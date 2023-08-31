@@ -138,6 +138,7 @@ const sidebars = {
         "Webhooks/Hello order"
       ],
     },
+    { type: 'doc', id: 'Version release notes', label: 'Version Release Notes' },
   ]
 };
 

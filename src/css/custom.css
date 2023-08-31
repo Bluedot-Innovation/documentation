@@ -41,7 +41,7 @@ h2, h3, h4, h5, h6 {
   font-family: 'League Spartan', sans-serif;
 }
 
-p, a {
+p, a, li, ul, span {
   font-size: 1.4rem;
   font-family: 'League Spartan', sans-serif;
 }
