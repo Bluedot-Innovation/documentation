@@ -14,7 +14,7 @@ Steps to use Geo-Trigger/Tempo
 
 3\. Inside the `InitializationResultListener`, On success reported back from Bluedot, prepare to start Geo-Trigger/Tempo.
 
-```
+```kotlin
 val serviceManager \= ServiceManager.getInstance(context)
 if (!serviceManager.isBluedotServiceInitialized) {
   val resultListener \= InitializationResultListener { initializationError \->
@@ -56,7 +56,7 @@ if (!serviceManager.isBluedotServiceInitialized) {
 
 4. Function with an example to start FG mode Geo-trigger
 
-```
+```kotlin
 fun startGeoTriggering(context: Context) {
   val geoTriggeringStatusListener \= GeoTriggeringStatusListener { geoTriggerError: BDError? \->
     if (geoTriggerError != null) {
@@ -79,7 +79,7 @@ fun startGeoTriggering(context: Context) {
 
 5. Function with an example to start Tempo
 
-```
+```kotlin
 fun startTempo(context: Context) {
   val tempoServiceStatusListener \= TempoServiceStatusListener { tempoError: BDError? \->
     if (tempoError != null) {

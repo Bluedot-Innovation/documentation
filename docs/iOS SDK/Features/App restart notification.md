@@ -7,12 +7,14 @@ The notification provides a way for the user to re-engage with the app.
 
 To start geo-triggering with app restart notification, you should
 
-BDLocationManager.instance()?.[startGeoTriggering](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)startGeoTriggeringWithAppRestartNotificationTitle:notificationButtonText:completion:)(withAppRestartNotificationTitle: "Restart App?", notificationButtonText: "Tap here to re-engage with App now"){
-    guard error \== nil else {
+```swift
+BDLocationManager.instance()?.startGeoTriggering(withAppRestartNotificationTitle: "Restart App?", notificationButtonText: "Tap here to re-engage with App now"){
+    guard error == nil else {
         print("Start Geotriggering with app restart notification failed \\(error.localizedDescription)")
         return
    }
 }
+```
 
 ![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 

@@ -14,14 +14,19 @@ The enable and disable Zone methods return YES if a valid Zone Id has been provi
 
 Retrieve the shared instance of [BDLocationManager](https://ios-docs.bluedot.io/Classes/BDLocationManager.html) to call the following methods:
 
-\- (void)setZone: (NSString \*)zoneId disableByApplication:(BOOL)disable
-\- (void)applicationContainsDisabledZone:(NSString \*)zoneId
+```
+- (void)setZone: (NSString \*)zoneId disableByApplication:(BOOL)disable
+- (void)applicationContainsDisabledZone:(NSString \*)zoneId
                              completion:(void (^)(BOOL))completion;
+```                             
 
 To determine the Zones available to your app, you should implement the [`BDPGeoTriggeringEventDelegate`](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html), which handles the callback:
 
 // The zoneInfos parameter contains a set of all available Zone and their associated Ids, names, descriptions and Geofences.
-\- (void)[onZoneInfoUpdate](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)onZoneInfoUpdate:): (NSSet<BDZoneInfo \*> \*)zoneInfos;
+
+```
+- (void)onZoneInfoUpdate: (NSSet<BDZoneInfo *> *)zoneInfos;
+```
 
 Zone Information will be updated after a successful Geo-triggering Start and/or after the next Rule Download :
 

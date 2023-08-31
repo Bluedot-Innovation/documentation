@@ -29,30 +29,30 @@ Please see our [Minimal Integration](https://github.com/Bluedot-Innovation/Point
 
 If a notification is passed in during Geo-triggering or Tempo initialization, the notification will be displayed across all device OS versions.  To only display the notification on devices running Android Oreo and above, where it is required to access location data from the background, perform a version check when initializing the service and pass in notification only if the OS version is API level 26 or above:
 
-```
-> if (Build.VERSION.SDK\_INT \>= Build.VERSION\_CODES.O) {
->     GeoTriggeringService.builder()
->             .notification(notification)
->             .start(this, geoTriggerError \-> {
->                 // Call method to handle Geo-triggering initialization here.
->             });
-> } else {
->     GeoTriggeringService.builder()
->             .start(this, geoTriggerError \-> {
->                 // Call method to handle Geo-triggering initialization here.
->             });
-> }
+```kotlin
+if (Build.VERSION.SDK\_INT \>= Build.VERSION\_CODES.O) {
+     GeoTriggeringService.builder()
+             .notification(notification)
+             .start(this, geoTriggerError \-> {
+                 // Call method to handle Geo-triggering initialization here.
+             });
+ } else {
+     GeoTriggeringService.builder()
+             .start(this, geoTriggerError \-> {
+                 // Call method to handle Geo-triggering initialization here.
+             });
+ }
 ```
 
 If your app runs another foreground service or will run the Geo-triggering service and Tempo service simultaneously, it is best practice to use the same notification ID. Using the same notification ID ensures that only a single persistent notification will be displayed for all running foreground services. The [`GeoTriggerBuilder`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-geo-triggering-service/-geo-trigger-builder/index.html) and [`TempoBuilder`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-service/-tempo-builder/index.html) expose `notificationId()` methods to set the `notification ID`, and the [`GeoTriggeringService`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-geo-triggering-service/index.html) and [`TempoService`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-service/index.html) expose the notification ID in use via `foregroundNotificationId()` methods. The notification ID may be used to [update the notification](https://developer.android.com/training/notify-user/build-notification#Updating) after starting a service. Be aware that the most recent notification used to start a service, or the last update, will be displayed as long as any foreground service is running, thus it may be necessary to update the notification when stopping service to ensure the content remains correct.
 
 If you do not plan to use location services without a foreground service, it’s recommended that you remove the background location permission entry included in the SDK Manifest. The Bluedot SDK will continue to receive location even when the app is backgrounded without this permission so long as the foreground notification is visible. Removing this Manifest entry can help to minimise Play Store review concerns. You can do this by adding to your app’s Manifest:
 
-```
-> <uses-permission
->       android:name\="android.permission.ACCESS\_BACKGROUND\_LOCATION"
->       tools:node\="remove"
-> />
+```xml
+<uses-permission
+    android:name="android.permission.ACCESS_BACKGROUND_LOCATION"
+    tools:node="remove"
+/>
 ```
 
 Services running in the background consume device resources such as battery life, CPU time and memory, potentially resulting in bad user experiences. To mitigate this problem, since the Oreo release of the Android operating system,  a number of limitations have been applied to the operation of background services. Android 12 also added new restrictions for apps targeting Android 12 (API level 31) onwards. Most significantly, there are further restrictions on the ability to start [foreground](https://developer.android.com/guide/components/foreground-services) services while running in the background, except for [a few special cases](https://developer.android.com/about/versions/12/foreground-services#cases-fgs-background-starts-allowed).

@@ -1,8 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Wave: Integration & User guide](https://docs.bluedot.io/wave-api-integration-user-guide/)
-3.  Receiving of Wave API events
-
-Receiving of Wave API events
+Receiving Wave API events
 ============================
 
 Wave API events are communicated to you in two ways:

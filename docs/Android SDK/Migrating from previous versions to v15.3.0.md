@@ -19,30 +19,32 @@ Update to authentication/initialization call
 
 The authentication call has been changed from:
 
-```
+```java
 // Deprecated in 15.3.0
  public void sendAuthenticationRequest(String apiKey, ServiceStatusListener listener)
 ```
 
 to
-```
+```java
 public interface InitializationResultListener{
-    void [onInitializationFinished](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-initialization-result-listener/index.html?query=fun%20fun%20interface%20InitializationResultListener#%5Bau.com.bluedot.point.net.engine%2FInitializationResultListener%2FonInitializationFinished%2F%23au.com.bluedot.point.net.engine.BDError%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F-762893342)(@Nullable BDError error)
+    void onInitializationFinished(@Nullable BDError error)
 }
  
- public void initialize(@NonNull String projectId,
+public void initialize(@NonNull String projectId,
      @NonNull InitializationResultListener resultListener)
 ```     
 
 in addition, in order to receive Bluedot service error events post initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html?query=abstract%20class%20BluedotServiceReceiver%20:%20BroadcastReceiver) should be implemented and registered in the AndroidManifest:
 
- class ExampleBluedotServiceReceiver : [BluedotServiceReceiver](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html?query=abstract%20class%20BluedotServiceReceiver%20:%20BroadcastReceiver)() {
+```kotlin
+ class ExampleBluedotServiceReceiver : BluedotServiceReceiver() {
      override fun onBluedotServiceError(error: BDError, context: Context) {
          // Handle error here.
      }
  }
- 
  ```
+ 
+ ```xml
  <application android:label\="@string/app\_name" \>
      <receiver
          android:name\="<path to your BluedotServiceReceiver implementation>"
@@ -61,7 +63,7 @@ in addition, in order to receive Bluedot service error events post initializatio
 *   Moving forward, `apiKey` will be replaced by `projectId`.
 *   Any error in relation to initialization will be passed back via a completion callback. If the error is null, initialization was successful.
 
-```
+```kotlin
 serviceManager.initialize("projectId", 
     (error) \-> {
          // Handle initialization result
@@ -118,6 +120,7 @@ Receiving Geo-trigger events
 
 In previous versions of the Point SDK, you would have implemented the `ApplicationNotificationListener` to receive Fence triggers callbacks. In the new version of the Point SDK, you need to implement `GeoTriggeringEventReceiver` as a new class to receive Geo-triggering related callbacks and declare it in AndroidManifest.
 
+```kotlin
 class ExampleGeoTriggerReceiver : GeoTriggeringEventReceiver() {
     override fun onZoneInfoUpdate(zones: List<ZoneInfo\>, context: Context) {
        //zones list from Rule Download
@@ -131,8 +134,9 @@ class ExampleGeoTriggerReceiver : GeoTriggeringEventReceiver() {
        //Zone Exit event details for Checkout
     }
  }
- 
  ```
+ 
+ ```xml
  <application android:label\="@string/app\_name" \>
     <receiver
         android:name\="<path to your GeoTriggeringEventReceiver implementation>"
@@ -160,17 +164,18 @@ Updates to Tempo API
 
 The Start Tempo API call has changed from
 
-```
+```java
 // Deprecated in 15.3.0
  public void startTempoTracking(@NonNull String destinationId,
  @NonNull TempoStatusListener statusListener)
  
  public void stopTempoTracking()
- ```
+```
 
 to
-```
- interface [TempoStatusListener](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-status-listener/index.html) {
+
+```kotlin
+ interface TempoStatusListener {
      fun onTempoResult(error: BDError?) 
  }
  
@@ -200,23 +205,23 @@ to
 
 In order to receive any error events during Tempo, a class that implements `TempoTrackingReceiver` should be implemented and registered in the AndroidManifest:
 
-```
- class ExampleTempoReceiver : [TempoTrackingReceiver]() {
+``` kotlin
+ class ExampleTempoReceiver : TempoTrackingReceiver() {
      //Called when there is an error that has caused Tempo to stop
      override fun tempoStoppedWithError(error: BDError, context: Context) {
          //error during Tempo }
  }
  ```
  
- ```
- <application android:label\="@string/app\_name" \>
+ ```xml
+ <application android:label="@string/app\_name" \>
      <receiver
-         android:name\="<path to your TempoTrackingReceiver implementation>"
-         android:enabled\="true"
-         android:exported\="false"
+         android:name="<path to your TempoTrackingReceiver implementation>"
+         android:enabled="true"
+         android:exported="false"
      \>
          <intent\-filter\>
-             <action android:name\="io.bluedot.point.TEMPO" />
+             <action android:name="io.bluedot.point.TEMPO" />
         </intent\-filter\>
      </receiver\>
  </application\>

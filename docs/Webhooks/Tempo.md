@@ -60,12 +60,12 @@ Endpoint: `https://config.bluedot.io/prod1/projects`
 
 Example of adding a Tempo Webhook:
 
-```json
+```
 "tempo": { 
-    "webhooks": [{ 
+    "webhooks": \[{ 
         "type": "tempo", 
         "url": "<webhook URL goes here>" 
-    }] 
+    }\] 
 }
 ```
 
@@ -73,7 +73,7 @@ Webhook request JSON structure
 ------------------------------
 
 **Update JSON request**
-```json
+```
 {
     "deviceType": "iPhone12,3",
     "os": "iOS",
@@ -85,18 +85,18 @@ Webhook request JSON structure
         "key1": "value1",
         "key2": "value2"
     },
-    "eventTime": "2020-05-21T05:44:04Z",
+    "eventTime": “2020\-05\-21T05:44:04Z",
     "longitude": 144.123123123,
     "latitude": -33.123123123,
     "destinationId": "store ID",
     "eventType": "tempoUpdate",
     "eta": 900, 
     "etaDirection": "greaterThan",
-    "installRef": "1111111-2222-3333-4444-555555555555",
-    "projectId": "1111111-2222-3333-4444-555555555555",
-    "triggerChainId": "11111111-2222-3333-4444-555555555555",
+    "installRef": "1111111\-2222\-3333\-4444\-555555555555",
+    "projectId": "1111111\-2222\-3333\-4444\-555555555555",
+    "triggerChainId": "11111111\-2222\-3333\-4444\-555555555555",
     "notificationType": "tempo",
-    "zoneId": "1111111-2222-3333-4444-555555555555",
+    "zoneId": "1111111\-2222\-3333\-4444\-555555555555",
     "zoneName": "Store 123", 
     "zoneCustomData": {
         "key1": "value1",
@@ -342,9 +342,12 @@ zoneCustomData
 
 The custom data associated with the zone
 
-```json
+JSON object
+
 {
-    "storeId": "12345",
-    "storeType": "drive-thru"
+
+      “storeId”: “12345”,
+
+      “storeType”: “drive-thru”
+
 }
-```

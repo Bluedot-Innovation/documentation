@@ -82,6 +82,62 @@ const sidebars = {
         
       ],
     },
+    {
+      type: 'category',
+      label: 'Hello Screens',
+      items: [
+        "Hello Screens/Overview",
+        "Hello Screens/Customer wait time goals",
+        "Hello Screens/Mobile app",
+        "Hello Screens/Additional security layer"
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Now Ready',
+      items: [
+        "Now Ready/Overview",
+        "Now Ready/Configure Now Ready",
+        "Now Ready/Integrate register endpoint"
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Config API',
+      items: [
+        "Config API/Overview",
+        "Config API/Regions Urls",
+        "Config API/How to authenticate with Config API",
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Analytics API',
+      items: [
+        "Analytics API/Overview",
+        "Analytics API/How to paginate responses",
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Wave API',
+      items: [
+        "Wave API/Overview",
+        "Wave API/Integrate Wave API",
+        "Wave API/Receiving Wave API events",
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Webhooks',
+      items: [
+        "Webhooks/Overview",
+        "Webhooks/Geo-triggering",
+        "Webhooks/Tempo",
+        "Webhooks/Wave",
+        "Webhooks/Hello order"
+      ],
+    },
   ]
 };
 

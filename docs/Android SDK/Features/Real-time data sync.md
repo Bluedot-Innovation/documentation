@@ -27,11 +27,11 @@ Connect Bluedot SDK with Firebase
 
 To make sure that push notification will be delivered to your applications which is using specific Bluedot Project. Your client app needs to subscribe to the topic with Bluedot Project ID. This is achieved using the code below. It is recommended to add the line to the GeoTriggeringService start success callback.
 
-```
+```kotlin
 GeoTriggeringService.builder()
         .notificationId(123)
          .notification(createNotification(SERVICE\_TITLE, SERVICE\_CONTENT, true, this))
-         .start(this, error \-> {
+         .start(this, error -> {
              if (error != null) {
                 //log error
                 return;
@@ -46,7 +46,7 @@ Bluedot Push Interface
 
 The last step is to provide the received push notification’s data object to Bluedot’s notifyPushUpdate method, to process the push and trigger rule set refresh. This method is to be placed inside the `onMessageReceived` callback of your service that extends FirebaseMessagingService, demonstrated below.
 
-```
+```java
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     @Override
      public void onMessageReceived(RemoteMessage remoteMessage) {

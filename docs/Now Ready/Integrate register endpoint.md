@@ -21,29 +21,35 @@ You can use the following sample JSON payload to register an order:
 
 Register API uses the `projectId` to sign requests. You’ll need to add the key `x-bluedot-api-key` with the `projectId` as the value in request’s headers as shown below:
 
-"x-bluedot-api-key": "<YOUR\_PROJECT\_ID>"
+```
+"x-bluedot-api-key": "<YOUR_PROJECT_ID>"
+```
 
 You can find your `projectId` in [Canvas](https://docs.bluedot.io/canvas/) in the Account section.
 
+```json
 {
-    "destinationId": "<DESTINATION\_ID>",
+    "destinationId": "<DESTINATION_ID>",
     "customEventMetaData": {
-        "hs\_orderId": "<ORDER\_ID>",
-         "hs\_customerName": "John Doe",
-         "hs\_Mobile number": "0412356789",
-         "hs\_Vehicle make": "Honda",
-         "hs\_Vehicle model": "SDG",
-         "hs\_Vehicle plate": "123DFG",
-         "hs\_Parking bay": "213"
+        "hs_orderId": "<ORDER_ID>",
+         "hs_customerName": "John Doe",
+         "hs_Mobile number": "0412356789",
+         "hs_Vehicle make": "Honda",
+         "hs_Vehicle model": "SDG",
+         "hs_Vehicle plate": "123DFG",
+         "hs_Parking bay": "213"
     },
      "eventTime": "2021-07-02T00:08:16.000Z"
 }
+```
 
 5\. The response of the request will return the `userToken` that will be used to generate the URL that you’ll be sending to your customer when the order is ready to be collected.
 
+```json
 {
     "userToken": "ABc1234"
 }
+```
 
 For more information about registering an order please check the [Events API reference documentation](https://events-docs.bluedot.io/#operation/registerOrder).
 

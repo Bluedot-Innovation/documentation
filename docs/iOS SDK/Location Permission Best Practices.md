@@ -15,14 +15,18 @@ Requesting for location permission
 
 To increase the uptake of location permission, it is also recommended initially to request for “_when in use_” permission:
 
+```swift
 BDLocationManager.instance()?.requestWhenInUseAuthorization()
+```
 
 ![](https://docs.bluedot.io/wp-content/uploads/2021/01/iPhone_11_Pro_Max_–_14_2.jpg)
 ------------------------------------------------------------------------------------
 
 Then later at an appropriate moment within your app, upgrade to “_always_” permission via the following API:
 
+```swift
 BDLocationManager.instance()?.requestAlwaysAuthorization()
+```
 
 ![](https://docs.bluedot.io/wp-content/uploads/2021/01/iPhone_11_Pro_Max_–_14_2-1.jpg)
 
@@ -43,13 +47,17 @@ iOS 14 – Precise Location Accuracy
 
 If your app doesn’t have precise location accuracy (accuracy authorization at a reduced level), you can make the following call via `BDLocationManager`, to request for Temporary Full Accuracy Authorization.
 
+```swift
 BDLocationManager.instance()?.requestTemporaryFullAccuracyAuthorization(withPurposeKey: "Your Purpose Key")
+```
 
 In addition, you can implement [`BDPBluedotServiceDelegate`](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html) and register it with BDLocationManager to receive Bluedot Service related callbacks.
 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: \[NSObject: AnyObject\]?) \-> Bool {
-    BDLocationManager.instance()?.bluedotServiceDelegate \= self
+```swift
+func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    BDLocationManager.instance()?.bluedotServiceDelegate = self
 }
+```
 
 Then, implement the [`accuracyAuthorizationDidChange`](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html#/c:objc(pl)BDPBluedotServiceDelegate(im)accuracyAuthorizationDidChangeFromPreviousAuthorization:toNewAuthorization:) protocol method, and receive callbacks on changes to Location Accuracy Authorization.
 

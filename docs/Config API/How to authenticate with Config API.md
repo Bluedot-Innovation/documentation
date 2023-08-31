@@ -11,7 +11,7 @@ To get your authentication token you’ll need to initiate a session. It will ge
 The following steps will guide you to authenticate to our Config API
 
 1.  Make a `POST` request to the `/sessions` with your credentials
-    ```
+    ```json
     {
       "email": "user@email.com",
       "password": "Secret_Password_123"
@@ -19,7 +19,7 @@ The following steps will guide you to authenticate to our Config API
     ```
 
 2.  The response will return an object with the following structure
-    ```
+    ```json
     {
       "statusCode": 201,
       "idToken": "string",
@@ -29,7 +29,7 @@ The following steps will guide you to authenticate to our Config API
     ```
 
 3.  Subsequent requests to the API can be made by passing in `Bearer <accessToken>` into the request Authorization headerThis is an example of how you would get the list of Projects
-  ```
+  ```js
     // NODE.JS
     const https \= require('https');
     

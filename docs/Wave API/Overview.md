@@ -1,6 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Wave: Integration & User guide
-
 Wave: Integration & User guide
 ==============================
 

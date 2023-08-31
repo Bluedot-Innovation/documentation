@@ -1,8 +1,5 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Hello Screens
-
-Hello Screens
-=============
+Overview
+========
 
 By leveraging Bluedot’s predicted time-based arrival technology and advanced geofencing you can see exactly when customers are going to arrive – powering a seamless curbside, drive-thru and pick-up experience. But a challenge is often how you share these insights with your store associates; POS integration is hard and depending on what insights or notifications you’d like to surface, it simply may not be possible. Enter Hello screens.
 

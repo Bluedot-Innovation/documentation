@@ -13,12 +13,15 @@ Update to authentication/initialization call
 
 The authentication call has changed from
 
+```
 // Deprecated in 15.4.0
 (void)authenticateWithApiKey: (NSString \*)apiKey requestAuthorization: (BDAuthorizationLevel) authorizationLevel;
+```
 
 to
-
-(void)[initializeWithProjectId](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)initializeWithProjectId:completion:): (NSString \* \_Nonnull)projectId completion: (void (^\_Nonnull)(NSError \* \_Nullable error)) completion;
+```
+(void)initializeWithProjectId: (NSString \* \_Nonnull)projectId completion: (void (^\_Nonnull)(NSError \* \_Nullable error)) completion;
+```
 
 To check if SDK is initialized:
 
@@ -33,8 +36,10 @@ To check if SDK is initialized:
     *   We encourage you to request OS location permission that you requires (Always or When in Use), at an opportune moment from within your app, to get the best conversion rate. For example, when a customer places an order within the mobile app, at this point you can start geo-triggering, as well as requesting for location permission.
     *   To request for OS location permission, you can make the calls via our [`BDLocationManager`](https://ios-docs.bluedot.io/Classes/BDLocationManager.html) Singleton, for example:
 
+```
 \[BDLocationManager.instance requestAlwaysAuthorization\];
 \[BDLocationManager.instance requestWhenInUseAuthorization\];
+```
 
 *   Bluedot SDK will **not** start triggering Geofeatures immediately after initialization as per the previous API. You will have to make the call explicitly to start/stop Geo-triggering.
 
@@ -69,19 +74,23 @@ In 15.4.0 SDK, we give more control to you on when to start and stop Geo-trigger
 
 #### 2\. To check if Geotriggering is running:
 
+```
 (BOOL) [isGeoTriggeringRunning](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)isGeoTriggeringRunning);
+```
 
 Receiving Geo-trigger events
 ----------------------------
 
 In previous versions of the Point SDK, you would have implemented the `BDPLocationDelegate` to receive Fence triggers callbacks. In the new version of the Point SDK, implement the following delegate to receive Geo-triggering related callbacks.
 
+```
 @protocol BDPGeoTriggeringEventDelegate <NSObject\>
 @optional
-(void)[onZoneInfoUpdate](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)onZoneInfoUpdate:): (NSSet<[BDZoneInfo](https://ios-docs.bluedot.io/Classes/BDZoneInfo.html) \*> \*)zoneInfos;
-(void)[didEnterZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didEnterZone:): ([BDZoneEntryEvent](https://ios-docs.bluedot.io/Classes/BDZoneEntryEvent.html)) enterEvent;
-(void)[didExitZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didExitZone:): ([BDZoneExitEvent](https://ios-docs.bluedot.io/Classes/BDZoneExitEvent.html)) exitEvent;
+(void)onZoneInfoUpdate: (NSSet<BDZoneInfo \*> \*)zoneInfos;
+(void)didEnterZone: (BDZoneEntryEvent) enterEvent;
+(void)didExitZone: (BDZoneExitEvent) exitEvent;
 @end
+```
 
 ### Update in 15.4.0
 
@@ -96,15 +105,17 @@ Bluedot Service Level Callbacks – [`BDPBluedotServiceDelegate`](https://ios-do
 
 There will a new Bluedot Service Level Callback for all essential callbacks for the Point SDK.
 
-@protocol [BDPBluedotServiceDelegate](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html) <NSObject\>
+```
+@protocol BDPBluedotServiceDelegate <NSObject\>
  @optional
- (void)[locationAuthorizationDidChangeFromOldAuthorizationStatus](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html#/c:objc(pl)BDPBluedotServiceDelegate(im)locationAuthorizationDidChangeFromPreviousStatus:toNewStatus:): (CLAuthorizationStatus) oldAuthorizationStatus toNewAuthorizationStatus: (CLAuthorizationStatus) newAuthorizationStatus;
- (void)[lowPowerModeDidChange](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html#/c:objc(pl)BDPBluedotServiceDelegate(im)lowPowerModeDidChange:): (Bool) isLowPowerMode;
- (void)[bluedotServiceDidReceiveError](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html#/c:objc(pl)BDPBluedotServiceDelegate(im)bluedotServiceDidReceiveError:):(NSError \*)error
+ (void)locationAuthorizationDidChangeFromOldAuthorizationStatus: (CLAuthorizationStatus) oldAuthorizationStatus toNewAuthorizationStatus: (CLAuthorizationStatus) newAuthorizationStatus;
+ (void)lowPowerModeDidChange: (Bool) isLowPowerMode;
+ (void)bluedotServiceDidReceiveError:(NSError *)error
  
  // iOS 14 only
- (void)[accuracyAuthorizationDidChangeFromOldAccuracyAuthorization](https://ios-docs.bluedot.io/Protocols/BDPBluedotServiceDelegate.html#/c:objc(pl)BDPBluedotServiceDelegate(im)accuracyAuthorizationDidChangeFromPreviousAuthorization:toNewAuthorization:): (CLAccuracyAuthorization) oldAccuracyAuthorization toNewAccuracyAuthorization: (CLAccuracyAuthorization) newAccuracyAuthorization API\_AVAILABLE(ios(14));
+ (void)accuracyAuthorizationDidChangeFromOldAccuracyAuthorization: (CLAccuracyAuthorization) oldAccuracyAuthorization toNewAccuracyAuthorization: (CLAccuracyAuthorization) newAccuracyAuthorization API\_AVAILABLE(ios(14));
  @end
+```
 
 * * *
 
@@ -113,34 +124,46 @@ Updates to Tempo API
 
 1.  The Start Tempo API call has changed from
 
+```
 // Deprecated in 15.4.0
 (void)startTempoTracking: (NSString \* \_Nonnull)destinationId
+```
 
 to
 
-(void)[startTempoTrackingWithDestinationId](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)startTempoTrackingWithDestinationId:completion:): (NSString \* \_Nonnull)destinationId completion: (void (^ \_Nonnull)(NSError \* \_Nullable error)) completion;
+```
+(void)startTempoTrackingWithDestinationId: (NSString * _Nonnull)destinationId completion: (void (^ _Nonnull)(NSError * _Nullable error)) completion;
+```
 
 2\. The Stop Tempo API call has changed from
 
+```
 // Deprecated in 15.4.0
 (void)stopTempoTracking
+```
 
 to
 
-(void)[stopTempoTrackingWithCompletion](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)stopTempoTrackingWithCompletion:):completion: (void (^ \_Nonnull)(NSError \* \_Nullable error)) completion;
+```
+(void)stopTempoTrackingWithCompletion:completion: (void (^ _Nonnull)(NSError * _Nullable error)) completion;
+```
 
 3\. New API to check if Tempo is running:
 
+```
 (BOOL) isTempoRunning;
+```
 
 4\. Updates to [`BDPTempoTrackingDelegate`](https://ios-docs.bluedot.io/Protocols/BDPTempoTrackingDelegate.html):
 
+```
 // Deprecated in 15.4.0, in favor of completion callbacks in Start/Stop Tempo API.
  (void)didStartTracking
  (void)didStopTracking
  
  // new in 15.4.0
- (void)[tempoTrackingDidExpire](https://ios-docs.bluedot.io/Protocols/BDPTempoTrackingDelegate.html#/c:objc(pl)BDPTempoTrackingDelegate(im)tempoTrackingDidExpire);
+ (void)tempoTrackingDidExpire
+```
 
 ### Update in 15.4.0
 

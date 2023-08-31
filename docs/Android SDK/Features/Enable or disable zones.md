@@ -5,9 +5,9 @@ An app may optionally disable (and later re-enable) Zones by calling `setZoneDi
 
 For example, if a Zone is configured in Canvas to be active between 1 pm and 3 pm, calls to `setZoneDisableByApplication` would have no effect outside of these times. During the Zone’s active period (e.g. at 2.30 pm), the Zone will be active unless disabled by `setZoneDisableByApplication`.
 
-```
-String zoneIdToDisable \= ""
-if(!mServiceManager.isZoneDisabledByApplication(zoneIdToDisable)){
+```java
+String zoneIdToDisable = ""
+if (!mServiceManager.isZoneDisabledByApplication(zoneIdToDisable)) {
     mServiceManager.setZoneDisableByApplication(zoneIdToDisable, true);
 }
 ```

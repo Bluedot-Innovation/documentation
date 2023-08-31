@@ -48,11 +48,13 @@ Also, your client needs to first register your app with both APNs and FCM to ens
 
 To subscribe to a topic, implement the didReceiveRegistrationToken method in [FIRMessagingDelegate](https://firebase.google.com/docs/reference/ios/firebasemessaging/api/reference/Protocols/FIRMessagingDelegate.html) Protocol.
 
+```
 \- (void)messaging:(FIRMessaging \*)messaging didReceiveRegistrationToken:(NSString \*)fcmToken {
     NSLog(@"Subcribing to Topic...");
     NSString \*topic \= \[NSString stringWithFormat:@"%@", ProjectId\];
     \[\[FIRMessaging messaging\] subscribeToTopic: topic\];
 }
+```
 
 ![image](https://docs.bluedot.io/wp-content/uploads/2018/01/001-exclamation-mark.png)
 
@@ -67,9 +69,10 @@ When your client app has received the Real-time Push Notification, you need to p
 
 Put the method in `UNUserNotificationCenterDelegate userNotificationCenter:willPresentNotification:withCompletionHandler:` to handle notifications received when the client app is in the foreground. The message is a UNNotificationobject. Implement FIRMessagingDelegate applicationReceivedRemoteMessage: to handle all data messages that are sent to the client. The message is a FIRMessagingRemoteMessage object.
 
+```
 // Receive displayed notifications
 #if defined(\_\_IPHONE\_10\_0) && \_\_IPHONE\_OS\_VERSION\_MAX\_ALLOWED >= \_\_IPHONE\_10\_0
-\- (void)userNotificationCenter:(UNUserNotificationCenter \*)center
+- (void)userNotificationCenter:(UNUserNotificationCenter \*)center
        willPresentNotification:(UNNotification \*)notification
          withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     NSDictionary \*userInfo \= notification.request.content.userInfo;
@@ -78,11 +81,12 @@ Put the method in `UNUserNotificationCenterDelegate userNotificationCenter:willP
 }
  
 // Receive data message
-\- (void)applicationReceivedRemoteMessage:(FIRMessagingRemoteMessage \*)remoteMessage {
+- (void)applicationReceivedRemoteMessage:(FIRMessagingRemoteMessage \*)remoteMessage {
     \[BDLocationManager.instance notifyPushUpdateWithData:\[remoteMessage appData\]\];
     ...
 }
 #endif
+```
 
 ![image](https://docs.bluedot.io/wp-content/uploads/2018/01/001-exclamation-mark.png)
 

@@ -59,7 +59,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Bluedot',
+     
         logo: {
           alt: 'Bluedot Documentation Logo',
           src: 'img/logo.svg',
@@ -91,6 +91,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['swift', 'kotlin', 'gradle']
       },
     }),
 };

@@ -15,6 +15,7 @@ For this capability, the SDK needs to be initialized and the app must have locat
 Tempo also requires Destination IDs to be defined, which you can learn about here.
 
 To start Tempo, you should
+
 ```swift
 BDLocationManager.instance()?.startTempoTracking(withDestinationId: "MyDestinationId"){ error in
     guard error \== nil else {

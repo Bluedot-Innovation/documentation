@@ -16,7 +16,7 @@ These changes have been made to improve build performance.
 
 Here are a few examples of the new build option default values in Gradle version 8.0.0:
 
-```
+```gradle
 android.defaults.buildfeatures.buildconfig (false)
 android.defaults.buildfeatures.aidl (false)
 android.defaults.buildfeatures.renderscript (false)
@@ -33,7 +33,7 @@ One of the changes in Gradle version 8.0.0 is that many build option default val
 
 Here are a few examples:
 
-```
+```gradle
 android.r8.failOnMissingClasses (true)
 android.enableNewResourceShrinker (true)
 android.enableSourceSetPathsMap (true)
@@ -47,7 +47,7 @@ Building Bluedot Point SDK with Gradle 8
 
 When building a project incorporating the Bluedot Point SDK with Gradle 8, Please add the following ProGuard rules to your proguard-rules.pro file for a smooth build and to ensure the Bluedot SDK runs correctly.
 
-```
+```gradle
 \-dontwarn kotlinx.parcelize.Parcelize
 #R8 full mode strips generic signatures from return types if not kept.
 \-if interface \* { @retrofit2.http.\* public \*\*\* \*(...); }
@@ -57,4 +57,7 @@ When building a project incorporating the Bluedot Point SDK with Gradle 8, Pleas
 \-keepattributes Signature
 \-keep class kotlin.coroutines.Continuation
 ```
+
+...note
 _Note: These rules are already included as consumer ProGuard rules in the upcoming Bluedot SDK 16.x release. Therefore, if you update to SDK v16.x in the future, these changes do not need to be made explicitly from the app side._
+...

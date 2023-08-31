@@ -1,7 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Webhooks
-
-Webhooks
+Overview
 ========
 
 Register Webhooks to receive real-time notifications from your app user’s activity. Webhooks can be used to send events for:
@@ -62,7 +59,7 @@ Header Fields (optional)
 
 Custom headers sent along with the webhook request. Keys must not contain spaces. The dynamic headers (available only for standard webhooks) will require a fixed property key, only the value can be programmatically set. 
 
-By adding dynamic headers to the Webhook, you’re setting up a pattern that will be picked up and populated from the webhook request body. It can be any property name that is present in the webhook request body. For example to set a custom value included in the event you can use eventMetaData.key\_name  for a Geo-trigger event or customEventMetaData.key\_name for a Tempo or Wave event
+By adding dynamic headers to the Webhook, you’re setting up a pattern that will be picked up and populated from the webhook request body. It can be any property name that is present in the webhook request body. For example to set a custom value included in the event you can use `eventMetaData.key_name`  for a Geo-trigger event or `customEventMetaData.key_name` for a Tempo or Wave event
 
 Body Fields (optional)
 
@@ -73,7 +70,7 @@ Custom fields and values which will be added to the body of the webhook when sen
 Receiving a Webhook notification
 ================================
 
-To receive a webhook, you would need a server, cloud function or any HTTP endpoint that can accept and process POST requests.
+To receive a webhook, you would need a server, cloud function or any HTTP endpoint that can accept and process `POST` requests.
 
 Webhook Event Headers
 ---------------------
@@ -85,19 +82,21 @@ tokenKey: "tokenValue"
 We encourage you to make use of these Key/Value tokens to sign the events with our own values to verify the origin of the events.
 
 ### Example HTTP header in the request
-
+```json
 {
     "securitytoken": "72340732BlueDOT7297329-T0",
     "contenttype": "application/json"
 }
+```
 
 ### Example Dynamic headers in the request
-
+```json
 {
-    "authentication\_token": "Bearer {eventMetaData.auth\_key}",
-    "user\_id": "{installRef}",
+    "authentication_token": "Bearer {eventMetaData.auth_key}",
+    "user_id": "{installRef}",
     "HeaderKey3": "HeaderValue3"
 }
+```
 
 Webhook request JSON structure
 ------------------------------

@@ -12,7 +12,7 @@ Tempo also requires Destination IDs to be defined, which [you can learn about he
 
 To start Tempo, you should
 
-```
+```kotlin
 if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
     // The Bluedot SDK is initialized, you can start Tempo.
     
@@ -38,7 +38,7 @@ Receiving Tempo events
 
 The Tempo service does not issue events under normal operation. Instead, it only issues events if there is an error with the operation. Tracking events are instead delivered via webhook, as configured in the Canvas UI.
 
-```
+```kotlin
 class ExampleTempoReceiver : [TempoTrackingReceiver](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html)() {
     //Called when there is an error that has caused Tempo to stop
     override fun tempoStoppedWithError(error: BDError, context: Context) {
@@ -47,15 +47,15 @@ class ExampleTempoReceiver : [TempoTrackingReceiver](https://android-docs.bluedo
 ```
 
 The receiver must be registered in the app's manifest:
-```
-<application android:label\="@string/app\_name" \>
+```xml
+<application android:label="@string/app\_name" \>
     <receiver
-        android:name\="my.package.ExampleTempoReceiver"
-        android:enabled\="true"
-        android:exported\="false"
+        android:name="my.package.ExampleTempoReceiver"
+        android:enabled="true"
+        android:exported="false"
      \>
         <intent-filter>
-           <action android:name\="io.bluedot.point.TEMPO" />
+           <action android:name="io.bluedot.point.TEMPO" />
         </intent-filter>
      </receiver>
  </application>
@@ -66,8 +66,8 @@ Stop Tempo
 
 Once the Tempo service is no longer needed, you can stop the service.
 
-```
-val tempoStopError: BDError? \= TempoService.stop(myContext)
+```kotlin
+val tempoStopError: BDError? = TempoService.stop(myContext)
 if (tempoStopError != null) {
     // An error occurred, the SDK or Tempo may not have been initialized correctly.
 }

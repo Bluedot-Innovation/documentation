@@ -7,7 +7,7 @@ You’ll need to create a **Zone** before you can start adding in specific **
 
 2\. Check you’re using the right Project (the Project dropdown is at the top of the screen)
 
-3\. Click the _\+ Add Zone_ button
+3\. Click the _+ Add Zone_ button
 
 ![](https://docs.bluedot.io/wp-content/uploads/2023/05/Zone-Creation-1-1024x507.png)
 
