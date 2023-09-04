@@ -14,61 +14,122 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   defaultSidebar: [
-    { type: 'doc', id: 'intro', label: 'Introduction' },
+    { type: "doc", id: "intro", label: "Introduction" },
     {
-      type: 'category',
-      label: 'Android',
+      type: "category",
+      label: "Point SDK",
       items: [
-        "Android SDK/Quick Start",
-        "Android SDK/Geo-triggering",
-        "Android SDK/Tempo",
         {
-          type: 'category',
-          label: 'Features',
+          type: "category",
+          label: "Android",
           items: [
-            "Android SDK/Features/Enable or disable zones",
-            "Android SDK/Features/Real-time data sync",
-          ]
+            "Point SDK/Android/Overview",
+            "Point SDK/Android/Quick Start",
+            "Point SDK/Android/Geo-triggering",
+            "Point SDK/Android/Tempo",
+            {
+              type: "category",
+              label: "Features",
+              items: [
+                "Point SDK/Android/Features/Enable or disable zones",
+                "Point SDK/Android/Features/Real-time data sync",
+              ],
+            },
+            "Point SDK/Android/Location Permission & Notifications Best Practices",
+            "Point SDK/Android/Best Practices & Recommendations",
+            "Point SDK/Android/Caveats",
+            "Point SDK/Android/Gradle 8",
+            "Point SDK/Android/Migrating from previous versions to v15.3.0",
+          ],
         },
-        "Android SDK/Location Permission & Notifications Best Practices",
-        "Android SDK/Best Practices & Recommendations",
-        "Android SDK/Caveats",
-        "Android SDK/Gradle 8",
-        "Android SDK/Migrating from previous versions to v15.3.0"
+        {
+          type: "category",
+          label: "iOS",
+          items: [
+            "Point SDK/iOS/Overview",
+            "Point SDK/iOS/Quick Start",
+            "Point SDK/iOS/Geo-triggering",
+            "Point SDK/iOS/Tempo",
+            {
+              type: "category",
+              label: "Features",
+              items: [
+                "Point SDK/iOS/Features/App restart notification",
+                "Point SDK/iOS/Features/Blue bar",
+                "Point SDK/iOS/Features/Enable or disable zones",
+                "Point SDK/iOS/Features/Real-time data sync",
+                "Point SDK/iOS/Features/Enhanced SDK restart",
+              ],
+            },
+            "Point SDK/iOS/Location Permission Best Practices",
+            {
+              type: "category",
+              label: "Migration Guides",
+              items: [
+                "Point SDK/iOS/Migration Guides/Migration guide from previous versions to Point SDK v15.4.0",
+                "Point SDK/iOS/Migration Guides/Migration guide from previous versions to Point SDK v15.5.0",
+              ],
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "React Native",
+          items: [
+            "Point SDK/React Native/Overview",
+            "Point SDK/React Native/Quick Start",
+            "Point SDK/React Native/Geo-triggering",
+            "Point SDK/React Native/Tempo",
+            "Point SDK/React Native/Features",
+            "Point SDK/React Native/Events List",
+            {
+              type: "category",
+              label: "Migration Guides",
+              items: [
+                "Point SDK/React Native/Migration Guides/Migrating to 2.0.0 guide",
+                "Point SDK/React Native/Migration Guides/Version 1.1.7 documentation",
+              ],
+            },
+          ],
+        },
+        {
+          type: "category",
+          label: "Flutter",
+          items: [
+            "Point SDK/Flutter/Overview",
+            "Point SDK/Flutter/Quick Start",
+            "Point SDK/Flutter/Geo-triggering",
+            "Point SDK/Flutter/Tempo",
+            "Point SDK/Flutter/Features",
+            "Point SDK/Flutter/Events List"
+          ],
+        },
+        {
+          type: "category",
+          label: "Xamarin",
+          items: [
+            "Point SDK/Xamarin/Overview",
+            "Point SDK/Xamarin/Android",
+            "Point SDK/Xamarin/iOS",
+          ],
+        },
+        {
+          type: "category",
+          label: "Cordova",
+          items: [
+            "Point SDK/Cordova/Overview",
+            "Point SDK/Cordova/Quick Start",
+            "Point SDK/Cordova/Geo-triggering",
+            "Point SDK/Cordova/Tempo",
+            "Point SDK/Cordova/Features",
+            "Point SDK/Cordova/Events List"
+          ],
+        },
       ],
     },
     {
-      type: 'category',
-      label: 'iOS',
-      items: [
-        "iOS SDK/Quick Start",
-        "iOS SDK/Geo-triggering",
-        "iOS SDK/Tempo",
-        {
-          type: 'category',
-          label: 'Features',
-          items: [
-            "iOS SDK/Features/App restart notification",
-            "iOS SDK/Features/Blue bar",
-            "iOS SDK/Features/Enable or disable zones",
-            "iOS SDK/Features/Real-time data sync",
-            "iOS SDK/Features/Enhanced SDK restart",
-          ]
-        },
-        "iOS SDK/Location Permission Best Practices",
-        {
-          type: 'category',
-          label: 'Migration Guides',
-          items: [
-            "iOS SDK/Migration Guides/Migration guide from previous versions to Point SDK v15.4.0",
-            "iOS SDK/Migration Guides/Migration guide from previous versions to Point SDK v15.5.0"
-          ]
-        }
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Canvas',
+      type: "category",
+      label: "Canvas",
       items: [
         "Canvas/Overview",
         "Canvas/Creating a new project",
@@ -79,67 +140,92 @@ const sidebars = {
         "Canvas/Setting up multiple environments",
         "Canvas/Event simulator guide",
         "Canvas/How to authenticate with Config API",
-        
       ],
     },
     {
-      type: 'category',
-      label: 'Hello Screens',
+      type: "category",
+      label: "Hello Screens",
       items: [
         "Hello Screens/Overview",
         "Hello Screens/Customer wait time goals",
         "Hello Screens/Mobile app",
-        "Hello Screens/Additional security layer"
+        "Hello Screens/Additional security layer",
       ],
     },
     {
-      type: 'category',
-      label: 'Now Ready',
+      type: "category",
+      label: "Now Ready",
       items: [
         "Now Ready/Overview",
         "Now Ready/Configure Now Ready",
-        "Now Ready/Integrate register endpoint"
+        "Now Ready/Integrate register endpoint",
       ],
     },
-    {
-      type: 'category',
-      label: 'Config API',
+     {
+      type: "category",
+      label: "APIs",
       items: [
-        "Config API/Overview",
-        "Config API/Regions Urls",
-        "Config API/How to authenticate with Config API",
+        {
+          type: "category",
+          label: "Config API",
+          items: [
+            "APIs/Config API/Overview",
+            "APIs/Config API/Regions Urls",
+            "APIs/Config API/How to authenticate with Config API",
+          ],
+        },
+        {
+          type: "category",
+          label: "Analytics API",
+          items: [
+            "APIs/Analytics API/Overview",
+            "APIs/Analytics API/How to paginate responses",
+          ],
+        },
+        {
+          type: "category",
+          label: "Wave API",
+          items: [
+            "APIs/Wave API/Overview",
+            "APIs/Wave API/Integrate Wave API",
+            "APIs/Wave API/Receiving Wave API events",
+          ],
+        },
       ],
     },
     {
-      type: 'category',
-      label: 'Analytics API',
-      items: [
-        "Analytics API/Overview",
-        "Analytics API/How to paginate responses",
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Wave API',
-      items: [
-        "Wave API/Overview",
-        "Wave API/Integrate Wave API",
-        "Wave API/Receiving Wave API events",
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Webhooks',
+      type: "category",
+      label: "Webhooks",
       items: [
         "Webhooks/Overview",
         "Webhooks/Geo-triggering",
         "Webhooks/Tempo",
         "Webhooks/Wave",
-        "Webhooks/Hello order"
+        "Webhooks/Hello order",
       ],
     },
-    { type: 'doc', id: 'Version release notes', label: 'Version Release Notes' },
-  ]
+    {
+      type: "doc",
+      id: "Custom Event Metadata",
+      label: "Custom Event Metadata",
+    },
+    {
+      type: "category",
+      label: "Implementation and Best Practices Guides",
+      items: [
+        "Implementation and Best Practices Guides/Overview",
+        "Implementation and Best Practices Guides/Curbside & Pickup implementation guide",
+        "Implementation and Best Practices Guides/Drive-thru implementation guide",
+        "Implementation and Best Practices Guides/Marketing & Gamification implementation guide",
+        "Implementation and Best Practices Guides/Submitting apps with location services guide",
+      ],
+    },
+    {
+      type: "doc",
+      id: "Version release notes",
+      label: "Version Release Notes",
+    },
+  ],
 };
 
 module.exports = sidebars;

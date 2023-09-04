@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Implementations and Best Practices Guides](https://docs.bluedot.io/use-cases-implementations-guides/)
-3.  Curbside Pickup Implementation Guide
-
 Curbside Pickup Implementation Guide
 ====================================
 

@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Hello Screens](https://docs.bluedot.io/hello-screens/)
-3.  Additional Security Layer
-
 Additional Security Layer
 =========================
 
@@ -32,10 +28,11 @@ POST https://us1-events.bluedot.io/hello/register HTTP/1.1
 You will receive your `userToken` in the response. This must be included in any subsequent requests made to update this order.
 
 ### Example response
-
+```json
 {
     "userToken": "abc123"
 }
+```
 
 ![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
@@ -59,11 +56,13 @@ When updating the status of a registered order, you’ll need to include the `us
 
 **Example Wave API body**
 
+```json
 {
     "destinationId": "store-destination-id",
     "userToken": "valid-user-token",
     "customEventMetaData": {
-        "hs\_orderId": "qwe123"
+        "hs_orderId": "qwe123",
         "eventType": "onTheWay"
     }
- }
+}
+```

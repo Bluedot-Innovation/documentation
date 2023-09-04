@@ -1,6 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Integrations
-
 Integrations
 ============
 

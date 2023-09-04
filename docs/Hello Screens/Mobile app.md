@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Hello Screens](https://docs.bluedot.io/hello-screens/)
-3.  Hello Screens App
-
 Hello Screens App
 =================
 

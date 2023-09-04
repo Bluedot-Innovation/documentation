@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Webhooks](https://docs.bluedot.io/webhooks/)
-3.  Geo-trigger Webhooks
-
 Geo-trigger Webhooks
 ====================
 

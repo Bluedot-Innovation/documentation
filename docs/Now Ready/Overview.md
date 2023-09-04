@@ -1,4 +1,4 @@
-Now Ready
+Overview
 =========
 
 [Curbside pickup](https://bluedot.io/solutions/curbside-pickup/) is placing an order online – via web or mobile and then driving to the store to pick it up. Sometimes this means parking, going inside the store, and waiting in a “mobile order” or “online order” queue. Other times, the curbside pickup might mean walking up to an outdoor locker, table, or tent where staff verifies your order before handing it to you. Curbside pickup or in-store pickup (AKA click and collect) is supposed to save customers time.

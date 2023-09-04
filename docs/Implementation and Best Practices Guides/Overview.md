@@ -1,7 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Implementations and Best Practices Guides
-
-Implementations and Best Practices Guides
+Overview
 =========================================
 
 Implementation Guides Per Use Case
