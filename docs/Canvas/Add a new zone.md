@@ -30,6 +30,7 @@ At any time you head back into a Zone to:
 *   Rename the Zone
 *   Edit the size of the geofence
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 You can also create Zones programmatically using our Config API. [Learn more about Config API](https://docs.bluedot.io/config-api/).
+:::

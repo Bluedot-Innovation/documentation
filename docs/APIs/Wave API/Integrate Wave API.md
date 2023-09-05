@@ -15,21 +15,11 @@ Endpoints
 
 Wave API is hosted in multiple regions worldwide to ensure the better performance of our services. Each region is completely independent and in a separated geographic area.
 
-**REGION**
-
-**URL**
-
-APAC
-
-[https://au1-events.bluedot.io/wave](https://au1-events.bluedot.io/wave)
-
-EUROPE
-
-[https://eu1-events.bluedot.io/wave](https://eu1-events.bluedot.io/wave)
-
-NORTH AMERICA
-
-[https://us1-events.bluedot.io/wave](https://us1-events.bluedot.io/wave)
+| **Region**    | **Wave API URL**                   |
+|---------------|------------------------------------|
+| APAC          | https://au1-events.bluedot.io/wave |
+| EUROPE        | https://eu1-events.bluedot.io/wave |
+| NORTH AMERICA | https://us1-events.bluedot.io/wave |
 
 If you’re not sure which region your account is in, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
 
@@ -48,8 +38,9 @@ You can also add context to the Wave Event, such as the user’s location, the e
 ### Request Signature
 
 Wave API uses the `projectId` to sign requests. You’ll need to add the key `x-bluedot-api-key` with the `projectId` as the value in request’s headers as shown below:
-
-"x-bluedot-api-key": "<YOUR\_PROJECT\_ID>"
+```
+"x-bluedot-api-key": "<YOUR_PROJECT_ID>"
+```
 
 You can find your `projectId` in the [Canvas](https://docs.bluedot.io/canvas/) in the Account section.
 
@@ -57,86 +48,82 @@ You can find your `projectId` in the [Canvas](https://docs.bluedot.io/canvas/) i
 
 #### Simple Example
 
-// JSON
+```json
 {
-  "destinationId": "your\_zone\_destinationId"
+  "destinationId": "your_zone_destinationId"
 }
+```
 
 #### Enriched Data Example
 
-// JSON
+```json 
 {
-  "destinationId": "melbourne\_store\_001",
+  "destinationId": "melbourne_store_001",
   "customEventMetaData": {
-    "userId": "your\_user\_id",
-    "storeId": "your\_store\_id"
+    "userId": "your_user_id",
+    "storeId": "your_store_id"
   },
   "location": {
     "longitude": 144.123123123,
-    "latitude": \-33.123123123,
+    "latitude": -33.123123123,
     "horizontalAccuracy": 12.232323,
     "bearing": 123,
     "speed": 2
   },
   "eventTime": "2018-09-02T00:08:16.000Z"
 }
+```
 
 Using Wave API with Hello Screens
 ---------------------------------
 
 The Wave Events can also inform Hello Screens of the arrival of a customer to a Zone. You just need to add the `OrderId` in the `customEventMetaData` as shown below:
 
-// JSON
+```json
 {
-  "destinationId": "melbourne\_store\_001",
+  "destinationId": "melbourne_store_001",
   "customEventMetaData": {
     "OrderId": "aslkfiowae"
   }
 }
+```
 
 We also recommend using the other properties the Hello Screens provides, such as adding the customer’s name and any additional relevant information for your use case. The fields that have the prefix `hs_` will be displayed in the Order’s details.
 
-// JSON
+```json
 {
-  "destinationId": "melbourne\_store\_001",
+  "destinationId": "melbourne_store_001",
   "customEventMetaData": {
-    "OrderId": "aslkfiowae"
-    "hs\_Customer Name": "James",
-    "hs\_Car Model": "Honda Civic",
-    "hs\_Car Color": "Red",
-    "hs\_Loyalty ID": "ABC123",
-    "hs\_Mobile Number": "3231234567"
+    "OrderId": "aslkfiowae",
+    "hs_Customer Name": "James",
+    "hs_Car Model": "Honda Civic",
+    "hs_Car Color": "Red",
+    "hs_Loyalty ID": "ABC123",
+    "hs_Mobile Number": "3231234567"
   }
 }
+```
 
 ### Updating the order’s state in Hello Screens
 
 To update the state of order in Hello Screens with Wave API, you’ll need to include the property `eventType` in the Custom Event Meta Data. There are three main values to pass in `eventType`
 
-**Event Type**
+| **Event Type** | **Description**                                                                                                                                                                                                                                                       |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `onTheWay`     | Updates the order’s state in Hello Screens to "On the way".                                                                                                                                                                                                           |
+| `arrival`      | Updates the order’s state in Hello Screens to "Customer Arrived". For example, when the user presses the "I'm here" button.                                                                                                                                           |
+| `updateOrder`  | Allows adding extra information about the order without impacting the order’s state. Only affects the fields with the `hs_prefix` . This might be useful when you get additional information after the customer has already started his journey to collect the order. |
 
-**Description**
-
-`onTheWay`
-
-Updates the order’s state in Hello Screens to “_On_ _the way_”. 
-
-`arrival`
-
-Updates the order’s state in Hello Screens to “_Customer_ _Arrived_”. For example when the user presses the “_I’m here_” button.
-
-`updateOrder`
-
-Allows adding extra information about the order without impacting the order’s state.  Only affects the fields with the `hs_` prefix. This might be useful when you get additional information after the customer has already started his journey to collect the order.
-
-// JSON { 
-  "destinationId": "melbourne\_store\_001", 
+```json
+{ 
+  "destinationId": "melbourne_store_001", 
   "customEventMetaData": { 
-    "OrderId": "aslkfiowae" 
-    "hs\_Customer Name": "James",
+    "OrderId": "aslkfiowae",
+    "hs_Customer Name": "James",
     "eventType": "onTheWay"
   } 
 }
+```
 
 Integrate Wave in your Web page using the Web SDK
 -------------------------------------------------

@@ -7,9 +7,10 @@ This metadata will be delivered to the mobile app at the time of entry (check-in
 
 The metadata received in the entry (check-in) and exit (check-out) callbacks for Zone trigger on your application can be used to enhance your post-entry processing and help you provide a better context-aware solution to your customers.
 
-![image](https://docs.bluedot.io/wp-content/uploads/2018/01/info-sign.png)
 
+:::info
 Maximum 20 entries can be set in custom data. The add button will not be available if you have added 20 key-value pairs already.
+:::
 
 Add custom data fields to a Zone
 --------------------------------

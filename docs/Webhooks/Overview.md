@@ -43,27 +43,14 @@ To set up **W****ebhooks**, login to Canvas and head to the **Integrations** sec
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot5.png)
 
-Event
+| Property | Description |
+|---|---|
+| Event | Choose Event Type: - Geo-triggering - Wave - Tempo - Hello Order |
+| URL | The URL of the server where the webhooks will be received. We suggest that the service has SSL enabled. |
+| Header fields (optional) | Custom headers are sent along with the webhook request. Keys must not contain spaces.  The dynamic headers (available only for standard webhooks) will require a fixed property key; only the value can be programmatically set. By adding dynamic headers to the Webhook, you’re setting up a pattern that will be picked up and populated from the webhook request body . It can be any property name that is present in the webhook request body. For example, to set a custom value included in the event, you can use `eventMetaData.key_name` for a Geo-trigger event or `customEventMetaData.key_name` for a Tempo or Wave event |
+| Body fields (optional) | Custom fields and values which will be added to the body of the webhook when sent. Keys must not contain spaces |
 
-Choose Event Type:
 
-*   Geo-triggering
-*   Wave
-*   Tempo
-
-URL
-
-The URL of the server where the webhooks will be received. We suggest that the service has SSL enabled.
-
-Header Fields (optional)
-
-Custom headers sent along with the webhook request. Keys must not contain spaces. The dynamic headers (available only for standard webhooks) will require a fixed property key, only the value can be programmatically set. 
-
-By adding dynamic headers to the Webhook, you’re setting up a pattern that will be picked up and populated from the webhook request body. It can be any property name that is present in the webhook request body. For example to set a custom value included in the event you can use `eventMetaData.key_name`  for a Geo-trigger event or `customEventMetaData.key_name` for a Tempo or Wave event
-
-Body Fields (optional)
-
-Custom fields and values which will be added to the body of the webhook when sent. Keys must not contain spaces
 
 5\. Select Add
 
@@ -77,7 +64,9 @@ Webhook Event Headers
 
 You can make use of the **Token Key** and **Token Value** to add your own signature to the Webhook event. The Token Key and Token Value will be included in the Header of the HTTP request. 
 
-tokenKey: "tokenValue"
+```json
+"tokenKey": "tokenValue"
+```
 
 We encourage you to make use of these Key/Value tokens to sign the events with our own values to verify the origin of the events.
 

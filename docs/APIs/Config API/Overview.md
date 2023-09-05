@@ -1,4 +1,4 @@
-Config API User Guide
+Overview
 =====================
 
 Config APIs expose the functionality of the feature-rich user interface, [Canvas](https://docs.bluedot.io/canvas/), as RESTful web services. A broad range of clients and integrations can be built to utilise these services.

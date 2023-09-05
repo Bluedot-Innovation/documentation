@@ -17,6 +17,7 @@ But default, the **Rule Download Interval** for your new **Project** all be 
 
 Once you’ve created a **Project**, you’re ready to start adding **Zones.** Check this article on [how to create a Zone.](https://docs.bluedot.io/canvas/add-a-new-zone/)
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 You can also create Projects programmatically using our Config API. [Learn more about Config API](https://docs.bluedot.io/config-api/).
+:::

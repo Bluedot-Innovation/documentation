@@ -137,6 +137,7 @@ const sidebars = {
         "Canvas/Store management",
         "Canvas/What are Zone settings",
         "Canvas/What is Zone custom data",
+        "Canvas/Mandatory two-factor authentication",
         "Canvas/Setting up multiple environments",
         "Canvas/Event simulator guide",
         "Canvas/How to authenticate with Config API",
@@ -170,7 +171,6 @@ const sidebars = {
           label: "Config API",
           items: [
             "APIs/Config API/Overview",
-            "APIs/Config API/Regions Urls",
             "APIs/Config API/How to authenticate with Config API",
           ],
         },
@@ -191,6 +191,11 @@ const sidebars = {
             "APIs/Wave API/Receiving Wave API events",
           ],
         },
+        {
+          type: "doc",
+          label: "Regions URLs",
+          id: "APIs/Regions URLs",
+        }
       ],
     },
     {

@@ -20,9 +20,9 @@ You’ll find a new “Stores” button on the main navigation bar to go to the 
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/09/store-management-3-570x1024.png)
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
-
-The Destination ID must be unique; once created, it can’t be changed. If you want to change the Destination ID, you’ll need to delete the store and create a new store with a new destination ID. When deleting a store, you can keep the Zones and link them again to the new store.
+:::caution
+The Destination ID must be unique; once created, _it can’t be changed_. If you want to change the Destination ID, you’ll need to delete the store and create a new store with a new destination ID. When deleting a store, you can keep the Zones and link them again to the new store.
+:::
 
 ### From Config API
 
