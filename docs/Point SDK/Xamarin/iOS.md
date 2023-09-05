@@ -1,8 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Xamarin Bluedot Point SDK Wrapper](https://docs.bluedot.io/xamarin-bluedot-wrapper/)
-3.  Xamarin iOS – Quick start guide
-
-Xamarin iOS – Quick start guide
+iOS – Quick start
 ===============================
 
 In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting for a [demo](https://bluedot.io/demo/).  Please also ensure that you also meet the [iOS requirements](/ios-sdk/ios-requirements/).
@@ -54,7 +50,7 @@ Follow the steps below to configure the Xamarin Project Options
 
 ![](http://bluedot.lionwood.software/wp-content/uploads/2018/01/Project_Options_–_BDHelloPointSDK.png)
 
-4. Bitcode was introduced in iOS 9 for App thinning. Point SDK is compatible with iOS versions prior to this and can therefore not be built with Bitcode enabled. This entails that an app utilizing Point SDK must have Bitcode set to ‘**`NO`**`'`
+4. Bitcode was introduced in iOS 9 for App thinning. Point SDK is compatible with iOS versions prior to this and can therefore not be built with Bitcode enabled. This entails that an app utilizing Point SDK must have Bitcode set to **`NO`**
 
 * * *
 
@@ -136,16 +132,20 @@ The following is a checklist of the source code implementations that will assist
 *   Implement the IBDPGeoTriggeringEventDelegate or IBDPTempoDelegate
 *   Assign an object implementing the protocols to a class (for example, AppDelegate)
 
-BDLocationManager.Instance().GeoTriggeringEventDelegate \= myDelegateImplementation;
-BDLocationManager.Instance().TempoTrackingDelegate \= myDelegateImplementation;
+```csharp
+BDLocationManager.Instance().GeoTriggeringEventDelegate = myDelegateImplementation;
+BDLocationManager.Instance().TempoTrackingDelegate = myDelegateImplementation;
+```
 
 **3\. iOS Caveats**
 
 To avoid unexpected behavior in the app, implementations of the following two selectors must be present in the [Application Delegate](https://developer.apple.com/library/ios/documentation/uikit/reference/uiapplicationdelegate_protocol/Reference/Reference.html):
 
-public override void DidEnterBackground(UIApplication application)
-public override void WillEnterForeground(UIApplication application)
-public override void OnResignActivation(UIApplication application)
+```csharp
+public override void DidEnterBackground(UIApplication application){ ... }
+public override void WillEnterForeground(UIApplication application){ ... }
+public override void OnResignActivation(UIApplication application){ ... }
+```
 
 If these are removed or missing for any reason, then an “`unrecognized selector sent to instance`” error will occur at Runtime.
 

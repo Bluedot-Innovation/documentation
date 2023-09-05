@@ -12,53 +12,26 @@ To start geo-triggering, you should use the `GeoTriggeringBuilder` .
 
 On android, you can run geo triggering in foreground or background mode.
 
-#### _Foreground mode:_
+### Foreground mode:
 
 Starting geo-triggering on foreground mode would require notification permissions. From Android 13, you have to request user for notification permissions.
 
 To run geo triggering on foreground mode, you have to set notification details as below. If any of the parameters below are null or blank (except for `androidNotificationId`), geo-triggering will start on background mode.
 
-Parameters
+| **Parameter**                | **Type** | **Description**                          |
+|------------------------------|----------|------------------------------------------|
+| `channelId`                  | String?  | The channel id of the notification..     |
+| `channelName`                | String?  | The channel name of the notification.    |
+| `androidNotificationTitle`   | String?  | The title of the notification.           |
+| `androidNotificationContent` | String?  | The content of the notification.         |
+| `androidNotificationId`      | Int?     | The notification Id of the notification. |
 
-Type
-
-Description
-
-channelId
-
-String?
-
-The channel id of the notification.
-
-channelName
-
-String?
-
-The channel name of the notification.
-
-androidNotificationTitle
-
-String?
-
-The title of the notification.
-
-androidNotificationContent
-
-String?
-
-The content of the notification.
-
-androidNotificationId
-
-int?
-
-The notification Id of the notification.
-
-String channelId \= 'Your channel Id';
-String channelName \= 'Your channel Name';
-String androidNotificationTitle \= 'Your notification title';
-String androidNotificationContent \= 'Your notification content';
-int androidNotificationId \= 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder()
+```dart
+String channelId = 'Your channel Id';
+String channelName = 'Your channel Name';
+String androidNotificationTitle = 'Your notification title';
+String androidNotificationContent = 'Your notification content';
+int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder()
    .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId)
    .start().then((value) { 
    //Handle geo triggering started successfully 
@@ -67,9 +40,10 @@ int androidNotificationId \= 123; // Will be -1 by default if set to null. Blued
   //Handle error when start geo-triggering 
   debugPrint('Failed to start geo-triggering. Error $error'); 
 });
+```
 
 #### _Background mode:_
-
+```dart
 BluedotPointSdk.instance.geoTriggeringBuilder().start().then((value) {
   //Handle geo triggering started successfully
  debugPrint('Geo-triggering has been started');
@@ -77,6 +51,7 @@ BluedotPointSdk.instance.geoTriggeringBuilder().start().then((value) {
    //Handle error when start geo-triggering
  debugPrint('Failed to start geo-triggering. Error $error');
 });
+```
 
 ### iOS
 
@@ -84,14 +59,16 @@ Either of the methods above would start geo-triggering in iOS.
 
 Receiving Geo-trigger events
 ----------------------------
+:::info
+As Entry events may occur immediately upon staring Geo-triggering, it is recommended ed to subscribe to the events before starting the Geo-triggering service.
+:::
 
-**Note:** _As E__ntry_ _events may occur immediately upon staring Geo-triggering, it is recommended ed to subscribe to the events before starting the Geo-triggering service._
-
+```dart
 // Listen to Geo-triggering events
-final geoTriggeringEventChannel \= MethodChannel(BluedotPointSdk.geoTriggering); 
+final geoTriggeringEventChannel = MethodChannel(BluedotPointSdk.geoTriggering); 
 
 geoTriggeringEventChannel.setMethodCallHandler((MethodCall call) async {
- var args \= call.arguments; 
+ var args = call.arguments; 
  switch (call.method) { 
  case GeoTriggeringEvents.onZoneInfoUpdate: 
     debugPrint('On Zone Info Update: $args'); 
@@ -109,12 +86,13 @@ geoTriggeringEventChannel.setMethodCallHandler((MethodCall call) async {
 
 // Then start geo triggering service
 ...
+```
 
 Stop Geo-triggering
 -------------------
 
 If you only need geo-triggering for a limited period, once that period is over, you can stop the geo-trigger service.
-
+```dart
 BluedotPointSdk.instance.stopGeoTriggering().then((value) {
   // Successfully stop geo triggering
   debugPrint('Geo-triggering has been stopped');
@@ -122,22 +100,24 @@ BluedotPointSdk.instance.stopGeoTriggering().then((value) {
   // Failed to stop geo triggering, handle error in here
   debugPrint('Failed to stop geo triggering. Error $error');
 });
+```
 
 Geo-triggering Status
 ---------------------
 
 You can use the `isGeoTriggeringRunning` method to check the status of the Geo-triggering service. It will return a boolean value.
-
+```dart
 BluedotPointSdk.instance.isGeoTriggeringRunning().then((value) {
   setState(() {
     debugPrint('Is Geo Running: $value');
   });
 });
+```
 
 Example
 -------
-```
-import 'package:bluedot\_point\_sdk/bluedot\_point\_sdk.dart';
+```dart
+import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -145,21 +125,21 @@ class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<MyApp\> createState() \=> \_MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class \_MyAppState extends State<MyApp\> {
+class _MyAppState extends State<MyApp> {
   // The SDK needs be initialized and the app must have location permissions.
-  var \_isGeoTriggeringRunning \= false;
+  var _isGeoTriggeringRunning = false;
 
   @override
   void initState() {
     super.initState();
     // Listen to geo triggering event from geo triggering event channel
-    final geoTriggeringEventChannel \= MethodChannel(BluedotPointSdk.geoTriggering);
+    final geoTriggeringEventChannel = MethodChannel(BluedotPointSdk.geoTriggering);
     
     geoTriggeringEventChannel.setMethodCallHandler((MethodCall call) async {
-      var args \= call.arguments;
+      var args = call.arguments;
       switch (call.method) {
         case GeoTriggeringEvents.onZoneInfoUpdate:
           debugPrint('On Zone Info Update: $args');
@@ -176,12 +156,12 @@ class \_MyAppState extends State<MyApp\> {
     });
   }
 
- void \_startGeoTriggering() {
-    String channelId \= 'Your channel Id'; 
-    String channelName \= 'Your channel Name'; 
-    String androidNotificationTitle \= 'Your notification title'; 
-    String androidNotificationContent \= 'Your notification content'; 
-    int androidNotificationId \= 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder() 
+ void _startGeoTriggering() {
+    String channelId = 'Your channel Id'; 
+    String channelName = 'Your channel Name'; 
+    String androidNotificationTitle = 'Your notification title'; 
+    String androidNotificationContent = 'Your notification content'; 
+    int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder() 
      .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId) 
      .start().then((value) { 
         //Handle geo triggering started successfully 
@@ -192,7 +172,7 @@ class \_MyAppState extends State<MyApp\> {
      });
  }
 
- void \_stopGeoTriggering() {
+ void _stopGeoTriggering() {
    BluedotPointSdk.instance.geoTriggeringBuilder().start().then((value) {
      //Handle geo triggering started successfully
      debugPrint('Geo-triggering has been started');
@@ -202,10 +182,10 @@ class \_MyAppState extends State<MyApp\> {
    });
  }
 
- void \_updateGeoTriggeringStatus() {
+ void _updateGeoTriggeringStatus() {
     BluedotPointSdk.instance.isGeoTriggeringRunning().then((value) {
       setState(() {
-        \_isGeoTriggeringRunning \= value;
+        _isGeoTriggeringRunning = value;
       });
     });
  }
@@ -213,11 +193,11 @@ class \_MyAppState extends State<MyApp\> {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: \[
-          Text('Is Geo Triggering Running: $\_isGeoTriggeringRunning'),
-          ElevatedButton(onPressed: \_startGeoTriggering, child: const Text('Start Geo-triggering')),
-          ElevatedButton(onPressed: \_stopGeoTriggering, child: const Text('Stop Geo-triggering')),
-          ElevatedButton(onPressed: \_updateGeoTriggeringStatus, child: const Text('Update Geo-triggering status')),
+        children: [
+          Text('Is Geo Triggering Running: $_isGeoTriggeringRunning'),
+          ElevatedButton(onPressed: _startGeoTriggering, child: const Text('Start Geo-triggering')),
+          ElevatedButton(onPressed: _stopGeoTriggering, child: const Text('Stop Geo-triggering')),
+          ElevatedButton(onPressed: _updateGeoTriggeringStatus, child: const Text('Update Geo-triggering status')),
         \],
       );
   }

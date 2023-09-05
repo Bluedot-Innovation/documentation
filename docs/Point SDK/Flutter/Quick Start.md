@@ -12,17 +12,17 @@ To get the SDK loaded and running, you’ll need to:
 Run this command:
 
 With Dart:
-```
+```sh
   $ dart pub add bluedot_point_sdk
 ```
 
 Or with Flutter:
-```
+```sh
   $ flutter pub add bluedot_point_sdk
 ```
 
 This will add a line like this to your package’s pubspec.yaml (and run an implicit `dart pub get`):
-```
+```yaml
   dependencies:
     bluedot_point_sdk: ^1.0.0
 ```
@@ -33,41 +33,35 @@ Alternatively, your editor might support `dart pub get` or `flutter pub get`. Ch
 
 Now in your Dart code, you can use:
 
-  `import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';`
+```dart
+import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';
+```
 
-2\. . Initialize the SDK
+2\. Initialize the SDK
 ------------------------
 
 Now that the project has been set up, you can import and initialize the Flutter Bluedot Point SDK plugin from your App:
 
 The `initialize` method expects 1 parameter:
 
-**Paramater**
+| **Parameter**           | **Type** | **Description**                                                         |
+|-------------------------|----------|-------------------------------------------------------------------------|
+| `lowPowerModeDidChange` | String   | The `projectId` you’re going to use. _This can be found in the Canvas._ |
 
-**Type**
-
-**Description**
-
-projectId
-
-String
-
-The project Id you’re going to use. _This can be found in the Canvas._
-
-```
+```dart
 import 'package:flutter/material.dart';
-import 'package:bluedot\_point\_sdk/bluedot\_point\_sdk.dart';
+import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';
 
-class \_MyAppState extends State<MyApp\> {
+class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
     super.initState();
-    \_initializeBluedotPointSDK();
+    _initializeBluedotPointSDK();
   }
 
-  void \_initializeBluedotPointSDK() {
-    BluedotPointSdk.instance.initialize('**Your\_bluedot\_project\_Id**')
+  void _initializeBluedotPointSDK() {
+    BluedotPointSdk.instance.initialize('**Your_bluedot_project_Id**')
         .then((value) {
           // Successfully initialised Bluedot Point SDK
           debugPrint('Bluedot Point SDK has been initialized');
@@ -90,8 +84,10 @@ class \_MyAppState extends State<MyApp\> {
 
 You can use the `isInitialized` method to check the status of the SDK. It will return a boolean value.
 
+```dart
 BluedotPointSdk.instance.isInitialized().then((value) {
   debugPrint('Is Bluedot Point SDK initialized?: $value');
 });
+```
 
 At this point, you’ve got the basics together, but to start receiving location events from the SDK, your need to use our Geo-triggering and/or Tempo features.

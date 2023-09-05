@@ -1,4 +1,4 @@
-Flutter – Tempo
+Tempo
 ===============
 
 Tempo allows active tracking of a user’s location, as well as live ETA estimation.
@@ -14,50 +14,22 @@ Tempo also requires Destination IDs to be defined, which [you can learn about he
 
 To start tempo on foreground mode, you have to set notification details as below.
 
-Parameters
-
-Type
-
-Description
-
-channelId
-
-String
-
-The channel id of the notification.
-
-channelName
-
-String
-
-The channel name of the notification.
-
-androidNotificationTitle
-
-String
-
-The title of the notification.
-
-androidNotificationContent
-
-String
-
-The content of the notification.
-
-androidNotificationId
-
-int?
-
-The notification Id of the notification.
+| **Parameter**                | **Type** | **Description**                          |
+|------------------------------|----------|------------------------------------------|
+| `channelId`                  | String?  | The channel id of the notification..     |
+| `channelName`                | String?  | The channel name of the notification.    |
+| `androidNotificationTitle`   | String?  | The title of the notification.           |
+| `androidNotificationContent` | String?  | The content of the notification.         |
+| `androidNotificationId`      | Int?     | The notification Id of the notification. |
 
 And start Tempo by using the `TempoBuilder`  class as below:
 
-```
-String destinationId \= 'Your destination Id';String channelId \= 'Your channel Id';
-String channelName \= 'Your channel Name';
-String androidNotificationTitle \= 'Your notification title';
-String androidNotificationContent \= 'Your notification content';
-int androidNotificationId \= 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.tempoBuilder() 
+```dart
+String destinationId = 'Your destination Id';String channelId = 'Your channel Id';
+String channelName = 'Your channel Name';
+String androidNotificationTitle = 'Your notification title';
+String androidNotificationContent = 'Your notification content';
+int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.tempoBuilder() 
 .androidNotification(channelId, channelName, androidNotificationTitle, androidNotificationContent, androidNotificationId) 
 .start(destinationId).then((value) { 
   // Successfully started tempo tracking 
@@ -75,10 +47,10 @@ The Tempo service does not issue events under normal operation. Instead, it only
 
 You can listen to receive the Tempo events as below.
 
-```
-const tempoEventChannel \= MethodChannel(BluedotPointSdk.tempo);
+```dart
+const tempoEventChannel = MethodChannel(BluedotPointSdk.tempo);
 tempoEventChannel.setMethodCallHandler((MethodCall call) async {
-  var args \= call.arguments;
+  var args = call.arguments;
   switch (call.method) {
     case TempoEvents.tempoTrackingStoppedWithError:
       // Handler error
@@ -95,7 +67,7 @@ Stop Tempo
 ----------
 
 Once the Tempo service is no longer needed, you can stop the service.
-
+```dart
 BluedotPointSdk.instance.stopTempoTracking().then((value) {
   // Successfully stopped tempo tracking
   debugPrint('Tempo has been stopped');
@@ -103,20 +75,22 @@ BluedotPointSdk.instance.stopTempoTracking().then((value) {
   // Failed to stop tempo tracking, handle error here
   debugPrint('Failed to stop tempo tracking. Error $error');
 });
+```
 
 Tempo Status
 ------------
 
 You can use the `isTempoRunning` method to check the status of the Tempo service. It will return a boolean value.
-
+```dart
 BluedotPointSdk.instance.isTempoRunning().then((value) {
   debugPrint('Is Tempo Running: $value');
 });
+```
 
 Example
 -------
-```
-import 'package:bluedot\_point\_sdk/bluedot\_point\_sdk.dart';
+```dart
+import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -124,24 +98,24 @@ class TempoPage extends StatefulWidget {
   const TempoPage({Key? key}) : super(key: key);
 
   @override
-  State<TempoPage\> createState() \=> \_TempoPageState();
+  State<TempoPage> createState() => _TempoPageState();
 }
 
-class \_TempoPageState extends State<TempoPage\> {
-  bool \_isTempoRunning \= false;
+class _TempoPageState extends State<TempoPage> {
+  bool _isTempoRunning = false;
 
   /// Start tempo tracking
-  void \_startTempo() {
-      String destinationId \= 'Your destination Id';
-      String channelId \= 'Your channel Id';
-      String channelName \= 'Your channel Name';
-      String androidNotificationTitle \= 'Your notification title';
-      String androidNotificationContent \= 'Your notification content';
-      int androidNotificationId \= 123; // Will be -1 by default if set to null. // Set custom event metadata.
+  void _startTempo() {
+      String destinationId = 'Your destination Id';
+      String channelId = 'Your channel Id';
+      String channelName = 'Your channel Name';
+      String androidNotificationTitle = 'Your notification title';
+      String androidNotificationContent = 'Your notification content';
+      int androidNotificationId = 123; // Will be -1 by default if set to null. // Set custom event metadata.
       // We suggest to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
-      var metadata \= {
-        'hs\_orderId': 'Order Id',
-        'hs\_Customer Name': 'Customer Name'
+      var metadata = {
+        'hs_orderId': 'Order Id',
+        'hs_Customer Name': 'Customer Name'
       };
 
       BluedotPointSdk.instance.setCustomEventMetaData(metadata);
@@ -161,7 +135,7 @@ class \_TempoPageState extends State<TempoPage\> {
   }
 
   /// Stop tempo tracking
-  void \_stopTempo() {
+  void _stopTempo() {
     BluedotPointSdk.instance.stopTempoTracking().then((value) {
       // Successfully stopped tempo tracking
       debugPrint('Tempo has been stopped');
@@ -171,10 +145,10 @@ class \_TempoPageState extends State<TempoPage\> {
     });
   }
 
-  void \_updateTempoStatus() {
+  void _updateTempoStatus() {
     BluedotPointSdk.instance.isTempoRunning().then((value) {
       setState(() {
-        \_isTempoRunning \= value;
+        _isTempoRunning = value;
       });
     });
   }
@@ -183,9 +157,9 @@ class \_TempoPageState extends State<TempoPage\> {
   void initState() {
     super.initState();
     // Listen to tempo events
-    const tempoEventChannel \= MethodChannel(BluedotPointSdk.tempo);
+    const tempoEventChannel = MethodChannel(BluedotPointSdk.tempo);
     tempoEventChannel.setMethodCallHandler((MethodCall call) async {
-      var args \= call.arguments;
+      var args = call.arguments;
       switch (call.method) {
         case TempoEvents.tempoTrackingStoppedWithError:
           // Handler error
@@ -200,12 +174,12 @@ class \_TempoPageState extends State<TempoPage\> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: \[
-        Text('Is Tempo Running: $\_isTempoRunning'),
-        ElevatedButton(onPressed: \_startTempo, child: const Text('Start Tempo')),
-        ElevatedButton(onPressed: \_stopTempo, child: const Text('Stop Tempo')),
-        ElevatedButton(onPressed: \_updateTempoStatus, child: const Text('Update Tempo Status')),
-      \],
+      children: [
+        Text('Is Tempo Running: $_isTempoRunning'),
+        ElevatedButton(onPressed: _startTempo, child: const Text('Start Tempo')),
+        ElevatedButton(onPressed: _stopTempo, child: const Text('Stop Tempo')),
+        ElevatedButton(onPressed: _updateTempoStatus, child: const Text('Update Tempo Status')),
+      ],
     );
   }
 }

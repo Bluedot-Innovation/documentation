@@ -15,28 +15,31 @@ Custom event metadata is a feature which is available in the Bluedot Point SDK f
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
-**Note:** _Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Bluedot SDK throws an error as: Only 20 CustomEventMetaData fields are allowed._
+:::info
+Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Bluedot SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
+:::
 
-```
-const metadata \= {
-  'hs\_orderId': 'Order Id',
-  'hs\_Customer Name': 'Customer Name'
+```dart
+const metadata = {
+  'hs_orderId': 'Order Id',
+  'hs_Customer Name': 'Customer Name'
 };
-```
+
 
 BluedotPointSdk.instance.setCustomEventMetaData(metadata);
+```
 
 Enable / Disable Zones
 ----------------------
 
 An app may optionally disable (and later re-enable) Zones by calling `setZoneDisableByApplication`. For further information refer to Enable or disable Zones documentation ([Android](https://docs.bluedot.io/android-sdk/android-features/android-features-enable-or-disable-zones/) | [iOS](https://docs.bluedot.io/ios-sdk/ios-features/enable-or-disable-zone/)) 
 
-```
-const zoneIdToDisable \= "your\_zone\_id";
-const disableZone \= true;
-```
+```dart
+const zoneIdToDisable = "your_zone_id";
+const disableZone = true;
 
 BluedotPointSdk.instance.setZoneDisableByApplication(zoneIdToDisable, disableZone);
+```
 
 Android Features
 ----------------
@@ -48,13 +51,13 @@ Given the restrictions on accessing location data from the background, it is rec
 The Foreground Notification method (`androidNotification`) is included in the `GeoTriggeringBuilder` and the `TempoBuilder` classes. It should be set up before starting any of the Geo-triggering or Tempo services as below.
 
 **Geo-triggering**
-```
+```dart
 // GeoTriggering
-String channelId \= 'Your channel Id';
-String channelName \= 'Your channel Name';
-String androidNotificationTitle \= 'Your notification title';
-String androidNotificationContent \= 'Your notification content';
-int androidNotificationId \= 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder()
+String channelId = 'Your channel Id';
+String channelName = 'Your channel Name';
+String androidNotificationTitle = 'Your notification title';
+String androidNotificationContent = 'Your notification content';
+int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder()
    .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId)
    .start().then((value) { 
    //Handle geo triggering started successfully 
@@ -66,14 +69,14 @@ int androidNotificationId \= 123; // Will be -1 by default if set to null. Blued
 ```
 
 **Tempo**
-```
+```dart
 // Tempo
-String destinationId \= 'Your destination Id';
-String channelId \= 'Your channel Id';
-String channelName \= 'Your channel Name';
-String androidNotificationTitle \= 'Your notification title';
-String androidNotificationContent \= 'Your notification content';
-int androidNotificationId \= 123; // Will be -1 by default if set to null.
+String destinationId = 'Your destination Id';
+String channelId = 'Your channel Id';
+String channelName = 'Your channel Name';
+String androidNotificationTitle = 'Your notification title';
+String androidNotificationContent = 'Your notification content';
+int androidNotificationId = 123; // Will be -1 by default if set to null.
 
 BluedotPointSdk.instance
     .tempoBuilder()
@@ -102,25 +105,28 @@ The background location usage indicator will be displayed as a blue pill or bar 
 
 ![iOS Blue Bar](https://docs.bluedot.io/wp-content/uploads/2020/10/ios-blue-bar-300x229.jpg)
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 If the user has selected the _Always_ location authorization, the background location usage indicator will not be displayed.
+:::
 
-#### When to use the background location usage indicator?
+### When to use the background location usage indicator?
 
 Background location usage indicator should be enabled when usage requires location updates even when the App is running in background and the user has granted the While using the app location authorization.
 
-**Enable** **background location usage indicator****:**     
+**Enable background location usage indicator:**     
 
 BluedotPointSdk.instance.allowsBackgroundLocationUpdates(true);
 
 For the background location usage indicator to work, `allowsBackgroundLocationUpdates` must be set to `true` while the app is in the foreground, and the app has _While using the app_ location authorization. If `allowsBackgroundLocationUpdates` is set to `true` while the app is in the background, or the user changes the location permission to _While using the app_ while the app is in the background, the background location usage indicator will not be enabled.
 
-**Disable** **background location usage indicator****:**
+**Disable background location usage indicator:**
 
+```dart
 if (await Permission.locationAlways.isGranted) {
   BluedotPointSdk.instance.allowsBackgroundLocationUpdates(false);
 }
+```
 
 The default value of `allowsBackgroundLocationUpdates` is `false`, and it can be disabled while the app is either in the foreground or the background. If the application requests _Always_ location authorization, be sure to check that _Always_ location authorization has not been granted before setting `allowsBackgroundLocationUpdates` to `false`, as setting the value to `false` will prevent the app from accessing location from the background.
 

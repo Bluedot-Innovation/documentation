@@ -1,4 +1,4 @@
-Cordova – Point SDK API
+Overview
 =======================
 
 The following methods are available to your app to utilise the low-energy, high accuracy Point SDK.  These methods are provided in the `bluedotPointSDKCDVPlugin.js` file and provide cross-platform access to iOS and Android.

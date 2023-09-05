@@ -1,8 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Xamarin Bluedot Point SDK Wrapper](https://docs.bluedot.io/xamarin-bluedot-wrapper/)
-3.  Xamarin Android – Quick start guide
-
-Xamarin Android – Quick start guide
+Android -  Quick start
 ===================================
 
 In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting a [demo](https://bluedotinnovation.com/demo).  Also, ensure that you also meet the [Android requirements](/android-sdk/android-requirements/).
@@ -47,20 +43,21 @@ Step 3: Minimal Point SDK Integration
 -------------------------------------
 
 1. Declare an instance of **ServiceManager** class, which is the entry point for an app to start using Point SDK.
-
-**Declare ServiceManager instance**
+```csharp
 namespace appname
 {
-    \[Activity(Label \= "appname", MainLauncher \= true, Icon \= "@mipmap/icon")\]
+    [Activity(Label = "appname", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         ServiceManager serviceManager;
         ...
     }
 }
+```
 
 2\. Instantiate the **ServiceManager** singleton object and invoke **initialize()** function inside **OnCreate()** by passing the _projectId_ and implementation of **IInitializationResultListener** for Initiliazing Bluedot SDK as below.
 
+```csharp
 namespace appname
 {
     \[Activity(Label \= "appname", MainLauncher \= true, Icon \= "@mipmap/icon")\]
@@ -87,80 +84,85 @@ namespace appname
       ... 
       }
  }
+ ```
 
 3\. Extend BroadcastReceivers as **GeoTriggeringEventReceiver, TempoTrackingReceiver** and **BluedotServiceReceiver** to receive GeoTriggering callbacks, Tempo and Bluedot service error callbacks. Implement the functions of the classes as below:
 
 **Point SDK Broadcast Receivers and Callbacks**
-
+```csharp
 namespace yourappname
 {
- \[BroadcastReceiver(Enabled \= true)\]
- \[IntentFilter(new\[\] { "io.bluedot.point.GEOTRIGGER" })\]
+ [BroadcastReceiver(Enabled = true)]
+ [IntentFilter(new[] { "io.bluedot.point.GEOTRIGGER" })]
  public class AppGeoTriggerReceiver : GeoTriggeringEventReceiver
  {
-   public override void OnZoneEntryEvent(ZoneEntryEvent entryEvent, Context context)
-   {
-      // This method will be called if the device entered into a Fence }
+    public override void OnZoneEntryEvent(ZoneEntryEvent entryEvent, Context context)
+    {
+      // This method will be called if the device entered into a Fence 
+    }
 
-   public override void OnZoneExitEvent(ZoneExitEvent exitEvent, Context context)
+    public override void OnZoneExitEvent(ZoneExitEvent exitEvent, Context context)
+    {
+      // This method will be called when a device exits the Fence for which OnZoneEntryEvent was reported.
+      // Only applies to zones flagged as Exit enabled on Canvas
+    }
+
+   public override void OnZoneInfoUpdate(IList<ZoneInfo> zones, Context context)
    {
-     // This method will be called when a device exits the Fence for which OnZoneEntryEvent was reported.
-     // Only applies to zones flagged as Exit enabled on Canvas
+     //Passively receive Zones information 
    }
-
-   public override void OnZoneInfoUpdate(IList<ZoneInfo\> zones, Context context)
-   {
-     //Passively receive Zones information }
  }
 
-\[BroadcastReceiver(Enabled \= true)\]
- \[IntentFilter(new\[\] { "io.bluedot.point.TEMPO" })\]
- public class AppTempoReceiver : TempoTrackingReceiver
- {
-   public override void TempoStoppedWithError(BDError error, Context context)
-   {
-      //If Tempo tracking is stopped due to some Error
-     // Human-readable string of error.getReason() can be useful to analyse the cause of the error. 
-    }
+[BroadcastReceiver(Enabled = true)]
+[IntentFilter(new[] { "io.bluedot.point.TEMPO" })]
+public class AppTempoReceiver : TempoTrackingReceiver
+{
+  public override void TempoStoppedWithError(BDError error, Context context)
+  {
+    // If Tempo tracking is stopped due to some Error
+    // Human-readable string of error.getReason() can be useful to analyse the cause of the error. 
+  }
 }
 
-\[BroadcastReceiver(Enabled \= true)\]
- \[IntentFilter(new\[\] { "io.bluedot.point.SERVICE" })\]
- public class BluedotErrorReceiver : BluedotServiceReceiver
- {
-   public override void OnBluedotServiceError(BDError error, Context context)
-   {
-      //This gives you details if BlueDotPointService encounters error. // Human-readable string of error.getReason() can be useful to analyse the cause of the error. 
-    }
+[BroadcastReceiver(Enabled = true)]
+[IntentFilter(new[] { "io.bluedot.point.SERVICE" })]
+public class BluedotErrorReceiver : BluedotServiceReceiver
+{
+  public override void OnBluedotServiceError(BDError error, Context context)
+  {
+    // This gives you details if BlueDotPointService encounters error. 
+    // Human-readable string of error.getReason() can be useful to analyse the cause of the error. 
+  }
  }
 }
+```
 
 4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](https://docs.bluedot.io/custom-event-metadata/).
 
+```csharp
 namespace appname
 {
-    \[Activity(Label \= "appname", MainLauncher \= true, Icon \= "@mipmap/icon")\]
+    [Activity(Label = "appname", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity,...
     {
         ServiceManager serviceManager;
-        ...
-        
+        ... 
       
         protected override void OnCreate(Bundle savedInstanceState)
         {
             ...
-            serviceManager \= ServiceManager.GetInstance(this);
-            // Set CustomEventMetadata IDictionary<string, string\> keyValuePairs \= new Dictionary<string, string\>(); 
-            keyValuePairs.Add("store\_id", "1234"); 
-            keyValuePairs.Add("user\_id", "3456"); 
+            serviceManager = ServiceManager.GetInstance(this);
+            // Set CustomEventMetadata 
+            IDictionary<string, string> keyValuePairs = new Dictionary<string, string>(); 
+            keyValuePairs.Add("store_id", "1234"); 
+            keyValuePairs.Add("user_id", "3456"); 
             serviceManager.SetCustomEventMetaData(keyValuePairs); 
             ...
-        }
- 
- 
+        } 
        ...
     }
 }
+```
 
 * * *
 

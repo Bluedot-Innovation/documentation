@@ -20,7 +20,8 @@ Resources
 *   [GitHub open-source plugin code](https://github.com/Bluedot-Innovation/PointSDK-Flutter-Plugin)
 *   [Minimal integration example](https://github.com/Bluedot-Innovation/Flutter-Minimal-Integration)
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
-This wrapper includes the basic functionality of our SDK. We’ve open-sourced the code of this wrapper in case you’d like to expand it and implement your methods or logic.  
+:::info
+This wrapper includes the core functionality of our SDK. We’ve open-sourced the code of this wrapper in case you’d like to expand it and implement your methods or logic.  
 If you have any suggestions for expanding functionality or would like our team to review your implementation, please contact our engineering support team – [help@bluedot.io](mailto:help@bluedot.ok)
+:::

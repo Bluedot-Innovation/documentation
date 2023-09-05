@@ -1,7 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Xamarin Bluedot Point SDK Wrapper
-
-Xamarin Bluedot Point SDK Wrapper
+Overview
 =================================
 
 You can also integrate the Bluedot Point SDK with your Xamarin applications. It can be easily integrated into your Android or iOS projects.
@@ -21,7 +18,8 @@ Resources
 *   [Xamarin Android integration example](https://github.com/Bluedot-Innovation/PointSDK-Xamarin-minimal-app-Android)
 *   [Xamarin iOS integration example](https://github.com/Bluedot-Innovation/PointSDK-Xamarin-minimal-app-iOS)
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 This wrapper includes the basic functionality of our SDK. We’ve open-sourced the code of this wrapper in case you’d like to expand it and implement your methods or logic.  
 If you have any suggestions for expanding functionality or would like our team to review your implementation, please contact our engineering support team – [help@bluedot.io](mailto:help@bluedot.ok)
+:::
