@@ -18,29 +18,15 @@ Under Your Account, choose
 
 ### 2\. Add the Webhook Details
 
-Project
+| **Property**             | **Description**                                                                                                                                                              |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Project                  | Select the Project you’ll receive the events from                                                                                                                            |
+| Event                    | Select _Tempo_                                                                                                                                                               |
+| Event Structure          | Select Standard. If you’d like to send the Tempo updates to Tealium check this guide.                                                                                        |
+| URL                      | The URL of the server where the webhooks will be received. We suggest that the service has SSL enabled.                                                                      |
+| Header Fields (Optional) | Add any extra parameters you’d like to be included in the header of the request. For example, this is a good place to add a security token to authorize the incoming events. |
+| Body Fields (Optional)   | Add any extra parameters you’d like to be included in the body of the request.                                                                                               |
 
-Select the Project you’ll receive the events from
-
-Event
-
-Select _Tempo_
-
-Event Structure
-
-Select Standard. If you’d like to send the Tempo updates to Tealium check this [guide](https://docs.bluedot.io/integrations/tealium-integration/).
-
-URL
-
-The URL of the server where the webhooks will be received. We suggest that the service has SSL enabled.
-
-Header Fields (Optional)
-
-Add any extra parameters you’d like to be included in the header of the request. For example, this is a good place to add a security token to authorize the incoming events.
-
-Body Fields (Optional)
-
-Add any extra parameters you’d like to be included in the body of the request.
 
 ### ![](https://docs.bluedot.io/wp-content/uploads/2022/01/tempo-webhook-example-1024x564.jpg)
 
@@ -60,12 +46,12 @@ Endpoint: `https://config.bluedot.io/prod1/projects`
 
 Example of adding a Tempo Webhook:
 
-```
+```json
 "tempo": { 
-    "webhooks": \[{ 
+    "webhooks": [{ 
         "type": "tempo", 
         "url": "<webhook URL goes here>" 
-    }\] 
+    }] 
 }
 ```
 
@@ -73,7 +59,7 @@ Webhook request JSON structure
 ------------------------------
 
 **Update JSON request**
-```
+```json
 {
     "deviceType": "iPhone12,3",
     "os": "iOS",
@@ -85,18 +71,18 @@ Webhook request JSON structure
         "key1": "value1",
         "key2": "value2"
     },
-    "eventTime": “2020\-05\-21T05:44:04Z",
+    "eventTime": "2020-05-21T05:44:04Z",
     "longitude": 144.123123123,
     "latitude": -33.123123123,
     "destinationId": "store ID",
     "eventType": "tempoUpdate",
     "eta": 900, 
     "etaDirection": "greaterThan",
-    "installRef": "1111111\-2222\-3333\-4444\-555555555555",
-    "projectId": "1111111\-2222\-3333\-4444\-555555555555",
-    "triggerChainId": "11111111\-2222\-3333\-4444\-555555555555",
+    "installRef": "1111111-2222-3333-4444-555555555555",
+    "projectId": "1111111-2222-3333-4444-555555555555",
+    "triggerChainId": "11111111-2222-3333-4444-555555555555",
     "notificationType": "tempo",
-    "zoneId": "1111111\-2222\-3333\-4444\-555555555555",
+    "zoneId": "1111111-2222-3333-4444-555555555555",
     "zoneName": "Store 123", 
     "zoneCustomData": {
         "key1": "value1",
@@ -106,27 +92,27 @@ Webhook request JSON structure
 ```
 
 **Stop JSON request**
-```
+```json
 {
     "deviceType": "iPhone12,3",
     "os": "iOS",
     "osVersion": "7.0",
-    "customerApplicationId": “au.com.bluedot", 
+    "customerApplicationId": "au.com.bluedot", 
     "sdkVersion": "1.11.0",
     "appBuildVersion": "1.11.2",
     "customEventMetaData": {
         "key1": "value1",
         "key2": "value2"
     },
-    "eventTime": "2020\-05\-21T05:44:04Z",
+    "eventTime": "2020-05-21T05:44:04Z",
     "destinationId": "store ID",
     "stopReason": "stoppedByCustomerApp", 
     "eventType": "tempoStop",
-    "installRef": "1111111\-2222\-3333\-4444\-555555555555",
-    "projectId": "1111111\-2222\-3333\-4444\-555555555555",
-    "triggerChainId": "11111111\-2222\-3333\-4444\-555555555555",
+    "installRef": "1111111-2222-3333-4444-555555555555",
+    "projectId": "1111111-2222-3333-4444-555555555555",
+    "triggerChainId": "11111111-2222-3333-4444-555555555555",
     "notificationType": "tempo",
-    "zoneId": "1111111\-2222\-3333\-4444\-555555555555",
+    "zoneId": "1111111-2222-3333-4444-555555555555",
     "zoneName": "Store 123",
     "zoneCustomData": { 
         "key1": "value1",
