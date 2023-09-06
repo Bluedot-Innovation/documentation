@@ -5,12 +5,12 @@ The Bluedot Point SDK brings high accuracy ‘always-on’ location awareness & 
 
 The following pages provide a guide to integrating the Point SDK with your iOS app.
 
-*   [Quick Start Guide](https://docs.bluedot.io/ios-sdk/ios-quick-start/)
-*   [Geo-triggering](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)
-*   [Tempo](https://docs.bluedot.io/ios-sdk/ios-tempo/)
-*   [Location Permission best practices](https://docs.bluedot.io/ios-sdk/ios-location-permission-best-practices/)
-*   [Guide to Submitting App With Location Services](https://docs.bluedot.io/guide-to-submitting-apps-with-location-services/)
-*   [SDK Features](https://docs.bluedot.io/ios-sdk/ios-features/)
+*   [Quick Start Guide](./Quick%20Start.md)
+*   [Geo-triggering](./Geo-triggering.md)
+*   [Tempo](./Tempo.md)
+*   [Location Permission best practices](./Location%20Permission%20Best%20Practices.md)
+*   [Guide to Submitting App With Location Services](../../Implementation%20and%20Best%20Practices%20Guides/Submitting%20apps%20with%20location%20services%20guide.md)
+*   [SDK Features](./Features/App%20restart%20notification.md)
 
 Refer to the [Bluedot Canvas User Guide](https://docs.bluedot.io/canvas/) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 

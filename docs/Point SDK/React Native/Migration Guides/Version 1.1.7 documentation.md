@@ -13,7 +13,7 @@ Functionality is provided through one single npm package so you can use it for b
 
 See the full documentation or get the Bluedot React Native library on npm [here](https://www.npmjs.com/package/bluedot-react-native).
 
-All Projects, Zones and Geofences configurations can be done through our [Canvas dashboard](https://docs.bluedot.io/canvas/).
+All Projects, Zones and Geofences configurations can be done through our [Canvas dashboard](../../../Canvas/Overview.md).
 
 How to install it?
 ------------------
@@ -31,7 +31,7 @@ $ git lfs install
 $ pod install
 ```
 
-2\. Setup your `info.plist` file as laid out on this [documentation page](https://docs.bluedot.io/ios-sdk/ios-quick-start#update-info-plist).
+2\. Setup your `info.plist` file as laid out on this [documentation page](../../iOS/Quick%20Start.md#update-your-infoplist-file).
 
 ### For Android
 

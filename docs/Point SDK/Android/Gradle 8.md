@@ -1,7 +1,7 @@
 Gradle 8
 ==================
 
-What has changed in [Gradle 8.0](https://developer.android.com/build/releases/gradle-plugin#8-0-0)
+What has changed in [**Gradle 8.0**](https://developer.android.com/build/releases/gradle-plugin#8-0-0)
 --------------------------------------------------------------------------------------------------
 
 There are several new features and improvements added in Gradle version (AGP 8.0.0). Some of the major ones are:
@@ -25,7 +25,7 @@ android.nonTransitiveRClass (true)
 android.enableR8.fullMode (true)
 ```
 
-For more details about them, please visit: [https://developer.android.com/build/releases/gradle-plugin#default-changes](https://developer.android.com/build/releases/gradle-plugin#default-changes).
+For more details about them, please visit: [Android Gradle plugin release notes](https://developer.android.com/build/releases/gradle-plugin#default-changes).
 
 **3\. Enforced build option values**
 
@@ -40,7 +40,7 @@ android.enableSourceSetPathsMap (true)
 .....
 ```
 
-For more details about them, please visit: [https://developer.android.com/build/releases/gradle-plugin#enforced-changes](https://developer.android.com/build/releases/gradle-plugin#enforced-changes)
+For more details about them, please visit: [Android Gradle plugin release notes](https://developer.android.com/build/releases/gradle-plugin#enforced-changes)
 
 Building Bluedot Point SDK with Gradle 8
 ----------------------------------------

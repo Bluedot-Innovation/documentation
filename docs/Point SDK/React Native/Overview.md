@@ -5,11 +5,11 @@ Bluedot React Native is a wrapper around the [Android Point SDK](https://docs.b
 
 The following pages provide a guide to integrating the Point SDK with your React Native app.
 
-*   [Quick Start Guide](https://docs.bluedot.io/react-native-library/react-native-quick-start/)
-*   [Geo-triggering](https://docs.bluedot.io/react-native-library/react-native-geo-triggering/)
-*   [Tempo](https://docs.bluedot.io/react-native-library/react-native-tempo/)
-*   [Events list](https://docs.bluedot.io/react-native-library/react-native-events-list/)
-*   [SDK features](https://docs.bluedot.io/react-native-library/react-native-features/)
+*   [Quick Start Guide](./Quick%20Start.md)
+*   [Geo-triggering](./Geo-triggering.md)
+*   [Tempo](./Tempo.md)
+*   [Events list](./Events%20List.md)
+*   [SDK features](./Features.md)
 
 Refer to the [Bluedot Canvas User Guide](https://docs.bluedot.io/canvas/) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 
@@ -26,5 +26,5 @@ If you have any suggestions for expanding functionality or would like our team t
 :::
 
 :::info
-The Bluedot React Native wrapper version `2.0.0` is a major rewrite of our APIs. It includes breaking changes if you’re still on versions `1.1.x`. Please check our Migration guide to `2.0.0` [**here**](https://docs.bluedot.io/react-native-library/react-native-migrating-to-2-0-0-guide/).
+The Bluedot React Native wrapper version `2.0.0` is a major rewrite of our APIs. It includes breaking changes if you’re still on versions `1.1.x`. Please check our Migration guide to `2.0.0` [**here**](./Migration%20Guides/Migrating%20to%202.0.0%20guide.md).
 :::

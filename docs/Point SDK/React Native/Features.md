@@ -11,7 +11,7 @@ Features
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/)
+Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Event%20Metadata.md)
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
@@ -30,7 +30,7 @@ BluedotPointSdk.setCustomEventMetadata({
 Enable / Disable Zones
 ----------------------
 
-An app may optionally disable (and later re-enable) Zones by calling `setZoneDisableByApplication`. For further information refer to Enable or disable Zones documentation ([Android](https://docs.bluedot.io/android-sdk/android-features/android-features-enable-or-disable-zones/) | [iOS](https://docs.bluedot.io/ios-sdk/ios-features/enable-or-disable-zone/)) 
+An app may optionally disable (and later re-enable) Zones by calling `setZoneDisableByApplication`. For further information refer to Enable or disable Zones documentation ([Android](../Android/Features/Enable%20or%20disable%20zones.md) | [iOS](../iOS/Features/Enable%20or%20disable%20zones.md)) 
 
 ```js
 const zoneIdToDisable = "your_zone_id";
@@ -59,7 +59,7 @@ Android Features
 
 ### Foreground Notification
 
-Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](https://docs.bluedot.io/android-sdk/android-location-permission-notifications-best-practices/)
+Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md)
 
 The Foreground Notification method (`androidNotification`) is included in the `GeoTriggeringBuilder` and the `TempoBuilder` classes. It should be set up before starting any of the Geo-triggering or Tempo services as below.
 
@@ -104,7 +104,7 @@ iOS Features
 
 ### App Restart Notification
 
-Bluedot Point SDK includes a method for apps to display app restart notification to user after app termination. For further details refer to [iOS Features – App restart](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-app-restart/)
+Bluedot Point SDK includes a method for apps to display app restart notification to user after app termination. For further details refer to [iOS Features – App restart](../iOS/Features/App%20restart%20notification.md)
 
 The App restart method (`iOSAppRestartNotification`) is included in the `GeoTriggeringBuilder`. It should be set up before starting Geo-triggering. 
 

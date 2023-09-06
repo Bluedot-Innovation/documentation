@@ -30,7 +30,7 @@ Please see our [Minimal Integration](https://github.com/Bluedot-Innovation/Point
 If a notification is passed in during Geo-triggering or Tempo initialization, the notification will be displayed across all device OS versions.  To only display the notification on devices running Android Oreo and above, where it is required to access location data from the background, perform a version check when initializing the service and pass in notification only if the OS version is API level 26 or above:
 
 ```kotlin
-if (Build.VERSION.SDK_INT \>= Build.VERSION_CODES.O) {
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
      GeoTriggeringService.builder()
         .notification(notification)
         .start(this, geoTriggerError -> {

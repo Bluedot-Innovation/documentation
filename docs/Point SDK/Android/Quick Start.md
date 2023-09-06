@@ -3,9 +3,9 @@ Quick Start
 
 To get the base SDK loaded and running, you’ll need to:
 
-1.  [Import the SDK](https://docs.bluedot.io/android-sdk/android-quick-start#import-sdk)
-2.  [Update your Android Manifest file](https://docs.bluedot.io/android-sdk/android-quick-start#manifest)
-3.  [Initialize the SDK](https://docs.bluedot.io/android-sdk/android-quick-start#initialize-sdk)
+1.  [Import the SDK](./Quick%20Start.md#import-the-sdk)
+2.  [Update your Android Manifest file](./Quick%20Start.md#manifest-requirements)
+3.  [Initialize the SDK](./Quick%20Start.md#initialize-the-sdk)
 
 * * *
 

@@ -1,17 +1,17 @@
 Overview
 =================================
 
-Flutter Bluedot Point SDK is a wrapper around the [Android Point SDK](https://docs.bluedot.io/android-sdk/) and [iOS Point SDK](https://docs.bluedot.io/ios-sdk/), allowing for Bluedot integration in Flutter apps. Functionality is provided through one single flutter plugin so you can use it for both platforms without downloading any extra packages.
+Flutter Bluedot Point SDK is a wrapper around the [Android Point SDK](../Android/Overview.md) and [iOS Point SDK](../iOS/Overview.md), allowing for Bluedot integration in Flutter apps. Functionality is provided through one single flutter plugin so you can use it for both platforms without downloading any extra packages.
 
 The following pages provide a guide to integrating the Point SDK with your Flutter app.
 
-*   [Quick Start Guide](https://docs.bluedot.io/flutter-library/flutter-quick-start/)
-*   [Geo-triggering](https://docs.bluedot.io/flutter-library/flutter-geo-triggering/)
-*   [Tempo](https://docs.bluedot.io/flutter-library/flutter-tempo/)
-*   [Events list](https://docs.bluedot.io/flutter-library/flutter-events-list/)
-*   [SDK features](https://docs.bluedot.io/flutter-library/flutter-features/)
+*   [Quick Start Guide](./Quick%20Start.md)
+*   [Geo-triggering](./Geo-triggering.md)
+*   [Tempo](./Tempo.md)
+*   [Events list](./Events%20List.md)
+*   [SDK features](./Features.md)
 
-Refer to the [Bluedot Canvas User Guide](https://docs.bluedot.io/canvas/) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
+Refer to the [Bluedot Canvas User Guide](../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 
 Resources
 ---------

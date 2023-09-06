@@ -13,7 +13,7 @@ If your use case requires configuration changes (Eg: changes to your Zone or geo
 Integrate Firebase SDK into your project
 ----------------------------------------
 
-To add Firebase to your app, you will need to create a Firebase project and a Firebase configuration file. This can be achieved by the steps documented [here](https://firebase.google.com/docs/android/setup).
+To add Firebase to your app, you will need to create a Firebase project and a Firebase configuration file.
 
 Set your Firebase Server key in Canvas
 --------------------------------------

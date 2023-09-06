@@ -35,7 +35,7 @@ If you wish to test APNS in a sandbox environment, you should map your token wit
 Set your Firebase Server key in Canvas
 --------------------------------------
 
-Information on setting the Firebase Server key for your Canvas project is [here](https://docs.bluedot.io/real-time-data-sync/).
+Add the Firebase Server key for your Canvas project.
 
 Connect Bluedot with Firebase
 -----------------------------
@@ -66,13 +66,13 @@ This makes an asynchronous request to the FCM backend and subscribes the client 
 Bluedot Push Interface
 ----------------------
 
-When your client app has received the Real-time Push Notification, you need to pass the userInfo from the notification as a parameter to the method `notifyPushUpdateWithData:` from [BDLocationManager](https://docs.bluedot.io/wp-content/uploads/api/ios/category_b_d_location_manager_07_b_d_point_s_d_k_08.html):
+When your client app has received the Real-time Push Notification, you need to pass the userInfo from the notification as a parameter to the method `notifyPushUpdateWithData:` from `BDLocationManager`:
 
 ```objectivec
 - (void)notifyPushUpdateWithData: (NSDictionary *)data;
 ```
 
-Put the method in `UNUserNotificationCenterDelegate userNotificationCenter:willPresentNotification:withCompletionHandler:` to handle notifications received when the client app is in the foreground. The message is a UNNotificationobject. Implement FIRMessagingDelegate applicationReceivedRemoteMessage: to handle all data messages that are sent to the client. The message is a FIRMessagingRemoteMessage object.
+Put the method in `UNUserNotificationCenterDelegate userNotificationCenter:willPresentNotification:withCompletionHandler:` to handle notifications received when the client app is in the foreground. The message is a `UNNotificationobject`. Implement `FIRMessagingDelegate applicationReceivedRemoteMessage:` to handle all data messages that are sent to the client. The message is a `FIRMessagingRemoteMessage` object.
 
 ```objectivec
 // Receive displayed notifications

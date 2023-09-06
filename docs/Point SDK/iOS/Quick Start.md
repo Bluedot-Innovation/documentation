@@ -4,10 +4,10 @@ Quick Start
 To get the base SDK loaded and running, you’ll need to:
 
 1.  The latest major version of Xcode
-2.  [Import the SDK](https://docs.bluedot.io/ios-sdk/ios-quick-start#import-sdk)
-3.  [Add the required frameworks to your project](https://docs.bluedot.io/ios-sdk/ios-quick-start#add-frameworks)
-4.  [Update your .plist file](https://docs.bluedot.io/ios-sdk/ios-quick-start#update-info-plist)
-5.  [Initialize the SDK](https://docs.bluedot.io/ios-sdk/ios-quick-start#initialize-sdk)
+2.  [Import the SDK](./Quick%20Start.md#import-the-sdk)
+3.  [Add the required frameworks to your project](./Quick%20Start#add-the-required-frameworks)
+4.  [Update your .plist file](./Quick%20Start#update-your-infoplist-file)
+5.  [Initialize the SDK](./Quick%20Start#initialize-the-sdk)
 
 Import the SDK
 --------------

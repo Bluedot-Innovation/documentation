@@ -45,7 +45,7 @@ BluedotPointSdk.isInitialized()
 New / Updates in 2.0.0
 ----------------------
 
-*   Moving forward, `apiKey` will be replaced by `projectId`. You can find the `projectId` in [Canvas](https://docs.bluedot.io/canvas/). 
+*   Moving forward, `apiKey` will be replaced by `projectId`. You can find the `projectId` in [Canvas](../../../Canvas/Overview.md). 
 *   Bluedot Point SDK **no longer requests for OS location permissions on initialization** as per the previous API.
     *   We encourage you to requests the OS the location permissions that you require (Always or When in Use), at an opportune moment from within your app. For example, when a user places an order within the app, at this point you can start Geo-triggering tracking and as well requesting for location permission.
     *   If you want to request _Always Allow_ permission immediately after the user grants the _When In Use_ permission level for iOS devices then please refer to changes from _react-native-permissions_ library [here](https://github.com/zoontek/react-native-permissions/pull/529/files#r550209147)

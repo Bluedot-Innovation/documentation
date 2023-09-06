@@ -8,7 +8,7 @@ Start Tempo
 
 For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Bluedot Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Bluedot CX representative. A foreground service notification is also required.
 
-Tempo also requires Destination IDs to be defined, which [you can learn about here](https://docs.bluedot.io/tempo/create-your-destinations/).
+Tempo also requires Destination IDs to be defined, which [you can learn about here](../../Tempo/Create%20your%20destinations.md).
 
 To start Tempo, you should
 

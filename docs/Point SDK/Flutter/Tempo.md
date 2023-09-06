@@ -8,9 +8,9 @@ Start Tempo
 
 For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Bluedot Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Bluedot CX representative.
 
-### For Android a [foreground service notification](https://docs.bluedot.io/android-sdk/android-location-permission-notifications-best-practices/) is also required.
+### For Android a [foreground service notification](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md) is also required.
 
-Tempo also requires Destination IDs to be defined, which [you can learn about here](https://docs.bluedot.io/tempo/create-your-destinations/).
+Tempo also requires Destination IDs to be defined, which [you can learn about here](../../Tempo/Create%20your%20destinations.md).
 
 To start tempo on foreground mode, you have to set notification details as below.
 
@@ -61,7 +61,7 @@ tempoEventChannel.setMethodCallHandler((MethodCall call) async {
 });
 ```
 
-To see the full list of supported events please refer to [Flutter Events List.](https://docs.bluedot.io/flutter-library/flutter-events-list)
+To see the full list of supported events please refer to [Flutter Events List.](./Events%20List.md)
 
 Stop Tempo
 ----------

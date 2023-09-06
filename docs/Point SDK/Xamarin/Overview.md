@@ -5,10 +5,10 @@ You can also integrate the Bluedot Point SDK with your Xamarin applications. It 
 
 Find the integration steps in the following documents:
 
-*   [Point SDK Xamarin Android: Quickstart](https://docs.bluedot.io/xamarin-bluedot-wrapper/xamarin-android-quick-start-guide/)
-*   [Point SDK Xamarin iOS: Quickstart](https://docs.bluedot.io/xamarin-bluedot-wrapper/xamarin-ios-quick-start-guide/)
+*   [Android: Quickstart](./Android.md)
+*   [iOS: Quickstart](./iOS.md)
 
-All Projects, Zones and Geofences configurations can be done through our [Canvas dashboard](https://docs.bluedot.io/canvas/).
+All Projects, Zones and Geofences configurations can be done through our [Canvas](../../Canvas/Overview.md).
 
 Resources
 ---------

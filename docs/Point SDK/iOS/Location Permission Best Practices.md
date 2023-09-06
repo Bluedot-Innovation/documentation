@@ -40,7 +40,7 @@ Use background location usage indicator for high-value use cases
 
 For some use cases, particularly when the value of allowing access to location data is communicated to the customer, it may be permissible to access location data while the app is in the background and only _While using the app_ location authorization has been granted. The background location usage indicator alerts the user that an app is accessing their location from the background without being granted _Always_ authorization. Utilizing the background location usage indicator allows the Bluedot SDK to operate from the background as though the app was in active use.
 
-See our guide to [enabling the background location usage indicator](https://docs.bluedot.io/ios-sdk/ios-features/blue-bar/).
+See our guide to [enabling the background location usage indicator](./Features/Blue%20bar.md).
 
 iOS 14 – Precise Location Accuracy
 ----------------------------------
