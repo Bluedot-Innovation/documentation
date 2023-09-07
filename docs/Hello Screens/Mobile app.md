@@ -18,7 +18,7 @@ Enabling notifications
 
 When you open your Hello Screens application for the first time, you will be prompted to allow push notifications. Be sure to allow push notifications to receive timely alerts upon customer arrival.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Enable-Notifications-506x1024.jpg)
+![](../assets/hs-Enable-Notifications.jpeg)
 
 Now that you have installed the Hello Screens application, there are two distinct ways to link your device to your `destinationId` (your store):
 
@@ -40,7 +40,7 @@ Generating Linking URL (for administrator users):
 7.  Select how long you want the generated URL to be active
 8.  Click Generate button
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-Screens-generate-link-1024x403.jpg)
+![](../assets/Hello-Screens-generate-link.jpeg)
 
 **Linking your device with ‘Connect with link’:**
 
@@ -52,24 +52,24 @@ Using this method, you will generate a one-time code within the Hello Screens ap
 
 **Generating the one-time code on your device**
 
-After enabling notifications on your device, you will be prompted to select your region. ![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-Screens-select-region.jpg)  
+After enabling notifications on your device, you will be prompted to select your region. ![](../assets/Hello-Screens-select-region.jpg)  
 
 After selecting your region, you will receive your one-time code. Pass this on to your Bluedot Canvas administrator to connect your device.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-Screens-One-time-code.jpg)
+![](../assets/Hello-Screens-One-time-code.jpg)
 
 Connecting with time one-time code on Canvas
 
 1.  Login to Canvas
 2.  Open Your Account (you’ll find when you tap on your username in the top right corner)
-3.  Select Hello screen from the side menu\*
+3.  Select Hello screen from the side menu
 4.  Select the Link card
 5.  Choose your Project
 6.  Search for your Zone
 7.  Add in the one-time code
 8.  Link
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-screens-on-time-code-linking-from-canvas-1024x542.jpg)
+![](../assets/Hello-screens-on-time-code-linking-from-canvas-1024x542.jpg)
 
 After the one-time code is entered on Canvas, the respective device will instantly access the Hello Screens dashboard.
 
@@ -83,7 +83,7 @@ Order statuses include:
 *   Arrived
 *   On the way
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-Screen-no-orders-screen.jpg)
+![](../assets/Hello-Screen-no-orders-screen.jpg)
 
 An audible alert will play if the Hello Screens application is open upon a customer’s arrival. This alert will keep playing until the ticket is opened/acknowledged.
 
@@ -94,10 +94,10 @@ To enable these alerts, tap the Enable Alerts button after opening the page. Alt
 If the Hello Screens application is in the background, whenever an order transitions from:
 
 *   From _Ready to collect_ to **_I’m on my way  
-    ![](https://docs.bluedot.io/wp-content/uploads/2022/08/Notification-with-ETA.jpg)  
+    ![](../assets/Notification-with-ETA.jpg)  
     _**
 *   _or I’m on my way_ to **_arrived  
-    ![](https://docs.bluedot.io/wp-content/uploads/2022/08/Notification-arrived.jpg)_**
+    ![](../assets/Notification-arrived.jpg)_**
 
 A push notification will trigger. If Bluedot is tracking customer ETA, the customer’s ETA will be displayed within the notification.
 
@@ -106,9 +106,9 @@ A push notification will trigger. If Bluedot is tracking customer ETA, the custo
 
 When a customer confirms that they are on the way to collect their order through [Now Ready](../Now%20Ready/Overview.md) or your app, the order’s ticket will move from _Ready to Collect_ to the _On The Way_ section.  
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Phone-on-the-way-notification.jpg)
+![](../assets/hs-Phone-on-the-way-notification.jpeg)
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-screens-on-the-way-list.png)
+![](../assets/Hello-screens-on-the-way-list.png)
 
 Push Notification: Customer is on their way with ETA information
 
@@ -127,9 +127,9 @@ When the customer arrives at the store the order’s ticket will move from _On t
 *   If the application is in the foreground, Hello Screens will flash the ticket and play an audible tone that will keep playing until the ticket is opened/acknowledged by a team member.
 *   If the application is in the background the device will receive a push notification.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/phone-arrived-notification.jpg)
+![](../assets/hs-phone-arrived-notification.jpeg)
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/hello-screens-arrived-orders-list.jpg)
+![](../assets/hello-screens-arrived-orders-list.jpg)
 
 Push Notification: Customer arrival
 
@@ -139,27 +139,27 @@ In order to acknowledge the customers arrival and stop the ongoing alert for a p
 
 **Complete the order & Historical Orders**
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/hello-screen-complete-order-modal.jpg)
+![](../assets/hello-screen-complete-order-modal.jpg)
 
 To confirm the order has been successfully fulfilled, press the “Fulfilled” button.
 
 When an order is closed off, it will disappear from the main screen view. To view any historic orders, team members will have to navigate to the Hello Screens menu via the button on the top right of the screen to find the order “_History_” view.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-screens-menu-opened.jpg)
+![](../assets/Hello-screens-menu-opened.jpg)
 
 Once the history view has been selected, all historical orders for that store will be displayed in chronological order, with the most recent ones at the top. After 24 hours, all orders will be cleared from Hello Screens.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-screens-historical-orders.jpg)
+![](../assets/Hello-screens-historical-orders.jpg)
 
 ### Manually updating order collection status
 
 Team members can also manually update the status of any order. A menu with the order details will pop up when a ticket is selected. At the bottom are two buttons, one to close the menu and the second to update the order status.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/hello-screens-on-the-way-order-ticket.jpg)
+![](../assets/hello-screens-on-the-way-order-ticket.jpg)
 
 After selecting “_Update Order Status_”, a list of possible statuses will be displayed. A team member can select the new state of the order and then confirm the change by pressing the “Update” button.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-screens-manually-update-order-status.jpg)
+![](../assets/Hello-screens-manually-update-order-status.jpg)
 
 If a team member accidentally deletes an order from the main view and wishes to revive it, they can update the ticket from the “_History_” section and select which status the ticket should be placed in.
 
@@ -168,7 +168,7 @@ If a team member accidentally deletes an order from the main view and wishes to 
 As the Hello Screens dashboard may display many tickets, a user can enter a keyword in the search bar that will filter orders displayed on the screen based on the term entered. 
 
 This filter will only apply to the customer’s name and order number, not any further details about the customer’s order contained within the tickets.  
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/Hello-screen-search-feat.jpg)  
+![](../assets/Hello-screen-search-feat.jpg)
 
 When such a filter is applied, it will stay current and filter out any existing or new events appearing on Hello Screens until the search term is cleared from the bar.
 
@@ -184,9 +184,9 @@ Hello Screens will provide visual feedback to the team members to identify which
 
 | **Color** | **Waiting Times example**                                           | **Example**                                                                       |
 |-----------|---------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| Green     | Customer has been waiting up to 0 to 5 mins to collect the order    | ![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrrived-card-on-time.jpg) |
-| Amber     | Customer has been waiting up to 5 to 8 mins to collect the order    | ![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrived-card-over-5.jpg)   |
-| Red       | Customer has been waiting for more than 8 mins to collect the order | ![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrived-card-over-8.jpg)   |
+| Green     | Customer has been waiting up to 0 to 5 mins to collect the order    | ![](../assets/hs-arrrived-card-on-time.jpeg) |
+| Amber     | Customer has been waiting up to 5 to 8 mins to collect the order    | ![](../assets/hs-arrived-card-over-5.jpeg)   |
+| Red       | Customer has been waiting for more than 8 mins to collect the order | ![](../assets/arrived-card-over-8.jpg)   |
 
 
 :::info

@@ -8,7 +8,7 @@ SDK Implementation
 
 When implementing the SDK we want to make sure to track the location of the users during the life-cycle of an order. This means that we want to start the SDK when the user places an order, and turn it off when it leaves the store.
 
-In this guide, we’ll cover when to call the main SDK methods required for a curbside use case. For all the technical details on all the SDK’s methods and how they work please refer to our [Documentation website.](https://docs.bluedot.io/)
+In this guide, we’ll cover when to call the main SDK methods required for a curbside use case.
 
 ![](https://docs.google.com/drawings/d/e/2PACX-1vRQf5-PSdDSmlHCQOXmb7PfQLmj94rHO4M376TjfL28gIDO4EnOdGc0PqdDIoiyXNu1ARSTTW-WDpSj/pub?w=2440&h=2017)
 
