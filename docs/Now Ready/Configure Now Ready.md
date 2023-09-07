@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Now Ready](https://docs.bluedot.io/now-ready/)
-3.  Configure Now Ready
-
 Configure Now Ready
 ===================
 

@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Now Ready](https://docs.bluedot.io/now-ready/)
-3.  Integrate Register endpoint
-
 Integrate Register endpoint
 ===========================
 
@@ -25,7 +21,7 @@ Register API uses the `projectId` to sign requests. You’ll need to add the key
 "x-bluedot-api-key": "<YOUR_PROJECT_ID>"
 ```
 
-You can find your `projectId` in [Canvas](https://docs.bluedot.io/canvas/) in the Account section.
+You can find your `projectId` in [Canvas](../Canvas/Overview.md) in the Account section.
 
 ```json
 {

@@ -14,11 +14,11 @@ In this guide, we’ll cover when to call the main SDK methods required for a cu
 
 | **Step** | **Functionality**            | **Documentation** |                     |
 | :------- | :------------------------- | :------------------ | :------------------ |
-| 1        | Initialize                 | [Android](https://docs.bluedot.io/android-sdk/android-quick-start/)          | [iOS](https://docs.bluedot.io/ios-sdk/ios-quick-start/)       |
-| 2        | `setCustomEventMetaData`   | [Android](https://docs.bluedot.io/custom-event-metadata/)                    | [iOS](https://docs.bluedot.io/custom-event-metadata/)       |
-| 3        | Start Tempo                | [Android](https://docs.bluedot.io/android-sdk/android-tempo/)                | [iOS](https://docs.bluedot.io/ios-sdk/ios-tempo/)       |
-| 4        | Start Geo-triggering       | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 5        | `enterZone` event callback | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 6        | Stop Tempo                 | [Android](https://docs.bluedot.io/android-sdk/android-tempo/)                | [iOS](https://docs.bluedot.io/ios-sdk/ios-tempo/)       |
-| 7        | `exitZone` event callback  | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 8        | Stop Geo-triggering        | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
+| 1        | Initialize                 | [Android](../Point%20SDK/Android/Quick%20Start.md)          | [iOS](../Point%20SDK/iOS/Quick%20Start.md)       |
+| 2        | `setCustomEventMetaData`   | [Android](../Custom%20Event%20Metadata.md)             | [iOS](../Custom%20Event%20Metadata.md)       |
+| 3        | Start Tempo                | [Android](../Point%20SDK/Android/Tempo.md)                | [iOS](../Point%20SDK/iOS/Tempo.md)       |
+| 4        | Start Geo-triggering       | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 5        | `enterZone` event callback | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 6        | Stop Tempo                 | [Android](../Point%20SDK/Android/Tempo.md)                | [iOS](../Point%20SDK/iOS/Tempo.md)       |
+| 7        | `exitZone` event callback  | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 8        | Stop Geo-triggering        | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
