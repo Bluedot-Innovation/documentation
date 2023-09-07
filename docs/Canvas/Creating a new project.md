@@ -5,7 +5,7 @@ Create a Project is your first step. All your Zones and all geofences exist with
 
 1\. From the **Project** dropdown, select the **Add new project** button
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/09/canvas-add-project-1024x518.jpg)
+![](../assets/canvas-add-project.jpeg)
 
 2\. Give the Project a name and the **Create** button
 

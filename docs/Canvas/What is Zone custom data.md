@@ -17,17 +17,17 @@ Add custom data fields to a Zone
 
 _Bluedot Canvas > Choose Zone > Zone Settings > Custom Data_
 
-![](https://docs.bluedot.io/wp-content/uploads/2020/01/zone-settings-custom-data-1024x633.png)
+![](../assets/zone-settings-custom-data.png)
 
-![](https://docs.bluedot.io/wp-content/uploads/2020/01/custom-data-1024x630.png)
+![](../assets/zone-settings-custom-data-1.png)
 
 Edit or Delete custom data fields in a Zone
 -------------------------------------------
 
 _Bluedot Canvas > Choose Zone > Zone Settings > Custom Data_ 
 
-![](https://docs.bluedot.io/wp-content/uploads/2020/01/custom-data-list-1024x633.png)
+![](../assets/zone-custom-data-list-1.png)
 
 Click on the “Edit” link of the custom data you want to update.
 
-![](https://docs.bluedot.io/wp-content/uploads/2020/01/custom-data-edit-1024x633.png)
+![](../assets/zone-custom-data-edit.png)

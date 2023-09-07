@@ -9,17 +9,17 @@ You’ll need to create a **Zone** before you can start adding in specific **
 
 3\. Click the _+ Add Zone_ button
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/05/Zone-Creation-1-1024x507.png)
+![](../assets/Canvas-Zone-Creation-1.png)
 
 4\. Give your Zone a name
 
 5\. Search for the address or point of interest (POI) where you’d like to create the geo-fence
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/05/Zone-Creation-2-1-1024x260.png)
+![](../assets/Canvas-Zone-Creation-2.png)
 
 6\. Add at least one Geo-fence (learn more here)
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/05/Zone-Creation-3-1024x520.png)
+![](../assets/Canvas-Zone-Creation-3.png)
 
 7\. Click Create
 

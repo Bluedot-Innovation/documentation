@@ -128,5 +128,5 @@ To update the state of order in Hello Screens with Wave API, you’ll need to in
 Integrate Wave in your Web page using the Web SDK
 -------------------------------------------------
 
-*   [Quick start and initialization](https://docs.bluedot.io/web-sdk/quick-start-and-initialization/)
-*   [Send your first Wave](https://docs.bluedot.io/web-sdk/send-your-first-wave/)
+*   [Quick start and initialization](../../Web%20SDK/Quick%20Start.md)
+*   [Send your first Wave](../../Web%20SDK/Send%20your%20first%20Wave.md)

@@ -9,12 +9,12 @@ Wave API events are communicated to you in two ways:
 Using Wave API with Webhook
 ---------------------------
 
-Details on how to configure and use Wave API with a Webhook are [here](https://docs.bluedot.io/webhooks/wave-webhooks/).
+Details on how to configure and use Wave API with a Webhook are [here](../../Webhooks/Wave.md).
 
 Using Wave API with Hello Screens
 ---------------------------------
 
 The Wave events can also inform Hello Screens of the arrival of a customer to a Zone.
 
-1\. You need to link a Destination to a Hello screen. More details [here](https://docs.bluedot.io/hello-screens/).  
-2\. You just need to add the `OrderId` in the `customEventMetaData` of the Wave API request. More details [here](https://docs.bluedot.io/wave-api-integration-user-guide/integrate-wave-api/).
+1\. You need to link a Destination to a Hello screen. More details [here](../../Hello%20Screens/Overview.md).  
+2\. You just need to add the `OrderId` in the `customEventMetaData` of the Wave API request. More details [here](./Integrate%20Wave%20API.md).

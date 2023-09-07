@@ -18,7 +18,7 @@ We’re always happy to help with integration, Zone setup or other questions you
 
 The Zone dashboard provides a simple, single map view for all your Zones and Geofences. From the dashboard, you can navigate between Projects, create new Zones, manage existing Zones, and generally navigate account.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/09/Canvas-1024x518.jpg)
+![](../assets/Canvas.jpeg)
 
 **Team member access**
 ----------------------

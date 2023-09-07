@@ -13,11 +13,10 @@ Types of Zone Settings:
 *   Retrigger Time
 *   [Custom Data](../Custom%20Event%20Metadata.md)
 
-_(Click on each Setting to learn more)_
 
-_![](https://docs.bluedot.io/wp-content/uploads/2023/06/Screenshot-2023-06-05-at-4.14.46-pm-1024x633.png)_
+_![](../assets/zone-settings-1.png)_
 
-_![](https://docs.bluedot.io/wp-content/uploads/2023/06/Screenshot-2023-06-05-at-4.15.02-pm-1024x635.png)  
+_![](../assets/zone-settings-2.png)  
 _
 
 Click the **Summary** button in the top right corner of **Zone Settings** for an overview of all the Settings currently applied to your Zone.

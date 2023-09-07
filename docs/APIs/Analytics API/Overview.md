@@ -19,7 +19,7 @@ Historical events are available for up to 12 months.
 Regions
 -------
 
-Analytics API is hosted in multiple regions worldwide to ensure better performance of our services. Make sure to use the endpoint for the region where your account is hosted. To learn more, refer to the [Bluedot Regions documentation](https://docs.bluedot.io/config-api/regions-urls/).
+Analytics API is hosted in multiple regions worldwide to ensure better performance of our services. Make sure to use the endpoint for the region where your account is hosted. To learn more, refer to the [Bluedot Regions documentation](../../Regions%20URLs.md).
 
 | **Region**    | **Analytics API URL**                   |
 |---------------|-----------------------------------------|
@@ -32,7 +32,7 @@ If you’re unsure which region your account is in, don’t hesitate to contact 
 Authentication
 --------------
 
-Analytics API uses the same authentication method as Config API. You’ll need to pass an Access Token in the header of the request that you can get from the Config API `/sessions` endpoint. Check the [“How to authenticate with Config API”](https://docs.bluedot.io/config-api/how-to-authenticate-with-config-api/) guide for more details.
+Analytics API uses the same authentication method as Config API. You’ll need to pass an Access Token in the header of the request that you can get from the Config API `/sessions` endpoint. Check the [“How to authenticate with Config API”](../Config%20API/How%20to%20authenticate%20with%20Config%20API.md) guide for more details.
 
 Geo-triggering Events
 ---------------------

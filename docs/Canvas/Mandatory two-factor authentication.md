@@ -10,12 +10,12 @@ Enabling 2FA as required for a user
 
 As an **Administrator**, you can turn on two-factor authentication from the “_Users_” section in Canvas.
 
-![enable-2fa](https://docs.bluedot.io/wp-content/uploads/2022/01/enable-2fa.png)
+![enable-2fa](../assets/enable-2fa.png)
 
 Once 2FA is turned on, users in your account will need to set up the 2FA using a third-party authentication app.
 
-![link-totp-app](https://docs.bluedot.io/wp-content/uploads/2022/01/link-totp-app-758x1024.png)
+![link-totp-app](../assets/link-totp-app.png)
 
 The next time the user logs into Canvas, they will have to enter the 6 digit code as displayed inside the authenticator app.
 
-![enter-verification-code](https://docs.bluedot.io/wp-content/uploads/2022/01/enter-verification-code-883x1024.png)
+![enter-verification-code](../assets/enter-verification-code.png)
