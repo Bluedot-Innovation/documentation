@@ -16,7 +16,7 @@ When adding custom fields you can select the type of custom field from the _Type
 
 :::info
 
-Some custom data fields have a special meaning, such as those tied to Hello Screens or our SFMC and mParticle integrations. For more information check our [Hello Screens documentation](https://docs.bluedot.io/hello-screens/) and [Integrations documentation](https://docs.bluedot.io/integrations/)
+Some custom data fields have a special meaning, such as those tied to Hello Screens or our SFMC and mParticle integrations. For more information check our [Hello Screens documentation](../Hello%20Screens/Overview.md) and [Integrations documentation](../Integrations/Overview.md)
 :::
 
 **Simulate Geo-trigger Events**

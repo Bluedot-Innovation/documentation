@@ -32,5 +32,5 @@ At any time you head back into a Zone to:
 
 
 :::info
-You can also create Zones programmatically using our Config API. [Learn more about Config API](https://docs.bluedot.io/config-api/).
+You can also create Zones programmatically using our Config API. [Learn more about Config API](../APIs/Config%20API/Overview.md).
 :::

@@ -15,11 +15,11 @@ Access Hello screens
 You can access Hello Screen by:
 
 *   **Browser**: A simple visit to the URL [https://screens.bluedot.io/](https://screens.bluedot.io/) on any compatible browser – recommend Safari or Chrome.
-*   **Native App:** Download the Hello Screen app to your Android or iOS device. Check the [Hello Screen App documentation here](https://docs.bluedot.io/hello-screens/hello-screens-mobile-app/)
+*   **Native App:** Download the Hello Screen app to your Android or iOS device. Check the [Hello Screen App documentation here](./Mobile%20app.md)
 
 ![](https://docs.bluedot.io/wp-content/uploads/2021/03/hello-screen-select-region-1024x486.png)
 
-You will be asked to choose a region. If you’re not sure which region your screen is in, [contact our Support Team](https://bluedotinnovation.zendesk.com/hc/en-us/requests/new). Once selected you will be displayed your one-time-code.
+You will be asked to choose a region. If you’re not sure which region your screen is in, [contact our Support Team](mailto:help@bluedot.io). Once selected you will be displayed your one-time-code.
 
 ![](https://docs.bluedot.io/wp-content/uploads/2021/03/hello-screen-linking-code-1024x486.png)
 
@@ -81,42 +81,20 @@ Sending Events to Hello Screen
 
 To send order updates to Hello Screens you just need to add the following properties in the Custom Event Meta Data, either from the Point SDK or Wave API.
 
-**Property**
-
-**Example**
-
-**Required**
-
-hs\_orderId
-
-`hs_orderId: "L23kjaf798"`
-
-Yes
-
-hs\_customerName
-
-`hs_customerName: "John"`
-
-No
+| **Property**      | **Example**               | **Required** |
+|-------------------|---------------------------|--------------|
+| `hs_orderId`      | `hs_orderId: "Lfjew13j"`  | Yes          |
+| `hs_customerName` | `hs_customerName: "Josh"` | No           |
 
 ### Custom Hello Screen Fields
 
 To display custom fields in Hello Screens, you’ll need to add the prefix `hs_` to the property’s key in the Custom Event Meta Data. This information will be displayed in the order details modal.
 
-**Example**
-
-**Property**
-
-**Example**
-
-“hs\_Vehicle Color”
-
-`"hs_Vehicle Color": "Silver"`
-
-“hs\_Pickup Bay Number”
-
-`"hs_Pickup Bay Number": "3"`
+| **Property**           | **Example**                    |
+|------------------------|--------------------------------|
+| `hs_Vehicle Color`     | `"hs_Vehicle Color": "Silver"` |
+| `hs_Pickup Bay Number` | `"hs_Pickup Bay Number": "3"`  |
 
 ![Hello Screens Modal with Custom Fields](https://docs.bluedot.io/wp-content/uploads/2021/05/Screen-Shot-2021-05-26-at-10.28.00-am-1024x842.png)
 
-To learn more about Custom Event Meta Data check the documentation [here](https://docs.bluedot.io/custom-event-metadata/).
+To learn more about Custom Event Meta Data check the documentation [here](../Custom%20Event%20Metadata.md).

@@ -1,17 +1,17 @@
 Features
 ==================
 
-*   [Custom Event Metadata](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-features/#CEMD)
-*   [Enable / Disable Zones](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-features/#zone-enablement)
-*   [Android features](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-features/#android)
-    *   [Foreground Notification](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-features/#android-fg)
-*   [iOS features](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-features/#ios)
-    *   [App Restart Notification](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-features/#app-restart)
+*   [Custom Event Metadata](./Features#custom-event-metadata)
+*   [Enable / Disable Zones](./Features#enable--disable-zones)
+*   [Android features](./Features#android-features)
+    *   [Foreground Notification](./Features#foreground-notification)
+*   [iOS features](./Features#ios-features)
+    *   [App Restart Notification](./Features#app-restart-notification)
 
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature that is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/).
+Custom event metadata is a feature that is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Event%20Metadata.md).
 
 It is recommended to set the Custom Event Metadata before starting Geo-triggering or Tempo.
 
@@ -30,7 +30,7 @@ io.bluedot.cordova.plugin.setCustomEventMetaData({
 Enable / Disable Zones
 ----------------------
 
-An app may optionally disable (and later re-enable) Zones by calling `enableZone` and `disableZone`. For further information refer to Enable or disable Zones documentation ([Android](https://docs.bluedot.io/android-sdk/android-features/android-features-enable-or-disable-zones/) | [iOS](https://docs.bluedot.io/ios-sdk/ios-features/enable-or-disable-zone/))
+An app may optionally disable (and later re-enable) Zones by calling `enableZone` and `disableZone`. For further information refer to Enable or disable Zones documentation ([Android](../../Point%20SDK/Android/Features/Enable%20or%20disable%20zones.md) | [iOS](../../Point%20SDK/iOS/Features/App%20restart%20notification.md))
 
 ```js
 const zoneId = "your_zone_id";
@@ -47,7 +47,7 @@ Android Features
 
 ### Foreground Notification
 
-Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](https://docs.bluedot.io/android-sdk/android-location-permission-notifications-best-practices/).
+Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](../../Point%20SDK/Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md).
 
 To run Geotriggering or Tempo with Foreground Notification, please refer to the sample code below:
 
@@ -99,7 +99,7 @@ iOS Features
 
 ### App Restart Notification
 
-Bluedot Point SDK includes a method for apps to display app restart notification to a user after app termination. For further details refer to [iOS Features – App restart](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-app-restart/).
+Bluedot Point SDK includes a method for apps to display app restart notification to a user after app termination. For further details refer to [iOS Features – App restart](../../Point%20SDK/iOS/Features/App%20restart%20notification.md).
 
 To start Geo-Triggering with App Restart notification, please refer to sample code below:
 

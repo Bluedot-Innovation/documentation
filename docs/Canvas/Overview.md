@@ -28,7 +28,7 @@ You can invite team members to access Canvas and help manage your Bluedot Accoun
 **Regions** 
 ------------
 
-Canvas is hosted in multiple regions worldwide to ensure better performance of our services. To go to your Account’s region use the [Select Region](https://select-region.bluedot.io/) page. To learn more refer to the [Bluedot Regions documentation](https://docs.bluedot.io/config-api/regions-urls/).
+Canvas is hosted in multiple regions worldwide to ensure better performance of our services. To go to your Account’s region use the [Select Region](https://select-region.bluedot.io/) page. To learn more refer to the [Bluedot Regions documentation](../Regions%20URLs.md).
 
 **  
 Browser compatibility**  
@@ -41,5 +41,5 @@ Canvas officially supports the following web browsers:
 
 Read on to learn more about Canvas and Bluedot:
 
-*   [Creating a new Project](https://docs.bluedot.io/canvas/creating-a-new-project/)
-*   [Creating a new Zone](https://docs.bluedot.io/canvas/add-a-new-zone/)
+*   [Creating a new Project](../Canvas/Creating%20a%20new%20project.md)
+*   [Creating a new Zone](../Canvas/Add%20a%20new%20zone.md)

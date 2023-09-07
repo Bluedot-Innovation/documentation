@@ -8,13 +8,10 @@ Bluedot’s Hello Screens are a super-fast & super simple dashboard that your te
 
 ### Downloading the Hello Screens App
 
-Android
-
- [Download from Google Play Store](https://play.google.com/store/apps/details?id=au.com.bluedot.HelloScreens)
-
-iOS
-
- [Download from Apple App Store](https://apps.apple.com/app/hello-screens/id1632552856)
+| **Platform** | **App Store**                                                                                                |
+|--------------|--------------------------------------------------------------------------------------------------------------|
+| Android      | [Download from Google Play Store](https://play.google.com/store/apps/details?id=au.com.bluedot.HelloScreens) |
+| iOS          | [Download from Apple App Store](https://apps.apple.com/app/hello-screens/id1632552856)                       |
 
 Enabling notifications
 ----------------------
@@ -36,7 +33,7 @@ Generating Linking URL (for administrator users):
 
 1.  Login to Canvas
 2.  Open Your Account (you’ll find when you tap on your username in the top right corner)
-3.  Select Hello screen from the side menu\*
+3.  Select Hello screen from the side menu
 4.  Select the Generate URL card
 5.  Choose your Project
 6.  Search for your Zone
@@ -49,7 +46,7 @@ Generating Linking URL (for administrator users):
 
 Now that your administrator has generated and distributed the linking URL, you can open the URL within your device’s web browser. You will be seamlessly linked into the Hello Screens application, where you can view your Hello Screens Dashboard.
 
-### **Connect with one-time cod****e**
+### **Connect with one-time code**
 
 Using this method, you will generate a one-time code within the Hello Screens application. Your Bluedot Canvas administrator will then connect your device to a specified `destinationId` (store) by entering the code within Bluedot Canvas. 
 
@@ -107,7 +104,7 @@ A push notification will trigger. If Bluedot is tracking customer ETA, the custo
 **I’m on my way  
 **
 
-When a customer confirms that they are on the way to collect their order through [Now Ready](https://docs.bluedot.io/now-ready/) or your app, the order’s ticket will move from _Ready to Collect_ to the _On The Way_ section.  
+When a customer confirms that they are on the way to collect their order through [Now Ready](../Now%20Ready/Overview.md) or your app, the order’s ticket will move from _Ready to Collect_ to the _On The Way_ section.  
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/08/Phone-on-the-way-notification.jpg)
 
@@ -177,40 +174,23 @@ When such a filter is applied, it will stay current and filter out any existing 
 
 ### Customer waiting times indicator
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
-
+:::info
 This is an optional feature that you can ask your CX representative to enable and set up for you.
+:::
 
 Once a customer has arrived at the store, Hello Screens will keep track of the time from the moment of the arrival to the moment when the team member marks the order as Complete. 
 
 Hello Screens will provide visual feedback to the team members to identify which orders have been waiting too long to be completed, highlighting the order tickets with the following colors:
 
-**Color**
+| **Color** | **Waiting Times example**                                           | **Example**                                                                       |
+|-----------|---------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| Green     | Customer has been waiting up to 0 to 5 mins to collect the order    | ![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrrived-card-on-time.jpg) |
+| Amber     | Customer has been waiting up to 5 to 8 mins to collect the order    | ![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrived-card-over-5.jpg)   |
+| Red       | Customer has been waiting for more than 8 mins to collect the order | ![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrived-card-over-8.jpg)   |
 
-**Waiting Time example**
 
-**Example**
-
-Green
-
-Customer has been waiting up to 0 to 5 mins to collect the order
-
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrrived-card-on-time.jpg)
-
-Amber
-
-Customer has been waiting up to 5 to 8 mins to collect the order
-
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrived-card-over-5.jpg)
-
-Red
-
-Customer has been waiting for more than 8 mins to collect the order
-
-![](https://docs.bluedot.io/wp-content/uploads/2022/08/arrived-card-over-8.jpg)
-
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
-
+:::info
 You can define the Waiting Times ranges that fits better your store operations. The times above are just for illustration purposes. Check with your Bluedot CX representative about the Waiting Times ranges when enabling this feature.
+:::
 
- If you have any questions about using the Hello Screens app reach out to our team at [help@bluedot.io](mailto:help@bluedot.io).
+If you have any questions about using the Hello Screens app reach out to our team at [help@bluedot.io](mailto:help@bluedot.io).

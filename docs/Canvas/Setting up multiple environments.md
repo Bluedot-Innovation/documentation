@@ -25,8 +25,6 @@ In the following example the user:
 
 ![user-permissions-example](https://docs.bluedot.io/wp-content/uploads/2022/01/user-permissions-example-1024x966.png)
 
-To learn more about the permissions check the [User types and permissions guide](https://bluedotinnovation.zendesk.com/hc/en-us/articles/360001291435-User-Types-and-Permissions-)
-
 Connecting to the different environments
 ----------------------------------------
 

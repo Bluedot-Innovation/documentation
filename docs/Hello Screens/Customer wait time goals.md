@@ -25,9 +25,10 @@ You can set the waiting time goal for a specific store.
 
 ![](https://docs.bluedot.io/wp-content/uploads/2023/05/docs-goal-times-2-1024x658.png)
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 Note that this information is optional. If you choose not to set it up, Hello Screens will display the customer waiting time average without the goal.
+:::
 
 Tracking Customer Waiting Time Goals in Hello Screens
 -----------------------------------------------------

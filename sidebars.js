@@ -190,13 +190,23 @@ const sidebars = {
             "APIs/Wave API/Integrate Wave API",
             "APIs/Wave API/Receiving Wave API events",
           ],
-        },
-        {
-          type: "doc",
-          label: "Regions URLs",
-          id: "APIs/Regions URLs",
         }
       ],
+    },
+    {
+      type: "category",
+      label: "Web SDK",
+      items: [
+        "Web SDK/Overview",
+        "Web SDK/Quick Start",
+        "Web SDK/Send your first Wave",
+        "Web SDK/Location permissions and best practices",
+        "Web SDK/Interacting with Hello Screens",
+        "Web SDK/NodeJs environment vs browser",
+        "Web SDK/SDK retry behaviour",
+        "Web SDK/User persistence in the SDK",
+        "Web SDK/SDK development tools"
+      ]
     },
     {
       type: "category",
@@ -224,6 +234,11 @@ const sidebars = {
         "Implementation and Best Practices Guides/Marketing & Gamification implementation guide",
         "Implementation and Best Practices Guides/Submitting apps with location services guide",
       ],
+    },
+    {
+      type: "doc",
+      label: "Regions URLs",
+      id: "Regions URLs",
     },
     {
       type: "doc",

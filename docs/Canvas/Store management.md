@@ -40,7 +40,7 @@ You can link a Zone to a store by clicking the “_Add New Zone_” if you’re 
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/09/Screen-Shot-2022-09-20-at-11.03.07-am-1024x448.png)
 
-*   *   Clicking on the Add New Zone button will take you to the Zone creation section. Once the Zone is created, it will automatically linked to the Store. To learn more about creating a Zone, check the [Adding a Zone documentation](https://docs.bluedot.io/canvas/add-a-new-zone/).
+*   *   Clicking on the Add New Zone button will take you to the Zone creation section. Once the Zone is created, it will automatically linked to the Store. To learn more about creating a Zone, check the [Adding a Zone documentation](../Canvas/Add%20a%20new%20zone.md).
     *   The Link Zone button will open a modal, where you can look up and select the Zone you’d like to link to the store  
         ![](https://docs.bluedot.io/wp-content/uploads/2022/09/Screen-Shot-2022-09-20-at-11.13.07-am-1024x875.png)
 

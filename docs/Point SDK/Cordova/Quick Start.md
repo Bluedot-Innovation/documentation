@@ -73,4 +73,4 @@ function doIsInitialized()
  }
 ```
 
-At this point, you’ve got the basics together, but to start receiving location events from the SDK, your need to use our [Geo-triggering](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-point-sdk-api/cordova-geo-triggering/) and/or [Tempo](https://docs.bluedot.io/cordova-bluedot-plug-in/cordova-point-sdk-api/cordova-tempo/) features.
+At this point, you’ve got the basics together, but to start receiving location events from the SDK, your need to use our [Geo-triggering](./Geo-triggering.md) and/or [Tempo](./Tempo.md) features.

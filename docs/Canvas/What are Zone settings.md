@@ -10,8 +10,8 @@ Types of Zone Settings:
     *   Day Range & Time
     *   Travel Direction & Speed
     *   Travel Path
-*   [Retrigger Time](https://bluedotinnovation.zendesk.com/hc/en-us/articles/360001234935)
-*   [Custom Data](https://docs.bluedot.io/canvas/what-are-zone-settings/what-is-custom-data/)
+*   Retrigger Time
+*   [Custom Data](../Custom%20Event%20Metadata.md)
 
 _(Click on each Setting to learn more)_
 

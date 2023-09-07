@@ -20,10 +20,11 @@ To get an `accessToken` you need to authenticate via **Config API** `/sessions` 
 Include the `accessToken` in the headers of the `/hello/register` request:
 
 ### Example header
-
+```
 POST https://us1-events.bluedot.io/hello/register HTTP/1.1
  Authorization: Bearer 
  "x-bluedot-api-key":
+```
 
 You will receive your `userToken` in the response. This must be included in any subsequent requests made to update this order.
 
@@ -33,10 +34,9 @@ You will receive your `userToken` in the response. This must be included in any 
     "userToken": "abc123"
 }
 ```
-
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
-
-Make sure to use the Wave API’s endpoint of the region of your account. If you’re not sure which region your account is in, [contact our Support Team](https://bluedotinnovation.zendesk.com/hc/en-us/requests/new).
+:::info
+Make sure to use the Wave API’s endpoint of the region of your account. If you’re not sure which region your account is in, contact our Support Team at [help@bluedot.io](mailto:help@bluedot.io)
+:::
 
 Authorising orders updates
 --------------------------
@@ -47,8 +47,8 @@ In order to update an order you’ll need to include the `userToken` in the Cust
 
 Before starting Tempo, it is necessary to include the `userToken` in the Custom Event Meta Data along with the other required fields, such as the `orderId`.
 
-– Check [Hello Screens documentation](https://docs.bluedot.io/hello-screens/) for more details about the required fields.  
-– Check [Custom Event Meta Data documentation](https://docs.bluedot.io/custom-event-metadata/) to learn how to pass custom data in the SDK events.
+* Check [Hello Screens documentation](../Hello%20Screens/Overview.md) for more details about the required fields.  
+* Check [Custom Event Meta Data documentation](../Custom%20Event%20Metadata.md) to learn how to pass custom data in the SDK events.
 
 ### Wave API
 

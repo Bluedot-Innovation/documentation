@@ -1,7 +1,7 @@
 iOS – Quick start
 ===============================
 
-In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting for a [demo](https://bluedot.io/demo/).  Please also ensure that you also meet the [iOS requirements](/ios-sdk/ios-requirements/).
+In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting for a [demo](https://bluedot.io/contact-us/).  Please also ensure that you also meet the [iOS requirements](../../Point%20SDK/iOS/Quick%20Start.md).
 
 The Bluedot Point SDK enables geo-location capability for apps by delivering accurate location awareness, while substantially reducing battery consumption compared to Android Location API or other standard methods. The Point SDK connects to the Bluedot’s backend system, Canvas, to download your pre-configured Geofences, GEOLINE™, Bluetooth Beacons, conditions, and actions.
 
@@ -156,8 +156,8 @@ Step 6: Next Steps
 
 **Essential Guides:**
 
-*   For a list of detailed iOS Features, please refer to the documentation section on [iOS – Features](/ios-sdk/ios-features/)
-*   For interacting with our Canvas backend, please refer to the documentation on [iOS – Quick Start](https://docs.bluedot.io/ios-sdk/ios-quick-start/)
+*   For a list of detailed iOS Features, please refer to the documentation section on [iOS – Features](../../Point%20SDK/iOS/Features/App%20restart%20notification.md)
+*   For interacting with our Canvas backend, please refer to the documentation on [iOS – Quick Start](../../Point%20SDK/iOS/Quick%20Start.md)
 
 **Xamarin iOS integration examples on GitHub** 
 

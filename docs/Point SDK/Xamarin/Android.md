@@ -1,7 +1,7 @@
 Android -  Quick start
 ===================================
 
-In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting a [demo](https://bluedotinnovation.com/demo).  Also, ensure that you also meet the [Android requirements](/android-sdk/android-requirements/).
+In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting a [demo](https://bluedot.io/contact-us/).  Also, ensure that you also meet the [Android requirements](../../Point%20SDK/Android/Quick%20Start.md).
 
 The Bluedot Point SDK enables geolocation capability for apps by delivering accurate location awareness, while substantially reducing battery consumption compared to Android Location API or other standard methods. The Point SDK connects to the Bluedot’s backend system, Canvas, to download your pre-configured Geofences, GEOLINE™, conditions, and actions.
 
@@ -171,9 +171,9 @@ Step 4: Next Steps
 
 **Essential Guides:**
 
-*   For a list of detailed Android Features, please refer to the documentation section on [Android – Features](/android-sdk/android-features/)
-*   To avoid unexpected behaviour in the app, it is highly recommended to read [Android – Caveats](/android-sdk/android-caveats/)
-*   For interacting with our Canvas backend, please refer to the documentation on [Android – Quick Start](https://docs.bluedot.io/android-sdk/android-quick-start/)
+*   For a list of detailed Android Features, please refer to the documentation section on [Android – Features](../../Point%20SDK/Android/Features/Enable%20or%20disable%20zones.md)
+*   To avoid unexpected behaviour in the app, it is highly recommended to read [Android – Caveats](../../Point%20SDK/Android/Caveats.md)
+*   For interacting with our Canvas backend, please refer to the documentation on [Android – Quick Start](../../Point%20SDK/Android/Quick%20Start.md)
 
 **Xamarin Android integration examples on GitHub** 
 
