@@ -1,4 +1,4 @@
-Geo-trigger
+Geo-trigger webhook
 ====================
 
 Register Geo-trigger Webhooks to receive real-time Entry/Exit notifications from your customers.
@@ -18,7 +18,7 @@ You can have additional information in either the headers or the body of the web
 
 You can also configure a Geo-trigger Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
 
-If you’d like to Create a Destination using [Config API](https://docs.bluedot.io/config-api/), you’ll use the following endpoints:
+If you’d like to Create a Destination using [Config API](../APIs/Config%20API/Overview.md), you’ll use the following endpoints:
 
 
 [**Add Geo-trigger Webhooks to a Project**](https://config-docs.bluedot.io/#tag/projects/operation/addProject)

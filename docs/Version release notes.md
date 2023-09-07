@@ -1,3 +1,7 @@
+---
+hide_table_of_contents: true
+---
+
 Version Release Notes
 =====================
 
@@ -220,7 +224,7 @@ Release date March 03, 2022
 
 **Additional note**
 
-This release resolves issues with maintaining initialization on restart. To ensure proper operation of the SDK it is important to follow the documented [Geo-triggering](https://docs.bluedot.io/android-sdk/android-geo-triggering/) and [Tempo](https://docs.bluedot.io/android-sdk/android-tempo/) service starting procedures. In particular, be sure to start the services subsequent to initializing the SDK.
+This release resolves issues with maintaining initialization on restart. To ensure proper operation of the SDK it is important to follow the documented [Geo-triggering](./Point%20SDK/Android/Geo-triggering.md) and [Tempo](./Point%20SDK/Android/Tempo.md) service starting procedures. In particular, be sure to start the services subsequent to initializing the SDK.
 
 * * *
 
@@ -386,7 +390,7 @@ Release date November 17, 2021
 
 **Events Simulator**
 
-*   Event Simulator is a tool designed to help test your Bluedot setup. It simulates events which would usually be sent by the mobile SDK (Geo–trigger and Tempo events) as well as web events sent via the Events API. Have a look at our [Event Simulator Guide.](https://docs.bluedot.io/canvas/event-simulator-guide/)
+*   Event Simulator is a tool designed to help test your Bluedot setup. It simulates events which would usually be sent by the mobile SDK (Geo–trigger and Tempo events) as well as web events sent via the Events API. Have a look at our [Event Simulator Guide.](./Canvas/Event%20simulator%20guide.md)
 
 * * *
 
@@ -395,11 +399,11 @@ Release date November 11, 2021
 
 ### Integrations
 
-*   New integration with Tealium. Now you can easily send Bluedot location events to Tealium. Learn more here: [Tealium Integration Guide.](https://docs.bluedot.io/integrations/tealium-integration/)
+*   New integration with Tealium. Now you can easily send Bluedot location events to Tealium. Learn more here: [Tealium Integration Guide.](./Integrations/Tealium.md)
 
 ### Canvas
 
-*   We’ve added a new interface to make the management and configuration of the webhooks easier. For more information check our [Webhooks documentation.](https://docs.bluedot.io/webhooks/)  
+*   We’ve added a new interface to make the management and configuration of the webhooks easier. For more information check our [Webhooks documentation.](./Webhooks/Overview.md)  
     
 
 * * *
@@ -605,7 +609,7 @@ Release date May 10, 2021
 
 ### Javascript SDK for Web V1.0.0
 
-Version 1.0 of [Bluedot Javascript SDK for Web](https://docs.bluedot.io/web-sdk/) with support for [Wave API](https://docs.bluedot.io/web-sdk/send-your-first-wave/) and [Hello screens](https://docs.bluedot.io/web-sdk/interacting-with-hello-screens/).
+Version 1.0 of [Bluedot Javascript SDK for Web](./Web%20SDK/Overview.md) with support for [Wave API](./Web%20SDK/Send%20your%20first%20Wave.md) and [Hello screens](./Web%20SDK/Interacting%20with%20Hello%20Screens.md).
 
 * * *
 
@@ -653,7 +657,7 @@ Release date March 29, 2021
 
 *   Notification permission needs to be requested explicitly by app.
     
-*   SDK will no longer request the notification permission after the SDK is initialized. The App will have to request the user to give the notification permission before starting Geo-triggering if it wants to display the message, URL action or the app restart notification to be displayed. More details [here](https://docs.bluedot.io/ios-sdk/migration-guide/ios-migration-guide-from-previous-versions-to-point-sdk-v15-5-0/).
+*   SDK will no longer request the notification permission after the SDK is initialized. The App will have to request the user to give the notification permission before starting Geo-triggering if it wants to display the message, URL action or the app restart notification to be displayed. More details [here](./Point%20SDK/iOS/Migration%20Guides/Migration%20guide%20from%20previous%20versions%20to%20Point%20SDK%20v15.5.0.md).
     
 
 * * *
@@ -692,14 +696,14 @@ Release date March 01, 2021
 *   Webhook support added.
 *   Hello screens support added.
 
-More information on Wave API and how to integrate it is [here](https://docs.bluedot.io/wave-api-integration-user-guide/).
+More information on Wave API and how to integrate it is [here](./APIs/Wave%20API/Integrate%20Wave%20API.md).
 
 ### Canvas
 
 #### **Enhancements**
 
-*   A new section to view & configure webhooks for different Bluedot Events added. More details [here](https://docs.bluedot.io/webhooks/).
-*   A new section to Setup & configure your Hello Screens added. More details [here](https://docs.bluedot.io/hello-screens/).
+*   A new section to view & configure webhooks for different Bluedot Events added. More details [here](./Webhooks/Overview.md).
+*   A new section to Setup & configure your Hello Screens added. More details [here](./Hello%20Screens/Overview.md).
 *   `DestinationId` has been made a Zone level attribute and no longer is only tied to accounts that have Tempo enabled.
 *   An information card has been added when clicking a fence in the Zone map view.
 
@@ -735,7 +739,7 @@ More information on Wave API and how to integrate it is [here](https://docs.blue
 
 #### **Enhancements**
 
-*   A new Webhooks to receive Wave API events has been added. More details [here](https://docs.bluedot.io/webhooks/wave-webhooks/).
+*   A new Webhooks to receive Wave API events has been added. More details [here](./Webhooks/Wave.md).
 
 ### Hello Screens
 
@@ -807,7 +811,7 @@ Release date December 21, 2020
 
 This release contains a complete overhaul of the APIs for SDK initialization, GeoTriggering session management, and Tempo session management. Existing APIs for SDK authentication and session management, and associated classes, are deprecated.
 
-Please see the [Migration Guide](https://docs.bluedot.io/android-sdk/android-migration-guide-from-previous-versions-to-point-sdk-v15-3-0/) for more details.
+Please see the [Migration Guide](./Point%20SDK/Android/Migrating%20from%20previous%20versions%20to%20v15.3.0.md) for more details.
 
 The deprecated APIs will be removed in the next major release (16.0.0).
 
@@ -824,7 +828,7 @@ The deprecated APIs will be removed in the next major release (16.0.0).
 
 This release contains a complete overhaul of the APIs for SDK initialization, GeoTriggering session management, and Tempo session management. Existing APIs for SDK authentication and session management, and associated classes, are deprecated.
 
-Please see the [Migration Guide](https://docs.bluedot.io/ios-sdk/ios-migration-guide-from-previous-versions-to-point-sdk-v15-4-0/) for more details.
+Please see the [Migration Guide](./Point%20SDK/iOS/Migration%20Guides/Migration%20guide%20from%20previous%20versions%20to%20Point%20SDK%20v15.4.0.md) for more details.
 
 The deprecated APIs will be removed in the next major release (16.0.0).
 
@@ -965,7 +969,7 @@ New Feature – Bluedot Tempo
         *   [startTempoTracking](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)startTempoTracking:)
         *   [stopTempoTracking](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)stopTempoTracking)
 
-More information on Tempo can be found in our documentation [here](https://docs.bluedot.io/tempo/).
+More information on Tempo can be found in our documentation [here](./Tempo/Integration%20&%20User%20Guide.md).
 
 #### **Note**
 
@@ -982,7 +986,7 @@ New Feature – Bluedot Tempo
 *   Config API support for managing destinations and the tempo webhook is added.
 *   Webhooks support for Tempo updates.
 
-More information on Canvas support for Tempo can be found in our documentation [here](https://docs.bluedot.io/tempo/create-your-destinations/) and for the Tempo webhooks can be found [here](https://docs.bluedot.io/tempo/configure-a-tempo-webhook/).
+More information on Canvas support for Tempo can be found in our documentation [here](./Tempo/Create%20your%20destinations.md) and for the Tempo webhooks can be found [here](./Webhooks/Tempo.md).
 
 * * *
 
@@ -994,7 +998,7 @@ Release date April 21, 2020
 #### **Enhancements**
 
 Increased the Zone Custom Data limit  
-We increased the limit so you can now attach up to 20 fields to each Zone. You can attach any type of metadata to a location that’s relevant to your location-based campaign. Tagging details about the location, the business, target customers and the campaign can add valuable context. Learn more about Zone custom data [here](https://docs.bluedot.io/canvas/what-are-zone-settings/what-is-custom-data/).
+We increased the limit so you can now attach up to 20 fields to each Zone. You can attach any type of metadata to a location that’s relevant to your location-based campaign. Tagging details about the location, the business, target customers and the campaign can add valuable context. Learn more about Zone custom data [here](./Canvas/What%20is%20Zone%20custom%20data.md).
 
 ### Point SDK for Android V15.1.0
 
@@ -1017,7 +1021,7 @@ The SDK will now catch and report the `SQLiteFullException` to the application u
 #### **Enhancements**
 
 Improvements to Enhanced restart mode  
-Improved the performance and reliability of SDK relaunch after the app is terminated. More details on enhanced restart can be found [here](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-enhanced-sdk-restart/).
+Improved the performance and reliability of SDK relaunch after the app is terminated. More details on enhanced restart can be found [here](./Point%20SDK/iOS/Features/Enhanced%20SDK%20restart.md).
 
 #### **Bug fixes**
 
@@ -1033,7 +1037,7 @@ Release date April 07, 2020
 #### **Enhancements**
 
 Increased the Custom Event Metadata limit  
-We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here](https://docs.bluedot.io/custom-event-metadata/).
+We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here](./Custom%20Event%20Metadata.md).
 
 Android SDK migrated to AndroidX  
 Support libraries used by the SDK have been upgraded to AndroidX. This means all apps that have the SDK integrated must upgrade their Android support libraries to AndroidX.
@@ -1081,7 +1085,7 @@ Release date April 02, 2020
 #### **Enhancements**
 
 Increased the Custom Event Metadata limit  
-We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here](https://docs.bluedot.io/custom-event-metadata/).
+We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here](./Custom%20Event%20Metadata.md).
 
 Overhaul to the SDK’s events reporting  
 We have redesigned the Event reporting architecture, implementing a more efficient retry strategy in situations of network failure. We have also reduced the data packet size sent from the SDK to the Bluedot backend on each notification event. This has no impact on the SDK check-in and check-out callbacks and does not require any integration changes other than taking this SDK update.
@@ -1129,7 +1133,7 @@ Release date October 30, 2019
 
 Based on customer feedback we have re-added support for the following devices iPhone 5, 5c, 5S, iPod touch-5, iPad-4, iPad Air.
 
-Please refer to our supported platforms list [here](https://docs.bluedot.io/supported-platforms/) to know which OS versions our SDK supports.
+Please refer to our supported platforms list [here](./Supported%20Platforms.md) to know which OS versions our SDK supports.
 
 * * *
 
@@ -1176,7 +1180,7 @@ Additional updates to the SDK’s manifest
 *   `READ_PHONE_STATE` permission has been removed.
 *   `ACCESS_COARSE_LOCATION` permission has been removed.
 
-Please note, as of this release we will no longer be providing the SDK as a standalone artifact to be downloaded from the website. Please consult the [project setup](https://docs.bluedot.io/android-sdk/android-project-setup/) documentation for how to integrate the SDK into your application.
+Please note, as of this release we will no longer be providing the SDK as a standalone artifact to be downloaded from the website. Please consult the [project setup](./Point%20SDK/Android/Quick%20Start.md) documentation for how to integrate the SDK into your application.
 
 * * *
 
@@ -1212,8 +1216,6 @@ Release date August 22, 2019
 Updates to Bluetooth permission handling: 
 
 The previous versions of the SDK used Core Bluetooth to determine whenever Bluetooth is enabled on the phone or not. From now on the SDK will notify the application when it is about to range for a beacon and the application should handle this notification respectively and inform the user about turning Bluetooth on. On devices running iOS 13, the end-user will no longer be prompted to provide Bluetooth permission if your zone configurations do not have beacons in it.
-
-More information on how to implement the new application flow can be found [here](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-beacon-triggering/).
 
 **  
 Bug Fixes**
@@ -1315,7 +1317,7 @@ MRT Persistence:
 Added in Minimum Retrigger Time (MRT) persistence when the user swipes app close to prevent unexpected re-triggers.
 
 Updates to Enhanced app restart mode:  
-Increased reliability of check-in and check-out in Bludeot’s [Enhanced app restart](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-enhanced-app-restart/) (i.e when the app is swipe closed or the device is restarted).  
+Increased reliability of check-in and check-out in Bludeot’s [Enhanced app restart](./Point%20SDK/iOS/Features/Enhanced%20SDK%20restart.md) (i.e when the app is swipe closed or the device is restarted).  
 **Note:** In Bludeot’s Enhanced app restart, the MRT should be set to more than 2 hours (to avoid OS restrictions overlap).
 
 **Bug fixes**
@@ -1334,7 +1336,7 @@ Release date April 16, 2019
 
 **Enhancements**
 
-Added os and osVersion fields to the response of [check-in webhooks](https://docs.bluedot.io/webhooks/).
+Added os and osVersion fields to the response of [check-in webhooks](./Webhooks/Overview.md).
 
 * * *
 
@@ -1376,7 +1378,7 @@ InstallRef is now persisted across the life of the SDK’s install on a specific
 **Defect fixes**
 
 Data Protection capability enabled:  
-If your app has [iOS](https://developer.apple.com/documentation/uikit/core_app/protecting_the_user_s_privacy/encrypting_your_app_s_files) [Data Protection capability](https://developer.apple.com/documentation/uikit/core_app/protecting_the_user_s_privacy/encrypting_your_app_s_files) enabled and you’re using Bludeot’s [Enhanced app restart](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-enhanced-app-restart/), the SDK will no longer crash after the phone has been restarted.
+If your app has [iOS](https://developer.apple.com/documentation/uikit/core_app/protecting_the_user_s_privacy/encrypting_your_app_s_files) [Data Protection capability](https://developer.apple.com/documentation/uikit/core_app/protecting_the_user_s_privacy/encrypting_your_app_s_files) enabled and you’re using Bludeot’s [Enhanced app restart](./Point%20SDK/iOS/Features/Enhanced%20SDK%20restart.md), the SDK will no longer crash after the phone has been restarted.
 
 * * *
 
@@ -1417,13 +1419,7 @@ Release date December 3, 2018
 ### Point SDK for iOS V1.13.0
 
 *   **Enhancements**
-    *   [Enhanced restart mode](https://docs.bluedot.io/ios-sdk/ios-features/ios-features-enhanced-app-restart/)
+    *   [Enhanced restart mode](./Point%20SDK/iOS/Features/Enhanced%20SDK%20restart.md)
 *   **Defect fixes**
     *   General minor defect fixes.
 
-* * *
-
-Archived Version Release Notes
-------------------------------
-
-The older version release notes can be found [here](https://docs.bluedot.io/version-release-notes/archived-version-release-notes/).

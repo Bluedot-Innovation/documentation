@@ -39,7 +39,7 @@ To set up **W****ebhooks**, login to Canvas and head to the **Integrations** sec
 3\. Configure Event Type, URL, Header and Body fields
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot4.png)  
-4\. Header Fields for the standard Webhooks can be set dynamically by adding the {} in the value field. By the way, the value itself can be set and injected from the additional event-specific **[Custom Event Meta Data](https://docs.bluedot.io/custom-event-metadata/)** fields. The Dynamic Webhook Headers feature will pick up that value and attach it to the Webhook outputs.
+4\. Header Fields for the standard Webhooks can be set dynamically by adding the {} in the value field. By the way, the value itself can be set and injected from the additional event-specific **[Custom Event Meta Data](../Custom%20Event%20Metadata.md)** fields. The Dynamic Webhook Headers feature will pick up that value and attach it to the Webhook outputs.
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot5.png)
 
@@ -90,7 +90,7 @@ We encourage you to make use of these Key/Value tokens to sign the events with o
 Webhook request JSON structure
 ------------------------------
 
-*   [Geo-trigger](https://docs.bluedot.io/webhooks/geo-trigger-webhooks/)
-*   [Tempo](https://docs.bluedot.io/tempo/configure-a-tempo-webhook/)
-*   [Wave](https://docs.bluedot.io/webhooks/wave-webhooks/)
-*   [Hello Order](https://docs.bluedot.io/webhooks/hello-order-webhooks/)
+*   [Geo-trigger](./Geo-triggering.md)
+*   [Tempo](./Tempo.md)
+*   [Wave](./Wave.md)
+*   [Hello Order](./Hello%20order.md)

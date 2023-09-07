@@ -1,8 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Tempo: Integration & User Guide](https://docs.bluedot.io/tempo/)
-3.  Configure a Tempo Webhook
-
-Configure a Tempo Webhook
+Tempo Webhook
 =========================
 
 Register Tempo Webhooks to receive real-time ETA notifications from your customers. As your customers get closer to their Destination to collect their order, Bluedot will send a notification every minute, so your team is ready to go.

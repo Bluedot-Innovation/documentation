@@ -1,4 +1,4 @@
-Wave
+Wave webhook
 =============
 
 Register Wave Webhooks to receive real-time Arrival notifications from your customers.
@@ -12,19 +12,7 @@ In the Webhooks section of your Canvas account while creating a Webhook, select 
 
 You can also configure a Wave Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
 
-If you’d like to Create a Destination using [Config API](https://docs.bluedot.io/config-api/), you’ll use the following /Endpoints;
-
-Endpoint
-
-Description
-
-Add Wave Webhooks to a Project
-
-When creating or editing a Project you can add Wave Webhooks within the `webhooks` property.
-
-Set the type to `wave` in the request.
-
-Endpoint: `https://config.bluedot.io/prod1/projects`
+If you’d like to Create a Destination using [Config API](../APIs/Config%20API/Overview.md),  When creating or editing a Project you can add Hello Order Webhooks within the `webhooks` property by setting the type to `wave` in the request.
 
 Example of adding a Wave Webhook:
 ```json

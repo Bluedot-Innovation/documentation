@@ -1,7 +1,7 @@
 Hello Order
 ====================
 
-Hello Screens uses webhooks to notify your application when the state of an order has been updated. Hello Order Webhooks help inform your systems when a customer is on the way to the store, arrives at the store, the staff acknowledges the arrival of the customer, when a staff member marks an order as completed. You can also receive updates when the order moves to any custom status you’ve set using [Wave API.](https://docs.bluedot.io/wave-api-integration-user-guide/)
+Hello Screens uses webhooks to notify your application when the state of an order has been updated. Hello Order Webhooks help inform your systems when a customer is on the way to the store, arrives at the store, the staff acknowledges the arrival of the customer, when a staff member marks an order as completed. You can also receive updates when the order moves to any custom status you’ve set using [Wave API.](../APIs/Wave%20API/Overview.md)
 
 Configure a Hello Order Webhook
 -------------------------------
@@ -12,19 +12,7 @@ In the Webhooks section of your Canvas account while creating a Webhook, select 
 
 You can also configure a Hello Order Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
 
-If you’d like to Create a Destination using [Config API](https://docs.bluedot.io/config-api/), you’ll use the following /Endpoints;
-
-Endpoint
-
-Description
-
-Add Hello Order Webhooks to a Project
-
-When creating or editing a Project you can add Hello Order Webhooks within the `webhooks` property.
-
-Set the type to `helloOrder` and structure to `default` in the request.
-
-Endpoint: `https://config.bluedot.io/prod1/projects`
+You can also create a Destination using [Config API](../APIs/Config%20API/Overview.md). When creating or editing a Project you can add Hello Order Webhooks within the `webhooks` property by setting the type to `helloOrder` and structure to `default` in the request.
 
 Example of adding a Hello Order Webhook:
 ```json
