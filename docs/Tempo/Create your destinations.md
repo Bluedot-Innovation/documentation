@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Tempo: Integration & User Guide](https://docs.bluedot.io/tempo/)
-3.  Create your Destination(s)
-
 Create your Destination(s)
 ==========================
 

@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Tempo: Integration & User Guide](https://docs.bluedot.io/tempo/)
-3.  Configure Tempo isochrone time brackets
-
 Configure Tempo isochrone time brackets
 =======================================
 

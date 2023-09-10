@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Tempo: Integration & User Guide](https://docs.bluedot.io/tempo/)
-3.  Integrate the Point SDK & configure Tempo in your app
-
 Integrate the Point SDK & configure Tempo in your app
 =====================================================
 
