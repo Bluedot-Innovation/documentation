@@ -220,6 +220,93 @@ const sidebars = {
       ],
     },
     {
+      type: "category",
+      label: "Integrations",
+      items: [
+        "Integrations/Overview",
+        "Integrations/Adobe Experience",
+        {
+          type: "category",
+          label: "Airship",
+          items: [
+            "Integrations/Airship/Overview",
+            "Integrations/Airship/Android",
+            "Integrations/Airship/iOS"
+          ]
+        },
+        {
+          type: "category",
+          label: "Attentive",
+          items: [
+            "Integrations/Attentive/Overview",
+            "Integrations/Attentive/Quick Start",
+            "Integrations/Attentive/Curbside experience",
+            "Integrations/Attentive/Location-based messages",
+          ]
+        },
+        "Integrations/Bbot",
+        {
+          type: "category",
+          label: "Braze",
+          items: [
+            "Integrations/Braze/Overview",
+            "Integrations/Braze/Android",
+            "Integrations/Braze/iOS"
+          ]
+        },
+        {
+          type: "category",
+          label: "CleverTap",
+          items: [
+            "Integrations/CleverTap/Overview",
+            "Integrations/CleverTap/Android",
+            "Integrations/CleverTap/iOS"
+          ]
+        },
+        "Integrations/Flipdish",
+        "Integrations/Incentivio",
+        "Integrations/Mobivity",
+        "Integrations/mParticle",
+        "Integrations/Olo",
+        "Integrations/OneSignal",
+        {
+          type: "category",
+          label: "Oracle Responsys",
+          items: [
+            "Integrations/Oracle Responsys/Overview",
+            "Integrations/Oracle Responsys/Android",
+            "Integrations/Oracle Responsys/iOS"
+          ]
+        },
+        "Integrations/Oracle Simphony",
+        "Integrations/Raydiant",
+        "Integrations/Safegraph",
+        {
+          type: "category",
+          label: "Salesforce",
+          items: [
+            "Integrations/Salesforce/Overview",
+            "Integrations/Salesforce/Linking Salesforce Marketing Cloud to Canvas",
+            "Integrations/Salesforce/Create SFMC events",
+            "Integrations/Salesforce/Set up your Canvas account",
+            "Integrations/Salesforce/Journey setup",
+            {
+              type: "category",
+              label: "Mobile SDK Integration",
+              items: [
+                "Integrations/Salesforce/Mobile SDK Integration/Overview",
+                "Integrations/Salesforce/Mobile SDK Integration/Android",
+                "Integrations/Salesforce/Mobile SDK Integration/iOS"
+              ]
+            },
+            "Integrations/Salesforce/Bluedot data extension fields",
+          ]
+        },
+        "Integrations/Segment",
+        "Integrations/Tealium"
+      ]
+    },
+    {
       type: "doc",
       id: "Custom Event Metadata",
       label: "Custom Event Metadata",

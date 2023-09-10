@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Attentive Integration
-
 Attentive Integration
 =====================
 

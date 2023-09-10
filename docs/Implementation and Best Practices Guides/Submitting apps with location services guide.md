@@ -1,6 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  Guide to submitting apps with location services
-
 Guide to submitting apps with location services
 ===============================================
 
@@ -8,11 +5,11 @@ If you’re building an app with Bluedot SDK that uses location services, you’
 
 *   **Explain your value proposition:** Clearly explain the purpose of using location services in your app and how they benefit the user. Ensure you communicate why location tracking is integral to the app’s functionality. This will speed up the app review process and as well will highly increase the likelihood a customer will grant the location permissions. If your App requires “Always” permissions, clarify to your customer why and how their location will be used.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/04/location-services-guide.jpg)
+![](../assets/location-services-guide.jpg)
 
 *   **Request user permission:** When requesting location permissions, craft a friendly and engaging purpose message that tells users why your app needs their location. Make it easy for them to see the value in granting permission.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/04/location-services-guide-2.jpg)
+![](../assets/location-services-guide-2.jpg)
 
 *   **Background location access best practices:** If your app requires background location access, clearly explain the necessity and how it improves the user experience in the app description.
 *   **Provide accurate metadata:** In your App submission, provide accurate and relevant information, such as app description, keywords, and screenshots. Mention the use of location services and their benefits for the user in the app description.

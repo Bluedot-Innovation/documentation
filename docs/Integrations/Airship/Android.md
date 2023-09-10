@@ -1,9 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Airship Integration](https://docs.bluedot.io/integrations/airship-integration/)
-4.  Airship Android Integration
-
-Airship Android Integration
+Android Integration
 ===========================
 
 Getting Started
@@ -19,7 +14,7 @@ Details on integrating the Airship SDK can be found on their documentation websi
 
 ### Integrate Bluedot PointSDK in your Project
 
-To integrate Point SDK, please refer to the integration steps [here](https://docs.bluedot.io/android-sdk/android-quick-start/)
+To integrate Point SDK, please refer to the integration steps [here](../../Point%20SDK/Android/Quick%20Start.md)
 
 Interaction between Airship SDK and Bluedot PointSDK
 ----------------------------------------------------
@@ -28,7 +23,7 @@ Interaction between Airship SDK and Bluedot PointSDK
 
 1\. Start Airship services by overriding `onCreate` in your custom Application class
 
-```
+```kotlin
 override fun onCreate() {    
     super.onCreate()
 
@@ -41,27 +36,27 @@ override fun onCreate() {
 
 or add `Autopilot` configuration to `AndroidManifest.xml`
 
-```
-<meta-data android:name\="com.urbanairship.autopilot" android:value\="com.package.yourAirshipAutopilotClass"/>
+```xml
+<meta-data android:name="com.urbanairship.autopilot" android:value="com.package.yourAirshipAutopilotClass"/>
 ```
 
 ### Setup Bluedot Location Services
 
 1\. Start PointSDK at the entry point in your application by overriding `onCreate()` and replace your Bluedot ProjectId in `<Your Bluedot Project ID>`:
-```
+```kotlin
 super.onCreate();
  ...
  // start Point SDK
-boolean locationPermissionGranted \= ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS\_FINE\_LOCATION) \== PackageManager.PERMISSION\_GRANTED
+boolean locationPermissionGranted = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
 
 if (locationPermissionGranted) {
-  serviceManager \= ServiceManager.getInstance(this);
+  serviceManager = ServiceManager.getInstance(this);
   if (!serviceManager.isBluedotServiceInitialized()) {
-    InitializationResultListener resultListener \= bdError \-> {
-    String text \= "Initialization Result "
+    InitializationResultListener resultListener = bdError -> {
+    String text = "Initialization Result "
 
     if (bdError != null) {
-      text \= text + bdError.reason
+      text = text + bdError.reason
       Log.i("Bluedot", text)
     }
     else {
@@ -78,7 +73,7 @@ else
 ```
 
 2\. Start Geo-triggering feature
-
+```kotlin
 public void startGeoTriggering() {
   // Start Geo-triggering feature
   GeoTriggeringService.builder()
@@ -91,20 +86,21 @@ public void startGeoTriggering() {
       }
   });
 }
+```
 
 3\. Receiving Geo-trigger events
 
 Create a receiver in the Manifest to receive Geo-trigger events (such as entering a location):
 
-```
-<application android:label\="@string/app\_name" \>
+```xml
+<application android:label="@string/app_name" >
   <receiver
-    android:name\="my.package.ExampleGeoTriggerReceiver"
-    android:enabled\="true"
-    android:exported\="false"
-  \>
+    android:name="my.package.ExampleGeoTriggerReceiver"
+    android:enabled="true"
+    android:exported="false"
+  >
     <intent-filter>
-      <action android:name\="io.bluedot.point.GEOTRIGGER" />
+      <action android:name="io.bluedot.point.GEOTRIGGER" />
     </intent-filter>
   </receiver>
 </application>
@@ -112,7 +108,7 @@ Create a receiver in the Manifest to receive Geo-trigger events (such as enterin
 
 Implement the receiver
 
-```
+```java
 public class ExampleGeoTriggerReceiver extends GeoTriggeringEventReceiver {
   @Override
   public void onZoneEntryEvent(@NotNull ZoneEntryEvent entryEvent, @NotNull Context context) {
@@ -126,9 +122,9 @@ public class ExampleGeoTriggerReceiver extends GeoTriggeringEventReceiver {
 }
 ```
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
-
+:::info
 `Exit` does not apply to GEOLINE™.
+:::
 
 ### Use Case
 
@@ -136,34 +132,34 @@ public class ExampleGeoTriggerReceiver extends GeoTriggeringEventReceiver {
 
 **Setting Automated Message:** Automated message to be setup via `Urban Airship Dashboard`, to trigger when a new event is posted.
 
-```
+```kotlin
 override fun onZoneEntryEvent(entryEvent: ZoneEntryEvent, context: Context) {
-  val builder \= CustomEvent.Builder("bluedot\_place\_entered")
+  val builder \= CustomEvent.Builder("bluedot_place_entered")
   builder.setInteraction("location", entryEvent.zoneInfo.zoneId)
-  entryEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot\_zone\_name", it) }
+  entryEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot_zone_name", it) }
   entryEvent.zoneInfo.customData?.let {
     for ((key, value) in it) {
       builder.addProperty(key, value)
     }
   }
-  val event \= builder.build()
+  val event = builder.build()
   event.track()
 }
 
 override fun onZoneExitEvent(exitEvent: ZoneExitEvent, context: Context) {
-  val builder \= CustomEvent.Builder("bluedot\_place\_exited")
+  val builder = CustomEvent.Builder("bluedot_place_exited")
   builder.setInteraction("location", exitEvent.zoneInfo.zoneId)
-  exitEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot\_zone\_name", it) }
+  exitEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot_zone_name", it) }
   exitEvent.zoneInfo.customData?.let {
     for ((key, value) in it) {
       builder.addProperty(key, value)
     }
   }
 
-  if (exitEvent.dwellTime != \-1) {
-    builder.addProperty("dwell\_time", exitEvent.dwellTime)
+  if (exitEvent.dwellTime != -1) {
+    builder.addProperty("dwell_time", exitEvent.dwellTime)
   }
-  val event \= builder.build()
+  val event = builder.build()
   event.track()
 }
 ```

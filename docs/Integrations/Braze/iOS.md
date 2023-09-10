@@ -1,9 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Braze Integration](https://docs.bluedot.io/integrations/braze-integration/)
-4.  Braze iOS Integration
-
-Braze iOS Integration
+iOS Integration
 =====================
 
 Table of Contents

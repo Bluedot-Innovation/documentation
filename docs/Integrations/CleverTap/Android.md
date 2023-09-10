@@ -1,9 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [CleverTap Integration](https://docs.bluedot.io/integrations/clevertap-integration/)
-4.  CleverTap Android Integration
-
-CleverTap Android Integration
+Android Integration
 =============================
 
 ### Table of Contents
@@ -17,6 +12,7 @@ Getting Started
 
 Modify your `build.gradle` to include CleverTap SDK.
 
+```gradle
 dependencies {
     ...
     implementation 'com.google.android.gms:play-services-base:17.6.0'
@@ -31,6 +27,7 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+```
 
 Integrate Bluedot Point SDK in your Project
 -------------------------------------------
@@ -42,6 +39,7 @@ Interaction between CleverTap SDK and Bluedot Point SDK
 
 1\. We need to ask the user to give permission to use the location services. To do that, create a RequestPermissionActivity.kt and then add the below code.
 
+```java
 public class RequestPermissionActivity extends AppCompatActivity {
 
     final int PERMISSION\_REQUEST\_CODE \= 1;
@@ -68,6 +66,7 @@ public class RequestPermissionActivity extends AppCompatActivity {
         finish();
     }
 }
+```
 
 2\. We then create another class which will implements Bluedot InitializationResultListener and upon SDK initialisation. To do that create MainApplication.kt class and add the below code.
 

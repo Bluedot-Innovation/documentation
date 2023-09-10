@@ -14,10 +14,10 @@ In this guide, we’ll cover when to call the main SDK methods required for a Dr
 
 | **Step** | **Functionality**            | **Documentation** |                     |
 | :------- | :------------------------- | :------------------ | :------------------ |
-| 1        | `Initialize`                 | [Android](https://docs.bluedot.io/android-sdk/android-quick-start/)          | [iOS](https://docs.bluedot.io/ios-sdk/ios-quick-start/)       |
-| 2        | `setCustomEventMetaData`   | [Android](https://docs.bluedot.io/custom-event-metadata/)                    | [iOS](https://docs.bluedot.io/custom-event-metadata/)       |
-| 3        | Start Geo-triggering       | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 4        | `enterZone` Order Taker event callback | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 5        | `enterZone` Pickup Window event callback | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 6        | `exitZone` event callback  | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
-| 7        | Stop Geo-triggering        | [Android](https://docs.bluedot.io/android-sdk/android-geo-triggering/)       | [iOS](https://docs.bluedot.io/ios-sdk/ios-geo-triggering/)       |
+| 1        | `Initialize`               | [Android](../Point%20SDK/Android/Quick%20Start.md)          | [iOS](../Point%20SDK/iOS/Quick%20Start.md)       |
+| 2        | `setCustomEventMetaData`   | [Android](../Custom%20Event%20Metadata.md)                    | [iOS](../Custom%20Event%20Metadata.md)       |
+| 3        | Start Geo-triggering       | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 4        | `enterZone` Order Taker event callback | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 5        | `enterZone` Pickup Window event callback | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 6        | `exitZone` event callback  | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
+| 7        | Stop Geo-triggering        | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |

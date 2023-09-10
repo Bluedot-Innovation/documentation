@@ -1,16 +1,5 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  CleverTap Integration
-
-CleverTap Integration
+Overview
 =====================
-
-*   [Background](#CleverTapIntegration-Background)
-*   [Integration architecture diagram](#CleverTapIntegration-Architecture)
-*   [Bluedot setup](#CleverTapIntegration-Bluedot-Setup)
-*   [CleverTap setup](#CleverTapIntegration-CleverTap-Setup)
-*   [Integration examples](#CleverTapIntegration-Examples)
-*   [Contact details](#CleverTapIntegration-Contact-Details)
 
 **Background**
 --------------

@@ -1,4 +1,4 @@
-Integrations
+Overview
 ============
 
 Send Bluedot events to other platforms to get the most of your customer’s location-based experiences.

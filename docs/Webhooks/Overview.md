@@ -24,7 +24,7 @@ There are two ways to configure a Webhook:
 
 Webhooks are configured at the Project level with a maximum of one webhook for each Event type.
 
-To set up **W****ebhooks**, login to Canvas and head to the **Integrations** section**.**
+To set up **Webhooks**, login to Canvas and head to the **Integrations** section**.**
 
 ![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot1.png)
 

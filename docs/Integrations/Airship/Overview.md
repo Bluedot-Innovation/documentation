@@ -1,8 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Airship Integration
-
-Airship Integration
+Overview
 ===================
 
 With the combination of Airship’s leading mobile engagement platform and Bluedot’s best in class location technology, mobile engagement is taken to the next level. Combine the power of Airship with the precision and scalability of Bluedot’s location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
@@ -10,13 +6,6 @@ With the combination of Airship’s leading mobile engagement platform and Blued
 Bluedot’s location marketing platform delivers a solution 20x more accurate, with negligible battery drain, unlimited locations and best in class privacy making it the only option that can deliver location-based 1:1 segmentation no matter how large your audience is.
 
 Connectivity is at the heart of this chapter for mobile. But it’s more than just the ability to engage. It’s also about connecting to mobile users with discernment and insight. That’s what mobile engagement is about, and it’s exciting what we can do.
-
-*   [Integration Architecture](#architecture)
-*   [Airship setup](#airship-setup)
-*   [Bluedot setup](#bluedot-setup)
-*   [Create Automation for an Entry trigger](#entry-trigger)
-*   [Create Automation for an Exit trigger](#exit-trigger)
-*   [Additional Information](#additional-info)
 
 Integration architecture
 ------------------------
@@ -41,9 +30,9 @@ Creating a Project is your first step. All your Zones and all geofeatures exist 
 
 You’ll need to create a Zone before you can start adding in specific Geofeatures. Each Zone can have one or many Geofeatures – that’s up to you and your use-case. More information on adding and managing Zones can be found [here](https://docs.bluedot.io/canvas/add-a-new-zone/).
 
-![image](https://docs.bluedot.io/wp-content/uploads/2018/01/info-sign.png)
-
+:::info
 The Zone name, Zone ID or a combination of both can be used as an event to be registered to Airship for triggering an Automation. Provide a descriptive name and possibly adopt a naming convention for the Zone name field.
+:::
 
 Configure an Entry Trigger
 --------------------------
@@ -64,12 +53,12 @@ Additional Information
 
 You can find additional information on the different features we support below:
 
-*   [Airship Android Integration](https://docs.bluedot.io/urban-airship-integration/urban-airship-android-integration/)
-*   [Airship iOS Integration](https://docs.bluedot.io/urban-airship-integration/urban-airship-ios-integration/)
+*   [Airship Android Integration](./Android.md)
+*   [Airship iOS Integration](./iOS.md)
 *   [GitHub – Bluedot Airship Android example](https://github.com/Bluedot-Innovation/BluedotAirshipDemoApp-Android)
 *   [GitHub – Bluedot Airship iOS example](https://github.com/Bluedot-Innovation/PointSDK-UrbanAirshipIntegrationExample-iOS)
-*   [Drawing Geofences or Geolines™](https://docs.bluedot.io/canvas/add-a-new-zone/)
-*   [Setting custom data fields](https://docs.bluedot.io/canvas/what-are-zone-settings/what-is-custom-data/)
-*   [Zone Settings](https://docs.bluedot.io/canvas/what-are-zone-settings/)
-*   You can use our [Config API](https://docs.bluedot.io/config-api/) to create the Zones (including the Geofences, GEOLINE™, Custom Actions and Conditions).
+*   [Drawing Geofences or Geolines™](../../Canvas/Add%20a%20new%20zone.md)
+*   [Setting custom data fields](../../Canvas/What%20is%20Zone%20custom%20data.md)
+*   [Zone Settings](../../Canvas/What%20are%20Zone%20settings.md)
+*   You can use our [Config API](../../APIs/Config%20API/Overview.md) to create the Zones (including the Geofences, GEOLINE™, Custom Actions and Conditions).
 *   [Airship Engage platform documentation](https://docs.airship.com/tutorials/getting-started/messaging/set-up-account/).

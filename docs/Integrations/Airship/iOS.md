@@ -1,9 +1,4 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Airship Integration](https://docs.bluedot.io/integrations/airship-integration/)
-4.  Airship iOS Integration
-
-Airship iOS Integration
+iOS Integration
 =======================
 
 Getting started
@@ -19,7 +14,7 @@ Details on integrating the Airship SDK can be found on their documentation websi
 
 ### Integrate your project with Bluedot PointSDK
 
-To integrate PointSDK, please refer to the integration steps [here](https://docs.bluedot.io/ios-sdk/ios-quick-start/)
+To integrate PointSDK, please refer to the integration steps [here](../../Point%20SDK/iOS/Quick%20Start.md)
 
 Interaction between Airship SDK and Bluedot PointSDK
 ----------------------------------------------------
@@ -32,27 +27,27 @@ Interaction between Airship SDK and Bluedot PointSDK
     
 2.  Take off Airship Services from `application:didFinishLaunchingWithOptions:` method in your `AppDelegate`.
 
-```
+```swift
 // Create Airship config
-**let** config \= Config()
+let config = Config()
 
 // Set production and development separately.
 // Alternatively you can use AirshipConfig.plist file to store all Airship configurations.
 // More details please see https://docs.airship.com/platform/mobile/setup/sdk/ios/
-config.developmentAppKey \= "YOUR DEV APP KEY"
-config.developmentAppSecret \= "YOUR DEV APP SECRET"
+config.developmentAppKey = "YOUR DEV APP KEY"
+config.developmentAppSecret = "YOUR DEV APP SECRET"
 
-config.productionAppKey \= "YOUR PRODUCTION APP KEY"
-config.productionAppSecret \= "YOUR PRODUCTION APP SECRET"
+config.productionAppKey = "YOUR PRODUCTION APP KEY"
+config.productionAppSecret = "YOUR PRODUCTION APP SECRET"
 
 // Change to true to use the production appKey/appSecret
-config.inProduction \= **false**
+config.inProduction = false
 
 // Set site. Either .us or .eu
-config.site \= .us
+config.site = .us
 
-// Allow lists. Use \* to allow anything
-config.urlAllowList \= \["\*"\]
+// Allow lists. Use * to allow anything
+config.urlAllowList = ["*"]
 
 // Call takeOff
 Airship.takeOff(config, launchOptions: launchOptions)
@@ -62,7 +57,7 @@ Airship.takeOff(config, launchOptions: launchOptions)
 // will be prompted to allow notifications. Normally, you should wait for a more
 // appropriate time to enable push to increase the likelihood that the user will
 // accept notifications.
-Airship.push.userPushNotificationsEnabled \= **true**
+Airship.push.userPushNotificationsEnabled = true
 ```
 
 ### Setup Bluedot Location Services
@@ -72,17 +67,18 @@ Airship.push.userPushNotificationsEnabled \= **true**
     `import BDPointSDK`
     
 2.  Introducing `BDLocationManager` which is the entry-point for an app to start using PointSDK.
-    
-    `BDLocationManager.instance()?.geoTriggeringEventDelegate \= self`
+    ```swift
+    BDLocationManager.instance()?.geoTriggeringEventDelegate = self
+    ```
     
 3.  Initialize the PointSDK
 
-   ``` 
-    if BDLocationManager.instance()?.isInitialized() \== false {
+   ```swift
+    if BDLocationManager.instance()?.isInitialized() == false {
       BDLocationManager.instance()?.initialize(
         withProjectId: projectId) { error in
-        guard error \== nil else {
-          print("Initialisation Error: \\(String(describing: error?.localizedDescription))") 
+        guard error == nil else {
+          print("Initialisation Error: \(String(describing: error?.localizedDescription))") 
           return
         }
         print( "Initialised successfully with Point sdk" )
@@ -92,9 +88,9 @@ Airship.push.userPushNotificationsEnabled \= **true**
     
 4.  Start Geo-triggering feature after PointSDK is initialized:
     
-    ```
+    ```swift
     BDLocationManager.instance()?.startGeoTriggering() { error in 
-      guard error \== nil else {
+      guard error == nil else {
         print("There was an error starting geo-triggering with the Bluedot SDK: \\(error.localizedDescription)")
         return
       }
@@ -102,22 +98,23 @@ Airship.push.userPushNotificationsEnabled \= **true**
     ```
     
 5.  Receiving Geo-trigger events
-    ```
+    ```swift
     extension AppDelegate: BDPGeoTriggeringEventDelegate {
-      func didEnterZone(\_ enterEvent: BDZoneEntryEvent){ 
+      func didEnterZone(_ enterEvent: BDZoneEntryEvent){ 
         print("I have entered a zone.")
       }
     
-      func didExitZone(\_ exitEvent: BDZoneExitEvent) {
+      func didExitZone(_ exitEvent: BDZoneExitEvent) {
         print("I have exited a zone")
       }
     }
     ```
     
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 Only `Custom Actions` defined for a Zone will trigger _Check-in_ and _Check-out_ callbacks.
+:::
 
 `Check-out` does not apply to Geoline™.
 
@@ -127,40 +124,40 @@ Only `Custom Actions` defined for a Zone will trigger _Check-in_ and _Check
 
 **Setting automated message:** Setup via `Airship` portal will be triggered when a new event is posted.
 
-```
-func didEnterZone(\_ enterEvent: BDZoneEntryEvent){
-    **let** customEvent \= CustomEvent(name:"bluedot\_place\_entered")
-    customEvent.interactionType \= "location"
-    customEvent.interactionID \= enterEvent.zone().id
+```swift
+func didEnterZone(_ enterEvent: BDZoneEntryEvent){
+    **let** customEvent = CustomEvent(name:"bluedot_place_entered")
+    customEvent.interactionType = "location"
+    customEvent.interactionID = enterEvent.zone().id
 
     // Set Bluedot Zone Custom Data
-    **var** bluedotProperties \= \[String : String\]()
+    **var** bluedotProperties = [String : String]()
     enterEvent.zone().customData?.forEach { (key, value) **in**
-        bluedotProperties\[key\] \= value
+        bluedotProperties[key] = value
     }
-    bluedotProperties\["bluedot\_zone\_name"\] \= enterEvent.zone().name
+    bluedotProperties["bluedot_zone_name"] = enterEvent.zone().name
     // assign custom event properties
-    customEvent.properties \= bluedotProperties
+    customEvent.properties = bluedotProperties
     // Record the event in analytics
     customEvent.track()
 }
 
-func didExitZone(\_ exitEvent: BDZoneExitEvent) {
-    **let** customEvent \= CustomEvent(name:"bluedot\_place\_exited")
-    customEvent.interactionType \= "location"
-    customEvent.interactionID \= exitEvent.zone().id
+func didExitZone(_ exitEvent: BDZoneExitEvent) {
+    **let** customEvent = CustomEvent(name:"bluedot_place_exited")
+    customEvent.interactionType = "location"
+    customEvent.interactionID = exitEvent.zone().id
     
     // Set Bluedot Zone Custom Data
-    **var** bluedotProperties \= \[String : String\]()
+    **var** bluedotProperties = [String : String]()
     exitEvent.zone().customData?.forEach { (key, value) **in**
-        bluedotProperties\[key\] \= value
+        bluedotProperties[key] = value
     }
-    bluedotProperties\["bluedot\_zone\_name"\] \= exitEvent.zone().name
+    bluedotProperties["bluedot_zone_name"] = exitEvent.zone().name
 
     // set dwell time
-    bluedotProperties\["dwell\_time"\] \= NSNumber(value: exitEvent.duration).stringValue
+    bluedotProperties["dwell_time"] = NSNumber(value: exitEvent.duration).stringValue
     // assign custom event properties
-    customEvent.properties \= bluedotProperties
+    customEvent.properties = bluedotProperties
     // Record the event in analytics
     customEvent.track()
 }
