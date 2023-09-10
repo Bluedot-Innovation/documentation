@@ -17,11 +17,11 @@ You can access Hello Screen by:
 *   **Browser**: A simple visit to the URL [https://screens.bluedot.io/](https://screens.bluedot.io/) on any compatible browser – recommend Safari or Chrome.
 *   **Native App:** Download the Hello Screen app to your Android or iOS device. Check the [Hello Screen App documentation here](./Mobile%20app.md)
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/03/hello-screen-select-region-1024x486.png)
+![](../assets/hello-screen-select-region-1024x486.png)
 
 You will be asked to choose a region. If you’re not sure which region your screen is in, [contact our Support Team](mailto:help@bluedot.io). Once selected you will be displayed your one-time-code.
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/03/hello-screen-linking-code-1024x486.png)
+![](../assets/hello-screen-linking-code-1024x486.png)
 
 The first time you visit the URL on a new device (or after a logout) you’ll need to set up the screen with your Bluedot Administrator.
 
@@ -51,7 +51,7 @@ The screen is now authenticated & linked to that destination. If you accidentall
 7.  Add in the one-time-code
 8.  Link
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/03/Hello-Screen-Link-1024x504.png)
+![](../assets/Hello-Screen-Link-1024x504.png)
 
 \*If you can’t see Hello screens in the side menu, please contact our team at [help@bluedot.io](mailto:help@bluedot.io) to enable this feature.
 
@@ -68,7 +68,7 @@ This method will generate a time-limited code that can be used to register acces
 7.  Select how long you want the generated URL to be active
 8.  Click **Generate** button
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/02/image-2.png)
+![](../assets/hello-screens-generate-linking-url.png)
 
 The link, then, can be shared and opened on multiple devices.
 
@@ -95,6 +95,6 @@ To display custom fields in Hello Screens, you’ll need to add the prefix `hs_`
 | `hs_Vehicle Color`     | `"hs_Vehicle Color": "Silver"` |
 | `hs_Pickup Bay Number` | `"hs_Pickup Bay Number": "3"`  |
 
-![Hello Screens Modal with Custom Fields](https://docs.bluedot.io/wp-content/uploads/2021/05/Screen-Shot-2021-05-26-at-10.28.00-am-1024x842.png)
+![Hello Screens Modal with Custom Fields](../assets/hello-screens-custom-fields.png)
 
 To learn more about Custom Event Meta Data check the documentation [here](../Custom%20Event%20Metadata.md).

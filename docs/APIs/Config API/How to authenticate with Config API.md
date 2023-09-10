@@ -31,28 +31,28 @@ The following steps will guide you to authenticate to our Config API
 3.  Subsequent requests to the API can be made by passing in `Bearer <accessToken>` into the request Authorization headerThis is an example of how you would get the list of Projects
   ```js
     // NODE.JS
-    const https \= require('https');
+    const https = require('https');
     
-    const options \= {
+    const options = {
       host: 'config.bluedot.io',
       path: '/prod1/projects',
       headers: { 'Authorization': 'Bearer <accessToken>' }
     };
     
-    const data \= \[\]
+    const data = []
     
-    https.get(options, (res) \=>; {
+    https.get(options, (res) =>; {
       res.setEncoding('utf8');
     
-      res.on('data', chunk \=> {
+      res.on('data', chunk => {
         data.push(chunk)
       });
     
-      res.on('error', error \=> {
+      res.on('error', error => {
         console.error(error)
       })
      
-      res.on('end', () \=> {
+      res.on('end', () => {
         console.log(data);
       })
     });

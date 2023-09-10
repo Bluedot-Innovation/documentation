@@ -42,7 +42,7 @@ Wave API uses the `projectId` to sign requests. You’ll need to add the key `x-
 "x-bluedot-api-key": "<YOUR_PROJECT_ID>"
 ```
 
-You can find your `projectId` in the [Canvas](https://docs.bluedot.io/canvas/) in the Account section.
+You can find your `projectId` in the [Canvas](../../Canvas/Overview.md) in the Account section.
 
 ### Request Payload
 

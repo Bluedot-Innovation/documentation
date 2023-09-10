@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Braze Integration
-
 Braze Integration
 =================
 
@@ -11,11 +7,18 @@ Bluedot’s location marketing platform delivers a solution 20x more accurate, w
 
 Connectivity is at the heart of this new chapter for mobile. But it’s more than just the ability to engage. It’s also about connecting to mobile users with discernment and insight. That’s what mobile engagement is about, and it’s exciting what we can now do.
 
-*   [Integration Architecture](#BrazeIntegration-Architecture)
-*   [Bluedot setup](#Bluedot-setup)
-*   [Braze setup](#Braze-setup)
-*   [Integration setup in the app](#App-setup)
-*   [Integration examples](#Integration-examples)
+- [Braze Integration](#braze-integration)
+  - [Integration architecture diagram](#integration-architecture-diagram)
+  - [Bluedot setup](#bluedot-setup)
+    - [**Creating a new Project**](#creating-a-new-project)
+    - [**Adding a Zone**](#adding-a-zone)
+  - [Braze setup](#braze-setup)
+    - [Add an App](#add-an-app)
+    - [Set up push in your App](#set-up-push-in-your-app)
+  - [Integration setup in the app](#integration-setup-in-the-app)
+    - [**Android**](#android)
+    - [**iOS**](#ios)
+  - [**Integration examples**](#integration-examples)
 
 Integration architecture diagram
 --------------------------------

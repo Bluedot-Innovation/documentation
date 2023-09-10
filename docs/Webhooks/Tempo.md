@@ -10,7 +10,7 @@ Configure a Tempo Webhook
 
 Under Your Account, choose
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/01/new-webhook-1024x563.jpg)
+![](../assets/new-webhook-1024x563.jpg)
 
 ### 2\. Add the Webhook Details
 
@@ -24,7 +24,7 @@ Under Your Account, choose
 | Body Fields (Optional)   | Add any extra parameters you’d like to be included in the body of the request.                                                                                               |
 
 
-### ![](https://docs.bluedot.io/wp-content/uploads/2022/01/tempo-webhook-example-1024x564.jpg)
+### ![](../assets/tempo-webhook-example-1024x564.jpg)
 
 ### 3\. Save
 

@@ -34,7 +34,7 @@ bluedot.wave.send("your-destination-id-here", {orderId: "order-id-here"})
 
 Example debug output:
 
-![Web SDK Debug mode example](https://docs.bluedot.io/wp-content/uploads/2021/05/8-debug-mode-1024x575.png)
+![Web SDK Debug mode example](../assets/debug-mode-1024x575.png)
 
 Configuring Location Behaviour
 ------------------------------

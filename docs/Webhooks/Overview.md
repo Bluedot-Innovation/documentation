@@ -26,22 +26,22 @@ Webhooks are configured at the Project level with a maximum of one webhook for e
 
 To set up **Webhooks**, login to Canvas and head to the **Integrations** section**.**
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot1.png)
+![](../assets/webhooks-overview-1.png)
 
 1\. In the Integrations section, choose a Project where you would like to add a Webhook and click on the Add button
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot2.png)
+![](../assets/webhooks-overview-2.png)
 
 2\. In the list of the Integrations search for the Webhooks tab and click on adding a new Webhook
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot3.png)
+![](../assets/webhooks-overview-3.png)
 
 3\. Configure Event Type, URL, Header and Body fields
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot4.png)  
+![](../assets/webhooks-overview-4.png)  
 4\. Header Fields for the standard Webhooks can be set dynamically by adding the {} in the value field. By the way, the value itself can be set and injected from the additional event-specific **[Custom Event Meta Data](../Custom%20Event%20Metadata.md)** fields. The Dynamic Webhook Headers feature will pick up that value and attach it to the Webhook outputs.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/06/Screenshot5.png)
+![](../assets/webhooks-overview-5.png)
 
 | Property | Description |
 |---|---|

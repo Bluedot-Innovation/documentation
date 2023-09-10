@@ -8,13 +8,13 @@ Configure a Geo-trigger Webhook
 
 From the Canvas Integration section, add a new Webhook and select Geo-trigger as the type in the dropdown.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/Add-New-Geo-trigger-webhook-1024x750.png)
+![](../assets/Add-New-Geo-trigger-webhook-1024x750.png)
 
 ### Additional Header and Body fields
 
 You can have additional information in either the headers or the body of the webhook’s request by adding extra fields.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/Add-extra-headers-and-body-fields-1024x647.png)
+![](../assets/Add-extra-headers-and-body-fields-1024x647.png)
 
 You can also configure a Geo-trigger Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
 

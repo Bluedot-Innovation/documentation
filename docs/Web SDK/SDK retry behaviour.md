@@ -9,4 +9,4 @@ With debugging, mode enabled every time a failed network connection is retried i
 
 Below are some example logs where a network request initially failed due to an unavailable network connection but then manages to be sent after several attempts.
 
-![WebSdk Retry](https://docs.bluedot.io/wp-content/uploads/2021/05/6-web-sdk-retry-1024x527.png)
+![WebSdk Retry](../assets/web-sdk-retry-1024x527.png)

@@ -3,7 +3,7 @@ Integrate Register endpoint
 
 Once an order has been created in your system, you can register this order in NowReady by using the Register API. The API will return a `user_token` that will be used to generate the URL that it’s going to be sent to the user to open the NowReady app.
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/08/Now-Ready-Order-Registration-1024x315.png)
+![](../assets/Now-Ready-Order-Registration-1024x315.png)
 
 How to register an order?
 -------------------------
@@ -53,21 +53,11 @@ For more information about registering an order please check the [Events API ref
 
 Register API is hosted in multiple regions worldwide to ensure the better performance of our services. Each region is completely independent and in a separated geographic area.
 
-**REGION**
-
-**URL**
-
-APAC
-
-[https://au1-events.bluedot.io/](https://au1-events.bluedot.io/hello/register)[hello/register](https://au1-events.bluedot.io/hello/register)
-
-EUROPE
-
-[https://eu1-events.bluedot.io/](https://eu1-events.bluedot.io/hello/register)[hello/register](https://eu1-events.bluedot.io/hello/register)
-
-NORTH AMERICA
-
-[https://us1-events.bluedot.io/](https://us1-events.bluedot.io/hello/register)[hello/register](https://us1-events.bluedot.io/hello/register)
+| **Region**    | **URL**                                      |
+|---------------|----------------------------------------------|
+| APAC          | https://au1-events.bluedot.io/hello/register |
+| EUROPE        | https://eu1-events.bluedot.io/hello/register |
+| NORTH AMERICA | https://us1-events.bluedot.io/hello/register |
 
 If you’re not sure which region your account is in, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
 
@@ -94,18 +84,8 @@ You just need to add the user token as the path of the Now Ready base URL.
 
 ### Now Ready URL by region
 
-**REGION**
-
-**NOW READY URL**
-
-APAC
-
-[https://au.nowready.io](https://au.nowready.io)
-
-Europe
-
-[https://eu.nowready.io](https://eu.nowready.io)
-
-North America
-
-[https://us.nowready.io](https://us.nowready.io)
+| **Region**    | **URL**                                      |
+|---------------|----------------------------------------------|
+| APAC          | https://au.nowready.io                       |
+| EUROPE        | https://eu.nowready.io                       |
+| NORTH AMERICA | https://us.nowready.io                       |

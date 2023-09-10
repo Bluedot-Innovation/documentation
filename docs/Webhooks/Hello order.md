@@ -8,7 +8,7 @@ Configure a Hello Order Webhook
 
 In the Webhooks section of your Canvas account while creating a Webhook, select Hello Order as the Event type in the dropdown.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/07/Canvas-Webhooks-Hello-Order.png)
+![](../assets/Canvas-Webhooks-Hello-Order.png)
 
 You can also configure a Hello Order Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
 

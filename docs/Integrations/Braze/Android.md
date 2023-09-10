@@ -12,7 +12,7 @@ Getting Started
 
 1\. Modify your `build.gradle` to include Braze SDK.
 
-```
+```gradle
 repositories {
 ...
     maven { 
