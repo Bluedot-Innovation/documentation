@@ -1,7 +1,7 @@
 Overview
 ======================================
 
-Bluedot React Native is a wrapper around the [Android Point SDK](https://docs.bluedot.io/android-sdk/) and [iOS Point SDK](https://docs.bluedot.io/ios-sdk/), allowing for Bluedot integration in React Native apps. Functionality is provided through one single npm package so you can use it for both platforms without downloading any extra packages
+Bluedot React Native is a wrapper around the [Android Point SDK](../Android/Overview.md) and [iOS Point SDK](../iOS/Overview.md), allowing for Bluedot integration in React Native apps. Functionality is provided through one single npm package so you can use it for both platforms without downloading any extra packages
 
 The following pages provide a guide to integrating the Point SDK with your React Native app.
 
@@ -11,7 +11,7 @@ The following pages provide a guide to integrating the Point SDK with your React
 *   [Events list](./Events%20List.md)
 *   [SDK features](./Features.md)
 
-Refer to the [Bluedot Canvas User Guide](https://docs.bluedot.io/canvas/) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
+Refer to the [Bluedot Canvas User Guide](../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 
 Resources
 ---------

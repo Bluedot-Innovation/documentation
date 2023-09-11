@@ -1,8 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Attentive Integration](https://docs.bluedot.io/integrations/attentive-integration/)
-4.  Attentive Curbside Experience
-
 Attentive Curbside Experience
 =============================
 
@@ -20,18 +15,18 @@ You can register orders from one of our Order Management partners (I.E., Olo) or
 Create your Journeys to send messages
 -------------------------------------
 
-Once you’ve installed the Attentive & Bluedot integration, you can start creating Journeys to send SMS with the [Now Ready](https://docs.bluedot.io/now-ready/) link. 
+Once you’ve installed the Attentive & Bluedot integration, you can start creating Journeys to send SMS with the [Now Ready](../../Now%20Ready/Overview.md) link. 
 
 1\. Create a new Journey and select the “Start from scratch” option.
 
-![Create a new Journey in Attentive](https://docs.bluedot.io/wp-content/uploads/2022/05/Attentive_create_new_journey-1024x745.png)
+![Create a new Journey in Attentive](../../assets/Attentive_create_new_journey-1024x745.png)
 
 2\. Select the _Bluedot Order Ready_ custom event.
 
-![Attentive choose journey trigger](https://docs.bluedot.io/wp-content/uploads/2022/05/attentive_choose_attentive_trigger-1024x722.png)
+![Attentive choose journey trigger](../../assets/attentive_choose_attentive_trigger-1024x722.png)
 
 3\. Add a “Send text message” option and edit the content of the message.  
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/attentive_send_message_content-994x1024.png)
+![](../../assets/attentive_send_message_content-994x1024.png)
 
 Custom Properties
 -----------------

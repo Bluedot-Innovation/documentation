@@ -10,7 +10,7 @@ Connectivity is at the heart of this chapter for mobile. But it’s more than ju
 Integration architecture
 ------------------------
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/01/Bluedot-Airship-Architecture-Diagram.jpg)
+![](../../assets/Bluedot-Airship-Architecture-Diagram.jpg)
 
 Airship Setup
 -------------
@@ -24,11 +24,11 @@ Bluedot setup
 
 ### Creating a new Project
 
-Creating a Project is your first step. All your Zones and all geofeatures exist within a Project. More information on adding and managing Bluedot Canvas project can be found [here](https://docs.bluedot.io/canvas/creating-a-new-project/).
+Creating a Project is your first step. All your Zones and all geofeatures exist within a Project. More information on adding and managing Bluedot Canvas project can be found [here](../../Canvas/Creating%20a%20new%20project.md).
 
 ### Adding a Zone
 
-You’ll need to create a Zone before you can start adding in specific Geofeatures. Each Zone can have one or many Geofeatures – that’s up to you and your use-case. More information on adding and managing Zones can be found [here](https://docs.bluedot.io/canvas/add-a-new-zone/).
+You’ll need to create a Zone before you can start adding in specific Geofeatures. Each Zone can have one or many Geofeatures – that’s up to you and your use-case. More information on adding and managing Zones can be found [here](../../Canvas/Add%20a%20new%20zone.md).
 
 :::info
 The Zone name, Zone ID or a combination of both can be used as an event to be registered to Airship for triggering an Automation. Provide a descriptive name and possibly adopt a naming convention for the Zone name field.

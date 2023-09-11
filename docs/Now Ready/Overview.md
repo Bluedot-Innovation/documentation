@@ -7,7 +7,7 @@ Overview
 
 You don’t have a mobile app to integrate the Bluedot Point SDK and/or don’t have resources to the Wave API to power Curbside.
 
-We present Now Ready which is built using [Bluedot Javascript SDK](https://docs.bluedot.io/web-sdk/). Now Ready is a white label version of Customer pickup screens. You can apply your branding to the screens and provide a quick solution to power your curbside use case.
+We present Now Ready which is built using [Bluedot Javascript SDK](../Web%20SDK/Overview.md). Now Ready is a white label version of Customer pickup screens. You can apply your branding to the screens and provide a quick solution to power your curbside use case.
 
 Architecture & User flow
 ------------------------

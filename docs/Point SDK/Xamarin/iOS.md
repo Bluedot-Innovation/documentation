@@ -33,7 +33,7 @@ Step 2: Add Bluedot.PointSDK.iOS package
 
 Right click on Packages folder, select ‘_Add Packages…_‘. In the search box type Bluedot.
 
-![](https://docs.bluedot.io/wp-content/uploads/2018/09/Screen-Shot-2018-09-21-at-2.14.23-pm-1024x678.png)
+![](../../assets/Xamarin-ios-nugget.png)
 
 * * *
 

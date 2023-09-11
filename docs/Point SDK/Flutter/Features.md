@@ -11,7 +11,7 @@ Features
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/)
+Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Event%20Metadata.md)
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
@@ -32,7 +32,7 @@ BluedotPointSdk.instance.setCustomEventMetaData(metadata);
 Enable / Disable Zones
 ----------------------
 
-An app may optionally disable (and later re-enable) Zones by calling `setZoneDisableByApplication`. For further information refer to Enable or disable Zones documentation ([Android](https://docs.bluedot.io/android-sdk/android-features/android-features-enable-or-disable-zones/) | [iOS](https://docs.bluedot.io/ios-sdk/ios-features/enable-or-disable-zone/)) 
+An app may optionally disable (and later re-enable) Zones by calling `setZoneDisableByApplication`. For further information refer to Enable or disable Zones documentation ([Android](../Android/Features/Enable%20or%20disable%20zones.md) | [iOS](../iOS/Features/Enable%20or%20disable%20zones.md)) 
 
 ```dart
 const zoneIdToDisable = "your_zone_id";
@@ -46,7 +46,7 @@ Android Features
 
 ### Foreground Notification
 
-Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](https://docs.bluedot.io/android-sdk/android-location-permission-notifications-best-practices/)
+Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md)
 
 The Foreground Notification method (`androidNotification`) is included in the `GeoTriggeringBuilder` and the `TempoBuilder` classes. It should be set up before starting any of the Geo-triggering or Tempo services as below.
 
@@ -103,7 +103,7 @@ The background location usage indicator (Blue Bar) is an iOS feature that allows
 
 The background location usage indicator will be displayed as a blue pill or bar at the top of the screen – either behind the clock or across the status bar (the event display changes between iPhone models). This notification lets the user know that an app is accessing location data.
 
-![iOS Blue Bar](https://docs.bluedot.io/wp-content/uploads/2020/10/ios-blue-bar-300x229.jpg)
+![iOS Blue Bar](../../assets/ios-blue-bar-300x229.jpg)
 
 
 :::info

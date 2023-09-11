@@ -1,7 +1,7 @@
 Create your Destination(s)
 ==========================
 
-To create a Destination, you’ll need to have an active user and a Bluedot Account. Your Bluedot administrator can easily grant you access ([instructions](https://bluedotinnovation.zendesk.com/hc/en-us/articles/360001277496-Inviting-your-team-to-Canvas) [here](https://bluedotinnovation.zendesk.com/hc/en-us/articles/360001277496-Inviting-your-team-to-Canvas)) or you can contact our team – help@bluedot.io. Your user credentials are used to log into the [Canvas dashboard](https://docs.bluedot.io/canvas/) and also authenticate with [Config API](https://docs.bluedot.io/config-api/). 
+To create a Destination, you’ll need to have an active user and a Bluedot Account. Your Bluedot administrator can easily grant you access or you can contact our team – help@bluedot.io. Your user credentials are used to log into the [Canvas dashboard](../Canvas/Overview.md) and also authenticate with [Config API](../APIs/Config%20API/Overview.md). 
 
 Creating a Destination
 ----------------------
@@ -15,9 +15,9 @@ There are 2 simple steps:
 
 ### 1\. Store creation
 
-From the “Stores” section, fill out the “Add a New Store” form. In the form, you’ll have to input the Destination ID for the store. We recommend using an ID that makes sense for your brand and/or systems. Check the [Store Management documentation](https://docs.bluedot.io/canvas/store-management/) for more details.
+From the “Stores” section, fill out the “Add a New Store” form. In the form, you’ll have to input the Destination ID for the store. We recommend using an ID that makes sense for your brand and/or systems. Check the [Store Management documentation](../Canvas/Store%20management.md) for more details.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/09/store-management-3-570x1024.png)
+![](../assets/store-management-3.png)
 
 ### 2\. Zone creation
 
@@ -25,13 +25,13 @@ Once you’ve created the store, click on Add new Zone and create a geofence –
 
 You can also update the name of the Zone and geofence – both of these details will be included in Tempo Webhook updates.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/01/Create-zone-1024x697.jpg)
+![](../assets/Create-zone-1024x697.jpg)
 
 ### 3\. Save
 
 Close Zone Settings and click the Create/Update button. The Zone is ready, and the isochrones for it will be generated in the Bluedot backend. It takes from 30 seconds to 1 minute for the isochrones to be generated.
 
-If you’d like to link a Zone to a Store (A.K.A Destination) using [Config API](https://docs.bluedot.io/config-api/), you’ll use the following /Endpoints;
+If you’d like to link a Zone to a Store (A.K.A Destination) using [Config API](../APIs/Config%20API/Overview.md), you’ll use the following /Endpoints;
 
 **Endpoint**
 
@@ -44,7 +44,8 @@ When linking a Zone to a Store you’ll have to pass the Destination ID of the S
 Endpoint: `https://config.bluedot.io/prod1/zones`
 
 Example of adding a Destination Id:
-
+```json
 { 
-    "destinationId": "<store\_destination\_id\_goes\_here>" 
+    "destinationId": "<store_destination_id_goes_here>" 
 }
+```

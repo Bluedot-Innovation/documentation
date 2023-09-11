@@ -6,14 +6,14 @@ This integration brings together the power of location-based technology and pers
 Location-based Messages
 -----------------------
 
-Send targeted, location-based SMS messages to your customers. You can use this feature to send notifications about new deals or offers when a customer enters a specific store or to send surveys as soon as the customer leaves the geofenced area. For more information, check the [Attentive’s Location-based Messages documentation.](https://docs.bluedot.io/integrations/attentive-integration/location-based-messages/)
+Send targeted, location-based SMS messages to your customers. You can use this feature to send notifications about new deals or offers when a customer enters a specific store or to send surveys as soon as the customer leaves the geofenced area. For more information, check the [Attentive’s Location-based Messages documentation.](./Location-based%20messages.md)
 
 Curbside Experience wi Now Ready
 --------------------------------
 
-Send an SMS with a link to access [Now Ready](https://docs.bluedot.io/now-ready/) – our web-based curbside experience. Implement a curbside solution that enables SMS messaging and updates during the order pickup journey. With Bluedot [Hello Screens](https://docs.bluedot.io/hello-screens/), store staff are updated in real-time on impending customer arrival.
+Send an SMS with a link to access [Now Ready](../../Now%20Ready/Overview.md) – our web-based curbside experience. Implement a curbside solution that enables SMS messaging and updates during the order pickup journey. With Bluedot [Hello Screens](../../Hello%20Screens/Overview.md), store staff are updated in real-time on impending customer arrival.
 
-For more information check the [Attentive – Bluedot Curbside Experience documentation.](https://docs.bluedot.io/integrations/attentive-integration/curbside-experience/)
+For more information check the [Attentive – Bluedot Curbside Experience documentation.](./Curbside%20experience.md)
 
 How does it work?
 -----------------

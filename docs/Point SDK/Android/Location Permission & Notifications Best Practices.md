@@ -6,13 +6,13 @@ Location permissions
 
 Prior to starting any Bluedot Services (Geo-triggering or Tempo), the app must request and be granted location permission. When requesting location permission it is important to make the request in context and convey the value the user will be gaining from granting the permission.
 
-For apps targeted Android 11 and lower, only [ACCESS\_FINE\_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) permission needs to be requested and granted.
+For apps targeted Android 11 and lower, only [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) permission needs to be requested and granted.
 
-When targeting Android 12 and onwards the app must request both [approximate location](https://developer.android.com/training/location/permissions#request-location-access-runtime) and [precise location](https://developer.android.com/training/location/permissions#accuracy). The app should request [ACCESS\_COARSE\_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_COARSE_LOCATION) and [ACCESS\_FINE\_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION).
+When targeting Android 12 and onwards the app must request both [approximate location](https://developer.android.com/training/location/permissions#request-location-access-runtime) and [precise location](https://developer.android.com/training/location/permissions#accuracy). The app should request [ACCESS_COARSE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_COARSE_LOCATION) and [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION).
 
 The user may choose to grant access to either approximate or precise as shown below:
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/12/FlR1TT9c-146x300.png)
+![](../../assets/FlR1TT9c-146x300.png)
 
 If the app has not been granted permission to access precise location data the Geo-triggering and Tempo services will not start, and the start method will return a [LocationPermissionNotGrantedError](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point/-location-permission-not-granted-error/index.html). To ensure the location permission has been granted, it is important to implement the permission checking and requesting process prior to any attempt to start a Bluedot service.
 

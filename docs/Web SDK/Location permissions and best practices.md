@@ -23,6 +23,6 @@ Most users are distrustful of sites that simply show a prompt to give location a
 
 Below is an example of requesting location from the user.
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/05/location-permission.png)
+![](../assets/location-permission.png)
 
 [Resource](https://developers.google.com/web/fundamentals/native-hardware/user-location) on how to handle user location on the web.

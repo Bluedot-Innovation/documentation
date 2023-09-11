@@ -27,35 +27,35 @@ Braze supports a few push providers: FCM, GCM, ADM. We recommend using Firebase.
 
 implementation "com.appboy:android-sdk-ui:+"
 
-3\. Create appboy.xml under the res folder and add the following code. Create a Braze Android App and get the API key and replace it in the “REPLACE\_WITH\_YOUR\_API\_KEY”. Also, replace the “YOUR\_CUSTOM\_ENDPOINT\_OR\_CLUSTER” with the custom endpoint from Braze.
+3\. Create `appboy.xml` under the res folder and add the following code. Create a Braze Android App and get the API key and replace it in the `“REPLACE_WITH_YOUR_API_KEY”`. Also, replace the `“YOUR_CUSTOM_ENDPOINT_OR_CLUSTER”` with the custom endpoint from Braze.
 
-```
-<?xml version\="1.0" encoding\="utf-8"?>
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name\="com\_appboy\_api\_key"\>REPLACE\_WITH\_YOUR\_API\_KEY</string>
-    <string translatable\="false" name\="com\_appboy\_custom\_endpoint"\>YOUR\_CUSTOM\_ENDPOINT\_OR\_CLUSTER</string>
-    <bool translatable\="false" name\="com\_appboy\_firebase\_cloud\_messaging\_registration\_enabled"\>true</bool>
-    <string translatable\="false" name\="com\_appboy\_firebase\_cloud\_messaging\_sender\_id"\>your\_fcm\_sender\_id\_here</string>
-    <integer name\="com\_appboy\_default\_notification\_accent\_color"\>0xFFf33e3e</integer>
-    <bool name\="com\_appboy\_handle\_push\_deep\_links\_automatically"\>true</bool>
+    <string name="com_appboy_api_key">REPLACE_WITH_YOUR_API_KEY</string>
+    <string translatable="false" name="com_appboy_custom_endpoint">YOUR_CUSTOM_ENDPOINT_OR_CLUSTER</string>
+    <bool translatable="false" name="com_appboy_firebase_cloud_messaging_registration_enabled">true</bool>
+    <string translatable="false" name="com_appboy_firebase_cloud_messaging_sender_id">your_fcm_sender_id_here</string>
+    <integer name="com_appboy_default_notification_accent_color">0xFFf33e3e</integer>
+    <bool name="com_appboy_handle_push_deep_links_automatically">true</bool>
 </resources>
 ```
 
-4\. In the AndroidManifest.xml add the following:  
+4\. In the `AndroidManifest.xml` add the following:  
 a. The following permissions are required.
 
-```
-<uses-permission android:name\="android.permission.ACCESS\_FINE\_LOCATION" />
-<uses-permission android:name\="android.permission.INTERNET" />
-<uses-permission android:name\="android.permission.ACCESS\_NETWORK\_STATE" />
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
 b. The following braze service should be included to handle push receipt and open intents.
 
-```
-<service android:name\="com.appboy.AppboyFirebaseMessagingService"\>
+```xml
+<service android:name="com.appboy.AppboyFirebaseMessagingService">
     <intent-filter>
-        <action android:name\="com.google.firebase.MESSAGING\_EVENT" />
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
     </intent-filter>
 </service>
 ```
@@ -70,23 +70,23 @@ Interaction between Braze SDK and Bluedot Point SDK
 
 1\. We need to ask the user to give permission to use the location services. To do that, create a RequestPermissionActivity.kt and then add the below code.
 
-```
-internal val PERMISSION\_REQUEST\_CODE \= 1
+```java
+internal val PERMISSION_REQUEST_CODE = 1
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
     //Request permission required for location
     ActivityCompat.requestPermissions(
         this,
-        arrayOf(Manifest.permission.ACCESS\_COARSE\_LOCATION, Manifest.permission.ACCESS\_FINE\_LOCATION),
-        PERMISSION\_REQUEST\_CODE
+        arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION),
+        PERMISSION_REQUEST_CODE
     )
 }
 
 override fun onRequestPermissionsResult(requestCode: Int, permissions: Array, grantResults: IntArray) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     when (requestCode) {
-        PERMISSION\_REQUEST\_CODE \-> if (grantResults.size \> 0 && grantResults\[0\] \== PackageManager.PERMISSION\_GRANTED) {
+        PERMISSION_REQUEST_CODE -> if (grantResults.size > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             (application as MainApplication).initPointSDK()
 
         } else {
@@ -100,12 +100,12 @@ override fun onRequestPermissionsResult(requestCode: Int, permissions: Array, gr
 
 2\. We then create another class which will implements Bluedot InitializationResultListener and upon SDK initialisation, calls Braze’s changeUser API. To do that create MainApplication.kt class and add the below code.
 
-```
+```java
 class MainApplication : Application(), InitializationResultListener {
 
     private lateinit var mServiceManager: ServiceManager
     
-    private val projectId \= Bluedot Project Id for the App 
+    private val projectId \= Bluedot Project Id for the App
 
     override fun onCreate() {
         super.onCreate()
@@ -135,6 +135,7 @@ class MainApplication : Application(), InitializationResultListener {
         intent.flags \= Intent.FLAG\_ACTIVITY\_NEW\_TASK
         startActivity(intent)
     }
+}    
 ```
 
 This method is called when BlueDotPointService started successfully, your app logic code using the Bluedot service could start from here. Replace “YOUR\_BRAZE\_USER\_ACCOUNT” with the Braze user account.

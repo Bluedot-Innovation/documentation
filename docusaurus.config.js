@@ -68,17 +68,6 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Documentation',
-                to: '/docs/intro',
-              },
-            ],
-          }
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} Bluedot.`,
       },
       prism: {

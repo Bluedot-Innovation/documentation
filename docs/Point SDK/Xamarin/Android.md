@@ -35,7 +35,7 @@ Step 2: Add Bluedot.PointSDK.Android package
 
 1\. Right-click on Packages folder, select ‘_Add Packages…_‘. In the search box type Bluedot.
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/02/Screen-Shot-2021-02-04-at-2.21.38-pm-300x197.png)
+![](../../assets/Screen-Shot-2021-02-04-at-2.21.38-pm-300x197.png)
 
 * * *
 
@@ -137,7 +137,7 @@ public class BluedotErrorReceiver : BluedotServiceReceiver
 }
 ```
 
-4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](https://docs.bluedot.io/custom-event-metadata/).
+4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](../../Custom%20Event%20Metadata.md).
 
 ```csharp
 namespace appname

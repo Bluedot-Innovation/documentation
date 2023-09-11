@@ -1,8 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Attentive Integration](https://docs.bluedot.io/integrations/attentive-integration/)
-4.  Attentive location-based messages
-
 Attentive location-based messages
 =================================
 
@@ -24,17 +19,17 @@ You can install the integration either from Attentive’s marketplace or from Ca
 
 From Attentive’s market place search for Bluedot and follow the steps to install the app.
 
-![Attentive marketplace Install Bluedot Integration](https://docs.bluedot.io/wp-content/uploads/2022/05/Attentive-marketplace-bluedot-integration-1024x529.png)
+![Attentive marketplace Install Bluedot Integration](../../assets/Attentive-marketplace-bluedot-integration-1024x529.png)
 
 ### From Canvas Integrations
 
 From Canvas, go to the Integrations section and select Attentive click on the “_Enable_ _Attentive Integration_” button and then follow the steps to complete the integration.
 
-![Install the Attentive integration from Canvas](https://docs.bluedot.io/wp-content/uploads/2022/05/attentive_integration_from_canvas-1024x649.png)
+![Install the Attentive integration from Canvas](../../assets/attentive_integration_from_canvas-1024x649.png)
 
 ### Authorizing the Integration
 
-![Authorize the Attentive & Bluedot integration](https://docs.bluedot.io/wp-content/uploads/2022/05/Authorize_the_attentive__bluedot_integration-1024x1020.png)
+![Authorize the Attentive & Bluedot integration](../../assets/Authorize_the_attentive__bluedot_integration-1024x1020.png)
 
 If you are installing the integration from Attentive’s Market place, you’ll need to select the region where your Bluedot account is. If you’re not sure what is the region of your account let us know at [help@bluedot.io](mailto:help@bluedot.io).
 

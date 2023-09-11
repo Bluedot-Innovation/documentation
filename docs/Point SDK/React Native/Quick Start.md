@@ -26,7 +26,7 @@ $ cd ios
 $ pod install
 ```
 
-Make sure to update the `info.plist` file within the ios folder. For further information please refer to the section **Update your `info.plist` file** in the [iOS Quick Start Guide](https://docs.bluedot.io/ios-sdk/ios-quick-start/)
+Make sure to update the `info.plist` file within the ios folder. For further information please refer to the section **Update your `info.plist` file** in the [iOS Quick Start Guide](../iOS/Quick%20Start.md)
 
 3\. Android: Update the build.gradle file
 -----------------------------------------

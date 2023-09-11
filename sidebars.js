@@ -32,7 +32,6 @@ const sidebars = {
               label: "Features",
               items: [
                 "Point SDK/Android/Features/Enable or disable zones",
-                "Point SDK/Android/Features/Real-time data sync",
               ],
             },
             "Point SDK/Android/Location Permission & Notifications Best Practices",
@@ -162,7 +161,18 @@ const sidebars = {
         "Now Ready/Integrate register endpoint",
       ],
     },
-     {
+    {
+      type: "category",
+      label: "Tempo",
+      items: [
+        "Tempo/Overview",
+        "Tempo/Integrate the Point SDK in your app",
+        "Tempo/Isochrone time brackets",
+        "Tempo/Create your destinations",
+        "Tempo/Configure a Tempo webhook"
+      ]
+    },
+    {
       type: "category",
       label: "APIs",
       items: [

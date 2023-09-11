@@ -3,9 +3,9 @@ Configure Tempo isochrone time brackets
 
 An isochrone is a time-based map & geofence, showing how far a customer can travel (Eg. to get to your restaurant) in a certain number of minutes. It will usually look something like this:
 
-![](https://docs.bluedot.io/wp-content/uploads/2020/12/Screen-Shot-2020-12-04-at-2.32.10-pm-1024x664.png)
+![](../assets/tempo-isochrone-example.png)
 
-In Tempo, isochrones help calculate a customer’s estimated-time-of-arrival (ETA) to their pick-up location (aka Destination). By default, for every  [Destination you create](https://docs.bluedot.io/tempo/create-your-destinations/), Tempo automatically builds 5 time-brackets to send ETA notifications at intervals or 15, 10, 5, 2 and 1 minute.
+In Tempo, isochrones help calculate a customer’s estimated-time-of-arrival (ETA) to their pick-up location (aka Destination). By default, for every  [Destination you create](../Tempo/Create%20your%20destinations.md), Tempo automatically builds 5 time-brackets to send ETA notifications at intervals or 15, 10, 5, 2 and 1 minute.
 
 With Tempo, you can choose:
 
