@@ -19,7 +19,7 @@ This documentation depends on BluedotPointSDK and Appboy-iOS-SDK. Both dependenc
 Integrate your project with Bluedot Point SDK
 ---------------------------------------------
 
-You can find detailed instructions at [https://docs.bluedot.io/ios-sdk/ios-quick-start](https://docs.bluedot.io/ios-sdk/ios-quick-start/)
+You can find detailed instructions [here](../../Point%20SDK/iOS/Quick%20Start.md)
 
 1.  Import BDPointSDK to your class:`import BDPointSDK`
 2.  Implement Bluedot [`BDPGeoTriggeringEventDelegate`](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html):

@@ -1,12 +1,6 @@
 Android Integration
 =========================
 
-### Table of Contents
-
-*   Getting Started
-*   Integrate Bluedot Point SDK in your Project
-*   Interaction between Braze SDK and Bluedot Point SDK
-
 Getting Started
 ---------------
 
@@ -23,9 +17,10 @@ repositories {
 
 Braze supports a few push providers: FCM, GCM, ADM. We recommend using Firebase. However, you can choose other.
 
-2. In the app gradle add
-
+2\. In the app gradle add
+```gradle
 implementation "com.appboy:android-sdk-ui:+"
+```
 
 3\. Create `appboy.xml` under the res folder and add the following code. Create a Braze Android App and get the API key and replace it in the `“REPLACE_WITH_YOUR_API_KEY”`. Also, replace the `“YOUR_CUSTOM_ENDPOINT_OR_CLUSTER”` with the custom endpoint from Braze.
 
@@ -63,14 +58,14 @@ b. The following braze service should be included to handle push receipt and ope
 Integrate Bluedot Point SDK in your Project
 -------------------------------------------
 
-To integrate Bluedot Point SDK in your project, please click [here](https://docs.bluedot.io/android-sdk/android-project-setup/)
+To integrate Bluedot Point SDK in your project, please click [here](../../Point%20SDK/Android/Quick%20Start.md)
 
 Interaction between Braze SDK and Bluedot Point SDK
 ---------------------------------------------------
 
-1\. We need to ask the user to give permission to use the location services. To do that, create a RequestPermissionActivity.kt and then add the below code.
+1\. We need to ask the user to give permission to use the location services. To do that, create a `RequestPermissionActivity.kt` and then add the below code.
 
-```java
+```kotlin
 internal val PERMISSION_REQUEST_CODE = 1
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -98,14 +93,14 @@ override fun onRequestPermissionsResult(requestCode: Int, permissions: Array, gr
 }
 ```
 
-2\. We then create another class which will implements Bluedot InitializationResultListener and upon SDK initialisation, calls Braze’s changeUser API. To do that create MainApplication.kt class and add the below code.
+2\. We then create another class which will implements Bluedot `InitializationResultListener` and upon SDK initialisation, calls Braze’s changeUser API. To do that create `MainApplication.kt` class and add the below code.
 
-```java
+```kotlin
 class MainApplication : Application(), InitializationResultListener {
 
     private lateinit var mServiceManager: ServiceManager
     
-    private val projectId \= Bluedot Project Id for the App
+    private val projectId = Bluedot Project Id for the App
 
     override fun onCreate() {
         super.onCreate()
@@ -117,11 +112,11 @@ class MainApplication : Application(), InitializationResultListener {
     }
 
     fun initPointSDK() {
-        val checkPermissionFine \= 
-            ActivityCompat.checkSelfPermission( applicationContext, Manifest.permission.ACCESS\_FINE\_LOCATION ) 
+        val checkPermissionFine = 
+            ActivityCompat.checkSelfPermission( applicationContext, Manifest.permission.ACCESS_FINE_LOCATION ) 
 
-        if (checkPermissionFine \== PackageManager.PERMISSION\_GRANTED) { 
-            mServiceManager \= ServiceManager.getInstance(this) 
+        if (checkPermissionFine == PackageManager.PERMISSION_GRANTED) { 
+            mServiceManager = ServiceManager.getInstance(this) 
             if (!mServiceManager.isBluedotServiceInitialized) { 
                 mServiceManager.initialize(projectId, this) 
             } 
@@ -131,14 +126,14 @@ class MainApplication : Application(), InitializationResultListener {
     }
 
     private fun requestPermissions() {
-        val intent \= Intent(applicationContext, RequestPermissionActivity::class.java)
-        intent.flags \= Intent.FLAG\_ACTIVITY\_NEW\_TASK
+        val intent = Intent(applicationContext, RequestPermissionActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }
 }    
 ```
 
-This method is called when BlueDotPointService started successfully, your app logic code using the Bluedot service could start from here. Replace “YOUR\_BRAZE\_USER\_ACCOUNT” with the Braze user account.
+This method is called when BlueDotPointService started successfully, your app logic code using the Bluedot service could start from here. Replace “YOUR_BRAZE_USER_ACCOUNT” with the Braze user account.
 
 ```
     override fun onInitializationFinished(error: BDError?) {
@@ -146,35 +141,35 @@ This method is called when BlueDotPointService started successfully, your app lo
             Toast.makeText(
                 applicationContext,
                 "Bluedot Point SDK initialization error: ${error.reason}",
-                Toast.LENGTH\_LONG
+                Toast.LENGTH_LONG
             ).show()
             return
         }
 
-        Appboy.getInstance(this).changeUser(YOUR\_BRAZE\_USER\_ACCOUNT)
+        Appboy.getInstance(this).changeUser(YOUR_BRAZE_USER_ACCOUNT)
         println("Bluedot Point SDK authenticated")
     }
 ```
 
-3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the Braze API. To do that create BluedotGeoTriggerReceiver.kt class and add the below code.
+3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the Braze API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
 
-```
+```kotlin
 class BluedotGeoTriggerReceiver: GeoTriggeringEventReceiver() {
-    private val customEventEntry \= YOUR CUSTOM ENTRY EVENT NAME
-    private val customEventExit \=YOUR CUSTOM EXIT EVENT NAME
+    private val customEventEntry = YOUR CUSTOM ENTRY EVENT NAME
+    private val customEventExit =YOUR CUSTOM EXIT EVENT NAME
 
     override fun onZoneEntryEvent(entryEvent: ZoneEntryEvent, context: Context) {
         println("Zone ${entryEvent.zoneInfo.zoneName}, fence ${entryEvent.fenceInfo.name} entered at: ${Date()}")
 
-        val eventProperties \= AppboyProperties()
-        eventProperties.addProperty("zone\_id", entryEvent.zoneInfo.zoneId)
-        eventProperties.addProperty("zone\_name", entryEvent.zoneInfo.zoneName)
+        val eventProperties = AppboyProperties()
+        eventProperties.addProperty("zone_id", entryEvent.zoneInfo.zoneId)
+        eventProperties.addProperty("zone_name", entryEvent.zoneInfo.zoneName)
         eventProperties.addProperty("latitude", entryEvent.locationInfo.latitude)
         eventProperties.addProperty("longitude", entryEvent.locationInfo.longitude)
-        eventProperties.addProperty("fence\_id", entryEvent.fenceInfo.id)
-        eventProperties.addProperty("fence\_name", entryEvent.fenceInfo.name)
+        eventProperties.addProperty("fence_id", entryEvent.fenceInfo.id)
+        eventProperties.addProperty("fence_name", entryEvent.fenceInfo.name)
 
-        entryEvent.zoneInfo.getCustomData()?.forEach { data \->
+        entryEvent.zoneInfo.getCustomData()?.forEach { data ->
             eventProperties.addProperty(data.key, data.value)
         }
 
@@ -184,22 +179,22 @@ class BluedotGeoTriggerReceiver: GeoTriggeringEventReceiver() {
     override fun onZoneExitEvent(exitEvent: ZoneExitEvent, context: Context) {
         println("Zone ${exitEvent.zoneInfo.zoneName}, fence ${exitEvent.fenceInfo.name} exited at: ${Date()}")
 
-        val eventProperties \= AppboyProperties()
-        eventProperties.addProperty("zone\_id", exitEvent.zoneInfo.zoneId)
-        eventProperties.addProperty("zone\_name", exitEvent.zoneInfo.zoneName)
+        val eventProperties = AppboyProperties()
+        eventProperties.addProperty("zone_id", exitEvent.zoneInfo.zoneId)
+        eventProperties.addProperty("zone_name", exitEvent.zoneInfo.zoneName)
         eventProperties.addProperty("dwellTime", exitEvent.dwellTime)
-        eventProperties.addProperty("fence\_id", exitEvent.fenceInfo.id)
-        eventProperties.addProperty("fence\_name", exitEvent.fenceInfo.name)
+        eventProperties.addProperty("fence_id", exitEvent.fenceInfo.id)
+        eventProperties.addProperty("fence_name", exitEvent.fenceInfo.name)
 
-        exitEvent.zoneInfo.getCustomData()?.forEach { data \->
+        exitEvent.zoneInfo.getCustomData()?.forEach { data ->
             eventProperties.addProperty(data.key, data.value)
         }
 
         Appboy.getInstance(context).logCustomEvent(customEventExit, eventProperties)
     }
 
-    override fun onZoneInfoUpdate(zones: List<ZoneInfo\>, context: Context) {
-        println("Zones updated at: ${Date()} \\nZoneInfos count: ${zones.count()}")
+    override fun onZoneInfoUpdate(zones: List<ZoneInfo>, context: Context) {
+        println("Zones updated at: ${Date()} \nZoneInfos count: ${zones.count()}")
     }
 }
 ```
