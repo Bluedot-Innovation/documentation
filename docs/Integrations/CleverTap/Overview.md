@@ -11,18 +11,18 @@ CleverTap enables mobile marketers to analyze, segment, engage, and measure thei
 **Integration architecture diagram**
 ------------------------------------
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/06/Bluedot-CleverTap-System-Architecture-1024x576.png)
+![](../../assets/Bluedot-CleverTap-System-Architecture-1024x576.png)
 
 **Bluedot setup**
 -----------------
 
 ### Creating a new Project
 
-Creating a Project is your first step. All your Zones and all geofeatures exist within a Project. More information on adding and managing the Bluedot Canvas project can be found [here](https://docs.bluedot.io/canvas/creating-a-new-project/).
+Creating a Project is your first step. All your Zones and all geofeatures exist within a Project. More information on adding and managing the Bluedot Canvas project can be found [here](../../Canvas/Creating%20a%20new%20project.md).
 
 ### Adding a Zone
 
-You’ll need to create a Zone before you can start adding in specific Geofeatures. Each Zone can have one or many Geofeatures – that’s up to you and your use-case. More information on adding and managing Zones can be found [here](https://docs.bluedot.io/canvas/add-a-new-zone/).
+You’ll need to create a Zone before you can start adding in specific Geofeatures. Each Zone can have one or many Geofeatures – that’s up to you and your use-case. More information on adding and managing Zones can be found [here](../../Canvas/Add%20a%20new%20zone.md).
 
 **CleverTap setup**
 -------------------
@@ -31,13 +31,13 @@ We use custom events to trigger Campaigns in CleverTap. Once you follow the step
 
 #### **Setting up a CleverTap journey powered by Bluedot**
 
-![ClerverTap journery](https://docs.bluedot.io/wp-content/uploads/2020/02/CT-Action.png)
+![ClerverTap journery](../../assets/CT-Action.png)
 
 To set up a CleverTap journey triggered by a user entering or exiting a location, drag and drop an “Action” into the entry criteria field. Once the entry criteria look like the image above, click it and fill out the basic requirements for the journey. In the second section, select “+ Create an ad-hoc segment”.  
-![Create a segment](https://docs.bluedot.io/wp-content/uploads/2020/02/CT-Events.png)
+![Create a segment](../../assets/CT-Events.png)
 
-Here, you can select the bluedot\_place\_entered or bluedot\_place\_exited events as the triggering event, and add filters to specify under which circumstances a journey should be triggered (in the above example, when the a\_custom\_field attribute equals with\_custom\_data, which might be populated from Bluedot zone custom data).  
-![Create a build](https://docs.bluedot.io/wp-content/uploads/2020/02/CT-Builds.png)
+Here, you can select the `bluedot_place_entered` or `bluedot_place_exited` events as the triggering event, and add filters to specify under which circumstances a journey should be triggered (in the above example, when the `a_custom_field attribute` equals `with_custom_data`, which might be populated from Bluedot zone custom data).  
+![Create a build](../../assets/CT-Builds.png)
 
 Once the action entry criteria is setup, standard CleverTap behaviors can be defined, all triggered by the user’s interaction with a physical location.
 
@@ -46,12 +46,12 @@ More information on CleverTap Journeys can be found [here](https://docs.cleverta
 **Integrating SDK to Android App**
 ----------------------------------
 
-A detailed step by step guideline is available [here](https://docs.bluedot.io/integrations/clevertap-integration/clevertap-android-integration/https://docs.bluedot.io/integrations/clevertap-integration/clevertap-android-integration/).
+A detailed step by step guideline is available [here](./Android.md).
 
 **Integrating SDK to iOS App**
 ------------------------------
 
-A detailed step by step guideline is available [here](https://docs.bluedot.io/integrations/clevertap-integration/clevertap-ios-integration/).
+A detailed step by step guideline is available [here](./iOS.md).
 
 **Integration examples**
 ------------------------

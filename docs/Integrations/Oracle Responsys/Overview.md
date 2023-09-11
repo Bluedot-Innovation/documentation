@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Oracle Responsys Integration
-
 Oracle Responsys Integration
 ============================
 
@@ -13,7 +9,7 @@ The Bluedot SDK integration with Oracle Responsys Mobile App Platform Cloud Serv
 Integration system architecture
 -------------------------------
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/06/Bluedot-Oracle-System-Architecture-1024x576.png)
+![](../../assets/Bluedot-Oracle-System-Architecture-1024x576.png)
 -------------------------------------------------------------------------------------------------------
 
 Integration prerequisite
@@ -29,9 +25,9 @@ It is assumed that Responsys SDK is integrated into the project with the require
 Integrating SDK to Android App
 ------------------------------
 
-A detailed step by step guideline is available [here](https://docs.bluedot.io/oracle-integration/android/).
+A detailed step by step guideline is available [here](../../Point%20SDK/Android/Overview.md).
 
 Integrating SDK to iOS App
 --------------------------
 
-A detailed step by step guideline is available [here](https://docs.bluedot.io/oracle-integration/ios/).
+A detailed step by step guideline is available [here](../../Point%20SDK/iOS/Overview.md).

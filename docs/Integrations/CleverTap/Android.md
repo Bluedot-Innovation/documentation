@@ -1,12 +1,6 @@
 Android Integration
 =============================
 
-### Table of Contents
-
-*   Getting Started
-*   Integrate Bluedot Point SDK in your Project
-*   Interaction between CleverTap SDK and Bluedot Point SDK
-
 Getting Started
 ---------------
 
@@ -23,7 +17,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
     //Bluedot Point SDK
-    implementation 'com.gitlab.bluedotio.android:point\_sdk\_android:15.3.4'
+    implementation 'com.gitlab.bluedotio.android:point_sdk_android:15.3.4'
 }
 
 apply plugin: 'com.google.gms.google-services'
@@ -32,31 +26,31 @@ apply plugin: 'com.google.gms.google-services'
 Integrate Bluedot Point SDK in your Project
 -------------------------------------------
 
-To integrate Bluedot Point SDK in your project, please click [here](https://docs.bluedot.io/android-sdk/)
+To integrate Bluedot Point SDK in your project, please click [here](../../Point%20SDK/Android/Overview.md)
 
 Interaction between CleverTap SDK and Bluedot Point SDK
 -------------------------------------------------------
 
-1\. We need to ask the user to give permission to use the location services. To do that, create a RequestPermissionActivity.kt and then add the below code.
+1\. We need to ask the user to give permission to use the location services. To do that, create a `RequestPermissionActivity.kt` and then add the below code.
 
-```java
+```kotlin
 public class RequestPermissionActivity extends AppCompatActivity {
 
-    final int PERMISSION\_REQUEST\_CODE \= 1;
+    final int PERMISSION_REQUEST_CODE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Request permission required for location
-        ActivityCompat.requestPermissions(this, new String\[\]{Manifest.permission.ACCESS\_COARSE\_LOCATION, Manifest.permission.ACCESS\_FINE\_LOCATION}, PERMISSION\_REQUEST\_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_REQUEST_CODE);
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String\[\] permissions, int\[\] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case PERMISSION\_REQUEST\_CODE:
-                if (grantResults.length \> 0 && grantResults\[0\] \== PackageManager.PERMISSION\_GRANTED) {
+            case PERMISSION_REQUEST_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     ((MainApplication)getApplication()).initPointSDK();
                 } else {
                     //Permissions denied
@@ -68,12 +62,13 @@ public class RequestPermissionActivity extends AppCompatActivity {
 }
 ```
 
-2\. We then create another class which will implements Bluedot InitializationResultListener and upon SDK initialisation. To do that create MainApplication.kt class and add the below code.
+2\. We then create another class which will implements Bluedot `InitializationResultListener` and upon SDK initialisation. To do that create `MainApplication.kt` class and add the below code.
 
+```
 public class MainApplication extends Application implements InitializationResultListener {
 
     private ServiceManager serviceManager;
-    private final String projectId \= ""; //Project Id for the Point Demo App
+    private final String projectId = ""; //Project Id for the Point Demo App
 
     @Override
     public void onCreate() {
@@ -88,11 +83,11 @@ public class MainApplication extends Application implements InitializationResult
 
     public void initPointSDK() {
 
-        int checkPermissionCoarse \= ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS\_COARSE\_LOCATION);
-        int checkPermissionFine \= ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS\_FINE\_LOCATION);
+        int checkPermissionCoarse = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION);
+        int checkPermissionFine = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION);
 
-        if(checkPermissionCoarse \== PackageManager.PERMISSION\_GRANTED && checkPermissionFine \== PackageManager.PERMISSION\_GRANTED) {
-            serviceManager \= ServiceManager.getInstance(this);
+        if(checkPermissionCoarse == PackageManager.PERMISSION_GRANTED && checkPermissionFine == PackageManager.PERMISSION_GRANTED) {
+            serviceManager = ServiceManager.getInstance(this);
 
             if(!serviceManager.isBlueDotPointServiceRunning()) {
                 serviceManager.initialize(projectId, this);
@@ -110,8 +105,8 @@ public class MainApplication extends Application implements InitializationResult
 
     private void requestPermissions() {
 
-        Intent intent \= new Intent(getApplicationContext(), RequestPermissionActivity.class);
-        intent.setFlags(Intent.FLAG\_ACTIVITY\_NEW\_TASK);
+        Intent intent = new Intent(getApplicationContext(), RequestPermissionActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 
@@ -120,20 +115,22 @@ public class MainApplication extends Application implements InitializationResult
         if (bdError != null){
             Toast.makeText(getApplicationContext(),
                     "Bluedot Initialization Error " + bdError.getReason(),
-                    Toast.LENGTH\_LONG).show();
+                    Toast.LENGTH_LONG).show();
 
             return;
         }
     }
 }
+```
 
-3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the CleverTap API. To do that create BluedotGeoTriggerReceiver.kt class and add the below code.
+3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the CleverTap API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
 
+```kotlin
 public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
-    private final String TAG \= "BluedotApp";
+    private final String TAG = "BluedotApp";
 
     @Override
-    public void onZoneInfoUpdate(@NotNull List<ZoneInfo\> list, @NotNull Context context) {
+    public void onZoneInfoUpdate(@NotNull List<ZoneInfo> list, @NotNull Context context) {
         Log.i(TAG, "Zones updated at: " + new Date().toString()
                 + " ZoneInfos count: " + list.size());
     }
@@ -143,7 +140,7 @@ public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
         sendCustomEvent(
                 "YOUR CUSTOM ENTRY EVENT NAME",
                 zoneEntryEvent.getZoneInfo(),
-                \-1,
+                -1,
                 zoneEntryEvent.getZoneInfo().getCustomData(),
                 context);
     }
@@ -158,21 +155,22 @@ public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
                 context);
     }
 
-    private void sendCustomEvent(String eventName, ZoneInfo zoneInfo, int dwellTime, Map<String, String\> customDataMap, Context context) {
-        CleverTapAPI cleverTap \= CleverTapAPI.getDefaultInstance(context);
-        HashMap<String, Object\> checkInAction \= new HashMap<String, Object\>();
-        checkInAction.put("bluedot\_zone\_id", zoneInfo.getZoneId());
-        checkInAction.put("bluedot\_zone\_name", zoneInfo.getZoneName());
+    private void sendCustomEvent(String eventName, ZoneInfo zoneInfo, int dwellTime, Map<String, String> customDataMap, Context context) {
+        CleverTapAPI cleverTap = CleverTapAPI.getDefaultInstance(context);
+        HashMap<String, Object> checkInAction = new HashMap<String, Object>();
+        checkInAction.put("bluedot_zone_id", zoneInfo.getZoneId());
+        checkInAction.put("bluedot_zone_name", zoneInfo.getZoneName());
         if(customDataMap != null && !customDataMap.isEmpty()) {
-            for(Map.Entry<String, String\> data : customDataMap.entrySet()) {
+            for(Map.Entry<String, String> data : customDataMap.entrySet()) {
                 checkInAction.put(data.getKey(), data.getValue());
             }
         }
 
-        if(dwellTime != \-1) {
-            checkInAction.put("dwell\_time", dwellTime);
+        if(dwellTime != -1) {
+            checkInAction.put("dwell_time", dwellTime);
         }
 
         cleverTap.pushEvent(eventName, checkInAction);
     }
 }
+```
