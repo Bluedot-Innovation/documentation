@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Olo Integration
-
 Olo Integration
 ===============
 
@@ -21,27 +17,17 @@ The first step is to get Bluedot’s webhook URL; we will use it later when crea
 
 Get the `projectId` in the Projects section in Canvas to complete the Webhook URL based on the region where your account is located.
 
-**Region**
-
-**Webhook URL**
-
-North America
-
-https://us.inbound.bluedot.io/olo/<PROJECT\_ID>
-
-Europe
-
-https://eu.inbound.bluedot.io/olo/<PROJECT\_ID>
-
-APAC
-
-https://au.inbound.bluedot.io/olo/<PROJECT\_ID>
+| **Region**    | **Webhook URL**                                |
+|---------------|------------------------------------------------|
+| North America | https://us.inbound.bluedot.io/olo/<PROJECT_ID> |
+| Europe        | https://eu.inbound.bluedot.io/olo/<PROJECT_ID> |
+| APAC          | https://au.inbound.bluedot.io/olo/<PROJECT_ID> |
 
 ### Create a Webhook in Olo
 
 In Olo’s Dashboard add a new webhook from the _Dev Tools_ section. 
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/Add-webhook-from-olo-1024x155.png)
+![](../assets/Add-webhook-from-olo-1024x155.png)
 
 Fill the following fields:
 
@@ -55,18 +41,18 @@ From the Order Events section, enable the following events:
 *   Order Cancelled
 *   Order Closed
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/create-olo-webhook-steps-1024x1004.jpeg)
+![](../assets/create-olo-webhook-steps-1024x1004.jpeg)
 
 Once you are ready to Publish the webhook, first select “Test Webhook”.  This will bring up the Shared Secret modal. Pass the _Shared Secret_ to Bluedot to ensure your account is secured.
 
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/olo-webhook-shared-secret-1024x561.jpeg)
+![](../assets/olo-webhook-shared-secret-1024x561.jpeg)
 
 Configure the Hello Orders Webhooks:
 ------------------------------------
 
-You’ll need the `userId` in the “_Register Order_” webhook event to track the customer’s journey. When using the Point SDK, you’ll include the `userId` in the [Custom Event Meta Data](https://docs.bluedot.io/custom-event-metadata/) before starting Tempo, and when using Now Ready, you’ll use the `userId` to create the URL to Now Ready.
+You’ll need the `userId` in the “_Register Order_” webhook event to track the customer’s journey. When using the Point SDK, you’ll include the `userId` in the [Custom Event Meta Data](../Custom%20Event%20Metadata.md) before starting Tempo, and when using Now Ready, you’ll use the `userId` to create the URL to Now Ready.
 
-Learn more about [Hello Order Webhooks here.](https://docs.bluedot.io/webhooks/hello-order-webhooks/)
+Learn more about [Hello Order Webhooks here.](../Webhooks/Hello%20order.md)
 
 Point SDK: Tempo
 ----------------
@@ -75,19 +61,20 @@ With Tempo, you can accurately track the customer’s ETA to collect its order i
 
 Once Tempo is running, your store staff will see the customer’s ETA updates on Hello Screen.
 
-To learn more, check [Tempo’s Documentation](https://docs.bluedot.io/tempo/).
+To learn more, check [Tempo’s Documentation](../Tempo/Overview.md).
 
 Now Ready
 ---------
 
 Once Bluedot receives the order details from Olo, the Hello Orders Webhooks will fire a Register Order event with a `userId`. You will use that `userId` to generate the URL for the Now Ready experience you’ll share with your customer. From Now Ready, customers will inform the store when they’re on their way to collect the order and when they arrive. To generate the Now Ready URL for an order, you simply add the \`userId\` as a parameter to the Now Ready base URL: `https://us.nowready.io/<USER_TOKEN>`
 
-To learn more, [check Now Ready’s Documentation](https://docs.bluedot.io/now-ready/).
+To learn more, [check Now Ready’s Documentation](../Now%20Ready/Overview.md).
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 You can also use any of our SMS Messaging integrations to send the Now Ready link to your users. When implementing any of the SMS integration, we’ll take care of creating the Now Ready URL. You just need to craft the content of the message.
 
-To learn more, check out our [Integrations documentation.](https://docs.bluedot.io/integrations/)
+To learn more, check out our [Integrations documentation.](./Overview.md)
+:::
 
 If you have any questions, contact us at [help@bluedot.io](mailto:help@bluedot.io)

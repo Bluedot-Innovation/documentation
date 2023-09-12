@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Safegraph Integration
-
 Safegraph Integration
 =====================
 
@@ -13,10 +9,10 @@ This documentation will walk you through integrating SafeGraph’s data into the
 
 **Access Bluedot’s platform and navigate to Integrations**: Log in to your Bluedot account and navigate to the main dashboard, then from the main menu locate the integrations section and then select SafeGraph from the available options.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/03/safegrapg_integrations_page-1024x520.png)
+![](../assets/safegrapg_integrations_page-1024x520.png)
 
 **Upload SafeGraph CSV file**: Find the drag-and-drop input area, where you’ll be able to upload the SafeGraph CSV file containing the geospatial data you want to use for creating geofences.  
-![](https://docs.bluedot.io/wp-content/uploads/2023/03/safegraph_upload_file-1024x460.png)
+![](../assets/safegraph_upload_file-1024x460.png)
 
 **Initiate geofence creation**: After uploading the CSV file, the platform will automatically begin creating geofences based on the SafeGraph data.
 
@@ -24,7 +20,7 @@ This documentation will walk you through integrating SafeGraph’s data into the
 
 **Confirm import completion**: Once the import is finished and all geofences have been created, the status of the job in the table will update to ‘_Complete’_.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/03/safegraph_imports_history-1024x696.png)
+![](../assets/safegraph_imports_history-1024x696.png)
 
 By following these steps, you’ll be able to successfully import SafeGraph’s data into Bluedot’s platform and create highly accurate geofences to enhance your location-based services.
 

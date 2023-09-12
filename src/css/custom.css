@@ -43,19 +43,19 @@ h2, h3, h4, h5, h6 {
 
 p, a, li, ul, span {
   font-size: 1.2rem;
-  font-family: 'Spartan', sans-serif;
+  /* font-family: 'Spartan', sans-serif; */
 }
 
 a {
   font-weight: 500;
 }
 
-code, pre {
+/* code, pre {
   font-size: 1.2rem;
   font-family: monospace;
 }
 
 code {
   color: #F4406F;
-}
+} */
 

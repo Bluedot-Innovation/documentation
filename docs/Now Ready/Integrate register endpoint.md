@@ -17,7 +17,7 @@ You can use the following sample JSON payload to register an order:
 
 Register API uses the `projectId` to sign requests. You’ll need to add the key `x-bluedot-api-key` with the `projectId` as the value in request’s headers as shown below:
 
-```
+```json
 "x-bluedot-api-key": "<YOUR_PROJECT_ID>"
 ```
 

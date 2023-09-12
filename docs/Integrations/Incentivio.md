@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Incentivio Integration
-
 Incentivio Integration
 ======================
 
@@ -17,11 +13,11 @@ Enable the integration in Canvas
 
 Once you’ve got your Incentivio Customer ID, you’re ready to enable the Bluedot - Incentivio integration. From Canvas, go to the integrations section and select Incentivio.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/05/Screen-Shot-2023-05-30-at-9.51.02-am-1024x539.png)
+![](../assets/incentivio-canvas-integrations.png)
 
 Then copy/paste your Incentivio Client ID and click on save. And that’s all! Really, you don’t need to do anything else.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/05/incentivio-page-1024x723.png)
+![](../assets/incentivio-page-1024x723.png)
 
 Importing your Stores details to Canvas
 ---------------------------------------
@@ -31,6 +27,6 @@ Once you’ve enabled the Incentivio integration, Canvas will import all Stores�
 Setting up Hello Screens for your stores
 ----------------------------------------
 
-After Canvas have imported all your store’s data from Incentivio. Now you’re ready to start [setting up Hello Screens in your stores](https://docs.bluedot.io/canvas/store-management/) and [configure the branding for Now Ready](https://docs.bluedot.io/now-ready/configure-now-ready/).
+After Canvas have imported all your store’s data from Incentivio. Now you’re ready to start [setting up Hello Screens in your stores](../Canvas/Store%20management.md) and [configure the branding for Now Ready](../Now%20Ready/Configure%20Now%20Ready.md).
 
 If you have any questions, please reach out to our team at [help@bluedot.io](mailto:help@bluedot.io)

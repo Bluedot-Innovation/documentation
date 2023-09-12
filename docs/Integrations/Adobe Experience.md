@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Adobe Experience Platform integration
-
 Adobe Experience Platform integration
 =====================================
 
@@ -24,11 +20,11 @@ Before you begin the integration please ensure you have an active customer accou
 We will be using an [**HTTP API streaming connector**](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/streaming/http.html?lang=en) to pass Bluedot Entry/Exit events to Adobe.
 
 1.  Decide on the custom data you’ll be passing from Bluedot Entry/Exit (can also be called Check-in and Check-out Event) Events to Adobe:
-    1.  [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/) (max. 20)
-    2.  [Custom Zone Data](https://docs.bluedot.io/canvas/what-are-zone-settings/what-is-custom-data/) (max. 20)
+    1.  [Custom Event Metadata](../Custom%20Event%20Metadata.md) (max. 20)
+    2.  [Custom Zone Data](../Canvas/What%20is%20Zone%20custom%20data.md) (max. 20)
 2.  Integrate the Bluedot SDK within your mobile app:
-    1.  [Android integration guide](https://docs.bluedot.io/android-sdk/)
-    2.  [iOS integration guide](https://docs.bluedot.io/ios-sdk/)
+    1.  [Android integration guide](../Point%20SDK/Android/Quick%20Start.md)
+    2.  [iOS integration guide](../Point%20SDK/iOS/Quick%20Start.md)
 3.  Create a streaming connection using the UI to accept Bluedot events as per Adobe’s documentation.
     1.  Create a new HTTP API account
         *   **Account name:** Bluedot geo-trigger webhook
@@ -50,11 +46,12 @@ Once these steps are done, the integration is ready to go. Simply enter a geofen
 Custom Event Metadata in Bluedot events
 ---------------------------------------
 
-More information on best practices of setting and using custom event metadata can be found [here](https://docs.bluedot.io/custom-event-metadata/).
+More information on best practices of setting and using custom event metadata can be found [here](../Custom%20Event%20Metadata.md).
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 The custom event metadata is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
+:::
 
 Webhook fields passed to HTTP API Streaming connector
 -----------------------------------------------------

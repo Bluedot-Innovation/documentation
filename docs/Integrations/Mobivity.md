@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Mobivity Integration
-
 Mobivity Integration
 ====================
 
@@ -25,6 +21,6 @@ Then, on the Canvas Integrations page under _Mobivity,_ paste your _username_, _
 
 On the “_Message_ _Content”_ field, create your personalized message. You can add any value in the [Custom Event Meta Data](https://docs.bluedot.io/custom-event-metadata/) of a Bluedot event by wrapping it in curly brackets. Don’t forget to include the value {NowReadyLink} in the template where you want the link to appear.
 
-![Mobivity integration form](https://docs.bluedot.io/wp-content/uploads/2022/03/mobivity_integration_form.png)
+![Mobivity integration form](../assets/mobivity_integration_form.png)
 
 If you have any technical issues or questions please use [**_help@bluedot.io_**](mailto:help@bluedot.io) to reach out to our team.

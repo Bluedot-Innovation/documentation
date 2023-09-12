@@ -1,9 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Salesforce Marketing Cloud Integration](https://docs.bluedot.io/integrations/salesforce-integration/)
-4.  [Integrate the Point SDK](https://docs.bluedot.io/integrations/salesforce-integration/mobile-sdk-integration/)
-5.  Salesforce iOS Integration
-
 Salesforce iOS Integration
 ==========================
 
@@ -22,22 +16,24 @@ Salesforce iOS MarketingCloudSDK Integration
 
 To integrate **MarketingCloudSDK** you need to add `MarketingCloudSDKConfiguration.json` file to your project.
 
-\[{
+```json
+[{
     "name": "production",
-    "appid": "\_\_your app id\_\_",
-    "accesstoken": "\_\_your access token\_\_",
-    "marketing\_cloud\_server\_url": "\_\_your app endpoint\_\_",
-    "mid": "\_\_your account mid\_\_",
+    "appid": "__your app id__",
+    "accesstoken": "__your access token__",
+    "marketing_cloud_server_url": "__your app endpoint__",
+    "mid": "__your account mid__",
     "etanalytics": false,
     "pianalytics": false,
     "location": false,
     "inbox": false,
     "uselegacypiidentifier": true
-}\]
+}]
+```
 
 And then add MarketingCloudSDKConfiguration.json to Copy Bundle Resources in your target’s Build Phases settings.
 
-![](https://docs.bluedot.io/wp-content/uploads/2018/12/SDKConfigure6.png)
+![](../../../assets/SDKConfigure6.png)
 
 You can find more information [here](https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS/get-started/apple.html).
 
@@ -50,35 +46,38 @@ Requirements
 2.  Operating Environment: Data connection (only authentication and rule download) and location services.
 3.  Permissions: Background processing for location services, local notification.
 
-To integrate PointSDK, please refer to the integration steps [here.](https://docs.bluedot.io/ios-sdk/ios-integrating-the-sdk/)
+To integrate PointSDK, please refer to the integration steps [here.](../../../Point%20SDK/iOS/Quick%20Start.md)
 
 Bluedot/Salesforce Marketing Cloud integration
 ----------------------------------------------
 
 To trigger Bluedot events in Salesforce Marketing Cloud, please ensure that the Contact Key is passed into Bluedot via the `CustomKey` field with `[BDLocationManager.instance setCustomEventMetaData]`:
 
+```objectivec
 @implementation ViewController
 
-\- (void)viewDidLoad {
-    \[super viewDidLoad\];
+- (void)viewDidLoad {
+    [super viewDidLoad];
  
     ...
-    successful \= \[\[MarketingCloudSDK sharedInstance\] sfmc\_configure:&error\];
+    successful = [[MarketingCloudSDK sharedInstance] sfmc_configure:&error];
  
-    \[\[MarketingCloudSDK sharedInstance\] sfmc\_setContactKey:@"\_\_your\_contactKey\_\_"\];
+    [[MarketingCloudSDK sharedInstance] sfmc_setContactKey:@"__your_contactKey__"];
  
-    \[BDLocationManager.instance setCustomEventMetaData:@{@"ContactKey": \[\[MarketingCloudSDK sharedInstance\] sfmc\_contactKey\]}\];
-    BDLocationManager.instance.sessionDelegate \= self;
-    BDLocationManager.instance.locationDelegate \= self;
+    [BDLocationManager.instance setCustomEventMetaData:@{@"ContactKey": [[MarketingCloudSDK sharedInstance] sfmc_contactKey]}];
+    BDLocationManager.instance.sessionDelegate = self;
+    BDLocationManager.instance.locationDelegate = self;
  
-    \[BDLocationManager.instance authenticateWithApiKey:@"\_\_your\_ApiKey\_\_" requestAuthorization:authorizedAlways\];
+    [BDLocationManager.instance authenticateWithApiKey:@"__your_ApiKey__" requestAuthorization:authorizedAlways];
 }
+```
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 The custom event metadata is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
 
-More information on best practices of setting and using custom event metadata can be found [here](https://docs.bluedot.io/custom-event-metadata/).
+More information on best practices of setting and using custom event metadata can be found [here](../../../Custom%20Event%20Metadata.md).
+:::
 
 **GitHub Sample Project**
 -------------------------

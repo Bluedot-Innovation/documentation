@@ -1,7 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  Salesforce Marketing Cloud Integration
-
 Salesforce Marketing Cloud Integration
 ======================================
 
@@ -22,8 +18,8 @@ Before you can use this integration, the Bluedot Point SDK must be integrated in
 How to configure Salesforce Marketing Cloud & Bluedot
 -----------------------------------------------------
 
-1.  [Link Salesforce Marketing Cloud & your Canvas account](https://docs.bluedot.io/integrations/salesforce-integration/linking-salesforce-marketing-cloud-your-canvas-account/)
-2.  [Create SFMC events](https://docs.bluedot.io/integrations/salesforce-integration/create-sfmc-events/)
-3.  [Create a geofence in Canvas](https://docs.bluedot.io/integrations/salesforce-integration/set-up-your-canvas-account/)
-4.  [Build your first Bluedot powered Journey in SFMC](https://docs.bluedot.io/integrations/salesforce-integration/journey-setup/)
-5.  [Integrate the Point SDK](https://docs.bluedot.io/integrations/salesforce-integration/mobile-sdk-integration/)
+1.  [Link Salesforce Marketing Cloud & your Canvas account](./Linking%20Salesforce%20Marketing%20Cloud%20to%20Canvas.md)
+2.  [Create SFMC events](./Create%20SFMC%20events.md)
+3.  [Create a geofence in Canvas](./Set%20up%20your%20Canvas%20account.md)
+4.  [Build your first Bluedot powered Journey in SFMC](./Journey%20setup.md)
+5.  [Integrate the Point SDK](./Mobile%20SDK%20Integration/Overview.md)

@@ -1,8 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Salesforce Marketing Cloud Integration](https://docs.bluedot.io/integrations/salesforce-integration/)
-4.  Create SFMC events
-
 Create SFMC events
 ==================
 
@@ -11,7 +6,7 @@ Event Creation
 
 To have Bluedot Zones trigger Salesforce Marketing Cloud Journeys, you must add corresponding API Events to Salesforce Marketing Cloud to receive the Bluedot Zone trigger. Follow the below instructions carefully to create the correct events.
 
- **Add a** **_Bluedot Entry_** **event**
+ **Add a _Bluedot Entry_ **event**
 
 1.  In the _Journey Builder_ section go to _Entry Sources_ and create a new Event clicking on the _\+ New Event_ button.
 

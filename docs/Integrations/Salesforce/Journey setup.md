@@ -1,12 +1,7 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Salesforce Marketing Cloud Integration](https://docs.bluedot.io/integrations/salesforce-integration/)
-4.  Journey Setup
-
 Journey Setup
 =============
 
-Once events have been correctly setup (see [**Event Creati****on**](https://docs.bluedot.io/salesforce-integration/getting-started-marketing-cloud/check-in-entry-event/) section), _J__ourneys_ can be created using those events as triggers.
+Once events have been correctly setup (see [**Event Creation**](./Create%20SFMC%20events.md) section), _Journeys_ can be created using those events as triggers.
 
 *   Create a Trigger, triggered by Bluedot
 *   Send a Location-Based Mobile Notification
@@ -51,17 +46,17 @@ Create a mobile push notification
 3.  Select **Outbound**. The other options are only for when using standard geofence marketing, not the Hyper Location-enabled geofences that are available via Bluedot Location Marketing.
 4.  Fill in the details of your message. For the send method, select **Interaction**.
 
-![](https://docs.bluedot.io/wp-content/uploads/2018/02/New-Push-Message-1024x513.png)
+![](../../assets/New-Push-Message-1024x513.png)
 
-5\. Now, create a Zone and Journey as [detailed in this guide](https://docs.bluedot.io/salesforce-integration/getting-started-marketing-cloud/check-in-entry-event/).
+5\. Now, create a Zone and Journey as [detailed in this guide](./Journey%20setup.md).
 
 6\. When activating your Journey, add a **Send Push** action to the Journey. It will appear in grey.
 
- ![](https://docs.bluedot.io/wp-content/uploads/2019/08/SFMC-Journey.png)
+ ![](../../assets/SFMC-Journey.png)
 
 7\. Select the **Send Push** icon in the Journey workflow and select **Configure.** A send Send Push pop up will appear. Select the message created in Step 4.
 
-![](https://docs.bluedot.io/wp-content/uploads/2018/02/Send-Push-Pop-Up.png)
+![](../../assets/Send-Push-Pop-Up.png)
 
 8\. The **Send Push** activity will now have turned cyan to indicate that it has been assigned.
 

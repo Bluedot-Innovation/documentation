@@ -1,9 +1,3 @@
-1.  [Developer Documentation](https://docs.bluedot.io)
-2.  [Integrations](https://docs.bluedot.io/integrations/)
-3.  [Salesforce Marketing Cloud Integration](https://docs.bluedot.io/integrations/salesforce-integration/)
-4.  [Integrate the Point SDK](https://docs.bluedot.io/integrations/salesforce-integration/mobile-sdk-integration/)
-5.  Salesforce Android Integration
-
 Salesforce Android Integration
 ==============================
 
@@ -16,7 +10,7 @@ Salesforce Marketing Cloud Android SDK Integration
 --------------------------------------------------
 
 1\. Add the following repositories and dependencies to your Project’s `build.gradle` file:
-```
+```gradle
 ...
 allprojects {
     repositories {
@@ -31,7 +25,7 @@ dependencies {
 ```
 
 2.  Add the following plugin and dependencies to your application’s `build.gradle` file:
-```
+```gradle
 dependencies { 
     ... 
     implementation ('com.salesforce.marketingcloud:marketingcloudsdk:6.1.0') { 
@@ -43,62 +37,62 @@ dependencies {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-3.  Add google-services.json obtained from Firebase test project in your app as below:
+3.  Add `google-services.json` obtained from Firebase test project in your app as below:
 
-![](https://docs.bluedot.io/wp-content/uploads/2019/05/Screen-Shot-2019-05-16-at-2.08.09-pm-254x300.png)
+![](../../../assets/salesforce-android-google-services.png)
 
 The following code example demonstrates starting the Marketing Cloud SDK as well as obtaining the `salesforceContactKey` or setting the`salesforceContactKey` if not assigned yet. More information on how to get AppID, Access Token and MID can be found [here](http://salesforce-marketingcloud.github.io/JB4A-SDK-Android/create-apps/create-apps-overview.html#finding-your-marketing-cloud-application-configuration-data)
 
-```
+```java
 public class MainApplication extends Application implements MarketingCloudSdk.InitializationListener {
     private String salesforceContactKey;
-    private String app\_id\="";           //From Marketing Cloud App details
-    private String access\_token\="";     //From Marketing Cloud App details
-    private String mID \= “”;            // MID from Firebase setup
-    private String fcm\_id\="";
+    private String app_id="";           //From Marketing Cloud App details
+    private String access_token="";     //From Marketing Cloud App details
+    private String mID = “”;            // MID from Firebase setup
+    private String fcm_id="";
     private void initCloudMobilePushSDK() {
         MarketingCloudSdk.init((this, MarketingCloudConfig.builder()
-            .setApplicationId(app\_id)
-            .setAccessToken(access\_token)
-            .setSenderId(fcm\_id)
-            .setMarketingCloudServerUrl(getString(R.string.marketing\_cloud\_url))   //Cloud Marketing URL
+            .setApplicationId(app_id)
+            .setAccessToken(access_token)
+            .setSenderId(fcm_id)
+            .setMarketingCloudServerUrl(getString(R.string.marketing_cloud_url))   //Cloud Marketing URL
             .setMid(mID)
             .setNotificationCustomizationOptions(
-                        NotificationCustomizationOptions.create(R.mipmap.ic\_launcher, null,
+                        NotificationCustomizationOptions.create(R.mipmap.ic_launcher, null,
                               new com.salesforce.marketingcloud.notifications.NotificationManager.NotificationChannelIdProvider() {
                               @Override @NonNull 
                                public String getNotificationChannelId(@NonNull Context context,@NonNull NotificationMessage notificationMessage) {
                                      // Whatever custom logic required to determine which channel should be used for the message.
-                                     return CHANNEL\_ID;
+                                     return CHANNEL_ID;
                                }
-                })).build((Context) this), this);
+                })).build((Context) this), this));
     }
 
 @Override
 public void complete(@NonNull InitializationStatus status) {
 
-if (status.status() \== InitializationStatus.Status.SUCCESS) {
+if (status.status() == InitializationStatus.Status.SUCCESS) {
     logInfo("Marketing Cloud SDK started");
-    salesforceContactKey \= MarketingCloudSdk.getInstance().getRegistrationManager().getContactKey();
-    if (salesforceContactKey \== null || salesforceContactKey.length() \== 0) {
-        salesforceContactKey \= UUID.randomUUID().toString();
+    salesforceContactKey = MarketingCloudSdk.getInstance().getRegistrationManager().getContactKey();
+    if (salesforceContactKey == null || salesforceContactKey.length() == 0) {
+        salesforceContactKey = UUID.randomUUID().toString();
         MarketingCloudSdk.getInstance().getRegistrationManager().edit().setContactKey(salesforceContactKey).commit();
     }
 
-    } else if (status.status() \== InitializationStatus.Status.COMPLETED\_WITH\_DEGRADED\_FUNCTIONALITY) {
+    } else if (status.status() == InitializationStatus.Status.COMPLETED_WITH_DEGRADED_FUNCTIONALITY) {
         // While the SDK is usable, something happened during init that you should address.
        // This could include:
 
       //Google play services encountered a recoverable error
 
-     /\* The user had previously provided the location permission, but it has now been revoked.
+     /* The user had previously provided the location permission, but it has now been revoked.
      Geofence messages have been disabled. You will need to request the location
-     permission again and re-enable Geofence messaging again. \*/
+     permission again and re-enable Geofence messaging again. */
 
-     /\* Google Play Services attempted to update your SSL providers but failed. It should be assumed that
+     /* Google Play Services attempted to update your SSL providers but failed. It should be assumed that
      all network communications will fallback to TLS1.0.
-     \*/
-     } else if (status.status() \== InitializationStatus.Status.FAILED) {
+     */
+     } else if (status.status() == InitializationStatus.Status.FAILED) {
          logInfo("Marketing Cloud SDK error: " + status.toString());
      } else {
          logInfo("Marketing Cloud SDK : Unknown error");
@@ -123,12 +117,12 @@ Bluedot Point SDK Integration
 
 To trigger Bluedot events in Salesforce Marketing Cloud, please ensure that the Contact Key is passed into Bluedot via the `CustomKey` field with `ServiceManager.setCustomEventMetaData()`:
 
-```
+```java
 @Override
 public void onBlueDotPointServiceStartedSuccess() {
     mServiceManager.subscribeForApplicationNotification(this);
-    Map<String, String\> metaData \= new HashMap<>();
-    String salesforceContactKey \= MarketingCloudSdk.getInstance().getRegistrationManager().getContactKey();
+    Map<String, String> metaData = new HashMap<>();
+    String salesforceContactKey = MarketingCloudSdk.getInstance().getRegistrationManager().getContactKey();
     metaData.put("ContactKey", salesforceContactKey);
     mServiceManager.setCustomEventMetaData(metaData);
 
@@ -136,11 +130,12 @@ public void onBlueDotPointServiceStartedSuccess() {
  }
 ```
 
-![image](https://docs.bluedot.io/wp-content/uploads/2021/07/info.png)
 
+:::info
 The custom event metadata is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
 
-More information on best practices of setting and using custom event metadata can be found [here](https://docs.bluedot.io/custom-event-metadata/).
+More information on best practices of setting and using custom event metadata can be found [here](../../../Custom%20Event%20Metadata.md).
+:::
 
 **GitHub Sample Project**
 -------------------------
