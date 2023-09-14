@@ -37,7 +37,7 @@ An example will be:
 For more details, check the [Bluedot source documentation in Segment](https://segment.com/docs/connections/sources/catalog/cloud-apps/bluedot/)
 
 :::info
-The [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/) is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
+The [Custom Event Metadata](../Custom%20Event%20Metadata.md) is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
 :::
 
 Events

@@ -1,5 +1,6 @@
 ---
 hide_table_of_contents: true
+custom_edit_url: null
 ---
 
 Version Release Notes
@@ -969,7 +970,7 @@ New Feature – Bluedot Tempo
         *   [startTempoTracking](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)startTempoTracking:)
         *   [stopTempoTracking](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)stopTempoTracking)
 
-More information on Tempo can be found in our documentation [here](./Tempo/Integration%20&%20User%20Guide.md).
+More information on Tempo can be found in our documentation [here](./Tempo/Overview.md).
 
 #### **Note**
 

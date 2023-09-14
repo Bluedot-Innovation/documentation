@@ -19,7 +19,7 @@ On the Mobivity’s Recurrency Platform, copy your REST API _username_ and _pass
 
 Then, on the Canvas Integrations page under _Mobivity,_ paste your _username_, _password_ and _target ID._
 
-On the “_Message_ _Content”_ field, create your personalized message. You can add any value in the [Custom Event Meta Data](https://docs.bluedot.io/custom-event-metadata/) of a Bluedot event by wrapping it in curly brackets. Don’t forget to include the value {NowReadyLink} in the template where you want the link to appear.
+On the “_Message_ _Content”_ field, create your personalized message. You can add any value in the [Custom Event Meta Data](../Custom%20Event%20Metadata.md) of a Bluedot event by wrapping it in curly brackets. Don’t forget to include the value {NowReadyLink} in the template where you want the link to appear.
 
 ![Mobivity integration form](../assets/mobivity_integration_form.png)
 

@@ -50,17 +50,17 @@ Once you’ve installed the Attentive & Bluedot integration, and have implemente
 
 1\. Create a new Journey and select the “_Start from scratch_” option.
 
-![Create a new Journey in Attentive](https://docs.bluedot.io/wp-content/uploads/2022/05/Attentive_create_new_journey-1024x745.png)
+![Create a new Journey in Attentive](../../assets/Attentive_create_new_journey-1024x745.png)
 
 2\. Select one of the _Bluedot Entered a Zone_ or _Bluedot Exit a Zone_ custom events.
 
-![](https://docs.bluedot.io/wp-content/uploads/2023/02/attentive-geo-trigger-1024x433.jpg)
+![](../../assets/attentive-geo-trigger-1024x433.jpg)
 
 3\. Add a “Send text message” option and edit the content of the message.  
-![](https://docs.bluedot.io/wp-content/uploads/2022/05/attentive_send_message_content-994x1024.png)
+![](../../assets/attentive_send_message_content-994x1024.png)
 
 Important Notes
----------------
+--------------
 
 Here’s a list of known caveats that you need to take into account when designing your Curbside experience with Attentive & Bluedot to ensure your users will receive the SMS.
 

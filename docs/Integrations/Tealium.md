@@ -46,7 +46,7 @@ We’ll use the previous parameters to start sending Bluedot events to Tealium. 
 
 1\. Select event type
 
-There are three types of events: Geo-triggering, Tempo and Wave. To learn more about the event types go to the [Webhooks documentation](https://docs.bluedot.io/webhooks/)
+There are three types of events: Geo-triggering, Tempo and Wave. To learn more about the event types go to the [Webhooks documentation](../Webhooks/Overview.md)
 
 2\. Fill required fields
 
@@ -71,7 +71,7 @@ Adding custom data through the SDK’s Custom Event Meta Data
 
 The Custom Event Meta Data allows you to set additional event-specific data for the Bluedot SDK’s events. This is the method used to include additional information about the end-user, for example, the `tealium_visitor_id`.
 
-For more information about the Custom Event Meta Data check this [documentation](https://docs.bluedot.io/custom-event-metadata/).
+For more information about the Custom Event Meta Data check this [documentation](../Custom%20Event%20Metadata.md/).
 
 Reserved fields
 ---------------

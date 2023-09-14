@@ -50,12 +50,8 @@ a {
   font-weight: 500;
 }
 
-/* code, pre {
-  font-size: 1.2rem;
-  font-family: monospace;
-}
-
 code {
   color: #F4406F;
-} */
+  font-size: 1.1rem;
+}
 
