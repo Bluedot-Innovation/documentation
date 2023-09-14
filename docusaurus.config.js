@@ -14,7 +14,10 @@ const config = {
   url: 'https://docs.bluedot.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/documentation',
+  organizationName: 'Bluedot-Innovation',
+  projectName: 'documentation',
+  trailingSlash: false,
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
