@@ -22,6 +22,10 @@ const sidebars = {
         {
           type: "category",
           label: "Android",
+          link: {
+            type: "doc",
+            id: "Point SDK/Android/Overview",
+          },
           items: [
             "Point SDK/Android/Overview",
             "Point SDK/Android/Quick Start",
@@ -44,6 +48,10 @@ const sidebars = {
         {
           type: "category",
           label: "iOS",
+          link: {
+            type: "doc",
+            id: "Point SDK/iOS/Overview",
+          },
           items: [
             "Point SDK/iOS/Overview",
             "Point SDK/iOS/Quick Start",
@@ -74,6 +82,10 @@ const sidebars = {
         {
           type: "category",
           label: "React Native",
+          link: {
+            type: "doc",
+            id: "Point SDK/React Native/Overview",
+          },
           items: [
             "Point SDK/React Native/Overview",
             "Point SDK/React Native/Quick Start",
@@ -94,6 +106,10 @@ const sidebars = {
         {
           type: "category",
           label: "Flutter",
+          link: {
+            type: "doc",
+            id: "Point SDK/Flutter/Overview",
+          },
           items: [
             "Point SDK/Flutter/Overview",
             "Point SDK/Flutter/Quick Start",
@@ -106,6 +122,10 @@ const sidebars = {
         {
           type: "category",
           label: "Xamarin",
+          link: {
+            type: "doc",
+            id: "Point SDK/Xamarin/Overview",
+          },
           items: [
             "Point SDK/Xamarin/Overview",
             "Point SDK/Xamarin/Android",
@@ -115,6 +135,10 @@ const sidebars = {
         {
           type: "category",
           label: "Cordova",
+          link: {
+            type: "doc",
+            id: "Point SDK/Cordova/Overview",
+          },
           items: [
             "Point SDK/Cordova/Overview",
             "Point SDK/Cordova/Quick Start",
@@ -129,6 +153,10 @@ const sidebars = {
     {
       type: "category",
       label: "Canvas",
+      link: {
+       type: "doc",
+       id: "Canvas/Overview",
+      },
       items: [
         "Canvas/Overview",
         "Canvas/Creating a new project",
@@ -145,6 +173,10 @@ const sidebars = {
     {
       type: "category",
       label: "Hello Screens",
+      link: {
+        type: "doc",
+        id: "Hello Screens/Overview",
+      },
       items: [
         "Hello Screens/Overview",
         "Hello Screens/Customer wait time goals",
@@ -155,6 +187,10 @@ const sidebars = {
     {
       type: "category",
       label: "Now Ready",
+      link: {
+        type: "doc",
+        id: "Now Ready/Overview",
+      },
       items: [
         "Now Ready/Overview",
         "Now Ready/Configure Now Ready",
@@ -164,6 +200,10 @@ const sidebars = {
     {
       type: "category",
       label: "Tempo",
+      link: {
+        type: "doc",
+        id: "Tempo/Overview",
+      },
       items: [
         "Tempo/Overview",
         "Tempo/Integrate the Point SDK in your app",
@@ -179,6 +219,10 @@ const sidebars = {
         {
           type: "category",
           label: "Config API",
+          link: {
+            type: "doc",
+            id: "APIs/Config API/Overview",
+          },
           items: [
             "APIs/Config API/Overview",
             "APIs/Config API/How to authenticate with Config API",
@@ -187,6 +231,10 @@ const sidebars = {
         {
           type: "category",
           label: "Analytics API",
+          link: {
+            type: "doc",
+            id: "APIs/Analytics API/Overview",
+          },
           items: [
             "APIs/Analytics API/Overview",
             "APIs/Analytics API/How to paginate responses",
@@ -195,6 +243,10 @@ const sidebars = {
         {
           type: "category",
           label: "Wave API",
+          link: {
+            type: "doc",
+            id: "APIs/Wave API/Overview",
+          },
           items: [
             "APIs/Wave API/Overview",
             "APIs/Wave API/Integrate Wave API",
@@ -206,6 +258,10 @@ const sidebars = {
     {
       type: "category",
       label: "Web SDK",
+      link: {
+        type: "doc",
+        id: "Web SDK/Overview",
+      },
       items: [
         "Web SDK/Overview",
         "Web SDK/Quick Start",
@@ -221,6 +277,10 @@ const sidebars = {
     {
       type: "category",
       label: "Webhooks",
+      link: {
+        type: "doc",
+        id: "Webhooks/Overview",
+      },
       items: [
         "Webhooks/Overview",
         "Webhooks/Geo-triggering",
@@ -232,12 +292,20 @@ const sidebars = {
     {
       type: "category",
       label: "Integrations",
+      link: {
+        type: "doc",
+        id: "Integrations/Overview",
+      },
       items: [
         "Integrations/Overview",
         "Integrations/Adobe Experience",
         {
           type: "category",
           label: "Airship",
+          link: {
+            type: "doc",
+            id: "Integrations/Airship/Overview",
+          },
           items: [
             "Integrations/Airship/Overview",
             "Integrations/Airship/Android",
@@ -247,6 +315,10 @@ const sidebars = {
         {
           type: "category",
           label: "Attentive",
+          link: {
+            type: "doc",
+            id: "Integrations/Attentive/Overview",
+          },
           items: [
             "Integrations/Attentive/Overview",
             "Integrations/Attentive/Quick Start",
@@ -258,6 +330,10 @@ const sidebars = {
         {
           type: "category",
           label: "Braze",
+          link: {
+            type: "doc",
+            id: "Integrations/Braze/Overview",
+          },
           items: [
             "Integrations/Braze/Overview",
             "Integrations/Braze/Android",
@@ -267,6 +343,10 @@ const sidebars = {
         {
           type: "category",
           label: "CleverTap",
+          link: {
+            type: "doc",
+            id: "Integrations/CleverTap/Overview",
+          },
           items: [
             "Integrations/CleverTap/Overview",
             "Integrations/CleverTap/Android",
@@ -282,6 +362,10 @@ const sidebars = {
         {
           type: "category",
           label: "Oracle Responsys",
+          link: {
+            type: "doc",
+            id: "Integrations/Oracle Responsys/Overview",
+          },
           items: [
             "Integrations/Oracle Responsys/Overview",
             "Integrations/Oracle Responsys/Android",
@@ -294,6 +378,10 @@ const sidebars = {
         {
           type: "category",
           label: "Salesforce",
+          link: {
+            type: "doc",
+            id: "Integrations/Salesforce/Overview",
+          },
           items: [
             "Integrations/Salesforce/Overview",
             "Integrations/Salesforce/Linking Salesforce Marketing Cloud to Canvas",
@@ -303,6 +391,10 @@ const sidebars = {
             {
               type: "category",
               label: "Mobile SDK Integration",
+              link: {
+                type: "doc",
+                id: "Integrations/Salesforce/Mobile SDK Integration/Overview",
+              },
               items: [
                 "Integrations/Salesforce/Mobile SDK Integration/Overview",
                 "Integrations/Salesforce/Mobile SDK Integration/Android",
@@ -324,6 +416,10 @@ const sidebars = {
     {
       type: "category",
       label: "Implementation and Best Practices Guides",
+      link: {
+        type: "doc",
+        id: "Implementation and Best Practices Guides/Overview",
+      },
       items: [
         "Implementation and Best Practices Guides/Overview",
         "Implementation and Best Practices Guides/Curbside & Pickup implementation guide",

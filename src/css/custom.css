@@ -55,3 +55,7 @@ code {
   font-size: 1.1rem;
 }
 
+.card-stack {
+  grid-template-columns: 1fr;
+  display: grid;
+}
