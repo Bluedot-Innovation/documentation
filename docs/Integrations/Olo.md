@@ -74,7 +74,7 @@ To learn more, [check Now Ready’s Documentation](../Now%20Ready/Overview.md).
 :::info
 You can also use any of our SMS Messaging integrations to send the Now Ready link to your users. When implementing any of the SMS integration, we’ll take care of creating the Now Ready URL. You just need to craft the content of the message.
 
-To learn more, check out our [Integrations documentation.](./Overview.md)
+To learn more, check out our [Integrations documentation.](./Overview.mdx)
 :::
 
 If you have any questions, contact us at [help@bluedot.io](mailto:help@bluedot.io)

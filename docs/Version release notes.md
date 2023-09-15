@@ -1285,7 +1285,7 @@ Please note, the following authentication API has now been deprecated:
 
 `(void)authenticateWithApiKey: (NSString *)apiKey`
 
-This is our first offical notification of this deprecation and more will follow before the API is removed. However, if you have immediate questions please reach out to [help@bluedot.io](help@bluedot.io).
+This is our first offical notification of this deprecation and more will follow before the API is removed. However, if you have immediate questions please reach out to [help@bluedot.io](mailto:help@bluedot.io).
 
 Note: Authentication with old API will show iOS location permission prompt with three options, _“Always”_, _“When in use”_ and _“Never”_.
 
