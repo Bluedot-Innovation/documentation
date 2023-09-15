@@ -18,7 +18,9 @@ const config = {
   baseUrl: '/',
   organizationName: 'Bluedot-Innovation',
   projectName: 'documentation',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
+
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
