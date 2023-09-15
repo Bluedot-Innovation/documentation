@@ -18,7 +18,12 @@ const sidebars = {
     {
       type: "category",
       label: "Point SDK",
+      link: {
+        type: "doc",
+        id: "Point SDK/Overview",
+      },
       items: [
+        "Point SDK/Overview",
         {
           type: "category",
           label: "Android",

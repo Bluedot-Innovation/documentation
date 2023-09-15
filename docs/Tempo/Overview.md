@@ -1,5 +1,5 @@
-Tempo: Integration & User Guide
-===============================
+Overview
+========
 
 With Tempo, you can understand customers’ estimated time of arrival (ETA) via the app. This allows more efficient use of your resources to fire off tickets at the right time – ensuring food freshness. Say goodbye to soggy fries, melted ice drinks, and luke-warm burgers.
 
