@@ -1,3 +1,7 @@
+---
+pagination_next: null
+---
+
 How to authenticate with Config API
 ===================================
 

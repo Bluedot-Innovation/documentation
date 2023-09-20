@@ -1,3 +1,8 @@
+---
+pagination_next: null
+pagination_prev: null
+---
+
 Custom Event Metadata
 =====================
 

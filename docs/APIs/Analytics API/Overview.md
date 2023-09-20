@@ -1,3 +1,7 @@
+---
+pagination_next: APIs/Analytics API/How to paginate responses
+---
+
 Analytics API User Guide
 ========================
 

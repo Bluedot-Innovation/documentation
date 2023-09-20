@@ -1,3 +1,7 @@
+---
+pagination_next: null
+---
+
 Receiving Wave API events
 ============================
 

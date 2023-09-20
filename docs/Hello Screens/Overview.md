@@ -1,3 +1,8 @@
+---
+pagination_next: Hello Screens/Customer wait time goals
+pagination_prev: null
+---
+
 Overview
 ========
 

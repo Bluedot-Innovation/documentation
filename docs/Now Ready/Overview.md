@@ -1,3 +1,8 @@
+---
+pagination_next: Now Ready/Configure Now Ready
+pagination_prev: null
+---
+
 Overview
 =========
 

@@ -10,7 +10,7 @@ With Adobe Experience Platform + Bluedot together you can send Push messages whe
 Integration Architecture Diagram
 --------------------------------
 
-![](https://docs.bluedot.io/wp-content/uploads/2021/06/Bluedot-Adobe-Experience-Platform-Architecture-1024x576.png)
+![](../assets/Bluedot-Adobe-Experience-Platform-Architecture-1024x576.png)
 
 Integration Overview
 --------------------
@@ -56,7 +56,7 @@ The custom event metadata is not persisted across SDK sessions. If the SDK is lo
 Webhook fields passed to HTTP API Streaming connector
 -----------------------------------------------------
 
-More information on the fields passed via entry/exit events Bluedot webhooks are [here](https://docs.bluedot.io/webhooks/#webhooks-response).
+More information on the fields passed via entry/exit events Bluedot webhooks are [here](../Webhooks/Overview.md).
 
 * * *
 

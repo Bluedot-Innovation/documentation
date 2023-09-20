@@ -1,3 +1,6 @@
+---
+pagination_next: null
+---
 
 Migration guide from previous versions to Point SDK v15.3.0
 ===================================================================

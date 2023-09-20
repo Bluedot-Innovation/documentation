@@ -15,7 +15,7 @@ During SDK integration, there are 4 important stages that align with your custom
 
 Android – Tempo implementation
 ------------------------------
-
+```kotlin
 /**
  * Start Tempo Tracking.
  * @param destinationId - destinationId of the Zone for tracking.
@@ -29,6 +29,7 @@ public void startTempoTracking(@NonNull String destinationId,
  * TempoStatusListener#tempoStopped() will be called once tracking has ceased.
 */
 public void stopTempoTracking()
+```
 
 You’ll find comprehensive [Android implementation detail here](../Point%20SDK/Android/Tempo.md).
 

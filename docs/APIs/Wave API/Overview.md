@@ -1,3 +1,7 @@
+---
+pagination_next: APIs/Wave API/Integrate Wave API
+---
+
 Wave: Integration & User guide
 ==============================
 
