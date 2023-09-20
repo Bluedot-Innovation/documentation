@@ -53,14 +53,35 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
+      colorMode: {
+        disableSwitch: true,
+      },
       navbar: {
-     
         logo: {
           alt: 'Bluedot Documentation Logo',
           src: 'img/logo.svg',
         },
         items: [
-      
+          {
+            href: 'https://bluedot.io/blog/',
+            label: 'Blog',
+            position: 'right',
+          },
+          {
+            href: 'mailto:help@bluedot.io',
+            label: 'Contact Us',
+            position: 'right',
+          },
+          {
+            href: 'https://select-region.bluedot.io/',
+            label: 'Sign In',
+            position: 'right',
+          },
+          {
+            href: 'https://bluedot.io/demo/',
+            label: 'Request Free Demo',
+            position: 'right',
+          },
         ],
       },
       footer: {

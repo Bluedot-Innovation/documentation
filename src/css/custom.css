@@ -70,3 +70,14 @@ code {
   display: grid;
   grid-gap: 20px;
 }
+
+.navbar__link {
+  font-family: 'Spartan', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.navbar__link svg {
+  display: none;
+}
