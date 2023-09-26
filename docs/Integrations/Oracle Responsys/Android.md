@@ -120,7 +120,7 @@ User should `registerUserID` on `PushIOManager` with any customer user-specific 
 }
 ```
 
-3\. Next, we create a class, BluedotGeoTriggerReceiver.kt, which will receive Bluedot GeoTrigger events. Inside the callbacks ZoneInfo and FenceInfo details are populated in PIOGeoRegion and corresponding PushIOManager onGeoRegionEntered() / onGeoRegionExited() are called.
+3\. Next, we create a class, `BluedotGeoTriggerReceiver.kt`, which will receive Bluedot GeoTrigger events. Inside the callbacks `ZoneInfo` and `FenceInfo` details are populated in PIOGeoRegion and corresponding PushIOManager `onGeoRegionEntered()` / `onGeoRegionExited()` are called.
 
 ```java
 public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
