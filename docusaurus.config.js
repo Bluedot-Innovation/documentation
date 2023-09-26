@@ -391,7 +391,7 @@ const config = {
             },
             {
               from: '/canvas/what-are-zone-settings/',
-              to: '/Canvas/What are zone settings'
+              to: '/Canvas/What are Zone settings'
             },
             {
               from: '/canvas/what-are-zone-settings/what-is-custom-data/',
