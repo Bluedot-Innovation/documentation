@@ -265,9 +265,142 @@ const config = {
               from: '/integrations/tealium-integration/',
               to: '/integrations/Tealium'
             },
-
-
-            
+            {
+              from: '/android-sdk/',
+              to: 'Point SDK/Android/Overview'
+            },
+            {
+              from: '/android-sdk/',
+              to: 'Point SDK/Android/Overview'
+            },
+            {
+              from: '/android-sdk/android-quick-start/',
+              to: 'Point SDK/Android/Quick Start'
+            },
+            {
+              from: '/android-sdk/android-geo-triggering/',
+              to: 'Point SDK/Android/Geo-triggering'
+            },
+            {
+              from: '/android-sdk/android-tempo/',
+              to: 'Point SDK/Android/Tempo'
+            },
+            {
+              from: '/android-sdk/android-location-permission-notifications-best-practices/',
+              to: 'Point SDK/Android/Location Permission & Notifications Best Practices'
+            },
+            {
+              from: '/android-sdk/android-best-practices-recommendations/',
+              to: 'Point SDK/Android/Best Practices & Recommendations'
+            },
+            {
+              from: '/android-sdk/android-caveats/',
+              to: 'Point SDK/Android/Caveats'
+            },
+            {
+              from: '/android-sdk/android-caveats/',
+              to: 'Point SDK/Android/Caveats'
+            },
+            {
+              from: '/ios-sdk/',
+              to: 'Point SDK/iOS/Overview'
+            },
+            {
+              from: '/ios-sdk/ios-quick-start/',
+              to: 'Point SDK/iOS/Quick Start'
+            },
+            {
+              from: '/ios-sdk/ios-geo-triggering/',
+              to: 'Point SDK/iOS/Geo-triggering'
+            },
+            {
+              from: '/ios-sdk/ios-tempo/',
+              to: 'Point SDK/iOS/Tempo'
+            },
+            {
+              from: '/ios-sdk/ios-location-permission-best-practices/',
+              to: 'Point SDK/iOS/Location Permission Best Practices'
+            },
+            {
+              from: '/react-native-library/',
+              to: 'Point SDK/React Native/Overview'
+            },
+            {
+              from: '/react-native-library/react-native-migrating-to-2-0-0-guide/',
+              to: 'Point SDK/React Native/Migration Guides/Migrating to 2.0.0 guide'
+            },
+            {
+              from: '/flutter-library/',
+              to: 'Point SDK/Flutter/Overview'
+            },
+            {
+              from: '/cordova-bluedot-plug-in/',
+              to: 'Point SDK/Cordova/Overview'
+            },
+            {
+              from: '/xamarin-bluedot-wrapper/',
+              to: 'Point SDK/Xamarin/Overview'
+            },
+            {
+              from: '/xamarin-bluedot-wrapper/xamarin-ios-quick-start-guide/',
+              to: 'Point SDK/Xamarin/iOS'
+            },
+            {
+              from: '/tempo/',
+              to: 'Tempo/Overview'
+            },
+            {
+              from: '/web-sdk/',
+              to: 'Web SDK/Overview'
+            },
+            {
+              from: '/config-api/',
+              to: 'APIs/Config API/Overview'
+            },
+            {
+              from: '/custom-event-metadata/',
+              to: 'Custom Event Metadata'
+            },
+            {
+              from: '/version-release-notes/',
+              to: 'Version release notes'
+            },
+            {
+              from: '/supported-platforms/',
+              to: 'Supported Platforms'
+            },
+            {
+              from: '/canvas/',
+              to: 'Canvas/Overview'
+            },
+            {
+              from: '/canvas/',
+              to: 'Canvas/Overview'
+            },
+            {
+              from: '/canvas/creating-a-new-project/',
+              to: 'Canvas/Creating a new project'
+            },
+            {
+              from: '/canvas/add-a-new-zone/',
+              to: 'Canvas/Add a new zone'
+            },
+            {
+              from: '/canvas/add-a-new-zone/',
+              to: 'Canvas/Add a new zone'
+            },
+            {
+              from: '/canvas/store-management/',
+              to: 'Canvas/Store management'
+            },
+            {
+              from: '/canvas/what-are-zone-settings/',
+              to: 'Canvas/What are zone settings'
+            },
+            {
+              from: '/canvas/what-are-zone-settings/what-is-custom-data/',
+              to: 'Canvas/What is Zone custom data'
+            }
           ]
         }
       ]
