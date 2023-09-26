@@ -1,4 +1,4 @@
-CleverTap iOS Integration
+iOS Integration
 =========================
 
 Getting started

@@ -401,7 +401,7 @@ Release date November 11, 2021
 
 ### Integrations
 
-*   New integration with Tealium. Now you can easily send Bluedot location events to Tealium. Learn more here: [Tealium Integration Guide.](./Integrations/Tealium.md)
+*   New integration with Tealium. Now you can easily send Bluedot location events to Tealium. Learn more here: [Tealium Integration Guide.](./integrations/Tealium.md)
 
 ### Canvas
 

@@ -64,7 +64,7 @@ public class RequestPermissionActivity extends AppCompatActivity {
 
 2\. We then create another class which will implements Bluedot `InitializationResultListener` and upon SDK initialisation. To do that create `MainApplication.kt` class and add the below code.
 
-```
+```kotlin
 public class MainApplication extends Application implements InitializationResultListener {
 
     private ServiceManager serviceManager;

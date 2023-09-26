@@ -94,6 +94,184 @@ const config = {
         additionalLanguages: ['swift', 'kotlin', 'java', 'objectivec', 'gradle', 'dart','csharp']
       },
     }),
+
+    plugins:[
+      [
+        '@docusaurus/plugin-client-redirects',
+        // Redirects from old documentation pages
+        {
+          redirects: [
+            {
+              from: ['/integrations/adobe-experience-platform-integration'],
+              to: '/integrations/Adobe Experience',
+            },
+            {
+              from: ['/integrations/airship-integration/'],
+              to: '/integrations/Airship/Overview',
+            },
+            {
+              from: ['/integrations/airship-integration/urban-airship-android-integration/'],
+              to: '/integrations/Airship/Android',
+            },
+            {
+              from: ['/integrations/airship-integration/urban-airship-ios-integration/'],
+              to: '/integrations/Airship/iOS',
+            },
+            {
+              from: ['/integrations/attentive-integration/'],
+              to: '/integrations/Attentive/Overview',
+            },
+            {
+              from: ['/integrations/attentive-integration/installing-the-attentive-bluedot-integration/'],
+              to: '/integrations/Attentive/Quick Start',
+            },
+            {
+              from: ['/integrations/attentive-integration/curbside-experience/'],
+              to: '/integrations/Attentive/Curbside experience',
+            },
+            {
+              from: ['/integrations/attentive-integration/location-based-messages/'],
+              to: '/integrations/Attentive/Location-based messages',
+            },
+            {
+              from: ['/integrations/bbot-integration'],
+              to: '/integrations/Bbot',
+            },
+            {
+              from: ['/integrations/braze-integration'],
+              to: '/integrations/Braze/Overview',
+            },
+            {
+              from: '/integrations/braze-integration/braze-android-integration/',
+              to: '/integrations/Braze/Android'
+            },
+            {
+              from: '/integrations/braze-integration/braze-ios-integration/',
+              to: '/integrations/Braze/iOS'
+            },
+            {
+              from: '/integrations/clevertap-integration/',
+              to: '/integrations/CleverTap/Overview'
+            },
+            {
+              from: '/integrations/clevertap-integration/clevertap-android-integration/',
+              to: '/integrations/CleverTap/Android'
+            },
+            {
+              from: '/integrations/clevertap-integration/clevertap-ios-integration/',
+              to: '/integrations/CleverTap/iOS'
+            },
+            {
+              from: '/integrations/flipdish-integration/',
+              to: '/integrations/Flipdish'
+            },
+            {
+              from: '/integrations/incentivio-integration/',
+              to: '/integrations/Incentivio'
+            },
+            {
+              from: '/integrations/incentivio-integration/',
+              to: '/integrations/Incentivio'
+            },
+            {
+              from: '/integrations/mobivity-integration/',
+              to: '/integrations/Mobivity'
+            },
+            {
+              from: '/integrations/mparticle-integration/',
+              to: '/integrations/mParticle'
+            },
+            {
+              from: '/integrations/olo-integration/',
+              to: '/integrations/Olo'
+            },
+            {
+              from: '/integrations/one-signal-integration/',
+              to: '/integrations/OneSignal'
+            },
+            {
+              from: '/integrations/oracle-integration/',
+              to: '/integrations/Oracle Responsys/Overview'
+            },
+            {
+              from: '/integrations/oracle-integration/android/',
+              to: '/integrations/Oracle Responsys/Android'
+            },
+            {
+              from: '/integrations/oracle-integration/ios/',
+              to: '/integrations/Oracle Responsys/iOS'
+            },
+            {
+              from: '/integrations/oracle-simphony-pos-integration/',
+              to: '/integrations/Oracle Simphony'
+            },
+            {
+              from: '/integrations/raydiant-integration/',
+              to: '/integrations/Raydiant'
+            },
+            {
+              from: '/integrations/safegraph-integration/',
+              to: '/integrations/Safegraph'
+            },
+            {
+              from: '/integrations/safegraph-integration/',
+              to: '/integrations/Safegraph'
+            },
+            {
+              from: '/integrations/salesforce-integration/',
+              to: '/integrations/Salesforce/Overview'
+            },
+            {
+              from: '/integrations/salesforce-integration/linking-salesforce-marketing-cloud-your-canvas-account/',
+              to: '/integrations/Salesforce/Linking Salesforce Marketing Cloud to Canvas'
+            },
+            {
+              from: '/integrations/salesforce-integration/create-sfmc-events/',
+              to: '/integrations/Salesforce/Create SFMC events'
+            },
+            {
+              from: '/integrations/salesforce-integration/create-sfmc-events/',
+              to: '/integrations/Salesforce/Set up your Canvas account'
+            },
+            {
+              from: '/integrations/salesforce-integration/journey-setup/',
+              to: '/integrations/Salesforce/Journey setup'
+            },
+            {
+              from: '/integrations/salesforce-integration/mobile-sdk-integration/',
+              to: '/integrations/Salesforce/Mobile SDK Integration/Overview'
+            },
+            {
+              from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-android-integration/',
+              to: '/integrations/Salesforce/Mobile SDK Integration/Android'
+            },
+            {
+              from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-ios-integration/',
+              to: '/integrations/Salesforce/Mobile SDK Integration/iOS'
+            },
+            {
+              from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-ios-integration/',
+              to: '/integrations/Salesforce/Mobile SDK Integration/iOS'
+            },
+            {
+              from: '/integrations/salesforce-integration/bluedot-data-extension-fields/',
+              to: '/integrations/Salesforce/Bluedot data extension fields'
+            },
+            {
+              from: '/integrations/segment-integration/',
+              to: '/integrations/Segment'
+            },
+            {
+              from: '/integrations/tealium-integration/',
+              to: '/integrations/Tealium'
+            },
+
+
+            
+          ]
+        }
+      ]
+    ]
 };
 
 module.exports = config;

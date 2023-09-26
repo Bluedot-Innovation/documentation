@@ -1,4 +1,4 @@
-Salesforce Marketing Cloud Integration
+Overview
 ======================================
 
 You can use the [Bluedot Location Marketing app](https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000Dq8lCEAR) from the Salesforce AppExchange to power personalized customer journeys at scale. With Salesforce + Bluedot together you can send Push messages when the customer arrives at your restaurant, trigger specific email campaigns based on visits to a rival’s store, or create an immersive game experience, engaging your customers as they move throughout real-world locations.

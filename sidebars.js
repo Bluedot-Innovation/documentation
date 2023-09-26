@@ -299,22 +299,22 @@ const sidebars = {
       label: "Integrations",
       link: {
         type: "doc",
-        id: "Integrations/Overview",
+        id: "integrations/Overview",
       },
       items: [
-        "Integrations/Overview",
-        "Integrations/Adobe Experience",
+        "integrations/Overview",
+        "integrations/Adobe Experience",
         {
           type: "category",
           label: "Airship",
           link: {
             type: "doc",
-            id: "Integrations/Airship/Overview",
+            id: "integrations/Airship/Overview",
           },
           items: [
-            "Integrations/Airship/Overview",
-            "Integrations/Airship/Android",
-            "Integrations/Airship/iOS"
+            "integrations/Airship/Overview",
+            "integrations/Airship/Android",
+            "integrations/Airship/iOS"
           ]
         },
         {
@@ -322,27 +322,27 @@ const sidebars = {
           label: "Attentive",
           link: {
             type: "doc",
-            id: "Integrations/Attentive/Overview",
+            id: "integrations/Attentive/Overview",
           },
           items: [
-            "Integrations/Attentive/Overview",
-            "Integrations/Attentive/Quick Start",
-            "Integrations/Attentive/Curbside experience",
-            "Integrations/Attentive/Location-based messages",
+            "integrations/Attentive/Overview",
+            "integrations/Attentive/Quick Start",
+            "integrations/Attentive/Curbside experience",
+            "integrations/Attentive/Location-based messages",
           ]
         },
-        "Integrations/Bbot",
+        "integrations/Bbot",
         {
           type: "category",
           label: "Braze",
           link: {
             type: "doc",
-            id: "Integrations/Braze/Overview",
+            id: "integrations/Braze/Overview",
           },
           items: [
-            "Integrations/Braze/Overview",
-            "Integrations/Braze/Android",
-            "Integrations/Braze/iOS"
+            "integrations/Braze/Overview",
+            "integrations/Braze/Android",
+            "integrations/Braze/iOS"
           ]
         },
         {
@@ -350,67 +350,67 @@ const sidebars = {
           label: "CleverTap",
           link: {
             type: "doc",
-            id: "Integrations/CleverTap/Overview",
+            id: "integrations/CleverTap/Overview",
           },
           items: [
-            "Integrations/CleverTap/Overview",
-            "Integrations/CleverTap/Android",
-            "Integrations/CleverTap/iOS"
+            "integrations/CleverTap/Overview",
+            "integrations/CleverTap/Android",
+            "integrations/CleverTap/iOS"
           ]
         },
-        "Integrations/Flipdish",
-        "Integrations/Incentivio",
-        "Integrations/Mobivity",
-        "Integrations/mParticle",
-        "Integrations/Olo",
-        "Integrations/OneSignal",
+        "integrations/Flipdish",
+        "integrations/Incentivio",
+        "integrations/Mobivity",
+        "integrations/mParticle",
+        "integrations/Olo",
+        "integrations/OneSignal",
         {
           type: "category",
           label: "Oracle Responsys",
           link: {
             type: "doc",
-            id: "Integrations/Oracle Responsys/Overview",
+            id: "integrations/Oracle Responsys/Overview",
           },
           items: [
-            "Integrations/Oracle Responsys/Overview",
-            "Integrations/Oracle Responsys/Android",
-            "Integrations/Oracle Responsys/iOS"
+            "integrations/Oracle Responsys/Overview",
+            "integrations/Oracle Responsys/Android",
+            "integrations/Oracle Responsys/iOS"
           ]
         },
-        "Integrations/Oracle Simphony",
-        "Integrations/Raydiant",
-        "Integrations/Safegraph",
+        "integrations/Oracle Simphony",
+        "integrations/Raydiant",
+        "integrations/Safegraph",
         {
           type: "category",
           label: "Salesforce",
           link: {
             type: "doc",
-            id: "Integrations/Salesforce/Overview",
+            id: "integrations/Salesforce/Overview",
           },
           items: [
-            "Integrations/Salesforce/Overview",
-            "Integrations/Salesforce/Linking Salesforce Marketing Cloud to Canvas",
-            "Integrations/Salesforce/Create SFMC events",
-            "Integrations/Salesforce/Set up your Canvas account",
-            "Integrations/Salesforce/Journey setup",
+            "integrations/Salesforce/Overview",
+            "integrations/Salesforce/Linking Salesforce Marketing Cloud to Canvas",
+            "integrations/Salesforce/Create SFMC events",
+            "integrations/Salesforce/Set up your Canvas account",
+            "integrations/Salesforce/Journey setup",
             {
               type: "category",
               label: "Mobile SDK Integration",
               link: {
                 type: "doc",
-                id: "Integrations/Salesforce/Mobile SDK Integration/Overview",
+                id: "integrations/Salesforce/Mobile SDK Integration/Overview",
               },
               items: [
-                "Integrations/Salesforce/Mobile SDK Integration/Overview",
-                "Integrations/Salesforce/Mobile SDK Integration/Android",
-                "Integrations/Salesforce/Mobile SDK Integration/iOS"
+                "integrations/Salesforce/Mobile SDK Integration/Overview",
+                "integrations/Salesforce/Mobile SDK Integration/Android",
+                "integrations/Salesforce/Mobile SDK Integration/iOS"
               ]
             },
-            "Integrations/Salesforce/Bluedot data extension fields",
+            "integrations/Salesforce/Bluedot data extension fields",
           ]
         },
-        "Integrations/Segment",
-        "Integrations/Tealium"
+        "integrations/Segment",
+        "integrations/Tealium"
       ]
     },
     {
