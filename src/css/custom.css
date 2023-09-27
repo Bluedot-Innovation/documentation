@@ -81,3 +81,10 @@ code {
 .navbar__link svg {
   display: none;
 }
+
+@media (max-width: 1239px) {
+  .card-stack-two-column {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
