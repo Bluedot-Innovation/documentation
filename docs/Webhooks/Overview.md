@@ -55,12 +55,12 @@ To set up **Webhooks**, login to Canvas and head to the **Integrations** section
 | Header fields (optional) | Custom headers are sent along with the webhook request. Keys must not contain spaces.  The dynamic headers (available only for standard webhooks) will require a fixed property key; only the value can be programmatically set. By adding dynamic headers to the Webhook, you’re setting up a pattern that will be picked up and populated from the webhook request body . It can be any property name that is present in the webhook request body. For example, to set a custom value included in the event, you can use `eventMetaData.key_name` for a Geo-trigger event or `customEventMetaData.key_name` for a Tempo or Wave event |
 | Body fields (optional) | Custom fields and values which will be added to the body of the webhook when sent. Keys must not contain spaces |
 
+5\. After finalizing your webhook configuration, click _'Add'_ to save and activate the webhook.
+
 :::info
 **Webhooks Retry Mechanism**: 
 The Webhooks Retry Mechanism is an optional feature that resends failed webhook events automatically. Learn how to enable and use this feature [here](./Webhooks%20retry.md).
 :::
-
-5\. Select Add
 
 Receiving a Webhook notification
 ================================
