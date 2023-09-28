@@ -292,6 +292,7 @@ const sidebars = {
         "Webhooks/Tempo",
         "Webhooks/Wave",
         "Webhooks/Hello order",
+        "Webhooks/Webhooks retry"
       ],
     },
     {

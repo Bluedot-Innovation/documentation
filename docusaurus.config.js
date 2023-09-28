@@ -396,6 +396,10 @@ const config = {
             {
               from: '/canvas/what-are-zone-settings/what-is-custom-data/',
               to: '/Canvas/What is Zone custom data'
+            },
+            {
+              from: '/webhooks/',
+              to: '/Webhooks/Overview'
             }
           ]
         }
