@@ -112,7 +112,7 @@ If you have trouble finding out in which region your account is located, please 
 
 Webhook payload structure
 ------------------------------
-Explore these links for detailed examples and explanations of the JSON structures used in our webhook requests.
+Explore these links for detailed examples and explanations of the JSON structures used in our webhook events.
 
 *   [Geo-trigger](./Geo-triggering.md)
 *   [Tempo](./Tempo.md)
