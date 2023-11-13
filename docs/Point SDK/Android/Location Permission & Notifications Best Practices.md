@@ -23,6 +23,17 @@ Foreground service and persistent notification
 
 Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. Implementing a [foreground service](https://developer.android.com/guide/components/foreground-services) is the best practice for ensuring users are fully aware of how and when their location is accessed and also for the most efficient use of system resources. When a foreground service is running, there will be a persistent notification in the notification tray informing the user that your app is accessing the device location when the app is in the foreground and background. Foreground services must always be started while the app is in use and in the foreground.
 
+As per latest recommendation from [Google](https://support.google.com/googleplay/android-developer/answer/13392821?hl=en#zippy=%2Cwhat-is-a-foreground-service-permission-and-does-it-need-to-be-granted-by-the-user-before-starting-a-foreground-service%2Cwhat-is-changing-for-foreground-services-in-android%2Chow-do-i-know-what-foreground-service-type-to-use), When app is targeting Android 14 and onwards and it is using foreground service Geo-trigger/Tempo then it should add a Foreground service Location type permission in the app manifest.
+And if it is targeting Android 13 onwards then for using Foreground Service implementation of Geo-Trigger/Tempo [POST_NOTIFICATIONS](https://developer.android.com/develop/ui/views/notifications/notification-permission) is required to be declared in app manifest as below:
+
+```xml
+//Required Android 14 onwards
+ <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+//Required Android 13 onwards
+ <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>   
+```
+
 To run as a foreground service the [`GeoTriggerBuilder`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-geo-triggering-service/-geo-trigger-builder/index.html) and [`TempoBuilder`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-service/-tempo-builder/index.html) must be passed a [Notification](https://developer.android.com/training/notify-user/build-notification) via the `notification()` method. This is the notification that will be displayed persistently as long as the service is running. The notification should convey to the user why the app is collecting location data, and what value they are receiving from allowing the app to do so.
 
 Please see our [Minimal Integration](https://github.com/Bluedot-Innovation/PointSDK-MinimalIntegrationExample-Android) project for examples on how to build notifications and start [Geo-triggering](https://github.com/Bluedot-Innovation/PointSDK-MinimalIntegrationExample-Android/blob/415b25f55e551718fd4525858f3db9346920f802/app/src/main/java/au/com/bluedot/minimalintegration/MainApplication.java#L93) and [Tempo](https://github.com/Bluedot-Innovation/PointSDK-MinimalIntegrationExample-Android/blob/415b25f55e551718fd4525858f3db9346920f802/app/src/main/java/au/com/bluedot/minimalintegration/MainApplication.java#L120) as foreground services.
