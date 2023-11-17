@@ -31,6 +31,16 @@ At any time you head back into a Zone to:
 *   Edit the size of the geofence
 
 
+Geofeatures Size Limits
+-----------------------
+
+When creating a **Geofence**, it's important to be aware of the size limitations depending on the type of geofeature you are choosing:
+
+* For type `circle`, the minimum radius is 5 meters.
+* For types `boundingBox` and `polygon`, the minimum area must be at least 70 square meters.
+
+These limitations ensure that your Geofences are effective and accurate for your use case. Make sure to take these into account when adding a new Geofence to your Zone.
+
 :::info
 You can also create Zones programmatically using our Config API. [Learn more about Config API](../APIs/Config%20API/Overview.md).
 :::
