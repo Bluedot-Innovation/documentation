@@ -14,43 +14,60 @@ Associated Documentation
 
 * * *
 
-Integration Architecture Diagram
---------------------------------
-
-![](../assets/Bluedot-mParticle-Architecture-1024x576.png)
 
 Integration Overview
 --------------------
 
-Before you begin the integration please ensure you have an active customer account with both Bluedot & mParticle.
+Before you begin the integration, ensure you have an active customer account with Bluedot & mParticle. Decide on the custom data you'll be passing from Bluedot Events to mParticle:
 
-1.  Decide on the custom data you’ll be passing from Bluedot Entry/Exit (_can_ _also be called Check-in and Check-out Event_) Events to mParticle:
-    1.  [Custom Event Metadata](../Custom%20Event%20Metadata.md) (_max.20_)
-    2.  [Custom Zone Data](../Canvas/What%20is%20Zone%20custom%20data.md) (_max.20_)
-2.  Integrate the Bluedot SDK within your mobile app: 
-    1.  [iOS integration guide](../Point%20SDK/iOS/Quick%20Start.md)
-    2.  [Android integration guide](../Point%20SDK/Android/Quick%20Start.md)
-3.  Add a Bluedot integration to your mParticle account, as laid out in [mParticle’s documentation](https://docs.mparticle.com/integrations/bluedot/feed/).
-4.  Add your mParticle iOS and/or Android publishable API keys and secrets to the Project via the Integrations section in Canvas.  
-      
-    ![mParticle Integration Form](../assets/mParticle-canvas-integration.png)
+- [Custom Event Metadata](../Custom%20Event%20Metadata.md) (max.20)
+- Custom Zone Data (max.20)
 
-Once these steps are done, the integration is ready to go. Simply enter a geofence with a mobile device to trigger the Zone.
+Events type
+-----------
+
+The mParticle integration will also support the following events:
+
+- **Geo-trigger:** Entry and/or exit into a Zone/Geofence
+- **Tempo**: ETA calculations as a user moves towards a Zone
+- **Wave**: API events when a user notifies of their arrival
+- **Hello Orders**: Events when the state of an order has been updated in Hello Screens
+
+To use the Geo-trigger and Tempo events, you'll need to integrate the Bluedot SDK within your mobile app:
+
+- [iOS integration guide](../Point%20SDK/iOS/Overview.md)
+- [Android integration guide](../Point%20SDK/Android/Overview.md)
+
+For Wave and Hello Orders, please refer to the following:
+
+- [Wave integration guide](../APIs/Wave%20API/Integrate%20Wave%20API.md)
+- [Hello Screens documentation](../Hello%20Screens/Overview.md)
+
+Add a Bluedot integration to your mParticle account, as mentioned in mParticle's documentation. 
+
+Add your mParticle iOS, Android and/or Web publishable API keys and secrets to the Project via the Integrations section in Canvas.
+
+Environments
+------------
+
+You have the option to send data to mParticle as either development or production data. When set to development, all data is treated as such and remains separate from your production data. If set to production, the data is forwarded to all configured integrations for your application. We recommend using the development setting for testing purposes. This allows you to view Bluedot events in the [Live Stream view](https://docs.mparticle.com/guides/data-master/live-stream/).
+
+![](../assets/mparticle-in-canvas-documentation.png)
 
 Custom Attributes / Sending events to mParticle
 -----------------------------------------------
 
-Custom attributes can be passed along to mParticle as key/ value pairs in Bluedot’s [Custom Event Metadata](../Custom%20Event%20Metadata.md) by prepending the key with `mparticle_`.  
+Custom attributes can be passed along to mParticle as key/ value pairs in Bluedot’s [Custom Event Metadata](../Custom%20Event%20Metadata.md).  
 An example will be:
 
 ```json
 mparticle_customer_id : "<your mparticle customer id>",
-mparticle_another_custom_field : "another value",
+another_custom_field : "another value",
 ```
 
 
-:::warning
-At least one of `user_dentities` listed in [mParticle’s documentation](https://docs.mparticle.com/developers/server/json-reference/#user_identities) with the `mparticle_` fields **_must_** be included in the CustomEventMetaData in order to push events to mParticle.
+:::tip
+At least one of `user_dentities` listed in [mParticle’s documentation](https://docs.mparticle.com/developers/server/json-reference/#user_identities) with the `mparticle_` fields **_must_** be included in the [Custom Event Metadata](../Custom%20Event%20Metadata.md) in order to push events to mParticle.
 :::
 
 :::info
@@ -59,52 +76,5 @@ The custom event metadata is not persisted across SDK sessions. If the SDK is lo
 More information on best practices of setting and using custom event metadata can be found [here](../Custom%20Event%20Metadata.md).
 :::
 
-Integration Fields: Type & Character Length setup
--------------------------------------------------
 
-### **Event Custom Attributes**
-
-| **Field**          | **TYPE** | **LENGTH** | **DESCRIPTION**                                                                   |
-|--------------------|----------|------------|-----------------------------------------------------------------------------------|
-| `altitude`         | Number   |            | Altitude in metres if supplied by device sensors                                  |
-| `altitudeAccuracy` | Number   |            | Accuracy of supplied altitude                                                     |
-| `bearing`          | Number   |            | The direction of motion of the device at the time of trigger event, if available  |
-| `checkInTime`      | Datetime |            | The time of entry – only supplied for exit triggers                               |
-| `eventTime`        | Datetime |            | The time of the trigger event                                                     |
-| `fenceId`          | UUID     | 36         | Only available if trigger caused by geofence or Geoline™                          |
-| `fenceName`        | String   |            | Only available if trigger caused by geofence or Geoline™                          |
-| `id`               | UUID     | 36         | The unique ID of the trigger                                                      |
-| `projectId`        | UUID     | 36         | The ID of the Bluedot project that the SDK was running against                    |
-| `sdkVersion`       | String   |            | The version of the Bluedot SDK                                                    |
-| `speed`            | Number   |            | The speed of the device at the time of trigger event, if available                |
-| `triggerId`        | UUID     | 36         | The chain ID of the trigger, which can be used to associate entry and exit events |
-| `zoneId`           | UUID     | 36         | The ID of the Bluedot Zone that the trigger was associated with                   |
-| `zoneName`         | String   |            | The name of the Bluedot Zone that the trigger was associated with                 |
-
-### **Application Info**
-
-| **FIELD**             | **TYPE** | **LENGTH** | **DESCRIPTION**                                                                          |
-|-----------------------|----------|------------|------------------------------------------------------------------------------------------|
-| `application_version` | String   |            | The version of the application holding the Bluedot PointSDK on the device that triggered |
-| `package`             | String   |            | The package name of the application running Bluedot Point SDK                            |
-
-### **Device Info**
-
-| **FIELD**      | **TYPE** | **LENGTH** | **DESCRIPTION**                                                  |
-|----------------|----------|------------|------------------------------------------------------------------|
-| `device_model` | String   |            | The model of device that triggered                               |
-| `platform`     | String   |            | iOS or android                                                   |
-| `os_version`   | String   |            | The version of the operating system on the device that triggered |
-
-### **User Attributes**
-
-| **FIELD**             | **TYPE** | **LENGTH** | **DESCRIPTION**                                         |
-|-----------------------|----------|------------|---------------------------------------------------------|
-| `bluedot_customer_id` | UUID     | 36         | A unique UUID associated with the device that triggered |
-
-* * *
-
-Contact Details
----------------
-
-If you have any technical issues or questions you please use [**_help@bluedot.io_**](mailto:help@bluedot.io) to reach out to our Melbourne-based Engineering team.
+If you have any technical issues or questions you please use ***[help@bluedot.io](mailto:help@bluedot.io)*** to reach out to our Support team.
