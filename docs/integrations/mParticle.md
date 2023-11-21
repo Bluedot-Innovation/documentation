@@ -20,7 +20,7 @@ Integration Overview
 
 Before you begin the integration, ensure you have an active customer account with Bluedot & mParticle. Decide on the custom data you'll be passing from Bluedot Events to mParticle:
 
-- [Custom Event Metadata](https://docs.bluedot.io/custom-event-metadata/) (max.20)
+- [Custom Event Metadata](../Custom%20Event%20Metadata.md) (max.20)
 - Custom Zone Data (max.20)
 
 Events type
@@ -35,13 +35,13 @@ The mParticle integration will also support the following events:
 
 To use the Geo-trigger and Tempo events, you'll need to integrate the Bluedot SDK within your mobile app:
 
-- [iOS integration guide](https://docs.bluedot.io/ios-sdk/)
-- [Android integration guide](https://docs.bluedot.io/android-sdk/)
+- [iOS integration guide](../Point%20SDK/iOS/Overview.md)
+- [Android integration guide](../Point%20SDK/Android/Overview.md)
 
 For Wave and Hello Orders, please refer to the following:
 
-- [Wave integration guide](https://docs.bluedot.io/wave-api-integration-user-guide/)
-- [Hello Screens documentation](https://docs.bluedot.io/hello-screens/)
+- [Wave integration guide](../APIs/Wave%20API/Integrate%20Wave%20API.md)
+- [Hello Screens documentation](../Hello%20Screens/Overview.md)
 
 Add a Bluedot integration to your mParticle account, as mentioned in mParticle's documentation. 
 
