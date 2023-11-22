@@ -185,6 +185,7 @@ const sidebars = {
       items: [
         "Hello Screens/Overview",
         "Hello Screens/Customer wait time goals",
+        "Hello Screens/Order ticket details",
         "Hello Screens/Mobile app",
         "Hello Screens/Additional security layer",
       ],
