@@ -27,7 +27,7 @@ As per latest recommendation from [Google](https://support.google.com/googleplay
 * When app is targeting **Android 14** and onwards and it is using foreground service Geo-trigger/Tempo then it should add a [`FOREGROUND_SERVICE_LOCATION`](https://developer.android.com/reference/android/Manifest.permission#FOREGROUND_SERVICE_LOCATION) type permission in the app manifest.
 
 ```xml title="AndroidManifest"
-// Required Android 14 onwards
+ // Required Android 14 onwards
  <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>   
 ```
@@ -35,7 +35,7 @@ As per latest recommendation from [Google](https://support.google.com/googleplay
 * And if it is targeting **Android 13** onwards then for using Foreground Service implementation of Geo-Trigger/Tempo [`POST_NOTIFICATIONS`](https://developer.android.com/develop/ui/views/notifications/notification-permission) is required to be declared in app manifest as below:
 
 ```xml title="AndroidManifest"
-// Required Android 13 onwards
+ // Required Android 13 onwards
  <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>   
 ```
 
