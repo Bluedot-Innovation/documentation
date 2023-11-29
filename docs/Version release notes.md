@@ -16,7 +16,7 @@ Release date Nov 29, 2023
 **What’s New:**
 * Dependency Updates:
   * Google Play Location Services upgraded to version 21.0.1.
-  * Android X now at version 2.5.1.
+  * AndroidX Room now at version 2.5.1.
   * Work Manager updated to version 2.8.1.
 * SDK Compatibility Adjustments:
   * `compileSdk` version have been updated to 33.
