@@ -7,6 +7,23 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+
+Release date Nov 29, 2023
+-------------------------
+
+### Android SDK 15.6.0
+
+**What’s New:**
+* Dependency Updates:
+  * Google Play Location Services upgraded to version 21.0.1.
+  * AndroidX Room now at version 2.5.1.
+  * Work Manager updated to version 2.8.1.
+* SDK Compatibility Adjustments:
+  * `compileSdk` version have been updated to 33.
+  * Developers are advised to update their `compileSdkVersion` to version 33 or higher to ensure full compatibility with the latest SDK.
+
+* * *
+
 Release date May 2, 2023
 ------------------------
 
