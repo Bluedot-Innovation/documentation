@@ -7,6 +7,17 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date Nov 30, 2023
+-------------------------
+
+### Bluedot React Native wrapper 2.3.5
+
+**What’s New:**
+* React Native updated to version 0.72.7
+* Bluedot Android SDK updated to version 15.6.0
+
+* * *
+
 
 Release date Nov 29, 2023
 -------------------------
