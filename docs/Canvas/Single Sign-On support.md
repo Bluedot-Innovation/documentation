@@ -9,7 +9,7 @@ If you want to enable SSO, get in touch with your Bluedot account manager, who w
 
 ### Step 1: Confirm Your Identity Provider (IdP)
 
-Confirm the Identity Provider (IdP) you're using, ensuring it supports standard protocols like SAML, OIDC, OAuth, or JWT.
+Confirm the Identity Provider (IdP) you're using, ensuring it supports SAML 2.0.
 
 ### Step 2: Share Your SSO Details
 
