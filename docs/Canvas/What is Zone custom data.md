@@ -5,7 +5,7 @@ You can attach any type of metadata to a location that’s relevant to your loca
 
 This metadata will be delivered to the mobile app at the time of entry (check-in) as part of the SDK callbacks. Add custom data fields to the Zone to receive it when a device moves into a Fence. The fields will be returned to the application as a map of keys and values by the SDK when the zone is triggered on the mobile device.
 
-The metadata received in the entry (check-in) and exit (check-out) callbacks for Zone trigger on your application can be used to enhance your post-entry processing and help you provide a better context-aware solution to your customers.
+The metadata received in the Entry (check-in) and Exit (check-out) callbacks for Zone trigger on your application can be used to enhance your post-entry processing and help you provide a better context-aware solution to your customers.
 
 
 :::info
