@@ -35,6 +35,16 @@ Release date Nov 29, 2023
 
 * * *
 
+Release date Aug 11, 2023
+-------------------------
+
+### iOS SDK 15.6.8
+
+**What’s New:**
+* Fixed rare race condition crash caused by null pointer on startup.
+
+* * *
+
 Release date May 2, 2023
 ------------------------
 
