@@ -91,7 +91,7 @@ Airship.push.userPushNotificationsEnabled = true
     ```swift
     BDLocationManager.instance()?.startGeoTriggering() { error in 
       guard error == nil else {
-        print("There was an error starting geo-triggering with the Bluedot SDK: \\(error.localizedDescription)")
+        print("There was an error starting geo-triggering with the Bluedot SDK: \(error.localizedDescription)")
         return
       }
     }
