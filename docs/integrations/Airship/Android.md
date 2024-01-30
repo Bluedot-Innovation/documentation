@@ -29,7 +29,7 @@ override fun onCreate() {
 
     UAirship.takeOff(this, OnReadyCallback {
       // Enable user notifications
-      it.pushManager.userNotificationsEnabled \= true
+      it.pushManager.userNotificationsEnabled = true
     })
 }
 ```
@@ -77,7 +77,7 @@ else
 public void startGeoTriggering() {
   // Start Geo-triggering feature
   GeoTriggeringService.builder()
-    .start(this, geoTriggerError \-> {
+    .start(this, geoTriggerError -> {
       if (geoTriggerError != null) {
         Log.i("Bluedot", "Error in starting GeoTrigger" + geoTriggerError.reason)
       }
@@ -134,7 +134,7 @@ public class ExampleGeoTriggerReceiver extends GeoTriggeringEventReceiver {
 
 ```kotlin
 override fun onZoneEntryEvent(entryEvent: ZoneEntryEvent, context: Context) {
-  val builder \= CustomEvent.Builder("bluedot_place_entered")
+  val builder = CustomEvent.Builder("bluedot_place_entered")
   builder.setInteraction("location", entryEvent.zoneInfo.zoneId)
   entryEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot_zone_name", it) }
   entryEvent.zoneInfo.customData?.let {
