@@ -97,6 +97,10 @@ class ExampleGeoTriggerReceiver : GeoTriggeringEventReceiver() {
  }
  ```
 
+:::info
+ _Exit_ events will only trigger when the device has moved a substantial distance away from the geofence. Detection of _Exit_ events may not be as immediate as _Entry_ events.
+:::
+
 Stop Geo-triggering
 -------------------
 
