@@ -170,8 +170,8 @@ const config = {
               to: '/integrations/Incentivio'
             },
             {
-              from: '/integrations/incentivio-integration/',
-              to: '/integrations/Incentivio'
+              from: '/integrations/klaviyo-integration/',
+              to: '/integrations/Klaviyo'
             },
             {
               from: '/integrations/mobivity-integration/',

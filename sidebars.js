@@ -364,6 +364,7 @@ const sidebars = {
         },
         "integrations/Flipdish",
         "integrations/Incentivio",
+        "integrations/Klaviyo",
         "integrations/Mobivity",
         "integrations/mParticle",
         "integrations/Olo",
