@@ -7,6 +7,22 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+
+Release date Feb 9, 2024
+-------------------------
+
+### Android SDK 15.6.2
+**What's New:**
+* Further enhancements to the Geo-triggering service performance, building on the improvements introduced in version 15.6.1. This version brings optimised efficiency and reliability when the App is in the foreground and operates without a Foreground Service Notification.
+
+### Bluedot React Native wrapper 2.3.7
+
+**What’s New:**
+* Bluedot Android SDK updated to version 15.6.2
+
+* * *
+
+
 Release date Dec 22, 2023
 -------------------------
 
