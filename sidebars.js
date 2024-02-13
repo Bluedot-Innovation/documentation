@@ -169,6 +169,18 @@ const sidebars = {
         "Canvas/Store management",
         "Canvas/What are Zone settings",
         "Canvas/What is Zone custom data",
+        {
+          type: "category",
+          label: "Analytics",
+          link: {
+            type: 'doc',
+            id: 'Canvas/Analytics/Historical Event Tracking'
+          },
+          items: [
+            'Canvas/Analytics/Historical Event Tracking',
+            'Canvas/Analytics/Hello Order Logs'
+          ]
+        },
         "Canvas/Mandatory two-factor authentication",
         "Canvas/Single Sign-On support",
         "Canvas/Setting up multiple environments",
