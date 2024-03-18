@@ -4,39 +4,26 @@ Android Integration
 Getting Started
 ---------------
 
-1\. Modify your `build.gradle` to include Braze SDK.
-
+1\. Add the dependency in the app's build gradle add
 ```gradle
-repositories {
-...
-    maven { 
-        url "https://appboy.github.io/appboy-android-sdk/sdk" 
-    }
-}
+implementation "com.braze:android-sdk-ui:+"
+implementation "com.braze:android-sdk-location:+"
 ```
 
-Braze supports a few push providers: FCM, GCM, ADM. We recommend using Firebase. However, you can choose other.
-
-2\. In the app gradle add
-```gradle
-implementation "com.appboy:android-sdk-ui:+"
-```
-
-3\. Create `appboy.xml` under the res folder and add the following code. Create a Braze Android App and get the API key and replace it in the `“REPLACE_WITH_YOUR_API_KEY”`. Also, replace the `“YOUR_CUSTOM_ENDPOINT_OR_CLUSTER”` with the custom endpoint from Braze.
+2\. Create `braze.xml` under the `res/values` folder and add the following code. Create a Braze Android App and get the API key and replace it in the `“YOUR-APP-IDENTIFIER-API-KEY”`. Also, replace the `“YOUR-BRAZE-ENDPOINT”` with the custom endpoint from Braze.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="com_appboy_api_key">REPLACE_WITH_YOUR_API_KEY</string>
-    <string translatable="false" name="com_appboy_custom_endpoint">YOUR_CUSTOM_ENDPOINT_OR_CLUSTER</string>
-    <bool translatable="false" name="com_appboy_firebase_cloud_messaging_registration_enabled">true</bool>
-    <string translatable="false" name="com_appboy_firebase_cloud_messaging_sender_id">your_fcm_sender_id_here</string>
-    <integer name="com_appboy_default_notification_accent_color">0xFFf33e3e</integer>
-    <bool name="com_appboy_handle_push_deep_links_automatically">true</bool>
+    <string name="com_braze_api_key">YOUR-APP-IDENTIFIER-API-KEY</string>
+    <string translatable="false" name="com_braze_custom_endpoint">YOUR-BRAZE-ENDPOINT</string>
+    <bool name="com_braze_enable_location_collection">true</bool>
+    <bool name="com_braze_fallback_firebase_cloud_messaging_service_enabled">true</bool>
+    <string name="com_braze_fallback_firebase_cloud_messaging_service_classpath">com.company.OurFirebaseMessagingService</string>
 </resources>
 ```
 
-4\. In the `AndroidManifest.xml` add the following:  
+3\. In the `AndroidManifest.xml` add the following:  
 a. The following permissions are required.
 
 ```xml
@@ -48,10 +35,11 @@ a. The following permissions are required.
 b. The following braze service should be included to handle push receipt and open intents.
 
 ```xml
-<service android:name="com.appboy.AppboyFirebaseMessagingService">
-    <intent-filter>
-        <action android:name="com.google.firebase.MESSAGING_EVENT" />
-    </intent-filter>
+<service android:name="com.braze.push.BrazeFirebaseMessagingService"
+  android:exported="false">
+  <intent-filter>
+    <action android:name="com.google.firebase.MESSAGING_EVENT" />
+  </intent-filter>
 </service>
 ```
 
@@ -99,21 +87,20 @@ override fun onRequestPermissionsResult(requestCode: Int, permissions: Array, gr
 class MainApplication : Application(), InitializationResultListener {
 
     private lateinit var mServiceManager: ServiceManager
-    
-    private val projectId = Bluedot Project Id for the App
+    private val projectId = BLUEDOT-PROJECT-ID
 
     override fun onCreate() {
         super.onCreate()
 
-        registerActivityLifecycleCallbacks(AppboyLifecycleCallbackListener(false, false))
+        registerActivityLifecycleCallbacks(BrazeActivityLifecycleCallbackListener())
 
-        // initialize Bluedot point sdk
+        // Initialize Bluedot Point SDK
         initPointSDK()
     }
 
     fun initPointSDK() {
         val checkPermissionFine = 
-            ActivityCompat.checkSelfPermission( applicationContext, Manifest.permission.ACCESS_FINE_LOCATION ) 
+            ActivityCompat.checkSelfPermission(applicationContext, Manifest.permission.ACCESS_FINE_LOCATION) 
 
         if (checkPermissionFine == PackageManager.PERMISSION_GRANTED) { 
             mServiceManager = ServiceManager.getInstance(this) 
@@ -133,68 +120,66 @@ class MainApplication : Application(), InitializationResultListener {
 }    
 ```
 
-This method is called when BlueDotPointService started successfully, your app logic code using the Bluedot service could start from here. Replace “YOUR_BRAZE_USER_ACCOUNT” with the Braze user account.
+This method is called when Bluedot Point service started successfully, your app logic code using the Bluedot service could start from here. Replace “BRAZE_USER_ID” with the Braze user account.
 
-```
-    override fun onInitializationFinished(error: BDError?) {
-        if (error != null) {
-            Toast.makeText(
-                applicationContext,
-                "Bluedot Point SDK initialization error: ${error.reason}",
-                Toast.LENGTH_LONG
-            ).show()
-            return
-        }
+```kotlin
+override fun onInitializationFinished(error: BDError?) {
+	if (error != null) {
+		Toast.makeText(
+			applicationContext,
+			"Bluedot Point SDK initialization error: ${error.reason}",
+			Toast.LENGTH_LONG
+		).show()
+		return
+	}
 
-        Appboy.getInstance(this).changeUser(YOUR_BRAZE_USER_ACCOUNT)
-        println("Bluedot Point SDK authenticated")
-    }
+	Braze.getInstance(this).changeUser(BRAZE_USER_ID)
+	println("Bluedot Point SDK authenticated")
+}
 ```
 
 3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the Braze API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
 
 ```kotlin
 class BluedotGeoTriggerReceiver: GeoTriggeringEventReceiver() {
-    private val customEventEntry = YOUR CUSTOM ENTRY EVENT NAME
-    private val customEventExit =YOUR CUSTOM EXIT EVENT NAME
+    private val customEventEntry = YOUR_CUSTOM_ENTRY_EVENT_NAME
+    private val customEventExit = YOUR_CUSTOM_EXIT_EVENT_NAME
 
-    override fun onZoneEntryEvent(entryEvent: ZoneEntryEvent, context: Context) {
-        println("Zone ${entryEvent.zoneInfo.zoneName}, fence ${entryEvent.fenceInfo.name} entered at: ${Date()}")
+   override fun onZoneEntryEvent(geoTriggerEvent: GeoTriggerEvent, context: Context) {
+        println("Zone ${geoTriggerEvent.zoneInfo.name}, fence ${geoTriggerEvent.entryEvent()?.fenceName} entered at: ${Date()}")
 
-        val eventProperties = AppboyProperties()
-        eventProperties.addProperty("zone_id", entryEvent.zoneInfo.zoneId)
-        eventProperties.addProperty("zone_name", entryEvent.zoneInfo.zoneName)
-        eventProperties.addProperty("latitude", entryEvent.locationInfo.latitude)
-        eventProperties.addProperty("longitude", entryEvent.locationInfo.longitude)
-        eventProperties.addProperty("fence_id", entryEvent.fenceInfo.id)
-        eventProperties.addProperty("fence_name", entryEvent.fenceInfo.name)
+        val eventProperties = BrazeProperties()
+        eventProperties.addProperty("zone_id", geoTriggerEvent.zoneInfo.id)
+        eventProperties.addProperty("zone_name", geoTriggerEvent.zoneInfo.name)
+        eventProperties.addProperty("latitude",
+            geoTriggerEvent.entryEvent()?.locations?.get(0)?.latitude
+        )
+        eventProperties.addProperty("longitude", geoTriggerEvent.entryEvent()?.locations?.get(0)?.longitude)
+        eventProperties.addProperty("fence_id", geoTriggerEvent.entryEvent()?.fenceId)
+        eventProperties.addProperty("fence_name", geoTriggerEvent.entryEvent()?.fenceName)
 
-        entryEvent.zoneInfo.getCustomData()?.forEach { data ->
+        geoTriggerEvent.zoneInfo.customData?.forEach { data ->
             eventProperties.addProperty(data.key, data.value)
         }
 
-        Appboy.getInstance(context).logCustomEvent(customEventEntry, eventProperties)
+        Braze.getInstance(context).logCustomEvent(customEventEntry, eventProperties)
     }
 
-    override fun onZoneExitEvent(exitEvent: ZoneExitEvent, context: Context) {
-        println("Zone ${exitEvent.zoneInfo.zoneName}, fence ${exitEvent.fenceInfo.name} exited at: ${Date()}")
+    override fun onZoneExitEvent(geoTriggerEvent: GeoTriggerEvent, context: Context) {
+        println("Zone ${geoTriggerEvent.zoneInfo.name}, fence ${geoTriggerEvent.exitEvent()?.fenceName} exited at: ${Date()}")
 
-        val eventProperties = AppboyProperties()
-        eventProperties.addProperty("zone_id", exitEvent.zoneInfo.zoneId)
-        eventProperties.addProperty("zone_name", exitEvent.zoneInfo.zoneName)
-        eventProperties.addProperty("dwellTime", exitEvent.dwellTime)
-        eventProperties.addProperty("fence_id", exitEvent.fenceInfo.id)
-        eventProperties.addProperty("fence_name", exitEvent.fenceInfo.name)
+        val eventProperties = BrazeProperties()
+        eventProperties.addProperty("zone_id", geoTriggerEvent.zoneInfo.id)
+        eventProperties.addProperty("zone_name", geoTriggerEvent.zoneInfo.name)
+        eventProperties.addProperty("dwellTime", geoTriggerEvent.exitEvent()?.dwellTime)
+        eventProperties.addProperty("fence_id", geoTriggerEvent.exitEvent()?.fenceId)
+        eventProperties.addProperty("fence_name", geoTriggerEvent.exitEvent()?.fenceName)
 
-        exitEvent.zoneInfo.getCustomData()?.forEach { data ->
+        geoTriggerEvent.zoneInfo.customData.forEach { data ->
             eventProperties.addProperty(data.key, data.value)
         }
 
-        Appboy.getInstance(context).logCustomEvent(customEventExit, eventProperties)
-    }
-
-    override fun onZoneInfoUpdate(zones: List<ZoneInfo>, context: Context) {
-        println("Zones updated at: ${Date()} \nZoneInfos count: ${zones.count()}")
+        Braze.getInstance(context).logCustomEvent(customEventExit, eventProperties)
     }
 }
 ```
