@@ -69,7 +69,6 @@ const sidebars = {
                 "Point SDK/iOS/Features/App restart notification",
                 "Point SDK/iOS/Features/Blue bar",
                 "Point SDK/iOS/Features/Enable or disable zones",
-                "Point SDK/iOS/Features/Real-time data sync",
                 "Point SDK/iOS/Features/Enhanced SDK restart",
               ],
             },
