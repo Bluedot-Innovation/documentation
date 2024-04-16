@@ -27,27 +27,15 @@ As per the [documentation](https://developer.apple.com/documentation/corelocatio
 
 ![](../../../assets/ios_background_mode.png)
 
-If the location updates background mode is enabled, the background location usage indicator can be enabled and disabled by setting the `allowsBackgroundLocationUpdates` property from [CLLocationManager](https://developer.apple.com/documentation/corelocation/cllocationmanager), which is inherited by [BDLocationManager](https://ios-docs.bluedot.io/Classes/BDLocationManager.html):
-
-![](../../../assets/iOS_allowsbackgroundlocationupdates.png)  
+If the location updates background mode is enabled, the background location usage indicator can be enabled and disabled by setting the `backgroundLocationAccessForWhileUsing` property in the [BDLocationManager](https://ios-docs.bluedot.io/Classes/BDLocationManager.html):
 
 **Enable background location usage indicator:**     
 
 ```swift
-BDLocationManager.instance().allowsBackgroundLocationUpdates = true
+BDLocationManager.instance().backgroundLocationAccessForWhileUsing = isOn
 ```
 
-For the background location usage indicator to work, `allowsBackgroundLocationUpdates` must be set to `true` while the app is in the foreground, and the app has _While using the app_ location authorization. If `allowsBackgroundLocationUpdates` is set to `true` while the app is in the background, or the user changes the location permission to _While using the app_ while the app is in the background, the background location usage indicator will not be enabled.
-
-**Disable background location usage indicator:**
-
-```swift
-if (BDLocationManager.authorizationStatus != .authorizedAlways) {
-  BDLocationManager.instance().allowsBackgroundLocationUpdates = false
-}
-```
-
-The default value of `allowsBackgroundLocationUpdates` is `false`, and it can be disabled while the app is either in the foreground or the background. If the application requests _Always_ location authorization, be sure to check that _Always_ location authorization has not been granted before setting `allowsBackgroundLocationUpdates` to `false`, as setting the value to `false` will prevent the app from accessing location from the background.
+The default value of `backgroundLocationAccessForWhileUsing` is `false`, and it can be disabled while the app is either in the foreground or the background.
 
 Background location use cases
 -----------------------------
@@ -66,13 +54,3 @@ Example steps to implement:
 4.  User travels to the pickup location.
 5.  Order is completed.
 6.  Disable background location usage indicator.
-
-Migration from BDPointBackgroundLocationEnabledForWhenInUseKey  
-
------------------------------------------------------------------
-
-The Bluedot iOS SDK also supports setting the background location usage indicator at build time. Setting a `BDPointBackgroundLocationEnabledForWhenInUseKey` property in an app’s `info.plist` to `true` will cause the Bluedot SDK to set the `allowsBackgroundLocationUpdates` property setting to `true` upon start. Enabling the background location usage indicator at runtime via this method is **deprecated**, and will be removed in a future release.
-
-If the app was previously using `BDPointBackgroundLocationEnabledForWhenInUseKey` to enable the background location usage indicator, please ensure the property is removed before using `BDLocationManager.instance().allowsBackgroundLocationUpdates`.
-
-To migrate to the new method of enabling the background location usage indicator without a change in SDK or app functionality, simply remove the `BDPointBackgroundLocationEnabledForWhenInUseKey` property and ensure `BDLocationManager.instance().allowsBackgroundLocationUpdates` is set to `true` prior to starting Geo-triggering or Tempo.
