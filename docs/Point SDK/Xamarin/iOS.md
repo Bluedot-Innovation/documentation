@@ -20,13 +20,9 @@ Create the Xamarin iOS project:
 
 1\. Note: Ensure that your Visual Studio version is at least 15.3, and your Xamarin.iOS version is 10.12.0.18 or greater.
 
-2\. Start a new Xamarin Visual Studio project, using whichever template is appropriate for the app. The following example uses ‘**Single View App**‘ for simplicity:
-
-![](http://bluedot.lionwood.software/wp-content/uploads/2018/01/New_Project.png)
+2\. Start a new Xamarin Visual Studio project, using whichever template is appropriate for the app.
 
 3. Enter a Product Name, Solution Name, and other required details.
-
-![](http://bluedot.lionwood.software/wp-content/uploads/2018/01/New_Project-2.png)
 
 4. Choose a folder to save the project (e.g. ‘Projects’) and select ‘**Create**’.
 
@@ -58,19 +54,19 @@ Follow the steps below to configure the Xamarin Project Options
 
 * * *
 
-Step 4: Configure the info.plist settings
+Step 4: Configure the Info.plist settings
 -----------------------------------------
 
-Follow the steps below to configure the info.plist settings:
+Follow the steps below to configure the Info.plist settings:
 
 **1. Device capabilities**
 
-Point SDK requires Location Services with GPS accuracy to operate as intended. This should be declared in the `info.plist` of any integrating app.
+Point SDK requires Location Services with GPS accuracy to operate as intended. This should be declared in the `Info.plist` of any integrating app.
 
 To declare the requirement:
 
-1.  Locate the app’s `info.plist` file.
-2.  In the ‘_Source_‘ tab of info.plist, find the existing entry titled ‘**Required Device Capabilities**’ or create one if it does not exist.
+1.  Locate the app’s `Info.plist` file.
+2.  In the ‘_Source_‘ tab of Info.plist, find the existing entry titled ‘**Required Device Capabilities**’ or create one if it does not exist.
 3.  Select the (+) icon to add new Item lines containing the following values:
     1.  `gps`
     2.  `location-services`
@@ -84,16 +80,16 @@ Apple has restricted the ability of apps to execute in the background to reduce 
 
 To declare the background execution modes:
 
-1.  Locate the app’s `info.plist` file.
+1.  Locate the app’s `Info.plist` file.
 2.  In the ‘_Source_‘ tab of info.plist, find an existing entry titled ‘**Required background modes**‘ or create one if it does not exist.
 3.  Select the (+) icon and select from the drop-down list provided: **App registers for location updates**
 
 **3\. Required background updates description**
 
-Starting from iOS 8, a usage description is required when utilizing Location services; this is also provided in `info.plist`
+Starting from iOS 8, a usage description is required when utilizing Location services; this is also provided in `Info.plist`
 
-1.  Locate the app’s `info.plist` file.
-2.  In the ‘_Source_‘ tab of info.plist, find an existing entry titled ‘**NSLocationAlwaysUsageDescription**‘ or create one if it does not exist.
+1.  Locate the app’s `Info.plist` file.
+2.  In the ‘_Source_‘ tab of Info.plist, find an existing entry titled ‘**NSLocationAlwaysUsageDescription**‘ or create one if it does not exist.
 3.  Select the type of String.
 4.  Enter a usage description that denotes the use of location services by your app. For example, **Your location is used by the app to get you deals closer to you while in the background** (This message will be prompted to the user when location services are first requested).
 
@@ -101,9 +97,9 @@ Starting from iOS 8, a usage description is required when utilizing Location ser
 
 The Local Notification Permission Prompt is enabled by default to make sure the SDK delivers local notifications for the ‘Message Action’ or/and ‘URL Action’ set on a Zone through the Canvas dashboard.
 
-Optional: To disable the notification permission prompt, the following key should be declared in the `info.plist` of any integrating app.
+Optional: To disable the notification permission prompt, the following key should be declared in the `Info.plist` of any integrating app.
 
-1.  Locate the app’s `info.plist` file
+1.  Locate the app’s `Info.plist` file
 2.  Select the (+) icon to add a new key BDPointLocalNotificationEnabled, and set the value to `Boolean` Type.
     1.  set the value to `YES` to enable default notification prompt.
     2.  set the value to `NO` to disable default notification prompt.
@@ -117,13 +113,13 @@ Step 5: Integration Checklist
 
 The following is a checklist of the project configurations that must be made for successful integration of Point SDK into an app.
 
-*   The following keys are added to the UIRequiredDeviceCapabilities section of the `info.plist`:
+*   The following keys are added to the UIRequiredDeviceCapabilities section of the `Info.plist`:
     *   `gps`
     *   `location-services`
     *   `accelerometer`
-*   The following keys are added to the UIBackgroundModes section of the `info.plist`:
+*   The following keys are added to the UIBackgroundModes section of the `Info.plist`:
     *   `location`
-*   The following key is added the Information Property List in the `info.plist`:
+*   The following key is added the Information Property List in the `Info.plist`:
     *   `NSLocationAlwaysUsageDescription`
         *   Type: String
         *   A description of the usage of location services by your app in the Value field.
@@ -140,19 +136,6 @@ The following is a checklist of the source code implementations that will assist
 BDLocationManager.Instance().GeoTriggeringEventDelegate = myDelegateImplementation;
 BDLocationManager.Instance().TempoTrackingDelegate = myDelegateImplementation;
 ```
-
-**3\. iOS Caveats**
-
-To avoid unexpected behavior in the app, implementations of the following two selectors must be present in the [Application Delegate](https://developer.apple.com/library/ios/documentation/uikit/reference/uiapplicationdelegate_protocol/Reference/Reference.html):
-
-```csharp
-public override void DidEnterBackground(UIApplication application){ ... }
-public override void WillEnterForeground(UIApplication application){ ... }
-public override void OnResignActivation(UIApplication application){ ... }
-```
-
-If these are removed or missing for any reason, then an “`unrecognized selector sent to instance`” error will occur at Runtime.
-
 * * *
 
 Step 6: Next Steps
@@ -172,3 +155,47 @@ You can refer to Xamarin iOS integration examples via the link below:
 API Documentation can be assessed via the link below:
 
 **[API Documentation](https://ios-docs.bluedot.io "API Documentation")**
+
+Point SDK 16 Migration Guide
+------------------
+**1\.  Geo Triggering**
+
+Replace the callbacks of `IBDPGeoTriggeringEventDelegate` with the new callbacks.
+ 
+```csharp
+public override void DidUpdateZoneInfo()
+{
+	Console.WriteLine("Zone info has been updated");
+}
+
+public override void DidEnterZone(GeoTriggerEvent enterEvent)
+{
+	Console.WriteLine("Zone: " + enterEvent.ZoneInfo.Name + " Entered");
+}
+
+public override void DidExitZone(GeoTriggerEvent exitEvent)
+{
+	Console.WriteLine("Zone: " + exitEvent.ZoneInfo.Name + " Exited");
+}
+```
+
+**2\. Tempo**
+
+Add callbacks to your implementation of `IBDPTempoTrackingDelegate`.
+```csharp
+public override void TempoTrackingDidUpdate(TempoTrackingUpdate tempoUpdate)
+{
+	Console.WriteLine("TempoTrackingDidUpdate: " + tempoUpdate.Description);
+}
+
+public override void TempoTrackingDidExpire()
+{
+	Console.WriteLine("Tempo Tracking has expired");
+}
+
+public override void DidStopTrackingWithError(NSError error)
+{
+	Console.WriteLine(""There was an error continuing to track with the Bluedot SDK: " + error.LocalizedDescription);
+}
+```
+
