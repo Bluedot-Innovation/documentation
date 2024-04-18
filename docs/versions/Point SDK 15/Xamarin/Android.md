@@ -1,7 +1,7 @@
 Android -  Quick start
 ===================================
 
-In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting a [demo](https://bluedot.io/contact-us/).  Also, ensure that you also meet the [Android requirements](../../Point%20SDK/Android/Quick%20Start.md).
+In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Bluedot account. Please contact our sales team by requesting a [demo](https://bluedot.io/contact-us/).  Also, ensure that you also meet the [Android requirements](../Android/Quick%20Start.md).
 
 The Bluedot Point SDK enables geolocation capability for apps by delivering accurate location awareness, while substantially reducing battery consumption compared to Android Location API or other standard methods. The Point SDK connects to the Bluedot’s backend system, Canvas, to download your pre-configured Geofences, GEOLINE™, conditions, and actions.
 
@@ -35,7 +35,7 @@ Step 2: Add Bluedot.PointSDK.Android package
 
 1\. Right-click on Packages folder, select ‘_Add Packages…_‘. In the search box type Bluedot.
 
-![](../../assets/Screen-Shot-2021-02-04-at-2.21.38-pm-300x197.png)
+![](../../../assets/Screen-Shot-2021-02-04-at-2.21.38-pm-300x197.png)
 
 * * *
 
@@ -137,7 +137,7 @@ public class BluedotErrorReceiver : BluedotServiceReceiver
 }
 ```
 
-4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](../../Custom%20Event%20Metadata.md).
+4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](../../../Custom%20Event%20Metadata.md).
 
 ```csharp
 namespace appname
@@ -171,9 +171,9 @@ Step 4: Next Steps
 
 **Essential Guides:**
 
-*   For a list of detailed Android Features, please refer to the documentation section on [Android – Features](../../Point%20SDK/Android/Features/Enable%20or%20disable%20zones.md)
-*   To avoid unexpected behaviour in the app, it is highly recommended to read [Android – Caveats](../../Point%20SDK/Android/Caveats.md)
-*   For interacting with our Canvas backend, please refer to the documentation on [Android – Quick Start](../../Point%20SDK/Android/Quick%20Start.md)
+*   For a list of detailed Android Features, please refer to the documentation section on [Android – Features](../Android/Features/Enable%20or%20disable%20zones.md)
+*   To avoid unexpected behaviour in the app, it is highly recommended to read [Android – Caveats](../Android/Caveats.md)
+*   For interacting with our Canvas backend, please refer to the documentation on [Android – Quick Start](../Android/Quick%20Start.md)
 
 **Xamarin Android integration examples on GitHub** 
 

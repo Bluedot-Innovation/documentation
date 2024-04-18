@@ -17,7 +17,7 @@ Functionality is provided through one single npm package so you can use it for b
 
 See the full documentation or get the Bluedot React Native library on npm [here](https://www.npmjs.com/package/bluedot-react-native).
 
-All Projects, Zones and Geofences configurations can be done through our [Canvas dashboard](../../../Canvas/Overview.md).
+All Projects, Zones and Geofences configurations can be done through our [Canvas dashboard](../../../../Canvas/Overview.md).
 
 How to install it?
 ------------------

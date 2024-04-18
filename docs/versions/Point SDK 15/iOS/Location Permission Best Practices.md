@@ -8,7 +8,7 @@ Convince user of the value
 
 Rather than prompting the user with a location permission prompt at some unexpected time, it’s instead recommended that you display in your UI an explanation of why location is required and what value it will give the user. This varies from app to app depending on its usage, but we’ve reliably seen double or more uptake in location usage when an appropriate justification is given.
 
-![](../../assets/iOS-Location-Permission-onboarding.png)
+![](../../../assets/iOS-Location-Permission-onboarding.png)
 
 Requesting for location permission
 ----------------------------------
@@ -19,7 +19,7 @@ To increase the uptake of location permission, it is also recommended initially 
 BDLocationManager.instance()?.requestWhenInUseAuthorization()
 ```
 
-![](../../assets/iPhone_11_Pro_Max_–_14_2.jpg)
+![](../../../assets/iPhone_11_Pro_Max_–_14_2.jpg)
 ------------------------------------------------------------------------------------
 
 Then later at an appropriate moment within your app, upgrade to “_always_” permission via the following API:
@@ -28,7 +28,7 @@ Then later at an appropriate moment within your app, upgrade to “_always_” p
 BDLocationManager.instance()?.requestAlwaysAuthorization()
 ```
 
-![](../../assets/iPhone_11_Pro_Max_–_14_2-1.jpg)
+![](../../../assets/iPhone_11_Pro_Max_–_14_2-1.jpg)
 
 Engage location services only when necessary
 --------------------------------------------

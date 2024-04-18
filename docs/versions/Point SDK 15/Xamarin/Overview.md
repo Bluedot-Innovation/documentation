@@ -14,7 +14,7 @@ Find the integration steps in the following documents:
 *   [Android: Quickstart](./Android.md)
 *   [iOS: Quickstart](./iOS.md)
 
-All Projects, Zones and Geofences configurations can be done through our [Canvas](../../Canvas/Overview.md).
+All Projects, Zones and Geofences configurations can be done through our [Canvas](../../../Canvas/Overview.md).
 
 Resources
 ---------

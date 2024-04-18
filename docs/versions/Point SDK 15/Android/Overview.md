@@ -15,11 +15,11 @@ The following pages provide a guide to integrating the Point SDK with your Andro
 *   [Tempo](./Tempo.md)
 *   [Location Permission & Notifications Best Practices](./Location%20Permission%20&%20Notifications%20Best%20Practices.md)
 *   [Best Practices & Recommendations](./Best%20Practices%20&%20Recommendations.md)
-*   [Guide to Submitting Apps With Location Services](../../Implementation%20and%20Best%20Practices%20Guides/Submitting%20apps%20with%20location%20services%20guide.md)
+*   [Guide to Submitting Apps With Location Services](../../../Implementation%20and%20Best%20Practices%20Guides/Submitting%20apps%20with%20location%20services%20guide.md)
 *   [SDK Features](./Features/Enable%20or%20disable%20zones.md)
 *   [Caveats](./Caveats.md)
 
-Refer to the [Bluedot Canvas User Guide](../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
+Refer to the [Bluedot Canvas User Guide](../../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 
 API Documentation
 -----------------

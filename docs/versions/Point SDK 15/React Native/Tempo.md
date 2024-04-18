@@ -10,7 +10,7 @@ For this capability, the SDK needs to be initialized and the app must have locat
 
 **For Android a [foreground service notification](../Android/Best%20Practices%20&%20Recommendations.md) is also required.**
 
-Tempo also requires Destination IDs to be defined, which [you can learn about here](../../Tempo/Create%20your%20destinations.md).
+Tempo also requires Destination IDs to be defined, which [you can learn about here](../../../Tempo/Create%20your%20destinations.md).
 
 To start Tempo, you should use the `TempoBuilder`  class as below:
 

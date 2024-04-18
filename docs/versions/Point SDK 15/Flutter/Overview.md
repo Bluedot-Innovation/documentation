@@ -16,7 +16,7 @@ The following pages provide a guide to integrating the Point SDK with your Flutt
 *   [Events list](./Events%20List.md)
 *   [SDK features](./Features.md)
 
-Refer to the [Bluedot Canvas User Guide](../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
+Refer to the [Bluedot Canvas User Guide](../../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 
 Resources
 ---------

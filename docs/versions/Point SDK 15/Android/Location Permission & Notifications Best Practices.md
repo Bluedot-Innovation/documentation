@@ -12,7 +12,7 @@ When targeting Android 12 and onwards the app must request both [approximate loc
 
 The user may choose to grant access to either approximate or precise as shown below:
 
-![](../../assets/FlR1TT9c-146x300.png)
+![](../../../assets/FlR1TT9c-146x300.png)
 
 If the app has not been granted permission to access precise location data the Geo-triggering and Tempo services will not start, and the start method will return a [LocationPermissionNotGrantedError](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point/-location-permission-not-granted-error/index.html). To ensure the location permission has been granted, it is important to implement the permission checking and requesting process prior to any attempt to start a Bluedot service.
 
