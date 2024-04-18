@@ -13,7 +13,7 @@ Tempo also requires Destination IDs to be defined, which you can learn about her
 To start Tempo, you should
 
 ```swift
-BDLocationManager.instance()?.startTempoTracking(withDestinationId: "MyDestinationId"){ error in
+BDLocationManager.instance()?.startTempoTracking(withDestinationId: "MyDestinationId") { error in
     guard error == nil else {
         print("There was an error starting Tempo with the Bluedot SDK: \(error.localizedDescription)")
         return
@@ -26,13 +26,12 @@ The [`startTempoTracking`](https://ios-docs.bluedot.io/Classes/BDLocationManager
 Receiving Tempo events
 ----------------------
 
-The Tempo service does not issue events under normal operation. Instead, it only issues events if there is an issue with the operation. Tracking events are instead delivered via webhook, as configured in the Canvas UI.
+Implement `BDPTempoTrackingDelegate` to receive Tempo related callbacks.
 
 ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     BDLocationManager.instance()?.tempoTrackingDelegate = self
-    BDLocationManager.instance()?.initialize(
-       withProjectId: "MyProjectId"){ error in
+    BDLocationManager.instance()?.initialize(withProjectId: "MyProjectId") { error in
           guard error == nil else {
              print("Initialisation with Bluedot SDK failed \(error.localizedDescription)")
              return
@@ -41,7 +40,15 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     return true
 }
 
-extension AppDelegate: BDPTempoTrackingDelegate{
+extension AppDelegate: BDPTempoTrackingDelegate {
+    func tempoTrackingDidUpdate(_ tempoUpdate: TempoTrackingUpdate) {
+        print("tempoTrackingDidUpdate: '\(tempoUpdate.destination?.name ?? "")' - eta:\(tempoUpdate.eta) minutes")
+    }
+
+    func tempoTrackingDidExpire() {
+         print("Tempo Tracking has expired") 
+    }
+    
     func didStopTrackingWithError(_ error: Error!) {
        print("There was an error continuing to track with the Bluedot SDK: \(error.localizedDescription)") 
     }
@@ -54,7 +61,7 @@ Stop Tempo
 If you only need tempo for a limited period, once that period is over, you can stop the tempo service.
 
 ```swift
-BDLocationManager.instance()?.stopTempoTracking(){ error in
+BDLocationManager.instance()?.stopTempoTracking() { error in
      guard error == nil else {
         print("Stop Tempo failed \(error.localizedDescription)")
         return
