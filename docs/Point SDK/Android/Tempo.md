@@ -36,10 +36,19 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
 Receiving Tempo events
 ----------------------
 
-The Tempo service does not issue events under normal operation. Instead, it only issues events if there is an error with the operation. Tracking events are instead delivered via webhook, as configured in the Canvas UI.
+The Tempo service emits [TempoTrackingUpdate](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine.event/-tempo-tracking-update/-tempo-tracking-update.html) which are tracking events with eta, etaDirection and [destination](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.ruleEngine.model.rule/-destination/index.html) of the Tempo enabled store. 
+To receive the TempoUpdateEvents and any Errors during the operation. You must extend 
+[TempoTrackingReceiver](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html) Receiver and override below functions.
+
 
 ```kotlin
 class ExampleTempoReceiver : TempoTrackingReceiver() {
+
+   // Called with every tempotrackingUpdate received by device from backend with TempoTrackingUpdate
+    override fun onTempoTrackingUpdate(tempoTrackingUpdate: TempoTrackingUpdate, context: Context) {
+      // TempoTrackingUpdate class with eta, etaDirection and destination
+    }
+
     // Called when there is an error that has caused Tempo to stop
     override fun tempoStoppedWithError(error: BDError, context: Context) {
         //error during Tempo     }
