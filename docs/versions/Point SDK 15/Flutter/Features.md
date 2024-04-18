@@ -11,7 +11,7 @@ Features
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Event%20Metadata.md)
+Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../../Custom%20Event%20Metadata.md)
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
@@ -103,7 +103,7 @@ The background location usage indicator (Blue Bar) is an iOS feature that allows
 
 The background location usage indicator will be displayed as a blue pill or bar at the top of the screen – either behind the clock or across the status bar (the event display changes between iPhone models). This notification lets the user know that an app is accessing location data.
 
-![iOS Blue Bar](../../assets/ios-blue-bar-300x229.jpg)
+![iOS Blue Bar](../../../assets/ios-blue-bar-300x229.jpg)
 
 
 :::info

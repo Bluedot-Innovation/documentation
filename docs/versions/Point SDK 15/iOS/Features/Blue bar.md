@@ -8,7 +8,7 @@ The background location usage indicator (Blue Bar) is an iOS feature that allows
 
 The background location usage indicator will be displayed as a blue pill or bar at the top of the screen – either behind the clock or across the status bar (the event display changes between iPhone models). This notification lets the user know that an app is accessing location data.
 
-![iOS background location usage indicator](../../../assets/ios-blue-bar.jpg)
+![iOS background location usage indicator](../../../../assets/ios-blue-bar.jpg)
 
 
 :::info
@@ -25,11 +25,11 @@ How to set the background location usage indicator?
 
 As per the [documentation](https://developer.apple.com/documentation/corelocation/getting_the_user_s_location/handling_location_events_in_the_background), enabling the background location usage indicator first requires that the app has enabled the location updates background mode:
 
-![](../../../assets/ios_background_mode.png)
+![](../../../../assets/ios_background_mode.png)
 
 If the location updates background mode is enabled, the background location usage indicator can be enabled and disabled by setting the `allowsBackgroundLocationUpdates` property from [CLLocationManager](https://developer.apple.com/documentation/corelocation/cllocationmanager), which is inherited by [BDLocationManager](https://ios-docs.bluedot.io/Classes/BDLocationManager.html):
 
-![](../../../assets/iOS_allowsbackgroundlocationupdates.png)  
+![](../../../../assets/iOS_allowsbackgroundlocationupdates.png)  
 
 **Enable background location usage indicator:**     
 
