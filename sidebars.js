@@ -47,7 +47,14 @@ const sidebars = {
             "Point SDK/Android/Best Practices & Recommendations",
             "Point SDK/Android/Caveats",
             "Point SDK/Android/Gradle 8",
-            "Point SDK/Android/Migrating from previous versions to v15.3.0",
+            {
+              type: "category",
+              label: "Migration Guides",
+              items: [
+                "Point SDK/Android/Migration Guides/Migration guide to SDK 16 for Android",
+                "Point SDK/Android/Migration Guides/Migrating from previous versions to v15.3.0",
+              ]
+            }
           ],
         },
         {
