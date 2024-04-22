@@ -11,7 +11,7 @@ If you have implemented the previous versions of the iOS Point SDKs, this guide 
 #### Update your minimum supported version to iOS 12 or higher.
 
 We regularly update the minimum supported version of our SDKs to focus on providing the best developer experience.
-Existing 15.X versions of the Point iOS SDK will continue to support devices running **iOS 11** and higher.
+Versions up to and including 15.6.8 of the Point iOS SDK will continue to support devices from iOS 10. However, starting with version 15.6.9, the minimum supported iOS version will be iOS 12.
 
 #### XCFramework support for Cocoapods and Carthage
 
