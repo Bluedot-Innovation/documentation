@@ -69,6 +69,7 @@ We are excited to announce the release of Point SDK v16.0.0. This major update p
 - Return a new structure `GeoTriggerEvent` in the `didEnterZone` and `didExitZone` callbacks that replaces `BDZoneEntryEvent` and `BDZoneExitEvent`.
 - Replaced the `onZoneInfoUpdate(zoneInfos)` callback with `didUpdateZoneInfo()`. The `zoneInfos` is no longer returned as part of this callback, access it via `BDLocationManager.instance().zoneInfos` instead.
 - Custom Event Meta Data is cleared when the SDK resets.
+- Simplified control of "Blue Bar" background location usage indicator, using the `backgroundLocationAccessForWhileUsing` field.
 
 #### Deprecated Features
 
