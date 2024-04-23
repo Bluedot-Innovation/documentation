@@ -7,7 +7,7 @@ pagination_prev: null
 Version Release Notes
 =====================
 
-Release date Feb 9, 2024
+Release date Apr 23, 2024
 -------------------------
 
 ### Android Point SDK 16.0.0
