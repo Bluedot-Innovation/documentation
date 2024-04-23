@@ -99,7 +99,7 @@ We are excited to announce the release of Point SDK v16.0.0. This major update p
 
 
 :::info
-For more information SDK 16, please refer to our updated documentation and [**migration guides**](./Point%20SDK/Overview.mdx). We appreciate your feedback and are available to assist with any questions.
+For more information SDK 16, please refer to our updated documentation and [**migration guides**](./Point%20SDK/Migrating%20to%20Point%20SDK%2016.md). We appreciate your feedback and are available to assist with any questions.
 :::
 
 * * *
