@@ -65,7 +65,11 @@ If you are accessing `BDZoneInfo`'s fences property, note that fences are no lon
 
 [CODE SNIPPET - EXAMPLE -> Change from `zoneInfo?.fences?` to `zoneInfo?.fences`]
 
-#### Removal of deprecated classes and functions
+
+#### **Upgrade to `reset` method now includes clearing of Custom Event Meta Data**
+We've updated the reset method to enhance its functionality. Previously, invoking reset did not clear the Custom Event Meta Data. With this release, the reset method now also clears any Custom Event Meta Data, ensuring that all settings and cached data are fully restored to their default states.
+
+#### **Removal of deprecated classes and functions**
 
 The following classes and functions have been removed from the SDK as these were deprecated in version 15.4.0, released in March 2021.
 
@@ -109,3 +113,7 @@ Each 'Destination' (AKA Store) can have multiple 'Zones' associated with it in o
 Here's an example of what the Destination payload looks like:
 
 [CODE SNIPPET - DESTINATION PAYLOAD]
+
+#### **Privacy Manifest Included in SDK 16**
+
+To comply with Apple's latest guidelines, SDK 16 now includes a Privacy Manifest (`PrivacyInfo.xcprivacy`). This manifest details the necessary API usage reasons, ensuring our Point SDK adheres to the latest privacy requirements for app submissions.
