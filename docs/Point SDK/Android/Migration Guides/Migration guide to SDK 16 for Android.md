@@ -27,16 +27,17 @@ The "*Entry"* and "*Exit"* callbacks have a new payload structure with additio
 
 The [ZoneEntryEvent] class has been renamed to [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html). The callback functionality remains the same, apart from the new payload structure, which has new data available.
 
-``` 
+``` kotlin
     override fun onZoneEntryEvent(event: GeoTriggerEvent, context: Context) {
-    Log.i(TAG_TEST_APP, "onZoneEntryEvent for ${event.toJson()}")
-    ....
+        Log.i(TAG_TEST_APP, "onZoneEntryEvent for ${event.toJson()}")
+        ....
+    }
 ```
 
 Here's an example of how the new Entry callback payload looks like:
 
 
-```
+```json
 {
     "notificationType": "entry",
     "appInfo": {
@@ -51,11 +52,10 @@ Here's an example of how the new Entry callback payload looks like:
             "OrderId": "Test OrderId",
         }
       },
-
     "triggerEvents": [
         {
             "eventTime": "2024-04-16T04:24:20.843Z",
-            "localEventTime": "2024-04-16T14:29:42.955"
+            "localEventTime": "2024-04-16T14:29:42.955",
             "fenceName": "Home Fence",
             "applicationState": {
                 "viewState": "foreground",
@@ -68,23 +68,21 @@ Here's an example of how the new Entry callback payload looks like:
             "fenceId": "444444-2423-4092-9db6-44444444",
             "eventType": "fenceEntered",
             "crossedFences": [ 
-                      {        "fenceId": "03d7bd1d-5555-5555-846c-6755555555", 
-                               "fenceName": "Fence 0", 
-                               "crossTime": "2024-04-16T04:24:20.843Z", 
-                               "location": {
-                                            "longitude" : 145.3023396,
-                                            "latitude" : -38.018478, 
-                                            "horizontalAccuracy": 11.591,
-                                            "time": "2024-04-16T04:24:20.843Z",
-                                            "altitude": 32.67277495576316,
-                                            "verticalAccuracy": 8.2064, 
-                                            "bearing": -1.0,
-                                            "speed": -1.0
-                                            }
-                                            
-
-                      }
-                    ],
+                {   
+                    "fenceId": "03d7bd1d-5555-5555-846c-6755555555", 
+                    "fenceName": "Fence 0", 
+                    "crossTime": "2024-04-16T04:24:20.843Z", 
+                    "location": {
+                        "longitude" : 145.3023396,
+                        "latitude" : -38.018478, 
+                        "horizontalAccuracy": 11.591,
+                        "time": "2024-04-16T04:24:20.843Z",
+                        "altitude": 32.67277495576316,
+                        "verticalAccuracy": 8.2064, 
+                        "bearing": -1.0,
+                        "speed": -1.0
+                    }
+                }],
             "locations": [
                 {
                     "verticalAccuracy": 3,
@@ -121,15 +119,17 @@ Here's an example of how the new Entry callback payload looks like:
 
 The [ZoneExitEvent] class has been renamed to [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html)
 
-```
+```kotlin
  override fun onZoneExitEvent(event: GeoTriggerEvent, context: Context) {
     Log.i(TAG_TEST_APP, "onZoneExitEvent for ${event.toJson()}")
     ...
+ }
 ```
 
 Here's an example of how the new Exit callback payload looks like:
 
-```{
+```json
+{
     "notificationType": "exit",
     "appInfo": {
         "appBuildVersion": "2.0.0.203",
@@ -143,7 +143,6 @@ Here's an example of how the new Exit callback payload looks like:
             "OrderId": "Test OrderId",
         }
       },
-
     "triggerEvents": [
         {  
             "eventType": "fenceEntered",
@@ -203,7 +202,7 @@ Here's an example of how the new Exit callback payload looks like:
 
 The previous callback `onZoneInfoUpdate(zones: List<ZoneInfo>, context: Context)` has been updated to `onZoneInfoUpdate(context: Context)`. The updated callback no longer returns the `zones` data directly. Instead, you should access the `zones` data from the `ServiceManager.getInstance(context).getZonesAndFences()` property. 
 
-```
+```kotlin
  override fun onZoneInfoUpdate(context: Context) {
     Log.i(TAG_TEST_APP, "onZoneInfoUpdate")
     Log.i(TAG_TEST_APP, "Zones and Fences ${ServiceManager.getInstance(context).zonesAndFences}")
@@ -218,7 +217,7 @@ Below is an example of how you can add the necessary location permissions to you
 
 If your use case requires Bluedot Geo-Trigger to run as a foreground service then you need to add below 2 permissions in your App's Manifest:
 
-```
+```xml
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
 
@@ -226,9 +225,12 @@ If your use case requires Bluedot Geo-Trigger to run as a foreground service the
 
 If your use case requires Bluedot Geo-trigger to run without a foreground service but always inthe background then add permission in your App's Manifest:
 
-```
+```xml
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 ```
+
+#### **Upgrade to `reset` method now includes clearing of Custom Event Meta Data**
+We've updated the reset method to enhance its functionality. Previously, invoking reset did not clear the Custom Event Meta Data. With this release, the reset method now also clears any Custom Event Meta Data, ensuring that all settings and cached data are fully restored to their default states.
 
 
 #### Removal of deprecated classes and functions
@@ -260,7 +262,7 @@ The following classes and functions have been removed from the SDK as these were
 
 The Tempo Service has a new [callback](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html) that provides the user's ETA updates at runtime. Previously, the ETA updates were only accessible by listening to our Tempo webhooks. Now, you can receive the user's ETA updates in your app, not only from the Tempo webhooks.
 
-```
+```kotlin
   class AppTempoReceiver : TempoTrackingReceiver() {
  
     override fun onTempoTrackingUpdate(tempoTrackingUpdate: TempoTrackingUpdate, context: Context) {
@@ -273,7 +275,7 @@ The Tempo Service has a new [callback](https://android-docs.bluedot.io/-bluedot-
 
 Every time the Tempo Service generates a new ETA update, the `onTempoTrackingUpdate` callback payload looks like this:
 
-```
+```json
      {
         "triggerChainId": "30add2f5-ac7b-42cc-8799-cf8d4729579e",
         "eta": 60,
@@ -293,7 +295,7 @@ Every time the Tempo Service generates a new ETA update, the `onTempoTrackingUpd
 
 Each 'Destination' (AKA Store) can have multiple 'Zones' associated with it in our platform. We have enhanced the `ZoneInfo` object to reflect this relationship better. Now, when a Zone is linked to a Destination, you can access its information directly within each [ZoneInfo](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-zone-info/index.html) object.
 
-```
+```kotlin
     ZoneInfo {
         zoneId='23d2f4be-0228-4c89-93ce-4e30719eb8ac',
         zoneName='TestSales123',
@@ -327,7 +329,7 @@ Each 'Destination' (AKA Store) can have multiple 'Zones' associated with it in o
 
 Here's an example of what the Destination payload looks like:
 
-```
+```kotlin
 destination='{ 
    "name": "TestSales123",
    "address": "1 ulip  Pl, Point Cook VIC 3030, Australia",
@@ -336,4 +338,11 @@ destination='{
                  "longitude":144.72884061177632
     }
 }    
+```
+
+#### ***New `getCustomEventMetaData()` method
+We have introduced the `getCustomEventMetaData` API, enhancing your ability to access Custom Event Meta Data in real-time. This new API allows you to retrieve the custom event meta data dynamically.
+
+```kotlin
+ServiceManager.getInstance(context).getCustomEventMetaData();
 ```
