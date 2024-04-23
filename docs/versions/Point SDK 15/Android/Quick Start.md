@@ -31,7 +31,7 @@ allprojects {
 ```gradle
 dependencies {
      ...
-     implementation 'com.gitlab.bluedotio.android:point_sdk_android:16.0.0'
+     implementation 'com.gitlab.bluedotio.android:point_sdk_android:15.6.2'
  }
 ```
 
@@ -74,4 +74,4 @@ ServiceManager.getInstance(this).initialize("myProjectId",
  });
 ```
 
-At this point, you’ve got the basics together, but to get value from the SDK you’ll need to start getting location events – you can do so by using our [Geo-triggering](./Geo-triggering.md) or [Tempo](./Tempo.md) features.
+At this point, you’ve got the basics together, but to get value from the SDK you’ll need to start getting location events – you can do so by using our Geo-triggering or Tempo features.

@@ -40,13 +40,13 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 
 ```swift
 extension AppDelegate: BDPGeoTriggeringEventDelegate {
-    func didUpdateZoneInfo() {
+    func onZoneInfoUpdate(_ zoneInfos: Set<BDZoneInfo>) {
         print("My local cache of the zones has updated!")
     }
-    func didEnterZone(_ enterZoneEvent: GeoTriggerEvent){ 
+    func didEnterZone(_ enterEvent: BDZoneEntryEvent){ 
         print("I have entered a zone.")
     }
-    func didExitZone(_ exitZoneEvent: GeoTriggerEvent) {
+    func didExitZone(_ exitEvent: BDZoneExitEvent) {
         print("I have exited a zone")
     }
  }

@@ -48,7 +48,7 @@ eventMetaData.put("key2","value2");
 ServiceManager.getInstance(context).setCustomEventMetaData(eventMetaData);
 ```
 
-Detailed Info can be found in respective SDK API docs [here](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-service-manager/index.html).
+Detailed Info can be found in respective SDK API docs [here](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-service-manager/index.html#%5Bau.com.bluedot.point.net.engine%2FServiceManager%2FsetCustomEventMetaData%2F%23java.util.Map%3Cjava.lang.String%2Cjava.lang.String%3E%2FPointingToDeclaration%2F%5D%2FFunctions%2F-762893342).
 
 How to implement custom event metadata on iOS
 ---------------------------------------------

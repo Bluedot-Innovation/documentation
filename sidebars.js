@@ -47,7 +47,14 @@ const sidebars = {
             "Point SDK/Android/Best Practices & Recommendations",
             "Point SDK/Android/Caveats",
             "Point SDK/Android/Gradle 8",
-            "Point SDK/Android/Migrating from previous versions to v15.3.0",
+            {
+              type: "category",
+              label: "Migration Guides",
+              items: [
+                "Point SDK/Android/Migration Guides/Migration guide to SDK 16 for Android",
+                "Point SDK/Android/Migration Guides/Migrating from previous versions to v15.3.0",
+              ]
+            }
           ],
         },
         {
@@ -77,6 +84,7 @@ const sidebars = {
               type: "category",
               label: "Migration Guides",
               items: [
+                "Point SDK/iOS/Migration Guides/Migration guide to SDK 16 for iOS",
                 "Point SDK/iOS/Migration Guides/Migration guide from previous versions to Point SDK v15.4.0",
                 "Point SDK/iOS/Migration Guides/Migration guide from previous versions to Point SDK v15.5.0",
               ],
@@ -152,6 +160,7 @@ const sidebars = {
             "Point SDK/Cordova/Events List"
           ],
         },
+        "Point SDK/Migrating to Point SDK 16"
       ],
     },
     {

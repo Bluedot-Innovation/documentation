@@ -15,52 +15,61 @@ During SDK integration, there are 4 important stages that align with your custom
 
 Android – Tempo implementation
 ------------------------------
-```kotlin
-/**
- * Start Tempo Tracking.
- * @param destinationId - destinationId of the Zone for tracking.
- * @param statusListener - implementation of Tempo status callbacks to receive Tempo lifecycle events and errors.
-*/
-public void startTempoTracking(@NonNull String destinationId,
- @NonNull TempoStatusListener statusListener)
 
-/**
- * Stop Tempo Tracking
- * TempoStatusListener#tempoStopped() will be called once tracking has ceased.
-*/
-public void stopTempoTracking()
+***Start Tempo Tracking***
+
+```kotlin
+TempoService.builder()
+        .notificationId(myNotificationId)
+        .notification(notificationReference)
+        .destinationId("myDestinationId")
+        .start(myApplicationContext, // This context should be the Application context
+            (error) -> {
+                if (error != null) {
+                    // An error has occurred while starting Tempo.
+                } else {
+                    // Tempo has started successfully.
+                }
+            })
+```
+
+***Stop Tempo Tracking***
+
+```kotlin
+val tempoStopError: BDError? = TempoService.stop(myContext)
+if (tempoStopError != null) {
+    // An error occurred, the SDK or Tempo may not have been initialized correctly.
+}
 ```
 
 You’ll find comprehensive [Android implementation detail here](../Point%20SDK/Android/Tempo.md).
 
 iOS – Tempo implementation
 --------------------------
-```objectivec
-/**
- * Start Tempo Tracking for destination id provided
- *
- * @note An error will be returned if your App does not have **Always** location permission.
- * @param destinationId The destinationId to be tracked
- * @param completion A mandatory completion handler called once Start Tempo processing completed. If the Tempo is started successful, error will be returned as nil. However, if the Start Tempo fails, an error will be provided.
-*/
-- (void)startTempoTrackingWithDestinationId: (NSString * _Nonnull)destinationId  completion: (void (^ _Nonnull)(NSError *  _Nullable error)) completion;
+
+***Start Tempo Tracking***
+```swift
+BDLocationManager.instance()?.startTempoTracking(withDestinationId: "MyDestinationId"){ error in
+    guard error == nil else {
+        print("There was an error starting Tempo with the Bluedot SDK: \(error.localizedDescription)")
+        return
+     }
+ }
 ```
 
-```objectivec
-/**
- * Stop Tempo Tracking
- *
- * @param completion A mandatory completion handler called once Stop Tempo processing completed. If the Tempo is stopped successful, error will be returned as nil. However, if the Start Tempo fails, an error will be provided.
-*/
-- (void)stopTempoTrackingWithCompletion: (void (^ _Nonnull)(NSError *  _Nullable error)) completion;
+***Stop Tempo Tracking***
+```swift
+BDLocationManager.instance()?.stopTempoTracking(){ error in
+     guard error == nil else {
+        print("Stop Tempo failed \(error.localizedDescription)")
+        return
+     }
+ }
 ```
 
 You’ll find comprehensive [iOS implementation detail here](../Point%20SDK/iOS/Tempo.md).
 
 ### Important Note
-
-In iOS, to receive Tempo related callbacks, implement the [BDPTempoTrackingDelegate](https://ios-docs.bluedot.io/Protocols/BDPTempoTrackingDelegate.html) protocol
-
 
 :::info
 Tempo will **timeout after 30 minutes** if the device hasn’t arrived at the destination. This expiring time is customizable; check with your CX representative if you’d like to update it.
