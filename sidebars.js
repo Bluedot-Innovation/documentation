@@ -160,6 +160,7 @@ const sidebars = {
             "Point SDK/Cordova/Events List"
           ],
         },
+        "Point SDK/Migrating to Point SDK 16"
       ],
     },
     {
