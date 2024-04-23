@@ -84,6 +84,7 @@ const sidebars = {
               type: "category",
               label: "Migration Guides",
               items: [
+                "Point SDK/iOS/Migration Guides/Migration guide to SDK 16 for iOS",
                 "Point SDK/iOS/Migration Guides/Migration guide from previous versions to Point SDK v15.4.0",
                 "Point SDK/iOS/Migration Guides/Migration guide from previous versions to Point SDK v15.5.0",
               ],
