@@ -7,6 +7,102 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date Feb 9, 2024
+-------------------------
+
+### Android Point SDK 16.0.0
+We are excited to announce the release of Point SDK v16.0.0. This major update supports Gradle 8 and significantly enhances the data available in the `GeoTriggeringEventReceiver` callbacks and new Tempo `onTempoTrackingUpdate` callback. Here are the key highlights:
+
+#### New Features
+
+- **Enhanced Geo-Triggering Data:** The `GeoTriggeringEventReceiver` callbacks have been updated with more useful information to enhance your use cases.
+- **New Tempo Tracking Callback:** Added a new callback `onTempoTrackingUpdate` to `TempoTrackingReceiver` with the customer’s ETA data.
+- **New Destination Information:** The `ZoneInfo` now contains `Destination` information that can be accessed via `ServiceManager::getZonesAndFences`.
+- Added a new `getCustomEventMetaData` to access the Custom Event Meta Data.
+
+#### Changes
+
+- Return a new structure `GeoTriggerEvent` in the `onZoneEntryEvent` and `onZoneExitEvent` callbacks.
+- The `onZoneInfoUpdate()` callback no longer supplies the `List<ZoneInfo>`. If needed access it via `ServiceManager::getZonesAndFences`.
+- Custom Event Meta Data is cleared when the SDK resets.
+- Requires Gradle 8 or above.
+- Compile SDK Version 34
+
+#### Deprecated Features
+
+- **Feature Removals:**
+    - Real-time Data Sync feature
+    - URL Action and Message Action
+- **Deprecated Classes and Functions Removed:**
+    - `setCustomMessageAction`
+    - List of zones removed from `onZoneInfoUpdate`
+    - Deprecations removed:
+        - `sendAuthenticationRequest`
+        - `addBlueDotPointServiceStatusListener`
+        - `removeBlueDotPointServiceStatusListener`
+        - `subscribeForApplicationNotification`
+        - `unsubscribeForApplicationNotification`
+        - `startTempoTracking` (variant)
+        - `stopTempoTracking` (variant)
+        - `stopPointService`
+        - `isBlueDotPointServiceRunning`
+        - `isBlueDotPointServiceConfiguredToRestart`
+        - `registerService`
+        - `notifyPushUpdate` (message action)
+        - `setForegroundServiceNotification`
+    - Beacons removed.
+
+
+### iOS Point SDK 16.0.0
+We are excited to announce the release of Point SDK v16.0.0. This major update provides better architecture support with our migration to `XCFramework` for CocoaPods and Carthage and significantly enhances the data available in the `BDPGeoTriggeringEventDelegate` callbacks and new Tempo `tempoTrackingDidUpdate` callback. Here are the key highlights:
+
+#### New Features
+
+- **Enhanced Geo-Triggering Data:** The `BDPGeoTriggeringEventDelegate` callbacks have been updated with more useful information to enhance your use cases.
+- **New Tempo Tracking Callback:** Added a new callback `tempoTrackingDidUpdate` to `BDPTempoTrackingDelegate` with customer’s ETA data.
+- **New Destination Information:** Each `BDZoneInfo` now contains destination information accessible via `BDLocationManager.instance().zoneInfos`.
+- **Improved Architecture Support:** Migrated to `XCFramework` for both CocoaPods and Carthage, significantly improving support for multiple architectures.
+
+#### Changes
+
+- The `fences` property of `BDZoneInfo` is now non-optional in Swift.
+- Return a new structure `GeoTriggerEvent` in the `didEnterZone` and `didExitZone` callbacks that replaces `BDZoneEntryEvent` and `BDZoneExitEvent`.
+- Replaced the `onZoneInfoUpdate(zoneInfos)` callback with `didUpdateZoneInfo()`. The `zoneInfos` is no longer returned as part of this callback, access it via `BDLocationManager.instance().zoneInfos` instead.
+- Custom Event Meta Data is cleared when the SDK resets.
+
+#### Deprecated Features
+
+- **iOS 11 Support Discontinued:** The minimum deployment target is now iOS 12.
+- **Feature Removals:**
+    - Real-time Data Sync feature
+    - URL Action and Message Action
+    - The `BDPointBackgroundLocationEnabledForWhenInUseKey` key in `Info.plist` (to set enable the Background Location Indicator)
+- **Deprecated Classes and Functions Removed:** The following deprecated classes and functions have been removed, providing a cleaner API.
+    - `BDPLocationDelegate`
+    - `BDPAuthenticationStateProvider`
+    - `BDPSessionDelegate`
+    - `BDPRestartAlertDelegate`
+    - `BDAuthorizationLevel`
+    - `BDPMKShape`
+    - All Beacon related classes and functionalities
+    - BDLocationManager:
+        - `authenticateWithApiKey:`
+        - `authenticateWithApiKey:requestAuthorization:`
+        - `logOut`
+        - `pointDelegate`, `locationDelegate`, `authenticationDelegate`, `sessionDelegate`
+        - `authenticationState`,
+        - `isZoneDisabledByApplication:`
+        - `startTempoTracking:` and `stopTempoTracking`
+        - `BDPointSDKVersionNumber` and `BDPointSDKVersionString`
+    - BDPTempoTrackingDelegate: `didStartTracking` and `didStopTracking`
+
+
+
+:::info
+For more information SDK 16, please refer to our updated documentation and [**migration guides**](./Point%20SDK/Overview.mdx). We appreciate your feedback and are available to assist with any questions.
+:::
+
+* * *
 
 Release date Feb 9, 2024
 -------------------------
