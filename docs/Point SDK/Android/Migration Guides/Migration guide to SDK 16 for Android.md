@@ -8,7 +8,7 @@ If you have implemented the previous versions of the Android Point SDKs, this gu
 
 ### Breaking Changes
 
-#### Update your `CompileSdk` version to 34, Gradle to version 8 and Java to version 17.
+#### Update your `CompileSdk` version to 34, Gradle to version 8.2 and Java to version 17.
 
 We regularly update the minimum supported version of our SDKs to focus on providing the best developer experience.
 Existing 15.X versions of the Android Point SDK will continue to be compatible with devices running on `CompileSDK` version 33, utilize Gradle version
