@@ -977,7 +977,7 @@ Release date December 21, 2020
 
 This release contains a complete overhaul of the APIs for SDK initialization, GeoTriggering session management, and Tempo session management. Existing APIs for SDK authentication and session management, and associated classes, are deprecated.
 
-Please see the [Migration Guide](./Point%20SDK/Android/Migrating%20from%20previous%20versions%20to%20v15.3.0.md) for more details.
+Please see the [Migration Guide](./Point%20SDK/Android/Migration%20Guides/Migrating%20from%20previous%20versions%20to%20v15.3.0.md) for more details.
 
 The deprecated APIs will be removed in the next major release (16.0.0).
 
