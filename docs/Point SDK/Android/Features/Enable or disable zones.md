@@ -17,5 +17,5 @@ if (!mServiceManager.isZoneDisabledByApplication(zoneIdToDisable)) {
 
 Note that if a Zone has already entered (checked-in) and is awaiting an exit event, then disabling the Zone at this point will not prevent the exit callback from occurring.
 
-If it is important to suppress exit behaviors while a Zone is disabled by your application, we advise that you make use of the [`isZoneDisabledByApplication`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-service-manager/index.html#%5Bau.com.bluedot.point.net.engine%2FServiceManager%2FisZoneDisabledByApplication%2F%23java.lang.String%2FPointingToDeclaration%2F%5D%2FFunctions%2F-762893342) method as part of your exit callback
+If it is important to suppress exit behaviors while a Zone is disabled by your application, we advise that you make use of the [`isZoneDisabledByApplication`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-service-manager/index.html#%5Bau.com.bluedot.point.net.engine%2FServiceManager%2FisZoneDisabledByApplication%2F%23java.lang.String%2FPointingToDeclaration%2F%5D%2FFunctions%2F-762893342) method as part of your exit callback
 :::

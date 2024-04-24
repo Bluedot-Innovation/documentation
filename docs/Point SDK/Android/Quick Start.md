@@ -38,7 +38,7 @@ dependencies {
 Manifest requirements
 ---------------------
 
-In order to receive Bluedot service error events after initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html) should be implemented and registered in the AndroidManifest:
+In order to receive Bluedot service error events after initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html) should be implemented and registered in the AndroidManifest:
 
 ```kotlin
 class ExampleBluedotServiceReceiver : BluedotServiceReceiver() {
