@@ -25,7 +25,7 @@ The "*Entry"* and "*Exit"* callbacks have a new payload structure with additio
 
 #### **New "Entry" callback**
 
-The [ZoneEntryEvent] class has been renamed to [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html). The callback functionality remains the same, apart from the new payload structure, which has new data available.
+The [ZoneEntryEvent] class has been renamed to [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html). The callback functionality remains the same, apart from the new payload structure, which has new data available.
 
 ``` kotlin
     override fun onZoneEntryEvent(event: GeoTriggerEvent, context: Context) {
@@ -117,7 +117,7 @@ Here's an example of how the new Entry callback payload looks like:
 
 #### **New "Exit" callback**
 
-The [ZoneExitEvent] class has been renamed to [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html)
+The [ZoneExitEvent] class has been renamed to [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html)
 
 ```kotlin
  override fun onZoneExitEvent(event: GeoTriggerEvent, context: Context) {
@@ -260,7 +260,7 @@ The following classes and functions have been removed from the SDK as these were
 
 #### **New `onTempoTrackingUpdate` callback available in the Tempo service.**
 
-The Tempo Service has a new [callback](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html) that provides the user's ETA updates at runtime. Previously, the ETA updates were only accessible by listening to our Tempo webhooks. Now, you can receive the user's ETA updates in your app, not only from the Tempo webhooks.
+The Tempo Service has a new [callback](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html) that provides the user's ETA updates at runtime. Previously, the ETA updates were only accessible by listening to our Tempo webhooks. Now, you can receive the user's ETA updates in your app, not only from the Tempo webhooks.
 
 ```kotlin
   class AppTempoReceiver : TempoTrackingReceiver() {
@@ -278,8 +278,8 @@ Every time the Tempo Service generates a new ETA update, the `onTempoTrackingUpd
 ```json
      {
         "triggerChainId": "30add2f5-ac7b-42cc-8799-cf8d4729579e",
-        "eta": 60,
-        "etaDirection": "lessThan",
+        "eta": 60,                     //In seconds
+        "etaDirection": "lessThan",    // lessThan, greaterThan
         "destination": {
                        "destinationId": "002",
                         "name": "Tempo Zone 002",
@@ -293,7 +293,7 @@ Every time the Tempo Service generates a new ETA update, the `onTempoTrackingUpd
 
 #### **Destination (Store) Details Now Accessible in `ZoneInfo`**
 
-Each 'Destination' (AKA Store) can have multiple 'Zones' associated with it in our platform. We have enhanced the `ZoneInfo` object to reflect this relationship better. Now, when a Zone is linked to a Destination, you can access its information directly within each [ZoneInfo](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-zone-info/index.html) object.
+Each 'Destination' (AKA Store) can have multiple 'Zones' associated with it in our platform. We have enhanced the `ZoneInfo` object to reflect this relationship better. Now, when a Zone is linked to a Destination, you can access its information directly within each [ZoneInfo](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-zone-info/index.html) object.
 
 ```kotlin
     ZoneInfo {

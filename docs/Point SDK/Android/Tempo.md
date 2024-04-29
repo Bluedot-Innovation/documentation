@@ -36,9 +36,9 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
 Receiving Tempo events
 ----------------------
 
-The Tempo service emits [TempoTrackingUpdate](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine.event/-tempo-tracking-update/-tempo-tracking-update.html) which are tracking events with eta, etaDirection and [destination](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.ruleEngine.model.rule/-destination/index.html) of the Tempo enabled store. 
+The Tempo service emits [TempoTrackingUpdate](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine.event/-tempo-tracking-update/index.html) which are tracking events with eta, etaDirection and [destination](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.ruleEngine.model.rule/-destination/index.html) of the Tempo enabled store. 
 To receive the TempoUpdateEvents and any Errors during the operation. You must extend 
-[TempoTrackingReceiver](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html) Receiver and override below functions.
+[TempoTrackingReceiver](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-tempo-tracking-receiver/index.html) Receiver and override below functions.
 
 
 ```kotlin

@@ -34,7 +34,7 @@ public void initialize(@NonNull String projectId,
      @NonNull InitializationResultListener resultListener)
 ```     
 
-in addition, in order to receive Bluedot service error events post initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html?query=abstract%20class%20BluedotServiceReceiver%20:%20BroadcastReceiver) should be implemented and registered in the AndroidManifest:
+in addition, in order to receive Bluedot service error events post initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html?query=abstract%20class%20BluedotServiceReceiver%20:%20BroadcastReceiver) should be implemented and registered in the AndroidManifest:
 
 ```kotlin
  class ExampleBluedotServiceReceiver : BluedotServiceReceiver() {
