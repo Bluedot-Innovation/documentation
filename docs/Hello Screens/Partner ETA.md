@@ -32,7 +32,8 @@ Here's a guide to help you correctly structure your Wave API event:
 
 If either the **`hs_partnerPickupTime`** or **`eventType`** is missing from the payload, the event will be ignored, and the order status on the Hello Screens will not be updated. It is crucial that both fields are present and correctly formatted to ensure the system processes the event properly.
 
-If no updates are received within 5 minutes, consider sending a standard **`onTheWay`** event to transition the order status, ensuring continuity in order status management.
+If no ETA updates are received within a 5-minute period, the ETA will be removed from the order's ticket, but the order status will remain "On The Way". This ensures that the order's details remain relevant and avoids potential confusion caused by outdated ETA information.
+
 
 ### Understanding ETA Display Logic in Hello Screens
 
