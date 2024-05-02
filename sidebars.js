@@ -209,6 +209,7 @@ const sidebars = {
         "Hello Screens/Order ticket details",
         "Hello Screens/Scheduled Pickup Time",
         "Hello Screens/Partner ETA",
+        "Hello Screens/Grouping Orders",
         "Hello Screens/Mobile app",
         "Canvas/Single Sign-On support",
         "Hello Screens/Additional security layer",
