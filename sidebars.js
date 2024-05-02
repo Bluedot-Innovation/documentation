@@ -208,6 +208,7 @@ const sidebars = {
         "Hello Screens/Customer wait time goals",
         "Hello Screens/Order ticket details",
         "Hello Screens/Scheduled Pickup Time",
+        "Hello Screens/Partner ETA",
         "Hello Screens/Mobile app",
         "Canvas/Single Sign-On support",
         "Hello Screens/Additional security layer",
