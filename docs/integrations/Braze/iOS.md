@@ -108,7 +108,7 @@ For further information refer to [Braze Developer Documentation](https://www.bra
 			customData.forEach { data in properties["\(data.key)"] = "\(data.value)"}
 		}
 	
-		// Log the Custom Event in Appboy
+		// Log the Custom Event in Braze
 		AppDelegate.braze?.logCustomEvent(name: customEventName, properties: properties)
 	}
 
@@ -133,6 +133,7 @@ For further information refer to [Braze Developer Documentation](https://www.bra
 			customData.forEach { data in properties["\(data.key)"] = "\(data.value)"}
 		}
 	
+		// Log the Custom Event in Braze
 		AppDelegate.braze?.logCustomEvent(name: customEventName, properties: properties)
 	}
 	```
