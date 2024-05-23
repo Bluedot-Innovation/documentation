@@ -24,7 +24,7 @@ Or with Flutter:
 This will add a line like this to your package’s pubspec.yaml (and run an implicit `dart pub get`):
 ```yaml
   dependencies:
-    bluedot_point_sdk: ^1.0.0
+    bluedot_point_sdk: ^2.0.0
 ```
 
 Alternatively, your editor might support `dart pub get` or `flutter pub get`. Check the docs for your editor to learn more.
