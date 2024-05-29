@@ -99,7 +99,7 @@ iOS Features
 
 #### What is the background location usage indicator?
 
-The background location usage indicator (Blue Bar) is an iOS feature that allows an app to access location data when the user has selected While using the app location authorization and the app is in the background.
+The background location usage indicator (Blue Bar) is an iOS feature that allows an app to access location data when the user has selected _While using the app_ location authorization and the app is in the background.
 
 The background location usage indicator will be displayed as a blue pill or bar at the top of the screen – either behind the clock or across the status bar (the event display changes between iPhone models). This notification lets the user know that an app is accessing location data.
 
@@ -112,23 +112,17 @@ If the user has selected the _Always_ location authorization, the background loc
 
 ### When to use the background location usage indicator?
 
-Background location usage indicator should be enabled when usage requires location updates even when the App is running in background and the user has granted the While using the app location authorization.
+Background location usage indicator should be enabled when usage requires location updates even when the App is running in background and the user has granted the _While using the app_ location authorization.
 
 **Enable background location usage indicator:**     
 
-BluedotPointSdk.instance.allowsBackgroundLocationUpdates(true);
-
-For the background location usage indicator to work, `allowsBackgroundLocationUpdates` must be set to `true` while the app is in the foreground, and the app has _While using the app_ location authorization. If `allowsBackgroundLocationUpdates` is set to `true` while the app is in the background, or the user changes the location permission to _While using the app_ while the app is in the background, the background location usage indicator will not be enabled.
-
-**Disable background location usage indicator:**
-
 ```dart
-if (await Permission.locationAlways.isGranted) {
-  BluedotPointSdk.instance.allowsBackgroundLocationUpdates(false);
-}
+BluedotPointSdk.instance.backgroundLocationAccessForWhileUsing(true);
 ```
 
-The default value of `allowsBackgroundLocationUpdates` is `false`, and it can be disabled while the app is either in the foreground or the background. If the application requests _Always_ location authorization, be sure to check that _Always_ location authorization has not been granted before setting `allowsBackgroundLocationUpdates` to `false`, as setting the value to `false` will prevent the app from accessing location from the background.
+For the background location usage indicator to work, `backgroundLocationAccessForWhileUsing` must be set to `true` while the app is in the foreground if the app has _While using the app_ location authorization. 
+
+The default value of `backgroundLocationAccessForWhileUsing` is `false`, and it can be disabled while the app is either in the foreground or the background.
 
 #### Background location use cases
 
