@@ -45,10 +45,10 @@ Admins can view, edit, or delete scheduled reports at any time through the Repor
 | `os`                   | Operating system of the device                               | String    |
 | `osVersion`            | Version of the operating system                              | String    |
 | `deviceType`           | Type of device used                                          | String    |
-| `locationPermissions`  | Status of location permissions                               | Boolean   |
+| `locationPermissions`  | Status of location permissions granted to the device         | String    |
 | `orderWaitTime`        | Time difference between `arrival` and `complete` events (seconds) | Integer   |
 | `ExitTime`             | Timestamp when the Exit event occurred                       | Timestamp |
-| `geoDwellTime`         | Time difference between `Entry` and `Exit` events            | Integer   |
+| `geoDwellTime`         | Time difference between `Entry` and `Exit` events (seconds)  | Integer   |
 
 ### Scheduling Frequency 
 You can select the frequency of report generation and email distribution through a dropdown menu with options for Daily, Weekly, or Monthly reports. Additionally, you can select your preferred time zone to receive reports, which will be sent at 3 am in the selected time zone.
