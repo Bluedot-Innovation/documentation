@@ -36,7 +36,7 @@ Admins can view, edit, or delete scheduled reports at any time through the Repor
 | Column Name            | Explanation                                                  | Data Type |
 |------------------------|--------------------------------------------------------------|-----------|
 | `orderId`              | Unique identifier for each order                             | String    |
-| Order States Timestamps| Progression states timestamps of the order as per Hello Template configuration. [See Hello Templates](../../Hello%20Screens/Custom%20configuration%20per%20store.mdx)  | Timestamp    |
+| Order States Timestamps| Progression states timestamps of the order as per Hello Order States configuration. [See Hello Order States](../../Hello%20Screens/Custom%20Order%20States.md)  | Timestamp    |
 | `destinationId`        | Unique identifier for the destination                        | String    |
 | `UsedWave`             | Indicates if Wave was used                                   | Boolean   |
 | `TempoTracked`         | Indicates if Tempo was used to tracked the order             | Boolean   |
