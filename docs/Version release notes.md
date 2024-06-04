@@ -7,6 +7,14 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date Jun 4, 2024
+-------------------------
+
+### Bluedot React Native wrapper 2.3.9
+What’s New:
+
+Implemented additional fixes and optimizations to enhance the performance and reliability of the Geo-triggering service. These improvements are focused on the wrapper level, ensuring smoother operation and better efficiency, particularly when the app moves to the foreground.
+
 Release date Apr 24, 2024
 -------------------------
 
