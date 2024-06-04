@@ -23,16 +23,16 @@ Interaction between Airship SDK and Bluedot PointSDK
 
 1.  Import AirshipKit to your class.
     
-    `import AirshipKit`
+    `import AirshipCore`
     
 2.  Take off Airship Services from `application:didFinishLaunchingWithOptions:` method in your `AppDelegate`.
 
 ```swift
 // Create Airship config
-let config = Config()
+let config = AirshipConfig()
 
 // Set production and development separately.
-// Alternatively you can use AirshipConfig.plist file to store all Airship configurations.
+// Set default credentials. Alternatively you can set production and development separately
 // More details please see https://docs.airship.com/platform/mobile/setup/sdk/ios/
 config.developmentAppKey = "YOUR DEV APP KEY"
 config.developmentAppSecret = "YOUR DEV APP SECRET"
@@ -100,11 +100,11 @@ Airship.push.userPushNotificationsEnabled = true
 5.  Receiving Geo-trigger events
     ```swift
     extension AppDelegate: BDPGeoTriggeringEventDelegate {
-      func didEnterZone(_ enterEvent: BDZoneEntryEvent){ 
+      func didEnterZone(_ enterEvent: GeoTriggerEvent){ 
         print("I have entered a zone.")
       }
     
-      func didExitZone(_ exitEvent: BDZoneExitEvent) {
+      func didExitZone(_ exitEvent: GeoTriggerEvent) {
         print("I have exited a zone")
       }
     }
@@ -125,37 +125,41 @@ Only `Custom Actions` defined for a Zone will trigger _Check-in_ and _Check
 **Setting automated message:** Setup via `Airship` portal will be triggered when a new event is posted.
 
 ```swift
-func didEnterZone(_ enterEvent: BDZoneEntryEvent){
-    **let** customEvent = CustomEvent(name:"bluedot_place_entered")
-    customEvent.interactionType = "location"
-    customEvent.interactionID = enterEvent.zone().id
-
-    // Set Bluedot Zone Custom Data
-    **var** bluedotProperties = [String : String]()
-    enterEvent.zone().customData?.forEach { (key, value) **in**
-        bluedotProperties[key] = value
-    }
-    bluedotProperties["bluedot_zone_name"] = enterEvent.zone().name
-    // assign custom event properties
-    customEvent.properties = bluedotProperties
-    // Record the event in analytics
-    customEvent.track()
+func didEnterZone(_ enterEvent: GeoTriggerEvent){
+	let customEvent = CustomEvent(name: "bluedot_place_entered")
+	customEvent.interactionType = "location"
+	customEvent.interactionID = enterEvent.zoneInfo.id.uuidString
+	
+	// Set Bluedot Zone Custom Data
+	var bluedotProperties = [String : String]()
+	enterEvent.zoneInfo.customData.forEach { (key, value) in
+		bluedotProperties[key] = value
+	}
+	bluedotProperties["bluedot_zone_name"] = enterEvent.zoneInfo.name
+	// Assign custom event properties
+	customEvent.properties = bluedotProperties
+	// Record the event in analytics
+	customEvent.track()
 }
 
-func didExitZone(_ exitEvent: BDZoneExitEvent) {
-    **let** customEvent = CustomEvent(name:"bluedot_place_exited")
+func didExitZone(_ exitEvent: GeoTriggerEvent) {
+    let customEvent = CustomEvent(name: "bluedot_place_exited")
     customEvent.interactionType = "location"
-    customEvent.interactionID = exitEvent.zone().id
+    customEvent.interactionID = exitEvent.zoneInfo.id.uuidString
     
     // Set Bluedot Zone Custom Data
-    **var** bluedotProperties = [String : String]()
-    exitEvent.zone().customData?.forEach { (key, value) **in**
+    var bluedotProperties = [String : String]()
+    exitEvent.zoneInfo.customData.forEach { (key, value) in
         bluedotProperties[key] = value
     }
-    bluedotProperties["bluedot_zone_name"] = exitEvent.zone().name
+    bluedotProperties["bluedot_zone_name"] = exitEvent.zoneInfo.name
 
-    // set dwell time
-    bluedotProperties["dwell_time"] = NSNumber(value: exitEvent.duration).stringValue
+    // Set dwell time
+	if let milliseconds = triggerEvent.exitEvent?.dwellTime {
+		let minutes = milliseconds / 1000 / 60
+    	bluedotProperties["dwell_time"] = String(format: "%.2f", ceil(minutes * 100) / 100)
+	}
+
     // assign custom event properties
     customEvent.properties = bluedotProperties
     // Record the event in analytics
