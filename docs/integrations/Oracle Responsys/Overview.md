@@ -4,7 +4,7 @@ Oracle Responsys Integration
 Introduction
 ------------
 
-The Bluedot SDK integration with Oracle Responsys Mobile App Platform Cloud Service enables mobile apps to take advantage of the power of  Cloud services and the superior accuracy, Geofence and Geolines™ triggering capabilities of the Bluedot SDKs. To take full advantage of the Oracle Cloud services, it is mandatory to integrate needed libraries/frameworks generally called SDKs to your mobile app. At this moment, only iOS and Android mobile apps are supported by the SDK. This page contains steps on how to update your mobile app’s source and integrate the app with Bluedot Point SDK.
+The Bluedot SDK integration with Oracle Responsys Mobile App Platform Cloud Service enables mobile apps to take advantage of the power of Cloud services and the superior accuracy, Geofence and Geolines™ triggering capabilities of the Bluedot SDKs. To take full advantage of the Oracle Cloud services, it is mandatory to integrate needed libraries/frameworks generally called SDKs to your mobile app. At this moment, only iOS and Android mobile apps are supported by the SDK. This page contains steps on how to update your mobile app’s source and integrate the app with Bluedot Point SDK.
 
 Integration system architecture
 -------------------------------
@@ -20,7 +20,7 @@ To start with integration we need to first gather the two necessities for the in
 *   The most important one is to add the SDK framework to the app source code, which can be either achieved by adding the artifacts via the online repository or copy-pasting the SDK artifacts files to the project.
 *   The second important element is the credentials needed to authorize or authenticate the SDK. These credentials are unique for each account or application.
 
-It is assumed that Responsys SDK is integrated into the project with the required credentials. If this is not the case, then an extra step is required that involves integrating Responsys SDK into the project. Detailed documentation is available here for [Android](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCFB/android/) and [iOS](https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCFB/ios/).
+It is assumed that Responsys SDK is integrated into the project with the required credentials. If this is not the case, then an extra step is required that involves integrating Responsys SDK into the project. Detailed documentation is available here for [Android](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop-mobile/android/android.htm) and [iOS](https://docs.oracle.com/en/cloud/saas/marketing/responsys-develop-mobile/ios/ios.htm).
 
 Integrating SDK to Android App
 ------------------------------

@@ -21,21 +21,20 @@ Setup Bluedot Location Services
 
 1\. Import required header files.
 ```swift
-    import BDPointSDK
-    import PushIOManager
+import BDPointSDK
+import PushIOManager
 ```
 
 2\. Implement Bluedot [`BDPGeoTriggeringEventDelegate`](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html):
 
 ```swift
-// Swift extension 
 YourClass: BDPGeoTriggeringEventDelegate { 
-    func didEnterZone(_ enterEvent: BDZoneEntryEvent) 
+    func didEnterZone(_ enterEvent: GeoTriggerEvent) 
     { 
         // Your logic when the device enters a Bluedot Zone 
     } 
 
-    func didExitZone(_ exitEvent: BDZoneExitEvent) 
+    func didExitZone(_ exitEvent: GeoTriggerEvent) 
     { 
         // Your logic when the device leaves a Bluedot Zone 
     } 
@@ -44,14 +43,14 @@ YourClass: BDPGeoTriggeringEventDelegate {
 
 3\. Assign GeoTriggeringEvent delegate with your implementation
 ```swift
-// Swift 
 let instanceOfYourClass = YourClass() 
 BDLocationManager.instance()?.geoTriggeringEventDelegate = instanceOfYourClass
+```
 
 4\. Authenticate with the Bluedot services
 
-// Swift
-BDLocationManager.instance()?.initialize(withProjectId: projectId){ error in
+```swift
+BDLocationManager.instance()?.initialize(withProjectId: projectId) { error in
      guard error == nil else {
         print("There was an error initializing the Bluedot SDK: \(error.localizedDescription)")
         return
@@ -80,49 +79,47 @@ PushIOManager.sharedInstance().configure(withFileName: configName, completionHan
 6\. Send event to Oracle Reponsys via Bluedot [didEnterZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didEnterZone:) / [didExitZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didExitZone:) callbacks.
 
 ```swift
-    func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
-
-        let geoRegion = PIOGeoRegion(
-            geofenceId: enterEvent.fence.id,
-            geofenceName: enterEvent.fence.name,
-            speed: enterEvent.location.speed,
-            bearing: enterEvent.location.bearing,
+func didEnterZone(_ enterEvent: GeoTriggerEvent) {
+	let geoRegion = PIOGeoRegion(
+            geofenceId: entryEvent.fenceId.uuidString,
+            geofenceName: entryEvent.fenceName,
+            speed: enterEvent.entryEvent?.locations[0].speed ?? 0.0,
+            bearing: enterEvent.entryEvent?.locations[0].course ?? 0.0,
             source: "Bluedot Point SDK",
-            zoneId: enterEvent.zone().id,
-            zoneName: enterEvent.zone().name,
+            zoneId: enterEvent.zoneInfo.id.uuidString,
+            zoneName: enterEvent.zoneInfo.name,
             dwellTime: 0,
-            extra: enterEvent.zone().customData)
+            extra: enterEvent.zoneInfo.customData)
 
-        PushIOManager.sharedInstance().didEnter(region: geoRegion) { error, _ in
-            if error == nil {
-                print("Geofence Entry Event triggered successfully")
-            } else {
-                print("Unable to send Geofence Entry Event, reason: \(String(describing: error?.localizedDescription))")
-            }
-        }
-    }
+	PushIOManager.sharedInstance().didEnter(region: geoRegion) { error, _ in
+		if error == nil {
+			print("Geofence Entry Event triggered successfully")
+		} else {
+			print("Unable to send Geofence Entry Event, reason: \(String(describing: error?.localizedDescription))")
+		}
+	}
+}
 
-    func didExitZone(_ exitEvent: BDZoneExitEvent) {
+func didExitZone(_ exitEvent: GeoTriggerEvent) {
+	let geoRegion = PIOGeoRegion(
+		geofenceId: exitEvent.fence.id,
+		geofenceName: exitEvent.fence.name,
+		speed: 0.0,
+		bearing: 0.0,
+		source: "Bluedot Point SDK",
+		zoneId: exitEvent.zoneInfo.id.uuidString,
+		zoneName: exitEvent.zoneInfo.name,
+		dwellTime: Int(exitEvent.exitEvent?.dwellTime ?? 0),
+		extra: exitEvent.zoneInfo.customData)
 
-        let geoRegion = PIOGeoRegion(
-            geofenceId: exitEvent.fence.id,
-            geofenceName: exitEvent.fence.name,
-            speed: 0.0,
-            bearing: 0.0,
-            source: "Bluedot Point SDK",
-            zoneId: exitEvent.zone().id,
-            zoneName: exitEvent.zone().name,
-            dwellTime: Int(exitEvent.duration),
-            extra: exitEvent.zone().customData)
-
-        PushIOManager.sharedInstance().didExit(region: geoRegion) { error, _ in
-            if error == nil {
-                print("Geofence Exit Event triggered successfully")
-            } else {
-                print("Unable to send Geofence Exit Event, reason: \(String(describing: error?.localizedDescription))")
-            }
-        }
-    }
+	PushIOManager.sharedInstance().didExit(region: geoRegion) { error, _ in
+		if error == nil {
+			print("Geofence Exit Event triggered successfully")
+		} else {
+			print("Unable to send Geofence Exit Event, reason: \(String(describing: error?.localizedDescription))")
+		}
+	}
+}
 ```
 
 **GitHub Sample Project**
