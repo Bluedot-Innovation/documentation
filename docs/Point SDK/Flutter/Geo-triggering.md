@@ -141,7 +141,7 @@ class _MyAppState extends State<MyApp> {
     geoTriggeringEventChannel.setMethodCallHandler((MethodCall call) async {
       var args = call.arguments;
       switch (call.method) {
-        case GeoTriggeringEvents.onZoneInfoUpdate:
+        case GeoTriggeringEvents.didUpdateZoneInfo:
           debugPrint('On Zone Info Update: $args');
           break;
         case GeoTriggeringEvents.didEnterZone:
