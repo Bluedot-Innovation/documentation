@@ -25,3 +25,4 @@ Here are some things you need to know about the Point SDK version 16:
 Please refer to the migration guide for each platform to better understand these changes and ensure a smooth transition.
 - [Android](../Point%20SDK/Android/Migration%20Guides/Migration%20guide%20to%20SDK%2016%20for%20Android.md)
 - [iOS](../Point%20SDK/iOS/Migration%20Guides/Migration%20guide%20to%20SDK%2016%20for%20iOS.md)
+- [React Native](../Point%20SDK/React%20Native/Migration%20Guides/Migration%20guide%20to%203.0.0.md)
