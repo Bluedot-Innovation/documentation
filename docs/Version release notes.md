@@ -10,10 +10,52 @@ Version Release Notes
 Release date Jun 4, 2024
 -------------------------
 
+### Bluedot React Native wrapper 3.0.0
+
+We are excited to announce the release of [version 3.0.0 of our React Native wrapper for the Point SDK](https://www.npmjs.com/package/bluedot-react-native/v/3.0.0). This major update includes significant improvements, new features, and important changes to enhance your application's location-based capabilities.
+
+We are excited to announce the release of version 3.0.0 of our React Native wrapper for the Point SDK. This major update includes significant improvements, new features, and important changes to enhance your application's location-based capabilities.
+
+#### What's New in Version 3.0.0
+
+- **Integration with Point SDK 16.0.0**: This version is now fully compatible with Point SDK 16.0.0, bringing enhanced geo-triggering data, new callbacks, and improved API methods.
+
+- **Enhanced Geo-Triggering Data**: The `Entry` and `Exit` callbacks have been updated to provide more detailed information about geofence interactions, enhancing the data available for your use cases.
+
+- **New Tempo Tracking Callback**: Receive real-time ETA updates directly within your app with the new Tempo Service callback. This allows for more dynamic and responsive user experiences.
+
+- **Destination Information in Zones**: Access destination (store) details directly from the Zones list, simplifying the management and review of zones and their associated destinations.
+
+- **Updated API Methods**: Several API methods have been updated for improved consistency and performance:
+  - **New Payload for `enterZone` and `exitZone` Callbacks**: Enhanced payloads provide comprehensive information about geo-trigger events.
+  - **New API for Custom Event Metadata**: Fetch custom event metadata set for a Bluedot session using a new API method.
+  - **Modified Rule Download Callback**: The rule download callback no longer returns the list of ZoneInfos; instead, it can be accessed via an existing API.
+
+#### Removal of Deprecated Features and Properties
+
+- **URL Action and Message Action**: These actions have been removed from the platform and corresponding APIs, classes, and properties have been deprecated.
+- **Real-time Data Sync Feature**: This feature has been discontinued due to low usage and its associated APIs have been removed.
+- **Deprecated Classes and Methods**: Various classes, functions, and properties deprecated since versions 15.4 for iOS and 15.3 for Android have been removed.
+
+#### Android-Specific Changes
+
+- **Location Permissions Update**: Foreground and background usage permissions are no longer declared in the Bluedot SDK manifest. Ensure to update your app's manifest with the necessary location permissions for proper functionality.
+
+#### Migration Guide
+
+For detailed instructions on migrating to the new version, please refer to the [React Native Migration Guide](./Point%20SDK/React%20Native/Migration%20Guides/Migration%20guide%20to%203.0.0.md).
+
+* * *
+
+Release date Jun 4, 2024
+-------------------------
+
 ### Bluedot React Native wrapper 2.3.9
 What’s New:
 
 Implemented additional fixes and optimizations to enhance the performance and reliability of the Geo-triggering service. These improvements are focused on the wrapper level, ensuring smoother operation and better efficiency, particularly when the app moves to the foreground.
+
+* * *
 
 Release date Apr 24, 2024
 -------------------------
