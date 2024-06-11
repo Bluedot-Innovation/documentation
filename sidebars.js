@@ -109,6 +109,7 @@ const sidebars = {
               type: "category",
               label: "Migration Guides",
               items: [
+                "Point SDK/React Native/Migration Guides/Migration guide to 3.0.0",
                 "Point SDK/React Native/Migration Guides/Migrating to 2.0.0 guide",
                 "Point SDK/React Native/Migration Guides/Version 1.1.7 documentation",
               ],
