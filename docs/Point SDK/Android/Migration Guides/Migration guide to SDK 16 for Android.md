@@ -230,7 +230,7 @@ If your use case requires Bluedot Geo-trigger to run without a foreground servic
 ```
 
 #### **Add GeoTriggerEvent class in Proguard**
-Please add below rule to your ProGuard rules to preserve GeoTriggerEvent parameter names after obfuscation. This is crucial as GeoTriggerEvent is the new payload returned in the callback.
+Please add below rule to your ProGuard rules to preserve GeoTriggerEvent parameter names after obfuscation. This is crucial as GeoTriggerEvent is the new payload returned in the Entry and Exit callbacks.
 
 ```pro
 -keep class au.com.bluedot.point.net.engine.event.GeoTriggerEvent {*;}
