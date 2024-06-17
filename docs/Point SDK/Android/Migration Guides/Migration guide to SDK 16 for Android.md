@@ -229,6 +229,14 @@ If your use case requires Bluedot Geo-trigger to run without a foreground servic
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 ```
 
+#### **Add GeoTriggerEvent class in Proguard**
+Please add below rule to your ProGuard rules to preserve GeoTriggerEvent parameter names after obfuscation. This is crucial as GeoTriggerEvent is the new payload returned in the Entry and Exit callbacks.
+
+```pro
+-keep class au.com.bluedot.point.net.engine.event.GeoTriggerEvent {*;}
+```
+
+
 #### **Upgrade to `reset` method now includes clearing of Custom Event Meta Data**
 We've updated the reset method to enhance its functionality. Previously, invoking reset did not clear the Custom Event Meta Data. With this release, the reset method now also clears any Custom Event Meta Data, ensuring that all settings and cached data are fully restored to their default states.
 
