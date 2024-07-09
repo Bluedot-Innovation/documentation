@@ -93,6 +93,15 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['swift', 'kotlin', 'java', 'objectivec', 'gradle', 'dart','csharp']
       },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '2NCSK8Z8T6',
+  
+        // Public API key: it is safe to commit it
+        apiKey: '2f862b54cf71f1350d20e84980b27d50',
+  
+        indexName: 'bluedot'
+      }
     }),
 
     plugins:[
