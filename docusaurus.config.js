@@ -409,6 +409,10 @@ const config = {
             {
               from: '/webhooks/',
               to: '/Webhooks/Overview'
+            },
+            {
+              from: '/Canvas/Analytics/Hello%20Reports',
+              to: '/Canvas/Analytics/Scheduled Reports'
             }
           ]
         }

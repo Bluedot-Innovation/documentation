@@ -188,7 +188,7 @@ const sidebars = {
           items: [
             'Canvas/Analytics/Historical Event Tracking',
             'Canvas/Analytics/Hello Order Logs',
-            'Canvas/Analytics/Hello Reports'
+            'Canvas/Analytics/Scheduled Reports'
           ]
         },
         "Canvas/Mandatory two-factor authentication",
