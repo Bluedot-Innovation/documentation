@@ -3,11 +3,17 @@ Order Consolidation Alerts
 
 The Order Consolidation Alert feature in Hello Screens is designed to improve the efficiency of the order pickup process. This feature provides timely visual and auditory alerts to store staff, indicating when to start preparing orders based on the customer's estimated time of arrival (ETA). This ensures that orders are ready for handover promptly upon the customer's arrival, reducing wait times and enhancing the customer experience.
 
+
 Consolidation Time Alert
 ----------------------
 The alert applies to orders in the customer "On The Way" status. It is triggered when the customer's ETA falls within the pre-configured "preparation time" set in Canvas. When the alert is triggered, the order ticket will blink, and a distinct sound will be heard once to notify the staff. This can be configured globally for all stores or individually on a per-store basis. These alerts are also available as push notifications in the mobile app, informing staff that it is time to start preparing the order.
 
 ![](../assets/Hello%20Screens%20-%20consolidation%20alert%20time.png)
+
+:::info
+If you are interested in this feature, please contact your Bluedot representative or reach us at [help@bluedot.io](mailto:help@bluedot.io) to enable it for your account.
+:::
+
 
 How to Use
 ----------
