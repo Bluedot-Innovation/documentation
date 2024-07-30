@@ -201,7 +201,7 @@ For more details on webhook retry, please refer to the [Webhooks Retry Documenta
 
 
 :::info
-For information about the `1.0` version of the webhooks payload for Geo-triggering events, please refer to the [Geo-triggering Webhooks Version 1.0 Documentation](./V1/Geo-triggering-v1.md)
+For information about the `1.0` version of the webhooks payload for Geo-triggering events, please refer to the [Geo-triggering Webhooks Version 1.0 Documentation](./V1/Geo-triggering.md)
 :::
 
-For further assistance, please contact us at help@bluedot.io.
+For further assistance, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
