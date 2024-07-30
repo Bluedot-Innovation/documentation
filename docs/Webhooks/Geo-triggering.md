@@ -42,7 +42,7 @@ This table details the fields within the `appInfo` object, providing information
 |-------------------------------------------|-----------------------------------------------------------------------------|
 | `appInfo.appBuildVersion`                 | Build version of the application.                                           |
 | `appInfo.customEventMetaData`             | Custom metadata related to the event.                                        |
-| `appInfo.customEventMetaData.[KEY]` | The key of the custom event data key/value pair.                                               |
+| `appInfo.customEventMetaData.[KEY]` | The value of the custom event data key/value pair.                                               |
 | `appInfo.customerApplicationId`           | Application identifier.                                                     |
 | `appInfo.minimumOSVersion`                | Minimum OS version supported by the application.                            |
 | `appInfo.sdkVersion`                      | SDK version used by the application.                                        |
@@ -65,7 +65,7 @@ This table provides information about the `zoneInfo` object, including details a
 | Field                                 | Description                                                 |
 |---------------------------------------|-------------------------------------------------------------|
 | `zoneInfo.customData`                 | Custom data related to the zone.                            |
-| `zoneInfo.customData.[KEY]`         | The key of the zone custom data key/value pair.                    |
+| `zoneInfo.customData.[KEY]`         | The value of the zone custom data key/value pair.                    |
 | `zoneInfo.destination`                | Destination information.                                    |
 | `zoneInfo.destination.destinationId`  | Destination identifier.                                     |
 | `zoneInfo.destination.location`       | Location details of the destination.                        |
