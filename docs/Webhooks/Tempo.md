@@ -1,4 +1,4 @@
-Tempo Webhook
+Tempo webhook
 =========================
 
 Register Tempo Webhooks to receive real-time ETA notifications from your customers. As your customers get closer to their Destination to collect their order, Bluedot will send a notification every minute, so your team is ready to go.
