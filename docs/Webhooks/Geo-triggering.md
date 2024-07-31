@@ -1,183 +1,207 @@
-Geo-trigger webhook
-====================
+
+# Geo-Triggering webhook
 
 Register Geo-trigger Webhooks to receive real-time Entry/Exit notifications from your customers.
 
-Configure a Geo-trigger Webhook
--------------------------------
+## Selecting Webhooks Payload Version
 
-From the Canvas Integration section, add a new Webhook and select Geo-trigger as the type in the dropdown.
+When setting up webhooks from the dashboard, users can select the version of the Geo-triggering event payload. The rest of the events remain unchanged. Follow these steps to select the version:
 
-![](../assets/Add-New-Geo-trigger-webhook-1024x750.png)
+1. Navigate to the webhooks configuration section in the dashboard.
+2. Select the desired version (`1.0` or `2.0`) for the Geo-triggering event.
+3. Save your changes.
 
-### Additional Header and Body fields
+![](../assets/Webhook%20-%20geotriggering%202.png)
 
-You can have additional information in either the headers or the body of the webhook’s request by adding extra fields.
+## Geo-triggering event (V2.0)
 
-![](../assets/Add-extra-headers-and-body-fields-1024x647.png)
+The `2.0` version of the webhooks payload for Geo-triggering events includes a standardized structure that aligns with the Analytics API and SDK Entry and Exit events. This version provides additional data points for enhanced insights and uniformity.
 
-You can also configure a Geo-trigger Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
+### Root Level Fields
 
-If you’d like to Create a Destination using [Config API](../APIs/Config%20API/Overview.md), you’ll use the following endpoints:
+This table lists the primary fields found at the root level of the payload.
+
+| Field          | Description                                                   |
+|----------------|---------------------------------------------------------------|
+| `ulid`         | Unique identifier for the event.                              |
+| `retryCount`   | The number of retry attempts for the webhook delivery.        |
+| `triggerChainId` | Identifier for the chain of triggers leading to this event. |
+| `notificationType` | Type of notification (e.g., exit).                       |
+| `receivedAt`   | Timestamp when the event was received.                        |
+| `submissionTime` | Timestamp when the event was submitted.                    |
+| `accountId`    | Account identifier.                                           |
+| `installRef`   | Reference ID for the installation.                            |
+| `projectId`    | Project identifier.                                           |
 
 
-[**Add Geo-trigger Webhooks to a Project**](https://config-docs.bluedot.io/#tag/projects/operation/addProject)
+### `appInfo` fields
 
-When creating or editing a Project you can add Geo-trigger Webhooks within the webhooks property.
-Set the type to trigger in the request.
+This table details the fields within the `appInfo` object, providing information about the application.
 
-Endpoint: https://config.bluedot.io/prod1/projects
+| Field                                     | Description                                                                 |
+|-------------------------------------------|-----------------------------------------------------------------------------|
+| `appInfo.appBuildVersion`                 | Build version of the application.                                           |
+| `appInfo.customEventMetaData`             | Custom metadata related to the event.                                        |
+| `appInfo.customEventMetaData.[KEY]` | The value of the custom event data key/value pair.                                               |
+| `appInfo.customerApplicationId`           | Application identifier.                                                     |
+| `appInfo.minimumOSVersion`                | Minimum OS version supported by the application.                            |
+| `appInfo.sdkVersion`                      | SDK version used by the application.                                        |
 
-Example of adding a Geo-trigger Webhook:
-```json
-"webhooks": [{
-    "type": "trigger",
-    "url": "<webhook URL goes here>"
-}]
-```
 
-Webhook request JSON structure
-------------------------------
+### `deviceInfo` fields
 
-### Entry JSON request
+This table lists the fields within the `deviceInfo` object, containing details about the device.
+
+| Field             | Description                           |
+|-------------------|---------------------------------------|
+| `deviceInfo.deviceType` | Type of device (e.g., iPhone14,7). |
+| `deviceInfo.os`   | Operating system of the device.       |
+| `deviceInfo.osVersion` | Operating system version of the device. |
+
+### `zoneInfo` fields
+
+This table provides information about the `zoneInfo` object, including details about the zone and destination.
+
+| Field                                 | Description                                                 |
+|---------------------------------------|-------------------------------------------------------------|
+| `zoneInfo.customData`                 | Custom data related to the zone.                            |
+| `zoneInfo.customData.[KEY]`         | The value of the zone custom data key/value pair.                    |
+| `zoneInfo.destination`                | Destination information.                                    |
+| `zoneInfo.destination.destinationId`  | Destination identifier.                                     |
+| `zoneInfo.destination.location`       | Location details of the destination.                        |
+| `zoneInfo.destination.location.latitude` | Latitude of the destination.                             |
+| `zoneInfo.destination.location.longitude` | Longitude of the destination.                           |
+| `zoneInfo.destination.name`           | Name of the destination.                                    |
+| `zoneInfo.id`                         | Zone identifier.                                            |
+| `zoneInfo.name`                       | Name of the zone.                                           |
+
+### `triggerEvents` fields
+
+This table describes the fields within the `triggerEvents` array, detailing the events that triggered the notification.
+
+| Field                                    | Description                                                                             |
+|------------------------------------------|-----------------------------------------------------------------------------------------|
+| `triggerEvents[].applicationState`       | State of the application at the time of the event.                                      |
+| `triggerEvents[].applicationState.batteryLevel` | Battery level of the device at the time of the event.                              |
+| `triggerEvents[].applicationState.blueBarEnabled` | Indicates if the Background Location Usage Indicator was enabled at the time of the event.                                               |
+| `triggerEvents[].applicationState.lastRuleUpdate` | Timestamp of the last rule update.                                                  |
+| `triggerEvents[].applicationState.locationPermission` | Location permission status of the application.                              |
+| `triggerEvents[].applicationState.viewState` | View state of the application (foreground or background).                              |
+| `triggerEvents[].destinationId`          | Identifier for the destination associated with the event.                              |
+| `triggerEvents[].eventTime`              | Timestamp of the event.                                                                |
+| `triggerEvents[].eventType`              | Type of the event (e.g., fenceEntered, fenceExited).                                   |
+| `triggerEvents[].fenceId`                | Identifier for the geofence associated with the event.                                 |
+| `triggerEvents[].fenceName`              | Name of the geofence associated with the event.                                        |
+| `triggerEvents[].localEventTime`         | Local time of the event.                                                               |
+| `triggerEvents[].locations`              | Array of location data associated with the event.                                      |
+| `triggerEvents[].locations[].altitude`   | Altitude at the time of the event.                                                     |
+| `triggerEvents[].locations[].bearing`    | Bearing at the time of the event.                                                      |
+| `triggerEvents[].locations[].horizontalAccuracy` | Horizontal accuracy of the location data.                                            |
+| `triggerEvents[].locations[].latitude`   | Latitude at the time of the event.                                                     |
+| `triggerEvents[].locations[].longitude`  | Longitude at the time of the event.                                                    |
+| `triggerEvents[].locations[].speed`      | Speed at the time of the event.                                                        |
+| `triggerEvents[].locations[].time`       | Timestamp of the location data.                                                        |
+| `triggerEvents[].locations[].verticalAccuracy` | Vertical accuracy of the location data.                                               |
+| `triggerEvents[].triggerEngine`          | Engine used to trigger the event (e.g., bd).                                           |
+
+## Additional Fields
+In addition to the payload, there are additional fields included:
+
+| Field                       | Description                                                                               |
+|-----------------------------|-------------------------------------------------------------------------------------------|
+| `additionalFields.body_field1` | Custom field for additional body fields.                                                     |                                               |
+| `webhookUniqueId`           | Unique ID for the webhook, available when webhook retry is enabled.                      |
+
+For more details on webhook retry, please refer to the [Webhooks Retry Documentation](./Webhooks%20retry.md).
+
+
+## Webhooks Payload Example
+
 ```json
 {
-    "type": "checkIn",
-    "checkInId":"73cbdf0c-5523-46ec-bc15-c9ad362b2a85",
-    "installRef":"c92f4a32dc35282d4471b42993f809fa",
-    "checkInTime": "02-09-2018 00:08:16",
-    "checkInTimeISO": "2018-09-02T00:08:16.000Z",
-    "longitude":144.98173087835312,
-    "latitude":-37.819805462370944,
-    "fenceName":"Melbourne Cricket Ground Gate 1",
-    "deviceSpeed":10,
-    "fenceId":"80fc36ad-ee72-4450-ad96-b3fadfc26cb4",
-    "zoneName":"Melbourne Cricket Ground",
-    "zoneId":"ffece0a9-fd21-4148-892e-0a61d01a6bd4",
-    "deviceType":"iPhone 9,3",
-    "sdkVersion": "1.13.0",
-    "os": "iOS",
-    "osVersion": "12.1.2",
-    "appBuildVersion": "2.8.0.639",
-    "receivedAt": "2018-09-02T00:22:43.816Z"
+    "payload": {
+        "ulid": "01J1GPFGJJPY1NXSM76WDFXQ59",
+        "retryCount": 0,
+        "appInfo": {
+            "appBuildVersion": "5.2.0",
+            "customEventMetaData": {
+                "key1": "value 1",
+                "key2": "value 2"
+            },
+            "customerApplicationId": "au.com.bluedot",
+            "minimumOSVersion": "15.0",
+            "sdkVersion": "16.1.0"
+        },
+        "triggerChainId": "00093f0f-28e7-4128-a4b3-5576af71dae3",
+        "notificationType": "entry",
+        "receivedAt": "2024-06-29T00:31:48.294Z",
+        "deviceInfo": {
+            "deviceType": "iPhone14,2",
+            "os": "iOS",
+            "osVersion": "16.7.1"
+        },
+        "submissionTime": "2024-06-29T00:31:48.237Z",
+        "zoneInfo": {
+            "customData": {
+                "Country": "USA",
+                "State": "Florida"
+            },
+            "destination": {
+                "destinationId": "bluedot",
+                "location": {
+                    "longitude": 144.123123123,
+                    "latitude": -33.123123123
+                },
+                "name": "Bluedot"
+            },
+            "id": "45f3a3be-c542-4dcd-aba7-20cb2e671e8a",
+            "name": "Bluedot zone"
+        },
+        "accountId": "39a22449-0000-4f2a-923c-1a78af0000",
+        "installRef": "557a54be-0000-43ef-830c-3ef816cd0000",
+        "triggerEvents": [
+            {
+                "applicationState": {
+                    "batteryLevel": 40,
+                    "blueBarEnabled": false,
+                    "lastRuleUpdate": "2024-06-29T00:31:47.810Z",
+                    "locationPermission": "while_using",
+                    "viewState": "foreground"
+                },
+                "destinationId": "bluedot",
+                "eventTime": "2024-06-29T00:31:48.221Z",
+                "eventType": "fenceEntered",
+                "fenceId": "c87bfa51-505e-4c28-bfd9-215b1594e9c3",
+                "fenceName": "Fence 0",
+                "localEventTime": "2024-06-28T20:31:48.221",
+                "locations": [
+                    {
+                        "altitude": 100,
+                        "bearing": -1,
+                        "horizontalAccuracy": 12.232323,
+                        "longitude": 144.123123123,
+                        "latitude": -33.123123123,
+                        "speed": -1,
+                        "time": "2024-06-29T00:31:48.155Z",
+                        "verticalAccuracy": 12.232323
+                    }
+                ],
+                "triggerEngine": "bd"
+            }
+        ],
+        "projectId": "d12ee4ee-0f1a-4b58-b7f1-1c6ea3098gs"
+    },
+    "additionalFields": {
+        "body_field1": "value 1",
+        "body_field2": "value 2"
+    },
+    "webhookUniqueId": "0b816c7264a86200ce3523c48435b913d9d6b060" // only available when webhook retry is enabled
 }
 ```
 
-### Entry JSON request with `customEventMetaData` and `customData`
-```json
-{
-  "type": "checkIn",
-  "checkInId":"73cbdf0c-5523-46ec-bc15-c9ad362b2a85",
-  "installRef":"c92f4a32dc35282d4471b42993f809fa",
-  "checkInTime": "02-09-2018 00:08:16",
-  "checkInTimeISO": "2018-09-02T00:08:16.000Z",
-  "longitude":144.98173087835312,
-  "latitude":-37.819805462370944,
-  "fenceName":"Melbourne Cricket Ground Gate 1",
-  "deviceSpeed":10,
-  "fenceId":"80fc36ad-ee72-4450-ad96-b3fadfc26cb4",
-  "zoneName":"Melbourne Cricket Ground",
-  "zoneId":"ffece0a9-fd21-4148-892e-0a61d01a6bd4",
-  "deviceType":"iPhone 9,3",
-  "sdkVersion": "1.13.0",
-  "appBuildVersion": "2.8.0.639",
-  "os": "iOS",
-  "osVersion": "12.1.2",
-  "receivedAt": "2018-09-02T00:22:43.816Z",
-  "zoneCustomData": {
-      "key1": "value1",
-      "key2": "value2"
-  },
-  "eventMetaData": {
-      "eKey1": "eValue1"
-  }
-}
-```
 
-### Exit JSON request
-```json
-{
-    "type": "checkOut",
-    "checkInId":"73cbdf0c-5523-46ec-bc15-c9ad362b2a85",
-    "installRef":"c92f4a32dc35282d4471b42993f809fa",
-    "checkInTime": "02-09-2016 00:08:16",
-    "checkInTimeISO": "2016-09-02T00:08:16.000Z",
-    "checkOutTime": "02-09-2016 02:25:47",
-    "checkOutTimeISO": "2016-09-02T02:25:47.000Z",
-    "dwellTime": 138, 
-    "fenceName":"Melbourne Cricket Ground Gate 1",
-    "fenceId":"80fc36ad-ee72-4450-ad96-b3fadfc26cb4",
-    "zoneName":"Melbourne Cricket Ground",
-    "zoneId":"ffece0a9-fd21-4148-892e-0a61d01a6bd4",
-    "deviceType":"iPhone",
-    "sdkVersion": "1.8.0",
-    "appBuildVersion": "2.8.0.639",
-    "receivedAt": "2016-09-02T02:25:47.816Z"
-}
-```
+:::info
+For information about the `1.0` version of the webhooks payload for Geo-triggering events, please refer to the [Geo-triggering Webhooks Version 1.0 Documentation](./V1/Geo-triggering.md)
+:::
 
-### Exit JSON request with `customEventMetaData` and `customData`
-```json
-{
-    "type": "checkOut",
-    "checkInId":"73cbdf0c-5523-46ec-bc15-c9ad362b2a85",
-    "installRef":"c92f4a32dc35282d4471b42993f809fa",
-    "checkInTime": "02-09-2016 00:08:16",
-    "checkInTimeISO": "2016-09-02T00:08:16.000Z",
-    "checkOutTime": "02-09-2016 02:25:47",
-    "checkOutTimeISO": "2016-09-02T02:25:47.000Z",
-    "dwellTime": 138, 
-    "fenceName":"Melbourne Cricket Ground Gate 1",
-    "fenceId":"80fc36ad-ee72-4450-ad96-b3fadfc26cb4",
-    "zoneName":"Melbourne Cricket Ground",
-    "zoneId":"ffece0a9-fd21-4148-892e-0a61d01a6bd4",
-    "deviceType":"iPhone",
-    "sdkVersion": "1.8.0",
-    "appBuildVersion": "2.8.0.639",
-    "receivedAt": "2016-09-02T02:25:47.816Z",
-    "zoneCustomData": {
-        "key1": "value1",
-         "key2": "value2"
-     },
-     "eventMetaData": {
-          "eKey1": "eValue1"
-      }
-}
-```
-
-Geo-trigger Webhook field description
--------------------------------------
-
-Fields returned in Entry event JSON request
-
-| **Field**         | **Type**    | **Description**                                                                                                                                                                | **Example**                              |
-|-------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
-| `appBuildVersion` | String      | The app build version of the application using the Point SDK, which triggered the check-in. (Available only for check-ins of SDK version 1.8 and above.)                       | `"1.11.2"`                               |
-| `checkInId`       | String      | The unique identifier of the Check-in record.                                                                                                                                  | `"73cbdf0c-5523-46ec-bc15-c9ad362b2a85"` |
-| `checkInTime`     | String      | UTC date and time of the Check-in in DD-MM-YYYY hh:mm:ss format.                                                                                                               | `"02-09-2018 00:08:16"`                  |
-| `checkInTimeISO`  | String      | UTC date and time of the Check-in in ISO format.                                                                                                                               | `"2016-09-02T00:08:16.000Z"`             |
-| `deviceSpeed`     | Number      | The travel speed of the device at the time of Check-in reported as meters per second.                                                                                          | `10`                                     |
-| `eventMetaData`   | JSON Object | Key/Value pairs passed from the application to Bluedot Point SDK. This will not be returned as part of the request if no data set on the Mobile SDK.                           | `{ “eKey1”: “eValue1” }`                 |
-| `fenceId`         | String      | The unique identifier of the fence that triggered the Check-in.                                                                                                                | `"73cbdf0c-5523-46ec-bc15-c9ad362b2a85"` |
-| `fenceName`       | String      | The name of the geofence that triggered the Check-in.                                                                                                                          | `"Fence Number 1"`                       |
-| `installRef`      | String      | The unique app install reference on the device.                                                                                                                                | `"73cbdf0c-5523-46ec-bc15-c9ad362b2a85"` |
-| `latitude`        | Number      | Latitude component of the coordinate at which the Entry event occurred.                                                                                                        | `144.981730`                             |
-| `longitude`       | Number      | Longitude component of the coordinate at which the Entry event occurred.                                                                                                       | `-37.819805`                             |
-| `os`              | String      | The OS of the device that triggered the Check-in event.                                                                                                                        | `android` `iOS`                          |
-| `osVersion`       | String      | The OS Version of the device that triggered the Check-in event.                                                                                                                | `15.4.3`                                 |
-| `receivedAt`      | String      | UTC date and time of the Check-in was received in our database in ISO format.                                                                                                  | `"2016-09-02T00:08:16.000Z"`             |
-| `sdkVersion`      | String      | The Point SDK version number is being used in the application which has triggered the Entry event. (Available only for check-ins of SDK version 1.6 and above.)                | `"15.2.0"`                               |
-| `type`            | String      | This field denotes the type of event being relayed from our servers to yours. For check-ins, the type will be “checkIn”.                                                       | `"checkIn"`                              |
-| `zoneCustomData`  | JSON Object | Key/Value pair of Location specific data added to the custom action of the Zone. This will not be returned as part of the request if no data set for the Zone’s custom Action. | `{ “eKey1”: “eValue1” }`                 |
-| `zoneId`          | String      | The unique identifier of the zone that triggered the Entry event.                                                                                                              | `"73cbdf0c-5523-46ec-bc15-c9ad362b2a85"` |
-| `zoneName`        | String      | The name of the zone that triggered the Entry event.                                                                                                                           | `"Zone Restaurant"`                      |
-
-
-Fields returned in Exit event JSON request
-
-| **Field**         | **Type** | **Description**                                                                                                             | **Example**                  |
-|-------------------|----------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| `checkOutTime`    | String   | UTC date and time of the Check-out in DD-MM-YYYY hh:mm:ss format.                                                           | `"02-09-2018 00:08:16"`      |
-| `checkOutTimeISO` | String   | UTC date and time of the Check-out in ISO format.                                                                           | `"2016-09-02T00:08:16.000Z"` |
-| `dwellTime`       | Number   | The dwell time is the number of minutes a device was within a fence.                                                        | `138`                        |
-| `type`            | String   | This field denotes the type of event being relayed from our servers to yours. For Exit events, the type will be “checkOut”. | `"checkOut"`                 |
+For further assistance, please contact us at [help@bluedot.io](mailto:help@bluedot.io).

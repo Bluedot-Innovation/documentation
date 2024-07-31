@@ -323,7 +323,18 @@ const sidebars = {
         "Webhooks/Tempo",
         "Webhooks/Wave",
         "Webhooks/Hello order",
-        "Webhooks/Webhooks retry"
+        "Webhooks/Webhooks retry",
+        {
+          type: "category",
+          label: "V1",
+          link: {
+            type: "doc",
+            id: "Webhooks/V1/Geo-triggering"
+          },
+          items: [
+            "Webhooks/V1/Geo-triggering"
+          ]
+        }
       ],
     },
     {
