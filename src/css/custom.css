@@ -31,7 +31,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-
 h1 {
   font-family: 'Spartan', sans-serif;
   color: var(--ifm-color-primary);
@@ -58,7 +57,40 @@ code {
 
 .theme-doc-sidebar-container a {
   font-family: 'Spartan', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.theme-doc-sidebar-container a .menu__link {
+  color: red;
+  font-size: 0.6rem;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0.2rem;
+}
+
+/* .markdown {
+  margin: 4rem 5.5rem;
+} */
+
+.theme-doc-sidebar-item-link-level-2 a,
+.theme-doc-sidebar-item-link-level-3 a,
+.theme-doc-sidebar-item-link-level-4 a,
+.theme-doc-sidebar-item-category-level-2 a,
+.theme-doc-sidebar-item-category-level-3 a {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+a .menu__link .menu__link--sublist {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.theme-doc-sidebar-item-link-level-2:hover{
+  opacity: 1;
 }
 
 .card-stack {
