@@ -7,6 +7,28 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date Jul 1, 2024
+-------------------------
+
+### Android Point SDK 16.1.0
+
+This update includes several bug fixes and improvements to enhance the functionality and stability of the SDK.
+
+#### What's new
+* **Deprecated GeoTriggerService.isRunning() API:** 
+    * The existing `GeoTriggerService.isRunning()` API has been deprecated.
+    * A new API `GeoTriggerService.isRunning(context: Context)` has been introduced for improved context handling.
+* **GeotriggerEvent Class Update:**
+    * Added a JSON adapter for the `GeotriggerEvent` class.
+    * The `GeotriggerEvent` class is now readable in string format, making it easier to debug and log events.
+* **Improved Error Handling:**
+    * Enhanced the error handling process in the `startForeground()` call.
+    * Exceptions encountered during this process are now reported as Bluedot service errors via the existing `onBluedotServiceError` method in `BluedotServiceReceiver`.
+* **Crash Fix:**
+    * Resolved a crash occurring due to a `NullPointException` inside `PointService`.
+
+* * *
+
 Release date Jun 4, 2024
 -------------------------
 
