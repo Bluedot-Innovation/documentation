@@ -19,8 +19,8 @@ This update includes several bug fixes and improvements to enhance the functiona
     * The existing `GeoTriggerService.isRunning()` API has been deprecated.
     * A new API `GeoTriggerService.isRunning(context: Context)` has been introduced for improved context handling.
 * **GeotriggerEvent Class Update:**
-    * Added a JSON adapter for the `GeotriggerEvent` class.
-    * The `GeotriggerEvent` class is now readable in string format, making it easier to debug and log events.
+    * Added a JSON adapter for the `GeoTriggerEvent` class.
+    * The `GeoTriggerEvent` class is now readable in string format, making it easier to debug and log events.
 * **Improved Error Handling:**
     * Enhanced the error handling process in the `startForeground()` call.
     * Exceptions encountered during this process are now reported as Bluedot service errors via the existing `onBluedotServiceError` method in `BluedotServiceReceiver`.
