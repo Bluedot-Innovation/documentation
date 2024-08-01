@@ -34,15 +34,16 @@
 h1 {
   font-family: 'Spartan', sans-serif;
   color: var(--ifm-color-primary);
+  letter-spacing: -1.5px;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: 'Spartan', sans-serif;
+  letter-spacing: -0.5px;
 }
 
 p, a, li, ul, span {
   font-size: 1rem;
-  /* font-family: 'Spartan', sans-serif; */
 }
 
 a {
@@ -68,7 +69,7 @@ code {
 }
 
 .markdown {
-  margin: 3rem 4rem;
+  margin: 3rem;
 }
 
 .theme-doc-sidebar-item-link-level-2 a,
