@@ -7,7 +7,20 @@ pagination_prev: null
 Version Release Notes
 =====================
 
-Release date Jul 1, 2024
+Release date  Aug 1, 2024
+-------------------------
+
+### Bluedot React Native wrapper 3.1.0
+
+**What’s New:**
+
+*   Update React Native version to 0.74.2.
+*   Updated to Point Android SDK v16.1.0
+
+* * *
+
+
+Release date  Jul 31, 2024
 -------------------------
 
 ### Android Point SDK 16.1.0
