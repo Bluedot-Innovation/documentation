@@ -31,19 +31,19 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-
 h1 {
   font-family: 'Spartan', sans-serif;
   color: var(--ifm-color-primary);
+  letter-spacing: -1.5px;
 }
 
 h2, h3, h4, h5, h6 {
   font-family: 'Spartan', sans-serif;
+  letter-spacing: -0.5px;
 }
 
 p, a, li, ul, span {
   font-size: 1rem;
-  /* font-family: 'Spartan', sans-serif; */
 }
 
 a {
@@ -58,7 +58,45 @@ code {
 
 .theme-doc-sidebar-container a {
   font-family: 'Spartan', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.theme-doc-sidebar-container a .menu__link {
+  color: red;
+  font-size: 0.6rem;
+}
+
+.markdown {
+  margin: 3rem;
+}
+
+.theme-doc-sidebar-item-link-level-2 a,
+.theme-doc-sidebar-item-link-level-3 a,
+.theme-doc-sidebar-item-link-level-4 a,
+.theme-doc-sidebar-item-category-level-2 a,
+.theme-doc-sidebar-item-category-level-3 a {
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+.theme-doc-sidebar-item-link-level-2 a:hover,
+.theme-doc-sidebar-item-link-level-3 a:hover,
+.theme-doc-sidebar-item-link-level-4 a:hover,
+.theme-doc-sidebar-item-category-level-2 a:hover,
+.theme-doc-sidebar-item-category-level-3 a:hover {
+  opacity: 1;
+}
+
+.menu__link:hover {
+  background: #f7f7f7;
+}
+
+.table-of-contents__link {
+  font-family: 'Spartan';
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .card-stack {
