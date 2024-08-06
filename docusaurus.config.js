@@ -275,10 +275,6 @@ const config = {
               to: '/Point SDK/Android/Overview'
             },
             {
-              from: '/android-sdk/',
-              to: '/Point SDK/Android/Overview'
-            },
-            {
               from: '/android-sdk/android-quick-start/',
               to: '/Point SDK/Android/Quick Start'
             },
@@ -297,10 +293,6 @@ const config = {
             {
               from: '/android-sdk/android-best-practices-recommendations/',
               to: '/Point SDK/Android/Best Practices & Recommendations'
-            },
-            {
-              from: '/android-sdk/android-caveats/',
-              to: '/Point SDK/Android/Caveats'
             },
             {
               from: '/android-sdk/android-caveats/',
@@ -387,10 +379,6 @@ const config = {
               to: '/Canvas/Add a new zone'
             },
             {
-              from: '/canvas/add-a-new-zone/',
-              to: '/Canvas/Add a new zone'
-            },
-            {
               from: '/canvas/store-management/',
               to: '/Canvas/Store management'
             },
@@ -412,7 +400,7 @@ const config = {
             },
             {
               from: '/Custom%20Event%20Metadata',
-              to: '/Custom%20Data'
+              to: '/Custom Data'
             }
           ]
         }
