@@ -7,17 +7,17 @@ Add the following repositories and dependencies to your application’s `build.
 
 ```gradle
 dependencies {
-  implementation fileTree(dir: 'libs', include: \['PushIOManager.aar'\]) // Responsys PushIOManager
-  implementation 'com.gitlab.bluedotio.android:point\_sdk\_android:15.3.4' //Bluedot Point SDK
-  implementation 'com.google.firebase:firebase-core:16.0.8'
-  implementation 'com.google.firebase:firebase-messaging:17.6.0'
+  implementation fileTree(dir: 'libs', include: ['PushIOManager.aar']) // Responsys PushIOManager
+  implementation 'com.gitlab.bluedotio.android:point_sdk_android:16.0.0' //Bluedot Point SDK
+  implementation 'com.google.firebase:firebase-core:21.1.1'
+  implementation 'com.google.firebase:firebase-messaging:23.4.0'
   ...
 }
 
 apply plugin: 'com.google.gms.google-services'
 ```
 
-The following code example demonstrates registering your app with Responsys SDK & also listen to Blue Dot Point SDK’s `InitializationResultListener`:
+The following code example demonstrates registering your app with Responsys SDK & also listen to Bluedot Point SDK’s `InitializationResultListener`:
 
 **Starting the Bluedot SDK**
 
@@ -61,7 +61,7 @@ public class MainApplication extends Application implements InitializationResult
 
     ServiceManager mServiceManager;
 
-    private final String projectId = ""; //Project ID// for the App
+    private final String projectId = ""; //Project ID
 
     @Override
     public void onCreate() {
@@ -72,30 +72,26 @@ public class MainApplication extends Application implements InitializationResult
         //Set this you need InApp Push feature from Responsys
         PushIOManager.getInstance(this).setInAppFetchEnabled(true);
 
-        // initialize Bluedot point sdk
+        //Initialize Bluedot Point SDK
         initPointSDK();
     }
 
     public void initPointSDK() {
-
         int checkPermissionCoarse = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION);
         int checkPermissionFine = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION);
 
-        if(checkPermissionCoarse == PackageManager.PERMISSION_GRANTED && checkPermissionFine == PackageManager.PERMISSION_GRANTED) {
+        if (checkPermissionCoarse == PackageManager.PERMISSION_GRANTED && checkPermissionFine == PackageManager.PERMISSION_GRANTED) {
             mServiceManager = ServiceManager.getInstance(this);
 
-            if(!mServiceManager.isBlueDotPointServiceRunning()) {
+            if (!mServiceManager.isBlueDotPointServiceRunning()) {
                 mServiceManager.initialize(projectId, this);
             }
-        }
-        else
-        {
+        } else {
             requestPermissions();
         }
     }
 
     private void requestPermissions() {
-
         Intent intent = new Intent(getApplicationContext(), RequestPermissionActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
@@ -126,53 +122,59 @@ User should `registerUserID` on `PushIOManager` with any customer user-specific 
 public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
     private final String TAG = "BluedotApp";
 
-    @Override
-    public void onZoneInfoUpdate(@NotNull List<ZoneInfo> list, @NotNull Context context) {
+    public void onZoneInfoUpdate(@NotNull Context context) {
         Log.i(TAG, "Zones updated at: " + new Date().toString()
-                + " ZoneInfos count: " + list.size());
+                + " ZoneInfos count: " + ServiceManager.getInstance(context).getZonesAndFences().size());
     }
 
     @Override
-    public void onZoneEntryEvent(@NotNull ZoneEntryEvent zoneEntryEvent, @NotNull Context context) {
+    public void onZoneEntryEvent(@NotNull GeoTriggerEvent zoneEntryEvent, @NotNull Context context) {
         Log.i(TAG, "Zones entered at: " + new Date().toString()
-                + " Zone name:" + zoneEntryEvent.toString());
+                + " Zone name:" + zoneEntryEvent.getZoneInfo().getName());
 
         //Building GeoRegion  with Fence details
         PIOGeoRegion geoRegion= new PIOGeoRegion();
-        geoRegion.setGeofenceId(zoneEntryEvent.getFenceInfo().getId());
-        geoRegion.setGeofenceName(zoneEntryEvent.getFenceInfo().getName());
-        geoRegion.setZoneId(zoneEntryEvent.getZoneInfo().getZoneId());
-        geoRegion.setZoneName(zoneEntryEvent.getZoneInfo().getZoneName());
+        geoRegion.setGeofenceId(zoneEntryEvent.entryEvent().getFenceId().toString());
+        geoRegion.setGeofenceName(zoneEntryEvent.entryEvent().getFenceName());
+        geoRegion.setZoneId(zoneEntryEvent.getZoneInfo().getId().toString());
+        geoRegion.setZoneName(zoneEntryEvent.getZoneInfo().getName());
         geoRegion.setSource("Bluedot SDK");
 
         //Reporting Checkin to Responsys
-        PushIOManager.getInstance(context).onGeoRegionEntered(geoRegion,
-                (s, pioRegionEventType, e) -> {
-                    Log.i(TAG,"onGeoRegionEntered  pioRegionEventType"+pioRegionEventType);
-                    if(e != null) {
-                        Log.i(TAG, "onGeoRegionEntered PIORegionException" + e.getErrorMessage() + "###" + e.getErrorDescription());
-                    }
-                });
+        try {
+            PushIOManager.sharedInstance(context).onGeoRegionEntered(geoRegion,
+                    (s, pioRegionEventType, e) -> {
+                        Log.i(TAG, "onGeoRegionEntered  pioRegionEventType" + pioRegionEventType);
+                        if (e != null) {
+                            Log.i(TAG, "onGeoRegionEntered PIORegionException" + e.getErrorMessage() + "###" + e.getErrorDescription());
+                        }
+                    });
+        } catch(PIOInitException error) {
+            //Error
+        }
     }
 
     @Override
-    public void onZoneExitEvent(@NotNull ZoneExitEvent zoneExitEvent, @NotNull Context context) {
+    public void onZoneExitEvent(@NotNull GeoTriggerEvent zoneExitEvent, @NotNull Context context) {
         Log.i(TAG, "Zones exited at: " + new Date().toString()
-                + " Zone name:" + zoneExitEvent.toString());
+                + " Zone name:" + zoneExitEvent.getZoneInfo().getName());
 
         //Building GeoRegion with Fence details
-        PIOGeoRegion geoRegion = new PIOGeoRegion();
-        geoRegion.setGeofenceId(zoneExitEvent.getFenceInfo().getId());
-        geoRegion.setGeofenceName(zoneExitEvent.getFenceInfo().getName());
-        geoRegion.setDwellTime(zoneExitEvent.getDwellTime());
-        geoRegion.setZoneId(zoneExitEvent.getZoneInfo().getZoneId());
-        geoRegion.setZoneName(zoneExitEvent.getZoneInfo().getZoneName());
+        PIOGeoRegion geoRegion= new PIOGeoRegion();
+        geoRegion.setGeofenceId(zoneExitEvent.exitEvent().getFenceId().toString());
+        geoRegion.setGeofenceName(zoneExitEvent.exitEvent().getFenceName());
+        geoRegion.setDwellTime((int)zoneExitEvent.exitEvent().getDwellTime());
+        geoRegion.setZoneId(zoneExitEvent.getZoneInfo().getId().toString());
+        geoRegion.setZoneName(zoneExitEvent.getZoneInfo().getName());
         geoRegion.setSource("Bluedot SDK");
 
         //Reporting Checkout to Responsys
-        PushIOManager.getInstance(context).onGeoRegionExited(geoRegion,
-                (s, pioRegionEventType, e) -> Log.i(TAG,"onGeoRegionExited "+s));
-    }
+        try {
+            PushIOManager.sharedInstance(context).onGeoRegionExited(geoRegion,
+                    (s, pioRegionEventType, e) -> Log.i(TAG, "onGeoRegionExited " + s));
+        } catch(PIOInitException error) {
+            //Error
+        }
 }
 ```
 
