@@ -459,8 +459,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "Custom Event Metadata",
-      label: "Custom Event Metadata",
+      id: "Custom Data",
+      label: "Custom Data",
     },
     {
       type: "category",

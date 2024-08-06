@@ -409,6 +409,10 @@ const config = {
             {
               from: '/Canvas/Analytics/Hello%20Reports',
               to: '/Canvas/Analytics/Scheduled Reports'
+            },
+            {
+              from: '/Custom%20Event%20Metadata',
+              to: '/Custom%20Data'
             }
           ]
         }
