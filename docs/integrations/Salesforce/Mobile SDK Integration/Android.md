@@ -134,7 +134,7 @@ public void onBlueDotPointServiceStartedSuccess() {
 :::info
 The custom event metadata is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
 
-More information on best practices of setting and using custom event metadata can be found [here](../../../Custom%20Event%20Metadata.md).
+More information on best practices of setting and using custom event metadata can be found [here](../../../Custom%20Data.md).
 :::
 
 **GitHub Sample Project**

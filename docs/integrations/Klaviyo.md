@@ -35,7 +35,7 @@ Custom Event Meta Data: It's essential to include at least one profile identifie
    - `klaviyo_email`
    - `klaviyo_phone_number`
 
-Check the [Custom Event Meta Data documentation](../Custom%20Event%20Metadata.md) to learn more.
+Check the [Custom Event Meta Data documentation](../Custom%20Data.md) to learn more.
 
 :::info
 **Klaviyo API Rate Limits**

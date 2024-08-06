@@ -102,4 +102,4 @@ To display custom fields in Hello Screens, you’ll need to add the prefix `hs_`
 
 ![Hello Screens Modal with Custom Fields](../assets/hello-screens-custom-fields.png)
 
-To learn more about Custom Event Meta Data check the documentation [here](../Custom%20Event%20Metadata.md).
+To learn more about Custom Event Meta Data check the documentation [here](../Custom%20Data.md).

@@ -15,7 +15,7 @@ In this guide, we’ll cover when to call the main SDK methods required for a Dr
 | **Step** | **Functionality**            | **Documentation** |                     |
 | :------- | :------------------------- | :------------------ | :------------------ |
 | 1        | `Initialize`               | [Android](../Point%20SDK/Android/Quick%20Start.md)          | [iOS](../Point%20SDK/iOS/Quick%20Start.md)       |
-| 2        | `setCustomEventMetaData`   | [Android](../Custom%20Event%20Metadata.md)                    | [iOS](../Custom%20Event%20Metadata.md)       |
+| 2        | `setCustomEventMetaData`   | [Android](../Custom%20Data.md)                    | [iOS](../Custom%20Data.md)       |
 | 3        | Start Geo-triggering       | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
 | 4        | `enterZone` Order Taker event callback | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
 | 5        | `enterZone` Pickup Window event callback | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |

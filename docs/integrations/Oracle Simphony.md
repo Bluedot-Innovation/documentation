@@ -33,7 +33,7 @@ a. [iOS integration guide](../Point%20SDK/iOS/Quick%20Start.md)
 
 b. [Android integration guide](../Point%20SDK/Android/Quick%20Start.md)
 
-2\. For every order, the app will have to define the following fields in the [custom event metadata](../Custom%20Event%20Metadata.md).
+2\. For every order, the app will have to define the following fields in the [custom event metadata](../Custom%20Data.md).
 
 Mandatory
 

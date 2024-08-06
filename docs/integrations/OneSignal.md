@@ -69,7 +69,7 @@ Once these steps are done, the integration is ready to go. Simply send a Wave, e
 Custom Event Metadata in Bluedot events
 ---------------------------------------
 
-To send events to Segment you’ll need to include the `external_user_id` in the [Custom Event Metadata](../Custom%20Event%20Metadata.md) of the event. Make sure to name the property `oneSignalExternalUserId`.  
+To send events to Segment you’ll need to include the `external_user_id` in the [Custom Event Metadata](../Custom%20Data.md) of the event. Make sure to name the property `oneSignalExternalUserId`.  
 An example will be: `"oneSignalExternalUserId": "<YOUR ONESIGNAL EXTERNAL USER ID>"`
 
 :::info

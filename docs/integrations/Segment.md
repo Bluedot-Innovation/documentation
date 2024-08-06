@@ -14,7 +14,7 @@ Before beginning the integration, please ensure you have an active customer acco
 
 1\. Decide on the custom data you’ll be passing from the Bluedot Events to Segment:
 
-a. [Custom Event Metadata](../Custom%20Event%20Metadata.md) (max. 20)  
+a. [Custom Event Metadata](../Custom%20Data.md) (max. 20)  
 b. [Custom Zone Data](../Canvas/What%20is%20Zone%20custom%20data.md) (max. 20)
 
 2. Integrate the Bluedot SDK within your mobile app:
@@ -29,7 +29,7 @@ b. [iOS integration guide](../Point%20SDK/iOS/Quick%20Start.md)
 Send events to Segment
 ----------------------
 
-To send events to Segment, you’ll need to include the Segment’s `userId` in the [Custom Event Metadata](../Custom%20Event%20Metadata.md) of the Bluedot event. Make sure to name the property `segment_userId`.  
+To send events to Segment, you’ll need to include the Segment’s `userId` in the [Custom Event Metadata](../Custom%20Data.md) of the Bluedot event. Make sure to name the property `segment_userId`.  
 An example will be:
 
 `"segment_userId": "<YOUR SEGMENT USER ID>"   `
@@ -37,7 +37,7 @@ An example will be:
 For more details, check the [Bluedot source documentation in Segment](https://segment.com/docs/connections/sources/catalog/cloud-apps/bluedot/)
 
 :::info
-The [Custom Event Metadata](../Custom%20Event%20Metadata.md) is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
+The [Custom Event Metadata](../Custom%20Data.md) is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
 :::
 
 Events

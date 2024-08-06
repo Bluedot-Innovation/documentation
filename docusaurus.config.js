@@ -219,10 +219,6 @@ const config = {
               to: '/integrations/Safegraph'
             },
             {
-              from: '/integrations/safegraph-integration/',
-              to: '/integrations/Safegraph'
-            },
-            {
               from: '/integrations/salesforce-integration/',
               to: '/integrations/Salesforce/Overview'
             },
@@ -249,10 +245,6 @@ const config = {
             {
               from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-android-integration/',
               to: '/integrations/Salesforce/Mobile SDK Integration/Android'
-            },
-            {
-              from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-ios-integration/',
-              to: '/integrations/Salesforce/Mobile SDK Integration/iOS'
             },
             {
               from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-ios-integration/',
@@ -356,7 +348,7 @@ const config = {
             },
             {
               from: '/custom-event-metadata/',
-              to: '/Custom Event Metadata'
+              to: '/Custom Data'
             },
             {
               from: '/version-release-notes/',

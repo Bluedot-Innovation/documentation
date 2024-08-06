@@ -42,7 +42,7 @@ A new Tempo Callback provides real-time ETA updates during the user's journey, o
 
 
 ## New API to getCustomEventMetaData
-A new API allows you to fetch custom event metadata set for a Bluedot session. For more details on Custom Event Metadata, please refer to the documentation [here](../../../Custom%20Event%20Metadata.md).
+A new API allows you to fetch custom event metadata set for a Bluedot session. For more details on Custom Event Metadata, please refer to the documentation [here](../../../Custom%20Data.md).
 
 
 ```jsx

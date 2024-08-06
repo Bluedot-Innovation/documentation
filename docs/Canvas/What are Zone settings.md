@@ -11,7 +11,7 @@ Types of Zone Settings:
     *   Travel Direction & Speed
     *   Travel Path
 *   Retrigger Time
-*   [Custom Data](../Custom%20Event%20Metadata.md)
+*   [Custom Data](../Custom%20Data.md)
 
 
 _![](../assets/zone-settings-1.png)_

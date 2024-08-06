@@ -44,7 +44,7 @@ To set up **Webhooks**, login to Canvas and head to the **Integrations** section
 3\. Configure Event Type, URL, Header and Body fields
 
 ![](../assets/webhooks-overview-4.png)  
-4\. Header Fields for the standard Webhooks can be set dynamically by adding the {} in the value field. By the way, the value itself can be set and injected from the additional event-specific **[Custom Event Meta Data](../Custom%20Event%20Metadata.md)** fields. The Dynamic Webhook Headers feature will pick up that value and attach it to the Webhook outputs.
+4\. Header Fields for the standard Webhooks can be set dynamically by adding the {} in the value field. By the way, the value itself can be set and injected from the additional event-specific **[Custom Event Meta Data](../Custom%20Data.md)** fields. The Dynamic Webhook Headers feature will pick up that value and attach it to the Webhook outputs.
 
 ![](../assets/webhooks-overview-5.png)
 

@@ -1303,7 +1303,7 @@ Release date April 07, 2020
 #### **Enhancements**
 
 Increased the Custom Event Metadata limit  
-We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here](./Custom%20Event%20Metadata.md).
+We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here]../Custom%20Data.md).
 
 Android SDK migrated to AndroidX  
 Support libraries used by the SDK have been upgraded to AndroidX. This means all apps that have the SDK integrated must upgrade their Android support libraries to AndroidX.
@@ -1351,7 +1351,7 @@ Release date April 02, 2020
 #### **Enhancements**
 
 Increased the Custom Event Metadata limit  
-We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here](./Custom%20Event%20Metadata.md).
+We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here]../Custom%20Data.md).
 
 Overhaul to the SDK’s events reporting  
 We have redesigned the Event reporting architecture, implementing a more efficient retry strategy in situations of network failure. We have also reduced the data packet size sent from the SDK to the Bluedot backend on each notification event. This has no impact on the SDK check-in and check-out callbacks and does not require any integration changes other than taking this SDK update.

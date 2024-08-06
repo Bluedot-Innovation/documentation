@@ -11,7 +11,7 @@ Features
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature that is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../../Custom%20Event%20Metadata.md).
+Custom event metadata is a feature that is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../../Custom%20Data.md).
 
 It is recommended to set the Custom Event Metadata before starting Geo-triggering or Tempo.
 
