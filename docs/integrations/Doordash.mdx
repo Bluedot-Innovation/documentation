@@ -1,0 +1,52 @@
+DoorDash Integration
+====================
+
+The DoorDash integration with Hello Screens enhances your store's ability to manage deliveries effectively by providing real-time updates on dasher ETAs and arrival statuses. This integration ensures that your order management process is seamless, with continuous updates that help store staff prepare orders just in time for pickup, reducing wait times and improving customer satisfaction.
+
+### Import or Create Your Stores in Canvas:
+
+Before proceeding with the integration, ensure that your stores are set up in Canvas. We recommend contacting your Bluedot representative to assist with importing your stores. Alternatively, you can achieve this using our [Config API](../APIs/Config%20API/Overview.md) or by manually creating the stores in [Canvas](../Canvas/Store%20management.md).
+
+### Enable the Integration in Hello Screens:
+
+- Navigate to the Integrations section in Canvas.
+- Enable the DoorDash integration.
+- Copy the provided Webhook URL and Authorization token. These will be used later in the DoorDash Developer Portal.
+
+![](../assets/Doordash%20Integration%201.png)
+
+### Configure Webhooks in DoorDash Developer Portal:
+
+:::info
+Please note that to use the DoorDash integration with Hello Screens, you may need to request access to the Delivery Tracking webhook events. These events are crucial for the integration to function correctly, as they enable real-time updates on dasher ETAs and arrival statuses. Without access to these webhooks, the integration will not be able to provide the necessary updates.
+
+For more information and to request access, please visit the [DoorDash Delivery Tracking Webhooks documentation](https://developer.doordash.com/en-US/docs/drive/reference/webhooks#delivery-tracking).
+:::
+
+- Log in to the DoorDash Developer Portal.
+- Navigate to Webhooks.
+- Click Add Webhook and paste the Webhook URL copied from Canvas.
+- Set the Authorization Type to "Basic" and enter the Authorization token.
+- Select the environment (Sandbox or Production) and save.
+
+<div style={{display: "flex", justifyContent: "center"}}>
+    <img style={{maxWidth: "450px"}} src="/img/Doordash%20Integration%202.png"></img>
+</div>
+
+To learn more about setting up webhooks in DoorDash, check the [DoorDash documentation](https://developer.doordash.com/en-US/docs/drive/how_to/webhooks/).
+
+### Event Handling in Hello Screens:
+
+- `DASHER_CONFIRMED`: When this event is received, the order is registered in Hello Screens, ensuring that the store is aware of the upcoming delivery from the start. This marks the beginning of the order tracking process in the system. At this point the order is still not visible on Hello Screens.
+
+- `dasher_enroute_to_pickup`: As this event is received every 30 seconds, Hello Screens updates the order ticket with the dasher’s latest ETA. This allows the store staff to precisely time the preparation of the order, reducing the chance of delays and ensuring that the order is ready when the dasher arrives.
+
+![](../assets/Doordash%20Integration%203.png)
+
+- `DASHER_CONFIRMED_PICKUP_ARRIVAL`: Once this event is received, the order ticket in Hello Screens is updated to "Arrived." This status change immediately notifies staff that the dasher is at the pickup location, prompting them to hand off the order without delay.
+
+![](../assets/Doordash%20Integration%204.png)
+
+To explore additional features and configuration options, please refer to the [Hello Screens documentation](../Hello%20Screens/Overview.md).
+
+If you have any questions, contact us at [help@bluedot.io](mailto:help@bluedot.io)
