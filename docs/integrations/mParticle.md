@@ -20,7 +20,7 @@ Integration Overview
 
 Before you begin the integration, ensure you have an active customer account with Bluedot & mParticle. Decide on the custom data you'll be passing from Bluedot Events to mParticle:
 
-- [Custom Event Metadata](../Custom%20Event%20Metadata.md) (max.20)
+- [Custom Event Metadata](../Custom%20Data.md) (max.20)
 - Custom Zone Data (max.20)
 
 Events type
@@ -57,7 +57,7 @@ You have the option to send data to mParticle as either development or productio
 Custom Attributes / Sending events to mParticle
 -----------------------------------------------
 
-Custom attributes can be passed along to mParticle as key/ value pairs in Bluedot’s [Custom Event Metadata](../Custom%20Event%20Metadata.md).  
+Custom attributes can be passed along to mParticle as key/ value pairs in Bluedot’s [Custom Event Metadata](../Custom%20Data.md).  
 An example will be:
 
 ```json
@@ -67,13 +67,13 @@ another_custom_field : "another value",
 
 
 :::tip
-At least one of `user_dentities` listed in [mParticle’s documentation](https://docs.mparticle.com/developers/server/json-reference/#user_identities) with the `mparticle_` fields **_must_** be included in the [Custom Event Metadata](../Custom%20Event%20Metadata.md) in order to push events to mParticle.
+At least one of `user_dentities` listed in [mParticle’s documentation](https://docs.mparticle.com/developers/server/json-reference/#user_identities) with the `mparticle_` fields **_must_** be included in the [Custom Event Metadata](../Custom%20Data.md) in order to push events to mParticle.
 :::
 
 :::info
 The custom event metadata is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.
 
-More information on best practices of setting and using custom event metadata can be found [here](../Custom%20Event%20Metadata.md).
+More information on best practices of setting and using custom event metadata can be found [here](../Custom%20Data.md).
 :::
 
 

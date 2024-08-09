@@ -8,7 +8,7 @@ To get started with Tempo, you’ll first need to integrate the Point SDK in you
 
 During SDK integration, there are 4 important stages that align with your customer’s experience.
 
-1.  Set the Custom Event Metadata to be attached with each Tempo Event – this is usually at least the customer’s name and orderID, but you can add up to 20. ([Learn more here.](../Custom%20Event%20Metadata.md))
+1.  Set the Custom Event Metadata to be attached with each Tempo Event – this is usually at least the customer’s name and orderID, but you can add up to 20. ([Learn more here.](../Custom%20Data.md))
 2.  Define the DestinationId – this is where the customer is collecting their order. You can use anything, but we recommend using the normal Store Number or Restaurant ID.
 3.  Start location tracking & the Tempo service when your customer submits their order.
 4.  Stop location tracking & the Tempo service once your customer arrives at their Destination.

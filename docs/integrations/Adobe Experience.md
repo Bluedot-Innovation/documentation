@@ -20,7 +20,7 @@ Before you begin the integration please ensure you have an active customer accou
 We will be using an [**HTTP API streaming connector**](https://experienceleague.adobe.com/docs/experience-platform/sources/ui-tutorials/create/streaming/http.html?lang=en) to pass Bluedot Entry/Exit events to Adobe.
 
 1.  Decide on the custom data you’ll be passing from Bluedot Entry/Exit (can also be called Check-in and Check-out Event) Events to Adobe:
-    1.  [Custom Event Metadata](../Custom%20Event%20Metadata.md) (max. 20)
+    1.  [Custom Event Metadata](../Custom%20Data.md) (max. 20)
     2.  [Custom Zone Data](../Canvas/What%20is%20Zone%20custom%20data.md) (max. 20)
 2.  Integrate the Bluedot SDK within your mobile app:
     1.  [Android integration guide](../Point%20SDK/Android/Quick%20Start.md)
@@ -46,7 +46,7 @@ Once these steps are done, the integration is ready to go. Simply enter a geofen
 Custom Event Metadata in Bluedot events
 ---------------------------------------
 
-More information on best practices of setting and using custom event metadata can be found [here](../Custom%20Event%20Metadata.md).
+More information on best practices of setting and using custom event metadata can be found [here](../Custom%20Data.md).
 
 
 :::info

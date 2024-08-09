@@ -52,7 +52,7 @@ In order to update an order you’ll need to include the `userToken` in the Cust
 Before starting Tempo, it is necessary to include the `userToken` in the Custom Event Meta Data along with the other required fields, such as the `orderId`.
 
 * Check [Hello Screens documentation](../Hello%20Screens/Overview.md) for more details about the required fields.  
-* Check [Custom Event Meta Data documentation](../Custom%20Event%20Metadata.md) to learn how to pass custom data in the SDK events.
+* Check [Custom Event Meta Data documentation](../Custom%20Data.md) to learn how to pass custom data in the SDK events.
 
 ### Wave API
 

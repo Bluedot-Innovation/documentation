@@ -137,7 +137,7 @@ public class BluedotErrorReceiver : BluedotServiceReceiver
 }
 ```
 
-4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](../../../Custom%20Event%20Metadata.md).
+4 (Optional). You can use the **SetCustomEventMetaData()** method to pass additional event-specific metadata to our Check-in and/or Check-out Notifications which is sent to our servers. Make sure to set this MetaData before calling the _initialize()_. Learn more about the Custom Event Metadata [here](../../../Custom%20Data.md).
 
 ```csharp
 namespace appname

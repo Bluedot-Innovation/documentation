@@ -219,10 +219,6 @@ const config = {
               to: '/integrations/Safegraph'
             },
             {
-              from: '/integrations/safegraph-integration/',
-              to: '/integrations/Safegraph'
-            },
-            {
               from: '/integrations/salesforce-integration/',
               to: '/integrations/Salesforce/Overview'
             },
@@ -255,10 +251,6 @@ const config = {
               to: '/integrations/Salesforce/Mobile SDK Integration/iOS'
             },
             {
-              from: '/integrations/salesforce-integration/mobile-sdk-integration/salesforce-ios-integration/',
-              to: '/integrations/Salesforce/Mobile SDK Integration/iOS'
-            },
-            {
               from: '/integrations/salesforce-integration/bluedot-data-extension-fields/',
               to: '/integrations/Salesforce/Bluedot data extension fields'
             },
@@ -269,10 +261,6 @@ const config = {
             {
               from: '/integrations/tealium-integration/',
               to: '/integrations/Tealium'
-            },
-            {
-              from: '/android-sdk/',
-              to: '/Point SDK/Android/Overview'
             },
             {
               from: '/android-sdk/',
@@ -297,10 +285,6 @@ const config = {
             {
               from: '/android-sdk/android-best-practices-recommendations/',
               to: '/Point SDK/Android/Best Practices & Recommendations'
-            },
-            {
-              from: '/android-sdk/android-caveats/',
-              to: '/Point SDK/Android/Caveats'
             },
             {
               from: '/android-sdk/android-caveats/',
@@ -364,7 +348,7 @@ const config = {
             },
             {
               from: '/custom-event-metadata/',
-              to: '/Custom Event Metadata'
+              to: '/Custom Data'
             },
             {
               from: '/version-release-notes/',
@@ -381,10 +365,6 @@ const config = {
             {
               from: '/canvas/creating-a-new-project/',
               to: '/Canvas/Creating a new project'
-            },
-            {
-              from: '/canvas/add-a-new-zone/',
-              to: '/Canvas/Add a new zone'
             },
             {
               from: '/canvas/add-a-new-zone/',
@@ -409,6 +389,10 @@ const config = {
             {
               from: '/Canvas/Analytics/Hello%20Reports',
               to: '/Canvas/Analytics/Scheduled Reports'
+            },
+            {
+              from: '/Custom%20Event%20Metadata',
+              to: '/Custom Data'
             }
           ]
         }

@@ -15,7 +15,7 @@ In this guide, we’ll cover when to call the main SDK methods required for a cu
 | **Step** | **Functionality**            | **Documentation** |                     |
 | :------- | :------------------------- | :------------------ | :------------------ |
 | 1        | Initialize                 | [Android](../Point%20SDK/Android/Quick%20Start.md)        | [iOS](../Point%20SDK/iOS/Quick%20Start.md)       |
-| 2        | `setCustomEventMetaData`   | [Android](../Custom%20Event%20Metadata.md)                | [iOS](../Custom%20Event%20Metadata.md)       |
+| 2        | `setCustomEventMetaData`   | [Android](../Custom%20Data.md)                | [iOS](../Custom%20Data.md)       |
 | 3        | Start Tempo                | [Android](../Point%20SDK/Android/Tempo.md)                | [iOS](../Point%20SDK/iOS/Tempo.md)       |
 | 4        | Start Geo-triggering       | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |
 | 5        | `enterZone` event callback | [Android](../Point%20SDK/Android/Geo-triggering.md)       | [iOS](../Point%20SDK/iOS/Geo-triggering.md)       |

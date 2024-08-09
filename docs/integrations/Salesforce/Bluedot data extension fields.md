@@ -27,7 +27,7 @@ The following information will be sent to the Data Extension for every event:
 Add Custom Data
 ---------------
 
-Additional custom data can be included in the information going to your Data Extension. This data can come from either [Custom Zone Data fields](../../Canvas/What%20is%20Zone%20custom%20data.md), or from [Custom Event Metadata fields](../../Custom%20Event%20Metadata.md). However, we’ll need to adjust your Data Extension in order to receive this data. 
+Additional custom data can be included in the information going to your Data Extension. This data can come from either [Custom Zone Data fields](../../Canvas/What%20is%20Zone%20custom%20data.md), or from [Custom Event Metadata fields](../../Custom%20Data.md). However, we’ll need to adjust your Data Extension in order to receive this data. 
 
 To add these fields into your Data Extension just connect the Bluedot team using [help@bluedot.io](mailto:help@bluedot.io) and pass a list of the additional field names that you would like to be able to populate.
 

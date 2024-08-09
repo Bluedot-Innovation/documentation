@@ -75,7 +75,7 @@ Adding custom data through the SDK’s Custom Event Meta Data
 
 The Custom Event Meta Data allows you to set additional event-specific data for the Bluedot SDK’s events. This is the method used to include additional information about the end-user, for example, the `tealium_visitor_id`.
 
-For more information about the Custom Event Meta Data check this [documentation](../Custom%20Event%20Metadata.md/).
+For more information about the Custom Event Meta Data check this [documentation](../Custom%20Data.md/).
 
 Reserved fields
 ---------------
