@@ -401,6 +401,7 @@ const sidebars = {
             "integrations/CleverTap/iOS"
           ]
         },
+        "integrations/Doordash",
         "integrations/Flipdish",
         "integrations/Incentivio",
         "integrations/Klaviyo",
