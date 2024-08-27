@@ -150,3 +150,18 @@ Example steps to implement:
 4.  User travels to the pickup location.
 5.  Order is completed.
 6.  Disable background location usage indicator.
+
+### iOS App Restart Notification feature
+
+More details about this feature can be found here: ([App restart notification](https://docs.bluedot.io/Point%20SDK/iOS/Features/App%20restart%20notification))
+
+To use this feature in Flutter plugin, while starting the Geo-Trigger provide Restart Notification title and text as below:
+
+```dart
+String iosAppRestartNotificationTitle ='Restart Bluedot Service';
+String iosAppRestartNotificationButtonText ='Restart';
+
+BluedotPointSdk.instance.geoTriggeringBuilder()
+   .iosNotification(iosAppRestartNotificationTitle,iosAppRestartNotificationButtonText)
+   .start()
+```
