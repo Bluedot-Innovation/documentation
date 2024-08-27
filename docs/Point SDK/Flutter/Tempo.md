@@ -22,28 +22,30 @@ To start tempo on foreground mode, you have to set notification details as below
 | `androidNotificationContent` | String?  | The content of the notification.         |
 | `androidNotificationId`      | Int?     | The notification Id of the notification. |
 
-And start Tempo by using the `TempoBuilder`  class as below:
+And start Tempo by using the `TempoBuilder` class as below:
 
 ```dart
 String destinationId = 'Your destination Id';String channelId = 'Your channel Id';
 String channelName = 'Your channel Name';
 String androidNotificationTitle = 'Your notification title';
 String androidNotificationContent = 'Your notification content';
-int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.tempoBuilder() 
-.androidNotification(channelId, channelName, androidNotificationTitle, androidNotificationContent, androidNotificationId) 
-.start(destinationId).then((value) { 
-  // Successfully started tempo tracking 
-  debugPrint('Tempo has been started successfully'); 
-}).catchError((error) { 
-  // Failed to start tempo tracking, handle error here 
-  debugPrint('Failed to start tempo. Error $error'); 
-});
+int androidNotificationId = 123; // Will be -1 by default if set to null. 
+
+BluedotPointSdk.instance.tempoBuilder() 
+  .androidNotification(channelId, channelName, androidNotificationTitle, androidNotificationContent, androidNotificationId) 
+  .start(destinationId).then((value) { 
+    // Successfully started tempo tracking 
+    debugPrint('Tempo has been started successfully'); 
+  }).catchError((error) { 
+    // Failed to start tempo tracking, handle error here 
+    debugPrint('Failed to start tempo. Error $error'); 
+  });
 ```
 
 Receiving Tempo events
 ----------------------
 
-The Tempo service does not issue events under normal operation. Instead, it only issues events if there is an error with the operation. Tracking events are instead delivered via webhook, as configured in the Canvas UI.
+The Tempo service issues events during normal operation to provide real-time updates through the Point SDK via callbacks. These events, such as tempoTrackingDidUpdate, deliver details like ETA and destination information directly to the SDK. Tempo webhooks can also be used to receive ETA updates, allowing for flexible integration options through the Canvas dashboard.
 
 You can listen to receive the Tempo events as below.
 
@@ -52,6 +54,8 @@ const tempoEventChannel = MethodChannel(BluedotPointSdk.tempo);
 tempoEventChannel.setMethodCallHandler((MethodCall call) async {
   var args = call.arguments;
   switch (call.method) {
+    case TempoEvents.tempoTrackingDidUpdate:
+      // Handle ETA update event
     case TempoEvents.tempoTrackingStoppedWithError:
       // Handler error
       break;

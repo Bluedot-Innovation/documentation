@@ -38,7 +38,7 @@ export default function App() {
       )
   }
 
-  return <Button title="Start Tempo" onPress\={handleStartTempo} />
+  return <Button title="Start Tempo" onPress={handleStartTempo} />
 }
 ```
 

@@ -129,7 +129,14 @@ const sidebars = {
             "Point SDK/Flutter/Geo-triggering",
             "Point SDK/Flutter/Tempo",
             "Point SDK/Flutter/Features",
-            "Point SDK/Flutter/Events List"
+            "Point SDK/Flutter/Events List",
+            {
+              type: "category",
+              label: "Migration Guides",
+              items: [
+                "Point SDK/Flutter/Migration Guides/Migration guide to 2.0",
+              ],
+            },
           ],
         },
         {

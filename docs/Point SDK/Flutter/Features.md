@@ -15,6 +15,7 @@ Custom event metadata is a feature which is available in the Bluedot Point SDK f
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
+
 :::info
 Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Bluedot SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
 :::
@@ -25,8 +26,17 @@ const metadata = {
   'hs_Customer Name': 'Customer Name'
 };
 
-
 BluedotPointSdk.instance.setCustomEventMetaData(metadata);
+```
+
+### Fetch Custom Event Metadata
+
+The API `getCustomEventMetaData` allows fetching custom event metadata set for a Bluedot session. For more details on Custom Event Metadata.
+
+```dart
+BluedotPointSdk.getCustomEventMetaData().then((metadata) => {  
+   const message = `CustomEventMetaData: ${JSON.stringify(metadata)}`; 
+});
 ```
 
 Enable / Disable Zones
