@@ -7,6 +7,26 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Aug 27, 2024
+-------------------------
+
+### Bluedot Flutter Wrapper Version 2.0.0
+
+**New Features and Enhancements:**
+
+* **Integration with Point SDK 16.0.0:** This version is now fully compatible with Point SDK 16.0.0, bringing enhanced geo-triggering data, new callbacks, and improved API methods.
+* **Enhanced Zone Entry and Exit Callbacks:** Now provide a richer payload with additional information upon entering or exiting a zone.
+* **New Tempo Update Callback:** Introduced a callback for real-time ETA updates during Tempo sessions.
+* **Modified Rule Download Callback:** No longer returns `ZoneInfo`. Access `ZoneInfo` via an existing API to fetch the `ZoneInfo` list
+* **`ZoneInfo` Updates:** Access destination (store) details directly from the Zones list, simplifying the management and review of zones and their associated destinations.
+* **CustomEventMetaData API:** New API to fetch custom event metadata for the Point SDK sessions.
+* **Android Permissions:** Foreground and Background service permissions must be declared in the app.
+* **iOS App Restart Notification:** Added support for App restart notification feature in iOS.
+
+For guidance on updating your application to use the new Flutter wrapper version 2.0.0, refer to the [Migration Guide](./Point%20SDK/Flutter/Migration%20Guides/Migration%20guide%20to%202.0.md).
+
+* * *
+
 Release date  Aug 1, 2024
 -------------------------
 

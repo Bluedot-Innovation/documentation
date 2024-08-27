@@ -31,7 +31,9 @@ String channelId = 'Your channel Id';
 String channelName = 'Your channel Name';
 String androidNotificationTitle = 'Your notification title';
 String androidNotificationContent = 'Your notification content';
-int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder()
+int androidNotificationId = 123; // Will be -1 by default if set to null. 
+
+BluedotPointSdk.instance.geoTriggeringBuilder()
    .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId)
    .start().then((value) { 
    //Handle geo triggering started successfully 
