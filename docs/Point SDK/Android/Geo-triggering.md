@@ -121,10 +121,3 @@ GeoTriggeringService.stop(myContext, error -> {
 ```
 
 Geo-triggering start and stop status are provided through callbacks on the  [`geoTriggeringStatusListener`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-geo-triggering-status-listener/index.html), implemented as lambda functions in the above examples.
-
-### **Add GeoTriggerEvent class in Proguard**
-Please add below rule to your ProGuard rules to preserve GeoTriggerEvent parameter names after obfuscation. This is crucial as GeoTriggerEvent is the new payload returned in the Entry and Exit callbacks.
-
-```pro
--keep class au.com.bluedot.point.net.engine.event.GeoTriggerEvent {*;}
-```
