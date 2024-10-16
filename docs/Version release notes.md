@@ -7,6 +7,23 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Oct 16, 2024
+-------------------------
+
+### iOS SDK 16.0.1 and 15.6.10
+
+**What's new**
+
+In this update, we've focused on enhancing the reliability of the Point SDK for iOS:
+* Improved stability when app permissions are changed.
+* Improved overall performance by resolving issues that could impact consistency in specific scenarios.
+
+Version `16.0.1` is the latest for iOS, but for users who haven't migrated to version 16 yet, we’ve also applied these same fixes to version `15.6.10`.
+
+We recommend updating to benefit from these improvements, regardless of which version you’re using.
+
+* * *
+
 Release date  Aug 27, 2024
 -------------------------
 
