@@ -12,6 +12,10 @@ Release date  Oct 16, 2024
 
 ### iOS SDK 15.6.11
 
+**What's new**
+In this update, we have made some minor improvements to enhance stability.
+
+* * *
 
 Release date  Oct 16, 2024
 --------------------------
