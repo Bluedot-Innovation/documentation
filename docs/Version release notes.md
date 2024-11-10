@@ -8,7 +8,17 @@ Version Release Notes
 =====================
 
 Release date  Oct 16, 2024
--------------------------
+--------------------------
+
+### iOS SDK 15.6.11
+
+**What's new**
+In this update, we have made some minor improvements to enhance stability.
+
+* * *
+
+Release date  Oct 16, 2024
+--------------------------
 
 ### iOS SDK 16.0.1 and 15.6.10
 
@@ -138,7 +148,7 @@ What's New:
 We've updated iOS SDK 15.6.9 to include a Privacy Manifest, ensuring compliance with Apple's latest privacy requirements for those who have not migrated to SDK 16. This update supports smoother app submissions to App Store Connect by aligning with required privacy standards.
 
 ### Bluedot React Native wrapper 2.3.8
-What’s New:
+What's New:
 
 Bluedot iOS SDK updated to version 15.6.9
 
