@@ -396,6 +396,10 @@ const config = {
             {
               from: '/Custom%20Event%20Metadata',
               to: '/Custom Data'
+            },
+            {
+              from: "/Canvas/Event%20simulator%20guide",
+              to: "/Canvas/Tools/Event Simulator"
             }
           ]
         }
