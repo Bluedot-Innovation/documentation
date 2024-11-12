@@ -703,7 +703,7 @@ Release date November 17, 2021
 
 **Events Simulator**
 
-*   Event Simulator is a tool designed to help test your Bluedot setup. It simulates events which would usually be sent by the mobile SDK (Geo–trigger and Tempo events) as well as web events sent via the Events API. Have a look at our [Event Simulator Guide.](./Canvas/Event%20simulator%20guide.md)
+*   Event Simulator is a tool designed to help test your Bluedot setup. It simulates events which would usually be sent by the mobile SDK (Geo–trigger and Tempo events) as well as web events sent via the Events API. Have a look at our [Event Simulator Guide.](./Canvas/Tools/Event%20Simulator.md)
 
 * * *
 

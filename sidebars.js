@@ -198,10 +198,23 @@ const sidebars = {
             'Canvas/Analytics/Scheduled Reports'
           ]
         },
+        {
+          type: "category",
+          label: "Tools",
+          link: {
+            type: 'doc',
+            id: 'Canvas/Tools/Event Simulator'
+          },
+          items: [
+            'Canvas/Tools/Event Simulator',
+            'Canvas/Tools/Copy Project',
+            'Canvas/Tools/Copy Stores',
+            'Canvas/Tools/Copy Zones',
+          ]
+        },
         "Canvas/Mandatory two-factor authentication",
         "Canvas/Single Sign-On support",
         "Canvas/Setting up multiple environments",
-        "Canvas/Event simulator guide",
         "Canvas/How to authenticate with Config API",
       ],
     },
