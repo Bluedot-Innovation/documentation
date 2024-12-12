@@ -1,4 +1,4 @@
-API Keys managament
+API Keys management
 ===================
 
 The **API Keys** section is where you create, manage and revoke API Keys to securely interact with **Orders API.** API Keys are critical for authenticating your Orders API requests and controlling which projects those keys can access. Here’s how you can use this section effectively.
