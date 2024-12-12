@@ -212,6 +212,7 @@ const sidebars = {
             'Canvas/Tools/Copy Zones',
           ]
         },
+        "Canvas/API Keys management",
         "Canvas/Mandatory two-factor authentication",
         "Canvas/Single Sign-On support",
         "Canvas/Setting up multiple environments",
@@ -282,6 +283,21 @@ const sidebars = {
           items: [
             "APIs/Config API/Overview",
             "APIs/Config API/How to authenticate with Config API",
+          ],
+        },
+        {
+          type: "category",
+          label: "Orders API",
+          link: {
+            type: "doc",
+            id: "APIs/Orders API/Overview",
+          },
+          items: [
+            "APIs/Orders API/Overview",
+            "APIs/Orders API/Getting started",
+            "APIs/Orders API/Key concepts",
+            "APIs/Orders API/Using the Orders API",
+            "APIs/Orders API/Best practices",
           ],
         },
         {
