@@ -11,7 +11,7 @@ CleverTap enables mobile marketers to analyze, segment, engage, and measure thei
 **Integration architecture diagram**
 ------------------------------------
 
-![](../../assets/Bluedot-CleverTap-System-Architecture-1024x576.png)
+![](../../assets/clever-tap-diagram.png)
 
 **Bluedot setup**
 -----------------
