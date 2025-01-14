@@ -252,6 +252,7 @@ const sidebars = {
         "Now Ready/Overview",
         "Now Ready/Configure Now Ready",
         "Now Ready/Integrate register endpoint",
+        "Now Ready/Verification Code"
       ],
     },
     {
