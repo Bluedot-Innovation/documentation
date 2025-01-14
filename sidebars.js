@@ -298,6 +298,7 @@ const sidebars = {
             "APIs/Orders API/Key concepts",
             "APIs/Orders API/Using the Orders API",
             "APIs/Orders API/Best practices",
+            "APIs/Orders API/Migration Guide from Wave API"
           ],
         },
         {
