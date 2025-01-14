@@ -4,7 +4,7 @@ The Verification Code feature is designed to enhance the security and reliabilit
 
 Staff can then input this code into **Hello Screens** to validate it, ensuring that only the correct individual collects the order. 
 
-## **How It Works**
+### **How It Works**
 
 When customers arrive at the store and press the **"I've arrived"** button in the Now Ready app, a unique 3-digit verification code is instantly displayed on their screen. This code is presented on a confirmation screen, alongside a clear message explaining that they should share the code with the store staff upon order collection.
 
@@ -20,7 +20,7 @@ The Verification Code feature is built to make order collection more secure and 
 ![](../assets/now-ready-verification-code-1.png)
 
 
-## **How to Enable the Feature**
+### **How to Enable the Feature**
 
 To enable the Verification Code feature, follow these steps:
 
