@@ -17,7 +17,7 @@ In the root directory of your project run
 $ npm install bluedot-react-native --save
 ```
 
-2. iOS: Install the Bluedot Point SDK Pod
+2\. iOS: Install the Bluedot Point SDK Pod
 ------------------------------------------
 
 To install the Bluedot Point SDK pod run the following commands in the terminal from the root directory of your project:
