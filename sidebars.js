@@ -487,6 +487,7 @@ const sidebars = {
         },
         "integrations/Oracle Simphony",
         "integrations/Raydiant",
+        "integrations/Rezolve AI",
         "integrations/Safegraph",
         {
           type: "category",

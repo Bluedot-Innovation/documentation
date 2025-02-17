@@ -10,7 +10,7 @@ This guide shows you how to quickly integrate Rezolve AI into your existing Poin
 ### Prerequisites
 
 - **Rezolve AI Account:** You must have an account to access the Rezolve Commerce Brain. To learn more or sign up, visit [Rezolve’s website](https://rezolve.com/commerce/).
-- **Integration Activated in Canvas:** Ensure the Rezolve AI integration is enabled in Canvas. (ADD LINK WHEN READY)
+- **Integration Activated in Canvas:** Ensure the Rezolve AI integration is enabled in Canvas. Check the [Rezolve AI Integration](../integrations/Rezolve%20AI.md) documentation for more details.
 - **Point SDK** properly set up in your project
 - **iOS 15.0+** or **Android API Level 26+**
 - **Project ID** (API key) already configured in the Point SDK’s global config
