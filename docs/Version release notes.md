@@ -7,6 +7,25 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Feb 17, 2025
+--------------------------
+
+### Point SDK v17.0.0
+
+**What’s new**
+
+We’ve integrated Rezolve AI’s advanced conversational commerce API into the Bluedot SDK, bringing new capabilities for real-time, commerce-focused interactions. To access this feature, ensure you have an active [Rezolve AI account](https://rezolve.com).
+
+#### iOS
+- **Xcode 16 and iOS SDK 18:** The SDK is now built and tested with the latest Xcode 16 and iOS SDK 18.
+- Minimum Deployment Target Updated: Support for iOS 14 has been discontinued. You’ll need iOS 15 or higher to integrate this version of the Bluedot SDK.
+
+#### Android
+- **Improved Location Permission Handling:** We’ve fixed a bug related to requesting location permissions. If permissions aren’t granted, the SDK now correctly reports a Bluedot Service Error instead of silently failing.
+- **Target SDK Version Updated:** The minimum supported Android API level is 26, ensuring better performance.
+
+* * *
+
 Release date  Jan 15, 2025
 --------------------------
 
