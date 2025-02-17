@@ -42,4 +42,4 @@ Follow these steps to connect your Rezolve API Key and Endpoint:
 
 ## Using Rezolve AI in Your App
 
-After the integration is successful in Canvas, check out our [Quickstart](../Chat%20AI/Overview.md) guide to learn how to create a chat session, send messages, and display the real-time product contexts returned by Rezolve AI.
+After the integration is successful in Canvas, check out our [Quickstart](../Chat%20AI/Quick%20Start.md) guide to learn how to create a chat session, send messages, and display the real-time product contexts returned by Rezolve AI.

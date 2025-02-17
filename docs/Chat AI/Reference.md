@@ -36,16 +36,16 @@ Represents a single chat session. Responsible for sending messages and receiving
 
 | Method | Platform | Description |
 | --- | --- | --- |
-| `sendMessage(message: String)` | iOS | Sends a message; returns an `AsyncThrowingStream<StreamingResponseDto, Error>` (iOS 15+). A closure-based version is also available for earlier iOS versions. |
+| `sendMessage(message: String)` | iOS | Sends a message; returns an `AsyncThrowingStream<StreamingResponseDto, Error>`. A closure-based version is also available for earlier iOS versions. |
 | `sendMessage(message: String)` | Android | Sends a message in Android; returns a `Sequence` (Kotlin) or `Stream` (Java) of `StreamingResponseDto`. |
 
 **Public Properties**
 
 | Property | Type | Description |
 | --- | --- | --- |
-| `sessionID` | String | Non-optional, unique session identifier (e.g., `urn:uuid:9a652678-4616-475d-af12-aca21cfbe06d`). |
-| `userID` | String? | Optional; defaults to an installation reference. Useful for tracking which user initiated the chat. |
-| `language` | String? | Optional; defaults to `"en"`. Set this to customise the language context for your queries. |
+| `sessionID` | String | Unique session identifier (e.g., `urn:uuid:9a652678-4616-475d-af12-aca21cfbe06d`). |
+| `userID` | String | Defaults to an installation reference. Useful for tracking which user initiated the chat. |
+| `language` | String | Defaults to `"English"`. Set this to customise the language context for your queries. |
 
 ### StreamingResponseDto
 
@@ -57,7 +57,7 @@ A wrapper for each partial chunk of the chat’s streaming response.
 | --- | --- | --- |
 | `response` | String | The text content of the current response chunk. |
 | `responseID` | String | Unique identifier for the response chunk (if needed). |
-| `contexts` | Array of `BDStreamingResponseDtoContext` (Android) or `ChatContext` (iOS)  | List of additional context objects (optional, depends on your usage). |
+| `contexts` | Array of `BDStreamingResponseDtoContext` (Android) or `ChatContext` (iOS)  | List of additional context objects. |
 | `streamType` | Integer | Indicates the type of stream chunk ( `1` = `CONTEXT`, `2` = `RESPONSE_TEXT`, `3` = `RESPONSE_IDENTIFIER`). |
 
 ### Contexts in `StreamingResponseDto`
@@ -73,13 +73,13 @@ When you receive a context chunk on iOS, you’ll typically deal with an array o
 
 | Property | Type | Description |
 | --- | --- | --- |
-| **title** | `String?` | Optional product or suggestion title. |
-| **imageLinks** | `[URL]?` | List of product/category image URLs (optional). |
-| **price** | `NSNumber?` | Price of the product. |
-| **contextDescription** | `String?` | A descriptive text for the product or suggestion. |
-| **merchantID** | `NSNumber?` | Merchant identifier. |
-| **categoryID** | `NSNumber?` | Category identifier. |
-| **productID** | `NSNumber?` | Product identifier, which you can link to your backend. |
+| **title** | `String` | Product or suggestion title. |
+| **imageLinks** | `[URL]` | List of product/category image URLs. |
+| **price** | `NSNumber` | Price of the product. |
+| **contextDescription** | `String` | A descriptive text for the product or suggestion. |
+| **merchantID** | `NSNumber` | Merchant identifier. |
+| **categoryID** | `NSNumber` | Category identifier. |
+| **productID** | `NSNumber` | Product identifier, which you can link to your backend. |
 
 #### Android: `BDStreamingResponseDtoContext`
 
@@ -89,8 +89,8 @@ On Android, context chunks are represented by `BDStreamingResponseDtoContext` ob
 
 | Property | Type | Description |
 | --- | --- | --- |
-| **title** | `String?` | Product or suggestion title, if available. |
-| **image_links** | `Array<String>?` | Optional list of image URLs related to the product or category. |
+| **title** | `String` | Product or suggestion title, if available. |
+| **image_links** | `Array<String>` | List of image URLs related to the product or category. |
 | **price** | `Double` | Product price. |
 | **description** | `String` | Text describing the product or suggestion. |
 | **merchant_id** | `Int` | Merchant identifier. |
