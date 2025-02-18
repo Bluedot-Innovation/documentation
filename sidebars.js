@@ -37,6 +37,11 @@ const sidebars = {
             "Point SDK/Android/Geo-triggering",
             "Point SDK/Android/Tempo",
             {
+              type: "doc",
+              label: "Chat AI",
+              id: "Chat AI/Android Guide"
+            },
+            {
               type: "category",
               label: "Features",
               items: [
@@ -69,6 +74,11 @@ const sidebars = {
             "Point SDK/iOS/Quick Start",
             "Point SDK/iOS/Geo-triggering",
             "Point SDK/iOS/Tempo",
+            {
+              type: "doc",
+              label: "Chat AI",
+              id: "Chat AI/iOS Guide"
+            },
             {
               type: "category",
               label: "Features",
@@ -218,6 +228,21 @@ const sidebars = {
         "Canvas/Setting up multiple environments",
         "Canvas/How to authenticate with Config API",
       ],
+    },
+    {
+      type: "category",
+      label: "Chat AI",
+      link: {
+        type: "doc",
+        id: "Chat AI/Overview"
+      },
+      items: [
+        "Chat AI/Overview",
+        "Chat AI/Quick Start",
+        "Chat AI/iOS Guide",
+        "Chat AI/Android Guide",
+        "Chat AI/Reference"
+      ]
     },
     {
       type: "category",
@@ -462,6 +487,7 @@ const sidebars = {
         },
         "integrations/Oracle Simphony",
         "integrations/Raydiant",
+        "integrations/Rezolve AI",
         "integrations/Safegraph",
         {
           type: "category",
