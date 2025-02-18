@@ -118,6 +118,10 @@ code {
   grid-gap: 20px;
 }
 
+.navbar__logo {
+  height: 2.5rem;
+}
+
 .navbar__link {
   font-family: 'Spartan', sans-serif;
   font-size: 0.8rem;
