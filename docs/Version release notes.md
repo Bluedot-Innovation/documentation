@@ -7,6 +7,18 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Feb 18, 2025
+-------------------------
+
+### Bluedot React Native wrapper 3.2.1
+
+**What’s New:**
+
+*   Update React Native version to 0.76.6.
+*   Minimum requirements iOS 15.1+ and Android API 24+
+
+* * *
+
 Release date  Feb 17, 2025
 --------------------------
 
