@@ -32,9 +32,9 @@ The Orders API uses API Key-based authentication to secure your requests. Here's
 
 The Orders API provides region-specific endpoints to optimise performance and comply with regional regulations. Use the URL that matches your account's region:
 
-- **US Region: `https://au1-orders.bluedot.io`**
+- **US Region: `https://us1-orders.bluedot.io`**
 - **EU Region: `https://eu1-orders.bluedot.io`**
-- **APAC Region: `https://us1-orders.bluedot.io`**
+- **APAC Region: `https://au1-orders.bluedot.io`**
 
 Make sure you’re using the correct URL for your region to avoid errors.
 
