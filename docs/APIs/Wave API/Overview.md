@@ -28,3 +28,8 @@ The Destination is the store or restaurant where your customer is collecting the
 
 3\. [Setup receiving of Wave events](./Receiving%20Wave%20API%20events.md)  
 A notification for a customer’s arrival to the store for collecting an order when Wave is used in your app or web page can be received via Webhooks or seen on Hello screens.
+
+API reference
+-------------
+
+The API specification for the Wave API can be found [here](https://events-docs.bluedot.io/).
