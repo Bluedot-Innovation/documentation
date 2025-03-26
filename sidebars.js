@@ -406,10 +406,7 @@ const sidebars = {
             id: "Webhooks/V2/Geo-triggering"
           },
           items: [
-            "Webhooks/V2/Geo-triggering",
-            "Webhooks/V2/Hello order",
-            "Webhooks/V2/Tempo",
-            "Webhooks/V2/Wave",
+            "Webhooks/V2/Geo-triggering"
           ]
         },
         {
@@ -420,7 +417,10 @@ const sidebars = {
             id: "Webhooks/V1/Geo-triggering"
           },
           items: [
-            "Webhooks/V1/Geo-triggering"
+            "Webhooks/V1/Geo-triggering",
+            "Webhooks/V1/Hello order",
+            "Webhooks/V1/Tempo",
+            "Webhooks/V1/Wave",
           ]
         }
       ],
