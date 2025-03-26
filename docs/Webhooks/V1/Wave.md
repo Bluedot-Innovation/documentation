@@ -1,4 +1,4 @@
-# Wave Webhook V2.0
+# Wave Webhook V1.0
 
 This document provides information about the V2.0 payload structure for Wave webhooks.
 

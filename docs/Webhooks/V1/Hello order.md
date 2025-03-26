@@ -1,4 +1,4 @@
-# Hello Order Webhook V2.0
+# Hello Order Webhook V1.0
 
 This document provides information about the V2.0 payload structure for Hello Order webhooks.
 

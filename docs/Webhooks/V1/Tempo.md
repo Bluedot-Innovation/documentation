@@ -1,4 +1,4 @@
-# Tempo Webhook V2.0
+# Tempo Webhook V1.0
 
 This document provides information about the V2.0 payload structure for Tempo webhooks.
 
