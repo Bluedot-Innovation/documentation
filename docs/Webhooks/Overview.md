@@ -41,7 +41,7 @@ To set up **Webhooks**, login to Canvas and head to the **Integrations** section
 
 ![](../assets/webhooks-overview-3.png)
 
-3\. Configure Event Type, URL, Header and Body fields
+3\. Configure Event Type, Event Version, URL, Header and Body fields
 
 ![](../assets/webhooks-overview-4.png)
 

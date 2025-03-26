@@ -402,7 +402,7 @@ const config = {
               to: "/Canvas/Tools/Event Simulator"
             },
             {
-              from: "/Canvas/Store management",
+              from: "/Canvas/Store%20management",
               to: "/Canvas/Stores/Store management"
             }
           ]
