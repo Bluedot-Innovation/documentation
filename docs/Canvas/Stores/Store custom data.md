@@ -39,4 +39,4 @@ You can also manage Store Custom Data programmatically using the **Config API**,
 Store Custom Data is only included from Webhook payload version 2.1. Make sure to select this version when configuring your webhooks to receive the data.
 :::
 
-For more further details check  [Config API documentation](../../APIs/Config%20API/Overview.md) and [Webhooks documentation](../../Webhooks/).
+For more further details check  [Config API documentation](../../APIs/Config%20API/Overview.md) and [Webhooks documentation](../../Webhooks/Overview.md).

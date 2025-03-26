@@ -375,7 +375,7 @@ const config = {
             },
             {
               from: '/canvas/store-management/',
-              to: '/Canvas/Store management'
+              to: '/Canvas/Stores/Store management'
             },
             {
               from: '/canvas/what-are-zone-settings/',
