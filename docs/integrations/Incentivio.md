@@ -27,6 +27,6 @@ Once you’ve enabled the Incentivio integration, Canvas will import all Stores�
 Setting up Hello Screens for your stores
 ----------------------------------------
 
-After Canvas have imported all your store’s data from Incentivio. Now you’re ready to start [setting up Hello Screens in your stores](../Canvas/Store%20management.md) and [configure the branding for Now Ready](../Now%20Ready/Configure%20Now%20Ready.md).
+After Canvas have imported all your store’s data from Incentivio. Now you’re ready to start [setting up Hello Screens in your stores](../Canvas/Stores/Store%20management.md) and [configure the branding for Now Ready](../Now%20Ready/Configure%20Now%20Ready.md).
 
 If you have any questions, please reach out to our team at [help@bluedot.io](mailto:help@bluedot.io)

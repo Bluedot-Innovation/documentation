@@ -192,9 +192,20 @@ const sidebars = {
         "Canvas/Overview",
         "Canvas/Creating a new project",
         "Canvas/Add a new zone",
-        "Canvas/Store management",
         "Canvas/What are Zone settings",
         "Canvas/What is Zone custom data",
+        {
+          type: "category",
+          label: "Stores",
+          link: {
+            type: 'doc',
+            id: 'Canvas/Stores/Store management'
+          },
+          items: [
+            'Canvas/Stores/Store management',
+            'Canvas/Stores/Store custom data',
+          ]
+        },
         {
           type: "category",
           label: "Analytics",
@@ -387,6 +398,20 @@ const sidebars = {
         "Webhooks/Wave",
         "Webhooks/Hello order",
         "Webhooks/Webhooks retry",
+        {
+          type: "category",
+          label: "V2",
+          link: {
+            type: "doc",
+            id: "Webhooks/V2/Geo-triggering"
+          },
+          items: [
+            "Webhooks/V2/Geo-triggering",
+            "Webhooks/V2/Hello order",
+            "Webhooks/V2/Tempo",
+            "Webhooks/V2/Wave",
+          ]
+        },
         {
           type: "category",
           label: "V1",

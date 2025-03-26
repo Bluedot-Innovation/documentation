@@ -400,6 +400,10 @@ const config = {
             {
               from: "/Canvas/Event%20simulator%20guide",
               to: "/Canvas/Tools/Event Simulator"
+            },
+            {
+              from: "/Canvas/Store management",
+              to: "/Canvas/Stores/Store management"
             }
           ]
         }

@@ -6,11 +6,12 @@ pagination_prev: null
 # Custom Data Documentation
 
 ## Overview
-Custom data in Bluedot products can be applied in three different contexts: SDK events, Wave API, and Zones. Each type serves unique purposes:
+Custom data in Bluedot products can be applied in four different contexts: SDK events, Wave API, Zones, and Destinations (Stores). Each type serves unique purposes:
 
 1. **SDK Event Custom Data**: Ideal for adding details about the user, such as `external_customer_id`, `loyalty_number`, or `vehicle_plate`, enhancing user analytics and event tracking.
 2. **Zone Custom Data**: Perfect for attaching information about the location or geofence, like `store_id`, `store_type`, `state`, or `dma_region`, enabling contextual event triggering.
 3. **Wave API Custom Data**: Enhances order information, particularly useful for managing orders in Hello Screens.
+4. **Destination (Store) Custom Data**: Lets you add specific information about your stores that will show up in webhooks and can be used for analytics and decision-making.
 
 Understanding these differences allows for tailored implementations that best fit your application needs.
 
@@ -90,7 +91,7 @@ For more information please refer to the [Wave API documentation](https://events
 Zone Custom Data is used to attach specific information to geographical zones, triggering contextual events based on location. This can be done through Canvas. Check the [Zone Custom Data](./Canvas/What%20is%20Zone%20custom%20data.md) documentation for more details.
 
 ### Implementation
-You could also use Config API to set Zone Custom Data. For more details please refer to [Config API documentation](https://config-docs.dev-bluedot.com/#tag/zones/operation/addZone).
+You could also use Config API to set Zone Custom Data. For more details please refer to [Config API documentation](https://config-docs.bluedot.io/#tag/zones/operation/addZone).
 
 #### Example 
 ```json
@@ -101,6 +102,32 @@ You could also use Config API to set Zone Custom Data. For more details please r
         "store_type": "drive-tru",
         "campaign_id": "camp456"
     }
+}
+```
+
+## Custom Data in Destinations (Stores)
+
+### Description
+Destination Custom Data lets you link specific information to your stores (destinations). This data shows up in all webhook events, making it easier to make more advance analytics based on store details.
+
+### Implementation
+You could also use Config API to set Zone Custom Data. For more details please refer to [Config API documentation](https://config-docs.bluedot.io/#tag/destinations/operation/addDestination).
+
+### Example
+
+```json
+{
+  "zoneInfo": {
+    "destination": {
+      "destinationId": "store123",
+      "name": "Main Street Store",
+      "customData": {
+        "storeHours": "9AM-9PM",
+        "storeType": "drive-thru",
+        "region": "Northeast"
+      }
+    }
+  }
 }
 ```
 
