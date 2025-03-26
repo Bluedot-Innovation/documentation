@@ -28,7 +28,7 @@ Under Your Account, choose
 | Body Fields (Optional)   | Add any extra parameters you’d like to be included in the body of the request.                                                                                               |
 
 
-### ![](../assets/tempo-webhook-example-1024x564.jpg)
+### ![](../assets/tempo-webhook-example-1024x564.png)
 
 ### 3\. Save
 

@@ -1,60 +1,11 @@
-Tempo webhook
-=========================
+# Tempo Webhook V1.0
 
-Register Tempo Webhooks to receive real-time ETA notifications from your customers. As your customers get closer to their Destination to collect their order, Bluedot will send a notification every minute, so your team is ready to go.
+This document provides information about the V2.0 payload structure for Tempo webhooks.
 
-Configure a Tempo Webhook
--------------------------
+## Tempo webhook request JSON structure
 
-### 1\. Add a New Webhook
+### Update JSON request
 
-Under Your Account, choose
-
-![](../assets/new-webhook-1024x563.jpg)
-
-### 2\. Add the Webhook Details
-
-| **Property**             | **Description**                                                                                                                                                              |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project                  | Select the Project you'll receive the events from                                                                                                                            |
-| Event                    | Select _Tempo_                                                                                                                                                               |
-| Event Structure          | Select the desired version (v1 or v2.1). We recommend using v2.1 for access to all features including destination custom data.                                              |
-| URL                      | The URL of the server where the webhooks will be received. We suggest that the service has SSL enabled.                                                                      |
-| Header Fields (Optional) | Add any extra parameters you'd like to be included in the header of the request. For example, this is a good place to add a security token to authorize the incoming events. |
-| Body Fields (Optional)   | Add any extra parameters you'd like to be included in the body of the request.                                                                                               |
-
-
-![](../assets/tempo-webhook-example-1024x564.png)
-
-### 3\. Save
-
-You can also configure a Tempo Webhook through Config API (Information on using the Config API for registering a Webhook can be found here.)
-
-**Endpoint**
-
-**Description**
-
-Add Tempo Webhooks to a Project
-
-When creating or editing a Project you can add Tempo Webhooks within the tempo property.
-
-Endpoint: `https://config.bluedot.io/prod1/projects`
-
-Example of adding a Tempo Webhook:
-
-```json
-"tempo": { 
-    "webhooks": [{ 
-        "type": "tempo", 
-        "url": "<webhook URL goes here>" 
-    }] 
-}
-```
-
-Webhook request JSON structure
-------------------------------
-
-**Update JSON request**
 ```json
 {
     "deviceType": "iPhone12,3",
@@ -80,23 +31,15 @@ Webhook request JSON structure
     "notificationType": "tempo",
     "zoneId": "1111111-2222-3333-4444-555555555555",
     "zoneName": "Store 123", 
-    "destination": {
-        "destinationId": "store ID",
-        "name": "Destination name",
-        "location": {
-            "longitude": 144.123123123,
-            "latitude": -33.123123123
-        },
-        "customData": {
-            "key1": "value1",
-            "key2": "value2",
-            "key3": "value3"
-        }
+    "zoneCustomData": {
+        "key1": "value1",
+        "key2": "value2"
     }
 }
 ```
 
-**Stop JSON request**
+### Stop JSON request
+
 ```json
 {
     "deviceType": "iPhone12,3",
@@ -119,37 +62,21 @@ Webhook request JSON structure
     "notificationType": "tempo",
     "zoneId": "1111111-2222-3333-4444-555555555555",
     "zoneName": "Store 123",
-    "destination": {
-        "destinationId": "store ID",
-        "name": "Destination name",
-        "location": {
-            "longitude": 144.123123123,
-            "latitude": -33.123123123
-        },
-        "customData": {
-            "key1": "value1",
-            "key2": "value2",
-            "key3": "value3"
-        }
+    "zoneCustomData": { 
+        "key1": "value1",
+        "key2": "value2" 
     }
 }
 ```
 
-Tempo Webhook Field description
--------------------------------
+## Tempo Webhook Field description
+
 | Field name              | Description                                                                                                                                          | Data type | Example                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `appBuildVersion`       | The app build version of the application using the Point SDK which triggered the check-in.                                                           | String    | `"1.11.2"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `customerApplicationId` | The application's package name.                                                                                                                      | String    | `"io.bluedot"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `customEventMetaData`   | Key/Value pairs passed from the application to Bluedot Point SDK. This will not be returned as part of the request if no data set on the Mobile SDK. | JSON      | `{ "orderId":"Order 123" }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `destinationId`         | The ID associated with the location setup in Canvas for the Zone.                                                                                    | String    | `"Store-123"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `destination`           | Destination information object containing details about the destination.                                                                             | JSON      | See destination fields below                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `destination.destinationId` | Destination identifier.                                                                                                                          | String    | `"Store-123"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `destination.name`      | Name of the destination.                                                                                                                             | String    | `"Melbourne Store"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `destination.location`  | Location details of the destination.                                                                                                                 | JSON      | See location fields below                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `destination.location.latitude` | Latitude of the destination.                                                                                                                 | Number    | `-33.123123123`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `destination.location.longitude` | Longitude of the destination.                                                                                                               | Number    | `144.123123123`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| `destination.customData` | Custom data related to the destination.                                                                                                             | JSON      | `{ "StoreType": "Flagship", "OpenHours": "9AM-5PM" }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `deviceType`            | The type of device that triggered the Tempo event.                                                                                                   | String    | `"iPhone 9,3"`<br/>`"samsung SM-N950F"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `eta`                   | The estimated time of arrival of the user to the store in seconds.                                                                                   | Number    | `300`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `etaDirection`          | The direction of estimation – whether the device is more than or less than the number of seconds provided.                                           | String    | `"greaterThan"`<br/>`"lessThan"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -166,9 +93,5 @@ Tempo Webhook Field description
 | `stopReason`            | This field denotes the reason the Tempo service stopped running.                                                                                     | String    | - `invalidDestinationId`: Passing an invalid `destinationId` to the start Tempo tracking SDK method. The SDK will return an error at the client level and at the same time, this event will be fired by our webhooks.<br/><br/>- `stoppedByCustomerApp`: The stop Tempo tracking method is executed.<br/><br/>- `expired`: Tempo service has been tracking the device for 30 minutes, and it hasn't arrived at the destination. This expiring time is customizable. Check with your CX representative if you'd like to update it.<br/><br/>- `sdkLogout`: The SDK's reset method is executed. |
 | `triggerChainId`        | triggerChainId can be used to connect the ETA updates coming through for one set from start to finish.                                               | String    | `"c8965662-d67f-49e8-abf9-0bada6c153d1"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `zoneId`                | The unique identifier of the zone associated with the `destinationId`.                                                                               | String    | `"4647e4eb-f908-4d3d-82e9-4959d59923b0"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `zoneName`              | The name of the zone associated with the `destinationId`.                                                                                            | String    | `"Zone Name"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-
-:::info
-**Note on Webhook Versioning**
-Tempo webhooks now include destination custom data in the payload, providing more contextual information about the destination. This enhancement allows you to access destination-specific information directly in your webhook handlers.
-:::
+| `zoneName`              | The name of the zone associated with the `destinationId`.                                                                                            | String    | `"Zone Name"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `zoneCustomData`        | Key/Value pair of Location specific data added to the Zone. This will not be returned as part of the request if no data set for the Zone.            | JSON      | `{ "key1": "value1", "key2": "value2" }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 

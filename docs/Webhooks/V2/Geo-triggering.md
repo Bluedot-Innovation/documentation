@@ -1,20 +1,10 @@
-# Geo-Triggering webhook
+# Geo-Triggering Webhook V2.0
 
-Register Geo-trigger Webhooks to receive real-time Entry/Exit notifications from your customers.
+This document provides information about the V2.0 payload structure for Geo-triggering webhooks.
 
-## Selecting Webhooks Payload Version
+## Geo-triggering event (V2.0)
 
-When setting up webhooks from the dashboard, users can select the version of the Geo-triggering event payload. The rest of the events remain unchanged. Follow these steps to select the version:
-
-1. Navigate to the webhooks configuration section in the dashboard.
-2. Select the desired version for the Geo-triggering event. We recommend using the latest version to access all available features.
-3. Save your changes.
-
-![](../assets/Webhook%20-%20geotriggering%202.png)
-
-## Geo-triggering event (V2.1)
-
-The latest version of the webhooks payload for Geo-triggering events includes a standardized structure that aligns with the Analytics API and SDK Entry and Exit events. This version provides additional data points for enhanced insights and uniformity, including destination custom data.
+The `2.0` version of the webhooks payload for Geo-triggering events includes a standardized structure that aligns with the Analytics API and SDK Entry and Exit events. This version provides additional data points for enhanced insights and uniformity.
 
 ### Root Level Fields
 
@@ -25,7 +15,7 @@ This table lists the primary fields found at the root level of the payload.
 | `ulid`         | Unique identifier for the event.                              |
 | `retryCount`   | The number of retry attempts for the webhook delivery.        |
 | `triggerChainId` | Identifier for the chain of triggers leading to this event. |
-| `notificationType` | Type of notification (e.g., exit).                       |
+| `notificationType` | Type of notification (e.g., entry, exit).                |
 | `receivedAt`   | Timestamp when the event was received.                        |
 | `submissionTime` | Timestamp when the event was submitted.                    |
 | `accountId`    | Account identifier.                                           |
@@ -71,8 +61,6 @@ This table provides information about the `zoneInfo` object, including details a
 | `zoneInfo.destination.location.latitude` | Latitude of the destination.                             |
 | `zoneInfo.destination.location.longitude` | Longitude of the destination.                           |
 | `zoneInfo.destination.name`           | Name of the destination.                                    |
-| `zoneInfo.destination.customData`     | Custom data related to the destination (available in V2.1). |
-| `zoneInfo.destination.customData.[KEY]` | The value of the destination custom data key/value pair (available in V2.1). |
 | `zoneInfo.id`                         | Zone identifier.                                            |
 | `zoneInfo.name`                       | Name of the zone.                                           |
 
@@ -104,17 +92,6 @@ This table describes the fields within the `triggerEvents` array, detailing the 
 | `triggerEvents[].locations[].time`       | Timestamp of the location data.                                                        |
 | `triggerEvents[].locations[].verticalAccuracy` | Vertical accuracy of the location data.                                               |
 | `triggerEvents[].triggerEngine`          | Engine used to trigger the event (e.g., bd).                                           |
-
-## Additional Fields
-In addition to the payload, there are additional fields included:
-
-| Field                       | Description                                                                               |
-|-----------------------------|-------------------------------------------------------------------------------------------|
-| `additionalFields.body_field1` | Custom field for additional body fields.                                                     |                                               |
-| `webhookUniqueId`           | Unique ID for the webhook, available when webhook retry is enabled.                      |
-
-For more details on webhook retry, please refer to the [Webhooks Retry Documentation](./Webhooks%20retry.md).
-
 
 ## Webhooks Payload Example
 
@@ -153,12 +130,7 @@ For more details on webhook retry, please refer to the [Webhooks Retry Documenta
                     "longitude": 144.123123123,
                     "latitude": -33.123123123
                 },
-                "name": "Bluedot",
-                "customData": {
-                    "StoreType": "Flagship",
-                    "Suburb": "Naperville",
-                    "MarketCode": "4567"
-                }
+                "name": "Bluedot"
             },
             "id": "45f3a3be-c542-4dcd-aba7-20cb2e671e8a",
             "name": "Bluedot zone"
@@ -203,14 +175,4 @@ For more details on webhook retry, please refer to the [Webhooks Retry Documenta
     },
     "webhookUniqueId": "0b816c7264a86200ce3523c48435b913d9d6b060" // only available when webhook retry is enabled
 }
-```
-
-
-:::info
-**Webhook Versions:**
-Different versions of the Geo-triggering webhook payload are available to provide flexibility. For information about other versions, please refer to:
-- Version 1.0: See [Geo-triggering Webhooks Version 1.0 Documentation](./V1/Geo-triggering.md)
-- Version 2.0: Previous version without destination custom data. See [Geo-triggering Webhooks Version 2.0 Documentation](./V2/Geo-triggering.md)
-:::
-
-For further assistance, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
+``` 

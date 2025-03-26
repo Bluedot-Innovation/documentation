@@ -1,31 +1,10 @@
-Wave webhook
-=============
+# Wave Webhook V1.0
 
-Register Wave Webhooks to receive real-time Arrival notifications from your customers.
+This document provides information about the V2.0 payload structure for Wave webhooks.
 
-Configure a Wave Webhook
-------------------------
+## Webhook request JSON structure
 
-In the Webhooks section of your Canvas account while creating a Webhook, select Wave as the Event type in the dropdown.
-
-![](../assets/Canvas-Webhooks-Wave.png)
-
-You can also configure a Wave Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
-
-If you'd like to Create a Destination using [Config API](../APIs/Config%20API/Overview.md),  When creating or editing a Project you can add Hello Order Webhooks within the `webhooks` property by setting the type to `wave` in the request.
-
-Example of adding a Wave Webhook:
-```json
-"webhooks": [{
-    "type": "wave",
-    "url": "<webhook URL goes here>"
-}]
-```
-
-Webhook request JSON structure
-------------------------------
-
-JSON request for a simple Wave event
+### JSON request for a simple Wave event
 ```json
 {
    "notificationType":"wave",
@@ -37,24 +16,11 @@ JSON request for a simple Wave event
    "receivedAt":"2018-09-02T00:22:43.816Z",
    "customEventMetaData":{
       "eKey1":"eValue1"
-   },
-   "destination": {
-      "destinationId":"ABCD",
-      "name":"Destination name",
-      "location":{
-         "longitude":144.123123123,
-         "latitude":-33.123123123
-      },
-      "customData":{
-         "key1":"value1",
-         "key2":"value2",
-         "key3":"value3"
-      }
    }
 }
 ```
 
-JSON request for a Wave event when the location is passed in the API request
+### JSON request for a Wave event when the location is passed in the API request
 ```json
 {
    "notificationType":"wave",
@@ -92,24 +58,11 @@ JSON request for a Wave event when the location is passed in the API request
    ],
    "customEventMetaData":{
       "eKey1":"eValue1"
-   },
-   "destination": {
-      "destinationId":"ABCD",
-      "name":"Destination name",
-      "location":{
-         "longitude":144.123123123,
-         "latitude":-33.123123123
-      },
-      "customData":{
-         "key1":"value1",
-         "key2":"value2",
-         "key3":"value3"
-      }
    }
 }
 ```
-Wave Webhook field description
-------------------------------
+
+## Wave Webhook field description
 
 | **Field**                     | **Type**    | **Description**                                                                                                                                      | **Example**                              |
 |-------------------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------|
@@ -118,13 +71,6 @@ Wave Webhook field description
 | `projectId`                   | String      | The identifier of the project with which the API is signed within the header.                                                                        | `"751cf7a6-394b-4e8a-b09d-444ed520c3e5"` |
 | `installRef`                  | String      | A randomly issued installation reference, not tied to any personally identifiable data (PID) on the user's device.                                   | `"a7684ffd-2221-432c-9cb9-25fd241df39f"` |
 | `destinationId`               | String      | The ID associated with the location setup in Canvas for the Zone                                                                                     | `"Store1234"`                            |
-| `destination`                 | JSON Object | Destination information object containing details about the destination.                                                                             | See destination fields below             |
-| `destination.destinationId`   | String      | Destination identifier.                                                                                                                              | `"Store1234"`                            |
-| `destination.name`            | String      | Name of the destination.                                                                                                                             | `"Melbourne Store"`                       |
-| `destination.location`        | JSON Object | Location details of the destination.                                                                                                                 | See location fields below                 |
-| `destination.location.latitude` | Number    | Latitude of the destination.                                                                                                                         | `-33.123123123`                           |
-| `destination.location.longitude` | Number   | Longitude of the destination.                                                                                                                        | `144.123123123`                           |
-| `destination.customData`      | JSON Object | Custom data related to the destination.                                                                                                             | `{"key1": "value1", "key2": "value2"}`    |
 | `customEventMetaData`         | JSON Object | Key/Value pairs passed from the application to Bluedot Point SDK. This will not be returned as part of the request if no data set on the Mobile SDK. | `{"key1": "value1"}`                     |
 | `eventTime`                   | String      | UTC date and time of the Entry/Exit in ISO format on the device.                                                                                     | `"2021-02-02T02:25:47.000Z"`             |
 | `receivedAt`                  | String      | Records the time the event reaches the Bluedot platform.                                                                                             | `"2021-02-02T02:25:47.000Z"`             |
@@ -141,11 +87,4 @@ Wave Webhook field description
 | `zones.tags`                  | Array       | The tags added to a Zone in Canvas.                                                                                                                  | `["tag1","tag2"]`                        |
 | `zones.fence`                 | JSON Object | The Fence inside of the latitude and longitude of the location coordinates update in the Wave API request.                                           |                                          |
 | `fence.id`                    | String      | The unique identifier of the fence that location reported in the Wave event is inside of.                                                            | `"cf3ce604-adc2-494a-a41c-e19ded044c7d"` |
-| `fence.name`                  | String      | The name of the fence that the location reported in the Wave event is inside of.                                                                     | `"Fence name"`                           |
-
-:::info
-**Webhook Version 2.1**
-
-This documentation describes the latest webhook version (2.1) which includes destination custom data. 
-Previous versions are still available and fully supported to ensure backward compatibility with existing integrations.
-:::
+| `fence.name`                  | String      | The name of the fence that the location reported in the Wave event is inside of.                                                                     | `"Fence name"`                           | 

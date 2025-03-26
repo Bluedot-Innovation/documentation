@@ -375,7 +375,7 @@ const config = {
             },
             {
               from: '/canvas/store-management/',
-              to: '/Canvas/Store management'
+              to: '/Canvas/Stores/Store management'
             },
             {
               from: '/canvas/what-are-zone-settings/',
@@ -400,6 +400,10 @@ const config = {
             {
               from: "/Canvas/Event%20simulator%20guide",
               to: "/Canvas/Tools/Event Simulator"
+            },
+            {
+              from: "/Canvas/Store%20management",
+              to: "/Canvas/Stores/Store management"
             }
           ]
         }

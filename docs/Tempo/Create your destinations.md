@@ -15,7 +15,7 @@ There are 2 simple steps:
 
 ### 1\. Store creation
 
-From the “Stores” section, fill out the “Add a New Store” form. In the form, you’ll have to input the Destination ID for the store. We recommend using an ID that makes sense for your brand and/or systems. Check the [Store Management documentation](../Canvas/Store%20management.md) for more details.
+From the “Stores” section, fill out the “Add a New Store” form. In the form, you’ll have to input the Destination ID for the store. We recommend using an ID that makes sense for your brand and/or systems. Check the [Store Management documentation](../Canvas/Stores/Store%20management.md) for more details.
 
 ![](../assets/store-management-3.png)
 

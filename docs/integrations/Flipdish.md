@@ -41,7 +41,7 @@ Select the `order.accepted` event.
 
 ![](../assets/flipdish_select_event-1024x641.png)
 
-Once configured the Webhook and added the `order.accepted` event , you can set up your stores in Canvas. Make sure to use the Flipdish Store Id when adding the Destination ID to your stores. To learn more about creating your stores in Canvas, check [Canva’s Store Management documentation](../Canvas/Store%20management.md).
+Once configured the Webhook and added the `order.accepted` event , you can set up your stores in Canvas. Make sure to use the Flipdish Store Id when adding the Destination ID to your stores. To learn more about creating your stores in Canvas, check [Canva’s Store Management documentation](../Canvas/Stores/Store%20management.md).
 
 
 :::info
