@@ -7,6 +7,18 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Mar 28, 2025
+-------------------------
+
+### Android SDK v17.1.0
+
+**What’s New:**
+
+* **General maintenance:** This release also includes under-the-hood improvements and routine maintenance to ensure continued stability and performance.
+* **Updated Kotlin version:** The SDK now uses Kotlin 2.0 (previously 1.8) as part of ongoing improvements to support a broader range of development platforms.  If you're upgrading to this version, make sure to update your Kotlin Gradle plugin to avoid compatibility issues.
+
+* * *
+
 Release date  Feb 18, 2025
 -------------------------
 
