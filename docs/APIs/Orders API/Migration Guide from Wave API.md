@@ -18,7 +18,8 @@ Migrating to the Orders API allows you to take advantage of the following enhanc
 
 | **Feature** | **Wave API** | **Orders API** |
 | --- | --- | --- |
-| **Authentication** | Requires `x-bluedot-api-key` header (value is `projectId`). | Requires an API Key provided in the `Authorization` header. |
+| **Authentication** | Requires `x-bluedot-api-key` header (value is `projectId`). | Requires `x-bluedot-api-key` header with an API Key generated from Canvas. |
+| **Project ID** | Used as the API key value. | Required field in the payload. |
 | **Order Updates** | Requires `userToken` for modifications. | Directly updated using an API Key. |
 | **Scheduling** | Handled via `hs_scheduledTimeForCollection` in `customEventMetaData`. | Handled via `scheduledTimeForCollection` field at the root level. |
 | **Partner Pickup Time** | Managed via `hs_partnerPickupTime` in `customEventMetaData`. | Managed via `partnerPickupTime` field at the root level and event type `partnerOnTheWay` |
@@ -34,7 +35,7 @@ Migrating to the Orders API allows you to take advantage of the following enhanc
 
 ### **Step 1: Update Authentication**
 
-Replace the `x-bluedot-api-key` header with the new `Authorization` header containing the API Key generated in Canvas.
+Replace the `x-bluedot-api-key` header with the new API Key generated in Canvas.
 
 - **Wave API Example:**
     
@@ -45,7 +46,7 @@ Replace the `x-bluedot-api-key` header with the new `Authorization` header conta
 - **Orders API Example:**
     
     ```bash
-    "Authorization": "Bearer <Your_API_Key>"
+    "x-bluedot-api-key": "<Your_API_Key>"
     ```
     
 
@@ -85,6 +86,7 @@ In the Wave API, scheduling orders is handled using `hs_scheduledTimeForCollecti
     {
       "destinationId": "Store-001",
       "orderId": "12345678",
+      "projectId": "your-project-id",
       "eventType": "registration",
       "scheduledTimeForCollection": "2023-12-31T12:00:00.000Z",
       "customerName": "John Doe",
@@ -120,6 +122,7 @@ When handling partner pickup times in the Orders API, the `partnerPickupTime` fi
     {
       "destinationId": "Store-001",
       "orderId": "Order22",
+      "projectId": "your-project-id",
       "eventType": "partnerOnTheWay",
       "partnerPickupTime": "2024-03-04T05:15:00.000Z",
       "customerName": "Emma Goldman",
@@ -157,6 +160,7 @@ In the Orders API, grouping is managed using the `orderGroupId` field, now locat
     {
       "destinationId": "Store-001",
       "orderId": "Order1",
+      "projectId": "your-project-id",
       "eventType": "onTheWay",
       "customerName": "Mark Herrera",
       "hsFields": {
