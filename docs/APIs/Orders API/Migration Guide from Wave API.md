@@ -18,7 +18,7 @@ Migrating to the Orders API allows you to take advantage of the following enhanc
 
 | **Feature** | **Wave API** | **Orders API** |
 | --- | --- | --- |
-| **Authentication** | Requires `x-bluedot-api-key` header (value is `projectId`). | Requires an API Key provided in the `Authorization` header. |
+| **Authentication** | Requires `x-bluedot-api-key` header (value is `projectId`). | Requires `x-bluedot-api-key` header with an API Key generated from Canvas. |
 | **Order Updates** | Requires `userToken` for modifications. | Directly updated using an API Key. |
 | **Scheduling** | Handled via `hs_scheduledTimeForCollection` in `customEventMetaData`. | Handled via `scheduledTimeForCollection` field at the root level. |
 | **Partner Pickup Time** | Managed via `hs_partnerPickupTime` in `customEventMetaData`. | Managed via `partnerPickupTime` field at the root level and event type `partnerOnTheWay` |
@@ -34,7 +34,7 @@ Migrating to the Orders API allows you to take advantage of the following enhanc
 
 ### **Step 1: Update Authentication**
 
-Replace the `x-bluedot-api-key` header with the new `Authorization` header containing the API Key generated in Canvas.
+Replace the `x-bluedot-api-key` header with the new API Key generated in Canvas.
 
 - **Wave API Example:**
     
@@ -45,7 +45,7 @@ Replace the `x-bluedot-api-key` header with the new `Authorization` header conta
 - **Orders API Example:**
     
     ```bash
-    "Authorization": "Bearer <Your_API_Key>"
+    "x-bluedot-api-key": "<Your_API_Key>"
     ```
     
 
