@@ -31,7 +31,7 @@ allprojects {
 ```gradle
 dependencies {
      ...
-     implementation 'com.gitlab.bluedotio.android:point_sdk_android:16.1.0'
+     implementation 'com.gitlab.bluedotio.android:point_sdk_android:17.1.0'
  }
 ```
 
