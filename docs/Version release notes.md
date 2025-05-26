@@ -7,6 +7,23 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  May 26, 2025
+-------------------------
+
+### iOS SDK v17.0.1
+
+**What’s New:**
+
+* **Live Update engine support:** We've added support for Apple's new [Live Update engine](https://developer.apple.com/documentation/corelocation/cllocationupdate/liveconfiguration), available in iOS 17 and above. This improvement enhances location tracking performance in background use cases, especially when users have granted _"Always"_ location permissions.
+
+**What’s Improved:**
+
+* **Better background performance on iOS 17+:** Apps running on iOS 17 and above will now benefit from higher trigger rates and improved reliability when tracking in the background or when the device is locked.
+
+* Devices running iOS versions earlier than 17 will continue to use the previous background location tracking logic.
+
+* * *
+
 Release date  Mar 28, 2025
 -------------------------
 
