@@ -14,7 +14,7 @@ Release date  May 26, 2025
 
 **What’s New:**
 
-* **Live Update engine support:** We've added support for Apple's new [Live Update engine](https://developer.apple.com/documentation/corelocation/cllocationupdate/liveconfiguration), available in iOS 17 and above. This improvement enhances location tracking performance in background use cases, especially when users have granted _"Always"_ location permissions.
+* **Live Update engine support:** We've added support for Apple's new [Live Update engine](https://developer.apple.com/documentation/corelocation/cllocationupdate), available in iOS 17 and above. This improvement enhances location tracking performance in background use cases, especially when users have granted _"Always"_ location permissions.
 
 **What’s Improved:**
 
