@@ -216,6 +216,7 @@ const sidebars = {
           items: [
             'Canvas/Analytics/Historical Event Tracking',
             'Canvas/Analytics/Hello Order Logs',
+            'Canvas/Analytics/Customer Journey Insights',
             'Canvas/Analytics/Scheduled Reports'
           ]
         },
