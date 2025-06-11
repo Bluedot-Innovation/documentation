@@ -6,7 +6,7 @@ The Orders API is designed to complement and enhance the functionality provided 
 
 Migrating to the Orders API allows you to take advantage of the following enhancements:
 
-- **Improved Authentication:** Orders API uses an API Key for secure and streamlined access, replacing the `x-bluedot-api-key` header used in Wave API.
+- **Improved Authentication:** Orders API requires a dedicated API Key generated from the Canvas Dashboard, replacing the `x-bluedot-api-key` header used in Wave API.
 - **Enhanced Metadata Structure:** Metadata is now split into `hsFields` (store staff visibility) and `customEventMetaData` (backend processing), improving flexibility and clarity.
 - **Simplified Updates:** Orders API eliminates the need for a `userToken` for modifications, allowing updates directly with the API Key.
 - **Comprehensive Scheduling Support:** Scheduling and partner pickup times are now handled more explicitly, with dedicated fields for better clarity and alignment.
@@ -35,7 +35,12 @@ Migrating to the Orders API allows you to take advantage of the following enhanc
 
 ### **Step 1: Update Authentication**
 
-Replace the `x-bluedot-api-key` header with the new API Key generated in Canvas.
+The first step in migrating to the Orders API is updating the authentication method. Unlike the Wave API, which used your project ID as the API key, the Orders API requires a dedicated API Key that must be generated from the Canvas Dashboard.
+
+For detailed instructions on generating and using your API Key, see the [Authentication section](./Getting%20started.md#authentication) in the Getting Started guide.
+
+2. **Update Your Requests:**
+   Replace the `x-bluedot-api-key` header with your new API Key:
 
 - **Wave API Example:**
     
@@ -48,7 +53,10 @@ Replace the `x-bluedot-api-key` header with the new API Key generated in Canvas.
     ```bash
     "x-bluedot-api-key": "<Your_API_Key>"
     ```
-    
+
+:::info
+Your existing project ID won't work for authentication - make sure to use an API Key generated from Canvas instead.
+:::
 
 ### **Step 2: Update Order Registration Payload**
 
