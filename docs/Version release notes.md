@@ -7,7 +7,7 @@ pagination_prev: null
 Version Release Notes
 =====================
 
-Release date  May 26, 2025
+Release date  Jun 16, 2025
 -------------------------
 
 ### Android SDK v16.1.1
