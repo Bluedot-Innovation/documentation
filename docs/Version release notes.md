@@ -10,6 +10,19 @@ Version Release Notes
 Release date  May 26, 2025
 -------------------------
 
+### Android SDK v16.1.1
+
+**What's New:**
+
+This release is functionally identical to version 16.1.0. Due to a JitPack service issue, the original SDK v16.1.0 artifacts became unavailable. We’ve re-published the SDK under a new patch version (16.1.1). No code or functionality has changed.
+
+If you previously attempted to integrate 16.1.0 and encountered issues due to missing artifacts, please update your dependency to 16.1.1. We apologize for the inconvenience.
+
+* * *
+
+Release date  May 26, 2025
+-------------------------
+
 ### iOS SDK v17.0.1
 
 **What’s New:**
