@@ -63,10 +63,8 @@ If you’re not sure which region your account is in, please contact us at [help
 
 ### API reference
 
+
 The API specification for Wave API can be found [here](https://events-docs.bluedot.io/#operation/postWaveEvents).
----
-pagination_next: null
----
 
 Generate a NowReady URL
 -----------------------

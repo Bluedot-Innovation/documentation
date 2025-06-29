@@ -7,6 +7,20 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Jun 18, 2025
+-------------------------
+
+### Bluedot React Native wrapper 3.2.2
+
+**What's New:**
+
+This release updates the underlying Android Point SDK dependency to version 16.1.1 to resolve a JitPack artifact issue with 16.1.0. No code or functionality has changed.
+
+If you encountered errors with 16.1.0 in Android, please update to 3.2.2.
+
+* * *
+
+
 Release date  Jun 16, 2025
 -------------------------
 
