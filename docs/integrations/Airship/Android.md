@@ -107,18 +107,20 @@ Create a receiver in the Manifest to receive Geo-trigger events (such as enterin
 ```
 
 Implement the receiver
+```kotlin
+class AppGeoTriggerReceiver : GeoTriggeringEventReceiver() {
 
-```java
-public class ExampleGeoTriggerReceiver extends GeoTriggeringEventReceiver {
-  @Override
-  public void onZoneEntryEvent(@NotNull ZoneEntryEvent entryEvent, @NotNull Context context) {
-    ...
-  }
-
-  @Override
-  public void onZoneExitEvent(@NotNull ZoneExitEvent exitEvent, @NotNull Context context) {
-    ...
-  }
+	override fun onZoneInfoUpdate(context: Context) {
+		...
+	}
+	
+	override fun onZoneEntryEvent(entryEvent: GeoTriggerEvent, context: Context) {
+		...
+	}
+	
+	override fun onZoneExitEvent(exitEvent: GeoTriggerEvent, context: Context) {
+		...
+	}
 }
 ```
 
@@ -133,10 +135,10 @@ public class ExampleGeoTriggerReceiver extends GeoTriggeringEventReceiver {
 **Setting Automated Message:** Automated message to be setup via `Urban Airship Dashboard`, to trigger when a new event is posted.
 
 ```kotlin
-override fun onZoneEntryEvent(entryEvent: ZoneEntryEvent, context: Context) {
+override fun onZoneEntryEvent(entryEvent: GeoTriggerEvent, context: Context) {
   val builder = CustomEvent.Builder("bluedot_place_entered")
-  builder.setInteraction("location", entryEvent.zoneInfo.zoneId)
-  entryEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot_zone_name", it) }
+  builder.setInteraction("location", entryEvent.zoneInfo.id)
+  builder.addProperty("bluedot_zone_name", entryEvent.zoneInfo.name)
   entryEvent.zoneInfo.customData?.let {
     for ((key, value) in it) {
       builder.addProperty(key, value)
@@ -146,10 +148,10 @@ override fun onZoneEntryEvent(entryEvent: ZoneEntryEvent, context: Context) {
   event.track()
 }
 
-override fun onZoneExitEvent(exitEvent: ZoneExitEvent, context: Context) {
+override fun onZoneExitEvent(exitEvent: GeoTriggerEvent, context: Context) {
   val builder = CustomEvent.Builder("bluedot_place_exited")
-  builder.setInteraction("location", exitEvent.zoneInfo.zoneId)
-  exitEvent.zoneInfo.zoneName?.let { builder.addProperty("bluedot_zone_name", it) }
+  builder.setInteraction("location", exitEvent.zoneInfo.id)
+  builder.addProperty("bluedot_zone_name", exitEvent.zoneInfo.name)
   exitEvent.zoneInfo.customData?.let {
     for ((key, value) in it) {
       builder.addProperty(key, value)
