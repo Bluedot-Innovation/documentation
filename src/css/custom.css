@@ -118,8 +118,12 @@ code {
   grid-gap: 20px;
 }
 
+.navbar {
+  height: 4rem;
+}
+
 .navbar__logo {
-  height: 2.5rem;
+  height: 3.5rem;
 }
 
 .navbar__link {
