@@ -103,6 +103,16 @@ Follow the steps below to configure the info.plist settings:
 
 Then, add the following key to the UIBackgroundModes section of the `info.plist`: `location`
 
+:::info
+#### Using BDPoint SDK (Swift 5) in a Swift 6 app
+
+To use a Swift 6 app with the Swift 5-based BDPoint SDK, you’ll need to disable the new Swift concurrency features for the SDK. This can be done by adding `@preconcurrency` attribute to:
+* The `import  BDPointSDK` 
+* Any BDPointSDK delegate declarations
+
+An example of using a Swift 6 app with a Swift 5 SDK is available on [GitHub](https://github.com/Bluedot-Innovation/PointSDK-MinimalIntegrationExample-iOS/tree/nk/swift6-app-with-swift5-BDPointSDK)
+:::
+
 Initialize the SDK
 ------------------
 
