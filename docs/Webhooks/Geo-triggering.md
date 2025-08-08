@@ -148,12 +148,12 @@ For more details on webhook retry, please refer to the [Webhooks Retry Documenta
                 "State": "Florida"
             },
             "destination": {
-                "destinationId": "bluedot",
+                "destinationId": "rezolve-id",
                 "location": {
                     "longitude": 144.123123123,
                     "latitude": -33.123123123
                 },
-                "name": "Bluedot",
+                "name": "Rezolve",
                 "customData": {
                     "StoreType": "Flagship",
                     "Suburb": "Naperville",
@@ -161,7 +161,7 @@ For more details on webhook retry, please refer to the [Webhooks Retry Documenta
                 }
             },
             "id": "45f3a3be-c542-4dcd-aba7-20cb2e671e8a",
-            "name": "Bluedot zone"
+            "name": "Rezolve zone"
         },
         "accountId": "39a22449-0000-4f2a-923c-1a78af0000",
         "installRef": "557a54be-0000-43ef-830c-3ef816cd0000",
@@ -174,7 +174,7 @@ For more details on webhook retry, please refer to the [Webhooks Retry Documenta
                     "locationPermission": "while_using",
                     "viewState": "foreground"
                 },
-                "destinationId": "bluedot",
+                "destinationId": "rezolve-id",
                 "eventTime": "2024-06-29T00:31:48.221Z",
                 "eventType": "fenceEntered",
                 "fenceId": "c87bfa51-505e-4c28-bfd9-215b1594e9c3",
@@ -213,4 +213,3 @@ Different versions of the Geo-triggering webhook payload are available to provid
 - Version 2.0: Previous version without destination custom data. See [Geo-triggering Webhooks Version 2.0 Documentation](./V2/Geo-triggering.md)
 :::
 
-For further assistance, please contact us at [help@bluedot.io](mailto:help@bluedot.io).

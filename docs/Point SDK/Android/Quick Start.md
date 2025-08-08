@@ -12,7 +12,7 @@ To get the base SDK loaded and running, you’ll need to:
 Import the SDK
 --------------
 
-Bluedot Point SDK for Android is integrated into an application project as a Gradle dependency. Follow the steps below to integrate the SDK into your project.
+Rezolve Point SDK for Android is integrated into an application project as a Gradle dependency. Follow the steps below to integrate the SDK into your project.
 
 1\. Edit the root `build.gradle` file to include a JitPack entry in the repositories section.
 
@@ -26,7 +26,7 @@ allprojects {
 }
 ```
 
-2\. Include the Bluedot Point SDK as a dependency in the app’s `build.gradle` file within the dependencies section.
+2\. Include the Rezolve Point SDK as a dependency in the app’s `build.gradle` file within the dependencies section.
 
 ```gradle
 dependencies {
@@ -38,7 +38,7 @@ dependencies {
 Manifest requirements
 ---------------------
 
-In order to receive Bluedot service error events after initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html) should be implemented and registered in the AndroidManifest:
+In order to receive Rezolve service error events after initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html) should be implemented and registered in the AndroidManifest:
 
 ```kotlin
 class ExampleBluedotServiceReceiver : BluedotServiceReceiver() {
@@ -65,7 +65,7 @@ class ExampleBluedotServiceReceiver : BluedotServiceReceiver() {
 Initialize the SDK
 ------------------
 
-Now that the project has been set up, should initialize the Bluedot Point SDK from your Application class’s `onCreate` function with:
+Now that the project has been set up, should initialize the Rezolve Point SDK from your Application class’s `onCreate` function with:
 
 ```kotlin
 ServiceManager.getInstance(this).initialize("myProjectId", 

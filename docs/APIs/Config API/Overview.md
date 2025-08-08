@@ -10,7 +10,7 @@ Config APIs expose the functionality of the feature-rich user interface, [Canvas
 
 Data added through the Config APIs can be reviewed and edited via the Canvas user interface and vice versa.
 
-Bluedot API model objects
+Rezolve API model objects
 -------------------------
 
 You will largely interact with the following API model objects when using Config APIs:
@@ -47,7 +47,7 @@ The API specification for the Config API can be found [here](https://config-docs
 Regions
 -------
 
-Config API is hosted in multiple regions worldwide to ensure better performance of our services. To learn more refer to the [Bluedot Regions documentation](../../Regions%20URLs.md).
+Config API is hosted in multiple regions worldwide to ensure better performance of our services. To learn more refer to the [Rezolve Regions documentation](../../Regions%20URLs.md).
 
 Example of authenticating the Config API
 ----------------------------------------

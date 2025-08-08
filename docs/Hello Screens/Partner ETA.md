@@ -41,4 +41,4 @@ When integrating ETAs from third-party partners into Hello Screens, it's crucial
 
 For example, if the default time brackets set for Tempo are 15, 10, 5, 2, and 1 minute(s), and a partner provides an ETA of 8 minutes, Hello Screens will display this as "Less than 10 minutes." This standardization helps maintain consistency in communication across different sources of ETA details and simplifies the information for your team.
 
-The time brackets used by Tempo are configurable, if you need to update them to better align with your operational needs, just contact our team at [help@bluedot.io](mailto:help@bluedot.io).
+The time brackets used by Tempo are configurable, if you need to update them to better align with your operational needs, just contact our team.

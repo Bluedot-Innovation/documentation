@@ -102,17 +102,15 @@ We encourage you to make use of these Key/Value tokens to sign the events with o
 Security: Safelisting IPs
 -------------------------
 
-In an effort to enhance security, it's essential to know the source of the events you're receiving. This is where IP safelisting comes into play. For Bluedot events, they will come from a specific set of IP addresses. You can safelist these IPs in your webhook receiver services to ensure that you're only receiving events from a secure source.
+In an effort to enhance security, it's essential to know the source of the events you're receiving. This is where IP safelisting comes into play. For Rezolve events, they will come from a specific set of IP addresses. You can safelist these IPs in your webhook receiver services to ensure that you're only receiving events from a secure source.
 
-Here are the lists of IPs where the Bluedot events will come from, categorized by account region:
+Here are the lists of IPs where the Rezolve events will come from, categorized by account region:
 
 | **Region**    | **IP Address**  |
 |---------------|-----------------|
 | APAC          | `34.87.240.222` |
 | Europe        | `34.79.240.229` |
 | North America | `35.229.85.242` |
-
-If you have trouble finding out in which region your account is located, please reach out to us at [help@bluedot.io](mailto:help@bluedot.io) so that we can confirm this for you.
 
 Webhook payload structure
 ------------------------------

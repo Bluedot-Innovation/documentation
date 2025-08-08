@@ -1,7 +1,7 @@
 Oracle Simphony POS Integration
 ===============================
 
-This integration between Oracle Simphony and Bluedot will enable your brand to understand the estimated time of arrival (ETA) and real-time Arrival of your mobile customers. Store Associates can use these insights, for efficient order preparation and a seamless, contactless, curbside pick-up experience.
+This integration between Oracle Simphony and Rezolve will enable your brand to understand the estimated time of arrival (ETA) and real-time Arrival of your mobile customers. Store Associates can use these insights, for efficient order preparation and a seamless, contactless, curbside pick-up experience.
 
 The real-time updates for your customer’s ETA and actual Arrival can be viewed:
 
@@ -12,9 +12,9 @@ The real-time updates for your customer’s ETA and actual Arrival can be viewed
 Notes
 -----
 
-*   Before starting your Bluedot Oracle Simphony implementation, a few important notes:
+*   Before starting your Rezolve Oracle Simphony implementation, a few important notes:
 *   You need to have an Order management system (OMS) implemented which creates orders in the Simphony POS
-*   Your brand app must pass the `OrderID` from the OMS to the Bluedot SDK
+*   Your brand app must pass the `OrderID` from the OMS to the Rezolve SDK
 *   The OMS should add the `OrderId` to `PCheckInfoLines` of the Simphony POS check.
 *   Implement Tempo for ETA & Arrival notifications
 *   You’ll continue to use your POS to view the actual order details and make adjustments (additional items, cancellations, refunds etc.)
@@ -27,7 +27,7 @@ Integration Architecture
 Integration Steps
 -----------------
 
-1\. Integrate the Bluedot SDK within your mobile app:
+1\. Integrate the Rezolve Point SDK within your mobile app:
 
 a. [iOS integration guide](../Point%20SDK/iOS/Quick%20Start.md)
 
@@ -91,10 +91,10 @@ func application(\_ application: UIApplication, didFinishLaunchingWithOptions la
 }
 ```
 
-3\. When an order is placed, the app will start [Tempo](../Tempo/Integrate%20the%20Point%20SDK%20in%20your%20app.md) on the Bluedot SDK.
+3\. When an order is placed, the app will start [Tempo](../Tempo/Integrate%20the%20Point%20SDK%20in%20your%20app.md) on the Rezolve Point SDK.
 
 4\. The order for the particular OrderID and its ETA will update in real-time on your Hello screen.
 
 * * *
 
-If you have any questions about this guide or implementing Bluedot & Oracle Simphony together, reach out to our Engineering Support Team [help@bluedot.io](mailto:help@bluedot.io).
+If you have any questions about this guide or implementing Rezolve & Oracle Simphony together, reach out to our Engineering Support Team [help@bluedot.io](mailto:help@bluedot.io).

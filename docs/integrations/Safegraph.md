@@ -1,13 +1,13 @@
 Safegraph Integration
 =====================
 
-Welcome to the documentation for the Bluedot and SafeGraph integration! This integration combines the exceptional accuracy of Bluedot’s geofencing technology and SafeGraph’s comprehensive geospatial data to create a powerful, location-based solution.
+Welcome to the documentation for the Rezolve and SafeGraph integration! This integration combines the exceptional accuracy of Bluedot’s geofencing technology and SafeGraph’s comprehensive geospatial data to create a powerful, location-based solution.
 
-This integration allows users to seamlessly import SafeGraph’s geospatial data into the Bluedot platform, creating highly accurate geofences. By incorporating SafeGraph’s extensive POI data, businesses can enhance their location-based services and deliver even more precise and engaging customer experiences.
+This integration allows users to seamlessly import SafeGraph’s geospatial data into the Rezolve platform, creating highly accurate geofences. By incorporating SafeGraph’s extensive POI data, businesses can enhance their location-based services and deliver even more precise and engaging customer experiences.
 
-This documentation will walk you through integrating SafeGraph’s data into the Bluedot platform, providing an efficient way to create geofences that accurately capture your target locations.
+This documentation will walk you through integrating SafeGraph’s data into the Rezolve platform, providing an efficient way to create geofences that accurately capture your target locations.
 
-**Access Bluedot’s platform and navigate to Integrations**: Log in to your Bluedot account and navigate to the main dashboard, then from the main menu locate the integrations section and then select SafeGraph from the available options.
+**Access Bluedot’s platform and navigate to Integrations**: Log in to your Rezolve account and navigate to the main dashboard, then from the main menu locate the integrations section and then select SafeGraph from the available options.
 
 ![](../assets/safegrapg_integrations_page-1024x520.png)
 

@@ -6,7 +6,7 @@ pagination_prev: null
 Overview
 ===========
 
-The Bluedot Point SDK brings high accuracy ‘always-on’ location awareness & low-energy capabilities to your mobile app.
+The Rezolve Point SDK brings high accuracy ‘always-on’ location awareness & low-energy capabilities to your mobile app.
 
 The following pages provide a guide to integrating the Point SDK with your Android app.
 
@@ -19,7 +19,7 @@ The following pages provide a guide to integrating the Point SDK with your Andro
 *   [SDK Features](./Features/Enable%20or%20disable%20zones.md)
 *   [Caveats](./Caveats.md)
 
-Refer to the [Bluedot Canvas User Guide](../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
+Refer to the [Rezolve Canvas User Guide](../../Canvas/Overview.md) for tips to set up your Zones, Geofences, GEOLINE™, Actions and Conditions.
 
 API Documentation
 -----------------

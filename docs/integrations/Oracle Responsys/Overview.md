@@ -4,7 +4,7 @@ Oracle Responsys Integration
 Introduction
 ------------
 
-The Bluedot SDK integration with Oracle Responsys Mobile App Platform Cloud Service enables mobile apps to take advantage of the power of Cloud services and the superior accuracy, Geofence and Geolines™ triggering capabilities of the Bluedot SDKs. To take full advantage of the Oracle Cloud services, it is mandatory to integrate needed libraries/frameworks generally called SDKs to your mobile app. At this moment, only iOS and Android mobile apps are supported by the SDK. This page contains steps on how to update your mobile app’s source and integrate the app with Bluedot Point SDK.
+The Rezolve Point SDK integration with Oracle Responsys Mobile App Platform Cloud Service enables mobile apps to take advantage of the power of Cloud services and the superior accuracy, Geofence and Geolines™ triggering capabilities of the Rezolve Point SDK. To take full advantage of the Oracle Cloud services, it is mandatory to integrate needed libraries/frameworks generally called SDKs to your mobile app. At this moment, only iOS and Android mobile apps are supported by the SDK. This page contains steps on how to update your mobile app’s source and integrate the app with Rezolve Point SDK.
 
 Integration system architecture
 -------------------------------

@@ -6,9 +6,9 @@ pagination_prev: null
 Region URLs
 ===========
 
-Bluedot infrastructure is hosted in multiple regions worldwide to ensure a better performance of our services, based on the location of our customers. Each region is completely independent and in a separated geographic area. The information stored in one region only exists in that region. 
+Rezolve infrastructure is hosted in multiple regions worldwide to ensure a better performance of our services, based on the location of our customers. Each region is completely independent and in a separated geographic area. The information stored in one region only exists in that region. 
 
-Choose the endpoint that corresponds to the region where your account is hosted. If you’re not sure which region your account is in, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
+Choose the endpoint that corresponds to the region where your account is hosted. If you’re not sure which region your account is in, please contact your Rezolve CX representative.
 
 | **Service**   | **APAC URL**                       | **EUROPE URL**                         | **NORTH AMERICA**                      |
 |---------------|------------------------------------|----------------------------------------|----------------------------------------|

@@ -1,7 +1,7 @@
 Create your Destination(s)
 ==========================
 
-To create a Destination, you’ll need to have an active user and a Bluedot Account. Your Bluedot administrator can easily grant you access or you can contact our team – help@bluedot.io. Your user credentials are used to log into the [Canvas dashboard](../Canvas/Overview.md) and also authenticate with [Config API](../APIs/Config%20API/Overview.md). 
+To create a Destination, you’ll need to have an active user and a Rezolve Account. Your Rezolve administrator can easily grant you access or you can contact our team. Your user credentials are used to log into the [Canvas dashboard](../Canvas/Overview.md) and also authenticate with [Config API](../APIs/Config%20API/Overview.md). 
 
 Creating a Destination
 ----------------------
@@ -29,7 +29,7 @@ You can also update the name of the Zone and geofence – both of these details 
 
 ### 3\. Save
 
-Close Zone Settings and click the Create/Update button. The Zone is ready, and the isochrones for it will be generated in the Bluedot backend. It takes from 30 seconds to 1 minute for the isochrones to be generated.
+Close Zone Settings and click the Create/Update button. The Zone is ready, and the isochrones for it will be generated in the Rezolve backend. It takes from 30 seconds to 1 minute for the isochrones to be generated.
 
 If you’d like to link a Zone to a Store (A.K.A Destination) using [Config API](../APIs/Config%20API/Overview.md), you’ll use the following /Endpoints;
 

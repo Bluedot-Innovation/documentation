@@ -31,6 +31,6 @@ To enable the Verification Code feature, follow these steps:
 ![](../assets/now-ready-verification-code-2.png)
 
 :::caution
-**Important:** The Verification Code feature must also be enabled in Hello Screens for it to work seamlessly. Please check with your Bluedot account representative or reach out to our team at help@bluedot.io for assistance with this configuration.
+**Important:** The Verification Code feature must also be enabled in Hello Screens for it to work seamlessly. Please check with your Rezolve account representative for assistance with this configuration.
 :::
 

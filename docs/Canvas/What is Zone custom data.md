@@ -15,7 +15,7 @@ Maximum 20 entries can be set in custom data. The add button will not be availab
 Add custom data fields to a Zone
 --------------------------------
 
-_Bluedot Canvas > Choose Zone > Zone Settings > Custom Data_
+_Rezolve Canvas > Choose Zone > Zone Settings > Custom Data_
 
 ![](../assets/zone-settings-custom-data.png)
 
@@ -24,7 +24,7 @@ _Bluedot Canvas > Choose Zone > Zone Settings > Custom Data_
 Edit or Delete custom data fields in a Zone
 -------------------------------------------
 
-_Bluedot Canvas > Choose Zone > Zone Settings > Custom Data_ 
+_Rezolve Canvas > Choose Zone > Zone Settings > Custom Data_ 
 
 ![](../assets/zone-custom-data-list-1.png)
 

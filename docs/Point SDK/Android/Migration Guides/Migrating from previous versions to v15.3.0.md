@@ -5,7 +5,7 @@ pagination_next: null
 Migration guide from previous versions to Point SDK v15.3.0
 ===================================================================
 
-The Bluedot Point SDK version 15.3.0 is a major rewrite of our API interfaces. It includes many updates, such as
+The Rezolve Point SDK version 15.3.0 is a major rewrite of our API interfaces. It includes many updates, such as
 
 *   a simpler and easier way to initialize with SDK, and
 *   giving you more control on when to start & stop Geo-triggering/Tempo features.
@@ -34,7 +34,7 @@ public void initialize(@NonNull String projectId,
      @NonNull InitializationResultListener resultListener)
 ```     
 
-in addition, in order to receive Bluedot service error events post initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html?query=abstract%20class%20BluedotServiceReceiver%20:%20BroadcastReceiver) should be implemented and registered in the AndroidManifest:
+in addition, in order to receive Rezolve service error events post initialization, a class that implements [`BluedotServiceReceiver`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-bluedot-service-receiver/index.html?query=abstract%20class%20BluedotServiceReceiver%20:%20BroadcastReceiver) should be implemented and registered in the AndroidManifest:
 
 ```kotlin
  class ExampleBluedotServiceReceiver : BluedotServiceReceiver() {
@@ -71,7 +71,7 @@ serviceManager.initialize("projectId",
 ```
 
 *   `ServiceStatusListener` will be replaced by the combination of the `InitializationResultListener` and `BluedotServiceReceiver`
-*   Bluedot SDK will not start triggering Geofeatures immediately as per the previous API. You will have to make the call explicitly to start/stop Geo-triggering.
+*   Rezolve Point SDK will not start triggering Geofeatures immediately as per the previous API. You will have to make the call explicitly to start/stop Geo-triggering.
 
 * * *
 
@@ -91,7 +91,7 @@ In 15.3.0 SDK, we give more control to you on when to start and stop Geo-trigger
  }
 
  /* GeoTriggeringService class is used to use GeoTriggering feature
- from Bluedot Point SDK which includes reporting zone entry and exit events.
+ from Rezolve Point SDK which includes reporting zone entry and exit events.
  Its builder can be used to start and stop GeoTriggering with/without 
  Foreground notification.
 
@@ -179,7 +179,7 @@ to
      fun onTempoResult(error: BDError?) 
  }
  
- /* TempoService class is used to use Tempo feature from the Bluedot
+ /* TempoService class is used to use Tempo feature from the Rezolve
  Point SDK which includes reporting tempo update and tempo stop events on a 
  defined interval.
  It has a builder which can be used to start and stop Tempo

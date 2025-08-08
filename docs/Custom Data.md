@@ -6,7 +6,7 @@ pagination_prev: null
 # Custom Data Documentation
 
 ## Overview
-Custom data in Bluedot products can be applied in four different contexts: SDK events, Wave API, Zones, and Destinations (Stores). Each type serves unique purposes:
+Custom data in Rezolve products can be applied in four different contexts: SDK events, Wave API, Zones, and Destinations (Stores). Each type serves unique purposes:
 
 1. **SDK Event Custom Data**: Ideal for adding details about the user, such as `external_customer_id`, `loyalty_number`, or `vehicle_plate`, enhancing user analytics and event tracking.
 2. **Zone Custom Data**: Perfect for attaching information about the location or geofence, like `store_id`, `store_type`, `state`, or `dma_region`, enabling contextual event triggering.
@@ -21,7 +21,7 @@ Understanding these differences allows for tailored implementations that best fi
 Custom Event Metadata allows developers to attach additional information to SDK events, such as user-specific data, enhancing user analytics and event tracking.
 
 :::info
-Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Bluedot SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
+Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Rezolve Point SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
 :::
 
 ### Usage Guidelines
@@ -47,7 +47,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     BDLocationManager.instance()?.setCustomEventMetaData(["DeviceName" : UIDevice.current.name])
     BDLocationManager.instance()?.initialize(withProjectId: "MyProjectId") { error in
         guard error == nil else {
-            print("Initialisation with Bluedot SDK failed \(error!.localizedDescription)")
+            print("Initialisation with Rezolve Point SDK failed \(error!.localizedDescription)")
             return
         }
     }
@@ -130,5 +130,3 @@ You could also use Config API to set Zone Custom Data. For more details please r
   }
 }
 ```
-
-If you have any questions please contact our team at [help@bluedot.io](mailto:help@bluedot.io)

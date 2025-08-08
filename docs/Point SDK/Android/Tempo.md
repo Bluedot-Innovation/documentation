@@ -6,7 +6,7 @@ Tempo allows active tracking of a user’s location, as well as live ETA estimat
 Start Tempo
 -----------
 
-For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Bluedot Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Bluedot CX representative. A foreground service notification is also required.
+For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Rezolve Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Rezolve CX representative. A foreground service notification is also required.
 
 Tempo also requires Destination IDs to be defined, which [you can learn about here](../../Tempo/Create%20your%20destinations.md).
 
@@ -14,7 +14,7 @@ To start Tempo, you should
 
 ```kotlin
 if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
-    // The Bluedot SDK is initialized, you can start Tempo.
+    // The Rezolve Point SDK is initialized, you can start Tempo.
     
     TempoService.builder()
         .notificationId(myNotificationId)
@@ -29,7 +29,7 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
                 }
             })
 } else {
-    // The Bluedot SDK is not initialized. Initialize before starting Tempo
+    // The Rezolve Point SDK is not initialized. Initialize before starting Tempo
 }
 ```
 

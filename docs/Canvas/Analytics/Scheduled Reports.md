@@ -90,4 +90,3 @@ You can select the frequency of report generation and email distribution through
 ### Admin Access Only
 The report generation and scheduling feature is exclusive to users with "Admin" permissions. Only these users can add, edit, or delete scheduled reports, ensuring control and security over report management.
 
-For further assistance or queries,  please get in touch with our support team at [help@bluedot.io](mailto:help@bluedot.io)

@@ -44,7 +44,7 @@ It may be beneficial to switch the background location usage indicator on and of
 
 For example: 
 
-On an app that handles ordering and pickup there may be value in starting Bluedot Geo-triggering on app start without the background location usage indicator enabled in order to power a marketing use case when the user grants _Always_ location authorization or is actively using the app. When the user places an order and there is greater necessity and value in collecting location data to maximise the likelihood the user is detected upon arrival at the collection point, the background location usage indicator should be enabled. Upon completion of the order and collection process, the background location usage indicator should be disabled, removing unauthorized background location data collection and the visible indicator.
+On an app that handles ordering and pickup there may be value in starting Rezolve Geo-triggering on app start without the background location usage indicator enabled in order to power a marketing use case when the user grants _Always_ location authorization or is actively using the app. When the user places an order and there is greater necessity and value in collecting location data to maximise the likelihood the user is detected upon arrival at the collection point, the background location usage indicator should be enabled. Upon completion of the order and collection process, the background location usage indicator should be disabled, removing unauthorized background location data collection and the visible indicator.
 
 Example steps to implement:
 

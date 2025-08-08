@@ -15,7 +15,7 @@ To achieve optimal performance of the SDK, we recommend initiating the Geo-trigg
 
 ```kotlin
 if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
-    // The Bluedot SDK is initialized, you can start Geo-triggering.
+    // The Rezolve Point SDK is initialized, you can start Geo-triggering.
 
     GeoTriggeringService.builder()
             .notification(notificationReference) // Notification to use to run Geo-triggering as a foreground service.
@@ -30,7 +30,7 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
                        // Geo-triggering has started successfully. Handle success here.
                    });
 } else {
-    // The Bluedot SDK is not initialized. Initialize before starting Geo-triggering.
+    // The Rezolve Point SDK is not initialized. Initialize before starting Geo-triggering.
 }
 ```
 
@@ -42,7 +42,7 @@ In scenarios where the Foreground Service Notification is not required, you can 
 
 ```kotlin
 if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
-    // The Bluedot SDK is initialized, you can start Geo-triggering.
+    // The Rezolve Point SDK is initialized, you can start Geo-triggering.
 
     GeoTriggeringService.builder()
         .start(myApplicationContext, // This context should be the Application context.
@@ -54,7 +54,7 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
                 // Geo-triggering has started successfully. Handle success here.
             });
 } else {
-    // The Bluedot SDK is not initialized. Initialize before starting Geo-triggering.
+    // The Rezolve Point SDK is not initialized. Initialize before starting Geo-triggering.
 }
 ```
 

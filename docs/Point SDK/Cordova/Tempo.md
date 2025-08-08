@@ -6,7 +6,7 @@ Tempo allows active tracking of a user’s location, as well as live ETA estimat
 Start Tempo
 -----------
 
-For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Bluedot Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Bluedot CX representative.
+For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Rezolve Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Rezolve CX representative.
 
 :::info
 For Android, a [foreground service notification](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md) is also required.
@@ -26,9 +26,9 @@ function doStartTempo() {
             "YOUR_DESTINATION_ID");
     } else if (device.platform === "Android") {
         const androidNotificationParams = {
-            channelId: 'Bluedot Cordova',
-            channelName: 'Bluedot Cordova',
-            title: 'Bluedot Foreground Service - Tempo',
+            channelId: 'Rezolve Cordova',
+            channelName: 'Rezolve Cordova',
+            title: 'Rezolve Foreground Service - Tempo',
             content: "This app is running a foreground service using location services",
             notificationId: -1
         }

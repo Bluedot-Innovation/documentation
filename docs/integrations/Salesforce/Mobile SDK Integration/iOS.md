@@ -4,7 +4,7 @@ Salesforce iOS Integration
 Overview
 --------
 
-This documentation describes the steps required to integrate the **Bluedot Point iOS SDK** and **MarketingCloudSDK** in an iOS App.
+This documentation describes the steps required to integrate the **Rezolve Point iOS SDK** and **MarketingCloudSDK** in an iOS App.
 
 BluedotPointSDK-Salesforce integration
 --------------------------------------
@@ -37,7 +37,7 @@ And then add MarketingCloudSDKConfiguration.json to Copy Bundle Resources in you
 
 You can find more information [here](https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS/get-started/apple.html).
 
-Bluedot Point iOS SDK Integration
+Rezolve Point iOS SDK Integration
 ---------------------------------
 
 Requirements
@@ -48,10 +48,10 @@ Requirements
 
 To integrate PointSDK, please refer to the integration steps [here.](../../../Point%20SDK/iOS/Quick%20Start.md)
 
-Bluedot/Salesforce Marketing Cloud integration
+Rezolve/Salesforce Marketing Cloud integration
 ----------------------------------------------
 
-To trigger Bluedot events in Salesforce Marketing Cloud, please ensure that the Contact Key is passed into Bluedot via the `CustomKey` field with `[BDLocationManager.instance setCustomEventMetaData]`:
+To trigger Rezolve events in Salesforce Marketing Cloud, please ensure that the Contact Key is passed into Rezolve via the `CustomKey` field with `[BDLocationManager.instance setCustomEventMetaData]`:
 
 ```objectivec
 @implementation ViewController
@@ -82,4 +82,4 @@ More information on best practices of setting and using custom event metadata ca
 **GitHub Sample Project**
 -------------------------
 
-A sample project which demonstrates the integration of JB4A iOS SDK and Bluedot Point iOS SDK  is available on **[GitHub](https://github.com/Bluedot-Innovation/Salesforce-Simple-Integration-Demo-iOS)**.
+A sample project which demonstrates the integration of JB4A iOS SDK and Rezolve Point iOS SDK  is available on **[GitHub](https://github.com/Bluedot-Innovation/Salesforce-Simple-Integration-Demo-iOS)**.

@@ -19,9 +19,9 @@ Please refer to below screenshot for reference:
 Integrating SDK to Android App
 ------------------------------
 
-The SDK comes with the minimum requirements, which are needed to be satisfied for the SDK to start working, this means updating the AndroidManifest.xml file, which is the main configuration file of every Android project. Once this is done, the Salesforce Marketing Cloud Contact Key will need to be passed into the SDK to allow Bluedot triggers to be associated with the correct user profile – a detailed step by step guideline is available [here](../Mobile%20SDK%20Integration/Android.md).
+The SDK comes with the minimum requirements, which are needed to be satisfied for the SDK to start working, this means updating the AndroidManifest.xml file, which is the main configuration file of every Android project. Once this is done, the Salesforce Marketing Cloud Contact Key will need to be passed into the SDK to allow Rezolve triggers to be associated with the correct user profile – a detailed step by step guideline is available [here](../Mobile%20SDK%20Integration/Android.md).
 
 Integrating SDK to iOS App
 --------------------------
 
-Once the SDK is integrated, the Salesforce Marketing Cloud Contact Key will need to be passed into the SDK to allow Bluedot triggers to be associated with the correct user profile – a detailed step by step guideline is available [here](../Mobile%20SDK%20Integration/Android.md).
+Once the SDK is integrated, the Salesforce Marketing Cloud Contact Key will need to be passed into the SDK to allow Rezolve triggers to be associated with the correct user profile – a detailed step by step guideline is available [here](../Mobile%20SDK%20Integration/Android.md).

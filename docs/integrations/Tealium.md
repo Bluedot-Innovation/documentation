@@ -7,12 +7,12 @@ Tealium Integration
 
 Tealium is a customer data platform formed of EventStream, AudienceStream, and iQ Tag Management to integrate mobile, online, and alternative data from third-party sources. Combine the power of Tealium with the precision and scalability of Bluedot’s location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
 
-Bluedot setup
+Rezolve setup
 -------------
 
 ### Creating a new Project
 
-Creating a Project is your first step. All your Zones exist within a Project. More information on adding and managing Bluedot Canvas project can be found [here](../Canvas/Creating%20a%20new%20project.md).
+Creating a Project is your first step. All your Zones exist within a Project. More information on adding and managing Rezolve Canvas project can be found [here](../Canvas/Creating%20a%20new%20project.md).
 
 ### Adding a Zone
 
@@ -42,7 +42,7 @@ From Tealium’s server-side dashboard, add a new Data Source.
 
 Click on the “Save and Continue” button.
 
-We’ll use the previous parameters to start sending Bluedot events to Tealium. From Canvas, go to the Integrations section, select the Project you’d like to connect to Tealium and follow these steps:
+We’ll use the previous parameters to start sending Rezolve events to Tealium. From Canvas, go to the Integrations section, select the Project you’d like to connect to Tealium and follow these steps:
 
 **Steps**
 
@@ -73,14 +73,14 @@ You can also add more fields that you’d like to include in the payload we’re
 Adding custom data through the SDK’s Custom Event Meta Data
 -----------------------------------------------------------
 
-The Custom Event Meta Data allows you to set additional event-specific data for the Bluedot SDK’s events. This is the method used to include additional information about the end-user, for example, the `tealium_visitor_id`.
+The Custom Event Meta Data allows you to set additional event-specific data for the Rezolve SDK’s events. This is the method used to include additional information about the end-user, for example, the `tealium_visitor_id`.
 
 For more information about the Custom Event Meta Data check this [documentation](../Custom%20Data.md/).
 
 Reserved fields
 ---------------
 
-The following list of fields are reserved for the Bluedot events. **If you include one of these fields either in the Custom Event Meta Data, Zone Custom Data or the Webhook’s body fields they will be ignored.**
+The following list of fields are reserved for the Rezolve events. **If you include one of these fields either in the Custom Event Meta Data, Zone Custom Data or the Webhook’s body fields they will be ignored.**
 
 | **EVENT NAME**    |
 |-------------------|
@@ -102,4 +102,4 @@ The following list of fields are reserved for the Bluedot events. **If you inclu
 | `zoneId`          |
 | `zoneName`        |
 
-If one of your fields clashes with the reserved keywords we recommend adding it a prefix to differentiate it from the Bluedot fields. For example `prefix_type`.
+If one of your fields clashes with the reserved keywords we recommend adding it a prefix to differentiate it from the Rezolve fields. For example `prefix_type`.

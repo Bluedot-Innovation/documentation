@@ -2,7 +2,7 @@
 
 ### Overview
 
-The "Hello Order Logs" feature within our analytics platform lets you view detailed insights about orders registered with Bluedot. This table lets you track each order's lifecycle, providing key insights into operational efficiencies and customer service performance.
+The "Hello Order Logs" feature within our analytics platform lets you view detailed insights about orders registered with Rezolve. This table lets you track each order's lifecycle, providing key insights into operational efficiencies and customer service performance.
 
 ### Accessing Hello Order Logs
 

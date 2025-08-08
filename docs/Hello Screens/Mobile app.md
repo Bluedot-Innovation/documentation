@@ -1,7 +1,7 @@
 Hello Screens App
 =================
 
-Bluedot’s Hello Screens are a super-fast & super simple dashboard that your team can use to view a customer’s ETA and receive both visual and audible notifications upon customer arrival. Now you can access Hello Screens via your iOS or Android device and receive timely push-notifications to assist your team in anticipating customer arrival and delivering excellent customer service.
+Rezolve’s Hello Screens are a super-fast & super simple dashboard that your team can use to view a customer’s ETA and receive both visual and audible notifications upon customer arrival. Now you can access Hello Screens via your iOS or Android device and receive timely push-notifications to assist your team in anticipating customer arrival and delivering excellent customer service.
 
 **Installing the Hello Screens application**
 --------------------------------------------
@@ -27,7 +27,7 @@ Now that you have installed the Hello Screens application, there are two distinc
 
 ### **Connect with link**
 
-This method will generate a time-limited URL that can be opened on your device to seamlessly link your Hello Screens application to a specified store. To ‘_Connect with link_’ your Bluedot Canvas administrator will first need to generate a URL in Canvas.
+This method will generate a time-limited URL that can be opened on your device to seamlessly link your Hello Screens application to a specified store. To ‘_Connect with link_’ your Rezolve Canvas administrator will first need to generate a URL in Canvas.
 
 Generating Linking URL (for administrator users):
 
@@ -48,13 +48,13 @@ Now that your administrator has generated and distributed the linking URL, you c
 
 ### **Connect with one-time code**
 
-Using this method, you will generate a one-time code within the Hello Screens application. Your Bluedot Canvas administrator will then connect your device to a specified `destinationId` (store) by entering the code within Bluedot Canvas. 
+Using this method, you will generate a one-time code within the Hello Screens application. Your Rezolve Canvas administrator will then connect your device to a specified `destinationId` (store) by entering the code within Rezolve Canvas. 
 
 **Generating the one-time code on your device**
 
 After enabling notifications on your device, you will be prompted to select your region. ![](../assets/Hello-Screens-select-region.jpg)  
 
-After selecting your region, you will receive your one-time code. Pass this on to your Bluedot Canvas administrator to connect your device.
+After selecting your region, you will receive your one-time code. Pass this on to your Rezolve Canvas administrator to connect your device.
 
 ![](../assets/Hello-Screens-One-time-code.jpg)
 
@@ -99,7 +99,7 @@ If the Hello Screens application is in the background, whenever an order transit
 *   _or I’m on my way_ to **_arrived  
     ![](../assets/Notification-arrived.jpg)_**
 
-A push notification will trigger. If Bluedot is tracking customer ETA, the customer’s ETA will be displayed within the notification.
+A push notification will trigger. If Rezolve is tracking customer ETA, the customer’s ETA will be displayed within the notification.
 
 **I’m on my way  
 **
@@ -190,7 +190,7 @@ Hello Screens will provide visual feedback to the team members to identify which
 
 
 :::info
-You can define the Waiting Times ranges that fits better your store operations. The times above are just for illustration purposes. Check with your Bluedot CX representative about the Waiting Times ranges when enabling this feature.
+You can define the Waiting Times ranges that fits better your store operations. The times above are just for illustration purposes. Check with your Rezolve CX representative about the Waiting Times ranges when enabling this feature.
 :::
 
-If you have any questions about using the Hello Screens app reach out to our team at [help@bluedot.io](mailto:help@bluedot.io).
+If you have any questions about using the Hello Screens app reach out to our team.

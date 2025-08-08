@@ -1,11 +1,11 @@
-Single Sign-On (SSO) is a user authentication process that allows users to access multiple applications with one set of login credentials. In addition to the user authentication provided by Bluedot, you can also use single sign-on (SSO) to authenticate your users in **Canvas** and **Hello Screens** with your own Identity Provider (IdP).
+Single Sign-On (SSO) is a user authentication process that allows users to access multiple applications with one set of login credentials. In addition to the user authentication provided by Rezolve, you can also use single sign-on (SSO) to authenticate your users in **Canvas** and **Hello Screens** with your own Identity Provider (IdP).
 
 ![Canvas Single Sign-On](../assets/Single-Sign-On.png)
 
 Enabling Single Sign-On (SSO)
 -----------------------------
 
-If you want to enable SSO, get in touch with your Bluedot account manager, who will initiate the configuration accordingly. You can enable SSO for accessing Canvas, Hello Screens or both.
+If you want to enable SSO, get in touch with your Rezolve account manager, who will initiate the configuration accordingly. You can enable SSO for accessing Canvas, Hello Screens or both.
 
 ### Step 1: Confirm Your Identity Provider (IdP)
 

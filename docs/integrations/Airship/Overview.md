@@ -19,12 +19,12 @@ Airship Setup
 
 If you have just registered for an Airship account the first step is to set up a project. If you have an existing account then either choose the project you wish to use or select the Create project button in the view all projects page to create a new one. More information on setting up a Project can be found [here](https://docs.airship.com/tutorials/getting-started/messaging/create-project/).
 
-Bluedot setup
+Rezolve setup
 -------------
 
 ### Creating a new Project
 
-Creating a Project is your first step. All your Zones and all geofeatures exist within a Project. More information on adding and managing Bluedot Canvas project can be found [here](../../Canvas/Creating%20a%20new%20project.md).
+Creating a Project is your first step. All your Zones and all geofeatures exist within a Project. More information on adding and managing Rezolve Canvas project can be found [here](../../Canvas/Creating%20a%20new%20project.md).
 
 ### Adding a Zone
 
@@ -39,14 +39,14 @@ Configure an Entry Trigger
 
 Information on configuring a trigger in Airship’s platform is [here](https://docs.airship.com/tutorials/orchestration/automation/event-triggers/).
 
-In the Events textbox while setting up a trigger, enter the event names you want to use. These event names will be used in your app to create Airship’s custom events when entry or exit is triggered by the Bluedot Point SDK. For example: `bluedot_place_entered`, `bluedot_place_exited`
+In the Events textbox while setting up a trigger, enter the event names you want to use. These event names will be used in your app to create Airship’s custom events when entry or exit is triggered by the Rezolve Point SDK. For example: `rezolve_place_entered`, `rezolve_place_exited`
 
-For an Entry event, we recommend setting the custom event as `bluedot_place_entered` in the App and trigger.
+For an Entry event, we recommend setting the custom event as `rezolve_place_entered` in the App and trigger.
 
 Configure an Exit trigger
 -------------------------
 
-For exit enabled Zones, you will have to set up a trigger similar to the entry event. Add another event, e.g. `bluedot_place_exited` if you want automation or journey to be triggered when the user leaves a Geofence.
+For exit enabled Zones, you will have to set up a trigger similar to the entry event. Add another event, e.g. `rezolve_place_exited` if you want automation or journey to be triggered when the user leaves a Geofence.
 
 Additional Information
 ----------------------

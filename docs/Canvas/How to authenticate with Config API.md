@@ -78,4 +78,4 @@ Best Practises on using the Session API
 Explore Config API
 ------------------
 
-Config API has a number of endpoints that can help you manage your Bluedot account, including creating new Zones or updating the configuration of a Projects. For further information please refer to [Config API Reference](https://config-docs.bluedot.io/)
+Config API has a number of endpoints that can help you manage your Rezolve account, including creating new Zones or updating the configuration of a Projects. For further information please refer to [Config API Reference](https://config-docs.bluedot.io/)

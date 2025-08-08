@@ -1,7 +1,7 @@
 Migration guide from previous versions to Point SDK v15.4.0
 =================================================================
 
-The Bluedot Point SDK version 15.4.0 is a major rewrite of our API interfaces. It includes many updates, such as
+The Rezolve Point SDK version 15.4.0 is a major rewrite of our API interfaces. It includes many updates, such as
 
 *   a simpler and easier way to initialize with Point SDK, and
 *   giving you more control on when to start & stop Geo-triggering/Tempo features.
@@ -33,7 +33,7 @@ To check if SDK is initialized:
 *   Moving forward, `apiKey` will be replaced by `projectId`. Note that you can find `projectId` in Canvas.
 *   Any error in relation to initialization will be passed back via a completion callback. If the error is NIL, initialization was successful.
 *   `BDPSessionDelegate` will be deprecated in favor of completion callbacks.
-*   Bluedot Point SDK no longer requests for OS location permission on authentication/initialization as per the previous API.
+*   Rezolve Point SDK no longer requests for OS location permission on authentication/initialization as per the previous API.
     *   We encourage you to request OS location permission that you requires (Always or When in Use), at an opportune moment from within your app, to get the best conversion rate. For example, when a customer places an order within the mobile app, at this point you can start geo-triggering, as well as requesting for location permission.
     *   To request for OS location permission, you can make the calls via our [`BDLocationManager`](https://ios-docs.bluedot.io/Classes/BDLocationManager.html) Singleton, for example:
 
@@ -42,7 +42,7 @@ To check if SDK is initialized:
 [BDLocationManager.instance requestWhenInUseAuthorization];
 ```
 
-*   Bluedot SDK will **not** start triggering Geofeatures immediately after initialization as per the previous API. You will have to make the call explicitly to start/stop Geo-triggering.
+*   Rezolve Point SDK will **not** start triggering Geofeatures immediately after initialization as per the previous API. You will have to make the call explicitly to start/stop Geo-triggering.
 
 * * *
 

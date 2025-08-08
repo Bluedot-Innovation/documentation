@@ -6,17 +6,17 @@ Getting Started
 
 ### Integration Example
 
-You can find our [Bluedot – Airship Android Example on GitHub](https://github.com/Bluedot-Innovation/BluedotAirshipDemoApp-Android) or follow the steps below to integrate Airship and Bluedot PointSDK.
+You can find our [Rezolve – Airship Android Example on GitHub](https://github.com/Bluedot-Innovation/BluedotAirshipDemoApp-Android) or follow the steps below to integrate Airship and Bluedot PointSDK.
 
 ### Integrate Airship SDK into your App
 
 Details on integrating the Airship SDK can be found on their documentation website [here](https://docs.airship.com/platform/android/getting-started/).
 
-### Integrate Bluedot PointSDK in your Project
+### Integrate Rezolve Point SDK in your Project
 
 To integrate Point SDK, please refer to the integration steps [here](../../Point%20SDK/Android/Quick%20Start.md)
 
-Interaction between Airship SDK and Bluedot PointSDK
+Interaction between Airship SDK and Rezolve Point SDK
 ----------------------------------------------------
 
 ### Start Airship Services
@@ -40,9 +40,9 @@ or add `Autopilot` configuration to `AndroidManifest.xml`
 <meta-data android:name="com.urbanairship.autopilot" android:value="com.package.yourAirshipAutopilotClass"/>
 ```
 
-### Setup Bluedot Location Services
+### Setup Rezolve Location Services
 
-1\. Start PointSDK at the entry point in your application by overriding `onCreate()` and replace your Bluedot ProjectId in `<Your Bluedot Project ID>`:
+1\. Start PointSDK at the entry point in your application by overriding `onCreate()` and replace your Rezolve ProjectId in `<Your Rezolve Project ID>`:
 ```kotlin
 super.onCreate();
  ...
@@ -57,13 +57,13 @@ if (locationPermissionGranted) {
 
     if (bdError != null) {
       text = text + bdError.reason
-      Log.i("Bluedot", text)
+      Log.i("Rezolve", text)
     }
     else {
       startGeoTriggering()
     }
   }
-  serviceManager.initialize("<Your Bluedot Project ID>", resultListener)
+  serviceManager.initialize("<Your Rezolve Project ID>", resultListener)
  }
 }
 else
@@ -79,10 +79,10 @@ public void startGeoTriggering() {
   GeoTriggeringService.builder()
     .start(this, geoTriggerError -> {
       if (geoTriggerError != null) {
-        Log.i("Bluedot", "Error in starting GeoTrigger" + geoTriggerError.reason)
+        Log.i("Rezolve", "Error in starting GeoTrigger" + geoTriggerError.reason)
       }
       else {
-        Log.i("Bluedot", "GeoTrigger started successfully")
+        Log.i("Rezolve", "GeoTrigger started successfully")
       }
   });
 }

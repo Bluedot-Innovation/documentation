@@ -5,34 +5,34 @@ Table of Contents
 =================
 
 *   Getting started
-    *   Integrate your project with Bluedot Point SDK
+    *   Integrate your project with Rezolve Point SDK
     *   Integrate your project with Braze SDK
-*   Interaction between Braze SDK and Bluedot Point SDK
+*   Interaction between Braze SDK and Rezolve Point SDK
     *   Start Braze SDK Services
-    *   Setup Bluedot Location Services
+    *   Setup Rezolve Location Services
 
 Getting started
 ===============
 
-This documentation depends on BluedotPointSDK and Braze SDK. Both dependencies can be managed by CocoaPods or Swift Package Manager.
+This documentation depends on Rezolve Point SDK and Braze SDK. Both dependencies can be managed by CocoaPods or Swift Package Manager.
 
-Integrate your project with Bluedot Point SDK
+Integrate your project with Rezolve Point SDK
 ---------------------------------------------
 
 You can find detailed instructions [here](../../Point%20SDK/iOS/Quick%20Start.md)
 
-1.  Import Bluedot Point SDK to your class: `import BDPointSDK`
-2.  Implement Bluedot [`BDPGeoTriggeringEventDelegate`](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html):
+1.  Import Rezolve Point SDK to your class: `import BDPointSDK`
+2.  Implement Rezolve [`BDPGeoTriggeringEventDelegate`](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html):
         
     ```swift
     extension YourClass: BDPGeoTriggeringEventDelegate {
     
         func didEnterZone(_ triggerEvent: GeoTriggerEvent) {
-            // Your logic when the device enters a Bluedot Zone
+            // Your logic when the device enters a Rezolve Zone
         }
     
          func didExitZone(_ triggerEvent: GeoTriggerEvent) {
-            // Your logic when the device leaves a Bluedot Zone
+            // Your logic when the device leaves a Rezolve Zone
          }
     }
     ```
@@ -43,12 +43,12 @@ You can find detailed instructions [here](../../Point%20SDK/iOS/Quick%20Start.m
     BDLocationManager.instance()?.geoTriggeringEventDelegate = instanceOfYourClass
     ```
     
-4.  Authenticate with the Bluedot services using [`BDLocationManager`](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)initializeWithProjectId:completion:)
+4.  Authenticate with the Rezolve services using [`BDLocationManager`](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)initializeWithProjectId:completion:)
     
     ```swift
     BDLocationManager.instance()?.initialize()(withProjectId: projectId) { error in
          guard error == nil else {
-            print("There was an error initializing the Bluedot Point SDK: \(error.localizedDescription)")
+            print("There was an error initializing the Rezolve Point SDK: \(error.localizedDescription)")
             return
          }
     }
@@ -81,7 +81,7 @@ For further information refer to [Braze Developer Documentation](https://www.bra
 	AppDelegate.braze = braze
 	```
 
-4.  Track Braze custom events in your Bluedot Entry / Exit events.
+4.  Track Braze custom events in your Rezolve Entry / Exit events.
 
 	```swift
 	func didEnterZone(_ triggerEvent: GeoTriggerEvent) {

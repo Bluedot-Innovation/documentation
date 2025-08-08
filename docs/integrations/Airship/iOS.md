@@ -6,17 +6,17 @@ Getting started
 
 ### Integration Example
 
-You can find our [Bluedot – Airship iOS Example on GitHub](https://github.com/Bluedot-Innovation/PointSDK-UrbanAirshipIntegrationExample-iOS) or follow the steps below to integrate Airship and Bluedot PointSDK.
+You can find our [Rezolve – Airship iOS Example on GitHub](https://github.com/Bluedot-Innovation/PointSDK-UrbanAirshipIntegrationExample-iOS) or follow the steps below to integrate Airship and Rezolve Point SDK.
 
 ### Integrate Airship SDK into your App
 
 Details on integrating the Airship SDK can be found on their documentation website [here](https://docs.airship.com/platform/ios/getting-started/).
 
-### Integrate your project with Bluedot PointSDK
+### Integrate your project with Rezolve Point SDK
 
 To integrate PointSDK, please refer to the integration steps [here](../../Point%20SDK/iOS/Quick%20Start.md)
 
-Interaction between Airship SDK and Bluedot PointSDK
+Interaction between Airship SDK and Rezolve PointSDK
 ----------------------------------------------------
 
 ### Start Airship Services
@@ -60,9 +60,9 @@ Airship.takeOff(config, launchOptions: launchOptions)
 Airship.push.userPushNotificationsEnabled = true
 ```
 
-### Setup Bluedot Location Services
+### Setup Rezolve Location Services
 
-1.  Import Bluedot PointSDK.
+1.  Import Rezolve Point SDK.
     
     `import BDPointSDK`
     
@@ -91,7 +91,7 @@ Airship.push.userPushNotificationsEnabled = true
     ```swift
     BDLocationManager.instance()?.startGeoTriggering() { error in 
       guard error == nil else {
-        print("There was an error starting geo-triggering with the Bluedot SDK: \(error.localizedDescription)")
+        print("There was an error starting geo-triggering with the Rezolve Point SDK: \(error.localizedDescription)")
         return
       }
     }
@@ -130,7 +130,7 @@ func didEnterZone(_ enterEvent: GeoTriggerEvent){
 	customEvent.interactionType = "location"
 	customEvent.interactionID = enterEvent.zoneInfo.id.uuidString
 	
-	// Set Bluedot Zone Custom Data
+	// Set Rezolve Zone Custom Data
 	var bluedotProperties = [String : String]()
 	enterEvent.zoneInfo.customData.forEach { (key, value) in
 		bluedotProperties[key] = value
@@ -147,7 +147,7 @@ func didExitZone(_ exitEvent: GeoTriggerEvent) {
     customEvent.interactionType = "location"
     customEvent.interactionID = exitEvent.zoneInfo.id.uuidString
     
-    // Set Bluedot Zone Custom Data
+    // Set Rezolve Zone Custom Data
     var bluedotProperties = [String : String]()
     exitEvent.zoneInfo.customData.forEach { (key, value) in
         bluedotProperties[key] = value

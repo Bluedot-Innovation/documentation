@@ -51,7 +51,7 @@ iOS – Tempo implementation
 ```swift
 BDLocationManager.instance()?.startTempoTracking(withDestinationId: "MyDestinationId"){ error in
     guard error == nil else {
-        print("There was an error starting Tempo with the Bluedot SDK: \(error.localizedDescription)")
+        print("There was an error starting Tempo with the Rezolve Point SDK: \(error.localizedDescription)")
         return
      }
  }

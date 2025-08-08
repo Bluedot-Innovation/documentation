@@ -11,7 +11,7 @@ To start geo-triggering, you should
 ```swift
 BDLocationManager.instance()?.startGeoTriggering(){ error in
     guard error == nil else {
-        print("There was an error starting geo-triggering with the Bluedot SDK: \(error.localizedDescription)")
+        print("There was an error starting geo-triggering with the Rezolve Point SDK: \(error.localizedDescription)")
         return
     }
  }
@@ -30,7 +30,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     BDLocationManager.instance()?.initialize(
         withProjectId: "MyProjectId"){ error in
             guard error == nil else {
-                print("Initialisation with Bluedot SDK failed \(error.localizedDescription)")
+                print("Initialisation with Rezolve Point SDK failed \(error.localizedDescription)")
                  return
              }
     }
@@ -64,7 +64,7 @@ If you only need geo-triggering for a limited period, once that period is over, 
 ```swift
 BDLocationManager.instance()?.stopGeoTriggering(){ error in
     guard error == nil else {
-        print("There was an error stopping geo-triggering with the Bluedot SDK: \(error.localizedDescription)")
+        print("There was an error stopping geo-triggering with the Rezolve Point SDK: \(error.localizedDescription)")
         return
     }
 }

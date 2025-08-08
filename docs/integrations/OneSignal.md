@@ -1,7 +1,7 @@
 OneSignal integration
 =====================
 
-Combine the power of Bluedot’s arrival and location awareness technology with OneSignal’s customer engagement solution for Push Notifications, Email, SMS & In-App to enable intelligent messaging for your customers based on real world events.
+Combine the power of Rezolve’s arrival and location awareness technology with OneSignal’s customer engagement solution for Push Notifications, Email, SMS & In-App to enable intelligent messaging for your customers based on real world events.
 
 Our OneSignal integration updates the tags of OneSignal users to provide information about the event such as the target zone or destination, the event time, and the time to reach the destination for [Tempo](../Tempo/Overview.md) events. These can then be used to place users in OneSignal segments that can trigger message actions.  
 
@@ -49,24 +49,24 @@ Setting up the OneSignal integration
 ------------------------------------
 
   
-Before you begin the integration please ensure you have an active customer account with both Bluedot & OneSignal.
+Before you begin the integration please ensure you have an active customer account with both Rezolve & OneSignal.
 
 ![](../assets/Screen-Shot-2022-06-16-at-12.48.58-pm.png)
 
   
 
-1.  For Geo-trigger or Tempo events, ensure you have integrated the Bluedot SDK into your mobile app (this can be skipped for Wave events):
+1.  For Geo-trigger or Tempo events, ensure you have integrated the Rezolve Point SDK into your mobile app (this can be skipped for Wave events):
 
 2.  [Android integration guide](../Point%20SDK/Android/Quick%20Start.md)
 3.   [iOS integration guide](../Point%20SDK/iOS/Quick%20Start.md)
 
 4.  Add your OneSignal `appId` via the Integrations > OneSignal section in Canvas.
 5.  Select the event types you would like to be passed to OneSignal and click ‘Add’.
-6.  When sending events via the Bluedot SDK or via the Wave API/Web SDK, ensure the `oneSignalExternalUserId` is included in the Custom Event Metadata (see below)
+6.  When sending events via the Rezolve Point SDK or via the Wave API/Web SDK, ensure the `oneSignalExternalUserId` is included in the Custom Event Metadata (see below)
 
 Once these steps are done, the integration is ready to go. Simply send a Wave, enter a geofence, or start a Tempo journey with a mobile device to trigger the Zone.
 
-Custom Event Metadata in Bluedot events
+Custom Event Metadata in Rezolve events
 ---------------------------------------
 
 To send events to Segment you’ll need to include the `external_user_id` in the [Custom Event Metadata](../Custom%20Data.md) of the event. Make sure to name the property `oneSignalExternalUserId`.  

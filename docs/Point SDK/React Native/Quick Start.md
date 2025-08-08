@@ -1,7 +1,7 @@
 Quick Start
 ==========================
 
-To get the SDK loaded and running, you’ll need to:
+To get the Rezolve Point SDK for React Native loaded and running, you’ll need to:
 
 1.  Install the Bluedot React Native npm package
 2.  iOS: Install the Bluedot Point SDK Pod
@@ -88,7 +88,7 @@ You can use the `isInitialized` method to check the status of the SDK. It will r
 
 ```js
 BluedotPointSdk.isInitialized()
-  .then(status => console.log("Is Bluedot SDk initialized?", status))
+  .then(status => console.log("Is Rezolve Point SDK initialized?", status))
   .catch(error => console.error("Error", error))
 ```
 

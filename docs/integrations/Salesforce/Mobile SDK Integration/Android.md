@@ -4,7 +4,7 @@ Salesforce Android Integration
 Overview
 --------
 
-This documentation describes the steps required to integrate the Bluedot Point Android SDK and Marketing Cloud Android SDK into an Android App.
+This documentation describes the steps required to integrate the Rezolve Point Android SDK and Marketing Cloud Android SDK into an Android App.
 
 Salesforce Marketing Cloud Android SDK Integration
 --------------------------------------------------
@@ -104,7 +104,7 @@ if (status.status() == InitializationStatus.Status.SUCCESS) {
 
 The full documentation on Marketing Cloud SDK integration; if required at any point; is available [here](https://salesforce-marketingcloud.github.io/JB4A-SDK-Android/sdk-implementation/implement-sdk-google.html).
 
-Bluedot Point SDK Integration
+Rezolve Point SDK Integration
 -----------------------------
 
 ### Requirements
@@ -113,9 +113,9 @@ Bluedot Point SDK Integration
 *   Active mobile data or a Wi-Fi connection.
 *   Location services must be turned on with the device allowing location updates from both GPS and network.
 
-### Pass Salesforce Marketing Cloud Contact Key into Bluedot
+### Pass Salesforce Marketing Cloud Contact Key into Rezolve
 
-To trigger Bluedot events in Salesforce Marketing Cloud, please ensure that the Contact Key is passed into Bluedot via the `CustomKey` field with `ServiceManager.setCustomEventMetaData()`:
+To trigger Rezolve events in Salesforce Marketing Cloud, please ensure that the Contact Key is passed into Rezolve via the `CustomKey` field with `ServiceManager.setCustomEventMetaData()`:
 
 ```java
 @Override
@@ -140,4 +140,4 @@ More information on best practices of setting and using custom event metadata ca
 **GitHub Sample Project**
 -------------------------
 
-A sample project which demonstrates the integration of Marketing Cloud SDK and Bluedot Point SDK is available on **[GitHub](https://github.com/Bluedot-Innovation/Salesforce-Simple-Integration-Demo-Android)**.
+A sample project which demonstrates the integration of Marketing Cloud SDK and Rezolve Point SDK is available on **[GitHub](https://github.com/Bluedot-Innovation/Salesforce-Simple-Integration-Demo-Android)**.

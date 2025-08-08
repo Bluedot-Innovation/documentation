@@ -6,7 +6,7 @@ Tempo allows active tracking of a user’s location, as well as live ETA estimat
 Start Tempo
 -----------
 
-For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Bluedot Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Bluedot CX representative.
+For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Rezolve Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Rezolve CX representative.
 
 Tempo also requires Destination IDs to be defined, which you can learn about here.
 
@@ -15,7 +15,7 @@ To start Tempo, you should
 ```swift
 BDLocationManager.instance()?.startTempoTracking(withDestinationId: "MyDestinationId") { error in
     guard error == nil else {
-        print("There was an error starting Tempo with the Bluedot SDK: \(error.localizedDescription)")
+        print("There was an error starting Tempo with the Rezolve SDK: \(error.localizedDescription)")
         return
      }
  }
@@ -33,7 +33,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     BDLocationManager.instance()?.tempoTrackingDelegate = self
     BDLocationManager.instance()?.initialize(withProjectId: "MyProjectId") { error in
           guard error == nil else {
-             print("Initialisation with Bluedot SDK failed \(error.localizedDescription)")
+             print("Initialisation with Rezolve Point SDK failed \(error.localizedDescription)")
              return
           }
     }
@@ -50,7 +50,7 @@ extension AppDelegate: BDPTempoTrackingDelegate {
     }
     
     func didStopTrackingWithError(_ error: Error!) {
-       print("There was an error continuing to track with the Bluedot SDK: \(error.localizedDescription)") 
+       print("There was an error continuing to track with the Rezolve Point SDK: \(error.localizedDescription)") 
     }
 }
 ```

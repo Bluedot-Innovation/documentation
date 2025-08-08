@@ -1,7 +1,7 @@
-Bluedot Data Extension Fields
+Rezolve Data Extension Fields
 =============================
 
-As part of Bluedot + Salesforce, we create a [Data Extension](https://help.salesforce.com/articleView?id=mc_co_salesforce_data_extensions.htm&type=5) associated with the app. It is called **BluedotLocationServicesV2**.  
+As part of Rezolve + Salesforce, we create a [Data Extension](https://help.salesforce.com/articleView?id=mc_co_salesforce_data_extensions.htm&type=5) associated with the app. It is called **BluedotLocationServicesV2**.  
 
 The following information will be sent to the Data Extension for every event:
 
@@ -29,8 +29,8 @@ Add Custom Data
 
 Additional custom data can be included in the information going to your Data Extension. This data can come from either [Custom Zone Data fields](../../Canvas/What%20is%20Zone%20custom%20data.md), or from [Custom Event Metadata fields](../../Custom%20Data.md). However, we’ll need to adjust your Data Extension in order to receive this data. 
 
-To add these fields into your Data Extension just connect the Bluedot team using [help@bluedot.io](mailto:help@bluedot.io) and pass a list of the additional field names that you would like to be able to populate.
+To add these fields into your Data Extension just connect the Rezolve team using [help@bluedot.io](mailto:help@bluedot.io) and pass a list of the additional field names that you would like to be able to populate.
 
 :::info
-Only the fields specified to the Bluedot team are passed along to the Salesforce Marketing Cloud Data Extensions. All other fields specified in the Zone Custom Data or Custom Event Metadata will be ignored.
+Only the fields specified to the Rezolve team are passed along to the Salesforce Marketing Cloud Data Extensions. All other fields specified in the Zone Custom Data or Custom Event Metadata will be ignored.
 :::

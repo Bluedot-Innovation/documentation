@@ -5,12 +5,12 @@ Send your first Wave
 What’s a Wave?
 --------------
 
-Wave events provide customer order updates that can be used on any platform. This data then propagates through the Bluedot Arrival platform, updating user status appropriately and firing any webhooks attached. More details [here](../APIs/Wave%20API/Integrate%20Wave%20API.md).
+Wave events provide customer order updates that can be used on any platform. This data then propagates through the Rezolve Arrival platform, updating user status appropriately and firing any webhooks attached. More details [here](../APIs/Wave%20API/Integrate%20Wave%20API.md).
 
 Sending Wave with custom data
 -----------------------------
 
-First, ensure that your Bluedot JS SDK is initialized, as documented [here](./Quick%20Start.md).
+First, ensure that your Rezolve JS SDK is initialized, as documented [here](./Quick%20Start.md).
 
 Next, send a Wave with any additional data you might need:
 ```js
