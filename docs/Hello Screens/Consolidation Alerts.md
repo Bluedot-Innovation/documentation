@@ -11,7 +11,7 @@ The alert applies to orders in the customer "On The Way" status. It is triggered
 ![](../assets/Hello%20Screens%20-%20consolidation%20alert%20time.png)
 
 :::info
-If you are interested in this feature, please contact your Bluedot representative or reach us at [help@bluedot.io](mailto:help@bluedot.io) to enable it for your account.
+If you are interested in this feature, please contact your Rezolve representative or reach us at [help@bluedot.io](mailto:help@bluedot.io) to enable it for your account.
 :::
 
 

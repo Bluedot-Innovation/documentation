@@ -43,12 +43,12 @@ b. The following braze service should be included to handle push receipt and ope
 </service>
 ```
 
-Integrate Bluedot Point SDK in your Project
+Integrate Rezolve Point SDK in your Project
 -------------------------------------------
 
-To integrate Bluedot Point SDK in your project, please click [here](../../Point%20SDK/Android/Quick%20Start.md)
+To integrate Rezolve Point SDK in your project, please click [here](../../Point%20SDK/Android/Quick%20Start.md)
 
-Interaction between Braze SDK and Bluedot Point SDK
+Interaction between Braze SDK and Rezolve Point SDK
 ---------------------------------------------------
 
 1\. We need to ask the user to give permission to use the location services. To do that, create a `RequestPermissionActivity.kt` and then add the below code.
@@ -81,20 +81,20 @@ override fun onRequestPermissionsResult(requestCode: Int, permissions: Array, gr
 }
 ```
 
-2\. We then create another class which will implements Bluedot `InitializationResultListener` and upon SDK initialisation, calls Braze’s changeUser API. To do that create `MainApplication.kt` class and add the below code.
+2\. We then create another class which will implements Rezolve `InitializationResultListener` and upon SDK initialisation, calls Braze’s changeUser API. To do that create `MainApplication.kt` class and add the below code.
 
 ```kotlin
 class MainApplication : Application(), InitializationResultListener {
 
     private lateinit var mServiceManager: ServiceManager
-    private val projectId = BLUEDOT-PROJECT-ID
+    private val projectId = REZOLVE-PROJECT-ID
 
     override fun onCreate() {
         super.onCreate()
 
         registerActivityLifecycleCallbacks(BrazeActivityLifecycleCallbackListener())
 
-        // Initialize Bluedot Point SDK
+        // Initialize Rezolve Point SDK
         initPointSDK()
     }
 
@@ -120,25 +120,25 @@ class MainApplication : Application(), InitializationResultListener {
 }    
 ```
 
-This method is called when Bluedot Point service started successfully, your app logic code using the Bluedot service could start from here. Replace “BRAZE_USER_ID” with the Braze user account.
+This method is called when Rezolve Point service started successfully, your app logic code using the Rezolve service could start from here. Replace “BRAZE_USER_ID” with the Braze user account.
 
 ```kotlin
 override fun onInitializationFinished(error: BDError?) {
 	if (error != null) {
 		Toast.makeText(
 			applicationContext,
-			"Bluedot Point SDK initialization error: ${error.reason}",
+			"Rezolve Point SDK initialization error: ${error.reason}",
 			Toast.LENGTH_LONG
 		).show()
 		return
 	}
 
 	Braze.getInstance(this).changeUser(BRAZE_USER_ID)
-	println("Bluedot Point SDK authenticated")
+	println("Rezolve Point SDK authenticated")
 }
 ```
 
-3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the Braze API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
+3\. Next, we create a class which will receive Rezolve Geo-Trigger events, which we will then log the event via the Braze API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
 
 ```kotlin
 class BluedotGeoTriggerReceiver: GeoTriggeringEventReceiver() {

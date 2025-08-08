@@ -1,7 +1,7 @@
 Migration Guide to 2.0
 ========================
 
-The Bluedot Flutter wrapper version 2.0.0 is a major update of our APIs. 
+The Rezolve Flutter wrapper version 2.0.0 is a major update of our APIs. 
 
 Please note that the following changes are also included in this major update:
 
@@ -10,7 +10,7 @@ Please note that the following changes are also included in this major update:
 - The Rule Download callback has been modified, and it no longer returns the list of ZoneInfo’s. Instead, this information can now be accessed from an existing API to fetch the `ZoneInfo` list.
 - Destinations have been added as a part of `ZoneInfo`, providing additional context.
 - A new API has been developed to fetch `CustomEventMetaData` set for a Point SDK session.
-- For Android users, permissions to use Foreground Service or to run Bluedot service in the Background must now be declared from the App.
+- For Android users, permissions to use Foreground Service or to run Rezolve service in the Background must now be declared from the App.
 - For iOS users, App restart notification feature support is added.
 
 ## Updated GeoTriggering Events
@@ -48,7 +48,7 @@ tempoEventChannel.setMethodCallHandler((MethodCall call) async {
 ```
 
 ## New API to getCustomEventMetaData
-A new API allows you to fetch custom event metadata set for a Bluedot session. For more details on Custom Event Metadata, please refer to the documentation [here](../../../Custom%20Data.md).
+A new API allows you to fetch custom event metadata set for a Rezolve session. For more details on Custom Event Metadata, please refer to the documentation [here](../../../Custom%20Data.md).
 
 ```dart
 BluedotPointSdk.getCustomEventMetaData().then((metadata) => {  
@@ -76,7 +76,7 @@ BluedotPointSdk.on("zoneInfoUpdate", () => {
 
 ## Android Permissions change
 
-For Android devices, the Bluedot service no longer declares Foreground and Background usage permissions in its Manifest. Therefore, we suggest adding the Foreground or Background usage permissions in your App's Manifest. For more details, refer below link [Migration Guide to Android Point SDK 16](https://docs.bluedot.io/Point%20SDK/Android/Migration%20Guides/Migration%20guide%20to%20SDK%2016%20for%20Android#update-the-apps-location-permissions-in-the-manifest)
+For Android devices, the Rezolve service no longer declares Foreground and Background usage permissions in its Manifest. Therefore, we suggest adding the Foreground or Background usage permissions in your App's Manifest. For more details, refer below link [Migration Guide to Android Point SDK 16](https://docs.bluedot.io/Point%20SDK/Android/Migration%20Guides/Migration%20guide%20to%20SDK%2016%20for%20Android#update-the-apps-location-permissions-in-the-manifest)
 
 ### iOS App Restart Notification feature
 
@@ -85,7 +85,7 @@ More details about this feature can be found here: ([App restart notification](h
 To use this feature in Flutter plugin, while starting the Geo-Trigger provide Restart Notification title and text as below:
 
 ```dart
-String iosAppRestartNotificationTitle ='Restart Bluedot Service';
+String iosAppRestartNotificationTitle ='Restart Rezolve Service';
 String iosAppRestartNotificationButtonText ='Restart';
 
 BluedotPointSdk.instance.geoTriggeringBuilder()

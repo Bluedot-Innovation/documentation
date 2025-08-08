@@ -1,17 +1,17 @@
 Olo Integration
 ===============
 
-With Bluedot’s first-class arrival toolkit and Olo, you can offer your customers a great curbside or pickup experience. You can track customers’ arrival at your restaurant with Hello Screens, informing your staff when a curbside order has been placed, completed or cancelled.
+With Rezolve’s first-class arrival toolkit and Olo, you can offer your customers a great curbside or pickup experience. You can track customers’ arrival at your restaurant with Hello Screens, informing your staff when a curbside order has been placed, completed or cancelled.
 
 How does it work?
 -----------------
 
-When a customer places a curbside or pickup order, Olo fires a webhook event to Bluedot to track the order. Then you can follow the customer’s journey to collect the order. You’ll get customers’ live updates using the Point SDK in your mobile app or our pre-built web-based experience: Now Ready.
+When a customer places a curbside or pickup order, Olo fires a webhook event to Rezolve to track the order. Then you can follow the customer’s journey to collect the order. You’ll get customers’ live updates using the Point SDK in your mobile app or our pre-built web-based experience: Now Ready.
 
 Configure the Olo Webhooks
 --------------------------
 
-### Find Bluedot Webhook Destination URL
+### Find Rezolve Webhook Destination URL
 
 The first step is to get Bluedot’s webhook URL; we will use it later when creating the Webhook in Olo.
 
@@ -43,7 +43,7 @@ From the Order Events section, enable the following events:
 
 ![](../assets/create-olo-webhook-steps-1024x1004.jpeg)
 
-Once you are ready to Publish the webhook, first select “Test Webhook”.  This will bring up the Shared Secret modal. Pass the _Shared Secret_ to Bluedot to ensure your account is secured.
+Once you are ready to Publish the webhook, first select “Test Webhook”.  This will bring up the Shared Secret modal. Pass the _Shared Secret_ to Rezolve to ensure your account is secured.
 
 ![](../assets/olo-webhook-shared-secret-1024x561.jpeg)
 
@@ -66,7 +66,7 @@ To learn more, check [Tempo’s Documentation](../Tempo/Overview.md).
 Now Ready
 ---------
 
-Once Bluedot receives the order details from Olo, the Hello Orders Webhooks will fire a Register Order event with a `userId`. You will use that `userId` to generate the URL for the Now Ready experience you’ll share with your customer. From Now Ready, customers will inform the store when they’re on their way to collect the order and when they arrive. To generate the Now Ready URL for an order, you simply add the \`userId\` as a parameter to the Now Ready base URL: `https://us.nowready.io/<USER_TOKEN>`
+Once Rezolve receives the order details from Olo, the Hello Orders Webhooks will fire a Register Order event with a `userId`. You will use that `userId` to generate the URL for the Now Ready experience you’ll share with your customer. From Now Ready, customers will inform the store when they’re on their way to collect the order and when they arrive. To generate the Now Ready URL for an order, you simply add the \`userId\` as a parameter to the Now Ready base URL: `https://us.nowready.io/<USER_TOKEN>`
 
 To learn more, [check Now Ready’s Documentation](../Now%20Ready/Overview.md).
 
@@ -76,5 +76,3 @@ You can also use any of our SMS Messaging integrations to send the Now Ready lin
 
 To learn more, check out our [Integrations documentation.](./Overview.mdx)
 :::
-
-If you have any questions, contact us at [help@bluedot.io](mailto:help@bluedot.io)

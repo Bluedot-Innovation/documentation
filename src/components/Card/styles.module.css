@@ -16,7 +16,7 @@
 }
 
 .cardWrapper:hover {
-    border: 1px solid var(--ifm-color-primary-lighter);
+    border: 1px solid var(--ifm-color-primary);
     box-shadow: 0 0 5px 5px #f6f6f6;
 }
 

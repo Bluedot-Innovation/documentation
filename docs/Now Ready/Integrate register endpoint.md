@@ -59,7 +59,6 @@ Register API is hosted in multiple regions worldwide to ensure the better perfor
 | EUROPE        | https://eu1-events.bluedot.io/hello/register |
 | NORTH AMERICA | https://us1-events.bluedot.io/hello/register |
 
-If you’re not sure which region your account is in, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
 
 ### API reference
 
@@ -82,8 +81,8 @@ You just need to add the user token as the path of the Now Ready base URL.
 
 **Notes:**
 
-*   Make sure to use the Now Ready URL for the region’s account. If you’re not sure which region your account is in, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
-*   The `userToken` it is only active for 24 hours by default. If would like to update the expiration time of the `userToken` please contact us at [help@bluedot.io](mailto:help@bluedot.io).
+*   Make sure to use the Now Ready URL for the region’s account.
+*   The `userToken` it is only active for 24 hours by default.
 
 ### Now Ready URL by region
 

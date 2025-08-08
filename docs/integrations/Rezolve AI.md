@@ -1,6 +1,6 @@
 # Rezolve AI Integration
 
-Rezolve’s AI platform specialises in conversational commerce, offering product-based recommendations and contextual data for a richer user experience. Once you set up this integration, your Bluedot-enabled app can request real-time commerce intelligence, stream dynamic responses, and incorporate product data into chat sessions.
+Rezolve’s AI platform specialises in conversational commerce, offering product-based recommendations and contextual data for a richer user experience. Once you set up this integration, your Rezolve Point SDK-enabled app can request real-time commerce intelligence, stream dynamic responses, and incorporate product data into chat sessions.
 
 ---
 
@@ -17,7 +17,7 @@ Follow these steps to connect your Rezolve API Key and Endpoint:
 
 1. **Log in to Canvas**
     
-    Sign in to your Bluedot Canvas dashboard using your admin credentials.
+    Sign in to your Rezolve Canvas dashboard using your admin credentials.
     
 2. **Navigate to Integrations**
     
@@ -28,7 +28,7 @@ Follow these steps to connect your Rezolve API Key and Endpoint:
     Locate **Rezolve** in the list. Click **Set Up** (or **Configure**) to open the setup screen.
     
 4. **Enter Your Rezolve API Credentials**
-    - **API Endpoint**: The base URL provided by Rezolve (e.g., `https://brain-api.rezolve.com/bluedot`).
+    - **API Endpoint**: The base URL provided by Rezolve (e.g., `https://brain-api.rezolve.com/rezolve-ai`).
     - **API Key**: Your unique key associated with the Rezolve account.
     
 ![](../assets/rezolve-integration-1.png)

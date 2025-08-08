@@ -11,13 +11,13 @@ Features
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Data.md)
+Custom event metadata is a feature which is available in the Rezolve Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Data.md)
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
 
 :::info
-Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Bluedot SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
+Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Rezolve Point SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
 :::
 
 ```dart
@@ -31,7 +31,7 @@ BluedotPointSdk.instance.setCustomEventMetaData(metadata);
 
 ### Fetch Custom Event Metadata
 
-The API `getCustomEventMetaData` allows fetching custom event metadata set for a Bluedot session. For more details on Custom Event Metadata.
+The API `getCustomEventMetaData` allows fetching custom event metadata set for a Rezolve session. For more details on Custom Event Metadata.
 
 ```dart
 BluedotPointSdk.getCustomEventMetaData().then((metadata) => {  
@@ -140,7 +140,7 @@ It may be beneficial to switch the background location usage indicator on and of
 
 For example:
 
-On an app that handles ordering and pickup there may be value in starting Bluedot Geo-triggering on app start without the background location usage indicator enabled in order to power a marketing use case when the user grants Always location authorization or is actively using the app. When the user places an order and there is greater necessity and value in collecting location data to maximise the likelihood the user is detected upon arrival at the collection point, the background location usage indicator should be enabled. Upon completion of the order and collection process, the background location usage indicator should be disabled, removing unauthorized background location data collection and the visible indicator.
+On an app that handles ordering and pickup there may be value in starting Rezolve Geo-triggering on app start without the background location usage indicator enabled in order to power a marketing use case when the user grants Always location authorization or is actively using the app. When the user places an order and there is greater necessity and value in collecting location data to maximise the likelihood the user is detected upon arrival at the collection point, the background location usage indicator should be enabled. Upon completion of the order and collection process, the background location usage indicator should be disabled, removing unauthorized background location data collection and the visible indicator.
 
 Example steps to implement:
 
@@ -158,7 +158,7 @@ More details about this feature can be found here: ([App restart notification](h
 To use this feature in Flutter plugin, while starting the Geo-Trigger provide Restart Notification title and text as below:
 
 ```dart
-String iosAppRestartNotificationTitle ='Restart Bluedot Service';
+String iosAppRestartNotificationTitle ='Restart Rezolve Service';
 String iosAppRestartNotificationButtonText ='Restart';
 
 BluedotPointSdk.instance.geoTriggeringBuilder()

@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Bluedot Documentation',
+  title: 'Rezolve - Order Orchestration & Fulfillment Documentation',
   tagline: 'Developer Documentation',
   favicon: 'img/favicon.ico',
 
@@ -61,25 +61,10 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: 'Bluedot Documentation Logo',
-          src: 'img/logo.svg',
+          alt: 'Rezolve AI Documentation Logo',
+          src: 'img/rezolve-ai-documentation-logo-navy.png',
         },
         items: [
-          {
-            href: 'https://bluedot.io/blog/',
-            label: 'Blog',
-            position: 'right',
-          },
-          {
-            href: 'mailto:help@bluedot.io',
-            label: 'Contact Us',
-            position: 'right',
-          },
-          {
-            href: 'https://select-region.bluedot.io/',
-            label: 'Sign In',
-            position: 'right',
-          },
           {
             href: 'https://bluedot.io/demo/',
             label: 'Request Free Demo',

@@ -1,14 +1,14 @@
 Oracle Android Integration
 ==========================
 
-**Responsys & Bluedot SDK Integration**
+**Responsys & Rezolve SDK Integration**
 
 Add the following repositories and dependencies to your application’s `build.gradle` file:
 
 ```gradle
 dependencies {
   implementation fileTree(dir: 'libs', include: \['PushIOManager.aar'\]) // Responsys PushIOManager
-  implementation 'com.gitlab.bluedotio.android:point\_sdk\_android:15.3.4' //Bluedot Point SDK
+  implementation 'com.gitlab.bluedotio.android:point\_sdk\_android:15.3.4' // Rezolve Point SDK
   implementation 'com.google.firebase:firebase-core:16.0.8'
   implementation 'com.google.firebase:firebase-messaging:17.6.0'
   ...
@@ -19,7 +19,7 @@ apply plugin: 'com.google.gms.google-services'
 
 The following code example demonstrates registering your app with Responsys SDK & also listen to Blue Dot Point SDK’s `InitializationResultListener`:
 
-**Starting the Bluedot SDK**
+**Starting the Rezolve SDK**
 
 1\. We need to ask the user to give permission to use the location services. To do that, create a `RequestPermissionActivity.kt` and then add the below code.
 
@@ -52,9 +52,9 @@ public class RequestPermissionActivity extends AppCompatActivity {
 }
 ```
 
-2\. The `ServiceManager` is the entry-point for an app to start using the Bluedot Point SDK. The app must get an instance of the ServiceManager class and invoke `initialize` method by providing the Project Id in order to initialize and start the Bluedot engine. The Project Id can be retrieved from the Bluedot Point Access account. It is important to pass a reference to `InitializationResultListener` so the app can receive initialization callbacks from the SDK.
+2\. The `ServiceManager` is the entry-point for an app to start using the Rezolve Point SDK. The app must get an instance of the ServiceManager class and invoke `initialize` method by providing the Project Id in order to initialize and start the Rezolve engine. The Project Id can be retrieved from the Rezolve Canvas account. It is important to pass a reference to `InitializationResultListener` so the app can receive initialization callbacks from the SDK.
 
-Initializing the Bluedot SDK and requesting for Location permission from the user and setting a foreground notification.
+Initializing the Rezolve Point SDK and requesting for Location permission from the user and setting a foreground notification.
 
 ```java
 public class MainApplication extends Application implements InitializationResultListener {
@@ -72,7 +72,7 @@ public class MainApplication extends Application implements InitializationResult
         //Set this you need InApp Push feature from Responsys
         PushIOManager.getInstance(this).setInAppFetchEnabled(true);
 
-        // initialize Bluedot point sdk
+        // initialize Rezolve Point SDK
         initPointSDK();
     }
 
@@ -104,13 +104,13 @@ public class MainApplication extends Application implements InitializationResult
 
 The following mandatory callbacks of the `InitializationResultListener` interface must be implemented. 
 
-User should `registerUserID` on `PushIOManager` with any customer user-specific ID, by default we are using Bluedot Point SDK InstallRef (It is a unique identifier assigned to a device during installation) in `onInitializationFinished()` callback.
+User should `registerUserID` on `PushIOManager` with any customer user-specific ID, by default we are using Rezolve Point SDK InstallRef (It is a unique identifier assigned to a device during installation) in `onInitializationFinished()` callback.
 
 ```java
 @Override public void onInitializationFinished(@Nullable BDError bdError) {
     if (bdError != null){
         Toast.makeText(getApplicationContext(),
-                "Bluedot Initialization Error " + bdError.getReason(),
+                "Rezolve Initialization Error " + bdError.getReason(),
                 Toast.LENGTH_LONG).show();
 
         return;
@@ -120,7 +120,7 @@ User should `registerUserID` on `PushIOManager` with any customer user-specific 
 }
 ```
 
-3\. Next, we create a class, `BluedotGeoTriggerReceiver.kt`, which will receive Bluedot GeoTrigger events. Inside the callbacks `ZoneInfo` and `FenceInfo` details are populated in PIOGeoRegion and corresponding PushIOManager `onGeoRegionEntered()` / `onGeoRegionExited()` are called.
+3\. Next, we create a class, `BluedotGeoTriggerReceiver.kt`, which will receive Rezolve Geo-Trigger events. Inside the callbacks `ZoneInfo` and `FenceInfo` details are populated in PIOGeoRegion and corresponding PushIOManager `onGeoRegionEntered()` / `onGeoRegionExited()` are called.
 
 ```java
 public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
@@ -143,7 +143,7 @@ public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
         geoRegion.setGeofenceName(zoneEntryEvent.getFenceInfo().getName());
         geoRegion.setZoneId(zoneEntryEvent.getZoneInfo().getZoneId());
         geoRegion.setZoneName(zoneEntryEvent.getZoneInfo().getZoneName());
-        geoRegion.setSource("Bluedot SDK");
+        geoRegion.setSource("Rezolve Point SDK");
 
         //Reporting Checkin to Responsys
         PushIOManager.getInstance(context).onGeoRegionEntered(geoRegion,
@@ -167,7 +167,7 @@ public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
         geoRegion.setDwellTime(zoneExitEvent.getDwellTime());
         geoRegion.setZoneId(zoneExitEvent.getZoneInfo().getZoneId());
         geoRegion.setZoneName(zoneExitEvent.getZoneInfo().getZoneName());
-        geoRegion.setSource("Bluedot SDK");
+        geoRegion.setSource("Rezolve Point SDK");
 
         //Reporting Checkout to Responsys
         PushIOManager.getInstance(context).onGeoRegionExited(geoRegion,
@@ -176,11 +176,11 @@ public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {
 }
 ```
 
-4\. Finally, start Geo-triggering as per the [Bluedot Geo-triggering Android documentation](../../Point%20SDK/Android/Geo-triggering.md).
+4\. Finally, start Geo-triggering as per the [Rezolve Geo-triggering Android documentation](../../Point%20SDK/Android/Geo-triggering.md).
 
 For further information on the classes and methods discussed within this documentation, please refer to the [Android SDK documentation](../../Point%20SDK/Android/Overview.md).
 
 **GitHub Sample Project**
 -------------------------
 
-A sample project which demonstrates the integration of the Responsys SDK and Bluedot Point SDK is available on **[GitHub](https://github.com/Bluedot-Innovation/OracleMinimalApp-Android)**.
+A sample project which demonstrates the integration of the Responsys SDK and Rezolve Point SDK is available on **[GitHub](https://github.com/Bluedot-Innovation/OracleMinimalApp-Android)**.

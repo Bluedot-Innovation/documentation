@@ -5,7 +5,7 @@ pagination_next: null
 Events List
 =====================
 
- GeoTriggering Events
+ Geo-Triggering Events
 ---------------------
 
 | **Name**           | **Description**             | **Event payload**                                                                                                                                                                                                                                               |

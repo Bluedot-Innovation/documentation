@@ -12,10 +12,10 @@ To set up a webhook on Flipdish, head over to Flipdish’s portal and click on 
 
 
 :::info
-When creating the Flipdish webhook please make sure to select **version 2.0**. The Bluedot integration only supports this webhooks version.
+When creating the Flipdish webhook please make sure to select **version 2.0**. The Rezolve integration only supports this webhooks version.
 :::
 
-Find Bluedot Webhook URL
+Find Rezolve Webhook URL
 ------------------------
 
 To fill out the _Create Webhook_ form, the first step is to get Bluedot’s webhook URL, which you will use when creating the Webhook in Flipdish.
@@ -24,7 +24,7 @@ From Canvas, go to the integrations section and select Flipdish.
 
 ![](../assets/canvas_integrations_flipdish-1024x598.png)
 
-Copy the Bluedot Webhook URL from the Your webhook URL section and paste it into Flipdish’s Create Webhook form.
+Copy the Rezolve Webhook URL from the Your webhook URL section and paste it into Flipdish’s Create Webhook form.
 
 Also, paste the **verify token** in Canvas. This token allows us to ensure that requests sent to the callback URL are secure and coming from Flipdish.
 

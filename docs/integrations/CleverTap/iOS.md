@@ -4,9 +4,9 @@ iOS Integration
 Getting started
 ---------------
 
-This documentation depends on Bluedot PointSDK and CleverTap SDK. Both dependencies can be managed by CocoaPods or Carthage.
+This documentation depends on Rezolve PointSDK and CleverTap SDK. Both dependencies can be managed by CocoaPods or Carthage.
 
-Integrate your project with Bluedot Point SDK
+Integrate your project with Rezolve Point SDK
 ---------------------------------------------
 
 You can find detailed instructions [here](../../Point%20SDK/iOS/Overview.md)
@@ -18,12 +18,12 @@ You can find detailed instructions [here](../../Point%20SDK/iOS/Overview.md)
     extension YourClass: BDPGeoTriggeringEventDelegate {
     
         func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
-            // Your logic when the device enters a Bluedot Zone
+            // Your logic when the device enters a Rezolve Zone
 
         }
     
         func didExitZone(_ exitEvent: BDZoneExitEvent) {
-            // Your logic when the device leaves a Bluedot Zone
+            // Your logic when the device leaves a Rezolve Zone
 
         }
 
@@ -36,11 +36,11 @@ You can find detailed instructions [here](../../Point%20SDK/iOS/Overview.md)
     BDLocationManager.instance()?.geoTriggeringEventDelegate = instanceOfYourClass
     ```
     
-4.  Authenticate with the Bluedot services
+4.  Authenticate with the Rezolve services
     ```swift
     BDLocationManager.instance()?.initialize(withProjectId: projectId){ error in
          guard error == nil else {
-            print("There was an error initializing the Bluedot SDK: \(error.localizedDescription)")
+            print("There was an error initializing the Rezolve SDK: \(error.localizedDescription)")
             return
          }
     }
@@ -60,7 +60,7 @@ Then start CleverTap within the `application:didFinishLaunchingWithOptions` meth
 ```swift
 CleverTap.autoIntegrate()
 
-// Track CleverTap custom events in your Bluedot Entry / Exit events.
+// Track CleverTap custom events in your Rezolve Entry / Exit events.
 
 func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
         // Name the custom event

@@ -1,7 +1,7 @@
 Segment integration
 ===================
 
-Bluedot is a location platform that provides an accurate and simple geofencing platform for apps. After integrating the Bluedot SDK and setting geofences, customer’s can create personalised location-based experiences for their users.
+Rezolve is a location platform that provides an accurate and simple geofencing platform for apps. After integrating the Rezolve Point SDK and setting geofences, customer’s can create personalised location-based experiences for their users.
 
 Segment provides the customer data infrastructure that helps businesses put their customers first. Using Segment, companies can collect, unify and connect their first-party data to over 200 marketing, analytics and data warehouse tools.
 
@@ -10,9 +10,9 @@ With this integration, Bluedot’s first-party, accurate, and privacy-compliant 
 Integration Overview
 --------------------
 
-Before beginning the integration, please ensure you have an active customer account with Bluedot & Segment.
+Before beginning the integration, please ensure you have an active customer account with Rezolve & Segment.
 
-1\. Decide on the custom data you’ll be passing from the Bluedot Events to Segment:
+1\. Decide on the custom data you’ll be passing from the Rezolve Events to Segment:
 
 a. [Custom Event Metadata](../Custom%20Data.md) (max. 20)  
 b. [Custom Zone Data](../Canvas/What%20is%20Zone%20custom%20data.md) (max. 20)
@@ -34,7 +34,7 @@ An example will be:
 
 `"segment_userId": "<YOUR SEGMENT USER ID>"   `
 
-For more details, check the [Bluedot source documentation in Segment](https://segment.com/docs/connections/sources/catalog/cloud-apps/bluedot/)
+For more details, check the [Rezolve source documentation in Segment](https://segment.com/docs/connections/sources/catalog/cloud-apps/bluedot/)
 
 :::info
 The [Custom Event Metadata](../Custom%20Data.md) is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. We suggest setting the custom data every time the SDK is authenticated in the app.

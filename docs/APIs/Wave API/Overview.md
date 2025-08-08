@@ -5,9 +5,9 @@ pagination_next: APIs/Wave API/Integrate Wave API
 Wave: Integration & User guide
 ==============================
 
-If you don’t have an app or don’t have the development resources to integrate the Bluedot Point SDK at the moment and still want to know when your customers reach the store to collect an order, then Wave is the solution for you. Wave is a lightweight API endpoint that provides customer arrival notifications that can be used on any platform. You can implement an Arrival callout on your web page or app that lets you know when your customers have arrived to collect the order.
+If you don’t have an app or don’t have the development resources to integrate the Rezolve Point SDK at the moment and still want to know when your customers reach the store to collect an order, then Wave is the solution for you. Wave is a lightweight API endpoint that provides customer arrival notifications that can be used on any platform. You can implement an Arrival callout on your web page or app that lets you know when your customers have arrived to collect the order.
 
-With Wave, you can send a notification to your backend when a user has been notified from your mobile app or web app that it has arrived at a Bluedot Destination.
+With Wave, you can send a notification to your backend when a user has been notified from your mobile app or web app that it has arrived at the destination.
 
 This Event is ideal for scenarios where:
 
@@ -15,7 +15,7 @@ This Event is ideal for scenarios where:
 *   Web apps where the browser doesn’t have access to all the location capabilities of mobile.
 *   Curbside scenarios where the customer can take a long period of time to collect the order, and you don’t want to track the device’s location.
 
-If you’d like to know if Wave is the best fit for your use case, please contact your Bluedot CX representative.
+If you’d like to know if Wave is the best fit for your use case, please contact your Rezolve CX representative.
 
 Getting started with Wave in 3 steps
 ------------------------------------

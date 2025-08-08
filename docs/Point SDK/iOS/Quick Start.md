@@ -99,7 +99,7 @@ Follow the steps below to configure the info.plist settings:
     Note that this is not necessary for already-published apps.
 *   Privacy – Location When In Use Usage Description as the key, and select the type of `String`: The value should be a usage description that denotes the use of location services by your app, e.g. Your location is used to detect your arrival so your order can be brought to you.
 *   Background operation  
-    If you want the Bluedot SDK to be able to trigger locations or send location updates while in the background, you’ll also need the same setup for Privacy – Location Always Usage Description and Privacy – Location Always and When In Use Usage Description.
+    If you want the Rezolve Point SDK to be able to trigger locations or send location updates while in the background, you’ll also need the same setup for Privacy – Location Always Usage Description and Privacy – Location Always and When In Use Usage Description.
 
 Then, add the following key to the UIBackgroundModes section of the `info.plist`: `location`
 
@@ -116,7 +116,7 @@ An example of using a Swift 6 app with a Swift 5 SDK is available on [GitHub](ht
 Initialize the SDK
 ------------------
 
-Now that the project has been set up, should initialize the Bluedot Point SDK from your App Delegate’s `didFinishLaunchingWithOptions` with:
+Now that the project has been set up, should initialize the Rezolve Point SDK from your App Delegate’s `didFinishLaunchingWithOptions` with:
 
 ```swift
 import BDPointSDK
@@ -124,7 +124,7 @@ import BDPointSDK
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     BDLocationManager.instance()?.initialize(withProjectId: projectId){ error in 
         guard error == nil else {
-            print("There was an error initializing the Bluedot SDK: \(error.localizedDescription)")
+            print("There was an error initializing the Rezolve SDK: \(error.localizedDescription)")
             return
         }
     }

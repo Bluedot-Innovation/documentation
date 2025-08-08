@@ -21,7 +21,7 @@ Wave API is hosted in multiple regions worldwide to ensure the better performanc
 | EUROPE        | https://eu1-events.bluedot.io/wave |
 | NORTH AMERICA | https://us1-events.bluedot.io/wave |
 
-If you’re not sure which region your account is in, please contact us at [help@bluedot.io](mailto:help@bluedot.io).
+If you’re not sure which region your account is in, please contact us.
 
 API reference
 -------------

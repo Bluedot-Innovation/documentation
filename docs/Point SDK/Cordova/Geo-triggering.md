@@ -18,9 +18,9 @@ function doStartGeoTriggering()
         );
     } else if (device.platform === "Android") {
         const androidNotificationParams = {
-            channelId: "Bluedot Cordova",
-            channelName: "Bluedot Cordova",
-            title: "Bluedot Foreground Service - Geo-triggering",
+            channelId: "Rezolve Cordova",
+            channelName: "Rezolve Cordova",
+            title: "Rezolve Foreground Service - Geo-triggering",
             content:
               "This app is running a foreground service using location services",
             notificationId: 123,

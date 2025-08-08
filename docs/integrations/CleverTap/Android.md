@@ -16,19 +16,19 @@ dependencies {
     implementation 'com.clevertap.android:clevertap-android-sdk:4.1.1'
     implementation 'com.google.firebase:firebase-messaging:20.2.4'
 
-    //Bluedot Point SDK
+    // Rezolve Point SDK
     implementation 'com.gitlab.bluedotio.android:point_sdk_android:15.3.4'
 }
 
 apply plugin: 'com.google.gms.google-services'
 ```
 
-Integrate Bluedot Point SDK in your Project
+Integrate Rezolve Point SDK in your Project
 -------------------------------------------
 
-To integrate Bluedot Point SDK in your project, please click [here](../../Point%20SDK/Android/Overview.md)
+To integrate Rezolve Point SDK in your project, please click [here](../../Point%20SDK/Android/Overview.md)
 
-Interaction between CleverTap SDK and Bluedot Point SDK
+Interaction between CleverTap SDK and Rezolve Point SDK
 -------------------------------------------------------
 
 1\. We need to ask the user to give permission to use the location services. To do that, create a `RequestPermissionActivity.kt` and then add the below code.
@@ -62,7 +62,7 @@ public class RequestPermissionActivity extends AppCompatActivity {
 }
 ```
 
-2\. We then create another class which will implements Bluedot `InitializationResultListener` and upon SDK initialisation. To do that create `MainApplication.kt` class and add the below code.
+2\. We then create another class which will implements Rezolve `InitializationResultListener` and upon SDK initialisation. To do that create `MainApplication.kt` class and add the below code.
 
 ```kotlin
 public class MainApplication extends Application implements InitializationResultListener {
@@ -77,7 +77,7 @@ public class MainApplication extends Application implements InitializationResult
         //Start the CleverTap SDK.
         initCleverTap();
 
-        //Start the Bluedot Point SDK
+        //Start the Rezolve Point SDK
         initPointSDK();
     }
 
@@ -114,7 +114,7 @@ public class MainApplication extends Application implements InitializationResult
     public void onInitializationFinished(@Nullable BDError bdError) {
         if (bdError != null){
             Toast.makeText(getApplicationContext(),
-                    "Bluedot Initialization Error " + bdError.getReason(),
+                    "Rezolve Initialization Error " + bdError.getReason(),
                     Toast.LENGTH_LONG).show();
 
             return;
@@ -123,7 +123,7 @@ public class MainApplication extends Application implements InitializationResult
 }
 ```
 
-3\. Next, we create a class which will receive Bluedot GeoTrigger events, which we will then log the event via the CleverTap API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
+3\. Next, we create a class which will receive Rezolve Geo-Trigger events, which we will then log the event via the CleverTap API. To do that create `BluedotGeoTriggerReceiver.kt` class and add the below code.
 
 ```kotlin
 public class BluedotGeoTriggerReceiver extends GeoTriggeringEventReceiver {

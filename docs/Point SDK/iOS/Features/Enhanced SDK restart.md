@@ -1,8 +1,6 @@
 Enhanced SDK restart
 ===================================
 
-From V1.13.0 iOS Point SDK supports enhanced restart mode.
-
 The SDK will handle a restart process after the application is terminated either by swiping the app from the app switcher or by restarting the device.
 
 
@@ -38,5 +36,5 @@ In this mode, the trigger will be more reliable in an area with better Wi-Fi cov
 
 
 :::info
-An enhanced restart mode is configured by the Bluedot team. Please contact our friendly [**support**](mailto:help@bluedot.io) if you would like to enable it.
+An enhanced restart mode is configured by the Rezolve team. Please contact our friendly [**support**](mailto:help@bluedot.io) if you would like to enable it.
 :::

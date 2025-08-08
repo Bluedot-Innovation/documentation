@@ -11,12 +11,12 @@ Features
 Custom Event Metadata
 ---------------------
 
-Custom event metadata is a feature which is available in the Bluedot Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Data.md)
+Custom event metadata is a feature which is available in the Rezolve Point SDK for our customers to set additional event-specific metadata to our location events. For further information refer to [Custom Event Metadata](../../Custom%20Data.md)
 
 It is recommended to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
 
 :::info
-Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Bluedot SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
+Maximum 20 entries can be set in custom event metadata. If more than 20 entries are set, Rezolve Point SDK throws an error as: Only 20 CustomEventMetaData fields are allowed.
 :::
 
 ```js
@@ -104,7 +104,7 @@ iOS Features
 
 ### App Restart Notification
 
-Bluedot Point SDK includes a method for apps to display app restart notification to user after app termination. For further details refer to [iOS Features – App restart](../iOS/Features/App%20restart%20notification.md)
+Rezolve Point SDK includes a method for apps to display app restart notification to user after app termination. For further details refer to [iOS Features – App restart](../iOS/Features/App%20restart%20notification.md)
 
 The App restart method (`iOSAppRestartNotification`) is included in the `GeoTriggeringBuilder`. It should be set up before starting Geo-triggering. 
 

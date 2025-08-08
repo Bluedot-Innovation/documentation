@@ -42,10 +42,10 @@ android.enableSourceSetPathsMap (true)
 
 For more details about them, please visit: [Android Gradle plugin release notes](https://developer.android.com/build/releases/gradle-plugin#enforced-changes)
 
-Building Bluedot Point SDK with Gradle 8
+Building Rezolve Point SDK with Gradle 8
 ----------------------------------------
 
-When building a project incorporating the Bluedot Point SDK with Gradle 8, Please add the following ProGuard rules to your proguard-rules.pro file for a smooth build and to ensure the Bluedot SDK runs correctly.
+When building a project incorporating the Rezolve Point SDK with Gradle 8, Please add the following ProGuard rules to your proguard-rules.pro file for a smooth build and to ensure the Rezolve Point SDK runs correctly.
 
 ```gradle
 -dontwarn kotlinx.parcelize.Parcelize
@@ -59,5 +59,5 @@ When building a project incorporating the Bluedot Point SDK with Gradle 8, Pleas
 ```
 
 :::note
-These rules are already included as consumer ProGuard rules in the upcoming Bluedot SDK 16.x release. Therefore, if you update to SDK v16.x in the future, these changes do not need to be made explicitly from the app side.
+These rules are already included as consumer ProGuard rules in the upcoming Rezolve Point SDK 16.x release. Therefore, if you update to SDK v16.x in the future, these changes do not need to be made explicitly from the app side.
 :::

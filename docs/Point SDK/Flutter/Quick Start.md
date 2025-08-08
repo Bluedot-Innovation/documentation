@@ -1,9 +1,9 @@
 Quick Start
 =====================
 
-To get the SDK loaded and running, you’ll need to:
+To get the Rezolve Point SDK loaded and running, you’ll need to:
 
-1.  Install the Flutter Bluedot Point SDK plugin
+1.  Install the Flutter Bluedot Point SDK plugin ()
 2.  Initialize the SDK
 
 1\. Install the Flutter Bluedot Point SDK plugin
@@ -40,7 +40,7 @@ import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';
 2\. Initialize the SDK
 ------------------------
 
-Now that the project has been set up, you can import and initialize the Flutter Bluedot Point SDK plugin from your App:
+Now that the project has been set up, you can import and initialize the Flutter Rezolve Point SDK plugin from your App:
 
 The `initialize` method expects 1 parameter:
 
@@ -63,11 +63,11 @@ class _MyAppState extends State<MyApp> {
   void _initializeBluedotPointSDK() {
     BluedotPointSdk.instance.initialize('**Your_bluedot_project_Id**')
         .then((value) {
-          // Successfully initialised Bluedot Point SDK
-          debugPrint('Bluedot Point SDK has been initialized');
+          // Successfully initialised Rezolve Point SDK
+          debugPrint('Rezolve Point SDK has been initialized');
     }).catchError((error) {
-      // Failed to initialize Bluedot Point SDK. Handle error here.
-      debugPrint('Failed to initialize Bluedot Point SDK. Error: $error');
+      // Failed to initialize Rezolve Point SDK. Handle error here.
+      debugPrint('Failed to initialize Rezolve Point SDK. Error: $error');
     });
 
   }

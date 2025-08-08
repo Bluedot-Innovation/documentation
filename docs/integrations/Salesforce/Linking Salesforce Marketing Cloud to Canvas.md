@@ -5,7 +5,7 @@ Important Notes
 
 *   Before starting make sure you have:
     *   A Salesforce marketing cloud account user with the Marketing Cloud Administrator role
-    *   A Bluedot Canvas account user with an Admin role
+    *   A Rezolve Canvas account user with an Admin role
 
 How to link the accounts
 ------------------------

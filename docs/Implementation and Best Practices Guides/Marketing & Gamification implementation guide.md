@@ -1,7 +1,7 @@
 Marketing / Gamification Implementation Guide
 =============================================
 
-This guide explains how to successfully implement a Marketing or Gamification use case using Bluedot. 
+This guide explains how to successfully implement a Marketing or Gamification use case using Rezolve. 
 
 SDK Implementation
 ------------------

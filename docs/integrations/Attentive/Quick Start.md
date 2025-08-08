@@ -1,13 +1,13 @@
-Installing the Attentive & Bluedot integration
+Installing the Attentive & Rezolve integration
 ==============================================
 
-To start using the Attentive integration you need to have an active account with Attentive, as well with Bluedot. 
+To start using the Attentive integration you need to have an active account with Attentive, as well with Rezolve. 
 
 You can install the integration either from Attentive’s marketplace or from Canvas in the integrations section.
 
 ### From Attentive’s Marketplace
 
-From Attentive’s market place search for Bluedot and follow the steps to install the app.
+From Attentive’s market place search for Rezolve and follow the steps to install the app.
 
 ![Attentive marketplace Install Bluedot Integration](../../assets/Attentive-marketplace-bluedot-integration-1024x529.png)
 
@@ -21,12 +21,12 @@ From Canvas, go to the Integrations section and select Attentive click on the �
 
 ![Authorize the Attentive & Bluedot integration](../../assets/Authorize_the_attentive__bluedot_integration-1024x1020.png)
 
-If installing the integration from Attentive’s Market place, you’ll need to select the region where your Bluedot account is. If you’re not sure what the region of your account is, let us know at [help@bluedot.io](mailto:help@bluedot.io).
+If installing the integration from Attentive’s Market place, you’ll need to select the region where your Rezolve account is. If you’re not sure what the region of your account is, let us know at [help@bluedot.io](mailto:help@bluedot.io).
 
 Important Notes
 ---------------
 
-Here’s a list of known caveats that you need to take into account when designing your Curbside experience with Attentive & Bluedot to ensure your users will receive the SMS.
+Here’s a list of known caveats that you need to take into account when designing your Curbside experience with Attentive & Rezolve to ensure your users will receive the SMS.
 
 ### Only Opt-in Users
 

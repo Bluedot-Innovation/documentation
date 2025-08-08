@@ -8,15 +8,15 @@ Add `PushIOManager.framework`  in Linked frameworks & `pushio_config_debug.json
 
 ![](../../assets/Screen-Shot-2019-05-02-at-1.15.28-pm-437x1024.png)
 
-Integrate your project with Bluedot Point SDK
+Integrate your project with Rezolve Point SDK
 ---------------------------------------------
 
 To integrate PointSDK, please refer to the integration steps documented [here](../../Point%20SDK/iOS/Quick%20Start.md)
 
-Interaction between the Responsys SDK and Bluedot Point SDK
+Interaction between the Responsys SDK and Rezolve Point SDK
 ===========================================================
 
-Setup Bluedot Location Services
+Setup Rezolve Location Services
 -------------------------------
 
 1\. Import required header files.
@@ -31,12 +31,12 @@ import PushIOManager
 YourClass: BDPGeoTriggeringEventDelegate { 
     func didEnterZone(_ enterEvent: GeoTriggerEvent) 
     { 
-        // Your logic when the device enters a Bluedot Zone 
+        // Your logic when the device enters a Rezolve Zone 
     } 
 
     func didExitZone(_ exitEvent: GeoTriggerEvent) 
     { 
-        // Your logic when the device leaves a Bluedot Zone 
+        // Your logic when the device leaves a Rezolve Zone 
     } 
 }
 ```
@@ -47,12 +47,12 @@ let instanceOfYourClass = YourClass()
 BDLocationManager.instance()?.geoTriggeringEventDelegate = instanceOfYourClass
 ```
 
-4\. Authenticate with the Bluedot services
+4\. Authenticate with the Rezolve services
 
 ```swift
 BDLocationManager.instance()?.initialize(withProjectId: projectId) { error in
      guard error == nil else {
-        print("There was an error initializing the Bluedot SDK: \(error.localizedDescription)")
+        print("There was an error initializing the Rezolve Point SDK: \(error.localizedDescription)")
         return
      }
 }
@@ -76,7 +76,7 @@ PushIOManager.sharedInstance().configure(withFileName: configName, completionHan
 })
 ```
 
-6\. Send event to Oracle Reponsys via Bluedot [didEnterZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didEnterZone:) / [didExitZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didExitZone:) callbacks.
+6\. Send event to Oracle Reponsys via Rezolve [didEnterZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didEnterZone:) / [didExitZone](https://ios-docs.bluedot.io/Protocols/BDPGeoTriggeringEventDelegate.html#/c:objc(pl)BDPGeoTriggeringEventDelegate(im)didExitZone:) callbacks.
 
 ```swift
 func didEnterZone(_ enterEvent: GeoTriggerEvent) {
@@ -85,7 +85,7 @@ func didEnterZone(_ enterEvent: GeoTriggerEvent) {
             geofenceName: entryEvent.fenceName,
             speed: enterEvent.entryEvent?.locations[0].speed ?? 0.0,
             bearing: enterEvent.entryEvent?.locations[0].course ?? 0.0,
-            source: "Bluedot Point SDK",
+            source: "Rezolve Point SDK",
             zoneId: enterEvent.zoneInfo.id.uuidString,
             zoneName: enterEvent.zoneInfo.name,
             dwellTime: 0,
@@ -106,7 +106,7 @@ func didExitZone(_ exitEvent: GeoTriggerEvent) {
 		geofenceName: exitEvent.fence.name,
 		speed: 0.0,
 		bearing: 0.0,
-		source: "Bluedot Point SDK",
+		source: "Rezolve Point SDK",
 		zoneId: exitEvent.zoneInfo.id.uuidString,
 		zoneName: exitEvent.zoneInfo.name,
 		dwellTime: Int(exitEvent.exitEvent?.dwellTime ?? 0),
@@ -124,4 +124,4 @@ func didExitZone(_ exitEvent: GeoTriggerEvent) {
 
 **GitHub Sample Project**
 
-A sample project which demonstrates the integration of Responsys SDK and Bluedot Point SDK is available on **[GitHub](https://github.com/Bluedot-Innovation/OracleMinimalApp-iOS)**.
+A sample project which demonstrates the integration of Responsys SDK and Rezolve Point SDK is available on **[GitHub](https://github.com/Bluedot-Innovation/OracleMinimalApp-iOS)**.

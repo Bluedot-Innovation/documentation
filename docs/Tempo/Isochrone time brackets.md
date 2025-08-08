@@ -15,5 +15,3 @@ With Tempo, you can choose:
 These two variable are configured using the number of isochrones created for each Destination and the time-bracket for each isochrone.
 
 For example, you want to know when are 10 mins, 5 mins, and then 3 mins away. Or you may simply want a single notification when the customer is 7 mins away. Tempo supports both of these different configurations out of the box.
-
-To configure these two variables, just connect with the Bluedot Engineering team using [help@bluedot.io](mailto:help@bluedot.io)

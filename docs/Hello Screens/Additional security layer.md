@@ -39,7 +39,7 @@ You will receive your `userToken` in the response. This must be included in any 
 }
 ```
 :::info
-Make sure to use the Wave API’s endpoint of the region of your account. If you’re not sure which region your account is in, contact our Support Team at [help@bluedot.io](mailto:help@bluedot.io)
+Make sure to use the Wave API’s endpoint of the region of your account. If you’re not sure which region your account is in, contact our Support Team
 :::
 
 Authorising orders updates

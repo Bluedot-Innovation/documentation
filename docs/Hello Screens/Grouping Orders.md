@@ -32,5 +32,3 @@ The order's grouping information is reset daily, so only orders from the current
     }
 }
 ```
-
-If you have any questions just contact our Support Team at [help@bluedot.io](mailto:help@bluedot.io).

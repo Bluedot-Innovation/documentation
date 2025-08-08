@@ -24,7 +24,7 @@ To illustrate how custom order states can be used, consider the following exampl
 ![](../assets/Hello%20Screens%20-%20With%20Custom%20Order%20States.png)
 
 ### Enabling Custom Order States
-To enable the Custom Order States feature, please contact your Bluedot Customer Experience representative. They will assist you in configuring the order states to match your specific operational requirements.
+To enable the Custom Order States feature, please contact your Rezolve Customer Experience representative. They will assist you in configuring the order states to match your specific operational requirements.
 
 ### Integration with Wave API
 You can integrate the Custom Order States with your systems using our Wave API. This allows you to programmatically move orders through the custom states, ensuring seamless integration with your existing workflows. For more details on using the Wave API, please refer to our [Wave API documentation](../APIs/Wave%20API/Overview.md).

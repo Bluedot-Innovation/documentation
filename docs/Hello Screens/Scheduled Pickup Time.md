@@ -40,5 +40,3 @@ To integrate a scheduled pickup time into your system, add the `hs_scheduledTime
 #### Local Time Conversion
 
 The feature automatically converts the scheduled time from UTC to the local time of the Hello Screen.
-
-If you have any questions just contact our Support Team at [help@bluedot.io](mailto:help@bluedot.io).

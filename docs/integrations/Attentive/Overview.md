@@ -11,15 +11,13 @@ Send targeted, location-based SMS messages to your customers. You can use this f
 Curbside Experience wi Now Ready
 --------------------------------
 
-Send an SMS with a link to access [Now Ready](../../Now%20Ready/Overview.md) – our web-based curbside experience. Implement a curbside solution that enables SMS messaging and updates during the order pickup journey. With Bluedot [Hello Screens](../../Hello%20Screens/Overview.md), store staff are updated in real-time on impending customer arrival.
+Send an SMS with a link to access [Now Ready](../../Now%20Ready/Overview.md) – our web-based curbside experience. Implement a curbside solution that enables SMS messaging and updates during the order pickup journey. With Rezolve [Hello Screens](../../Hello%20Screens/Overview.md), store staff are updated in real-time on impending customer arrival.
 
-For more information check the [Attentive – Bluedot Curbside Experience documentation.](./Curbside%20experience.md)
+For more information check the [Attentive – Rezolve Curbside Experience documentation.](./Curbside%20experience.md)
 
 How does it work?
 -----------------
 
-When a new order is registered, Bluedot will call [Attentive’s Custom Events API](https://docs.attentivemobile.com/openapi/reference/tag/Custom-Events/) to with the basic user and order details, then you can use [Attentive’s Journey Builder](https://www.attentivemobile.com/messaging) to craft the content of the SMS.
+When a new order is registered, Rezolve will call [Attentive’s Custom Events API](https://docs.attentivemobile.com/openapi/reference/tag/Custom-Events/) to with the basic user and order details, then you can use [Attentive’s Journey Builder](https://www.attentivemobile.com/messaging) to craft the content of the SMS.
 
-You can register orders from one of our Order Management partners (I.E., Olo) or [Bluedot’s Register Order API](https://events-docs.bluedot.io/#operation/registerOrder).
-
-If you have any technical issues or questions please use [**_help@bluedot.io_**](mailto:help@bluedot.io) to reach out to our team.
+You can register orders from one of our Order Management partners (I.E., Olo) or [Rezolve’s Register Order API](https://events-docs.bluedot.io/#operation/registerOrder).

@@ -1,7 +1,7 @@
 Drive-thru Implementation Guide
 ===============================
 
-This guide explains how to successfully implement a Drive-thru use case using Bluedot.
+This guide explains how to successfully implement a Drive-thru use case using Rezolve.
 
 SDK Implementation
 ------------------

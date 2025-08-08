@@ -1,6 +1,6 @@
 # Migrating to Point SDK 16
 
-#### Learn how to migrate to the latest version of the Bluedot Mobile Point SDK.
+#### Learn how to migrate to the latest version of the Rezolve Mobile Point SDK.
 
 The Point SDKs for iOS and Android have been updated with changes in APIs and behaviour, some of which require that you update your integration with the Point SDK. These changes are a part of our regular major version updates and aim to provide more data that can be used to enrich the user experience with your app. This guide will assist you in upgrading your integration by taking you through the latest changes.
 

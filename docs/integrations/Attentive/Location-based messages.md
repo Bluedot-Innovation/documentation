@@ -1,17 +1,17 @@
 Attentive location-based messages
 =================================
 
-The Attentive - Bluedot Geofencing enables brands to deliver more personalized and effective messaging to their customers. This feature allow you to send SMS messages to your customers when they enter or exit a Geofence.
+The Attentive - Rezolve Geofencing enables brands to deliver more personalized and effective messaging to their customers. This feature allow you to send SMS messages to your customers when they enter or exit a Geofence.
 
 How does it work?
 -----------------
 
-When a user enters or exits a Zone, Bluedot will call [Attentive’s Custom Events](https://docs.attentivemobile.com/openapi/reference/tag/Custom-Events/) API with the basic user and the information about the Zone they’ve reached, then you can use the [Attentive’s Journey Builder](https://www.attentivemobile.com/messaging) to craft the content of the SMS.
+When a user enters or exits a Zone, Rezolve will call [Attentive’s Custom Events](https://docs.attentivemobile.com/openapi/reference/tag/Custom-Events/) API with the basic user and the information about the Zone they’ve reached, then you can use the [Attentive’s Journey Builder](https://www.attentivemobile.com/messaging) to craft the content of the SMS.
 
-Installing the Attentive & Bluedot integration
+Installing the Attentive & Rezolve integration
 ----------------------------------------------
 
-To start using the Attentive integration you need to have an active account with Attentive, as well with Bluedot. 
+To start using the Attentive integration you need to have an active account with Attentive, as well with Rezolve. 
 
 You can install the integration either from Attentive’s marketplace or from Canvas in the integrations section.
 
@@ -31,12 +31,12 @@ From Canvas, go to the Integrations section and select Attentive click on the �
 
 ![Authorize the Attentive & Bluedot integration](../../assets/Authorize_the_attentive__bluedot_integration-1024x1020.png)
 
-If you are installing the integration from Attentive’s Market place, you’ll need to select the region where your Bluedot account is. If you’re not sure what is the region of your account let us know at [help@bluedot.io](mailto:help@bluedot.io).
+If you are installing the integration from Attentive’s Market place, you’ll need to select the region where your Rezolve account is.
 
-Bluedot Mobile SDK implementation best practices
+Rezolve Mobile Point SDK implementation best practices
 ------------------------------------------------
 
-When implementing the Bluedot SDK in your app, ensure that you include the subscriber’s mobile number in the SDK’s Custom Event Meta Data. We’ll pass this number to Attentive to send the message to the right user.
+When implementing the Rezolve Point SDK in your app, ensure that you include the subscriber’s mobile number in the SDK’s Custom Event Meta Data. We’ll pass this number to Attentive to send the message to the right user.
 
 For the integration to work, you’ll need to pass the subscriber mobile number in the Custom Event Meta Data with any of the following keys:
 
@@ -46,7 +46,7 @@ For the integration to work, you’ll need to pass the subscriber mobile number 
 Create your Journeys to send messages
 -------------------------------------
 
-Once you’ve installed the Attentive & Bluedot integration, and have implemented the Bluedot mobile SDK into your app, you can start creating Journeys to send an SMS when a user enters a Zone. 
+Once you’ve installed the Attentive & Bluedot integration, and have implemented the Rezolve mobile SDK into your app, you can start creating Journeys to send an SMS when a user enters a Zone. 
 
 1\. Create a new Journey and select the “_Start from scratch_” option.
 
@@ -62,7 +62,7 @@ Once you’ve installed the Attentive & Bluedot integration, and have implemente
 Important Notes
 --------------
 
-Here’s a list of known caveats that you need to take into account when designing your Curbside experience with Attentive & Bluedot to ensure your users will receive the SMS.
+Here’s a list of known caveats that you need to take into account when designing your Curbside experience with Attentive & Rezolve to ensure your users will receive the SMS.
 
 ### Only Opt-in Users
 
@@ -70,6 +70,4 @@ Please make sure to collect the customer’s consent when collecting the phone n
 
 ### Missing Custom Properties in SMS
 
-If a message includes variables from the {} Personalization options, but these are not populated when registering the order with Bluedot’s Wave API, then the message will not be sent. 
-
-If you have any technical issues or questions please use [**_help@bluedot.io_**](mailto:help@bluedot.io) to reach out to our team.
+If a message includes variables from the {} Personalization options, but these are not populated when registering the order with Rezolve's Wave API, then the message will not be sent. 

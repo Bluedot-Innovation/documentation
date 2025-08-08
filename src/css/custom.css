@@ -4,25 +4,27 @@
  * work well for content-centric websites.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap');
- @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #7B10F4;
+  --ifm-color-primary: #2b6cb0;
   --ifm-color-primary-dark: #700fdf;
-  --ifm-color-primary-darker: #640dc7;
+  --ifm-color-primary-darker: #2b6cb0;
   --ifm-color-primary-darkest: #560aac;
   --ifm-color-primary-light: #811cf3;
   --ifm-color-primary-lighter: #9950ec;
   --ifm-color-primary-lightest: #892ef2;
   --ifm-code-font-size: 95%;
+  --ifm-navbar-padding-horizontal: 50px;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #7B10F4;
+  --ifm-color-primary: #418fde;
   --ifm-color-primary-dark: #700fdf;
   --ifm-color-primary-darker: #640dc7;
   --ifm-color-primary-darkest: #560aac;
@@ -32,26 +34,44 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Spacing */
+
 h1 {
-  font-family: 'Spartan', sans-serif;
-  color: var(--ifm-color-primary);
-  letter-spacing: -1.5px;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #191919
 }
 
-h2, h3, h4, h5, h6 {
-  font-family: 'Spartan', sans-serif;
-  letter-spacing: -0.5px;
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
 }
 
 span {
   font-size: 0.9rem;
 }
 
-p, a, li, ul, td, th  {
-  font-size: 1.2rem;
-  font-family: 'League Spartan';
-  line-height: 1.7rem;
-  font-weight: 300;
+p,
+a,
+li,
+ul,
+td,
+th {
+  font-size: 1rem;
+  font-family: 'Inter Tight';
 }
 
 a {
@@ -65,10 +85,8 @@ code {
 }
 
 .theme-doc-sidebar-container a {
-  font-family: 'Spartan', sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.4px;
 }
 
 .theme-doc-sidebar-container a .menu__link {
@@ -102,9 +120,8 @@ code {
 }
 
 .table-of-contents__link {
-  font-family: 'Spartan';
+  font-family: 'Inter Tight';
   font-size: 0.8rem;
-  font-weight: 600;
 }
 
 .card-stack {
@@ -119,15 +136,15 @@ code {
 }
 
 .navbar {
-  height: 4rem;
+  height: 4.5rem;
 }
 
 .navbar__logo {
-  height: 3.5rem;
+  height: 2.4rem;
 }
 
 .navbar__link {
-  font-family: 'Spartan', sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 700;
@@ -137,9 +154,14 @@ code {
   display: none;
 }
 
+.main-wrapper {
+  padding-left: 30px;
+}
+
 @media (max-width: 1239px) {
   .card-stack-two-column {
     grid-template-columns: 1fr;
     grid-gap: 10px;
   }
 }
+

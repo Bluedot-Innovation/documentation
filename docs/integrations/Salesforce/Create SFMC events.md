@@ -4,7 +4,7 @@ Create SFMC events
 Event Creation
 --------------
 
-To have Bluedot Zones trigger Salesforce Marketing Cloud Journeys, you must add corresponding API Events to Salesforce Marketing Cloud to receive the Bluedot Zone trigger. Follow the below instructions carefully to create the correct events.
+To have Rezolve Zones trigger Salesforce Marketing Cloud Journeys, you must add corresponding API Events to Salesforce Marketing Cloud to receive the Rezolve Zone trigger. Follow the below instructions carefully to create the correct events.
 
  **Add a _Bluedot Entry_ **event**
 
@@ -30,11 +30,11 @@ Then click _Next._
 
 ![](https://paper-attachments.dropbox.com/s_29D56E43A1592333A34F1515C904FC60D2148D3191387FB2B56914DB69313A23_1563334812733_Screen+Shot+2019-07-15+at+4.37.52+pm.png)
 
-5.  We recommend that you do not add any filter at this stage to avoid limiting future use cases for the Bluedot technology. Instead, simply click _Next_.
+5.  We recommend that you do not add any filter at this stage to avoid limiting future use cases for the Rezolve technology. Instead, simply click _Next_.
 
 ![](https://paper-attachments.dropbox.com/s_29D56E43A1592333A34F1515C904FC60D2148D3191387FB2B56914DB69313A23_1563334834965_Screen+Shot+2019-07-15+at+4.38.12+pm.png)
 
-6.  In the summary check the event information and verify that the field _Event Definition Key_ is one of the valid Bluedot events keys: **_bluedot\_entry_** or **_bluedot\_exit_** 
+6.  In the summary check the event information and verify that the field _Event Definition Key_ is one of the valid Rezolve events keys: **_bluedot\_entry_** or **_bluedot\_exit_** 
 
 ![](https://paper-attachments.dropbox.com/s_29D56E43A1592333A34F1515C904FC60D2148D3191387FB2B56914DB69313A23_1563334846749_Screen+Shot+2019-07-15+at+4.38.23+pm.png)
 

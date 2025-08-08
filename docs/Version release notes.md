@@ -52,7 +52,7 @@ Release date  Mar 28, 2025
 Release date  Feb 18, 2025
 -------------------------
 
-### Bluedot React Native wrapper 3.2.1
+### Rezolve Point SDK React Native wrapper 3.2.1
 
 **What’s New:**
 
@@ -68,11 +68,11 @@ Release date  Feb 17, 2025
 
 **What’s new**
 
-We’ve integrated Rezolve AI’s advanced conversational commerce API into the Bluedot SDK, bringing new capabilities for real-time, commerce-focused interactions. To access this feature, ensure you have an active [Rezolve AI account](https://rezolve.com).
+We’ve integrated Rezolve AI’s advanced conversational commerce API into the Rezolve Point SDK, bringing new capabilities for real-time, commerce-focused interactions. To access this feature, ensure you have an active [Rezolve AI account](https://rezolve.com).
 
 #### iOS
 - **Xcode 16 and iOS SDK 18:** The SDK is now built and tested with the latest Xcode 16 and iOS SDK 18.
-- Minimum Deployment Target Updated: Support for iOS 14 has been discontinued. You’ll need iOS 15 or higher to integrate this version of the Bluedot SDK.
+- Minimum Deployment Target Updated: Support for iOS 14 has been discontinued. You’ll need iOS 15 or higher to integrate this version of the Rezolve Point SDK.
 
 #### Android
 - **Improved Location Permission Handling:** We’ve fixed a bug related to requesting location permissions. If permissions aren’t granted, the SDK now correctly reports a Bluedot Service Error instead of silently failing.
@@ -126,7 +126,7 @@ We recommend updating to benefit from these improvements, regardless of which ve
 Release date  Aug 27, 2024
 -------------------------
 
-### Bluedot Flutter Wrapper Version 2.0.0
+### Rezolve Flutter Wrapper Version 2.0.0
 
 **New Features and Enhancements:**
 
@@ -146,7 +146,7 @@ For guidance on updating your application to use the new Flutter wrapper version
 Release date  Aug 1, 2024
 -------------------------
 
-### Bluedot React Native wrapper 3.1.0
+### Rezolve React Native wrapper 3.1.0
 
 **What’s New:**
 
@@ -172,7 +172,7 @@ This update includes several bug fixes and improvements to enhance the functiona
     * The `GeoTriggerEvent` class is now readable in string format, making it easier to debug and log events.
 * **Improved Error Handling:**
     * Enhanced the error handling process in the `startForeground()` call.
-    * Exceptions encountered during this process are now reported as Bluedot service errors via the existing `onBluedotServiceError` method in `BluedotServiceReceiver`.
+    * Exceptions encountered during this process are now reported as Rezolve service errors via the existing `onBluedotServiceError` method in `BluedotServiceReceiver`.
 * **Crash Fix:**
     * Resolved a crash occurring due to a `NullPointException` inside `PointService`.
 
@@ -181,7 +181,7 @@ This update includes several bug fixes and improvements to enhance the functiona
 Release date Jun 4, 2024
 -------------------------
 
-### Bluedot React Native wrapper 3.0.0
+### Rezolve React Native wrapper 3.0.0
 
 We are excited to announce the release of [version 3.0.0 of our React Native wrapper for the Point SDK](https://www.npmjs.com/package/bluedot-react-native/v/3.0.0). This major update includes significant improvements, new features, and important changes to enhance your application's location-based capabilities.
 
@@ -210,7 +210,7 @@ We are excited to announce the release of version 3.0.0 of our React Native wrap
 
 #### Android-Specific Changes
 
-- **Location Permissions Update**: Foreground and background usage permissions are no longer declared in the Bluedot SDK manifest. Ensure to update your app's manifest with the necessary location permissions for proper functionality.
+- **Location Permissions Update**: Foreground and background usage permissions are no longer declared in the Rezolve Point SDK manifest. Ensure to update your app's manifest with the necessary location permissions for proper functionality.
 
 #### Migration Guide
 
@@ -221,7 +221,7 @@ For detailed instructions on migrating to the new version, please refer to the [
 Release date Jun 4, 2024
 -------------------------
 
-### Bluedot React Native wrapper 2.3.9
+### Rezolve Point SDK React Native wrapper 2.3.9
 What’s New:
 
 Implemented additional fixes and optimizations to enhance the performance and reliability of the Geo-triggering service. These improvements are focused on the wrapper level, ensuring smoother operation and better efficiency, particularly when the app moves to the foreground.
@@ -236,10 +236,10 @@ What's New:
 
 We've updated iOS SDK 15.6.9 to include a Privacy Manifest, ensuring compliance with Apple's latest privacy requirements for those who have not migrated to SDK 16. This update supports smoother app submissions to App Store Connect by aligning with required privacy standards.
 
-### Bluedot React Native wrapper 2.3.8
+### Rezolve React Native wrapper 2.3.8
 What's New:
 
-Bluedot iOS SDK updated to version 15.6.9
+Rezolve iOS SDK updated to version 15.6.9
 
 
 Release date Apr 23, 2024
@@ -347,10 +347,10 @@ Release date Feb 9, 2024
 **What's New:**
 * Further enhancements to the Geo-triggering service performance, building on the improvements introduced in version 15.6.1. This version brings optimised efficiency and reliability when the App is in the foreground and operates without a Foreground Service Notification.
 
-### Bluedot React Native wrapper 2.3.7
+### Rezolve Point React Native wrapper 2.3.7
 
 **What’s New:**
-* Bluedot Android SDK updated to version 15.6.2
+* Rezolve Point Android SDK updated to version 15.6.2
 
 * * *
 
@@ -362,21 +362,21 @@ Release date Dec 22, 2023
 **What's New:**
 * Enhanced Geo-triggering service performance when operating without a Foreground Service Notification while the app is in the foreground.
 
-### Bluedot React Native wrapper 2.3.6
+### Rezolve Point SDK React Native wrapper 2.3.6
 
 **What’s New:**
-* Bluedot Android SDK updated to version 15.6.1
+* Rezolve Point Android SDK updated to version 15.6.1
 
 * * *
 
 Release date Nov 30, 2023
 -------------------------
 
-### Bluedot React Native wrapper 2.3.5
+### Rezolve Point SDK React Native wrapper 2.3.5
 
 **What’s New:**
 * React Native updated to version 0.72.7
-* Bluedot Android SDK updated to version 15.6.0
+* Rezolve Point SDK Android updated to version 15.6.0
 
 * * *
 
@@ -410,7 +410,7 @@ Release date Aug 11, 2023
 Release date May 2, 2023
 ------------------------
 
-### Bluedot Flutter wrapper 1.0.1
+### Rezolve Point SDK Flutter wrapper 1.0.1
 
 *   Updated to the latest iOS PointSDK 15.6.7 and Android PointSDK 15.5.3
 *   In Android, PointSDK by default will use `ic_stat_name` resource in res/drawable or res/mipmap of android folder as the notification icon for GeoTriggering and Tempo foreground service notifications.
@@ -442,7 +442,7 @@ Release date March 28, 2023
 Release date March 3, 2023
 --------------------------
 
-### Bluedot React Native wrapper 2.3.0
+### Rezolve Point SDK React Native wrapper 2.3.0
 
 *   Now support React Native version 0.71.
 *   Fixed an issue with `setNotificationIDResourceID(resourceName)` function. Please use this method to set notification icon in Android, e.g. `setNotificationIDResourceID("ic_notification")`.
@@ -516,7 +516,7 @@ Optimized networking behavior, resulting in reduced network traffic by roughly 4
 Release date October 18, 2022
 -----------------------------
 
-### Bluedot Flutter wrapper 1.0.0
+### Rezolve Point SDK Flutter wrapper 1.0.0
 
 *   Links to Android PointSDK 15.4.2, iOS PointSDK 15.6.4
 
@@ -525,7 +525,7 @@ Release date October 18, 2022
 Release date September 8, 2022
 ------------------------------
 
-### Bluedot React Native wrapper 2.2.0
+### Rezolve Point SDK React Native wrapper 2.2.0
 
 *   Add support for React Native 0.69.x
 *   Contains Android SDK 15.4.2
@@ -647,7 +647,7 @@ There’s a search bar at the top of Hello Screens to help the staff find orders
 
 Team members can now manually update the status of an order. If there is a need to change an order’s state, the staff can use the “Update Order Status” option to move an order between states.
 
-There’s also a set of optional features that you can now ask your account representative to enable them or shoot us an email at [help@bluedot.io](mailto:help@bluedot.io).
+There’s also a set of optional features that you can now ask your account representative to enable them.
 
 **Customizable Order States**
 
@@ -666,7 +666,7 @@ When a team member completes an order within a short time, Hello Screens will di
 Release date January 19, 2022
 -----------------------------
 
-### Bluedot Cordova Plugin v4.0.0
+### Rezolve Point SDK Cordova Wrapper v4.0.0
 
 This release consists of iOS SDK v15.6.0 and Android SDK v15.4.0
 
@@ -684,7 +684,7 @@ This release is compatible with simulators running on M1 Silicon architectures.
 Release date January 12, 2022
 -----------------------------
 
-### Bluedot Xamarin Android Wrapper 15.4.0
+### Rezolve Point SDK Xamarin Android Wrapper 15.4.0
 
 This release contains Android SDK 15.4.0
 
@@ -697,7 +697,7 @@ Release date December 23, 2021
 
 #### Android 12 Compatibility
 
-Android SDK 15.4.0 brings full compatibility with Android 12 / targetSdk 31.  When targeting Android 12, be aware that the Bluedot SDK requires precise location permission to be granted before starting the Geo-triggering or Tempo services.
+Android SDK 15.4.0 brings full compatibility with Android 12 / targetSdk 31.  When targeting Android 12, be aware that the Rezolve Point SDK requires precise location permission to be granted before starting the Geo-triggering or Tempo services.
 
 #### Bug Fixes
 
@@ -737,7 +737,7 @@ The Android SDK 15.4.0 release is a “stepping stone” that helps us continue 
 Release date December 22, 2021
 ------------------------------
 
-### Bluedot Xamarin iOS Wrapper 15.6.0
+### Rezolve Point SDK Xamarin iOS Wrapper 15.6.0
 
 This release contains iOS SDK 15.6.0
 
@@ -792,7 +792,7 @@ Release date November 17, 2021
 
 **Events Simulator**
 
-*   Event Simulator is a tool designed to help test your Bluedot setup. It simulates events which would usually be sent by the mobile SDK (Geo–trigger and Tempo events) as well as web events sent via the Events API. Have a look at our [Event Simulator Guide.](./Canvas/Tools/Event%20Simulator.md)
+*   Event Simulator is a tool designed to help test your Rezolve setup. It simulates events which would usually be sent by the mobile SDK (Geo–trigger and Tempo events) as well as web events sent via the Events API. Have a look at our [Event Simulator Guide.](./Canvas/Tools/Event%20Simulator.md)
 
 * * *
 
@@ -801,7 +801,7 @@ Release date November 11, 2021
 
 ### Integrations
 
-*   New integration with Tealium. Now you can easily send Bluedot location events to Tealium. Learn more here: [Tealium Integration Guide.](./integrations/Tealium.md)
+*   New integration with Tealium. Now you can easily send Rezolve location events to Tealium. Learn more here: [Tealium Integration Guide.](./integrations/Tealium.md)
 
 ### Canvas
 
@@ -826,7 +826,7 @@ Generate URL to link Hello screens
 Release date August 30, 2021
 ----------------------------
 
-### Bluedot Xamarin Android Wrapper 15.3.5
+### Rezolve Point SDK Xamarin Android Wrapper 15.3.5
 
 #### Enhancements
 
@@ -837,7 +837,7 @@ Contains Android SDK 15.3.5
 Release date August 27, 2021
 ----------------------------
 
-### Bluedot React Native Wrapper v2.0.6
+### Rezolve Point SDK React Native Wrapper v2.0.6
 
 #### Enhancements
 
@@ -863,7 +863,7 @@ Release date August 17, 2021
     **App Improvements in Background Mode:**  
     Increasing your Marketing reach
     
-    *   Bluedot has increased the SDKs’ ability to access system resources in use cases where background location service is implemented.
+    *   Rezolve has increased the SDKs’ ability to access system resources in use cases where background location service is implemented.
     *   A significantly larger number of users can be detected and messaged when the app is in the background.
     
     (This also increases the amount of location data generated by the brand in the SDK for marketing type use cases.)
@@ -912,11 +912,11 @@ The optional field `userToken` has been added to the wave request to support reg
 Release date August 04, 2021
 ----------------------------
 
-### Bluedot Cordova Plugin 2.0.0
+### Rezolve Point SDK Cordova Plugin 2.0.0
 
 #### API update
 
-This release contains a complete overhaul of the APIs for SDK initialization, GeoTriggering session management, and Tempo session management. The plugin support Bluedot Point SDK Android V15.3.4 and iOS 15.5.1. The existing npm package has been deprecated.
+This release contains a complete overhaul of the APIs for SDK initialization, GeoTriggering session management, and Tempo session management. The plugin support Rezolve Point SDK Android V15.3.4 and iOS 15.5.1. The existing npm package has been deprecated.
 
 The npm package to receive updates going forward is [here](https://www.npmjs.com/package/@bluedot-innovation/cordova-plugin).
 
@@ -925,7 +925,7 @@ The npm package to receive updates going forward is [here](https://www.npmjs.com
 Release date July 23, 2021
 --------------------------
 
-### Bluedot Xamarin Android Wrapper 15.3.4.2
+### Rezolve Point SDK Xamarin Android Wrapper 15.3.4.2
 
 **Bug fix  
 **
@@ -937,7 +937,7 @@ Release date July 23, 2021
 Release date July 22, 2021
 --------------------------
 
-### Bluedot Xamarin Android Wrapper 15.3.4.1
+### Rezolve Point SDK Xamarin Android Wrapper 15.3.4.1
 
 **Bug fix  
 **
@@ -949,7 +949,7 @@ Release date July 22, 2021
 Release date July 15, 2021
 --------------------------
 
-### Bluedot React Native wrapper  V2.0.5
+### Rezolve React Native wrapper  V2.0.5
 
 **Enhancements**
 
@@ -1011,7 +1011,7 @@ Release date May 10, 2021
 
 ### Javascript SDK for Web V1.0.0
 
-Version 1.0 of [Bluedot Javascript SDK for Web](./Web%20SDK/Overview.md) with support for [Wave API](./Web%20SDK/Send%20your%20first%20Wave.md) and [Hello screens](./Web%20SDK/Interacting%20with%20Hello%20Screens.md).
+Version 1.0 of [Rezolve Javascript SDK for Web](./Web%20SDK/Overview.md) with support for [Wave API](./Web%20SDK/Send%20your%20first%20Wave.md) and [Hello screens](./Web%20SDK/Interacting%20with%20Hello%20Screens.md).
 
 * * *
 
@@ -1104,7 +1104,7 @@ More information on Wave API and how to integrate it is [here](./APIs/Wave%20API
 
 #### **Enhancements**
 
-*   A new section to view & configure webhooks for different Bluedot Events added. More details [here](./Webhooks/Overview.md).
+*   A new section to view & configure webhooks for different Rezolve Events added. More details [here](./Webhooks/Overview.md).
 *   A new section to Setup & configure your Hello Screens added. More details [here](./Hello%20Screens/Overview.md).
 *   `DestinationId` has been made a Zone level attribute and no longer is only tied to accounts that have Tempo enabled.
 *   An information card has been added when clicking a fence in the Zone map view.
@@ -1359,7 +1359,7 @@ Release date June 29, 2020
 
 #### **Features**
 
-New Feature – Bluedot Tempo
+New Feature – Rezolve Tempo
 
 *   A predictive time-based arrival technology that will allow businesses to receive real-time alerts to know when a consumer is approaching.
 *   Tempo updates can be delivered via a new dedicated webhook.
@@ -1381,7 +1381,7 @@ There are no other feature enhancements or bug fixes added in this version.
 
 #### **Features**
 
-New Feature – Bluedot Tempo
+New Feature – Rezolve Tempo
 
 *   Canvas support for Tempo is added.
 *   A new section to manage Tempo for a Project is added to Canvas.
@@ -1448,7 +1448,7 @@ Remove the `StartJobIntentServiceReceiver` entry in the SDK’s Android Manifest
 The SDK no longer uses the following Android manifest entry: `<receiver android:name="au.com.bluedot.point.net.engine.StartJobIntentServiceReceiver"/>`
 
 Overhaul to the SDK’s events reporting  
-We have redesigned the Event reporting architecture, implementing a more efficient retry strategy in situations of network failure. We have also reduced the data packet size sent from the SDK to the Bluedot backend on each notification event. This has no impact on the SDK check-in and check-out callbacks and does not require any integration changes other than taking this SDK update.
+We have redesigned the Event reporting architecture, implementing a more efficient retry strategy in situations of network failure. We have also reduced the data packet size sent from the SDK to the Rezolve backend on each notification event. This has no impact on the SDK check-in and check-out callbacks and does not require any integration changes other than taking this SDK update.
 
 New Point SDK dependency path  
 The SDK dependency path has changed from release 15.0.0 onwards. The PointSDK package paths have not changed, only the dependency. The app integrating our SDK does not need to change any imports in code. For all new Point SDK, versions use the following path:  `'com.gitlab.bluedotio.android:point_sdk_android:Tag'`  
@@ -1466,7 +1466,7 @@ If you are still using this service, we suggest implementing the `sendAuthentica
 
 #### **Third-party dependencies & licence information**
 
-The following third-party dependencies are added to the Bluedot Point SDK and their respective usage license are listed:
+The following third-party dependencies are added to the Rezolve Point SDK and their respective usage license are listed:
 
 *   json-simple – [https://code.google.com/archive/p/json-simple/](https://code.google.com/archive/p/json-simple/) – Apache License 2
 *   Moshi – [https://github.com/square/moshi](https://github.com/square/moshi) – Apache License 2
@@ -1490,7 +1490,7 @@ Increased the Custom Event Metadata limit
 We increased the limit so you can now attach up to 20 fields to each event. Use Custom Event Metadata to add additional information to Check-in and Check-out Notifications; this could be a Username, 3rd-party platform ID, or Order Number. Learn more about Custom Event Metadata [here]../Custom%20Data.md).
 
 Overhaul to the SDK’s events reporting  
-We have redesigned the Event reporting architecture, implementing a more efficient retry strategy in situations of network failure. We have also reduced the data packet size sent from the SDK to the Bluedot backend on each notification event. This has no impact on the SDK check-in and check-out callbacks and does not require any integration changes other than taking this SDK update.
+We have redesigned the Event reporting architecture, implementing a more efficient retry strategy in situations of network failure. We have also reduced the data packet size sent from the SDK to the Rezolve backend on each notification event. This has no impact on the SDK check-in and check-out callbacks and does not require any integration changes other than taking this SDK update.
 
 #### **Note about integrating the SDK**
 
@@ -1510,7 +1510,7 @@ Improved the handling of erroneous location updates reported by the device. This
 
 #### **Bug fixes**
 
-*   Fixed a bug where the app startup process was slowed down due to Bluedot rules being processed in the main thread.
+*   Fixed a bug where the app startup process was slowed down due to Rezolve rules being processed in the main thread.
 *   Fixed an error where SDK falsely reported a non-fatal error that Wi-Fi scanning is disabled on the device.
 
 * * *
@@ -1626,11 +1626,11 @@ Bug Fixes**
 
 **Notes about iOS 13:**
 
-This SDK version will be compatible with iOS 13 and Bluedot recommends customers this to prepare their app for Apple’s public release in mid-late September. This version also supports Swift 4.2 and Xcode 10.2.
+This SDK version will be compatible with iOS 13 and Rezolve recommends customers this to prepare their app for Apple’s public release in mid-late September. This version also supports Swift 4.2 and Xcode 10.2.
 
-Bluedot has developed this SDK in line with Apple’s ongoing beta releases of iOS 13.
+Rezolve has developed this SDK in line with Apple’s ongoing beta releases of iOS 13.
 
-Bluedot expects Apple to release a final iOS 13 beta in early September, before the official public release. As such, you can expect another SDK update shortly after the public release which will support Xcode 11, Swift 5 and any additional changes Apple may make.
+Rezolve expects Apple to release a final iOS 13 beta in early September, before the official public release. As such, you can expect another SDK update shortly after the public release which will support Xcode 11, Swift 5 and any additional changes Apple may make.
 
 * * *
 
@@ -1667,7 +1667,7 @@ Release date June 14, 2019
 
 Added a new SDK authentication API:
 
-The authenticateWithApiKeyAPI used to log into the Bluedot SDK has been updated. The API now requires an authorisation level parameter along with it. The API will now be referred to as:
+The authenticateWithApiKeyAPI used to log into the Rezolve Point SDK has been updated. The API now requires an authorisation level parameter along with it. The API will now be referred to as:
 
 `(void)authenticateWithApiKey:(NSString*)apiKeyrequestAuthorization:(BDAuthorizationLevel)authorizationLevel`
 
@@ -1686,7 +1686,7 @@ Please note, the following authentication API has now been deprecated:
 
 `(void)authenticateWithApiKey: (NSString *)apiKey`
 
-This is our first offical notification of this deprecation and more will follow before the API is removed. However, if you have immediate questions please reach out to [help@bluedot.io](mailto:help@bluedot.io).
+This is our first offical notification of this deprecation and more will follow before the API is removed.
 
 Note: Authentication with old API will show iOS location permission prompt with three options, _“Always”_, _“When in use”_ and _“Never”_.
 
@@ -1750,7 +1750,7 @@ Release date April 03, 2019
 **Enhancements**
 
 Network communication improvements:  
-Improvement in network communication from the SDK to Bluedot backend (i.e trigger events, rule downloads).
+Improvement in network communication from the SDK to Rezolve backend (i.e trigger events, rule downloads).
 
 Location Service improvements:  
 BluedotLocationService, a component of the SDK location logic, has been updated to improve overall trigger events.

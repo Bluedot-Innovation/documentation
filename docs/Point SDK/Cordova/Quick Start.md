@@ -3,12 +3,12 @@ Quick Start
 
 To get the SDK loaded and running, you will need to:
 
-1.  Install the Bluedot Cordova package
+1.  Install the Rezolve Cordova package
 2.  iOS: Install iOS SDK
 3.  Android: Install Android SDK
 4.  Initialize the SDK
 
-1\. Install the Bluedot Cordova package
+1\. Install the Rezolve Cordova package
 ---------------------------------------
 
 In the root directory of your project, run
@@ -39,7 +39,7 @@ $ cordova run android
 4\. Initialize the SDK
 ----------------------
 
-Now that the project has been set up, you can import and initialize the Bluedot Cordova package from your App:
+Now that the project has been set up, you can import and initialize the Rezolve Cordova package from your App:
 
 The `initializeWithProjectId` method expects 3 parameters:
 

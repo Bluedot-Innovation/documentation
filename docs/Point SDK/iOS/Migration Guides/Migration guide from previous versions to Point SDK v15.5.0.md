@@ -8,7 +8,7 @@ Migration guide from previous versions to Point SDK v15.5.0
 Update to requesting notification permission
 --------------------------------------------
 
-Starting from SDK v15.5.0, Bluedot Point SDK no longer requests Notification permission on authentication/initialization as per the previous API.
+Starting from SDK v15.5.0, Rezolve Point SDK no longer requests Notification permission on authentication/initialization as per the previous API.
 
 *   The app will now have to request for notification permission explicitly.
 *   It is recommended that App requests for notification permission anytime prior to Start Geo-Triggering.

@@ -1,7 +1,7 @@
 Curbside Pickup Implementation Guide
 ====================================
 
-This guide explains how to successfully implement a curb-side use case using Bluedot.
+This guide explains how to successfully implement a curb-side use case using Rezolve.
 
 SDK Implementation
 ------------------

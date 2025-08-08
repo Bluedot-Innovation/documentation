@@ -1,7 +1,7 @@
 Location Permission best practices
 ========================================
 
-There are certain approaches that Bluedot has found work best to achieve maximum value from your geolocation SDK when working with iOS location permissions.
+There are certain approaches that Rezolve has found work best to achieve maximum value from your geolocation SDK when working with iOS location permissions.
 
 Convince user of the value
 --------------------------
@@ -33,12 +33,12 @@ BDLocationManager.instance()?.requestAlwaysAuthorization()
 Engage location services only when necessary
 --------------------------------------------
 
-Both geo-triggering and Tempo tracking are powerful tools and can be used for a variety of use cases. Bluedot has worked hard to ensure that its location capabilities are as efficient as possible, however, location always causes at least some level of battery drain, so you’re encouraged to only turn on location capabilities when necessary for your business logic.
+Both geo-triggering and Tempo tracking are powerful tools and can be used for a variety of use cases. Rezolve has worked hard to ensure that its location capabilities are as efficient as possible, however, location always causes at least some level of battery drain, so you’re encouraged to only turn on location capabilities when necessary for your business logic.
 
 Use background location usage indicator for high-value use cases
 ----------------------------------------------------------------
 
-For some use cases, particularly when the value of allowing access to location data is communicated to the customer, it may be permissible to access location data while the app is in the background and only _While using the app_ location authorization has been granted. The background location usage indicator alerts the user that an app is accessing their location from the background without being granted _Always_ authorization. Utilizing the background location usage indicator allows the Bluedot SDK to operate from the background as though the app was in active use.
+For some use cases, particularly when the value of allowing access to location data is communicated to the customer, it may be permissible to access location data while the app is in the background and only _While using the app_ location authorization has been granted. The background location usage indicator alerts the user that an app is accessing their location from the background without being granted _Always_ authorization. Utilizing the background location usage indicator allows the Rezolve Point SDK to operate from the background as though the app was in active use.
 
 See our guide to [enabling the background location usage indicator](./Features/Blue%20bar.md).
 

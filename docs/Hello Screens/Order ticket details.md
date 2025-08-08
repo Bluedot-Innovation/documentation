@@ -12,8 +12,6 @@ Customising Your Order Tickets Display
 
 ![](../assets/hello-screens-order-ticket-details-2.png)
 
-2. **Configuration Update:** Relay your selection to your Bluedot account manager, who will update the Hello Screens configuration accordingly.
+2. **Configuration Update:** Relay your selection to your Rezolve account manager, who will update the Hello Screens configuration accordingly.
    
 3. **Optimised Viewing Experience:** Once configured, your chosen fields will be prominently displayed on each order ticket on the main screen.
-
-If you have any questions just contact our Support Team at [help@bluedot.io](mailto:help@bluedot.io).
