@@ -62,10 +62,8 @@ Register API is hosted in multiple regions worldwide to ensure the better perfor
 
 ### API reference
 
+
 The API specification for Wave API can be found [here](https://events-docs.bluedot.io/#operation/postWaveEvents).
----
-pagination_next: null
----
 
 Generate a NowReady URL
 -----------------------
