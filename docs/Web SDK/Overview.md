@@ -6,7 +6,7 @@ pagination_prev: null
 Overview
 ========
 
-The Bluedot Javascript SDK brings location awareness capabilities to your webpage.
+The Rezolve Javascript SDK brings location awareness capabilities to your webpage.
 
 The following pages provide a guide to integrating the Javascript SDK within your webpage or app.
 

@@ -4,7 +4,7 @@ Location Permission & Notifications Best Practices
 Location permissions
 --------------------
 
-Prior to starting any Bluedot Services (Geo-triggering or Tempo), the app must request and be granted location permission. When requesting location permission it is important to make the request in context and convey the value the user will be gaining from granting the permission.
+Prior to starting any Rezolve Geo Services (Geo-triggering or Tempo), the app must request and be granted location permission. When requesting location permission it is important to make the request in context and convey the value the user will be gaining from granting the permission.
 
 For apps targeted Android 11 and lower, only [ACCESS_FINE_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_FINE_LOCATION) permission needs to be requested and granted.
 
@@ -14,7 +14,7 @@ The user may choose to grant access to either approximate or precise as shown be
 
 ![](../../assets/FlR1TT9c-146x300.png)
 
-If the app has not been granted permission to access precise location data the Geo-triggering and Tempo services will not start, and the start method will return a [LocationPermissionNotGrantedError](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point/-location-permission-not-granted-error/index.html). To ensure the location permission has been granted, it is important to implement the permission checking and requesting process prior to any attempt to start a Bluedot service.
+If the app has not been granted permission to access precise location data the Geo-triggering and Tempo services will not start, and the start method will return a [LocationPermissionNotGrantedError](https://android-docs.bluedot.io/-bluedot-s-d-k/au.com.bluedot.point/-location-permission-not-granted-error/index.html). To ensure the location permission has been granted, it is important to implement the permission checking and requesting process prior to any attempt to start a Rezolve Point SDK service.
 
 Additionally, from Android 10 onwards, if the Geo-triggering service is not run as a [foreground service](https://developer.android.com/guide/components/foreground-services), the `ACCESS_BACKGROUND_LOCATION` [permission must be requested](https://developer.android.com/training/location/permissions#background) and granted in order for the Geo-triggering service to access location data and function when the app is not in use. From Android 11 onwards, the request to access background location data [must be made separately](https://developer.android.com/about/versions/11/privacy/location#request-background-location-separately) from the initial request to access location data. Even when granted permission to access background location data the access is limited to only a [few updates per hour](https://developer.android.com/training/location/background#limit-updates) while the app is not in use. The Play Store also has [restrictions](https://support.google.com/googleplay/android-developer/answer/9799150) on how apps published on the store may utilise background location data.
 
