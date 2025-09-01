@@ -7,6 +7,18 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+Release date  Aug 25, 2025
+-------------------------
+
+### Rezolve Point SDK React Native wrapper 3.3.2
+
+**What's New:**
+
+*   Update React Native version to 0.80.1.
+*   Enhanced compatibility with the latest React Native framework.
+
+* * *
+
 Release date  Jun 16, 2025
 -------------------------
 

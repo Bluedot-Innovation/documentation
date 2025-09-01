@@ -3,18 +3,18 @@ Raydiant Integration
 
 Take your Curbside & Pickup experience to the next level by combining Bluedot’s Hello Screens with [Raydiant](https://www.raydiant.com/) to deliver personalized digital experiences.
 
-Bluedot Hello Screens visualize customer ETAs and arrivals to your store. By combining them with Raydiant’s platform, you can display this vital information where you need it and deliver an unbeatable curbside customer experience and lightning-fast service.
+Rezolve Hello Screens visualize customer ETAs and arrivals to your store. By combining them with Raydiant’s platform, you can display this vital information where you need it and deliver an unbeatable curbside customer experience and lightning-fast service.
 
 Setting up Hello Screens with Raydiant
 --------------------------------------
 
-To set up Hello Screens with Raydiant, you must first have an active account with Raydiant and Bluedot. 
+To set up Hello Screens with Raydiant, you must first have an active account with Raydiant and Rezolve. 
 
-You can find the Bluedot Raydiant App under the library tab of the Raydiant dashboard. When creating a new playlist, there will be access to all Raydiant apps, including the Bluedot Raydiant app.
+You can find the Rezolve Raydiant App under the library tab of the Raydiant dashboard. When creating a new playlist, there will be access to all Raydiant apps, including the Rezolve Raydiant app.
 
 ![](../assets/Raydiant_docs-1-1024x481.png)
 
-Once the Bluedot Raydiant app has been chosen, there are a few options to be selected.
+Once the Rezolve Raydiant app has been chosen, there are a few options to be selected.
 
 *   Name: Name of the presentation in the library
 *   Duration: The duration that Hello Screens will appear through Raydiant.
