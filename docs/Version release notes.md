@@ -7,6 +7,19 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+
+Release date  Sep 22, 2025
+-------------------------
+
+### Android Point SDK 17.2.0
+
+**What's New:**
+
+* Faster and more accurate Exit event detection. Exit is now triggered when a device moves approximately 15 to 30 meters from the edge of the geofence, previously 70 to 100 meters. This improves timeliness and reduces missed exits.
+* General reliability, stability, and consistency improvements.
+
+* * *
+
 Release date  Sep 05, 2025
 -------------------------
 
