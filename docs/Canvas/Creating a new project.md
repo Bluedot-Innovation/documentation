@@ -5,7 +5,7 @@ Create a Project is your first step. All your Zones and all geofences exist with
 
 1\. From the **Project** dropdown, select the **Add new project** button
 
-![](../assets/canvas-add-project.jpeg)
+![](../assets/canvas-add-project.png)
 
 2\. Give the Project a name and the **Create** button
 

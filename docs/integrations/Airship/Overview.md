@@ -10,7 +10,7 @@ Connectivity is at the heart of this chapter for mobile. But it’s more than ju
 Integration architecture
 ------------------------
 
-![](../../assets/Bluedot-Airship-Architecture-Diagram.jpg)
+![](../../assets/Bluedot-Airship-Architecture-Diagram.png)
 
 Airship Setup
 -------------

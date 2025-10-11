@@ -23,7 +23,7 @@ Zone Dashboard
 
 The Zone dashboard provides a simple, single map view for all your Zones and Geofences. From the dashboard, you can navigate between Projects, create new Zones, manage existing Zones, and generally navigate account.
 
-![](../assets/Canvas.jpeg)
+![](../assets/Canvas.png)
 
 Team member access
 ----------------------
