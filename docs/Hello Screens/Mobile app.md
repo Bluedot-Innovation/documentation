@@ -40,7 +40,7 @@ Generating Linking URL (for administrator users):
 7.  Select how long you want the generated URL to be active
 8.  Click Generate button
 
-![](../assets/Hello-Screens-generate-link.jpeg)
+![](../assets/Hello-Screens-generate-link.png)
 
 **Linking your device with ‘Connect with link’:**
 
@@ -52,11 +52,11 @@ Using this method, you will generate a one-time code within the Hello Screens ap
 
 **Generating the one-time code on your device**
 
-After enabling notifications on your device, you will be prompted to select your region. ![](../assets/Hello-Screens-select-region.jpg)  
+After enabling notifications on your device, you will be prompted to select your region. ![](../assets/Hello-Screens-select-region.png)  
 
 After selecting your region, you will receive your one-time code. Pass this on to your Rezolve Canvas administrator to connect your device.
 
-![](../assets/Hello-Screens-One-time-code.jpg)
+![](../assets/Hello-Screens-One-time-code.png)
 
 Connecting with time one-time code on Canvas
 
@@ -69,7 +69,7 @@ Connecting with time one-time code on Canvas
 7.  Add in the one-time code
 8.  Link
 
-![](../assets/Hello-screens-on-time-code-linking-from-canvas-1024x542.jpg)
+![](../assets/Hello-screens-on-time-code-linking-from-canvas-1024x542.png)
 
 After the one-time code is entered on Canvas, the respective device will instantly access the Hello Screens dashboard.
 
@@ -83,7 +83,7 @@ Order statuses include:
 *   Arrived
 *   On the way
 
-![](../assets/Hello-Screen-no-orders-screen.jpg)
+![](../assets/Hello-Screen-no-orders-screen.png)
 
 An audible alert will play if the Hello Screens application is open upon a customer’s arrival. This alert will keep playing until the ticket is opened/acknowledged.
 
@@ -129,7 +129,7 @@ When the customer arrives at the store the order’s ticket will move from _On t
 
 ![](../assets/hs-phone-arrived-notification.jpeg)
 
-![](../assets/hello-screens-arrived-orders-list.jpg)
+![](../assets/hello-screens-arrived-orders-list.png)
 
 Push Notification: Customer arrival
 
@@ -145,21 +145,21 @@ To confirm the order has been successfully fulfilled, press the “Fulfilled” 
 
 When an order is closed off, it will disappear from the main screen view. To view any historic orders, team members will have to navigate to the Hello Screens menu via the button on the top right of the screen to find the order “_History_” view.
 
-![](../assets/Hello-screens-menu-opened.jpg)
+![](../assets/Hello-screens-menu-opened.png)
 
 Once the history view has been selected, all historical orders for that store will be displayed in chronological order, with the most recent ones at the top. After 24 hours, all orders will be cleared from Hello Screens.
 
-![](../assets/Hello-screens-historical-orders.jpg)
+![](../assets/Hello-screens-historical-orders.png)
 
 ### Manually updating order collection status
 
 Team members can also manually update the status of any order. A menu with the order details will pop up when a ticket is selected. At the bottom are two buttons, one to close the menu and the second to update the order status.
 
-![](../assets/hello-screens-on-the-way-order-ticket.jpg)
+![](../assets/hello-screens-on-the-way-order-ticket.png)
 
 After selecting “_Update Order Status_”, a list of possible statuses will be displayed. A team member can select the new state of the order and then confirm the change by pressing the “Update” button.
 
-![](../assets/Hello-screens-manually-update-order-status.jpg)
+![](../assets/Hello-screens-manually-update-order-status.png)
 
 If a team member accidentally deletes an order from the main view and wishes to revive it, they can update the ticket from the “_History_” section and select which status the ticket should be placed in.
 
@@ -168,7 +168,7 @@ If a team member accidentally deletes an order from the main view and wishes to 
 As the Hello Screens dashboard may display many tickets, a user can enter a keyword in the search bar that will filter orders displayed on the screen based on the term entered. 
 
 This filter will only apply to the customer’s name and order number, not any further details about the customer’s order contained within the tickets.  
-![](../assets/Hello-screen-search-feat.jpg)
+![](../assets/Hello-screen-search-feat.png)
 
 When such a filter is applied, it will stay current and filter out any existing or new events appearing on Hello Screens until the search term is cleared from the bar.
 
