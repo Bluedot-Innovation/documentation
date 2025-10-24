@@ -88,15 +88,19 @@ class ExampleGeoTriggerReceiver : GeoTriggeringEventReceiver() {
     override fun onZoneInfoUpdate(context: Context) {
         // Notification that the local cache of zones has been updated
         // and Zones can be fetched from ServiceManager getZonesAndFences() API
-     }
+    }
 
     override fun onZoneEntryEvent(entryEvent: GeoTriggerEvent, context: Context) {
         // Notification that a zone has been entered/Geoline™ crossed.
-     }
+    }
+
+    override fun onZoneDwellEvent(dwellEvent: GeoTriggerEvent, context: Context) {
+        // Notification that a dwell event has triggered for a zone.
+    }
  
-     override fun onZoneExitEvent(exitEvent: GeoTriggerEvent, context: Context) {
+    override fun onZoneExitEvent(exitEvent: GeoTriggerEvent, context: Context) {
         // Notification that an exit detection-enabled zone has been exited.
-     }   
+    }   
  }
  ```
 
