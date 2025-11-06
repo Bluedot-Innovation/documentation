@@ -1,7 +1,7 @@
 Attentive Integration
 =====================
 
-This integration brings together the power of location-based technology and personalized mobile messaging to help brands create unique and engaging experiences for their customers. With Bluedot’s accurate location data and Attentive’s powerful messaging platform, brands can now deliver targeted and relevant messages to their customers in real-time based on their exact location. In this documentation, we will walk you through the setup and configuration process for the integration, as well as provide examples of how to use it to drive engagement and growth for your business.
+This integration brings together the power of location-based technology and personalized mobile messaging to help brands create unique and engaging experiences for their customers. With Rezolve's accurate location data and Attentive’s powerful messaging platform, brands can now deliver targeted and relevant messages to their customers in real-time based on their exact location. In this documentation, we will walk you through the setup and configuration process for the integration, as well as provide examples of how to use it to drive engagement and growth for your business.
 
 Location-based Messages
 -----------------------

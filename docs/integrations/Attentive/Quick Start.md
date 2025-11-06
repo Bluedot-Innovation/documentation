@@ -7,7 +7,7 @@ You can install the integration either from Attentive’s marketplace or from Ca
 
 ### From Attentive’s Marketplace
 
-From Attentive’s market place search for Rezolve and follow the steps to install the app.
+From Attentive’s market place search for Rezolve (formerly Bluedot) and follow the steps to install the app.
 
 ![Attentive marketplace Install Bluedot Integration](../../assets/Attentive-marketplace-bluedot-integration-1024x529.png)
 
@@ -21,7 +21,7 @@ From Canvas, go to the Integrations section and select Attentive click on the �
 
 ![Authorize the Attentive & Bluedot integration](../../assets/Authorize_the_attentive__bluedot_integration-1024x1020.png)
 
-If installing the integration from Attentive’s Market place, you’ll need to select the region where your Rezolve account is. If you’re not sure what the region of your account is, let us know at [help@bluedot.io](mailto:help@bluedot.io).
+If installing the integration from Attentive’s Market place, you’ll need to select the region where your Rezolve account is.
 
 Important Notes
 ---------------
@@ -34,4 +34,4 @@ Please make sure to collect the customer’s consent when collecting the phone n
 
 ### Missing Custom Properties in SMS
 
-If a message includes variables from the `{}` Personalization options, but these are not populated when registering the order with Bluedot’s Wave API, then the message will not be sent.
+If a message includes variables from the `{}` Personalization options, but these are not populated when registering the order with Rezolve's Wave API, then the message will not be sent.

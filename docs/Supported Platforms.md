@@ -11,7 +11,7 @@ While we strive to keep supporting the older versions of the Operating Systems a
 Mobile SDK OS Support
 ---------------------
 
-Rezolve supports current and previous 2 versions for the Rezolve SDK and Android and iOS operating systems. Operating System (OS) version supportBluedot strives to support past versions of the respective Apple and Android Operating System (OS) for as long as possible. However, given both Apple and Android release OS updates annually, along with new compatible devices, Rezolve must be responsive to their innovations. Currently, the Rezolve Point SDK supports the following OS:
+Rezolve supports current and previous 2 versions for the Rezolve SDK and Android and iOS operating systems. Operating System (OS) version support strives to support past versions of the respective Apple and Android Operating System (OS) for as long as possible. However, given both Apple and Android release OS updates annually, along with new compatible devices, Rezolve must be responsive to their innovations. Currently, the Rezolve Point SDK supports the following OS:
 
 *   Android OS Version – 5.0 and above
 *   iOS Version – iOS 12 and above

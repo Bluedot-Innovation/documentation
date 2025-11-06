@@ -1,9 +1,9 @@
 Overview
 ===================
 
-With the combination of Airship’s leading mobile engagement platform and Bluedot’s best in class location technology, mobile engagement is taken to the next level. Combine the power of Airship with the precision and scalability of Bluedot’s location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
+With the combination of Airship’s leading mobile engagement platform and Rezolve's best in class location technology, mobile engagement is taken to the next level. Combine the power of Airship with the precision and scalability of Rezolve's location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
 
-Bluedot’s location marketing platform delivers a solution 20x more accurate, with negligible battery drain, unlimited locations and best in class privacy making it the only option that can deliver location-based 1:1 segmentation no matter how large your audience is.
+Rezolve's location marketing platform delivers a solution 20x more accurate, with negligible battery drain, unlimited locations and best in class privacy making it the only option that can deliver location-based 1:1 segmentation no matter how large your audience is.
 
 Connectivity is at the heart of this chapter for mobile. But it’s more than just the ability to engage. It’s also about connecting to mobile users with discernment and insight. That’s what mobile engagement is about, and it’s exciting what we can do.
 
@@ -55,8 +55,8 @@ You can find additional information on the different features we support below:
 
 *   [Airship Android Integration](./Android.md)
 *   [Airship iOS Integration](./iOS.md)
-*   [GitHub – Bluedot Airship Android example](https://github.com/Bluedot-Innovation/BluedotAirshipDemoApp-Android)
-*   [GitHub – Bluedot Airship iOS example](https://github.com/Bluedot-Innovation/PointSDK-UrbanAirshipIntegrationExample-iOS)
+*   [GitHub – Rezolve (formerly Bluedot) Airship Android example](https://github.com/Bluedot-Innovation/BluedotAirshipDemoApp-Android)
+*   [GitHub – Rezolve (formerly Bluedot) Airship iOS example](https://github.com/Bluedot-Innovation/PointSDK-UrbanAirshipIntegrationExample-iOS)
 *   [Drawing Geofences or Geolines™](../../Canvas/Add%20a%20new%20zone.md)
 *   [Setting custom data fields](../../Canvas/What%20is%20Zone%20custom%20data.md)
 *   [Zone Settings](../../Canvas/What%20are%20Zone%20settings.md)

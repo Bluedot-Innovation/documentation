@@ -15,7 +15,7 @@ You can register orders from one of our Order Management partners (I.E., Olo) or
 Create your Journeys to send messages
 -------------------------------------
 
-Once you’ve installed the Attentive & Rezolve integration, you can start creating Journeys to send SMS with the [Now Ready](../../Now%20Ready/Overview.md) link. 
+Once you’ve installed the Attentive & Rezolve (formerly Bluedot) integration, you can start creating Journeys to send SMS with the [Now Ready](../../Now%20Ready/Overview.md) link. 
 
 1\. Create a new Journey and select the “Start from scratch” option.
 
@@ -53,7 +53,7 @@ ID of the order registered
 
 Link to Now Ready for the order registered
 
-When using the Bluedot’s Wave API to register an order,  the fields `firstName`, `lastName` and `orderId` are required. Rezolve will take care of generating and then passing the `nowReadyUrl` to Attentive. If you’re using one of our order management integrations (i.e. Olo) Rezolve takes care of passing these fields to Attentive.
+When using the Rezolve's Wave API to register an order,  the fields `firstName`, `lastName` and `orderId` are required. Rezolve will take care of generating and then passing the `nowReadyUrl` to Attentive. If you’re using one of our order management integrations (i.e. Olo) Rezolve takes care of passing these fields to Attentive.
 
 Important Notes
 ---------------

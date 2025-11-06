@@ -7,7 +7,7 @@ iOS – Quick start
 
 In order to successfully integrate the Xamarin wrapper for Point SDK, you would require a Rezolve account. Please contact our sales team by requesting for a [demo](https://bluedot.io/contact-us/).  Please also ensure that you also meet the [iOS requirements](../../Point%20SDK/iOS/Quick%20Start.md).
 
-The Rezolve Point SDK enables geo-location capability for apps by delivering accurate location awareness, while substantially reducing battery consumption compared to Android Location API or other standard methods. The Point SDK connects to the Bluedot’s backend system, Canvas, to download your pre-configured Geofences, GEOLINE™, Bluetooth Beacons, conditions, and actions.
+The Rezolve Point SDK enables geo-location capability for apps by delivering accurate location awareness, while substantially reducing battery consumption compared to Android Location API or other standard methods. The Point SDK connects to the Rezolve's backend system, Canvas, to download your pre-configured Geofences, GEOLINE™, Bluetooth Beacons, conditions, and actions.
 
 The Point SDK enables rapid development of location-aware apps. It delivers precise location awareness to the mobile application, but without the usual battery drain that would typically occur. There’s also no need for additional hardware, making it highly scalable. This means the Point SDK enables location-based apps and experiences that were previously impossible. The rest is up to you.
 

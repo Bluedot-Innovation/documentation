@@ -5,12 +5,12 @@ Rezolve is a location platform that provides an accurate and simple geofencing p
 
 mParticle is a customer data platform that unifies customer data in one place and connects it to 175+ leading marketing, analytics, and data warehousing solutions.
 
-Through this integration, Bluedot’s first-party, accurate, and privacy compliant location data can be connected and utilised across all of the platform and apps supported by mParticle.  
+Through this integration, Rezolve’s first-party, accurate, and privacy compliant location data can be connected and utilised across all of the platform and apps supported by mParticle.  
 
 Associated Documentation
 ------------------------
 
-*   mParticle’s own [_mParticle + Bluedot documentation_](https://docs.mparticle.com/integrations/bluedot/feed/)
+*   mParticle’s own [_mParticle + Rezolve AI (fomerly Bluedot) documentation_](https://docs.mparticle.com/integrations/bluedot/feed/)
 
 * * *
 

@@ -1,7 +1,7 @@
 Mobivity Integration
 ====================
 
-Take your Curbside & Pickup experience to the next level with Mobivity’s leading message marketing platform and Bluedot’s best-in-class customer arrival technology. 
+Take your Curbside & Pickup experience to the next level with Mobivity’s leading message marketing platform and Rezolve’s best-in-class customer arrival technology. 
 
 Send a personalized SMS to your customers to collect their curbside pickup orders with a link to our pre-built web app _Now Ready__,_ to let a store know when they’re on their way and when they’ve arrived.
 
