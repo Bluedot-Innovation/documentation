@@ -1,7 +1,7 @@
 Braze Integration
 =================
 
-With the combination of Braze’s leading mobile engagement platform and Rezolve's best in class location technology, mobile engagement is taken to the next level. Combine the power of Braze with the precision and scalability of Bluedot’s location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
+With the combination of Braze’s leading mobile engagement platform and Rezolve's best in class location technology, mobile engagement is taken to the next level. Combine the power of Braze with the precision and scalability of Rezolve's location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
 
 Rezolve’s location marketing platform delivers a solution 20x more accurate, with negligible battery drain, unlimited locations and best in class privacy making it the only option that can deliver location-based 1:1 segmentation no matter how large your audience is.
 

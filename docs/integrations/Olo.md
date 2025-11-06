@@ -13,7 +13,7 @@ Configure the Olo Webhooks
 
 ### Find Rezolve Webhook Destination URL
 
-The first step is to get Bluedot’s webhook URL; we will use it later when creating the Webhook in Olo.
+The first step is to get Rezolve's webhook URL; we will use it later when creating the Webhook in Olo.
 
 Get the `projectId` in the Projects section in Canvas to complete the Webhook URL based on the region where your account is located.
 
@@ -31,8 +31,8 @@ In Olo’s Dashboard add a new webhook from the _Dev Tools_ section. 
 
 Fill the following fields:
 
-*   **Webhook Name:** This is a description to recognize Bluedot’s webhook.
-*   **Destination URL:** Use Bluedot’s Webhook URL covered in the previous step here.
+*   **Webhook Name:** This is a description to recognize Rezolve's webhook.
+*   **Destination URL:** Use Rezolve's Webhook URL covered in the previous step here.
 *   **Developer Partner:** Select the “_Bluedot_” option.
 
 From the Order Events section, enable the following events:

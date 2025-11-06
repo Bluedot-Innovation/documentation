@@ -1,7 +1,7 @@
 Flipdish Integration
 ====================
 
-With Bluedot’s first-class arrival toolkit and Flipdish, you can offer your customers a great curbside or pickup experience. You can track customers’ arrival at your restaurant with Hello Screens, informing your staff when a customer is on the way or has arrived to pick up their order.
+With Rezolve's first-class arrival toolkit and Flipdish, you can offer your customers a great curbside or pickup experience. You can track customers’ arrival at your restaurant with Hello Screens, informing your staff when a customer is on the way or has arrived to pick up their order.
 
 Create a Webhook in Flipdish
 ----------------------------
@@ -18,7 +18,7 @@ When creating the Flipdish webhook please make sure to select **version 2.0**. T
 Find Rezolve Webhook URL
 ------------------------
 
-To fill out the _Create Webhook_ form, the first step is to get Bluedot’s webhook URL, which you will use when creating the Webhook in Flipdish.
+To fill out the _Create Webhook_ form, the first step is to get Rezolve's webhook URL, which you will use when creating the Webhook in Flipdish.
 
 From Canvas, go to the integrations section and select Flipdish.
 
@@ -55,4 +55,3 @@ From the Order settings menu, please select the Customer Name required for colle
 
 ![](../assets/flipdish_customer_name_required-1024x238.png)
 
-If you have any questions, contact us at [help@bluedot.io](mailto:help@bluedot.io)

@@ -6,7 +6,7 @@ With Rezolve’s first-class arrival toolkit and Bbot, you can offer your custom
 Find Rezolve Webhook URL
 ------------------------
 
-The first step is to get Bluedot’s webhook URL; we will use it later when creating the Webhook in Bbot.
+The first step is to get Rezolve's webhook URL; we will use it later when creating the Webhook in Bbot.
 
 From Canvas, go to the integrations section and select Bbot.
 

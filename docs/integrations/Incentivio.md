@@ -1,7 +1,7 @@
 Incentivio Integration
 ======================
 
-With Bluedot’s first-class arrival toolkit and Incentivio, you can offer your customers a great curbside or pickup experience. You can track customers’ arrival at your restaurant with Hello Screens, informing your staff when a customer is on the way or has arrived to pick up their order.
+With Rezolve's first-class arrival toolkit and Incentivio, you can offer your customers a great curbside or pickup experience. You can track customers’ arrival at your restaurant with Hello Screens, informing your staff when a customer is on the way or has arrived to pick up their order.
 
 Get your Incentivio Customer ID
 -------------------------------

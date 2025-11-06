@@ -29,7 +29,7 @@ From the top navigation bar in Canvas, hover over the Analytics tab and select t
 #### Setting Up the Report:
 Click on "Create New Report".
 Configure the report parameters, including the frequency (Daily, Weekly, Monthly), time zone, and email distribution list.
- The report will be sent at 3 am in the selected time zone.
+The report will be sent at 3 am in the selected time zone and the download link included in the email is valid for 7 days from the time the report is generated.
 
 ![](../../assets/Hello%20Reports%20-%202.png)
 
@@ -85,7 +85,7 @@ Admins can view, edit, or delete scheduled reports at any time through the Repor
 
 
 ### Scheduling Frequency 
-You can select the frequency of report generation and email distribution through a dropdown menu with options for Daily, Weekly, or Monthly reports. Additionally, you can select your preferred time zone to receive reports, which will be sent at 3 am in the selected time zone.
+You can select the frequency of report generation and email distribution through a dropdown menu with options for Daily, Weekly, or Monthly reports. Additionally, you can select your preferred time zone to receive reports, which will be sent at 3 am in the selected time zone and the download link included in the email is valid for 7 days from the time the report is generated..
 
 ### Admin Access Only
 The report generation and scheduling feature is exclusive to users with "Admin" permissions. Only these users can add, edit, or delete scheduled reports, ensuring control and security over report management.

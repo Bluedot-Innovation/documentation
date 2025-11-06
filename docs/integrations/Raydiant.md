@@ -1,7 +1,7 @@
 Raydiant Integration
 ====================
 
-Take your Curbside & Pickup experience to the next level by combining Bluedot’s Hello Screens with [Raydiant](https://www.raydiant.com/) to deliver personalized digital experiences.
+Take your Curbside & Pickup experience to the next level by combining Rezolve's Hello Screens with [Raydiant](https://www.raydiant.com/) to deliver personalized digital experiences.
 
 Rezolve Hello Screens visualize customer ETAs and arrivals to your store. By combining them with Raydiant’s platform, you can display this vital information where you need it and deliver an unbeatable curbside customer experience and lightning-fast service.
 
@@ -36,7 +36,7 @@ Through the use of [Raydiant Second Screen](https://secondscreen.raydiant.com/) 
 
 ![](../assets/Raydiant_docs-6-1024x479.png)
 
-Once the second screen is online, you can then add a playlist from the library with all Raydiant apps desired, including Bluedots Hello Screens.
+Once the second screen is online, you can then add a playlist from the library with all Raydiant apps desired, including Rezolve's Hello Screens.
 
 ![](../assets/Raydiant_docs-7-1024x479.png)
 
@@ -44,6 +44,6 @@ Once linked and the updated playlist has been published to the Second Screen, th
 
 ![](../assets/Raydiant_docs-8-1024x480.png)
 
-When you navigate to the Hello Screens Linkin Page, you will see a one-time code displayed on the screen. Copy this code and enter it into the linking page in Bluedot’s Canvas UI under the “Hello Screens” tab in the drop-down menu. Once completed, you will be able to use your Raydiant Screen to show your Bluedot Hello Screen. 
+When you navigate to the Hello Screens Linkin Page, you will see a one-time code displayed on the screen. Copy this code and enter it into the linking page in Rezolve's Canvas dashboard under the “Hello Screens” tab in the drop-down menu. Once completed, you will be able to use your Raydiant Screen to show your Rezolve's Hello Screen. 
 
 ![](../assets/Raydiant_docs-9-1024x480.png)

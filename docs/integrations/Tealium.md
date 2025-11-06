@@ -5,7 +5,7 @@ pagination_next: null
 Tealium Integration
 ===================
 
-Tealium is a customer data platform formed of EventStream, AudienceStream, and iQ Tag Management to integrate mobile, online, and alternative data from third-party sources. Combine the power of Tealium with the precision and scalability of Bluedot’s location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
+Tealium is a customer data platform formed of EventStream, AudienceStream, and iQ Tag Management to integrate mobile, online, and alternative data from third-party sources. Combine the power of Tealium with the precision and scalability of Rezolve's location services to accelerate growth, drive loyalty engagement and revenue in your app and beyond.
 
 Rezolve setup
 -------------
