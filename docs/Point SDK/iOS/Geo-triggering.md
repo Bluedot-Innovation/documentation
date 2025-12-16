@@ -49,6 +49,9 @@ extension AppDelegate: BDPGeoTriggeringEventDelegate {
     func didExitZone(_ exitZoneEvent: GeoTriggerEvent) {
         print("I have exited a zone")
     }
+	func didDwellInZone(_ triggerEvent: GeoTriggerEvent) {
+		print("Dwell time (ms): '(triggerEvent.dwellEvent.calculatedDwellTime)'")
+	} 
  }
 ```
 
