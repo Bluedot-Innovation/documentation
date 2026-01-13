@@ -562,6 +562,7 @@ const sidebars = {
       },
       items: [
         "Implementation and Best Practices Guides/Overview",
+        "Implementation and Best Practices Guides/How to Integrate Point SDK with Hello Screens",
         "Implementation and Best Practices Guides/Curbside & Pickup implementation guide",
         "Implementation and Best Practices Guides/Drive-thru implementation guide",
         "Implementation and Best Practices Guides/Marketing & Gamification implementation guide",
