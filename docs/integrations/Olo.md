@@ -52,7 +52,7 @@ Configure the Hello Orders Webhooks:
 
 You’ll need the `userId` in the “_Register Order_” webhook event to track the customer’s journey. When using the Point SDK, you’ll include the `userId` in the [Custom Event Meta Data](../Custom%20Data.md) before starting Tempo, and when using Now Ready, you’ll use the `userId` to create the URL to Now Ready.
 
-Learn more about [Hello Order Webhooks here.](../Webhooks/Hello%20order.md)
+Learn more about [Hello Order Webhooks here.](../Webhooks/Hello-order.md)
 
 Point SDK: Tempo
 ----------------

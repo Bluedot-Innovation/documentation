@@ -397,31 +397,19 @@ const sidebars = {
         "Webhooks/Geo-triggering",
         "Webhooks/Tempo",
         "Webhooks/Wave",
-        "Webhooks/Hello order",
+        "Webhooks/Hello-order",
         "Webhooks/Webhooks retry",
         {
           type: "category",
-          label: "V2",
-          link: {
-            type: "doc",
-            id: "Webhooks/V2/Geo-triggering"
-          },
+          label: "Previous Versions",
+          collapsed: true,
           items: [
-            "Webhooks/V2/Geo-triggering"
-          ]
-        },
-        {
-          type: "category",
-          label: "V1",
-          link: {
-            type: "doc",
-            id: "Webhooks/V1/Geo-triggering"
-          },
-          items: [
-            "Webhooks/V1/Geo-triggering",
-            "Webhooks/V1/Hello order",
-            "Webhooks/V1/Tempo",
-            "Webhooks/V1/Wave",
+            "Webhooks/versions/Geo-triggering-v2-1",
+            "Webhooks/versions/Geo-triggering-v2-0",
+            "Webhooks/versions/Geo-triggering-v1-0",
+            "Webhooks/versions/Tempo-v1-0",
+            "Webhooks/versions/Wave-v1-0",
+            "Webhooks/versions/Hello-order-v1-0",
           ]
         }
       ],

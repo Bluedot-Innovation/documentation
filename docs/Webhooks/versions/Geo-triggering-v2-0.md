@@ -1,5 +1,15 @@
 # Geo-Triggering Webhook V2.0
 
+:::info
+**You're viewing an older version**
+
+For the latest features and improvements, see the current version.
+
+[View Latest Documentation](../Geo-triggering.md)
+:::
+
+---
+
 This document provides information about the V2.0 payload structure for Geo-triggering webhooks.
 
 ## Geo-triggering event (V2.0)
@@ -175,4 +185,4 @@ This table describes the fields within the `triggerEvents` array, detailing the 
     },
     "webhookUniqueId": "0b816c7264a86200ce3523c48435b913d9d6b060" // only available when webhook retry is enabled
 }
-``` 
+```

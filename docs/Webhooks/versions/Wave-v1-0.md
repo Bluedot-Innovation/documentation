@@ -1,6 +1,16 @@
 # Wave Webhook V1.0
 
-This document provides information about the V2.0 payload structure for Wave webhooks.
+:::warning
+**You're viewing legacy documentation**
+
+We recommend upgrading to the latest version for improved features including the full destination object.
+
+[View Latest Documentation](../Wave.md)
+:::
+
+---
+
+This document provides information about the V1.0 payload structure for Wave webhooks.
 
 ## Webhook request JSON structure
 
@@ -87,4 +97,4 @@ This document provides information about the V2.0 payload structure for Wave web
 | `zones.tags`                  | Array       | The tags added to a Zone in Canvas.                                                                                                                  | `["tag1","tag2"]`                        |
 | `zones.fence`                 | JSON Object | The Fence inside of the latitude and longitude of the location coordinates update in the Wave API request.                                           |                                          |
 | `fence.id`                    | String      | The unique identifier of the fence that location reported in the Wave event is inside of.                                                            | `"cf3ce604-adc2-494a-a41c-e19ded044c7d"` |
-| `fence.name`                  | String      | The name of the fence that the location reported in the Wave event is inside of.                                                                     | `"Fence name"`                           | 
+| `fence.name`                  | String      | The name of the fence that the location reported in the Wave event is inside of.                                                                     | `"Fence name"`                           |
