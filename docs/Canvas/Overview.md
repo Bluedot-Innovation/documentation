@@ -14,7 +14,7 @@ _Learn about using_ [_Canvas_](https://select-region.bluedot.io/) _to operate yo
 
 Rezolve Canvas is a feature-rich user interface for you to operate and configure your Rezolve account. You can use Canvas to build Projects, create Zones, draw Geofences, manage your account and more.
 
-Once you’ve integrated the SDK in your mobile app, you can use Canvas (or our Config. API) to design valuable, real-world experiences for your app users.
+Once you've integrated the SDK in your mobile app, you can use Canvas (or our Config API) to design valuable, real-world experiences for your app users.
 
 We’re always happy to help with integration, Zone setup or other questions you might have – just contact our Support Team.
 
