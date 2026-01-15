@@ -16,7 +16,7 @@ Choose the endpoint that corresponds to the region where your account is hosted.
 | Config API    | https://config.bluedot.io/prod1    | https://eu1-config.bluedot.io/prod1    | https://us1-config.bluedot.io/prod1    |
 | Analytics API | https://analytics.bluedot.io/prod1 | https://eu1-analytics.bluedot.io/prod1 | https://us1-analytics.bluedot.io/prod1 |
 | Events API    | https://au1-events.bluedot.io/     | https://eu1-events.bluedot.io/         | https://us1-events.bluedot.io/         |
-| Orders API    | https://au1-orders.bluedot.io      | https://eu1-orders.bluedot.io          | https://us1-orders.bluedot.io          |
+| Orders API    | https://au1-orders-core.bluedot.io | https://eu1-orders-core.bluedot.io     | https://us1-orders-core.bluedot.io     |
 | Now Ready     | https://au.nowready.io             | https://eu.nowready.io                 | https://us.nowready.io                 |
 
 To access Canvas you can also the [Select Region](https://select-region.bluedot.io/) page and select your Account’s region.
