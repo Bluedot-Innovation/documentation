@@ -1,5 +1,14 @@
-Geo-trigger webhook
-====================
+# Geo-Triggering Webhook V1.0
+
+:::warning
+**You're viewing legacy documentation**
+
+We recommend upgrading to the latest version for improved features and standardized structure.
+
+[View Latest Documentation](../Geo-triggering.md)
+:::
+
+---
 
 Register Geo-trigger Webhooks to receive real-time Entry/Exit notifications from your customers.
 

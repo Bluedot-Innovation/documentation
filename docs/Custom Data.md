@@ -39,7 +39,7 @@ eventMetaData.put("key2", "value2");
 ServiceManager.getInstance(context).setCustomEventMetaData(eventMetaData);
 ```
 
-Detailed informaion the `setCustomEventMetaData` API can be found in the [Android SDK documentation](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-service-manager/set-custom-event-meta-data.html).
+Detailed information the `setCustomEventMetaData` API can be found in the [Android SDK documentation](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-service-manager/set-custom-event-meta-data.html).
 
 #### iOS
 ```swift
@@ -55,7 +55,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 }
 ```
 
-Detailed informaion the `setCustomEventMetaData` API can be found in the [iOS SDK documentation](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)setCustomEventMetaData:).
+Detailed information the `setCustomEventMetaData` API can be found in the [iOS SDK documentation](https://ios-docs.bluedot.io/Classes/BDLocationManager.html#/c:objc(cs)BDLocationManager(im)setCustomEventMetaData:).
 
 :::info
 The custom event metadata is not persisted across SDK sessions. If the SDK is logged out the custom event metadata is cleared by the SDK. The Custom Event Metadata can be set at any time, although we suggest setting the custom data before starting GeoTriggering or Tempo.
@@ -93,7 +93,7 @@ Zone Custom Data is used to attach specific information to geographical zones, t
 ### Implementation
 You could also use Config API to set Zone Custom Data. For more details please refer to [Config API documentation](https://config-docs.bluedot.io/#tag/zones/operation/addZone).
 
-#### Example 
+#### Example
 ```json
 {
     "zone_id": "zone123",

@@ -1,4 +1,4 @@
-Wave webhook
+Wave Webhook
 =============
 
 Register Wave Webhooks to receive real-time Arrival notifications from your customers.
@@ -143,9 +143,9 @@ Wave Webhook field description
 | `fence.id`                    | String      | The unique identifier of the fence that location reported in the Wave event is inside of.                                                            | `"cf3ce604-adc2-494a-a41c-e19ded044c7d"` |
 | `fence.name`                  | String      | The name of the fence that the location reported in the Wave event is inside of.                                                                     | `"Fence name"`                           |
 
-:::info
-**Webhook Version 2.1**
 
-This documentation describes the latest webhook version (2.1) which includes destination custom data. 
-Previous versions are still available and fully supported to ensure backward compatibility with existing integrations.
+:::info
+**Webhook Versions:**
+This documentation describes Version 2.1 of the Wave webhook. For information about other versions, please refer to:
+- **Version 1.0**: Legacy structure with only destinationId. See [V1.0 Documentation](./versions/Wave-v1-0.md)
 :::

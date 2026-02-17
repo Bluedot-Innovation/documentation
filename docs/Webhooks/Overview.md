@@ -8,7 +8,7 @@ Overview
 
 Register Webhooks to receive real-time notifications from your app user's activity. Webhooks can be used to send events for:
 
-*   **Geo-trigger:** Entry and/or exit into a Zone/Geofence
+*   **Geo-trigger:** Entry, Exit, and Dwell events for Zones/Geofences
 *   **Tempo:** ETA calculations as a user moves towards a Zone
 *   **Wave:** API events when a user notifies of their arrival
 *   **Hello Orders:** events when the state of an order has been updated in Hello Screens
@@ -45,7 +45,7 @@ To set up **Webhooks**, login to Canvas and head to the **Integrations** section
 
 ![](../assets/webhooks-overview-4.png)
 
-4\. Webhook Payload Versions: we support multiple **payload versions**, allowing you to choose the structure that works best for your integration. We recommend selecting the **most recent version** to access the latest features and data fields. Older versions are still available to ensure we don't break existing implementations for customers already using webhooks.  
+4\. Webhook Payload Versions: we support multiple **payload versions**, allowing you to choose the structure that works best for your integration. We recommend selecting the **most recent version** to access the latest features and data fields. Older versions are still available to ensure we don't break existing implementations for customers already using webhooks.
 
 
 5\. Header Fields for the standard Webhooks can be set dynamically by adding the {} in the value field. By the way, the value itself can be set and injected from the additional event-specific **[Custom Event Meta Data](../Custom%20Data.md)** fields. The Dynamic Webhook Headers feature will pick up that value and attach it to the Webhook outputs.
@@ -62,7 +62,7 @@ To set up **Webhooks**, login to Canvas and head to the **Integrations** section
 5\. After finalizing your webhook configuration, click _'Add'_ to save and activate the webhook.
 
 :::info
-**Webhooks Retry Mechanism**: 
+**Webhooks Retry Mechanism**:
 The Webhooks Retry Mechanism is an optional feature that resends failed webhook events automatically. Learn how to enable and use this feature [here](./Webhooks%20retry.md).
 :::
 
@@ -74,7 +74,7 @@ To receive a webhook, you would need a server, cloud function or any HTTP endpoi
 Webhook Event Headers
 ---------------------
 
-You can make use of the **Token Key** and **Token Value** to add your own signature to the Webhook event. The Token Key and Token Value will be included in the Header of the HTTP request. 
+You can make use of the **Token Key** and **Token Value** to add your own signature to the Webhook event. The Token Key and Token Value will be included in the Header of the HTTP request.
 
 ```json
 "tokenKey": "tokenValue"
@@ -119,4 +119,4 @@ Explore these links for detailed examples and explanations of the JSON structure
 *   [Geo-trigger](./Geo-triggering.md)
 *   [Tempo](./Tempo.md)
 *   [Wave](./Wave.md)
-*   [Hello Order](./Hello%20order.md)
+*   [Hello Order](./Hello-order.md)

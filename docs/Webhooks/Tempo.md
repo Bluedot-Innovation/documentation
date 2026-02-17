@@ -1,4 +1,4 @@
-Tempo webhook
+Tempo Webhook
 =========================
 
 Register Tempo Webhooks to receive real-time ETA notifications from your customers. As your customers get closer to their Destination to collect their order, Rezolve will send a notification every minute, so your team is ready to go.
@@ -43,11 +43,11 @@ Endpoint: `https://config.bluedot.io/prod1/projects`
 Example of adding a Tempo Webhook:
 
 ```json
-"tempo": { 
-    "webhooks": [{ 
-        "type": "tempo", 
-        "url": "<webhook URL goes here>" 
-    }] 
+"tempo": {
+    "webhooks": [{
+        "type": "tempo",
+        "url": "<webhook URL goes here>"
+    }]
 }
 ```
 
@@ -60,7 +60,7 @@ Webhook request JSON structure
     "deviceType": "iPhone12,3",
     "os": "iOS",
     "osVersion": "7.0",
-    "customerApplicationId": "au.com.bluedot", 
+    "customerApplicationId": "au.com.bluedot",
     "sdkVersion": "1.11.0",
     "appBuildVersion": "1.11.2",
     "customEventMetaData": {
@@ -72,14 +72,14 @@ Webhook request JSON structure
     "latitude": -33.123123123,
     "destinationId": "store ID",
     "eventType": "tempoUpdate",
-    "eta": 900, 
+    "eta": 900,
     "etaDirection": "greaterThan",
     "installRef": "1111111-2222-3333-4444-555555555555",
     "projectId": "1111111-2222-3333-4444-555555555555",
     "triggerChainId": "11111111-2222-3333-4444-555555555555",
     "notificationType": "tempo",
     "zoneId": "1111111-2222-3333-4444-555555555555",
-    "zoneName": "Store 123", 
+    "zoneName": "Store 123",
     "destination": {
         "destinationId": "store ID",
         "name": "Destination name",
@@ -102,7 +102,7 @@ Webhook request JSON structure
     "deviceType": "iPhone12,3",
     "os": "iOS",
     "osVersion": "7.0",
-    "customerApplicationId": "au.com.bluedot", 
+    "customerApplicationId": "au.com.bluedot",
     "sdkVersion": "1.11.0",
     "appBuildVersion": "1.11.2",
     "customEventMetaData": {
@@ -111,7 +111,7 @@ Webhook request JSON structure
     },
     "eventTime": "2020-05-21T05:44:04Z",
     "destinationId": "store ID",
-    "stopReason": "stoppedByCustomerApp", 
+    "stopReason": "stoppedByCustomerApp",
     "eventType": "tempoStop",
     "installRef": "1111111-2222-3333-4444-555555555555",
     "projectId": "1111111-2222-3333-4444-555555555555",
@@ -166,9 +166,11 @@ Tempo Webhook Field description
 | `stopReason`            | This field denotes the reason the Tempo service stopped running.                                                                                     | String    | - `invalidDestinationId`: Passing an invalid `destinationId` to the start Tempo tracking SDK method. The SDK will return an error at the client level and at the same time, this event will be fired by our webhooks.<br/><br/>- `stoppedByCustomerApp`: The stop Tempo tracking method is executed.<br/><br/>- `expired`: Tempo service has been tracking the device for 30 minutes, and it hasn't arrived at the destination. This expiring time is customizable. Check with your CX representative if you'd like to update it.<br/><br/>- `sdkLogout`: The SDK's reset method is executed. |
 | `triggerChainId`        | triggerChainId can be used to connect the ETA updates coming through for one set from start to finish.                                               | String    | `"c8965662-d67f-49e8-abf9-0bada6c153d1"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `zoneId`                | The unique identifier of the zone associated with the `destinationId`.                                                                               | String    | `"4647e4eb-f908-4d3d-82e9-4959d59923b0"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `zoneName`              | The name of the zone associated with the `destinationId`.                                                                                            | String    | `"Zone Name"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `zoneName`              | The name of the zone associated with the `destinationId`.                                                                                            | String    | `"Zone Name"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+
 
 :::info
-**Note on Webhook Versioning**
-Tempo webhooks now include destination custom data in the payload, providing more contextual information about the destination. This enhancement allows you to access destination-specific information directly in your webhook handlers.
+**Webhook Versions:**
+This documentation describes Version 2.1 of the Tempo webhook. For information about other versions, please refer to:
+- **Version 1.0**: Legacy structure without destination object. See [V1.0 Documentation](./versions/Tempo-v1-0.md)
 :::

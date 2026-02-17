@@ -1,6 +1,16 @@
 # Tempo Webhook V1.0
 
-This document provides information about the V2.0 payload structure for Tempo webhooks.
+:::warning
+**You're viewing legacy documentation**
+
+We recommend upgrading to the latest version for improved features including destination custom data.
+
+[View Latest Documentation](../Tempo.md)
+:::
+
+---
+
+This document provides information about the V1.0 payload structure for Tempo webhooks.
 
 ## Tempo webhook request JSON structure
 
@@ -11,7 +21,7 @@ This document provides information about the V2.0 payload structure for Tempo we
     "deviceType": "iPhone12,3",
     "os": "iOS",
     "osVersion": "7.0",
-    "customerApplicationId": "au.com.bluedot", 
+    "customerApplicationId": "au.com.bluedot",
     "sdkVersion": "1.11.0",
     "appBuildVersion": "1.11.2",
     "customEventMetaData": {
@@ -23,14 +33,14 @@ This document provides information about the V2.0 payload structure for Tempo we
     "latitude": -33.123123123,
     "destinationId": "store ID",
     "eventType": "tempoUpdate",
-    "eta": 900, 
+    "eta": 900,
     "etaDirection": "greaterThan",
     "installRef": "1111111-2222-3333-4444-555555555555",
     "projectId": "1111111-2222-3333-4444-555555555555",
     "triggerChainId": "11111111-2222-3333-4444-555555555555",
     "notificationType": "tempo",
     "zoneId": "1111111-2222-3333-4444-555555555555",
-    "zoneName": "Store 123", 
+    "zoneName": "Store 123",
     "zoneCustomData": {
         "key1": "value1",
         "key2": "value2"
@@ -45,7 +55,7 @@ This document provides information about the V2.0 payload structure for Tempo we
     "deviceType": "iPhone12,3",
     "os": "iOS",
     "osVersion": "7.0",
-    "customerApplicationId": "au.com.bluedot", 
+    "customerApplicationId": "au.com.bluedot",
     "sdkVersion": "1.11.0",
     "appBuildVersion": "1.11.2",
     "customEventMetaData": {
@@ -54,7 +64,7 @@ This document provides information about the V2.0 payload structure for Tempo we
     },
     "eventTime": "2020-05-21T05:44:04Z",
     "destinationId": "store ID",
-    "stopReason": "stoppedByCustomerApp", 
+    "stopReason": "stoppedByCustomerApp",
     "eventType": "tempoStop",
     "installRef": "1111111-2222-3333-4444-555555555555",
     "projectId": "1111111-2222-3333-4444-555555555555",
@@ -62,9 +72,9 @@ This document provides information about the V2.0 payload structure for Tempo we
     "notificationType": "tempo",
     "zoneId": "1111111-2222-3333-4444-555555555555",
     "zoneName": "Store 123",
-    "zoneCustomData": { 
+    "zoneCustomData": {
         "key1": "value1",
-        "key2": "value2" 
+        "key2": "value2"
     }
 }
 ```
@@ -94,4 +104,4 @@ This document provides information about the V2.0 payload structure for Tempo we
 | `triggerChainId`        | triggerChainId can be used to connect the ETA updates coming through for one set from start to finish.                                               | String    | `"c8965662-d67f-49e8-abf9-0bada6c153d1"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `zoneId`                | The unique identifier of the zone associated with the `destinationId`.                                                                               | String    | `"4647e4eb-f908-4d3d-82e9-4959d59923b0"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `zoneName`              | The name of the zone associated with the `destinationId`.                                                                                            | String    | `"Zone Name"`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `zoneCustomData`        | Key/Value pair of Location specific data added to the Zone. This will not be returned as part of the request if no data set for the Zone.            | JSON      | `{ "key1": "value1", "key2": "value2" }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | 
+| `zoneCustomData`        | Key/Value pair of Location specific data added to the Zone. This will not be returned as part of the request if no data set for the Zone.            | JSON      | `{ "key1": "value1", "key2": "value2" }`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |

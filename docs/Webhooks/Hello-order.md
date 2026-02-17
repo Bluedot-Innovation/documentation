@@ -1,8 +1,34 @@
-# Hello Order Webhook V1.0
+---
+pagination_next: null
+---
 
-This document provides information about the V2.0 payload structure for Hello Order webhooks.
+Hello Order
+====================
 
-## The webhook request JSON structure
+Hello Screens uses webhooks to notify your application when the state of an order has been updated. Hello Order Webhooks help inform your systems when a customer is on the way to the store, arrives at the store, the staff acknowledges the arrival of the customer, when a staff member marks an order as completed. You can also receive updates when the order moves to any custom status you've set using [Wave API.](../APIs/Wave%20API/Overview.md)
+
+Configure a Hello Order Webhook
+-------------------------------
+
+In the Webhooks section of your Canvas account while creating a Webhook, select Hello Order as the Event type in the dropdown.
+
+![](../assets/Canvas-Webhooks-Hello-Order.png)
+
+You can also configure a Hello Order Webhook through Config API (Information on using the Config API for registering a Webhook can be found [here](https://config-docs.bluedot.io/#operation/addProject).)
+
+You can also create a Destination using [Config API](../APIs/Config%20API/Overview.md). When creating or editing a Project you can add Hello Order Webhooks within the `webhooks` property by setting the type to `helloOrder` and structure to `default` in the request.
+
+Example of adding a Hello Order Webhook:
+```json
+"webhooks": [{
+    "type": "helloOrder",
+    "structure": "default",
+    "url": "<webhook URL goes here>"
+}]
+```
+
+The webhook request JSON structure
+----------------------------------
 
 JSON request body for a Hello Order event
 ```json
@@ -11,6 +37,11 @@ JSON request body for a Hello Order event
     "notificationType": "helloOrder",
     "installRef": "1111111-2222-3333-4444-555555555555",
     "destinationId": "Store-001",
+    "destinationCustomData": {
+        "key1": "value1",
+        "key2": "value2",
+        "key3": "value3"
+    },
     "customerName": "John Smith",
     "orderId": "12345678",
     "etaDirection": "lessThan",
@@ -47,7 +78,8 @@ JSON request body for a Hello Order event
 }
 ```
 
-## Hello Order Webhook body field description
+Hello Order Webhook body field description
+------------------------------------------
 
 | **Field**                     | **Data type** | **Description**                                                                                                                                      | **Example**                                                                                                                                                             |
 |-------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -57,6 +89,7 @@ JSON request body for a Hello Order event
 | `accountId`                   | String        | The identifier of the account.                                                                                                                       | `"0ef516e2-fd11-454c-97bf-9ba53d45b885"`                                                                                                                                |
 | `installRef`                  | String        | A randomly issued installation reference, not tied to any personally identifiable data (PID) on the user's device.                                   | `"a7684ffd-2221-432c-9cb9-25fd241df39f"`                                                                                                                                |
 | `destinationId`               | String        | The ID associated with the location setup in Canvas for the Zone                                                                                     | `"Store1234"`                                                                                                                                                           |
+| `destinationCustomData`       | JSON Object   | Custom data related to the destination.                                                                                                              | `{"key1": "value1", "key2": "value2", "key3": "value3"}`                                                                                                               |
 | `customerName`                | String        | The name of the customer who made the order                                                                                                          | `"John Smith"`                                                                                                                                                          |
 | `orderId`                     | String        | The identifier of the order                                                                                                                          | `"Order 1234"`                                                                                                                                                          |
 | `eta`                         | Number        | The estimated time of arrival of the user to the store in seconds.                                                                                   | `300`                                                                                                                                                                   |
@@ -75,4 +108,10 @@ JSON request body for a Hello Order event
 | `location.bearing`            | Number        | The travel bearing of the device at the time of the event was reported in degrees.                                                                   | `120`                                                                                                                                                                   |
 | `location.horizontalAccuracy` | Number        | The estimated horizontal accuracy of the current location, in meters                                                                                 | `12`                                                                                                                                                                    |
 | `location.verticalAccuracy`   | Number        | The estimated vertical accuracy of the current location, in meters                                                                                   | `10`                                                                                                                                                                    |
-</rewritten_file> 
+
+
+:::info
+**Webhook Versions:**
+This documentation describes Version 2.1 of the Hello Order webhook. For information about other versions, please refer to:
+- **Version 1.0**: Legacy structure without destination custom data. See [V1.0 Documentation](./versions/Hello-order-v1-0.md)
+:::
