@@ -14,14 +14,22 @@ Import the SDK
 
 ### Option 1: Importing Point SDK with CocoaPods
 
-Follow the [CocoaPods installation instructions](https://guides.cocoapods.org/using/using-cocoapods.html). [BluedotPointSDK](https://cocoapods.org/pods/BluedotPointSDK) can be added into the `Podfile` as a dependency:
+Follow the [CocoaPods installation instructions](https://guides.cocoapods.org/using/using-cocoapods.html). [BluedotPointSDK](https://cocoapods.org/pods/BluedotPointSDK) can be added into the `Podfile` as a dependency.
 
-1. Create a Podfile in your project directory and add a ‘BluedotPointSDK’ dependency
+> **Important:** To receive the latest version of PointSDK, ensure your project’s minimum iOS deployment target is set to **iOS 15.0** in your `Podfile`.
+
+1. Create a Podfile in your project directory and specify the minimum platform version along with the `BluedotPointSDK` dependency:
 
 ```sh
-pod 'BluedotPointSDK'
+platform :ios, '15.0'
+
+target 'YourAppTargetName' do
+  use_frameworks!
+  pod 'BluedotPointSDK'
+end
 ```
-2. Open up the Workspace and follow the rest of the steps on this page to complete the project setup.
+
+2. Open up the Workspace and follow the rest of the steps on this page to complete the project setup.
 
 ### Option 2: Importing Point SDK with Carthage
 
