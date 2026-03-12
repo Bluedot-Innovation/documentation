@@ -29,3 +29,4 @@ For further information on the classes and methods discussed within the followin
 ### Compatibility  Notes
 
 *   **Moshi:** Android PointSDK v15.0.0+ is compatible with Moshi up to 1.9.3.
+*   Since v18.0.0 the PointSDK is compiled using the Java 21 toolchain.
