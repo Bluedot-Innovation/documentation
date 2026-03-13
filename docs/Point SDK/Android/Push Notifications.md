@@ -151,5 +151,7 @@ ServiceManager.getInstance(context)
     .setCustomPushNotification(customBuilder)
 ```
 
+> PendingIntent is a system-managed token that dies with the process. Make sure to set the custom builder early in the app lifecycle (e.g. in Application.onCreate) so it is available when the first notification arrives. If the module receives a message before you set the custom builder, it will create and use a default one.
+
 > The module fills in `.setContentTitle()` and `.setContentText()` automatically from the message payload, so you do not need to set them in your builder.
 
