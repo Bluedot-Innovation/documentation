@@ -119,15 +119,31 @@ Register the receiver in `AndroidManifest.xml`:
 
 ---
 
-## Step 5 — (Optional) Customise the notification appearance
+## Step 5 — (Optional) Customise the notification appearance and behaviour
 
-By default the module displays a standard notification using a built-in icon and the `IMPORTANCE_DEFAULT` channel. To override the appearance, supply your own `NotificationCompat.Builder` **before** the first message arrives:
+By default the module displays a standard notification using a built-in icon and the `IMPORTANCE_DEFAULT` channel. 
+On notification click the SDK sends the broadcast to the receiver defined in Step 4 and starts the default launcher activity defined for the app.
+
+To override the appearance or behaviour, supply your own `NotificationCompat.Builder` **before** the first message arrives:
 
 ```kotlin
+val contentIntent = PendingIntent.getActivity(
+    context,
+    0,  // request code — unique integer to distinguish this PendingIntent from others;
+        // use different values if you create multiple distinct PendingIntents
+    Intent(context, YourCustomActivity::class.java).apply {
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        // Optionally pass data:
+        putExtra("campaign_id", "...")
+    },
+    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+)
+
 val customBuilder = NotificationCompat.Builder(context, "your_channel_id")
     .setSmallIcon(R.drawable.your_notification_icon)
     .setColor(ContextCompat.getColor(context, R.color.your_brand_color))
     .setPriority(NotificationCompat.PRIORITY_HIGH)
+    .setContentIntent(contentIntent)   // <-- your custom activity
     .setAutoCancel(true)
 
 ServiceManager.getInstance(context)
