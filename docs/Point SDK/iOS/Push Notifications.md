@@ -1,46 +1,39 @@
 Push Notifications
 ==================
 
-Point SDK can process push notifications triggered by Rezolve campaigns.
+**Point SDK** can receive and process **Push Notifications** received from Location Events.
 
-Step 0 — Requirements
----------------------
+Requirements
+------------
 
 | Requirement | Value |
 | --- | --- |
-| Minimum iOS version | iOS 15+ |
-| Point SDK | Integrated and initialized in the app |
-| Apple push setup | APNs enabled for your app and provisioning profile |
+| Minimum version | iOS 15+ |
+| Point SDK | Embedded and initialized in the app |
+| APNs Setup | APNs enabled for the App ID and its Provision Profile |
 
-Project Setup Checklist
------------------------
+Setup Checklist
+---------------
 
-* Point SDK is initialized in your app.
-* Push Notifications capability is enabled for your app target in Xcode.
-* A valid `aps-environment` entitlement is included in the app provisioning profile.
-* If your app uses SwiftUI lifecycle, ensure APNs delegate callbacks are still wired through an app delegate.
+* Point SDK is setup & initialized.
+* Push Notifications feature is enabled in the Xcode's app target.
+* A valid `aps-environment` entitlement is included in the app's Provision Profile.
 
-Integration Steps
------------------
+Overview
+--------
 
-1. Configure iOS push credentials in Canvas.
-2. Request notification permission and register for remote notifications.
+1. Configure iOS Push Notifications credentials in Canvas.
+2. Request user permission and register for remote notifications.
 3. Register the device push token with Point SDK.
 4. Forward received and clicked notifications to Point SDK.
 5. Handle Point SDK notification callbacks.
 
-Step 1 — Configure APNs Credentials in Canvas
----------------------------------------------
+Step 1 — Setup APNs Credentials in Canvas
+-----------------------------------------
 
-Before push notifications can be delivered to your application, your Apple Push Notification Service (APNs) credentials must be configured in **Canvas**.
+Before **Push Notifications** can be delivered to the application, Apple Push Notification Service (APNs) credentials must be entered in **Canvas**.
 
-Navigate to:
-
-Project Settings -> Push Notification Settings -> iOS (APNs)
-
-Upload the required Apple Push credentials.
-
-Use the Canvas Push Notification Settings screen (iOS (APNs) tab) to confirm the iOS credential set is selected before saving.
+Go to `Project Settings -> Push Notification Settings -> iOS (APNs)`, and upload the required Apple Push Notifications credentials. Use the Canvas Push Notification Settings screen (iOS (APNs) tab) to confirm the iOS credential set is selected before saving.
 
 ![Canvas Push Notification Settings for iOS (APNs)](../../assets/push-notification-settings-ios-apns.png)
 
@@ -103,7 +96,7 @@ func application(
 Step 3 — Forward Push Notification Token to SDK
 -----------------------------------------------
 
-When the system provides a device token, forward it to the SDK.
+When a device token is provided, forward it to **Point SDK**.
 
 ```swift
 func application(_ application: UIApplication,
@@ -113,9 +106,7 @@ func application(_ application: UIApplication,
 }
 ```
 
-APNs tokens can change over time (for example after restore/reinstall). Always forward the latest token whenever iOS provides a new one.
-
-If push registration fails, you may optionally notify the SDK.
+**APNs Tokens** can change over time; for example after a restore, or a reinstall of the app. Make sure to forward the latest **Token** whenever iOS provides a new one. In the case of a failure, forward the actual error to the SDK.
 
 ```swift
 func application(_ application: UIApplication,
@@ -128,9 +119,9 @@ func application(_ application: UIApplication,
 Step 4 — Forward Push Notifications to the SDK
 ----------------------------------------------
 
-When a **Push notification** is received, forward the event to the SDK so it can process Rezolve notifications.
+When a **Push Notification** is received, forward the event to the SDK so it can process Rezolve-specific notifications.
 
-### Notification received (foreground)
+### Notification received
 
 ```swift
 func userNotificationCenter(
@@ -175,7 +166,7 @@ BDLocationManager.instance()?.pushNotifications.onNotificationClicked = { payloa
 }
 ```
 
-These callbacks can be used to update the UI, trigger navigation, or perform application logic. The callback content can include standard notification content and custom data configured in **Canvas**.
+These callbacks can be used to update the UI, app navigation, or perform other actions. The callback content can include standard notification content and custom data configured in **Canvas**.
 
 Complete Example
 ----------------
@@ -249,14 +240,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 Notes
 -----
 
-**Point SDK** works alongside the app's existing **Push Notifications** setup. Your app continues to control permission prompts and APNs registration, while the SDK focuses on handling Rezolve notifications and providing callbacks that can be used for UI updates, navigation, or other app logic.
+**Point SDK** works alongside the app's existing **Push Notifications** setup. Your app continues to control permission prompts and APNs registration, while the SDK focuses on handling Rezolve notifications and providing callbacks that can be used for UI updates, app navigation, or perform other actions.
 
 Troubleshoot
 ------------
 
-If notifications are not arriving as expected, check the following:
+If notifications are not received as expected, check:
 
 * The APNs credentials in Canvas match the app's **Team ID** and **Bundle ID**.
 * The app build uses a **Provision Profile** that contains the `aps-environment` entitlement.
-* Push Notifications permission has been granted from the user and remote notifications are indeed active.
+* Push Notifications permission has been granted from the user and remote notifications are active.
 * The latest and updated APNs Token has been forwarded to Point SDK.
