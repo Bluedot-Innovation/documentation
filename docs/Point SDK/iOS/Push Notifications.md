@@ -235,7 +235,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 Integration Notes
 -----------------
 
-* Point SDK does not request notification permissions automatically.
-* Point SDK does not register for remote notifications automatically.
-* The host application is responsible for managing push notification setup.
-* The SDK processes Rezolve notifications and exposes callbacks to the application.
+Point SDK works alongside your app’s existing push setup. Your app continues to control permission prompts and APNs registration, while the SDK focuses on handling Rezolve notifications and providing callbacks you can use for UI updates, navigation, or other app logic.
