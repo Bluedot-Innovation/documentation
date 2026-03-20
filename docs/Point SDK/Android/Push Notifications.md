@@ -117,15 +117,15 @@ Register the receiver in `AndroidManifest.xml`:
 
 ### NotificationData fields
 
-| Field | Type | Description                                           |
-|---|---|-------------------------------------------------------|
-| `title` | `String` | Notification title (empty string if absent)           |
-| `body` | `String` | Notification body text (empty string if absent)       |
-| `pushVersion` | `String` | Push schema version                                   |
-| `campaignId` | `String` | Campaign UUID                                         |
-| `zoneId` | `String` | Zone UUID                                             |
-| `notificationId` | `String` | Notification UUID                                     |
-| `data` | `Map<String, String>` | All remaining custom key-value pairs from the payload |
+| Field | Type | Description | Example value                            |
+|---|---|---|------------------------------------------|
+| `title` | `String` | Notification title (empty string if absent) | `"Title defined in Canvas Campaign"`     |
+| `body` | `String` | Notification body text (empty string if absent) | `"Body defined in Canvas Campaign"`      |
+| `pushVersion` | `String` | Push schema version | `"1.0"`                                  |
+| `campaignId` | `String` | Campaign UUID | `"b70e49c0-f12e-4ff1-b9f3-9d53767dc5b9"` |
+| `zoneId` | `String` | Zone UUID | `"89060cba-a910-481a-aeb5-816182fdf01f"` |
+| `notificationId` | `String` | Notification UUID | `"01J1ZQK8R4F9W6M0X9C1JZ7N2B"`           |
+| `data` | `Map<String, String>` | All remaining custom key-value pairs from the payload | `{"custom_key":"custom_value"}`          |
 
 ---
 
