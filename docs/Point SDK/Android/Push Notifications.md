@@ -22,6 +22,16 @@ The module:
 | Firebase Cloud Messaging | `com.google.firebase:firebase-messaging:25.0.1` |
 | Core Point SDK | `au.com.bluedot:pointsdk:18.0.0` |
 
+## Prerequisites
+
+Configure Android Push Notifications credentials and campaign in Canvas.
+
+![](../assets/canvas_push_settings_android.png)
+
+Setup Push Notifications campaign in Canvas.
+
+![](../assets/canvas_push_campaign.png)
+
 ## Step 1 — Add the dependency
 
 Follow [Quick Start](https://docs.bluedot.io/Point%20SDK/Android/Quick%20Start#import-the-sdk) guide to set up the core SDK first, including the project configuration URL and initialisation.
@@ -39,7 +49,7 @@ dependencies {
 
 The `pushnotifications` module uses **Firebase Cloud Messaging (FCM)** to receive push notifications. If your app doesn't use Firebase yet, follow the [official Android documentation](https://firebase.google.com/docs/cloud-messaging/android/get-started) to set it up.
 
-> On Android 13 (API 33) and above, you must declare `POST_NOTIFICATIONS` permission in your manifest **and** request it at runtime.
+> On Android 13 (API 33) and above, you must declare `POST_NOTIFICATIONS` permission in your manifest **and** request it at runtime. Follow official [Android documentation](https://developer.android.com/training/permissions/requesting) for details.
 
 ## Step 3 — Implementation of FirebaseMessagingService
 
@@ -53,8 +63,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        // use convenient extension functions from the pushnotifications module to check if the message is from Rezolve and convert it to RezolvePushData
         if (remoteMessage.isRezolvePushNotification()) {
-            ServiceManager.getInstance(this).pushNotificationsManager.onMessageReceived(remoteMessage.data)
+            ServiceManager.getInstance(this).pushNotificationsManager.onMessageReceived(remoteMessage.toRezolvePushData())
         } else {
             // Handle your own notifications here
         }
@@ -80,13 +91,12 @@ To receive callbacks when a notification is received or tapped by the user, crea
 
 ```kotlin
 class MyPushNotificationsEventReceiver : PushNotificationsEventReceiver() {
-
-    override fun onNotificationReceived(notificationData: NotificationData) {
+    override fun onNotificationReceived(rezolvePushData: RezolvePushData) {
         // Called when a Rezolve push notification arrives
-        // Use notificationData.campaignId, .zoneId, .notificationId, .data
+        // Use rezolvePushData.campaignId, .zoneId, .notificationId, .data
     }
 
-    override fun onNotificationClicked(notificationData: NotificationData) {
+    override fun onNotificationClicked(rezolvePushData: RezolvePushData) {
         // Called when the user taps the notification
     }
 }
@@ -111,10 +121,10 @@ Register the receiver in `AndroidManifest.xml`:
 |---|---|-------------------------------------------------------|
 | `title` | `String` | Notification title (empty string if absent)           |
 | `body` | `String` | Notification body text (empty string if absent)       |
-| `pushVersion` | `String?` | Push schema version                                   |
-| `campaignId` | `String?` | Campaign UUID                                         |
-| `zoneId` | `String?` | Zone UUID                                             |
-| `notificationId` | `String?` | Notification UUID                                     |
+| `pushVersion` | `String` | Push schema version                                   |
+| `campaignId` | `String` | Campaign UUID                                         |
+| `zoneId` | `String` | Zone UUID                                             |
+| `notificationId` | `String` | Notification UUID                                     |
 | `data` | `Map<String, String>` | All remaining custom key-value pairs from the payload |
 
 ---
@@ -127,6 +137,14 @@ On notification click the SDK sends the broadcast to the receiver defined in Ste
 To override the appearance or behaviour, supply your own `NotificationCompat.Builder` **before** the first message arrives:
 
 ```kotlin
+val channel = NotificationChannel(
+    CUSTOM_PUSH_CHANNEL_ID,
+    "Custom Push Notifications",
+    NotificationManager.IMPORTANCE_HIGH
+)
+val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+notificationManager.createNotificationChannel(channel)
+
 val contentIntent = PendingIntent.getActivity(
     context,
     0,  // request code — unique integer to distinguish this PendingIntent from others;
@@ -134,16 +152,16 @@ val contentIntent = PendingIntent.getActivity(
     Intent(context, YourCustomActivity::class.java).apply {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP
         // Optionally pass data:
-        putExtra("campaign_id", "...")
+        putExtra("my_custom_id", "1234")
     },
     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
 )
 
-val customBuilder = NotificationCompat.Builder(context, "your_channel_id")
+val customBuilder = NotificationCompat.Builder(context, CUSTOM_PUSH_CHANNEL_ID)
     .setSmallIcon(R.drawable.your_notification_icon)
     .setColor(ContextCompat.getColor(context, R.color.your_brand_color))
     .setPriority(NotificationCompat.PRIORITY_HIGH)
-    .setContentIntent(contentIntent)   // <-- your custom activity
+    .setContentIntent(contentIntent)
     .setAutoCancel(true)
 
 ServiceManager.getInstance(context)
