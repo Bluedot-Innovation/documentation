@@ -38,5 +38,5 @@ In this mode, the trigger will be more reliable in an area with better Wi-Fi cov
 
 
 :::info
-An enhanced restart mode is configured by the Bluedot team. Please contact our friendly [**support**](mailto:help@bluedot.io) if you would like to enable it.
+An enhanced restart mode is configured by the Bluedot team. Please contact our friendly [**support**](mailto:support@rezolve.com) if you would like to enable it.
 :::

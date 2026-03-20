@@ -24,7 +24,7 @@ You can access Hello Screen by:
 
 ![](../assets/hello-screen-select-region-1024x486.png)
 
-You will be asked to choose a region. If you’re not sure which region your screen is in, [contact our Support Team](mailto:help@bluedot.io). Once selected you will be displayed your one-time-code.
+You will be asked to choose a region. If you’re not sure which region your screen is in, [contact our Support Team](mailto:support@rezolve.com). Once selected you will be displayed your one-time-code.
 
 ![](../assets/hello-screen-linking-code-1024x486.png)
 
@@ -58,7 +58,7 @@ The screen is now authenticated & linked to that destination. If you accidentall
 
 ![](../assets/Hello-Screen-Link-1024x504.png)
 
-If you can’t see Hello screens in the side menu, please contact our team at [help@bluedot.io](mailto:help@bluedot.io) to enable this feature.
+If you can’t see Hello screens in the side menu, please contact our team at [support@rezolve.com](mailto:support@rezolve.com) to enable this feature.
 
 ### Method 2 – Generate a URL
 

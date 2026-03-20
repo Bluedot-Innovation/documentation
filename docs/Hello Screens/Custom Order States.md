@@ -29,4 +29,4 @@ To enable the Custom Order States feature, please contact your Rezolve Customer 
 ### Integration with Wave API
 You can integrate the Custom Order States with your systems using our Wave API. This allows you to programmatically move orders through the custom states, ensuring seamless integration with your existing workflows. For more details on using the Wave API, please refer to our [Wave API documentation](../APIs/Wave%20API/Overview.md).
 
-For further assistance, feel free to reach out to our support team at [help@bluedot.io](mailto:help@bluedot.io).
+For further assistance, feel free to reach out to our support team at [support@rezolve.com](mailto:support@rezolve.com).

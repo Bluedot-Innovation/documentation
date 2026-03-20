@@ -27,5 +27,5 @@ Resources
 
 :::info
 This wrapper includes the basic functionality of our SDK. We’ve open-sourced the code of this wrapper in case you’d like to expand it and implement your methods or logic.  
-If you have any suggestions for expanding functionality or would like our team to review your implementation, please contact our engineering support team – [help@bluedot.io](mailto:help@bluedot.ok)
+If you have any suggestions for expanding functionality or would like our team to review your implementation, please contact our engineering support team – [support@rezolve.com](mailto:support@rezolve.com)
 :::

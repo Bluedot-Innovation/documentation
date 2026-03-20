@@ -30,5 +30,5 @@ How to link the accounts
 :::info
 Allow 5 mins for the Data Extension to be created after the account is linked.
 
-If the Data Extension is not created within 30 mins contact our Support Team at [help@bluedot.io](mailto:help@bluedot.io) to assist you with it.
+If the Data Extension is not created within 30 mins contact our Support Team at [support@rezolve.com](mailto:support@rezolve.com) to assist you with it.
 :::
