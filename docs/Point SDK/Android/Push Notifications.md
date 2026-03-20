@@ -22,6 +22,8 @@ The module:
 | Firebase Cloud Messaging | `com.google.firebase:firebase-messaging:25.0.1` |
 | Core Point SDK | `au.com.bluedot:pointsdk:18.0.0` |
 
+> Using non-compatible versions of the Firebase dependencies may lead to runtime crashes or unexpected behaviour.
+
 ## Prerequisites
 
 Configure Android Push Notifications credentials and campaign in Canvas.
