@@ -60,4 +60,4 @@ More information on the fields passed via entry/exit events Rezolve webhooks are
 
 * * *
 
-If you have any questions about this guide or implementing Rezolve & Adobe Experience Platform together, reach out to our Engineering Support Team [help@bluedot.io](mailto:help@bluedot.io).
+If you have any questions about this guide or implementing Rezolve & Adobe Experience Platform together, reach out to our Engineering Support Team [support@rezolve.com](mailto:support@rezolve.com).

@@ -97,4 +97,4 @@ func application(\_ application: UIApplication, didFinishLaunchingWithOptions la
 
 * * *
 
-If you have any questions about this guide or implementing Rezolve & Oracle Simphony together, reach out to our Engineering Support Team [help@bluedot.io](mailto:help@bluedot.io).
+If you have any questions about this guide or implementing Rezolve & Oracle Simphony together, reach out to our Engineering Support Team [support@rezolve.com](mailto:support@rezolve.com).
