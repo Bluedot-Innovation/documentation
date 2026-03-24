@@ -150,11 +150,11 @@ The SDK exposes callbacks when a Rezolve **Push Notification** is received or cl
 
 ```swift
 BDLocationManager.instance()?.pushNotifications.onNotificationReceived = { payload in
-    print("Rezolve push notification received")
+    print("Rezolve push received. zoneID: \(payload.zoneID ?? \"unknown\")")
 }
 
 BDLocationManager.instance()?.pushNotifications.onNotificationClicked = { payload in
-    print("Rezolve push notification clicked")
+    print("Rezolve push clicked. zoneID: \(payload.zoneID ?? \"unknown\")")
 }
 ```
 
@@ -183,11 +183,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
 
         BDLocationManager.instance()?.pushNotifications.onNotificationReceived = { payload in
-            print("Push received")
+            print("Push received. zoneID: \(payload.zoneID ?? \"unknown\")")
         }
 
         BDLocationManager.instance()?.pushNotifications.onNotificationClicked = { payload in
-            print("Push clicked")
+            print("Push clicked. zoneID: \(payload.zoneID ?? \"unknown\")")
         }
 
         return true
