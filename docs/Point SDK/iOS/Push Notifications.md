@@ -106,15 +106,7 @@ func application(_ application: UIApplication,
 }
 ```
 
-**APNs Tokens** can change over time; for example after a restore, or a reinstall of the app. Make sure to forward the latest **Token** whenever iOS provides a new one. In the case of a failure, forward the actual error to the SDK.
-
-```swift
-func application(_ application: UIApplication,
-                 didFailToRegisterForRemoteNotificationsWithError error: Error) {
-
-    BDLocationManager.instance()?.pushNotifications.registrationFailed(error)
-}
-```
+**APNs Tokens** can change over time; for example after a restore, or a reinstall of the app. Make sure to forward the latest **Token** whenever iOS provides a new one.
 
 Step 4 — Forward Push Notifications to the SDK
 ----------------------------------------------
@@ -205,12 +197,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 
         BDLocationManager.instance()?.pushNotifications.register(deviceToken: deviceToken)
-    }
-
-    func application(_ application: UIApplication,
-                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
-
-        BDLocationManager.instance()?.pushNotifications.registrationFailed(error)
     }
 
     func userNotificationCenter(
