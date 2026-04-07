@@ -28,11 +28,11 @@ The module:
 
 Configure Android Push Notifications credentials and campaign in Canvas.
 
-![](../assets/canvas_push_settings_android.png)
+![](../../assets/canvas_push_settings_android.png)
 
 Setup Push Notifications campaign in Canvas.
 
-![](../assets/canvas_push_campaign.png)
+![](../../assets/canvas_push_campaign.png)
 
 ## Step 1 — Add the dependency
 
@@ -93,12 +93,12 @@ To receive callbacks when a notification is received or tapped by the user, crea
 
 ```kotlin
 class MyPushNotificationsEventReceiver : PushNotificationsEventReceiver() {
-    override fun onNotificationReceived(rezolvePushData: RezolvePushData) {
+    override fun onNotificationReceived(rezolvePushData: RezolvePushData, context: Context) {
         // Called when a Rezolve push notification arrives
         // Use rezolvePushData.campaignId, .zoneId, .notificationId, .data
     }
 
-    override fun onNotificationClicked(rezolvePushData: RezolvePushData) {
+    override fun onNotificationClicked(rezolvePushData: RezolvePushData, context: Context) {
         // Called when the user taps the notification
     }
 }
