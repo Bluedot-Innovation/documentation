@@ -36,7 +36,7 @@ Before **Push Notifications** can be delivered to the application, Apple Push No
 
 Go to `Project Settings -> Push Notification Settings -> iOS (APNs)`, and upload the required Apple Push Notifications credentials. Use the Canvas Push Notification Settings screen (iOS (APNs) tab) to confirm the iOS credential set is selected before saving.
 
-![Canvas Push Notification Settings for iOS (APNs)](../../assets/push-notification-settings-ios-apns.jpg)
+![Canvas Push Notification Settings for iOS (APNs)](../../assets/push-notification-settings-ios-apns.png)
 
 _Canvas Push Notification Settings screen with the iOS (APNs) tab selected._
 
