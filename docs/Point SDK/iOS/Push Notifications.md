@@ -18,6 +18,7 @@ Setup Checklist
 * Point SDK is setup & initialized.
 * Push Notifications feature is enabled in the Xcode's app target.
 * A valid `aps-environment` entitlement is included in the app's Provision Profile.
+* At least one Push Notifications campaign is configured in Canvas.
 
 Overview
 --------
@@ -26,7 +27,7 @@ Overview
 2. Request user permission and register for remote notifications.
 3. Register the device push token with Point SDK.
 4. Forward received and clicked notifications to Point SDK.
-5. Handle Point SDK notification callbacks.
+5. (Optional) Listen for Point SDK notification events.
 
 Step 1 — Setup APNs Credentials in Canvas
 -----------------------------------------
@@ -143,8 +144,8 @@ func userNotificationCenter(
 }
 ```
 
-Step 5 — Receive SDK Callbacks
-------------------------------
+Step 5 — (Optional) Listen for Notification Events
+--------------------------------------------------
 
 The SDK exposes callbacks when a Rezolve **Push Notification** is received or clicked.
 
@@ -228,8 +229,8 @@ Notes
 
 **Point SDK** works alongside the app's existing **Push Notifications** setup. Your app continues to control permission prompts and APNs registration, while the SDK focuses on handling Rezolve notifications and providing callbacks that can be used for UI updates, app navigation, or perform other actions.
 
-Troubleshoot
-------------
+Troubleshooting
+---------------
 
 If notifications are not received as expected, check:
 
