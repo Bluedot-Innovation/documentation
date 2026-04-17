@@ -252,13 +252,13 @@ const sidebars = {
         "Push Notifications/Overview",
         {
           type: "doc",
-          label: "iOS",
-          id: "Point SDK/iOS/Push Notifications"
+          label: "Android",
+          id: "Point SDK/Android/Push Notifications"
         },
         {
           type: "doc",
-          label: "Android",
-          id: "Point SDK/Android/Push Notifications"
+          label: "iOS",
+          id: "Point SDK/iOS/Push Notifications"
         }
       ]
     },
