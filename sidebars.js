@@ -74,7 +74,6 @@ const sidebars = {
             "Point SDK/iOS/Quick Start",
             "Point SDK/iOS/Geo-triggering",
             "Point SDK/iOS/Tempo",
-            "Point SDK/iOS/Push Notifications",
             {
               type: "doc",
               label: "Chat AI",
@@ -241,6 +240,27 @@ const sidebars = {
         "Canvas/Setting up multiple environments",
         "Canvas/How to authenticate with Config API",
       ],
+    },
+    {
+      type: "category",
+      label: "Push Notifications",
+      link: {
+        type: "doc",
+        id: "Push Notifications/Overview"
+      },
+      items: [
+        "Push Notifications/Overview",
+        {
+          type: "doc",
+          label: "iOS",
+          id: "Point SDK/iOS/Push Notifications"
+        },
+        {
+          type: "doc",
+          label: "Android",
+          id: "Point SDK/Android/Push Notifications"
+        }
+      ]
     },
     {
       type: "category",
