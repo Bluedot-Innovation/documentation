@@ -7,7 +7,7 @@ Additional Security Layer
 
 Hello Screens has an optional layer of security that would, if enabled, only allow authorized users to register new orders. Additionally, only requests with a valid `userToken` can update existing orders. This feature works in tandem with the existing security requirement of a valid `x-bluedot-api-key` to be provided with any requests to create/ modify an order.
 
-If you want to enable this feature for your account please contact our team at [help@bluedot.io](mailto:help@bluedot.io).
+If you want to enable this feature for your account please contact our team at [support@rezolve.com](mailto:support@rezolve.com).
 
 When this security feature is enabled, you will need:
 

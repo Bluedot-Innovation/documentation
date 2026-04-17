@@ -8,6 +8,127 @@ Version Release Notes
 =====================
 
 
+Release date  Mar 11, 2026
+-------------------------
+
+### Rezolve Flutter wrapper v2.1.1
+
+**What's New:**
+
+* Updated to Android Point SDK v17.4.1 (including custom event meta data persistence) and iOS Point SDK v17.2.0.
+* Added new GeoTriggering event `didDwellInZone`.
+
+* * *
+
+Release date  Mar 10, 2026
+-------------------------
+
+### Rezolve Point SDK React Native wrapper v3.4.1
+
+**What's New:**
+
+* Fixed Android callback issue for new React Native architecture.
+
+* * *
+
+Release date  Mar 5, 2026
+-------------------------
+
+### Android Point SDK v17.4.1
+
+**What's New:**
+
+* **Android 14+ stability improvements**: Prevented a crash that could occur when starting TempoService from the background. The SDK now fails gracefully and logs an error so apps can handle the condition appropriately.
+* Added persistence for custom event meta data.
+
+* * *
+
+Release date  Jan 15, 2026
+-------------------------
+
+### Rezolve Point SDK React Native wrapper v3.4.0
+
+**What's New:**
+
+* Updated compatibility to React Native 0.81.5.
+* Upgraded to Point SDK Android 17.3.0 and Point SDK iOS 17.1.0.
+* **Store Custom Data access**: Now exposes the custom data configured for a store. This enables you to tailor in-app behaviours or operational flows based on store-specific attributes.
+* **Improved Exit performance**: Enhanced exit detection logic delivers more timely and consistent exit events.
+
+* * *
+
+Release date  Dec 29, 2025
+-------------------------
+
+### Android Point SDK v17.4.0
+
+**What's New:**
+
+* **Dwell Time Geo Event**: Dwell Time is a new Geo-triggering event in the Point SDK that fires when a device stays inside a zone for a configured amount of time. It helps you move beyond simple Entry and Exit by confirming that a user has actually spent meaningful time on site.
+
+**How it works:**
+* Fires once per visit after the configured dwell threshold.
+* A visit starts on Entry and ends on Exit.
+* Re-entry starts a new visit, with no repeated firing in the same visit.
+
+Dwell can be enabled in Canvas or via the Config API. Exit is required and will be automatically enabled when Dwell is turned on.
+
+* * *
+
+Release date  Dec 24, 2025
+-------------------------
+
+### iOS Point SDK 17.2.0
+
+**What's New:**
+
+* **Dwell Time Geo Event**: Dwell Time is a new Geo-triggering event in the Point SDK that fires when a device stays inside a zone for a configured amount of time. It helps you move beyond simple Entry and Exit by confirming that a user has actually spent meaningful time on site.
+
+**How it works:**
+* Fires once per visit after the configured dwell threshold.
+* A visit starts on Entry and ends on Exit.
+* Re-entry starts a new visit, with no repeated firing in the same visit.
+
+Dwell can be enabled in Canvas or via the Config API. Exit is required and will be automatically enabled when Dwell is turned on.
+
+* * *
+
+Release date  Dec 8, 2025
+-------------------------
+
+### Rezolve Flutter wrapper v2.1.0
+
+**What's New:**
+
+* Upgraded to Point SDK Android 17.3.0 and Point SDK iOS 17.1.0.
+* **Store Custom Data access**: Now exposes the custom data configured for a store. This enables you to tailor in-app behaviours or operational flows based on store-specific attributes.
+* **Improved Exit performance**: Enhanced exit detection logic delivers more timely and consistent exit events.
+
+* * *
+
+Release date  Oct 20, 2025
+-------------------------
+
+### Android SDK v17.3.0
+
+**What's New:**
+
+* **Store Custom Data support**: The SDK now surfaces Store Custom Data, allowing your app to access metadata attached to Stores in Canvas or through the Config API. Examples include store type, region, or your internal store IDs. This makes it easier to tailor in-app behaviour and analytics by store.
+
+* * *
+
+Release date  Oct 14, 2025
+-------------------------
+
+### iOS SDK 17.1.0
+
+**What's New:**
+
+* **Store Custom Data support**: The SDK now surfaces Store Custom Data, allowing your app to access metadata attached to Stores in Canvas or through the Config API. Examples include store type, region, or your internal store IDs. This makes it easier to tailor in-app behaviour and analytics by store.
+
+* * *
+
+
 Release date  Sep 22, 2025
 -------------------------
 

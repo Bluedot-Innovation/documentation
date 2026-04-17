@@ -11,7 +11,7 @@ The alert applies to orders in the customer "On The Way" status. It is triggered
 ![](../assets/Hello%20Screens%20-%20consolidation%20alert%20time.png)
 
 :::info
-If you are interested in this feature, please contact your Rezolve representative or reach us at [help@bluedot.io](mailto:help@bluedot.io) to enable it for your account.
+If you are interested in this feature, please contact your Rezolve representative or reach us at [support@rezolve.com](mailto:support@rezolve.com) to enable it for your account.
 :::
 
 
@@ -38,5 +38,5 @@ To set up the preparation time in Canvas:
 4. Save the changes to apply the new configuration. The system will use this time bracket to trigger preparation alerts for the selected store.
 
 :::info
-If the Tempo Time Brackets cannot be configured as requested, please get in touch with your Bluedot representative or reach us at [help@bluedot.io](mailto:help@bluedot.io).
+If the Tempo Time Brackets cannot be configured as requested, please get in touch with your Bluedot representative or reach us at [support@rezolve.com](mailto:support@rezolve.com).
 :::

@@ -74,6 +74,7 @@ const sidebars = {
             "Point SDK/iOS/Quick Start",
             "Point SDK/iOS/Geo-triggering",
             "Point SDK/iOS/Tempo",
+            "Point SDK/iOS/Push Notifications",
             {
               type: "doc",
               label: "Chat AI",
