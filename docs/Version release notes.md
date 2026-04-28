@@ -7,6 +7,28 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+## Release date Apr, 28 2026
+
+### Point SDK v18.0.0
+
+**What's New:**
+
+Push Notifications is now supported in the Point SDK. When a customer enters a configured geofence zone, the SDK evaluates active campaigns in Canvas and delivers a push notification to their device in real time — no customer action required.
+
+#### iOS
+
+- Push Notifications is built into the core Point SDK. Notifications are delivered via Apple Push Notification service (APNs). Requires iOS 15 or higher.
+
+#### Android
+
+- Push Notifications is available as a separate, optional module (`au.com.bluedot:pushnotifications:18.x`). Notifications are delivered via Firebase Cloud Messaging (FCM). Requires `firebase-messaging:25.x` and Android 10 (API 29) or higher.
+
+### Canvas
+
+- **Push Notification Settings:** A new section under Project Settings allows you to upload APNs credentials (iOS) and FCM service account credentials (Android), authorising Rezolve to deliver push notifications on behalf of your app.
+- **Push Notification Campaigns:** A new Campaigns section lets you create and manage push notification campaigns. Each campaign defines a message (title + body) and the geofence zones that trigger it. Campaigns are created via a three-step wizard: compose message, select zones, and review & launch.
+
+* * *
 
 Release date  Mar 11, 2026
 -------------------------
