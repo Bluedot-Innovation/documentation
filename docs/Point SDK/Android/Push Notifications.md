@@ -43,7 +43,7 @@ In your **app-level** `build.gradle`, add the `pushnotifications` module alongsi
 ```groovy
 dependencies {
     // ...
-    implementation 'au.com.bluedot:pushnotifications:18.0.0'
+    implementation 'com.gitlab.bluedotio.android:point_sdk_push:18.0.0'
 }
 ```
 
