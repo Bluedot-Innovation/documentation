@@ -243,6 +243,27 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "Push Notifications",
+      link: {
+        type: "doc",
+        id: "Push Notifications/Overview"
+      },
+      items: [
+        "Push Notifications/Overview",
+        {
+          type: "doc",
+          label: "Android",
+          id: "Point SDK/Android/Push Notifications"
+        },
+        {
+          type: "doc",
+          label: "iOS",
+          id: "Point SDK/iOS/Push Notifications"
+        }
+      ]
+    },
+    {
+      type: "category",
       label: "Chat AI",
       link: {
         type: "doc",

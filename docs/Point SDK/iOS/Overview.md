@@ -13,6 +13,7 @@ The following pages provide a guide to integrating the Point SDK with your iOS a
 *   [Quick Start Guide](./Quick%20Start.md)
 *   [Geo-triggering](./Geo-triggering.md)
 *   [Tempo](./Tempo.md)
+*   [Push Notifications](./Push%20Notifications.md)
 *   [Location Permission best practices](./Location%20Permission%20Best%20Practices.md)
 *   [Guide to Submitting App With Location Services](../../Implementation%20and%20Best%20Practices%20Guides/Submitting%20apps%20with%20location%20services%20guide.md)
 *   [SDK Features](./Features/App%20restart%20notification.md)
