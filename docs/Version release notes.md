@@ -7,6 +7,20 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+## Release date Jun 25, 2026
+
+### Android Point SDK v17.5.0
+
+**What's New:**
+
+The Android Point SDK now better supports switching between projects within a single app, without losing persisted data. This makes it easier to run more than one location use case in the same app, for example location-based marketing and precise arrival detection for the Last Mile expirience (Click 'n Collect, drive-thru, and similar), by keeping each use case in its own project.
+
+Previously, pointing the SDK at a different project required re-initializing and cleared persisted data, including Minimum Retrigger Time (MRT) entries. The switch now preserves that data, so each use case keeps performing accurately straight after the change.
+
+- Switch projects without losing data: A new `switchProject(String projectId, SwitchResultListener switchListener)` API switches the SDK to another project while keeping persisted data, such as MRT entries, intact.
+- Check the active project: A new `isCurrentProjectId(String projectId)` API checks whether the SDK is already initialized with a given project, before deciding to initialize or switch.
+
+
 ## Release date Apr, 28 2026
 
 ### Point SDK v18.0.0
