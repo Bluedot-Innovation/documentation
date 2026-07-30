@@ -58,7 +58,7 @@ Add both to `package.json` dependencies:
 ```json
 "dependencies": {
   "bluedot-react-native": "4.0.0",
-  "bluedot-react-native-pushnotifications": "4.0.0"
+  "bluedot-react-native-pushnotifications": "1.0.0"
 }
 ```
 
