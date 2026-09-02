@@ -7,6 +7,35 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+## Release date Sep 2, 2026
+
+### Rezolve Flutter wrapper v2.1.4
+
+**What's New:**
+
+- Updated to iOS Point SDK v17.2.1 (including custom event metadata persistence across app termination).
+
+
+## Release date Aug 27, 2026
+
+### iOS Point SDK v17.2.1
+
+This is a maintenance release that improves custom event metadata persistence.
+
+**What's Improved:**
+
+- **Custom event metadata persistence:** Custom event metadata now persists across app termination and SDK restarts, so the metadata you set remains attached to Geo-triggering events without needing to be re-applied.
+
+**How it works:**
+
+- Metadata is retained after the app is swipe-killed.
+- Entry, Exit, and Dwell events include the metadata.
+- Metadata survives stopping and restarting Geo-triggering.
+- Behaviour is aligned with the Android Point SDK implementation.
+
+We recommend updating to benefit from these improvements.
+
+
 ## Release date Jun 25, 2026
 
 ### Android Point SDK v17.5.0
