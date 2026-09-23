@@ -7,6 +7,17 @@ pagination_prev: null
 Version Release Notes
 =====================
 
+## Release date Sep 23, 2026
+
+### iOS Point SDK v18.1.0
+
+**What's Improved:**
+
+- **Push Notification security:** Strengthened validation of device registration requests to prevent reuse of intercepted or stale credentials. No integration changes are required.
+- **More reliable push registration:** When a customer changes their notification permission, the SDK now updates their registration cleanly, so devices stay correctly registered for campaigns.
+- **Improved Exit precision:** Fixed an issue where Exit could fire while a device was still near the geofence boundary. Exit detection is now more tolerant of location noise and significantly more accurate.
+
+
 ## Release date Sep 2, 2026
 
 ### Rezolve Flutter wrapper v2.1.4
