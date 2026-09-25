@@ -2,9 +2,9 @@
 pagination_next: null
 ---
 
-# Migration Guide to Point SDK V18.2.0 for Android
+# Migration Guide to Point SDK V19.0.0 for Android
 
-If you have implemented previous versions of the Android Point SDK, this guide will help you understand the steps required to migrate to version 18.2.0.
+If you have implemented previous versions of the Android Point SDK, this guide will help you understand the steps required to migrate to version 19.0.0.
 
 ### Breaking Changes
 
