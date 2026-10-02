@@ -1,7 +1,7 @@
 # Bluedot Push Notifications Module — Integration Guide
 
-**SDK version:** 18.0.0  
-**Module artifact:** `au.com.bluedot:pushnotifications`
+**SDK version:** 18.1.0  
+**Module artifact:** `com.gitlab.bluedotio.android:point_sdk_push`
 
 ## Overview
 
@@ -15,12 +15,12 @@ The module:
 
 ## Requirements
 
-| Requirement | Value |
-|---|---|
-| Min SDK | 29 (Android 10) |
-| Compile SDK | 36 |
-| Firebase Cloud Messaging | `com.google.firebase:firebase-messaging:25.0.1` |
-| Core Point SDK | `au.com.bluedot:pointsdk:18.0.0` |
+| Requirement | Value                                                   |
+|---|---------------------------------------------------------|
+| Min SDK | 29 (Android 10)                                         |
+| Compile SDK | 36                                                      |
+| Firebase Cloud Messaging | `com.google.firebase:firebase-messaging:25.0.1`         |
+| Core Point SDK | `com.gitlab.bluedotio.android:point_sdk_android:18.1.0` |
 
 > Using non-compatible versions of the Firebase dependencies may lead to runtime crashes or unexpected behaviour.
 
@@ -43,7 +43,7 @@ In your **app-level** `build.gradle`, add the `pushnotifications` module alongsi
 ```groovy
 dependencies {
     // ...
-    implementation 'com.gitlab.bluedotio.android:point_sdk_push:18.0.0'
+    implementation 'com.gitlab.bluedotio.android:point_sdk_push:18.1.0'
 }
 ```
 
