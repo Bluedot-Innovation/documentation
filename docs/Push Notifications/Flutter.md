@@ -1,100 +1,87 @@
 # Bluedot Push Notifications — Flutter Integration Guide
 
-This guide describes all the changes required to integrate `bluedot_point_sdk_push` into an existing Flutter application that already uses the `bluedot_point_sdk` Point SDK plugin.
+This guide takes an existing Flutter app that already uses the `bluedot_point_sdk` Point SDK plugin and adds push notifications through `bluedot_point_sdk_push`. Both Android and iOS are supported, and none of it is required until you actually want push.
 
-:::info Android only
-Push notifications are currently **Android-only**. The `bluedot_point_sdk_push` package ships a no-op iOS stub so it can be included in cross-platform Flutter projects without errors — no iOS-specific configuration is required.
-:::
+**Requirements**
+
+| | |
+|---|---|
+| Flutter | 3.0+ |
+| `bluedot_point_sdk` | 2.2.0+ |
+| `bluedot_point_sdk_push` | 1.0.0+ |
+| Android | `minSdkVersion` 29, Java 21, Kotlin 2.3.0 |
+| iOS | deployment target 15.0+ |
+
+You will also need:
+
+- a **Bluedot Canvas** project, with a push campaign configured
+- **Android:** a Firebase project with your app registered
+- **iOS:** an Apple Developer App ID with the Push Notifications capability, plus an APNs key or certificate
+
+The package bundles the native SDKs — Android Point SDK 18.0.0 and iOS Point SDK 18.1.0 — so you do not add those yourself.
 
 ---
 
 ## Table of Contents
 
-1. [Prerequisites](#1-prerequisites)
-2. [Add the package](#2-add-the-package)
-3. [Dart setup](#3-dart-setup)
-    - [3.1 Listening for push notification events](#31-listening-for-push-notification-events)
-4. [Android setup](#4-android-setup)
-    - [4.1 Minimum SDK version](#41-minimum-sdk-version)
-    - [4.2 Add the Google Services plugin classpath](#42-add-the-google-services-plugin-classpath)
-    - [4.3 Apply the Google Services plugin](#43-apply-the-google-services-plugin)
-    - [4.4 Place `google-services.json`](#44-place-google-servicesjson)
-5. [Advanced: Custom FirebaseMessagingService (optional)](#5-advanced-custom-firebasemessagingservice-optional)
+1. [Add the package](#1-add-the-package)
+2. [Listen for notifications](#2-listen-for-notifications)
+    - [2.1 Notification events](#21-notification-events)
+    - [2.2 Registering with APNs (iOS)](#22-registering-with-apns-ios)
+3. [Android setup](#3-android-setup)
+    - [3.1 Minimum SDK version](#31-minimum-sdk-version)
+    - [3.2 Google Services plugin](#32-google-services-plugin)
+    - [3.3 Place google-services.json](#33-place-google-servicesjson)
+4. [iOS setup](#4-ios-setup)
+    - [4.1 Signing and capabilities](#41-signing-and-capabilities)
+    - [4.2 Forward notification callbacks](#42-forward-notification-callbacks)
+    - [4.3 Configure Bluedot Canvas](#43-configure-bluedot-canvas)
+    - [4.4 Build and run](#44-build-and-run)
+5. [Custom messaging service (optional)](#5-custom-messaging-service-optional)
     - [5.1 When you need this](#51-when-you-need-this)
-    - [5.2 Extra Android dependencies](#52-extra-android-dependencies)
-    - [5.3 Implement the custom service in Kotlin](#53-implement-the-custom-service-in-kotlin)
-    - [5.4 Register the service in AndroidManifest](#54-register-the-service-in-androidmanifest)
-    - [5.5 Forward FCM token & messages from Dart](#55-forward-fcm-token--messages-from-dart)
-6. [Summary of files changed](#6-summary-of-files-changed)
+    - [5.2 Forwarding Bluedot events](#52-forwarding-bluedot-events)
 
 ---
 
-## 1. Prerequisites
+## 1. Add the package
 
-| Requirement | Minimum version |
-|---|---|
-| Flutter | 3.0 |
-| `bluedot_point_sdk` (Point SDK) | 2.1.1 |
-| Android `minSdkVersion` | 29 |
-| Java toolchain | 21 |
-| Kotlin | 2.3.0 |
-
----
-
-## 2. Add the package
-
-Add `bluedot_point_sdk_push` to your app's `pubspec.yaml`:
+Add `bluedot_point_sdk_push` to your `pubspec.yaml`, next to the Point SDK:
 
 ```yaml
 dependencies:
-  bluedot_point_sdk: ^2.1.1
-  bluedot_point_sdk_push: ^2.1.1
+  bluedot_point_sdk: ^2.2.0
+  bluedot_point_sdk_push: ^1.0.0
 ```
 
-Then run:
+Then fetch dependencies — and on iOS, the pods:
 
 ```bash
 flutter pub get
+cd ios && pod install && cd ..
 ```
 
-Flutter will auto-link the plugin on both Android and iOS — no additional registration step is required.
+Flutter auto-links the plugin on both platforms, so there is no registration step.
 
 ---
 
-## 3. Dart setup
+## 2. Listen for notifications
 
-### 3.1 Listening for push notification events
+### 2.1 Notification events
 
-Import the plugin and register your notification listeners early in your app's lifecycle (e.g., inside `initState` of your root widget or your `main()` function).
+Register your listeners early — in `main()`, or your root widget's `initState`:
 
 ```dart
 import 'package:bluedot_point_sdk_push/bluedot_point_sdk_push.dart';
 
-void _setupPushNotifications() {
-  BluedotPointSdkPush.instance.setNotificationListener(
-    onReceived: (data) {
-      // Fired when a Bluedot campaign push notification arrives in the foreground.
-      print('[Bluedot] Notification received: ${data['title']} — campaignId: ${data['campaignId']}');
-      // Handle the notification (e.g. show an in-app banner)
-    },
-    onClicked: (data) {
-      // Fired when the user taps a Bluedot push notification.
-      print('[Bluedot] Notification clicked: ${data['title']} — campaignId: ${data['campaignId']}');
-      // Handle the tap (e.g. navigate to a specific screen)
-    },
-  );
-}
+BluedotPointSdkPush.instance.setNotificationListener(
+  onReceived: (data) => print('Received: ${data['title']}'),
+  onClicked:  (data) => print('Clicked: ${data['title']}'),
+);
 ```
 
-To stop listening, call:
+`onReceived` fires when a Bluedot notification arrives while your app is in the foreground, and `onClicked` when the user taps one. Call `removeNotificationListener()` to stop listening.
 
-```dart
-BluedotPointSdkPush.instance.removeNotificationListener();
-```
-
-#### Notification payload fields
-
-The `data` map passed to each callback contains the following fields:
+Each callback receives a map with the following fields:
 
 | Field | Type | Description |
 |---|---|---|
@@ -104,103 +91,179 @@ The `data` map passed to each callback contains the following fields:
 | `campaignId` | `String` | Campaign UUID |
 | `zoneId` | `String` | Zone UUID |
 | `notificationId` | `String` | Notification UUID |
-| `data` | `Map<String, String>` | Custom key-value pairs from the payload |
+| `data` | `Map<String, String>` | Your own key-value pairs from the payload |
+
+### 2.2 Registering with APNs (iOS)
+
+On iOS the device registers with APNs **only after the user grants notification permission**. Prompt for it using whatever flow you already have — [`permission_handler`](https://pub.dev/packages/permission_handler) or a native call — then:
+
+```dart
+await BluedotPointSdkPush.instance.registerForRemoteNotifications();
+```
+
+This registers with APNs and forwards the device token to PointSDK. On Android the method does nothing: FCM registration is handled by Firebase once `google-services.json` is in place.
 
 ---
 
-## 4. Android setup
+## 3. Android setup
 
-### 4.1 Minimum SDK version
+### 3.1 Minimum SDK version
 
-The push notifications package requires `minSdkVersion` **29** or higher.
-
-Verify that your **`android/app/build.gradle`** sets at least:
+The package requires `minSdkVersion` **29** or higher. Check `android/app/build.gradle`:
 
 ```groovy
 android {
     defaultConfig {
         minSdkVersion 29
-        // ...
     }
 }
 ```
 
-### 4.2 Add the Google Services plugin classpath
+### 3.2 Google Services plugin
 
-Add the `google-services` Gradle plugin classpath to your project-level **`android/build.gradle`**:
+Add the `google-services` Gradle plugin classpath to your project-level `android/build.gradle`:
 
 ```groovy
 buildscript {
     dependencies {
-        // ...existing classpath entries...
         classpath 'com.google.gms:google-services:4.4.2'
     }
 }
 ```
 
-### 4.3 Apply the Google Services plugin
-
-Apply the plugin at the top of your app-level **`android/app/build.gradle`**, after the other `apply plugin` lines:
+Then apply it in `android/app/build.gradle`, alongside your other `apply plugin` lines:
 
 ```groovy
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'com.google.gms.google-services'  // ← add this line
+apply plugin: 'com.google.gms.google-services'
 ```
 
-### 4.4 Place `google-services.json`
+### 3.3 Place `google-services.json`
 
-You must have a **Firebase project** set up. Download `google-services.json` from the [Firebase Console](https://console.firebase.google.com/) (**Project settings → Your apps → Android app**) and place it at:
+Create a **Firebase project** if you do not have one, register your Android app, and download `google-services.json` from the [Firebase Console](https://console.firebase.google.com/) (**Project settings → Your apps → Android app**). Place it at:
 
 ```
 android/app/google-services.json
 ```
 
-This file contains sensitive API keys and **must not** be committed to version control. Add it to `.gitignore`:
+The file contains sensitive API keys, so keep it out of version control:
 
 ```gitignore
 google-services.json
 ```
 
-That's all the Android configuration needed. The plugin ships its own `DefaultMessagingService` registered at FCM intent-filter priority `-1`. Because Android routes FCM messages to the highest-priority `FirebaseMessagingService`, this default service handles all Bluedot push messages automatically for apps that do not register their own messaging service.
+That is the whole Android setup. The plugin ships its own messaging service, registered at a lower FCM priority than anything you add, so Bluedot pushes are handled for you automatically. You only need your own service if your app receives pushes from more than one source — see [section 5](#5-custom-messaging-service-optional).
 
 ---
 
-## 5. Advanced: Custom FirebaseMessagingService (optional)
+## 4. iOS setup
+
+### 4.1 Signing and capabilities
+
+Open `ios/Runner.xcworkspace` in Xcode, select the **Runner** target, and under **Signing & Capabilities** choose a team and a bundle identifier backed by an App ID with the **Push Notifications** capability, then add that capability. Xcode writes the `aps-environment` entitlement for you:
+
+```xml
+<key>aps-environment</key>
+<string>development</string>
+```
+
+Adding **Background Modes → Remote notifications** is optional.
+
+### 4.2 Forward notification callbacks
+
+The plugin deliberately leaves `UNUserNotificationCenterDelegate` to your app: Flutter forwards those callbacks to every registered plugin with the same completion handler, so a plugin implementing them could race your app — or another plugin — to complete it. Owning them here also leaves the presentation options to you.
+
+In `ios/Runner/AppDelegate.swift` (`Runner` is the default target name), add one line to the `didFinishLaunchingWithOptions` method you already have:
+
+```swift
+import UserNotifications
+import bluedot_point_sdk_push
+
+override func application(
+  _ application: UIApplication,
+  didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+) -> Bool {
+  UNUserNotificationCenter.current().delegate = self   // <- add this line
+  return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+}
+```
+
+Then add these two methods to the same class:
+
+```swift
+override func userNotificationCenter(
+  _ center: UNUserNotificationCenter,
+  willPresent notification: UNNotification,
+  withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
+) {
+  let handled = BluedotPointSdkPushPlugin.handleForegroundNotification(notification)
+  completionHandler(handled ? [.banner, .list, .sound, .badge] : [.banner, .list])
+}
+
+override func userNotificationCenter(
+  _ center: UNUserNotificationCenter,
+  didReceive response: UNNotificationResponse,
+  withCompletionHandler completionHandler: @escaping () -> Void
+) {
+  BluedotPointSdkPushPlugin.handleNotificationResponse(response)
+  completionHandler()
+}
+```
+
+:::note
+Leave the rest of your `AppDelegate` alone — how plugins are registered differs between Flutter versions and project setups. In the two methods above, complete each handler once: forward to the plugin **or** call `super`, not both.
+:::
+
+### 4.3 Configure Bluedot Canvas
+
+Add the APNs authentication key or certificate for the same bundle identifier in Bluedot Canvas, then create a push campaign and choose the zone entry, exit or dwell event that should trigger it.
+
+### 4.4 Build and run
+
+```bash
+flutter pub get
+cd ios && pod install && cd ..
+flutter run
+```
+
+Accept the permission prompt — the app registers with APNs only afterwards.
+
+:::note
+Test on a physical device. APNs registration and location-triggered delivery are not reliable on the simulator.
+:::
+
+---
+
+## 5. Custom messaging service (optional)
 
 ### 5.1 When you need this
 
-By default, `bluedot_point_sdk_push` bundles its own `DefaultMessagingService` that automatically intercepts FCM messages and forwards them to the Bluedot Push SDK. **For most apps, no further Android configuration is needed.**
+Most apps can skip this section entirely.
 
-You only need a custom `FirebaseMessagingService` if your app **receives push notifications from multiple sources** (e.g. Bluedot campaigns plus your own backend or another SDK such as Airship). In that case, Android can only have one active `FirebaseMessagingService`, so you must own it and manually route incoming messages and token updates to each SDK that needs them.
+Android allows only one active `FirebaseMessagingService`, and messages go to the one with the highest intent-filter priority. The plugin registers its own at priority `-1`, so yours — at the default `0` — takes precedence the moment you add it.
 
-If you are using the [`firebase_messaging`](https://pub.dev/packages/firebase_messaging) Dart package, its native layer also registers a `FirebaseMessagingService` at the default priority (0), which pre-empts the Bluedot default service. In this case you must forward FCM events to Bluedot from Dart — see [section 5.5](#55-forward-fcm-token--messages-from-dart).
+That means you need your own service if your app receives pushes from **more than one source** — Bluedot campaigns plus your own backend, or another SDK. The same applies if you use the [`firebase_messaging`](https://pub.dev/packages/firebase_messaging) package, whose native layer registers a service that pre-empts Bluedot's. In either case you own delivery and must route each message and token update to Bluedot yourself.
 
-### 5.2 Extra Android dependencies
+### 5.2 Forwarding Bluedot events
 
-Add the following to the `dependencies` block in **`android/app/build.gradle`**:
+First add the native SDKs to `android/app/build.gradle`:
 
 ```groovy
 dependencies {
     // ...existing dependencies...
 
-    // Bluedot Android SDKs
     implementation 'com.gitlab.bluedotio.android:point_sdk_android:18.0.0'
     implementation 'com.gitlab.bluedotio.android:point_sdk_push:18.0.0'
 
-    // Firebase
     implementation platform('com.google.firebase:firebase-bom:34.12.0')
     implementation 'com.google.firebase:firebase-messaging'
 }
 ```
 
-### 5.3 Implement the custom service in Kotlin
+Then forward Bluedot's messages and token updates, either from Kotlin or from Dart.
 
-Create `android/app/src/main/kotlin/<your-package>/CustomMessagingService.kt`:
+**In Kotlin.** Own the service, and declare it in `AndroidManifest.xml` with `android:exported="false"` and the `com.google.firebase.MESSAGING_EVENT` action:
 
 ```kotlin
-package com.yourapp
-
 import au.com.bluedot.point.net.engine.ServiceManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -210,17 +273,15 @@ import com.rezolve.pushnotifications.toRezolvePushData
 class CustomMessagingService : FirebaseMessagingService() {
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
-        // Forward Bluedot campaign messages to the Bluedot Push SDK.
-        // Add handling for your own push sources here as well.
         if (remoteMessage.isRezolvePushNotification()) {
             ServiceManager.getInstance(this)
                 .pushNotificationsManager
                 .onMessageReceived(remoteMessage.toRezolvePushData())
         }
+        // Handle your own push sources here too.
     }
 
     override fun onNewToken(token: String) {
-        // Forward the new FCM token to the Bluedot Push SDK.
         ServiceManager.getInstance(this)
             .pushNotificationsManager
             .onNewFcmToken(token)
@@ -228,69 +289,24 @@ class CustomMessagingService : FirebaseMessagingService() {
 }
 ```
 
-### 5.4 Register the service in AndroidManifest
-
-Add the service declaration inside the `<application>` tag in **`android/app/src/main/AndroidManifest.xml`**:
-
-```xml
-<service
-    android:name="com.yourapp.CustomMessagingService"
-    android:exported="false">
-    <intent-filter>
-        <action android:name="com.google.firebase.MESSAGING_EVENT" />
-    </intent-filter>
-</service>
-```
-
-> **Important:** Once you declare a custom service at the default priority (0), it pre-empts the plugin's `DefaultMessagingService`. You are then fully responsible for forwarding messages and token updates to every SDK that needs them — including Bluedot, as shown above.
-
-### 5.5 Forward FCM token & messages from Dart
-
-If you are using the [`firebase_messaging`](https://pub.dev/packages/firebase_messaging) Dart package and prefer to handle forwarding in Dart rather than through a native service:
+**In Dart.** If you already use `firebase_messaging`, forward from its handlers instead:
 
 ```dart
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:bluedot_point_sdk_push/bluedot_point_sdk_push.dart';
 
-// Top-level background message handler (must be a top-level function)
+// Must be a top-level function.
 @pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  await BluedotPointSdkPush.instance.onMessageReceived(message.data);
-}
+Future<void> _backgroundHandler(RemoteMessage message) =>
+    BluedotPointSdkPush.instance.onMessageReceived(message.data);
 
-void _setupFirebaseMessaging() {
-  // Register background handler
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-
-  // Forward token refreshes to Bluedot
-  FirebaseMessaging.instance.onTokenRefresh.listen((token) {
-    BluedotPointSdkPush.instance.onNewFcmToken(token);
-  });
-
-  // Forward foreground messages to Bluedot
-  FirebaseMessaging.onMessage.listen((remoteMessage) {
-    BluedotPointSdkPush.instance.onMessageReceived(remoteMessage.data);
-  });
-}
+FirebaseMessaging.onBackgroundMessage(_backgroundHandler);
+FirebaseMessaging.instance.onTokenRefresh
+    .listen(BluedotPointSdkPush.instance.onNewFcmToken);
+FirebaseMessaging.onMessage.listen(
+    (message) => BluedotPointSdkPush.instance.onMessageReceived(message.data));
 ```
 
 :::note
-`onNewFcmToken` and `onMessageReceived` are **Android-only** — they are no-ops on iOS.
+`onNewFcmToken` and `onMessageReceived` are Android-only — they do nothing on iOS.
 :::
-
----
-
-## 6. Summary of files changed
-
-| File | Change |
-|---|---|
-| `pubspec.yaml` | Add `bluedot_point_sdk_push` dependency |
-| `android/build.gradle` | Add `com.google.gms:google-services:4.4.2` classpath |
-| `android/app/build.gradle` | Apply `com.google.gms.google-services` plugin; set `minSdkVersion 29` |
-| `android/app/google-services.json` | Add (downloaded from Firebase Console) |
-| `lib/main.dart` (or entry widget) | Call `BluedotPointSdkPush.instance.setNotificationListener(...)` |
-| *(Advanced)* `android/app/src/main/kotlin/.../CustomMessagingService.kt` | Custom FCM service forwarding messages to Bluedot |
-| *(Advanced)* `android/app/src/main/AndroidManifest.xml` | Register custom `FirebaseMessagingService` |
-
-
-
