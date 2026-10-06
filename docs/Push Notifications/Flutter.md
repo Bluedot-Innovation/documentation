@@ -37,7 +37,7 @@ The package bundles the native SDKs — Android Point SDK 18.0.0 and iOS Point S
     - [4.2 Forward notification callbacks](#42-forward-notification-callbacks)
     - [4.3 Configure Bluedot Canvas](#43-configure-bluedot-canvas)
     - [4.4 Build and run](#44-build-and-run)
-5. [Custom messaging service (optional)](#5-custom-messaging-service-optional)
+5. [Custom messaging service (optional, Android only)](#5-custom-messaging-service-optional-android-only)
     - [5.1 When you need this](#51-when-you-need-this)
     - [5.2 Forwarding Bluedot events](#52-forwarding-bluedot-events)
 
@@ -151,7 +151,7 @@ The file contains sensitive API keys, so keep it out of version control:
 google-services.json
 ```
 
-That is the whole Android setup. The plugin ships its own messaging service, registered at a lower FCM priority than anything you add, so Bluedot pushes are handled for you automatically. You only need your own service if your app receives pushes from more than one source — see [section 5](#5-custom-messaging-service-optional).
+That is the whole Android setup. The plugin ships its own messaging service, registered at a lower FCM priority than anything you add, so Bluedot pushes are handled for you automatically. You only need your own service if your app receives pushes from more than one source — see [section 5](#5-custom-messaging-service-optional-android-only).
 
 ---
 
@@ -165,6 +165,8 @@ Open `ios/Runner.xcworkspace` in Xcode, select the **Runner** target, and under 
 <key>aps-environment</key>
 <string>development</string>
 ```
+
+Xcode manages that value from your signing configuration — development builds get `development`, distribution builds get `production`. You do not set it by hand.
 
 Adding **Background Modes → Remote notifications** is optional.
 
@@ -233,7 +235,7 @@ Test on a physical device. APNs registration and location-triggered delivery are
 
 ---
 
-## 5. Custom messaging service (optional)
+## 5. Custom messaging service (optional, Android only)
 
 ### 5.1 When you need this
 
