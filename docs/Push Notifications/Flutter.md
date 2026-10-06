@@ -83,15 +83,19 @@ BluedotPointSdkPush.instance.setNotificationListener(
 
 Each callback receives a map with the following fields:
 
-| Field | Type | Description |
-|---|---|---|
-| `title` | `String` | Notification title |
-| `body` | `String` | Notification body text |
-| `pushVersion` | `String` | Push schema version |
-| `campaignId` | `String` | Campaign UUID |
-| `zoneId` | `String` | Zone UUID |
-| `notificationId` | `String` | Notification UUID |
-| `data` | `Map<String, String>` | Your own key-value pairs from the payload |
+| Field | Type | Platform | Description |
+|---|---|---|---|
+| `title` | `String` | Both | Notification title |
+| `body` | `String` | Both | Notification body text |
+| `campaignId` | `String` | Both | Campaign UUID |
+| `zoneId` | `String` | Both | Zone UUID |
+| `notificationId` | `String` | Both | Notification UUID |
+| `pushVersion` | `String` | Android | Push schema version |
+| `data` | `Map<String, String>` | Android | Your own key-value pairs from the payload |
+
+:::note
+`pushVersion` and `data` are Android-only in practice. On iOS both keys are still present in the map, but the plugin reads them out of the APNs payload — `pushVersion` from `com.rezolveai.push`, and `data` from the payload's custom keys — so they come back empty unless the campaign sets them.
+:::
 
 ### 2.2 Registering with APNs (iOS)
 
