@@ -264,6 +264,11 @@ const sidebars = {
           type: "doc",
           label: "React Native",
           id: "Push Notifications/React Native"
+        },
+        {
+          type: "doc",
+          label: "Flutter",
+          id: "Push Notifications/Flutter"
         }
       ]
     },

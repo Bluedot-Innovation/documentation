@@ -33,7 +33,7 @@ This guide describes all the changes required to integrate `bluedot-react-native
 | Requirement | Minimum version |
 |---|---|
 | React Native | 0.83 |
-| `bluedot-react-native` (Point SDK) | 4.0.0 |
+| `bluedot-react-native` (Point SDK) | 3.5.0 |
 | Android `minSdkVersion` | 29 |
 | Java toolchain | 21 |
 | Kotlin | 2.3.0 |
@@ -57,8 +57,8 @@ Add both to `package.json` dependencies:
 
 ```json
 "dependencies": {
-  "bluedot-react-native": "4.0.0",
-  "bluedot-react-native-pushnotifications": "4.0.0"
+  "bluedot-react-native": "3.5.0",
+  "bluedot-react-native-pushnotifications": "1.0.0"
 }
 ```
 
