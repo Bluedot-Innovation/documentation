@@ -2,6 +2,10 @@
 
 This guide describes all the changes required to integrate `bluedot-react-native-pushnotifications` into an existing React Native application that already uses the `bluedot-react-native` Point SDK.
 
+:::info Android only
+`bluedot-react-native-pushnotifications` is an Android-only package. It ships no iOS module and every method is a no-op on iOS, so there is no iOS configuration to make.
+:::
+
 ---
 
 ## Table of Contents
@@ -15,16 +19,12 @@ This guide describes all the changes required to integrate `bluedot-react-native
     - [4.1 Minimum SDK version](#41-minimum-sdk-version)
     - [4.2 Google Services plugin](#42-google-services-plugin)
     - [4.3 Register the Push Notifications package](#43-register-the-push-notifications-package)
-    - [4.4 Notification icon colour (optional)](#44-notification-icon-colour-optional)
-5. [iOS setup](#5-ios-setup)
-    - [5.1 AppDelegate — foreground notifications](#51-appdelegate--foreground-notifications)
-6. [Advanced: Custom FirebaseMessagingService (optional)](#6-advanced-custom-firebasemessagingservice-optional)
-    - [6.1 When you need this](#61-when-you-need-this)
-    - [6.2 Extra Android dependencies](#62-extra-android-dependencies)
-    - [6.3 Implement the custom service](#63-implement-the-custom-service)
-    - [6.4 Register the service in AndroidManifest](#64-register-the-service-in-androidmanifest)
-    - [6.5 Forward FCM token & messages from JavaScript](#65-forward-fcm-token--messages-from-javascript)
-7. [Summary of files changed](#7-summary-of-files-changed)
+5. [Advanced: Custom FirebaseMessagingService (optional)](#5-advanced-custom-firebasemessagingservice-optional)
+    - [5.1 When you need this](#51-when-you-need-this)
+    - [5.2 Extra Android dependencies](#52-extra-android-dependencies)
+    - [5.3 Implement the custom service](#53-implement-the-custom-service)
+    - [5.4 Register the service in AndroidManifest](#54-register-the-service-in-androidmanifest)
+    - [5.5 Forward FCM token & messages from JavaScript](#55-forward-fcm-token--messages-from-javascript)
 
 ---
 
@@ -168,15 +168,15 @@ protected List<ReactPackage> getPackages() {
 
 ---
 
-## 6. Advanced: Custom FirebaseMessagingService (optional)
+## 5. Advanced: Custom FirebaseMessagingService (optional)
 
-### 6.1 When you need this
+### 5.1 When you need this
 
 By default, `bluedot-react-native-pushnotifications` bundles its own `FirebaseMessagingService` that automatically intercepts FCM messages and forwards them to the Rezolve Point SDK. **For most apps, no further Android configuration is needed.**
 
 You only need a custom `FirebaseMessagingService` if your app **receives push notifications from multiple sources** (e.g. Rezolve campaigns plus your own backend). In that case Android can only have one active `FirebaseMessagingService`, so you must own it and manually route incoming messages and token updates to each SDK that needs them.
 
-### 6.2 Extra Android dependencies
+### 5.2 Extra Android dependencies
 
 Add the following to the `dependencies` block in **`android/app/build.gradle`**:
 
@@ -194,7 +194,7 @@ dependencies {
 }
 ```
 
-### 6.3 Implement the custom service
+### 5.3 Implement the custom service
 
 **Create** `android/app/src/main/java/<your-package>/CustomMessagingService.java`:
 
@@ -230,7 +230,7 @@ public class CustomMessagingService extends FirebaseMessagingService {
 }
 ```
 
-### 6.4 Register the service in AndroidManifest
+### 5.4 Register the service in AndroidManifest
 
 Add the service declaration inside the `<application>` tag in **`AndroidManifest.xml`**:
 
@@ -246,7 +246,7 @@ Add the service declaration inside the `<application>` tag in **`AndroidManifest
 
 > **Important:** Once you declare a custom service, you are fully responsible for forwarding messages and token updates to every SDK that needs them — including Rezolve, as shown above.
 
-### 6.5 Forward FCM token & messages from JavaScript
+### 5.5 Forward FCM token & messages from JavaScript
 
 If you are using `@react-native-firebase/messaging` in JavaScript and want to handle forwarding there instead of the native service:
 
