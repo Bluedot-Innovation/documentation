@@ -103,7 +103,7 @@ When a device token is provided, forward it to **Point SDK**.
 func application(_ application: UIApplication,
                  didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 
-    BDLocationManager.instance()?.pushNotifications.register(deviceToken: deviceToken)
+    BDLocationManager.instance()?.pushNotifications.register(deviceToken)
 }
 ```
 
@@ -197,7 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
 
-        BDLocationManager.instance()?.pushNotifications.register(deviceToken: deviceToken)
+        BDLocationManager.instance()?.pushNotifications.register(deviceToken)
     }
 
     func userNotificationCenter(

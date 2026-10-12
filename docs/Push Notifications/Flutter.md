@@ -32,6 +32,7 @@ The package bundles the native SDKs — Android Point SDK 18.0.0 and iOS Point S
     - [3.1 Minimum SDK version](#31-minimum-sdk-version)
     - [3.2 Google Services plugin](#32-google-services-plugin)
     - [3.3 Place google-services.json](#33-place-google-servicesjson)
+    - [3.4 Notification permission (Android 13+)](#34-notification-permission-android-13)
 4. [iOS setup](#4-ios-setup)
     - [4.1 Signing and capabilities](#41-signing-and-capabilities)
     - [4.2 Forward notification callbacks](#42-forward-notification-callbacks)
@@ -155,7 +156,23 @@ The file contains sensitive API keys, so keep it out of version control:
 google-services.json
 ```
 
-That is the whole Android setup. The plugin ships its own messaging service, registered at a lower FCM priority than anything you add, so Bluedot pushes are handled for you automatically. You only need your own service if your app receives pushes from more than one source — see [section 5](#5-custom-messaging-service-optional-android-only).
+The plugin ships its own messaging service, registered at a lower FCM priority than anything you add, so Bluedot pushes are handled for you automatically. You only need your own service if your app receives pushes from more than one source — see [section 5](#5-custom-messaging-service-optional-android-only).
+
+### 3.4 Notification permission (Android 13+)
+
+On Android 13 (API 33) and above you must also declare `POST_NOTIFICATIONS` in your app's `AndroidManifest.xml` and request it at runtime. Without it Android does not display the notification, even though the Point SDK processes the message.
+
+```xml
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+```
+
+Request it with whichever permission library you already use — for example `permission_handler`:
+
+```dart
+await Permission.notification.request();
+```
+
+That is the whole Android setup.
 
 ---
 
