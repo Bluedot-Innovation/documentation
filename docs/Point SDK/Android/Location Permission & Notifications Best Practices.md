@@ -71,3 +71,12 @@ We don't recommend starting Foreground Service Geo-trigger from background but i
 ```
 
 Services running in the background consume device resources such as battery life, CPU time and memory, potentially resulting in bad user experiences. To mitigate this problem, since the Oreo release of the Android operating system,  a number of limitations have been applied to the operation of background services. Android 12 also added new restrictions for apps targeting Android 12 (API level 31) onwards. Most significantly, there are further restrictions on the ability to start [foreground](https://developer.android.com/guide/components/foreground-services) services while running in the background, except for [a few special cases](https://developer.android.com/about/versions/12/foreground-services#cases-fgs-background-starts-allowed).
+
+Running without a foreground service or background location
+------------------------------------------------------------
+
+If your app neither runs Geo-triggering as a foreground service nor requests `ACCESS_BACKGROUND_LOCATION`, you do not need any of the `FOREGROUND_SERVICE` permissions or the background location permission. Start Geo-triggering without passing a notification, and the service operates only while your app is in use: zone entry, exit and dwell events are delivered while the app is in the foreground, and nothing is detected once it is backgrounded or closed.
+
+This is a reasonable choice for apps that do not want the SDK accessing location in the background. The trade-off is that location-triggered behaviour stops as soon as the user leaves the app.
+
+Note that this applies to **Geo-triggering only** — Tempo must always run as a foreground service.
