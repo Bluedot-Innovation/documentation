@@ -2,8 +2,8 @@
 
 This guide describes all the changes required to integrate `bluedot-react-native-pushnotifications` into an existing React Native application that already uses the `bluedot-react-native` Point SDK.
 
-:::info Android only
-`bluedot-react-native-pushnotifications` is an Android-only package. It ships no iOS module and every method is a no-op on iOS, so there is no iOS configuration to make.
+:::info Platform support
+Push notifications work on **both platforms**, but the setup differs. Android needs the extra `bluedot-react-native-pushnotifications` package — see [section 4](#4-android-setup). On iOS the `bluedot-react-native` package handles them itself — see [section 5](#5-ios-setup).
 :::
 
 ---
@@ -19,12 +19,13 @@ This guide describes all the changes required to integrate `bluedot-react-native
     - [4.1 Minimum SDK version](#41-minimum-sdk-version)
     - [4.2 Google Services plugin](#42-google-services-plugin)
     - [4.3 Register the Push Notifications package](#43-register-the-push-notifications-package)
-5. [Advanced: Custom FirebaseMessagingService (optional)](#5-advanced-custom-firebasemessagingservice-optional)
-    - [5.1 When you need this](#51-when-you-need-this)
-    - [5.2 Extra Android dependencies](#52-extra-android-dependencies)
-    - [5.3 Implement the custom service](#53-implement-the-custom-service)
-    - [5.4 Register the service in AndroidManifest](#54-register-the-service-in-androidmanifest)
-    - [5.5 Forward FCM token & messages from JavaScript](#55-forward-fcm-token--messages-from-javascript)
+5. [iOS setup](#5-ios-setup)
+6. [Advanced: Custom FirebaseMessagingService (optional)](#6-advanced-custom-firebasemessagingservice-optional)
+    - [6.1 When you need this](#61-when-you-need-this)
+    - [6.2 Extra Android dependencies](#62-extra-android-dependencies)
+    - [6.3 Implement the custom service](#63-implement-the-custom-service)
+    - [6.4 Register the service in AndroidManifest](#64-register-the-service-in-androidmanifest)
+    - [6.5 Forward FCM token & messages from JavaScript](#65-forward-fcm-token--messages-from-javascript)
 
 ---
 
@@ -104,6 +105,20 @@ export default function App() {
 }
 ```
 
+Both callbacks receive a payload with these fields:
+
+| Field | Type | Platform | Description |
+|---|---|---|---|
+| `title` | `string` | Both | Notification title |
+| `body` | `string` | Android | Notification body |
+| `pushVersion` | `string` | Android | Push schema version |
+| `campaignId` | `string` | Both | Campaign UUID |
+| `zoneId` | `string` | Both | Zone UUID |
+| `notificationId` | `string` | Both | Notification UUID |
+| `data` | `object` | Android | Your own key-value pairs from the payload |
+
+On iOS, `body`, `pushVersion` and `data` are not exposed by the Point SDK and arrive as `null`.
+
 ### 3.2 Custom notification channel (optional)
 
 You can customise how Android displays notifications — channel name, importance level, icon, and accent colour on Android native layer. Please refer to the Android documentation for Push Notifications for details.
@@ -168,15 +183,29 @@ protected List<ReactPackage> getPackages() {
 
 ---
 
-## 5. Advanced: Custom FirebaseMessagingService (optional)
+## 5. iOS setup
 
-### 5.1 When you need this
+iOS push notifications need **no extra package** — `bluedot-react-native` handles them itself. During initialisation it subscribes to the iOS Point SDK's push callbacks and forwards them to the same `PushNotifications.on(...)` listeners you registered in [section 3.1](#31-listening-for-push-notification-events).
+
+What you do need is the standard APNs configuration:
+
+1. In Xcode, add the **Push Notifications** capability to your app target.
+2. Register your App ID and an APNs authentication key or certificate for the same bundle identifier in Bluedot Canvas.
+3. Request notification permission from the user, using whichever library you already use for APNs in React Native.
+
+Once APNs is configured, received and clicked Bluedot notifications arrive through those listeners, subject to the field differences in [section 3.1](#31-listening-for-push-notification-events).
+
+---
+
+## 6. Advanced: Custom FirebaseMessagingService (optional)
+
+### 6.1 When you need this
 
 By default, `bluedot-react-native-pushnotifications` bundles its own `FirebaseMessagingService` that automatically intercepts FCM messages and forwards them to the Rezolve Point SDK. **For most apps, no further Android configuration is needed.**
 
 You only need a custom `FirebaseMessagingService` if your app **receives push notifications from multiple sources** (e.g. Rezolve campaigns plus your own backend). In that case Android can only have one active `FirebaseMessagingService`, so you must own it and manually route incoming messages and token updates to each SDK that needs them.
 
-### 5.2 Extra Android dependencies
+### 6.2 Extra Android dependencies
 
 Add the following to the `dependencies` block in **`android/app/build.gradle`**:
 
@@ -194,7 +223,7 @@ dependencies {
 }
 ```
 
-### 5.3 Implement the custom service
+### 6.3 Implement the custom service
 
 **Create** `android/app/src/main/java/<your-package>/CustomMessagingService.java`:
 
@@ -230,7 +259,7 @@ public class CustomMessagingService extends FirebaseMessagingService {
 }
 ```
 
-### 5.4 Register the service in AndroidManifest
+### 6.4 Register the service in AndroidManifest
 
 Add the service declaration inside the `<application>` tag in **`AndroidManifest.xml`**:
 
@@ -246,7 +275,7 @@ Add the service declaration inside the `<application>` tag in **`AndroidManifest
 
 > **Important:** Once you declare a custom service, you are fully responsible for forwarding messages and token updates to every SDK that needs them — including Rezolve, as shown above.
 
-### 5.5 Forward FCM token & messages from JavaScript
+### 6.5 Forward FCM token & messages from JavaScript
 
 If you are using `@react-native-firebase/messaging` in JavaScript and want to handle forwarding there instead of the native service:
 
