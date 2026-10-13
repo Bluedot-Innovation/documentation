@@ -4,7 +4,8 @@ Quick Start
 To get the Rezolve Point SDK loaded and running, you’ll need to:
 
 1.  Install the Flutter Bluedot Point SDK plugin ()
-2.  Initialize the SDK
+2.  Android setup: Add ProGuard rules
+3.  Initialize the SDK
 
 1\. Install the Flutter Bluedot Point SDK plugin
 ------------------------------------------------
@@ -37,7 +38,19 @@ Now in your Dart code, you can use:
 import 'package:bluedot_point_sdk/bluedot_point_sdk.dart';
 ```
 
-2\. Initialize the SDK
+2\. Android Setup: Add ProGuard Rules
+--------------------------------------
+
+If your Android app uses ProGuard (enabled by default for release builds), you must add the following rule to prevent Bluedot SDK classes from being obfuscated or removed.
+
+Add the following to your `android/app/proguard-rules.pro` file:
+
+```
+# Bluedot PointSDK
+-keep class au.com.bluedot.** { *; }
+```
+
+3\. Initialize the SDK
 ------------------------
 
 Now that the project has been set up, you can import and initialize the Flutter Rezolve Point SDK plugin from your App:
@@ -79,7 +92,7 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
-3\. Initialize Status
+4\. Initialize Status
 ---------------------
 
 You can use the `isInitialized` method to check the status of the SDK. It will return a boolean value.

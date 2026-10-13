@@ -259,6 +259,16 @@ const sidebars = {
           type: "doc",
           label: "iOS",
           id: "Point SDK/iOS/Push Notifications"
+        },
+        {
+          type: "doc",
+          label: "React Native",
+          id: "Push Notifications/React Native"
+        },
+        {
+          type: "doc",
+          label: "Flutter",
+          id: "Push Notifications/Flutter"
         }
       ]
     },
