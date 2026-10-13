@@ -218,7 +218,15 @@ But the plugin does **not** implement `UNUserNotificationCenterDelegate` or the 
 
 ### 5.2 Forward APNs events to the Point SDK
 
-Your app delegate must forward three APNs events to the Point SDK. It must also conform to `UNUserNotificationCenterDelegate`, which the stock template does not declare. In `ios/<AppName>/AppDelegate.swift`:
+Your app delegate must forward three APNs events to the Point SDK, and must conform to `UNUserNotificationCenterDelegate` — the stock template declares only `UIResponder, UIApplicationDelegate`.
+
+First add this line to the `didFinishLaunchingWithOptions` method you already have, leaving the rest of it untouched:
+
+```swift
+UNUserNotificationCenter.current().delegate = self
+```
+
+Then add these methods to the same class:
 
 ```swift
 import BDPointSDK
@@ -226,20 +234,13 @@ import UserNotifications
 
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-  ) -> Bool {
-    UNUserNotificationCenter.current().delegate = self
-    // ...your existing setup...
-    return true
-  }
+  // ...your existing declarations...
 
   func application(
     _ application: UIApplication,
     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
   ) {
-    BDLocationManager.instance().pushNotifications.register(deviceToken)
+    BDLocationManager.instance()?.pushNotifications.register(deviceToken)
   }
 
   func userNotificationCenter(
@@ -247,7 +248,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     willPresent notification: UNNotification,
     withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
   ) {
-    let handled = BDLocationManager.instance().pushNotifications.handleForeground(notification)
+    let handled = BDLocationManager.instance()?.pushNotifications.handleForeground(notification) ?? false
     completionHandler(handled ? [.banner, .list, .sound, .badge] : [])
   }
 
@@ -256,7 +257,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     didReceive response: UNNotificationResponse,
     withCompletionHandler completionHandler: @escaping () -> Void
   ) {
-    BDLocationManager.instance().pushNotifications.handleResponse(response)
+    BDLocationManager.instance()?.pushNotifications.handleResponse(response)
     completionHandler()
   }
 }
