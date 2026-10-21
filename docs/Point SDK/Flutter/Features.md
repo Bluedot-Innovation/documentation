@@ -4,7 +4,7 @@ Features
 *   Custom Event Metadata
 *   Enable / Disable Zones
 *   Android features
-    *   Foreground Notification
+    *   Foreground Service Linking
 *   iOS features
     *   Background Location Access
 
@@ -54,21 +54,18 @@ BluedotPointSdk.instance.setZoneDisableByApplication(zoneIdToDisable, disableZon
 Android Features
 ----------------
 
-### Foreground Notification
+### Foreground Service Linking
 
-Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md)
+Given the restrictions on accessing location data from the background, GeoTriggering and Tempo benefit from your app running its own foreground service. The Point SDK no longer starts, owns, or displays a foreground service notification itself - your app must implement its own foreground `Service` and link it to the Point SDK. For more information refer to [Android – Location Permission & Notifications Best Practices](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md) and the [Migration guide to 3.0.0](./Migration%20Guides/Migration%20guide%20to%203.0.0.md).
 
-The Foreground Notification method (`androidNotification`) is included in the `GeoTriggeringBuilder` and the `TempoBuilder` classes. It should be set up before starting any of the Geo-triggering or Tempo services as below.
+Use `BluedotPointSdk.instance.linkForegroundService()` once your foreground service has successfully started, and `BluedotPointSdk.instance.unlinkForegroundService()` when it stops.
 
 **Geo-triggering**
+
+Linking a foreground service is **optional** for GeoTriggering - it always runs via a background worker, and linking only reduces location-update latency.
 ```dart
 // GeoTriggering
-String channelId = 'Your channel Id';
-String channelName = 'Your channel Name';
-String androidNotificationTitle = 'Your notification title';
-String androidNotificationContent = 'Your notification content';
-int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder()
-   .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId)
+BluedotPointSdk.instance.geoTriggeringBuilder()
    .start().then((value) { 
    //Handle geo triggering started successfully 
    debugPrint('Geo-triggering has been started'); 
@@ -79,19 +76,14 @@ int androidNotificationId = 123; // Will be -1 by default if set to null. Bluedo
 ```
 
 **Tempo**
+
+A linked foreground service is **mandatory** for Tempo - calling `start` without one linked fails synchronously.
 ```dart
 // Tempo
 String destinationId = 'Your destination Id';
-String channelId = 'Your channel Id';
-String channelName = 'Your channel Name';
-String androidNotificationTitle = 'Your notification title';
-String androidNotificationContent = 'Your notification content';
-int androidNotificationId = 123; // Will be -1 by default if set to null.
 
 BluedotPointSdk.instance
     .tempoBuilder()
-    .androidNotification(channelId, channelName, androidNotificationTitle,
-    androidNotificationContent, androidNotificationId)
     .start(destinationId)
     .then((value) {
   // Successfully started tempo tracking
