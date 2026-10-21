@@ -10,41 +10,8 @@ To start geo-triggering, you should use the `GeoTriggeringBuilder` .
 
 ### Android
 
-On android, you can run geo triggering in foreground or background mode.
+GeoTriggering always runs via a background worker, regardless of whether a foreground service is linked:
 
-### Foreground mode:
-
-Starting geo-triggering on foreground mode would require notification permissions. From Android 13, you have to request user for notification permissions.
-
-To run geo triggering on foreground mode, you have to set notification details as below. If any of the parameters below are null or blank (except for `androidNotificationId`), geo-triggering will start on background mode.
-
-| **Parameter**                | **Type** | **Description**                          |
-|------------------------------|----------|------------------------------------------|
-| `channelId`                  | String?  | The channel id of the notification..     |
-| `channelName`                | String?  | The channel name of the notification.    |
-| `androidNotificationTitle`   | String?  | The title of the notification.           |
-| `androidNotificationContent` | String?  | The content of the notification.         |
-| `androidNotificationId`      | Int?     | The notification Id of the notification. |
-
-```dart
-String channelId = 'Your channel Id';
-String channelName = 'Your channel Name';
-String androidNotificationTitle = 'Your notification title';
-String androidNotificationContent = 'Your notification content';
-int androidNotificationId = 123; // Will be -1 by default if set to null
-
-BluedotPointSdk.instance.geoTriggeringBuilder()
-   .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId)
-   .start().then((value) { 
-   //Handle geo triggering started successfully 
-   debugPrint('Geo-triggering has been started'); 
-}).catchError((error) { 
-  //Handle error when start geo-triggering 
-  debugPrint('Failed to start geo-triggering. Error $error'); 
-});
-```
-
-#### _Background mode:_
 ```dart
 BluedotPointSdk.instance.geoTriggeringBuilder().start().then((value) {
   //Handle geo triggering started successfully
@@ -55,9 +22,11 @@ BluedotPointSdk.instance.geoTriggeringBuilder().start().then((value) {
 });
 ```
 
+Linking your own foreground service via `BluedotPointSdk.instance.linkForegroundService()` is entirely **optional** for GeoTriggering, and only reduces location-update latency. See [Migration guide to 3.0.0](./Migration%20Guides/Migration%20guide%20to%203.0.0.md) for details on implementing and linking a foreground service.
+
 ### iOS
 
-Either of the methods above would start geo-triggering in iOS.
+The same method above starts geo-triggering on iOS.
 
 Receiving Geo-trigger events
 ----------------------------
@@ -159,13 +128,7 @@ class _MyAppState extends State<MyApp> {
   }
 
  void _startGeoTriggering() {
-    String channelId = 'Your channel Id'; 
-    String channelName = 'Your channel Name'; 
-    String androidNotificationTitle = 'Your notification title'; 
-    String androidNotificationContent = 'Your notification content'; 
-    int androidNotificationId = 123; // Will be -1 by default if set to null. BluedotPointSdk.instance.geoTriggeringBuilder() 
-     .androidNotification(channelId, channelName, androidNotificationChannel, androidNotificationContent, androidNotificationId) 
-     .start().then((value) { 
+    BluedotPointSdk.instance.geoTriggeringBuilder().start().then((value) {
         //Handle geo triggering started successfully 
         debugPrint('Geo-triggering has been started'); 
      }).catchError((error) { 

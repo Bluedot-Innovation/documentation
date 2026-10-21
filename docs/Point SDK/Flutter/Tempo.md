@@ -8,31 +8,18 @@ Start Tempo
 
 For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Rezolve Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Rezolve CX representative.
 
-### For Android a [foreground service notification](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md) is also required.
+### Android requires a linked foreground service
+
+Tempo requires your app to implement, start, and link its own foreground service before Tempo can start — the Point SDK no longer starts or displays its own foreground service notification. See [Migration guide to 3.0.0](./Migration%20Guides/Migration%20guide%20to%203.0.0.md) for how to implement and link a foreground service.
 
 Tempo also requires Destination IDs to be defined, which [you can learn about here](../../Tempo/Create%20your%20destinations.md).
 
-To start tempo on foreground mode, you have to set notification details as below.
-
-| **Parameter**                | **Type** | **Description**                          |
-|------------------------------|----------|------------------------------------------|
-| `channelId`                  | String?  | The channel id of the notification..     |
-| `channelName`                | String?  | The channel name of the notification.    |
-| `androidNotificationTitle`   | String?  | The title of the notification.           |
-| `androidNotificationContent` | String?  | The content of the notification.         |
-| `androidNotificationId`      | Int?     | The notification Id of the notification. |
-
-And start Tempo by using the `TempoBuilder` class as below:
+And start Tempo by using the `TempoBuilder` class as below, once your foreground service is linked:
 
 ```dart
-String destinationId = 'Your destination Id';String channelId = 'Your channel Id';
-String channelName = 'Your channel Name';
-String androidNotificationTitle = 'Your notification title';
-String androidNotificationContent = 'Your notification content';
-int androidNotificationId = 123; // Will be -1 by default if set to null. 
+String destinationId = 'Your destination Id';
 
-BluedotPointSdk.instance.tempoBuilder() 
-  .androidNotification(channelId, channelName, androidNotificationTitle, androidNotificationContent, androidNotificationId) 
+BluedotPointSdk.instance.tempoBuilder()
   .start(destinationId).then((value) { 
     // Successfully started tempo tracking 
     debugPrint('Tempo has been started successfully'); 
@@ -41,6 +28,8 @@ BluedotPointSdk.instance.tempoBuilder()
     debugPrint('Failed to start tempo. Error $error'); 
   });
 ```
+
+If the linked foreground service goes away while Tempo is tracking, Tempo stops and reports it via the `tempoTrackingStoppedWithError` event, with `isForegroundServiceNotLinked: true` in the event arguments.
 
 Receiving Tempo events
 ----------------------
@@ -111,11 +100,7 @@ class _TempoPageState extends State<TempoPage> {
   /// Start tempo tracking
   void _startTempo() {
       String destinationId = 'Your destination Id';
-      String channelId = 'Your channel Id';
-      String channelName = 'Your channel Name';
-      String androidNotificationTitle = 'Your notification title';
-      String androidNotificationContent = 'Your notification content';
-      int androidNotificationId = 123; // Will be -1 by default if set to null. // Set custom event metadata.
+      // Set custom event metadata.
       // We suggest to set the Custom Event Meta Data before starting GeoTriggering or Tempo.
       var metadata = {
         'hs_orderId': 'Order Id',
@@ -124,10 +109,10 @@ class _TempoPageState extends State<TempoPage> {
 
       BluedotPointSdk.instance.setCustomEventMetaData(metadata);
 
+      // On Android, your own foreground service must be linked before calling start() -
+      // see the Migration guide to 3.0.0 for details.
       BluedotPointSdk.instance
           .tempoBuilder()
-          .androidNotification(channelId, channelName, androidNotificationTitle,
-          androidNotificationContent, androidNotificationId)
           .start(destinationId)
           .then((value) {
         // Successfully started tempo tracking
