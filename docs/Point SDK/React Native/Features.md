@@ -4,7 +4,7 @@ Features
 *   Custom Event Metadata
 *   Enable / Disable Zones
 *   Android features
-    *   Foreground Notification
+    *   Foreground Service
 *   iOS features
     *   App Restart Notification
 
@@ -57,47 +57,17 @@ BluedotPointSdk.isZoneDiableByApplication(zoneIdToDisable)
 Android Features
 ----------------
 
-### Foreground Notification
+### Foreground Service
 
-Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be run as a foreground service, and the Tempo service must be run as a foreground service. For more information refer to [Android – Location Permission & Notifications Best Practices](../Android/Location%20Permission%20&%20Notifications%20Best%20Practices.md)
+Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be linked to a foreground service for low-latency updates, and the Tempo service **requires** a linked foreground service to start.
 
-The Foreground Notification method (`androidNotification`) is included in the `GeoTriggeringBuilder` and the `TempoBuilder` classes. It should be set up before starting any of the Geo-triggering or Tempo services as below.
+Since plugin version `4.0.0`, the plugin no longer declares, starts, or owns a foreground service notification itself (the `androidNotification` builder method has been removed from both `GeoTriggeringBuilder` and `TempoBuilder`). Ownership of the foreground service moved to your app: your app declares its own `<service>` in the Android manifest, starts it, displays its own persistent notification, and links it to the SDK via `ServiceManager.getInstance(context).linkForegroundService()` (native) or `BluedotPointSDK.linkForegroundService()` (JS).
 
-**Geo-triggering**
-```js
-const geoTriggeringService = new BluedotPointSdk.GeoTriggeringBuilder()
+*   **GeoTriggering** runs in background-worker mode with or without a linked foreground service — linking is optional and only reduces location-update latency.
+*   **Tempo** fails to start if no foreground service is linked.
+*   There is a single, shared link state — if your app uses both GeoTriggering and Tempo, they share one linked service.
 
-geoTriggeringService
-  .androidNotification(
-    "notification channel Id", 
-    "notification channel name",
-    "notification title",
-    "notification content",
-    "notification ID" // optional
-  )
-  .start(
-    () => console.log("On success callback"),
-    (error) => console.error("On error callback")
-  )
-```
-
-**Tempo**
-```js
-const tempoService = new BluedotPointSdk.TempoBuilder()
-
-tempoService
-  .androidNotification(
-    "notification channel Id",
-    "notification channel name"
-    "notification title", 
-    "notification content",
-    "notification ID" // optional
-  )
-  .start(
-    () => console.log("On success callback"),
-    (error) => console.error("On error callback")
-  )
-```
+For full setup instructions — including Android manifest changes, implementing your own foreground service, and linking it to the SDK — refer to the [Migration guide to 4.0.0](./Migration%20Guides/Migration%20guide%20to%204.0.0.md).
 
 iOS Features
 ------------
