@@ -54,7 +54,11 @@ if (!serviceManager.isBluedotServiceInitialized) {
 }
 ```
 
-4. Function with an example to start FG mode Geo-trigger
+4. Function with an example to start Geo-trigger
+
+:::info
+As of SDK 19.0.0, the SDK no longer accepts a `notification()`/`notificationId()` on `GeoTriggerBuilder`. Your app owns its own foreground service and notification - see [Foreground service and persistent notification](./Location%20Permission%20&%20Notifications%20Best%20Practices.md#foreground-service-and-persistent-notification) and the [Migration Guide to Point SDK V19.0.0 for Android](./Migration%20Guides/Migration%20guide%20to%20SDK%2019.0.0%20for%20Android.md).
+:::
 
 ```kotlin
 fun startGeoTriggering(context: Context) {
@@ -66,18 +70,19 @@ fun startGeoTriggering(context: Context) {
     Log.i("TAG", "Rezolve GeoTriggering start success")
   }
 
-  val notification = createNotification(
-    "foreground_notification_title",
-    "foreground_notification_text", true, context
-  )
+  // Optionally start and link your own foreground service here first if you
+  // want low-latency triggers (see Foreground service and persistent notification).
 
   GeoTriggeringService.builder()
-    .notification(notification)
     .start(context, geoTriggeringStatusListener)
 }
 ```
 
-5. Function with an example to start Tempo
+5. Function with an example to start Tempo
+
+:::info
+Tempo requires a foreground service to be linked before it will start, and no longer accepts a `notification()`/`notificationId()` on `TempoBuilder`.
+:::
 
 ```kotlin
 fun startTempo(context: Context) {
@@ -88,13 +93,17 @@ fun startTempo(context: Context) {
     }
     Log.i("TAG", "Rezolve Tempo start success")
   }
-  val notification = createNotification(
-    "foreground_notification_title", "foreground_notification_text",
-    true, context
-  )
 
-  TempoService.builder().notification(notification)
-    .destinationId("<YOUR-PROJECT-DESTINATION-ID>")
-    .start(context, tempoServiceStatusListener)
+  // Start (or reuse) and link your own foreground service, then start Tempo
+  // once linking is confirmed - see Foreground service and persistent notification.
+  startYourForegroundServiceAndWaitForLink { linkError ->
+    if (linkError != null) {
+      return@startYourForegroundServiceAndWaitForLink
+    }
+
+    TempoService.builder()
+      .destinationId("<YOUR-PROJECT-DESTINATION-ID>")
+      .start(context, tempoServiceStatusListener)
+  }
 }
 ```

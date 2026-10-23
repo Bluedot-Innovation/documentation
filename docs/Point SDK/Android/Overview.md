@@ -25,7 +25,7 @@ Refer to the [Rezolve Canvas User Guide](../../Canvas/Overview.md) for tips to
 API Documentation
 -----------------
 
-For further information on the classes and methods discussed within the following documentation, please refer to the [Android API Documentation](http://android-docs.bluedot.io/).
+For further information on the classes and methods discussed within the following documentation, please refer to the [Android API Documentation](https://android-docs.bluedot.io/).
 
 ### Compatibility  Notes
 
