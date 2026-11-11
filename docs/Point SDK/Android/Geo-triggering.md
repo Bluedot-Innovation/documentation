@@ -22,13 +22,13 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
 
     GeoTriggeringService.builder()
         .start(myApplicationContext, // This context should be the Application context.
-            error -> {
+            { error ->
                 if (error != null) {
                     // Something went wrong when starting Geo-triggering. Handle error here.
-                    return;
+                    return@start
                 }
                 // Geo-triggering has started successfully. Handle success here.
-            });
+            })
 } else {
     // The Rezolve Point SDK is not initialized. Initialize before starting Geo-triggering.
 }
@@ -49,13 +49,13 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 
 GeoTriggeringService.builder()
     .start(myApplicationContext, // This context should be the Application context.
-        error -> {
+        { error ->
             if (error != null) {
                 // Something went wrong when starting Geo-triggering. Handle error here.
-                return;
+                return@start
             }
             // Geo-triggering has started successfully. Handle success here.
-        });
+        })
 ```
 
 :::info
@@ -114,14 +114,14 @@ Stop Geo-triggering
 If you only need geo-triggering for a limited period, once that period is over, you can stop the geo-trigger service.
 
 ```kotlin
-GeoTriggeringService.stop(myContext, error -> { 
+GeoTriggeringService.stop(myContext, { error ->
     if (error != null) {
         // Something went wrong stopping Geo-triggering. Handle error here.
-        return;
+        return@stop
     }
     
     // Geo-triggering stopped successfully. Handle success here.
-});
+})
 ```
 
 Geo-triggering start and stop status are provided through callbacks on the  [`geoTriggeringStatusListener`](https://android-docs.bluedot.io/-rezolve%20-point%20-s-d-k/au.com.bluedot.point.net.engine/-geo-triggering-status-listener/index.html), implemented as lambda functions in the above examples.

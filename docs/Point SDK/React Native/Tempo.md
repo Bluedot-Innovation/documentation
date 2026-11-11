@@ -8,7 +8,7 @@ Start Tempo
 
 For this capability, the SDK needs to be initialized and the app must have location permission. You also need Tempo to be enabled for your Rezolve Account and can see the Tempo section in the Projects List page of your Canvas account. If that is not visible and you want to use this capability, please contact your Rezolve CX representative. 
 
-**Tempo requires a linked foreground service on Android to start.** Since plugin version `4.0.0`, the plugin no longer declares, starts, or owns a foreground service notification itself — your app is responsible for declaring its own foreground service, starting it, and linking it to the SDK before calling `TempoBuilder.start()`. If no foreground service is linked, `start()` fails immediately. If the linked service goes away while Tempo is tracking, Tempo stops and reports a `ForegroundServiceNotLinkedError` via the `tempoStoppedWithError` event. See the [Migration guide to 4.0.0](./Migration%20Guides/Migration%20guide%20to%204.0.0.md) for full setup instructions, including the Android manifest changes, implementing your own foreground service, and linking it via `ServiceManager` or `BluedotPointSDK.linkForegroundService()`.
+**Tempo requires a linked foreground service on Android to start.** Since plugin version `4.0.0`, the plugin no longer declares, starts, or owns a foreground service notification itself — your app is responsible for declaring its own foreground service, starting it, and linking it to the SDK before calling `TempoBuilder.start()`. If no foreground service is linked, `start()` fails immediately. If the linked service goes away while Tempo is tracking, Tempo stops and reports a `ForegroundServiceNotLinkedError` via the `tempoTrackingStoppedWithError` event. See the [Migration guide to 4.0.0](./Migration%20Guides/Migration%20guide%20to%204.0.0.md) for full setup instructions, including the Android manifest changes, implementing your own foreground service, and linking it via `ServiceManager` or `BluedotPointSDK.linkForegroundService()`.
 
 Tempo also requires Destination IDs to be defined, which [you can learn about here](../../Tempo/Create%20your%20destinations.md).
 
@@ -60,13 +60,13 @@ export default function App() {
 () => console.log("On tempoTrackingDidExpire callback")
 );
 
-BluedotPointSdk.on('tempoStoppedWithError', (event) => {
+BluedotPointSdk.on('tempoTrackingStoppedWithError', (event) => {
   if (event.isForegroundServiceNotLinked) {
     // Tempo stopped because the linked foreground service went away mid-session
     // (Android only, since plugin version 4.0.0).
     console.log("Tempo stopped: foreground service not linked")
   } else {
-    console.error("On tempoStoppedWithError callback", event.error)
+    console.error("On tempoTrackingStoppedWithError callback", event.error)
   }
 });
 
@@ -81,7 +81,7 @@ To see the full list of supported events please refer to React Native Events Lis
 Stop Tempo
 ----------
 
-Once the Tempo service is no longer needed, you can stop the service. On Android, stop Tempo first and only stop your foreground service afterwards, to ensure the SDK is fully stopped before the link is released.
+Once the Tempo service is no longer needed, you can stop it. On Android, the success callback may run before Tempo has fully stopped: wait until `isTempoRunning()` returns `false` before stopping the foreground service. If GeoTriggering still uses the shared service, keep it running until GeoTriggering no longer needs it.
 
 ```js
 BluedotPointSdk.stopTempoTracking(

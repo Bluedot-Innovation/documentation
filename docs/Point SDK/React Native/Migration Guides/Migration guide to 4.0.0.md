@@ -13,7 +13,7 @@ If you choose to use a foreground service, ownership now moves to your app:
 *   Your app declares its **own** `<service>` in its Android manifest (with the appropriate `android:foregroundServiceType`), starts it, and shows its own persistent notification.
 *   Your app calls `ServiceManager.getInstance(context).linkForegroundService()` from inside that native service once it's actually running, and `ServiceManager.getInstance(context).unlinkForegroundService()` when it stops — **or** calls the plugin's new JS methods `BluedotPointSDK.linkForegroundService()` / `unlinkForegroundService()` from a JS callback fired once the native service is foregrounded.
 *   **GeoTriggering** always runs via a background worker (`ACCESS_BACKGROUND_LOCATION`), with or without a linked foreground service — linking is entirely **optional** and only reduces location-update latency. Do not declare/run a `FOREGROUND_SERVICE_LOCATION`-typed service just to keep GeoTriggering linked unless your app independently qualifies for that foreground service type; geofencing alone does not qualify as of October 28, 2026.
-*   **Tempo now requires a linked foreground service to start.** Calling `new TempoBuilder().start(...)` with none linked fails immediately. If the linked service later goes away mid-session (your app calls `unlinkForegroundService()`, or the service is killed/destroyed), Tempo stops immediately and reports a new `ForegroundServiceNotLinkedError` asynchronously via the `tempoStoppedWithError` event.
+*   **Tempo now requires a linked foreground service to start.** Calling `new TempoBuilder().start(...)` with none linked fails immediately. If the linked service later goes away mid-session (your app calls `unlinkForegroundService()`, or the service is killed/destroyed), Tempo stops immediately and reports a new `ForegroundServiceNotLinkedError` asynchronously via the `tempoTrackingStoppedWithError` event.
 *   There is a **single, shared link state** in the SDK — not one per feature. If your app uses both GeoTriggering and Tempo, they share **one** linked service; don't build separate link/unlink bookkeeping per feature.
 
 #### Removed API surface
@@ -163,12 +163,12 @@ Remove `.androidNotification()` calls — they no longer exist:
 // Before
 new BluedotPointSDK.GeoTriggeringBuilder()
     .androidNotification('channel_id', 'Channel Name', 'Tracking active', 'Your app is monitoring your location.')
-    .iOSAppRestartNotification(title, buttonText) // iOS unchanged
+    .iOSAppRestartNotification(title, buttonText) // This iOS API is unchanged
     .start(onSuccess, onError)
 
 // After
 new BluedotPointSDK.GeoTriggeringBuilder()
-    .iOSAppRestartNotification(title, buttonText) // iOS unchanged
+    .iOSAppRestartNotification(title, buttonText) // This iOS API is unchanged
     .start(onSuccess, onError)
 ```
 
@@ -202,10 +202,10 @@ new BluedotPointSDK.TempoBuilder()
 
 > ⚠️ Do **not** call `TempoBuilder.start()` in the same tick as `NativeModules.TrackingService.start()`. The service's `onCreate()` runs asynchronously on the main thread — starting Tempo immediately after scheduling the service start will race the link and fail. Use a real callback or event from within the service's `onCreate()` to confirm the link before proceeding.
 
-Handle the **new failure mode**: if the linked foreground service goes away while Tempo is tracking (your app calls `unlinkForegroundService()`, or the service is killed), Tempo stops and reports a `ForegroundServiceNotLinkedError` via the existing `tempoStoppedWithError` event. The event payload now includes an `isForegroundServiceNotLinked` boolean flag:
+Handle the **new failure mode**: if the linked foreground service goes away while Tempo is tracking (your app calls `unlinkForegroundService()`, or the service is killed), Tempo stops and reports a `ForegroundServiceNotLinkedError` via the `tempoTrackingStoppedWithError` event. The event payload now includes an `isForegroundServiceNotLinked` boolean flag:
 
 ```js
-BluedotPointSDK.on('tempoStoppedWithError', (event) => {
+BluedotPointSDK.on('tempoTrackingStoppedWithError', (event) => {
     if (event.isForegroundServiceNotLinked) {
         // Tempo stopped because the linked foreground service went away mid-session.
         // Re-link and restart, or update your UI to reflect that tracking has stopped.
@@ -216,7 +216,7 @@ BluedotPointSDK.on('tempoStoppedWithError', (event) => {
 })
 ```
 
-**When stopping Tempo**, stop Tempo first and only stop the foreground service afterwards. This ensures the SDK is fully stopped before the link is released:
+**When stopping Tempo**, wait until Tempo has fully stopped before considering whether to stop the foreground service. The callback below can run before shutdown is complete, so poll `isTempoRunning()`; if GeoTriggering is still using the shared service, keep it running:
 
 ```js
 // Before
@@ -224,12 +224,18 @@ NativeModules.TrackingService.stop()  // may release the link while Tempo is sti
 BluedotPointSDK.stopTempoTracking(onSuccess, onError)
 
 // After
-BluedotPointSDK.stopTempoTracking(() => {
-    // Tempo has fully stopped — now safe to stop the foreground service
-    if (Platform.OS === 'android') {
+const releaseServiceWhenUnused = async () => {
+    while (await BluedotPointSDK.isTempoRunning()) {
+        await new Promise(resolve => setTimeout(resolve, 100))
+    }
+
+    const isGeoTriggeringRunning = await BluedotPointSDK.isGeoTriggeringRunning()
+    if (Platform.OS === 'android' && !isGeoTriggeringRunning) {
         NativeModules.TrackingService.stop()
     }
-}, onError)
+}
+
+BluedotPointSDK.stopTempoTracking(releaseServiceWhenUnused, onError)
 ```
 
 * * *
@@ -257,15 +263,15 @@ await BluedotPointSDK.unlinkForegroundService()
 
 > If your own foreground service class already calls `ServiceManager.getInstance(context).linkForegroundService()` / `unlinkForegroundService()` natively (as shown in the service implementation above), you do **not** need to call these JS methods — the link is already managed at the native layer.
 
-#### `isForegroundServiceNotLinked` flag on `tempoStoppedWithError`
+#### `isForegroundServiceNotLinked` flag on `tempoTrackingStoppedWithError`
 
-The `tempoStoppedWithError` event payload now includes an `isForegroundServiceNotLinked: true` field when Tempo stops because the linked foreground service went away mid-session. See the Tempo start code section above for the updated handler.
+The `tempoTrackingStoppedWithError` event payload now includes an `isForegroundServiceNotLinked: true` field when Tempo stops because the linked foreground service went away mid-session. See the Tempo start code section above for the updated handler.
 
 * * *
 
 ### iOS
 
-No changes are required for iOS. `GeoTriggeringBuilder.iOSAppRestartNotification()` and all other iOS APIs continue to work as before.
+Most iOS APIs are unchanged, including `GeoTriggeringBuilder.iOSAppRestartNotification()`. The Tempo stopped-with-error event has been renamed from `tempoStoppedWithError` to `tempoTrackingStoppedWithError`; update any iOS listeners to use the new event name.
 
 * * *
 

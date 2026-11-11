@@ -59,7 +59,7 @@ Android Features
 
 ### Foreground Service
 
-Given the restrictions on accessing location data from the background, it is recommended that the Geo-triggering service be linked to a foreground service for low-latency updates, and the Tempo service **requires** a linked foreground service to start.
+GeoTriggering can run without a linked foreground service. Linking one can reduce location-update latency, but do so only if your app independently qualifies to use that foreground service type under current Google Play policy; geofencing alone does not qualify as of October 28, 2026. Without a linked service, GeoTriggering can use background-worker mode when `ACCESS_BACKGROUND_LOCATION` is granted, though updates may have higher latency; otherwise, it is limited to foreground operation. The Tempo service **requires** a linked foreground service to start.
 
 Since plugin version `4.0.0`, the plugin no longer declares, starts, or owns a foreground service notification itself (the `androidNotification` builder method has been removed from both `GeoTriggeringBuilder` and `TempoBuilder`). Ownership of the foreground service moved to your app: your app declares its own `<service>` in the Android manifest, starts it, displays its own persistent notification, and links it to the SDK via `ServiceManager.getInstance(context).linkForegroundService()` (native) or `BluedotPointSDK.linkForegroundService()` (JS).
 
