@@ -4,41 +4,17 @@ Geo-triggering
 Start Geo-triggering
 --------------------
 
-Geo-triggering allows the automatic detection of location context change events (such as entering or exiting a geofence, or crossing a Geoline™). For this capability, the SDK needs to be initialized and the app must have location permission. For many use cases, a foreground service notification is also recommended.
+Geo-triggering allows the automatic detection of location context change events (such as entering or exiting a geofence, or crossing a Geoline™). For this capability, the SDK needs to be initialized and the app must have location permission.
 
-To start Geo-triggering, you should create and start the [GeoTriggeringService](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-geo-triggering-service/index.html).
+:::warning Google Play policy change - geofencing is no longer an approved foreground service use case
+Google has announced it is **removing geofencing as an approved [foreground service use case](https://support.google.com/googleplay/android-developer/answer/13392821)**, effective **October 28, 2026** ([policy announcement](https://support.google.com/googleplay/android-developer/answer/16926792) - note Google's original communication cited a later date, since accelerated). This means a `FOREGROUND_SERVICE_LOCATION`-typed service can no longer be justified on the basis of Geo-triggering/geofencing alone - your app must independently qualify for that foreground service type (e.g. Tempo's active navigation tracking) if it wants to keep one running.
+:::
 
+:::info
+As of SDK 19.0.0, the SDK no longer owns a foreground service for Geo-triggering. Geo-triggering always runs via a background worker (`ACCESS_BACKGROUND_LOCATION`), with or without a linked foreground service. Linking a foreground service is optional, but it significantly reduces location-update latency and is recommended wherever your app can do so in compliance with Google Play policy (see above). See the [Migration Guide to Point SDK V19.0.0 for Android](./Migration%20Guides/Migration%20guide%20to%20SDK%2019.0.0%20for%20Android.md) if you are upgrading from an earlier version.
+:::
 
-### Start with Foreground Service Notification
-
-To achieve optimal performance of the SDK, we recommend initiating the Geo-triggering service with the Foreground Service Notification.
-
-```kotlin
-if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
-    // The Rezolve Point SDK is initialized, you can start Geo-triggering.
-
-    GeoTriggeringService.builder()
-            .notification(notificationReference) // Notification to use to run Geo-triggering as a foreground service.
-            .notificationId(myNotificationId) // Optional id to use for foreground service notification. Use if your app will 
-                                              // run additional foreground services, or you wish to update the notification.
-            .start(myApplicationContext, // This context should be the Application context.
-                   error -> {
-                       if (error != null) {
-                           // Something went wrong when starting Geo-triggering. Handle error here.
-                           return;
-                       }
-                       // Geo-triggering has started successfully. Handle success here.
-                   });
-} else {
-    // The Rezolve Point SDK is not initialized. Initialize before starting Geo-triggering.
-}
-```
-
-
-### Start without the Foreground Service Notification
-
-In scenarios where the Foreground Service Notification is not required, you can start the Geo-triggering service as demonstrated below. For guidance on when to use this approach, please consult your Customer Experience (CX) representative.
- 
+To start Geo-triggering, you should create and start the [GeoTriggeringService](https://android-docs.bluedot.io/-rezolve%20-point%20-s-d-k/au.com.bluedot.point.net.engine/-geo-triggering-service/index.html).
 
 ```kotlin
 if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
@@ -58,8 +34,32 @@ if (ServiceManager.getInstance(context).isBluedotServiceInitialized()) {
 }
 ```
 
+### Linking a foreground service for low-latency triggers
+
+For many use cases, linking your own app-owned foreground service delivers a substantial reduction in location-update latency, making it worth implementing wherever your app can justify a foreground service under current Google Play policy. The `GeoTriggerBuilder` no longer accepts a `notification()`/`notificationId()` - your app must declare, start, and display the notification for its own foreground service, then call `ServiceManager.getInstance(context).linkForegroundService()` once that service is running.
+
+> ⚠️ Per Google's updated policy (see above), geofencing alone no longer qualifies as a valid use case for a `FOREGROUND_SERVICE_LOCATION`-typed service. Do not declare/run such a service solely to keep Geo-triggering linked unless your app independently qualifies for that foreground service type for another reason.
+
+```kotlin
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    // Start your own foreground service here, which links itself via
+    // ServiceManager.getInstance(context).linkForegroundService() in its onCreate().
+    startYourForegroundService(context)
+}
+
+GeoTriggeringService.builder()
+    .start(myApplicationContext, // This context should be the Application context.
+        error -> {
+            if (error != null) {
+                // Something went wrong when starting Geo-triggering. Handle error here.
+                return;
+            }
+            // Geo-triggering has started successfully. Handle success here.
+        });
+```
+
 :::info
-To learn more about the Foreground Service Notification check the [Foreground service and persistent notification documentation](./Location%20Permission%20&%20Notifications%20Best%20Practices.md#foreground-service-and-persistent-notification)
+To learn more about implementing your own foreground service check the [Foreground service and persistent notification documentation](./Location%20Permission%20&%20Notifications%20Best%20Practices.md#foreground-service-and-persistent-notification)
 :::
 
 Receiving Geo-trigger events
@@ -81,7 +81,7 @@ Create a receiver in the Manifest to receive geo-trigger events (such as enterin
  </application>
  ```
 
-For every Entry/Exit event generated by BluedotSDK you will receive a callback as onZoneEntryEvent/onZoneExitEvent with [GeoTriggerEvent](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html)
+For every Entry/Exit event generated by BluedotSDK you will receive a callback as onZoneEntryEvent/onZoneExitEvent with [GeoTriggerEvent](https://android-docs.bluedot.io/-rezolve%20-point%20-s-d-k/au.com.bluedot.point.net.engine.event/-geo-trigger-event/index.html)
 
 ```kotlin
 class ExampleGeoTriggerReceiver : GeoTriggeringEventReceiver() {
@@ -124,4 +124,4 @@ GeoTriggeringService.stop(myContext, error -> {
 });
 ```
 
-Geo-triggering start and stop status are provided through callbacks on the  [`geoTriggeringStatusListener`](https://android-docs.bluedot.io/-bluedot%20-s-d-k%20-docs/au.com.bluedot.point.net.engine/-geo-triggering-status-listener/index.html), implemented as lambda functions in the above examples.
+Geo-triggering start and stop status are provided through callbacks on the  [`geoTriggeringStatusListener`](https://android-docs.bluedot.io/-rezolve%20-point%20-s-d-k/au.com.bluedot.point.net.engine/-geo-triggering-status-listener/index.html), implemented as lambda functions in the above examples.
